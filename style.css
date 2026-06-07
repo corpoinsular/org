@@ -208,7 +208,6 @@ font-size:1.1rem;
 
 @media(max-width:900px){
 
-```
 .nav-menu{
     gap:15px;
 }
@@ -216,6 +215,51 @@ font-size:1.1rem;
 .hero h1{
     font-size:2.8rem;
 }
-```
 
+}
+.conocenos-section{
+padding:120px 0;
+background:#ffffff;
+}
+
+.accordion{
+max-width:1000px;
+margin:60px auto 0;
+}
+
+.accordion-item{
+background:#ffffff;
+border:1px solid #e5e7eb;
+border-radius:20px;
+margin-bottom:20px;
+overflow:hidden;
+box-shadow:var(--shadow);
+}
+
+.accordion-header{
+width:100%;
+background:none;
+border:none;
+padding:28px 35px;
+text-align:left;
+cursor:pointer;
+font-size:1.2rem;
+font-weight:700;
+color:var(--dark);
+}
+
+.accordion-content{
+max-height:0;
+overflow:hidden;
+transition:max-height .4s ease;
+}
+
+.accordion-content p{
+padding:0 35px 30px;
+color:var(--text);
+line-height:1.9;
+}
+
+.accordion-item.active .accordion-content{
+max-height:300px;
 }
