@@ -1,23 +1,17 @@
 document.addEventListener("DOMContentLoaded", () => {
 
 ```
-const items = document.querySelectorAll(".accordion-item");
+const panels = document.querySelectorAll(".panel");
 
-items.forEach(item => {
+panels.forEach(panel => {
 
-    const header = item.querySelector(".accordion-header");
+    panel.addEventListener("click", () => {
 
-    header.addEventListener("click", () => {
-
-        items.forEach(other => {
-
-            if(other !== item){
-                other.classList.remove("active");
-            }
-
+        panels.forEach(item => {
+            item.classList.remove("active");
         });
 
-        item.classList.toggle("active");
+        panel.classList.add("active");
 
     });
 
