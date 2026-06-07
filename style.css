@@ -311,16 +311,47 @@ transform:translateY(-5px);
 
 .panel{
 
-    min-height:120px;
+    flex:1;
+
+    border-radius:30px;
+
+    position:relative;
+
+    overflow:hidden;
+
+    cursor:pointer;
+
+    transition:all .6s ease;
+
+    background:linear-gradient(
+        135deg,
+        #0A2EA8,
+        #1F8FE5
+    );
+
+    color:white;
+
+    padding:40px;
+
+    display:flex;
+
+    flex-direction:column;
+
+    justify-content:flex-end;
+
+    box-shadow:0 20px 40px rgba(10,46,168,.15);
+
+    min-width:120px;
 
 }
 
 .panel.active{
 
-    min-height:280px;
+    flex:4;
+
+    box-shadow:0 25px 50px rgba(10,46,168,.25);
 
 }
-```
 
 }
 
