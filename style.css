@@ -97,6 +97,7 @@ position:relative;
 z-index:2;
 max-width:900px;
 width:90%;
+animation:fadeUp 1s ease;    
 }
 
 .hero-badge{
@@ -223,45 +224,146 @@ font-size:1.1rem;
 padding:120px 0;
 background:#ffffff;
 }
+.panels{
 
-.accordion{
-max-width:1000px;
-margin:60px auto 0;
+```
+display:flex;
+
+gap:20px;
+
+margin-top:60px;
+
+height:500px;
+```
+
 }
 
-.accordion-item{
-background:#ffffff;
-border:1px solid #e5e7eb;
-border-radius:20px;
-margin-bottom:20px;
+.panel{
+
+```
+flex:1;
+
+border-radius:30px;
+
+position:relative;
+
 overflow:hidden;
-box-shadow:var(--shadow);
-}
 
-.accordion-header{
-width:100%;
-background:none;
-border:none;
-padding:28px 35px;
-text-align:left;
 cursor:pointer;
-font-size:1.2rem;
-font-weight:700;
-color:var(--dark);
+
+transition:all .6s ease;
+
+background:linear-gradient(
+    135deg,
+    #0A2EA8,
+    #1F8FE5
+);
+
+color:white;
+
+padding:40px;
+
+display:flex;
+
+flex-direction:column;
+
+justify-content:flex-end;
+```
+
 }
 
-.accordion-content{
-max-height:0;
-overflow:hidden;
-transition:max-height .4s ease;
+.panel.active{
+
+```
+flex:4;
+```
+
 }
 
-.accordion-content p{
-padding:0 35px 30px;
-color:var(--text);
-line-height:1.9;
+.panel h3{
+
+```
+font-size:1.8rem;
+
+font-family:'Montserrat',sans-serif;
+
+margin-bottom:20px;
+```
+
 }
 
-.accordion-item.active .accordion-content{
-max-height:300px;
+.panel-content{
+
+```
+opacity:0;
+
+transform:translateY(20px);
+
+transition:.4s;
+
+max-width:500px;
+```
+
+}
+
+.panel.active .panel-content{
+
+```
+opacity:1;
+
+transform:translateY(0);
+```
+
+}
+
+.panel:hover{
+
+```
+transform:translateY(-5px);
+```
+
+}
+
+@media(max-width:900px){
+
+```
+.panels{
+
+    flex-direction:column;
+
+    height:auto;
+
+}
+
+.panel{
+
+    min-height:120px;
+
+}
+
+.panel.active{
+
+    min-height:280px;
+
+}
+```
+
+}
+
+.btn-primary,
+.btn-secondary{
+transition:.3s ease;
+}
+
+.btn-primary:hover,
+.btn-secondary:hover{
+transform:translateY(-4px);
+box-shadow:0 15px 30px rgba(0,0,0,.10);
+}
+.impact-card{
+transition:.3s ease;
+}
+
+.impact-card:hover{
+transform:translateY(-8px);
 }
