@@ -7,11 +7,15 @@ panels.forEach(panel => {
 
     panel.addEventListener("click", () => {
 
+        const isActive = panel.classList.contains("active");
+
         panels.forEach(item => {
             item.classList.remove("active");
         });
 
-        panel.classList.add("active");
+        if (!isActive) {
+            panel.classList.add("active");
+        }
 
     });
 
@@ -19,3 +23,4 @@ panels.forEach(panel => {
 ```
 
 });
+
