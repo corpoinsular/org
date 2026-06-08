@@ -73,6 +73,7 @@ body{
 
 .nav-menu a:hover{
     color:var(--primary);
+}
 
 .btn-dona{
     background:var(--primary);
