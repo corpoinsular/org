@@ -205,10 +205,11 @@ body{
 
 /* TITULOS */
 
-.section-header{
-    width:100%;
-    max-width:1400px;
-    margin:0 auto 60px;
+.section-header h2{
+    font-family:'Montserrat',sans-serif;
+    font-size:clamp(3rem,4vw,4.5rem);
+    line-height:1.1;
+    white-space:nowrap;
     text-align:center;
 }
 
