@@ -244,3 +244,63 @@ body.colectivo {
         font-size: 1.3rem;
     }
 }
+/* NAVBAR BASE */
+.colectivo .navbar {
+    position: fixed;
+    top: 0;
+    width: 100%;
+    z-index: 9999;
+    padding: 15px 0;
+    transition: 0.4s ease;
+}
+
+/* estado inicial (transparente) */
+.colectivo .navbar.transparent {
+    background: linear-gradient(to bottom, rgba(0,0,0,0.6), transparent);
+}
+
+/* estado scroll (sólido tipo Netflix) */
+.colectivo .navbar.scrolled {
+    background: rgba(0,0,0,0.95);
+    backdrop-filter: blur(12px);
+    box-shadow: 0 10px 30px rgba(0,0,0,0.4);
+}
+
+/* layout */
+.colectivo .nav-flex {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0 40px;
+}
+
+/* logo */
+.colectivo .logo {
+    color: white;
+    font-weight: 800;
+    text-decoration: none;
+    font-size: 18px;
+    letter-spacing: 1px;
+}
+
+/* links */
+.colectivo .nav-menu a {
+    color: white;
+    margin-left: 18px;
+    text-decoration: none;
+    font-weight: 500;
+    font-size: 14px;
+    padding: 8px 10px;
+    border-radius: 6px;
+    transition: 0.3s;
+}
+
+.colectivo .nav-menu a:hover {
+    background: rgba(255,255,255,0.1);
+    color: #e50914;
+}
+
+/* link activo */
+.colectivo .nav-menu a.active {
+    color: #e50914;
+}
