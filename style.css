@@ -649,3 +649,72 @@ body {
     color: #888;
     font-size: 13px;
 }
+/* FONDO GENERAL NETFLIX */
+body {
+    margin: 0;
+    background: #141414;
+    color: white;
+    font-family: Arial, sans-serif;
+}
+
+/* TÍTULOS */
+.titulo-seccion {
+    padding: 20px 40px 10px;
+    font-size: 1.5rem;
+}
+
+/* FILA TIPO NETFLIX */
+.fila-netflix {
+    display: flex;
+    gap: 15px;
+    overflow-x: auto;
+    padding: 20px 40px;
+    scroll-behavior: smooth;
+}
+
+/* OCULTAR SCROLL PERO MANTENERLO */
+.fila-netflix::-webkit-scrollbar {
+    display: none;
+}
+
+/* CARD NETFLIX REAL */
+.card-netflix {
+    min-width: 260px;
+    height: 160px;
+    background: linear-gradient(135deg, #222, #111);
+    border-radius: 10px;
+    position: relative;
+    transition: transform 0.3s ease;
+    display: flex;
+    align-items: flex-end;
+}
+
+.card-netflix:hover {
+    transform: scale(1.08);
+}
+
+/* CONTENIDO */
+.contenido-card {
+    padding: 15px;
+}
+
+.contenido-card h3 {
+    margin: 0;
+    font-size: 1rem;
+}
+
+.contenido-card p {
+    font-size: 0.8rem;
+    color: #ccc;
+}
+
+/* BOTÓN */
+.contenido-card button {
+    margin-top: 8px;
+    background: #e50914;
+    color: white;
+    border: none;
+    padding: 6px 10px;
+    border-radius: 4px;
+    cursor: pointer;
+}
