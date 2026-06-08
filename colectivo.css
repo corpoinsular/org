@@ -75,27 +75,24 @@ body.colectivo {
     justify-content: center;
     text-align: center;
     overflow: hidden;
+
+    /* tu imagen como fondo */
+    background: url('/mnt/data/image.png') center/cover no-repeat;
 }
 
-/* 🔥 IMAGEN REAL (CABINA / MASTER) */
-.colectivo .hero-bg {
-    position: absolute;
-    inset: 0;
-    background: url('https://images.unsplash.com/photo-1526948128573-703ee1aeb6fa') center/cover no-repeat;
-    transform: scale(1.1);
-    filter: blur(1px) brightness(0.65) saturate(0.9);
-}
 
 /* 🔥 CAPA MÁS SUAVE (MENOS NEGRO) */
-.colectivo .hero-bg::after {
+.colectivo .hero-netflix::before {
     content: "";
     position: absolute;
     inset: 0;
-    background: linear-gradient(
-        to top,
-        rgba(20,20,20,0.95) 10%,
-        rgba(20,20,20,0.55) 45%,
-        rgba(31,143,229,0.10)
+
+    /* viñeta tipo cine */
+    background: radial-gradient(
+        circle at center,
+        rgba(0,0,0,0.25) 0%,
+        rgba(0,0,0,0.55) 60%,
+        rgba(0,0,0,0.85) 100%
     );
 }
 
@@ -105,6 +102,9 @@ body.colectivo {
     z-index: 2;
     max-width: 850px;
     padding: 30px;
+
+    /* mejora de contraste */
+    text-shadow: 0 2px 20px rgba(0,0,0,0.8);
 }
 
 .colectivo .hero-overlay h1 {
