@@ -1,48 +1,97 @@
 <!DOCTYPE html>
 <html lang="es">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Colectivo Insular</title>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>INSULAR+</title>
 
-    <link rel="stylesheet" href="colectivo.css">
+<link rel="stylesheet" href="colectivo.css">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
 </head>
 
 <body class="colectivo">
 
-<header class="navbar" id="navbar">
+<header class="navbar">
+
     <div class="nav-flex">
-        <div class="logo">INSULAR+</div>
+
+        <div class="logo">
+            INSULAR<span>+</span>
+        </div>
 
         <nav>
             <a href="#">Inicio</a>
             <a href="#programas">Programas</a>
             <a href="#pauta">Pauta</a>
         </nav>
+
+        <a href="#pauta" class="btn-nav">
+            Pautar ahora
+        </a>
+
     </div>
+
 </header>
 
-<!-- HERO -->
 <section class="hero">
 
     <div class="hero-bg"></div>
 
     <div class="hero-content">
+
+        <span class="hero-tag">
+            CONECTAMOS ISLAS · CONTAMOS HISTORIAS
+        </span>
+
         <h1>INSULAR+</h1>
 
         <p>
             Creamos contenido audiovisual desde la isla para el mundo.
+            Historias reales, cultura, territorio y transformación social.
         </p>
 
         <div class="hero-buttons">
-            <a href="#programas" class="btn-red">▶ Reproducir</a>
-            <a href="#pauta" class="btn-outline">Crear contenido</a>
+
+            <a href="#programas" class="btn-red">
+                ▶ Ver contenido
+            </a>
+
+            <a href="#pauta" class="btn-outline">
+                Crear contenido
+            </a>
+
         </div>
+
     </div>
 
 </section>
 
-<!-- PROGRAMAS -->
+<section class="features">
+
+    <div class="feature">
+        <h3>Contenido Original</h3>
+        <p>Producciones creadas desde el territorio.</p>
+    </div>
+
+    <div class="feature">
+        <h3>Historias Reales</h3>
+        <p>Voces auténticas de nuestras comunidades.</p>
+    </div>
+
+    <div class="feature">
+        <h3>Impacto Social</h3>
+        <p>Comunicación para transformar realidades.</p>
+    </div>
+
+    <div class="feature">
+        <h3>Producción Profesional</h3>
+        <p>Video, fotografía y narrativas digitales.</p>
+    </div>
+
+</section>
+
 <section id="programas" class="section">
 
     <h2 class="title">Programas al aire</h2>
@@ -61,29 +110,49 @@
 
         <div class="card">
             <div class="thumb t3"></div>
-            <h3>Voces del mar</h3>
+            <h3>Voces del Mar</h3>
         </div>
 
         <div class="card">
             <div class="thumb t4"></div>
-            <h3>Isla sostenible</h3>
+            <h3>Isla Sostenible</h3>
         </div>
 
     </div>
 
 </section>
 
-<!-- PAUTA -->
 <section id="pauta" class="ads">
 
-    <h2>¿Quieres anunciar con nosotros?</h2>
+    <div>
 
-    <p>
-        Conectamos tu marca con una audiencia real a través de contenido audiovisual.
-    </p>
+        <h2>
+            ¿Quieres anunciar con nosotros?
+        </h2>
 
-    <a href="#" class="btn-red">Pautar ahora</a>
+        <p>
+            Conectamos tu marca con una audiencia real a través de contenido audiovisual.
+        </p>
+
+    </div>
+
+    <a href="#" class="btn-red">
+        Pautar ahora
+    </a>
 
 </section>
 
+<footer class="footer">
+
+    <div class="footer-logo">
+        INSULAR+
+    </div>
+
+    <p>
+        Colectivo audiovisual de la Corporación Insular Digital.
+    </p>
+
+</footer>
+
 </body>
+</html>
