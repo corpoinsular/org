@@ -398,3 +398,23 @@ body{
         rgba(31,143,229,.05)
     );
 }
+.impact-card i{
+    font-size:2.5rem;
+    color:var(--primary);
+    margin-bottom:20px;
+    display:block;
+}
+.dona-home{
+    padding:120px 0;
+    text-align:center;
+    background:linear-gradient(
+        135deg,
+        #0A2EA8,
+        #1F8FE5
+    );
+}
+
+.dona-home h2,
+.dona-home p{
+    color:white;
+}
