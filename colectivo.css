@@ -16,331 +16,131 @@
 ========================= */
 
 body.colectivo {
+   body {
     margin: 0;
-    background: var(--dark);
-    color: var(--text);
     font-family: Arial, sans-serif;
-    overflow-x: hidden;
+    background: #0f0f0f;
+    color: white;
 }
 
-/* =========================
-   NAVBAR
-========================= */
-
-.colectivo .navbar {
+/* NAV */
+.navbar {
     position: fixed;
     top: 0;
     width: 100%;
-    z-index: 9999;
-    padding: 15px 0;
-    background: rgba(0,0,0,0.85);
+    z-index: 999;
+    background: rgba(0,0,0,0.6);
     backdrop-filter: blur(10px);
 }
 
-/* contenedor */
-.colectivo .navbar .nav-flex {
+.nav-flex {
     display: flex;
     justify-content: space-between;
-    align-items: center;
-    padding: 0 40px;
+    padding: 15px 40px;
 }
 
-/* LINKS BLANCOS (VISIBLE REAL) */
-.colectivo .navbar a {
-    color: #ffffff;
-    margin-left: 18px;
+.navbar a {
+    color: white;
+    margin-left: 20px;
     text-decoration: none;
-    font-weight: 600;
-    font-size: 14px;
-    transition: 0.3s;
-    padding: 8px 10px;
-    border-radius: 6px;
 }
 
-/* hover más pro */
-.colectivo .navbar a:hover {
-    background: rgba(255,255,255,0.1);
-    color: #e50914;
-}
-
-/* =========================
-   HERO (CON MEJOR CONTRASTE)
-========================= */
-
-.colectivo .hero-netflix {
-    height: 92vh;
+/* HERO */
+.hero {
+    height: 90vh;
     position: relative;
     display: flex;
     align-items: center;
-    justify-content: center;
-    text-align: center;
-    overflow: hidden;
-
-    /* tu imagen como fondo */
-    background: url('/mnt/data/image.png') center/cover no-repeat;
+    padding: 0 60px;
 }
 
-
-/* 🔥 CAPA MÁS SUAVE (MENOS NEGRO) */
-.colectivo .hero-netflix::before {
-    content: "";
+.hero-bg {
     position: absolute;
     inset: 0;
-
-    /* viñeta tipo cine */
-    background: radial-gradient(
-        circle at center,
-        rgba(0,0,0,0.25) 0%,
-        rgba(0,0,0,0.55) 60%,
-        rgba(0,0,0,0.85) 100%
-    );
+    background: url('https://images.unsplash.com/photo-1526948128573-703ee1aeb6fa') center/cover;
+    filter: brightness(0.6);
 }
 
-/* CONTENIDO */
-.colectivo .hero-overlay {
+.hero-content {
     position: relative;
-    z-index: 2;
-    max-width: 850px;
-    padding: 30px;
-
-    /* mejora de contraste */
-    text-shadow: 0 2px 20px rgba(0,0,0,0.8);
+    max-width: 600px;
 }
 
-.colectivo .hero-overlay h1 {
-    font-size: clamp(2.5rem, 4vw, 4rem);
-    font-weight: 800;
-    color: white;
-    letter-spacing: 1px;
+.hero h1 {
+    font-size: 4rem;
+    margin: 0;
 }
 
-.colectivo .hero-overlay p {
-    color: #e6e6e6;
-    font-size: 1.1rem;
+.hero p {
+    color: #ddd;
+    font-size: 1.2rem;
 }
 
 /* BOTONES */
-.colectivo .btn-red {
+.btn-red {
     background: #e50914;
-    padding: 12px 22px;
-    border-radius: 6px;
+    padding: 10px 20px;
     color: white;
     text-decoration: none;
+    border-radius: 4px;
     margin-right: 10px;
     display: inline-block;
 }
 
-.colectivo .btn-outline {
+.btn-outline {
     border: 1px solid white;
-    padding: 12px 22px;
-    border-radius: 6px;
+    padding: 10px 20px;
     color: white;
     text-decoration: none;
-    display: inline-block;
-}
-/* BOTÓN PRINCIPAL */
-.colectivo .btn-red {
-    display: inline-block;
-    margin-top: 20px;
-    background: var(--netflix-red);
-    color: #fff;
-    padding: 12px 22px;
-    border-radius: 6px;
-    text-decoration: none;
-    font-weight: bold;
-    transition: 0.3s;
+    border-radius: 4px;
 }
 
-.colectivo .btn-red:hover {
-    transform: scale(1.05);
-    background: #ff0a16;
+/* SECCIONES */
+.section {
+    padding: 60px 40px;
 }
 
-/* =========================
-   TÍTULOS (MEJOR VISUAL)
-========================= */
-
-.colectivo .titulo-seccion {
-    padding: 40px 40px 10px;
-    font-size: 1.6rem;
-    font-weight: 700;
-    color: #fff;
+.title {
+    margin-bottom: 20px;
 }
 
-/* =========================
-   CARRUSEL NETFLIX
-========================= */
-
-.colectivo .fila-netflix {
+/* ROW NETFLIX */
+.row {
     display: flex;
-    gap: 16px;
+    gap: 15px;
     overflow-x: auto;
-    padding: 20px 40px 50px;
-    scroll-behavior: smooth;
 }
 
-.colectivo .fila-netflix::-webkit-scrollbar {
+.row::-webkit-scrollbar {
     display: none;
 }
 
-/* =========================
-   CARD MEJORADA (CON COLOR)
-========================= */
-
-.colectivo .card-netflix {
-    min-width: 270px;
-    height: 170px;
-    border-radius: 12px;
-    background: linear-gradient(
-        135deg,
-        var(--dark-soft),
-        #0d0d0d
-    );
-    position: relative;
+/* CARDS */
+.card {
+    min-width: 220px;
+    background: #1a1a1a;
+    border-radius: 10px;
     overflow: hidden;
-    transition: 0.3s ease;
-    border: 1px solid rgba(255,255,255,0.05);
-}
-
-.colectivo .card-netflix:hover {
-    transform: scale(1.08);
-    box-shadow:
-        0 20px 50px rgba(229,9,20,0.15),
-        0 10px 30px rgba(31,143,229,0.10);
-}
-
-/* INFO CARD */
-.colectivo .card-info {
-    position: absolute;
-    bottom: 12px;
-    left: 12px;
-    z-index: 2;
-}
-
-/* TEXTO */
-.colectivo .card-info h3 {
-    margin: 0;
-    font-size: 1rem;
-}
-
-.colectivo .card-info p {
-    font-size: 0.85rem;
-    color: #bbb;
-}
-
-/* BOTÓN CARD */
-.colectivo .card-info button {
-    margin-top: 8px;
-    background: var(--insular-blue);
-    color: white;
-    border: none;
-    padding: 6px 10px;
-    border-radius: 4px;
-    cursor: pointer;
-    font-size: 0.8rem;
-}
-
-.colectivo .card-info button:hover {
-    background: var(--netflix-red);
-}
-
-/* =========================
-   PAUTA (MEJOR DISEÑO)
-========================= */
-
-.colectivo .pauta-netflix-pro {
-    padding: 90px 40px;
-    text-align: center;
-    background:
-        radial-gradient(circle at top,
-        rgba(229,9,20,0.15),
-        rgba(31,143,229,0.12),
-        #000);
-}
-
-.colectivo .pauta-netflix-pro h2 {
-    font-size: 2rem;
-    margin-bottom: 10px;
-}
-
-.colectivo .pauta-netflix-pro p {
-    max-width: 700px;
-    margin: auto;
-    color: #ccc;
-}
-
-/* =========================
-   RESPONSIVE
-========================= */
-
-@media (max-width: 768px) {
-
-    .colectivo .fila-netflix {
-        padding: 20px;
-    }
-
-    .colectivo .titulo-seccion {
-        padding: 25px 20px 10px;
-        font-size: 1.3rem;
-    }
-}
-/* NAVBAR BASE */
-.colectivo .navbar {
-    position: fixed;
-    top: 0;
-    width: 100%;
-    z-index: 9999;
-    padding: 15px 0;
-    transition: 0.4s ease;
-}
-
-/* estado inicial (transparente) */
-.colectivo .navbar.transparent {
-    background: linear-gradient(to bottom, rgba(0,0,0,0.6), transparent);
-}
-
-/* estado scroll (sólido tipo Netflix) */
-.colectivo .navbar.scrolled {
-    background: rgba(0,0,0,0.95);
-    backdrop-filter: blur(12px);
-    box-shadow: 0 10px 30px rgba(0,0,0,0.4);
-}
-
-/* layout */
-.colectivo .nav-flex {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    padding: 0 40px;
-}
-
-/* logo */
-.colectivo .logo {
-    color: white;
-    font-weight: 800;
-    text-decoration: none;
-    font-size: 18px;
-    letter-spacing: 1px;
-}
-
-/* links */
-.colectivo .nav-menu a {
-    color: white;
-    margin-left: 18px;
-    text-decoration: none;
-    font-weight: 500;
-    font-size: 14px;
-    padding: 8px 10px;
-    border-radius: 6px;
     transition: 0.3s;
 }
 
-.colectivo .nav-menu a:hover {
-    background: rgba(255,255,255,0.1);
-    color: #e50914;
+.card:hover {
+    transform: scale(1.05);
 }
 
-/* link activo */
-.colectivo .nav-menu a.active {
-    color: #e50914;
+.thumb {
+    height: 120px;
+    background: gray;
+}
+
+.t1 { background: url('https://images.unsplash.com/photo-1504384308090-c894fdcc538d') center/cover; }
+.t2 { background: url('https://images.unsplash.com/photo-1485217988980-11786ced9454') center/cover; }
+.t3 { background: url('https://images.unsplash.com/photo-1500530855697-b586d89ba3ee') center/cover; }
+.t4 { background: url('https://images.unsplash.com/photo-1469474968028-56623f02e42e') center/cover; }
+
+/* PAUTA */
+.ads {
+    padding: 80px 40px;
+    text-align: center;
+    background: linear-gradient(135deg, #111, #000);
 }
