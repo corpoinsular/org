@@ -9,102 +9,82 @@
 </head>
 
 <body class="colectivo">
-<!-- NAV SIMPLE -->
+
 <header class="navbar" id="navbar">
-
     <div class="nav-flex">
+        <div class="logo">INSULAR+</div>
 
-        <a href="index.html" class="logo">INSULAR+</a>
-
-        <nav class="nav-menu">
-            <a href="index.html" class="nav-link">Inicio</a>
-            <a href="programas.html" class="nav-link">Programas</a>
-            <a href="#programas" class="nav-link">Al aire</a>
-            <a href="#pauta" class="nav-link">Pauta</a>
+        <nav>
+            <a href="#">Inicio</a>
+            <a href="#programas">Programas</a>
+            <a href="#pauta">Pauta</a>
+            <a href="#nosotros">Nosotros</a>
         </nav>
-
     </div>
-
 </header>
-<!-- HERO APPLE -->
-<section class="hero-netflix">
+
+<!-- HERO -->
+<section class="hero">
 
     <div class="hero-bg"></div>
 
-    <div class="hero-overlay">
-
+    <div class="hero-content">
         <h1>INSULAR+</h1>
 
-        <p>Creamos contenido audiovisual desde la isla para el mundo</p>
+        <p>
+            Creamos contenido audiovisual que informa, educa e inspira.
+        </p>
 
         <div class="hero-buttons">
             <a href="#programas" class="btn-red">▶ Reproducir</a>
-            <a href="#creamos" class="btn-outline">Disfruta el contenido</a>
+            <a href="#pauta" class="btn-outline">Crear contenido</a>
+        </div>
+    </div>
+
+</section>
+
+<!-- PROGRAMAS -->
+<section id="programas" class="section">
+
+    <h2 class="title">Programas al aire</h2>
+
+    <div class="row">
+
+        <div class="card">
+            <div class="thumb t1"></div>
+            <h3>Sintonía Insular</h3>
+        </div>
+
+        <div class="card">
+            <div class="thumb t2"></div>
+            <h3>Raíces</h3>
+        </div>
+
+        <div class="card">
+            <div class="thumb t3"></div>
+            <h3>Voces del mar</h3>
+        </div>
+
+        <div class="card">
+            <div class="thumb t4"></div>
+            <h3>Isla sostenible</h3>
         </div>
 
     </div>
 
 </section>
-    
-<!-- PROGRAMAS LIMPIOS -->
-    <section id="programas" class="catalogo-netflix">
 
-    <h2 class="titulo-seccion">Programas al aire</h2>
+<!-- PAUTA -->
+<section id="pauta" class="ads">
 
-    <div class="fila-netflix">
-
-        <div class="card-netflix">
-            <div class="contenido-card">
-                <h3>Informe Informativo</h3>
-                <p>Sección Informativa de la semana</p>
-                <button>▶ Ver programa</button>
-            </div>
-        </div>
-
-       <div class="card-netflix">
-
-    <video class="preview-video" muted loop>
-        <source src="video/programa1.mp4" type="video/mp4">
-    </video>
-
-    <div class="card-info">
-        <h3>Sintonía Insular</h3>
-        <p>Sección de variedades</p>
-        <button>▶ Ver</button>
-    </div>
-
-</div>
-</section>
-
-<!-- PAUTA ELEGANTE -->
-<section class="pauta-netflix-pro">
-
-    <h2>🚀 Haz crecer tu negocio con INSULAR+</h2>
+    <h2>¿Quieres anunciar con nosotros?</h2>
 
     <p>
-        Llegamos a una audiencia real a través de contenido audiovisual comunitario.
-        Conecta tu marca con cultura, territorio y comunicación.
+        Conectamos tu marca con una audiencia real a través de contenido audiovisual.
     </p>
 
-    <a href="contacto.html" class="btn-red">Quiero pautar</a>
+    <a href="#" class="btn-red">Pautar ahora</a>
 
 </section>
-<!-- FOOTER SIMPLE -->
-<footer class="apple-footer">
-    <p>© 2026 Colectivo Insular</p>
-</footer>
-<script>
-const navbar = document.getElementById("navbar");
 
-window.addEventListener("scroll", () => {
-    if (window.scrollY > 50) {
-        navbar.classList.add("scrolled");
-        navbar.classList.remove("transparent");
-    } else {
-        navbar.classList.add("transparent");
-        navbar.classList.remove("scrolled");
-    }
-});
-</script>
 </body>
-</html>
