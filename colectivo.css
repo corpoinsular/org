@@ -2,69 +2,120 @@
    COLECTIVO NETFLIX MODE
 ========================= */
 
-/* BODY SOLO COLECTIVO */
 body.colectivo {
     margin: 0;
     background: #141414;
-    color: white;
+    color: #fff;
     font-family: Arial, sans-serif;
+    overflow-x: hidden;
 }
 
-/* NAVBAR */
+/* =========================
+   NAVBAR
+========================= */
+
 .colectivo .navbar {
     position: fixed;
     top: 0;
     width: 100%;
-    background: linear-gradient(to bottom, rgba(0,0,0,0.8), transparent);
-    padding: 15px 40px;
     z-index: 1000;
+    padding: 15px 0;
+    background: linear-gradient(to bottom, rgba(0,0,0,0.85), transparent);
+}
+
+.colectivo .navbar .nav-flex {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0 40px;
 }
 
 .colectivo .navbar a {
-    color: white;
-    margin-left: 15px;
+    color: #fff;
+    margin-left: 20px;
     text-decoration: none;
+    font-weight: 500;
 }
 
-/* HERO NETFLIX */
+.colectivo .navbar a:hover {
+    color: #e50914;
+}
+
+/* =========================
+   HERO NETFLIX
+========================= */
+
 .colectivo .hero-netflix {
     height: 90vh;
-    background: url('https://images.unsplash.com/photo-1524985069026-dd778a71c7b4') center/cover;
+    background: url('https://images.unsplash.com/photo-1524985069026-dd778a71c7b4') center/cover no-repeat;
     display: flex;
     align-items: center;
     justify-content: center;
-    position: relative;
     text-align: center;
+    position: relative;
+}
+
+.colectivo .hero-netflix::after {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background: rgba(0,0,0,0.55);
 }
 
 .colectivo .hero-overlay {
-    background: rgba(0,0,0,0.6);
-    padding: 40px;
-    border-radius: 10px;
+    position: relative;
+    z-index: 2;
+    max-width: 800px;
+    padding: 30px;
 }
 
+.colectivo .hero-overlay h2 {
+    font-size: clamp(2rem, 3vw, 3rem);
+    margin-bottom: 10px;
+}
+
+.colectivo .hero-overlay p {
+    color: #ddd;
+    font-size: 1.1rem;
+}
+
+/* BOTÓN ROJO NETFLIX */
 .colectivo .btn-red {
     display: inline-block;
+    margin-top: 20px;
     background: #e50914;
-    color: white;
-    padding: 12px 20px;
+    color: #fff;
+    padding: 12px 22px;
     border-radius: 4px;
     text-decoration: none;
-    margin-top: 15px;
+    font-weight: bold;
+    transition: 0.3s;
 }
 
-/* TÍTULOS */
+.colectivo .btn-red:hover {
+    background: #ff0a16;
+    transform: scale(1.05);
+}
+
+/* =========================
+   TÍTULOS
+========================= */
+
 .colectivo .titulo-seccion {
-    padding: 20px 40px 10px;
-    font-size: 1.5rem;
+    padding: 40px 40px 10px;
+    font-size: 1.6rem;
+    font-weight: bold;
 }
 
-/* FILA NETFLIX */
+/* =========================
+   FILA NETFLIX (CARRUSEL)
+========================= */
+
 .colectivo .fila-netflix {
     display: flex;
-    gap: 15px;
+    gap: 16px;
     overflow-x: auto;
-    padding: 20px 40px;
+    padding: 20px 40px 40px;
     scroll-behavior: smooth;
 }
 
@@ -72,67 +123,97 @@ body.colectivo {
     display: none;
 }
 
-/* CARDS */
+/* =========================
+   CARD NETFLIX
+========================= */
+
 .colectivo .card-netflix {
     min-width: 260px;
-    height: 160px;
-    background: linear-gradient(135deg, #222, #111);
-    border-radius: 10px;
+    height: 170px;
+    background: linear-gradient(135deg, #1f1f1f, #0d0d0d);
+    border-radius: 12px;
     display: flex;
     align-items: flex-end;
-    transition: transform 0.3s ease;
+    padding: 15px;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    cursor: pointer;
 }
 
 .colectivo .card-netflix:hover {
     transform: scale(1.08);
+    box-shadow: 0 15px 40px rgba(0,0,0,0.6);
 }
 
 /* CONTENIDO CARD */
-.colectivo .contenido-card {
-    padding: 15px;
-}
-
 .colectivo .contenido-card h3 {
     margin: 0;
     font-size: 1rem;
 }
 
 .colectivo .contenido-card p {
-    font-size: 0.8rem;
-    color: #ccc;
+    font-size: 0.85rem;
+    color: #bbb;
+    margin-top: 5px;
 }
 
-/* BOTÓN CARD */
 .colectivo .contenido-card button {
-    margin-top: 8px;
+    margin-top: 10px;
     background: #e50914;
-    color: white;
+    color: #fff;
     border: none;
-    padding: 6px 10px;
+    padding: 7px 12px;
     border-radius: 4px;
     cursor: pointer;
+    font-size: 0.8rem;
 }
 
-/* PAUTA */
+.colectivo .contenido-card button:hover {
+    background: #ff0a16;
+}
+
+/* =========================
+   PAUTA PUBLICITARIA
+========================= */
+
 .colectivo .pauta-netflix {
     padding: 80px 40px;
-    background: linear-gradient(135deg, #000, #1a1a1a);
     text-align: center;
+    background: linear-gradient(135deg, #000, #1a1a1a);
 }
 
 .colectivo .btn-netflix {
     display: inline-block;
-    margin-top: 15px;
-    padding: 12px 20px;
+    margin-top: 20px;
     background: #e50914;
-    color: white;
-    text-decoration: none;
+    color: #fff;
+    padding: 12px 24px;
     border-radius: 4px;
+    text-decoration: none;
+    font-weight: bold;
 }
 
-/* RESPONSIVE */
+.colectivo .btn-netflix:hover {
+    background: #ff0a16;
+    transform: scale(1.05);
+}
+
+/* =========================
+   RESPONSIVE
+========================= */
+
 @media (max-width: 768px) {
+
+    .colectivo .navbar .nav-flex {
+        padding: 0 20px;
+    }
+
     .colectivo .fila-netflix {
         padding: 20px;
     }
+
+    .colectivo .titulo-seccion {
+        padding: 30px 20px 10px;
+        font-size: 1.3rem;
+    }
+
 }
