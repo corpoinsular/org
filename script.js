@@ -1,26 +1,19 @@
 document.addEventListener("DOMContentLoaded", () => {
 
-```
-const panels = document.querySelectorAll(".panel");
+    const panelsContainer = document.querySelector(".panels");
 
-panels.forEach(panel => {
+    panelsContainer.addEventListener("click", (e) => {
 
-    panel.addEventListener("click", () => {
+        const panel = e.target.closest(".panel");
 
-        const isActive = panel.classList.contains("active");
+        if (!panel) return;
 
-        panels.forEach(item => {
+        document.querySelectorAll(".panel").forEach(item => {
             item.classList.remove("active");
         });
 
-        if (!isActive) {
-            panel.classList.add("active");
-        }
+        panel.classList.add("active");
 
     });
 
 });
-```
-
-});
-
