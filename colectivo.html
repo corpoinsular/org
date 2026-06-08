@@ -3,88 +3,79 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Colectivo | Corporación Insular</title>
+    <title>Colectivo Insular</title>
 
     <link rel="stylesheet" href="style.css">
 </head>
 
 <body>
 
-    <!-- HEADER -->
-    <header class="header">
-        <div class="container">
-            <h1 class="logo">Colectivo Insular</h1>
+<!-- NAVBAR FIJO -->
+<header class="navbar">
+    <div class="container nav-flex">
+        <h1 class="logo">INSULAR+</h1>
 
-            <nav class="nav">
-                <ul>
-                    <li><a href="index.html">Inicio</a></li>
-                    <li><a href="programas.html">Programas</a></li>
-                    <li><a href="colectivo.html" class="active">Colectivo</a></li>
-                </ul>
-            </nav>
-        </div>
-    </header>
+        <nav>
+            <a href="index.html">Inicio</a>
+            <a href="programas.html">Programas</a>
+            <a href="colectivo.html" class="active">Colectivo</a>
+        </nav>
+    </div>
+</header>
 
-    <!-- HERO TIPO NETFLIX -->
-    <section class="hero-colectivo">
-        <div class="hero-content">
-            <h2>Contenido hecho desde la isla, para el mundo</h2>
-            <p>Producción audiovisual, cultura y comunicación comunitaria.</p>
+<!-- HERO TIPO NETFLIX -->
+<section class="hero-netflix">
+    <div class="hero-overlay">
+        <h2>Contenido hecho desde la isla</h2>
+        <p>Cultura, educación y comunicación comunitaria en formato audiovisual</p>
 
-            <a href="#programas" class="btn-primary">Programas al aire</a>
-        </div>
-    </section>
+        <a href="#catalogo" class="btn-red">▶ Programas al aire</a>
+    </div>
+</section>
 
-    <!-- PROGRAMAS AL AIRE -->
-    <section id="programas" class="seccion">
-        <h2 class="section-title">Programas al aire</h2>
+<!-- CATÁLOGO -->
+<section id="catalogo" class="catalogo">
+    <h2>🔥 En emisión</h2>
 
-        <div class="grid-netflix">
+    <div class="row-netflix">
 
-            <!-- PROGRAMA 1 -->
-            <div class="card-netflix">
-                <div class="card-body">
-                    <h3>Sintonía Insular</h3>
-                    <p>Informativo comunitario con actualidad, cultura y territorio.</p>
-                    <button class="btn-small">Ver programa</button>
-                </div>
+        <div class="card-netflix">
+            <div class="card-hover">
+                <h3>Sintonía Insular</h3>
+                <p>Informativo comunitario</p>
+                <button>Ver programa</button>
             </div>
+        </div>
 
-            <!-- PROGRAMA 2 -->
-            <div class="card-netflix">
-                <div class="card-body">
-                    <h3>Crea Cine Insular</h3>
-                    <p>Producción audiovisual y narrativas desde la comunidad.</p>
-                    <button class="btn-small">Ver programa</button>
-                </div>
+        <div class="card-netflix">
+            <div class="card-hover">
+                <h3>Crea Cine Insular</h3>
+                <p>Producción audiovisual comunitaria</p>
+                <button>Ver programa</button>
             </div>
-
         </div>
-    </section>
 
-    <!-- PUBLICIDAD / PAUTA -->
-    <section class="pauta">
-        <div class="container pauta-box">
+    </div>
+</section>
 
-            <h2>¿Quieres anunciar tu emprendimiento o empresa?</h2>
+<!-- PAUTA PUBLICITARIA -->
+<section class="ads-section">
+    <div class="ads-box">
+        <h2>🚀 Haz crecer tu negocio con nosotros</h2>
 
-            <p>
-                En el Colectivo Insular conectamos tu marca con una audiencia real,
-                local y en crecimiento. Dale visibilidad a tu negocio a través de
-                nuestros contenidos audiovisuales y comunitarios.
-            </p>
+        <p>
+            Anuncia tu emprendimiento o empresa en nuestros contenidos audiovisuales.
+            Llegamos a comunidad real, audiencia local y público digital.
+        </p>
 
-            <a href="contacto.html" class="btn-primary">Pauta con nosotros</a>
+        <a href="contacto.html" class="btn-red">Pautar ahora</a>
+    </div>
+</section>
 
-        </div>
-    </section>
-
-    <!-- FOOTER -->
-    <footer class="footer">
-        <div class="container">
-            <p>&copy; 2026 Colectivo Insular. Todos los derechos reservados.</p>
-        </div>
-    </footer>
+<!-- FOOTER -->
+<footer>
+    <p>© 2026 INSULAR+ - Colectivo Audiovisual</p>
+</footer>
 
 </body>
 </html>
