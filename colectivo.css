@@ -137,7 +137,7 @@ nav a:hover{
         rgba(0,0,0,.35),
         rgba(0,0,0,.85)
     ),
-    url("img/hero.jpg");
+    url("assets/hero.jpg");
 
     background-size:cover;
     background-position:center;
