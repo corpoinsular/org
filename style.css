@@ -453,3 +453,15 @@ section{
 h1,h2{
     max-width:1000px;
 }
+.estadisticas-grid{
+    display:grid;
+    grid-template-columns:repeat(2,1fr);
+    gap:30px;
+}
+@media(max-width:900px){
+
+    .estadisticas-grid{
+        grid-template-columns:1fr;
+    }
+
+}
