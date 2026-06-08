@@ -26,8 +26,8 @@ body{
 }
 
 .container{
-    width:94%;
-    max-width:1600px;
+    width:95%;
+    max-width:1700px;
     margin:auto;
 }
 
@@ -185,7 +185,7 @@ body{
 
 .impact-grid{
     display:grid;
-    grid-template-columns:repeat(auto-fit,minmax(300px,1fr));
+    grid-template-columns:repeat(auto-fit,minmax(220px,1fr));
     gap:25px;
 }
 
@@ -211,9 +211,10 @@ body{
 /* SECCIONES */
 
 .section-header{
-    max-width:900px;
-    margin:auto;
-    text-align:center;
+    width:100%;
+    max-width:1400px;
+    margin:0 auto 60px;
+    text-align:left;
 }
 
 .section-tag{
@@ -417,4 +418,10 @@ body{
 .dona-home h2,
 .dona-home p{
     color:white;
+}
+.valores-grid{
+    display:grid;
+    grid-template-columns:repeat(3,1fr);
+    gap:30px;
+    margin-top:50px;
 }
