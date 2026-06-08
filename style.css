@@ -243,15 +243,6 @@ body{
     .hero h1{
         font-size:2.1rem;
     }
-
-    .panels{
-        flex-direction:column;
-        height:auto;
-    }
-
-    .panel.active{
-        box-shadow:0 25px 50px rgba(10,46,168,.25);
-    }
 }
 
 /* ANIMACIONES */
@@ -361,7 +352,7 @@ body{
     background:var(--light);
 }
 
-.programa-card h4{
+.impact-card h4{
     margin:15px 0;
     font-size:1.2rem;
     font-family:'Montserrat',sans-serif;
