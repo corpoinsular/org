@@ -27,7 +27,7 @@ body{
 
 .container{
     width:95%;
-    max-width:1600px;
+    max-width:1400px;
     margin:auto;
 }
 
@@ -185,8 +185,9 @@ body{
 
 .impact-grid{
     display:grid;
-    grid-template-columns:repeat(auto-fit,minmax(320px,1fr));
-    gap:30px;
+    grid-template-columns:repeat(4,1fr);
+    gap:25px;
+    width:100%;
 }
 
 .impact-card{
@@ -212,25 +213,22 @@ body{
 
 .section-header{
     width:100%;
-    max-width:1200px;
+    max-width:1100px;
     margin:0 auto 60px;
     text-align:center;
-}
-
-.section-tag{
-    margin-bottom:20px;
 }
 
 .section-header h2{
     font-family:'Montserrat',sans-serif;
     font-size:clamp(2rem,4vw,3.5rem);
-    margin-bottom:25px;
+    margin-bottom:20px;
 }
 
 .section-header p{
+    max-width:850px;
+    margin:auto;
     color:var(--text);
-    font-size:1.1rem;
-    line-height:1.9;
+    line-height:1.8;
 }
     
 /* RESPONSIVE */
@@ -399,21 +397,6 @@ body{
     text-align:center;
     background:linear-gradient(
         135deg,
-        rgba(10,46,168,.05),
-        rgba(31,143,229,.05)
-    );
-}
-.impact-card i{
-    font-size:2.5rem;
-    color:var(--primary);
-    margin-bottom:20px;
-    display:block;
-}
-.dona-home{
-    padding:120px 0;
-    text-align:center;
-    background:linear-gradient(
-        135deg,
         #0A2EA8,
         #1F8FE5
     );
@@ -423,51 +406,29 @@ body{
 .dona-home p{
     color:white;
 }
-.impact-grid{
-    display:grid;
-    grid-template-columns:repeat(4,1fr);
-    gap:25px;
-}
 @media(max-width:900px){
 
-    .valores-grid{
-        grid-template-columns:1fr;
+    .nav-container{
+        flex-direction:column;
+        gap:15px;
     }
 
-}
-.valores-grid .impact-card{
-    padding:50px 30px;
-}
-
-.valores-grid .impact-card p{
-    font-size:1.1rem;
-    font-weight:600;
-}
-.valores-header{
-    text-align:center;
-}
-section{
-    overflow:hidden;
-}
-h1,h2{
-    max-width:1000px;
-}
-.estadisticas-grid{
-    display:grid;
-    grid-template-columns:repeat(2,1fr);
-    gap:30px;
-}
-@media(max-width:900px){
-
-    .estadisticas-grid{
-        grid-template-columns:1fr;
+    .nav-menu{
+        flex-wrap:wrap;
+        justify-content:center;
+        gap:15px;
     }
-
-}
-@media(max-width:900px){
 
     .impact-grid{
-        grid-template-columns:repeat(2,1fr);
+        grid-template-columns:1fr;
     }
 
+    .footer-grid{
+        grid-template-columns:1fr;
+        text-align:center;
+    }
+
+    .hero h1{
+        font-size:2.1rem;
+    }
 }
