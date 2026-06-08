@@ -205,18 +205,17 @@ body{
 
 /* TITULOS */
 
-.section-header h2{
-    font-family:'Montserrat',sans-serif;
-    font-size:clamp(3rem,4vw,4.5rem);
-    line-height:1.1;
-    white-space:nowrap;
+.section-header{
+    width:100%;
+    max-width:1400px;
+    margin:0 auto 60px;
     text-align:center;
 }
 
 .section-header h2{
     font-family:'Montserrat',sans-serif;
     font-size:clamp(3rem,4vw,4.5rem);
-    line-height:1.1;
+    line-height:1.15;
     text-align:center;
     margin:0 auto 25px;
     max-width:1400px;
@@ -227,7 +226,11 @@ body{
     margin:0 auto;
     text-align:center;
 }
-
+.impact-grid{
+    display:grid;
+    gap:30px;
+    width:100%;
+}
 /* PROGRAMAS */
 
 .programas-home .impact-grid{
@@ -261,8 +264,17 @@ body{
 /* TARJETAS */
 
 .impact-card{
-    width:100%;
+    background:#fff;
+    padding:35px;
+    border-radius:20px;
+    text-align:center;
+    box-shadow:var(--shadow);
+    transition:.3s ease;
     height:100%;
+}
+
+.impact-card:hover{
+    transform:translateY(-8px);
 }
 
 /* MOVIL */
@@ -277,6 +289,35 @@ body{
 
     .section-header h2{
         font-size:2.2rem;
+    }
+
+}
+.footer{
+    background:var(--dark);
+    color:#fff;
+    padding:80px 0 30px;
+}
+
+.footer-grid{
+    display:grid;
+    grid-template-columns:2fr 1fr 1fr 1fr;
+    gap:50px;
+    align-items:start;
+}
+
+.footer-bottom{
+    margin-top:50px;
+    padding-top:25px;
+    border-top:1px solid rgba(255,255,255,.1);
+    text-align:center;
+}
+
+@media(max-width:900px){
+
+    .footer-grid{
+        grid-template-columns:1fr;
+        text-align:center;
+        gap:30px;
     }
 
 }
