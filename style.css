@@ -185,7 +185,7 @@ body{
 
 .impact-grid{
     display:grid;
-    grid-template-columns:repeat(4,1fr);
+    grid-template-columns:repeat(4,minmax(0,1fr));
     gap:25px;
     width:100%;
 }
@@ -350,7 +350,11 @@ body{
     padding:120px 0;
     background:var(--light);
 }
-
+.programas-home .impact-grid{
+    max-width:1200px;
+    margin:60px auto 0;
+    grid-template-columns:repeat(3,1fr);
+}
 .impact-card h4{
     margin:15px 0;
     font-size:1.2rem;
@@ -374,7 +378,11 @@ body{
         rgba(31,143,229,.08)
     );
 }
-
+.aliados-home .impact-grid{
+    max-width:1200px;
+    margin:60px auto 0;
+    grid-template-columns:repeat(4,1fr);
+}
 .aliados-grid{
     display:grid;
     grid-template-columns:repeat(auto-fit,minmax(180px,1fr));
@@ -419,7 +427,9 @@ body{
         gap:15px;
     }
 
-    .impact-grid{
+    .impact-grid,
+    .programas-home .impact-grid,
+    .aliados-home .impact-grid{
         grid-template-columns:1fr;
     }
 
@@ -428,7 +438,4 @@ body{
         text-align:center;
     }
 
-    .hero h1{
-        font-size:2.1rem;
-    }
 }
