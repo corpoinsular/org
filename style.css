@@ -786,3 +786,49 @@ body {
     color: white;
     text-decoration: none;
 }
+.card-pro {
+    min-width: 260px;
+    height: 160px;
+    border-radius: 10px;
+    overflow: hidden;
+    position: relative;
+    background: #222;
+}
+
+.preview {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    opacity: 0;
+    transition: 0.3s;
+}
+
+.card-pro:hover .preview {
+    opacity: 1;
+}
+
+.card-pro:hover {
+    transform: scale(1.08);
+    transition: 0.3s;
+}
+
+.info-card {
+    position: absolute;
+    bottom: 10px;
+    left: 10px;
+    color: white;
+}
+.navbar {
+    position: fixed;
+    top: 0;
+    width: 100%;
+    background: linear-gradient(to bottom, rgba(0,0,0,0.8), transparent);
+    padding: 15px 40px;
+    z-index: 1000;
+}
+
+.navbar a {
+    color: white;
+    margin-left: 15px;
+    text-decoration: none;
+}
