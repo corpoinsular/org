@@ -68,36 +68,75 @@ body.colectivo {
 ========================= */
 
 .colectivo .hero-netflix {
-    height: 90vh;
-    background:
-        linear-gradient(
-            120deg,
-            rgba(229,9,20,0.25),
-            rgba(31,143,229,0.18),
-            rgba(0,0,0,0.7)
-        ),
-        url('https://images.unsplash.com/photo-1524985069026-dd778a71c7b4') center/cover no-repeat;
+    height: 92vh;
+    position: relative;
     display: flex;
     align-items: center;
     justify-content: center;
     text-align: center;
-    position: relative;
+    overflow: hidden;
 }
 
+/* 🔥 IMAGEN REAL (CABINA / MASTER) */
+.colectivo .hero-bg {
+    position: absolute;
+    inset: 0;
+    background: url('https://images.unsplash.com/photo-1598488035139-bdbb2231ce04') center/cover no-repeat;
+    transform: scale(1.05);
+}
+
+/* 🔥 CAPA MÁS SUAVE (MENOS NEGRO) */
+.colectivo .hero-bg::after {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(
+        to top,
+        rgba(0,0,0,0.55),
+        rgba(0,0,0,0.25),
+        rgba(31,143,229,0.15)
+    );
+}
+
+/* CONTENIDO */
 .colectivo .hero-overlay {
+    position: relative;
+    z-index: 2;
     max-width: 850px;
     padding: 30px;
 }
 
-.colectivo .hero-overlay h2 {
-    font-size: clamp(2rem, 3vw, 3rem);
-    margin-bottom: 10px;
+.colectivo .hero-overlay h1 {
+    font-size: clamp(2.5rem, 4vw, 4rem);
+    font-weight: 800;
+    color: white;
+    letter-spacing: 1px;
 }
 
 .colectivo .hero-overlay p {
-    color: #ddd;
+    color: #e6e6e6;
+    font-size: 1.1rem;
 }
 
+/* BOTONES */
+.colectivo .btn-red {
+    background: #e50914;
+    padding: 12px 22px;
+    border-radius: 6px;
+    color: white;
+    text-decoration: none;
+    margin-right: 10px;
+    display: inline-block;
+}
+
+.colectivo .btn-outline {
+    border: 1px solid white;
+    padding: 12px 22px;
+    border-radius: 6px;
+    color: white;
+    text-decoration: none;
+    display: inline-block;
+}
 /* BOTÓN PRINCIPAL */
 .colectivo .btn-red {
     display: inline-block;
