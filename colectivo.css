@@ -81,8 +81,9 @@ body.colectivo {
 .colectivo .hero-bg {
     position: absolute;
     inset: 0;
-    background: url('https://images.unsplash.com/photo-1598488035139-bdbb2231ce04') center/cover no-repeat;
-    transform: scale(1.05);
+    background: url('https://images.unsplash.com/photo-1526948128573-703ee1aeb6fa') center/cover no-repeat;
+    transform: scale(1.1);
+    filter: blur(1px) brightness(0.65) saturate(0.9);
 }
 
 /* 🔥 CAPA MÁS SUAVE (MENOS NEGRO) */
@@ -92,9 +93,9 @@ body.colectivo {
     inset: 0;
     background: linear-gradient(
         to top,
-        rgba(0,0,0,0.55),
-        rgba(0,0,0,0.25),
-        rgba(31,143,229,0.15)
+        rgba(20,20,20,0.95) 10%,
+        rgba(20,20,20,0.55) 45%,
+        rgba(31,143,229,0.10)
     );
 }
 
