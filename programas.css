@@ -1,25 +1,14 @@
-/* =========================
-   VARIABLES
-========================= */
-
 :root{
-
     --red:#ff1f2d;
     --red-dark:#d80f20;
-
     --black:#02040a;
-    --nav:#050811;
     --card:#07101d;
-
     --white:#ffffff;
     --gray:#c4c9d4;
-
     --line:rgba(255,255,255,.08);
 }
 
-/* =========================
-   RESET
-========================= */
+/* RESET */
 
 *{
     margin:0;
@@ -35,36 +24,21 @@ body{
     font-family:'Inter',sans-serif;
 
     background:
-    radial-gradient(
-        circle at 80% 20%,
-        rgba(255,31,45,.08),
-        transparent 40%
-    ),
-    radial-gradient(
-        circle at 20% 80%,
-        rgba(0,90,255,.06),
-        transparent 40%
-    ),
+    radial-gradient(circle at 80% 20%, rgba(255,31,45,.08), transparent 40%),
+    radial-gradient(circle at 20% 80%, rgba(0,90,255,.06), transparent 40%),
     var(--black);
 
     color:var(--white);
-
     overflow-x:hidden;
 }
 
-/* =========================
-   NAVBAR
-========================= */
+/* NAVBAR */
 
 .navbar{
-
     position:fixed;
-
     top:0;
     left:0;
-
     width:100%;
-
     z-index:9999;
 
     background:
@@ -79,28 +53,20 @@ body{
 }
 
 .nav-flex{
-
     max-width:1400px;
-
     margin:auto;
 
     padding:24px 50px;
 
     display:flex;
-
     justify-content:space-between;
-
     align-items:center;
 }
 
 .logo{
-
     text-decoration:none;
-
     color:white;
-
     font-size:2rem;
-
     font-weight:900;
 }
 
@@ -109,35 +75,25 @@ body{
 }
 
 nav{
-
     display:flex;
-
     gap:40px;
 }
 
 nav a{
-
     color:white;
-
     text-decoration:none;
-
     font-weight:600;
-
     transition:.3s;
 }
 
 nav a:hover,
 nav a.active{
-
     color:var(--red);
 }
 
 .btn-nav{
-
     background:var(--red);
-
     color:white;
-
     text-decoration:none;
 
     padding:12px 22px;
@@ -150,83 +106,81 @@ nav a.active{
 }
 
 .btn-nav:hover{
-
     transform:translateY(-3px);
 }
 
-/* =========================
-   HERO
-========================= */
+/* HERO */
 
 .hero-programas{
-
     position:relative;
-
     min-height:100vh;
 
     display:flex;
-
     align-items:center;
 
     padding:0 8%;
 }
 
 .hero-bg{
-
     position:absolute;
-
     inset:0;
 
     background:
     linear-gradient(
-        rgba(0,0,0,.45),
+        rgba(0,0,0,.35),
         rgba(0,0,0,.85)
     ),
     url("assets/programas.jpg");
 
     background-size:cover;
     background-position:center;
+
+    transform:scale(1.05);
 }
 
-.hero-content h1{
+.hero-programas::after{
+    content:"";
 
-    font-size:clamp(2.5rem,4.5vw,4rem);
+    position:absolute;
+    inset:0;
 
-    line-height:1.1;
+    background:
+    radial-gradient(
+        circle at right,
+        rgba(255,31,45,.15),
+        transparent 40%
+    );
+}
 
-    font-weight:800;
-
-    max-width:850px;
+.hero-content{
+    position:relative;
+    z-index:10;
+    max-width:900px;
 }
 
 .hero-tag{
-
     display:inline-block;
 
     color:var(--red);
 
-    letter-spacing:2px;
-
     font-weight:700;
+    letter-spacing:2px;
 
     margin-bottom:20px;
 }
 
 .hero-content h1{
+    font-size:clamp(2.8rem,5vw,4.5rem);
 
-    font-size:clamp(3.5rem,8vw,6.5rem);
-
-    line-height:1;
+    line-height:1.1;
 
     font-weight:900;
 
-    margin-bottom:30px;
+    margin-bottom:25px;
 }
 
 .hero-content p{
-
-    font-size:1.25rem;
-
+    font-size:1.2rem;
     color:var(--gray);
 
     line-height:1.8;
@@ -234,48 +188,34 @@ nav a.active{
     max-width:700px;
 }
 
-/* =========================
-   PROGRAMAS
-========================= */
+/* PROGRAMAS */
 
 .programas{
-
     max-width:1400px;
-
     margin:auto;
 
     padding:120px 50px;
 }
 
 .section-header{
-
     text-align:center;
-
     margin-bottom:100px;
 }
 
 .section-header h2{
-
     font-size:3rem;
-
     margin-bottom:20px;
 }
 
 .section-header p{
-
     color:var(--gray);
-
     max-width:700px;
-
     margin:auto;
 }
 
-/* =========================
-   PROGRAMA CARD
-========================= */
+/* CARDS */
 
 .programa-card{
-
     display:grid;
 
     grid-template-columns:1fr 1.2fr;
@@ -285,15 +225,19 @@ nav a.active{
     align-items:center;
 
     margin-bottom:120px;
+
+    transition:.4s;
+}
+
+.programa-card:hover{
+    transform:translateY(-8px);
 }
 
 .programa-card.reverse{
-
     grid-template-columns:1.2fr 1fr;
 }
 
 .programa-visual{
-
     height:350px;
 
     border-radius:28px;
@@ -308,16 +252,42 @@ nav a.active{
     border:1px solid var(--line);
 
     display:flex;
-
     justify-content:center;
-
     align-items:center;
 
     backdrop-filter:blur(20px);
+
+    transition:.4s;
+}
+
+.programa-card:hover .programa-visual{
+    box-shadow:0 25px 60px rgba(255,31,45,.12);
+}
+
+.programa-icon{
+    width:120px;
+    height:120px;
+
+    border-radius:24px;
+
+    display:flex;
+    align-items:center;
+    justify-content:center;
+
+    background:rgba(255,31,45,.08);
+
+    border:1px solid rgba(255,255,255,.08);
+}
+
+.programa-icon svg{
+    width:60px;
+    height:60px;
+
+    stroke:var(--red);
+    stroke-width:1.8;
 }
 
 .programa-label{
-
     color:var(--red);
 
     font-size:.9rem;
@@ -328,7 +298,6 @@ nav a.active{
 }
 
 .programa-info h3{
-
     margin:20px 0;
 
     font-size:2.5rem;
@@ -337,7 +306,6 @@ nav a.active{
 }
 
 .programa-info p{
-
     color:var(--gray);
 
     line-height:1.9;
@@ -345,26 +313,19 @@ nav a.active{
     font-size:1.05rem;
 }
 
-/* =========================
-   IMPACTO
-========================= */
+/* IMPACTO */
 
 .impacto{
-
     padding:120px 8%;
-
     text-align:center;
 }
 
 .impacto h2{
-
     font-size:3rem;
-
     margin-bottom:60px;
 }
 
 .impact-grid{
-
     display:grid;
 
     grid-template-columns:repeat(4,1fr);
@@ -373,7 +334,6 @@ nav a.active{
 }
 
 .impact-card{
-
     background:rgba(7,16,29,.85);
 
     border:1px solid var(--line);
@@ -388,30 +348,38 @@ nav a.active{
 }
 
 .impact-card:hover{
-
     transform:translateY(-10px);
 
     box-shadow:
     0 20px 50px rgba(0,0,0,.4);
 }
 
-.impact-card span{
+.impact-icon{
+    width:70px;
+    height:70px;
 
-    font-size:3rem;
+    margin:0 auto 20px;
 
-    color:var(--red);
+    display:flex;
+    align-items:center;
+    justify-content:center;
 
-    display:block;
+    border-radius:16px;
 
-    margin-bottom:15px;
+    background:rgba(255,31,45,.08);
 }
 
-/* =========================
-   CTA
-========================= */
+.impact-icon svg{
+    width:34px;
+    height:34px;
+
+    stroke:var(--red);
+    stroke-width:2;
+}
+
+/* CTA */
 
 .cta{
-
     margin:100px 8%;
 
     padding:70px;
@@ -429,30 +397,24 @@ nav a.active{
 }
 
 .cta h2{
-
     font-size:3rem;
-
     margin-bottom:20px;
 }
 
 .cta p{
-
     max-width:700px;
-
     margin:auto auto 35px;
 
     line-height:1.8;
 }
 
 .btn-red{
-
     display:inline-flex;
 
     justify-content:center;
     align-items:center;
 
     min-width:240px;
-
     height:60px;
 
     border-radius:12px;
@@ -469,51 +431,39 @@ nav a.active{
 }
 
 .btn-red:hover{
-
     transform:translateY(-4px);
 
     box-shadow:
     0 15px 40px rgba(255,31,45,.4);
 }
 
-/* =========================
-   FOOTER
-========================= */
+/* FOOTER */
 
 .footer{
-
     padding:60px 8%;
-
     text-align:center;
 
     border-top:1px solid rgba(255,255,255,.05);
 }
 
 .footer-logo{
-
     font-size:2rem;
-
     font-weight:900;
 
     margin-bottom:15px;
 }
 
-/* =========================
-   RESPONSIVE
-========================= */
+/* RESPONSIVE */
 
 @media(max-width:1000px){
 
     .programa-card,
     .programa-card.reverse{
-
         grid-template-columns:1fr;
-
         gap:40px;
     }
 
     .impact-grid{
-
         grid-template-columns:1fr 1fr;
     }
 }
@@ -521,77 +471,20 @@ nav a.active{
 @media(max-width:700px){
 
     .nav-flex{
-
         flex-direction:column;
-
         gap:20px;
     }
 
     nav{
-
         flex-wrap:wrap;
-
         justify-content:center;
     }
 
     .impact-grid{
-
         grid-template-columns:1fr;
     }
 
     .hero-content h1{
-
         font-size:3rem;
     }
-}
-.programa-icon{
-
-    width:120px;
-    height:120px;
-
-    border-radius:24px;
-
-    display:flex;
-    align-items:center;
-    justify-content:center;
-
-    background:rgba(255,31,45,.08);
-
-    border:1px solid rgba(255,255,255,.08);
-}
-
-.programa-icon svg{
-
-    width:60px;
-    height:60px;
-
-    stroke:var(--red);
-
-    stroke-width:1.8;
-}
-
-.impact-icon{
-
-    width:70px;
-    height:70px;
-
-    margin:0 auto 20px;
-
-    display:flex;
-    align-items:center;
-    justify-content:center;
-
-    border-radius:16px;
-
-    background:rgba(255,31,45,.08);
-}
-
-.impact-icon svg{
-
-    width:34px;
-    height:34px;
-
-    stroke:var(--red);
-
-    stroke-width:2;
 }
