@@ -35,46 +35,65 @@ body{
 }
 
 /* =========================
-   NAVBAR (COLECTIVO)
+   NAVBAR COLECTIVO (UNIFICADO)
 ========================= */
 
 .navbar{
-    width:100%;
-    padding:14px 0;
-    background:rgba(5,8,17,.92);
-    backdrop-filter:blur(25px);
-    position:sticky;
+    position:fixed;
     top:0;
-    z-index:1000;
-    border-bottom:1px solid var(--line);
+    left:0;
+    width:100%;
+    z-index:9999;
+
+    background:linear-gradient(
+        rgba(0,0,0,.85),
+        rgba(0,0,0,.45)
+    );
+
+    backdrop-filter:blur(24px);
+
+    border-bottom:1px solid rgba(255,255,255,.06);
 }
 
-/* CONTENEDOR REAL CENTRADO */
+/* CONTENEDOR */
 .nav-flex{
-    max-width:1200px;
-    margin:0 auto;
+    max-width:1400px;
+    margin:auto;
 
     display:flex;
     justify-content:space-between;
     align-items:center;
 
-    padding:0 20px;
+    padding:20px 50px;
 }
 
-/* LINKS MÁS ORDENADOS */
+/* LOGO */
+.logo{
+    font-size:2rem;
+    font-weight:900;
+    letter-spacing:-1px;
+    color:white;
+    text-decoration:none;
+}
+
+.logo span{
+    color:var(--red);
+}
+
+/* NAV LINKS */
 nav{
     display:flex;
-    gap:18px;
+    gap:35px;
     align-items:center;
 }
 
 nav a{
-    color:var(--white);
     text-decoration:none;
-    font-weight:700;
-    padding:8px 12px;
-    border-radius:8px;
+    color:white;
+    font-weight:600;
     transition:.3s;
+    padding:8px 10px;
+    border-radius:8px;
 }
 
 nav a:hover{
@@ -90,19 +109,20 @@ nav a.active{
 .btn-nav{
     background:var(--red);
     color:white;
-    padding:10px 16px;
-    border-radius:10px;
-    font-weight:800;
     text-decoration:none;
+
+    padding:12px 22px;
+    border-radius:10px;
+
+    font-weight:800;
     transition:.3s;
 }
 
 .btn-nav:hover{
     background:var(--red-dark);
-    box-shadow:0 10px 25px rgba(255,31,45,.35);
+    box-shadow:0 10px 30px rgba(255,31,45,.35);
     transform:translateY(-2px);
 }
-
 /* =========================
    HERO PREMIUM (MEJORADO)
 ========================= */
