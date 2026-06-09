@@ -38,15 +38,22 @@ body{
    NAVBAR (COLECTIVO)
 ========================= */
 
-.navbar{
-    width:100%;
-    padding:18px 10%;
-    background:rgba(5,8,17,.85);
-    backdrop-filter:blur(25px);
-    position:sticky;
-    top:0;
-    z-index:1000;
-    border-bottom:1px solid var(--line);
+nav a{
+    color:var(--white);
+    text-decoration:none;
+    font-weight:700;
+    transition:.3s;
+    padding:8px 12px;
+    border-radius:8px;
+}
+
+nav a:hover{
+    color:var(--red);
+    background:rgba(255,31,45,.08);
+}
+
+nav a.active{
+    color:var(--red);
 }
 
 /* =========================
@@ -85,8 +92,12 @@ body{
     position:relative;
     z-index:2;
     max-width:900px;
-}
 
+    text-align:left;   /* 👈 IMPORTANTE */
+}
+.hero-programas{
+    justify-content:flex-start; /* 👈 no centrar */
+}
 /* TÍTULO GRANDE (ANTES TE FALTABA ESTO) */
 .hero-content h1{
     font-size:4.5rem;
@@ -181,8 +192,8 @@ body{
 
 /* ICONO GRANDE (MEJORADO COMO PEDISTE) */
 .programa-icon{
-    font-size:42px;
-    min-width:55px;
+    font-size:55px;   /* 👈 MÁS GRANDE */
+    min-width:65px;
 
     display:flex;
     align-items:center;
@@ -190,7 +201,7 @@ body{
 
     color:var(--red);
 
-    filter:drop-shadow(0 0 10px rgba(255,31,45,.3));
+    filter:drop-shadow(0 0 12px rgba(255,31,45,.35));
 }
 
 /* TEXTO HEADER */
@@ -285,9 +296,11 @@ body{
 
 /* ICONOS GRANDES EN IMPACTO */
 .impact-icon{
-    font-size:38px;
+    font-size:48px;   /* 👈 MÁS GRANDE */
     margin-bottom:12px;
     color:var(--red);
+
+    filter:drop-shadow(0 0 10px rgba(255,31,45,.25));
 }
 
 /* =========================
