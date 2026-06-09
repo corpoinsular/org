@@ -175,6 +175,19 @@
     </p>
 
 </footer>
+<script>
 
+const btn = document.getElementById('btn-info');
+const panel = document.getElementById('infoPanel');
+
+btn.addEventListener('click', function(e){
+
+    e.preventDefault();
+
+    panel.classList.toggle('active');
+
+});
+
+</script>
 </body>
 </html>
