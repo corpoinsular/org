@@ -188,11 +188,13 @@ nav a.active{
     background-position:center;
 }
 
-.hero-content{
+.hero-content h1{
 
-    position:relative;
+    font-size:clamp(2.5rem,4.5vw,4rem);
 
-    z-index:10;
+    line-height:1.1;
+
+    font-weight:800;
 
     max-width:850px;
 }
