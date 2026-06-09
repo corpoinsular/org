@@ -127,8 +127,8 @@ nav a.active{
 
     background:
     linear-gradient(
-        rgba(0,0,0,.35),
-        rgba(0,0,0,.85)
+        rgba(0,0,0,.65),
+        rgba(0,0,0,.90)
     ),
     url("assets/programas.jpg");
 
@@ -145,13 +145,15 @@ nav a.active{
     inset:0;
 
     background:
-    radial-gradient(
-        circle at right,
-        rgba(255,31,45,.15),
-        transparent 40%
-    );
-}
+        radial-gradient(
+            circle at center,
+            transparent 25%,
+            rgba(0,0,0,.35) 70%,
+            rgba(0,0,0,.75) 100%
+        );
 
+    pointer-events:none;
+}
 .hero-content{
     position:relative;
     z-index:10;
