@@ -380,3 +380,18 @@ nav a.active{
     background:var(--nav);
     border-top:1px solid var(--line);
 }
+.detalle-programa{
+    position:fixed;
+    inset:0;
+    background:rgba(0,0,0,.7);
+
+    display:none;
+    justify-content:center;
+    align-items:center;
+
+    z-index:9999;
+}
+
+.detalle-programa.active{
+    display:flex;
+}
