@@ -1,0 +1,307 @@
+/* =========================
+   VARIABLES COLECTIVO
+========================= */
+
+:root{
+    --red:#ff1f2d;
+    --red-dark:#d80f20;
+
+    --black:#02040a;
+    --nav:#050811;
+
+    --card:#07101d;
+
+    --white:#ffffff;
+    --gray:#c4c9d4;
+
+    --line:rgba(255,255,255,.08);
+}
+
+/* =========================
+   RESET
+========================= */
+
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+    font-family:'Inter',sans-serif;
+}
+
+body{
+    background:var(--black);
+    color:var(--white);
+    overflow-x:hidden;
+}
+
+/* =========================
+   NAVBAR (COLECTIVO UNIFICADO)
+========================= */
+
+.navbar{
+    position:sticky;
+    top:0;
+    width:100%;
+    z-index:9999;
+
+    background:linear-gradient(rgba(0,0,0,.85), rgba(0,0,0,.55));
+    backdrop-filter:blur(24px);
+
+    border-bottom:1px solid var(--line);
+}
+
+.nav-flex{
+    max-width:1200px;
+    margin:auto;
+
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+
+    padding:18px 20px;
+}
+
+.logo{
+    font-size:1.8rem;
+    font-weight:900;
+    color:white;
+    text-decoration:none;
+}
+
+.logo span{
+    color:var(--red);
+}
+
+nav{
+    display:flex;
+    gap:25px;
+    align-items:center;
+}
+
+nav a{
+    color:white;
+    text-decoration:none;
+    font-weight:700;
+    padding:8px 12px;
+    border-radius:8px;
+    transition:.3s;
+}
+
+nav a:hover{
+    color:var(--red);
+    background:rgba(255,31,45,.08);
+}
+
+nav a.active{
+    color:var(--red);
+}
+
+.btn-nav{
+    background:var(--red);
+    color:white;
+    padding:10px 16px;
+    border-radius:10px;
+    font-weight:800;
+    text-decoration:none;
+    transition:.3s;
+}
+
+.btn-nav:hover{
+    background:var(--red-dark);
+    transform:translateY(-2px);
+    box-shadow:0 10px 25px rgba(255,31,45,.35);
+}
+
+/* =========================
+   HERO CONÓCENOS (PREMIUM)
+========================= */
+
+.hero-programas{
+    min-height:80vh;
+    display:flex;
+    align-items:center;
+    justify-content:center;
+
+    text-align:left;
+
+    padding:120px 10%;
+
+    position:relative;
+    overflow:hidden;
+}
+
+/* fondo tipo cine */
+.hero-programas::before{
+    content:"";
+    position:absolute;
+    inset:0;
+
+    background:
+    linear-gradient(rgba(0,0,0,.75), rgba(0,0,0,.9)),
+    url("assets/hero.jpg");
+
+    background-size:cover;
+    background-position:center;
+}
+
+.hero-content{
+    position:relative;
+    z-index:2;
+    max-width:900px;
+}
+
+.hero-tag{
+    color:var(--red);
+    font-weight:900;
+    letter-spacing:2px;
+    font-size:12px;
+    display:block;
+    margin-bottom:15px;
+}
+
+.hero-content h1{
+    font-size:3.8rem;
+    line-height:1.1;
+    font-weight:900;
+    margin-bottom:15px;
+}
+
+.hero-content p{
+    color:var(--gray);
+    font-size:1.1rem;
+    line-height:1.7;
+}
+
+/* =========================
+   SECCIONES BASE
+========================= */
+
+.programas{
+    padding:90px 10%;
+}
+
+.impacto{
+    padding:90px 10%;
+    text-align:center;
+}
+
+/* =========================
+   ABOUT GRID
+========================= */
+
+.about-grid{
+    display:grid;
+    grid-template-columns:1fr 1fr;
+    gap:50px;
+    align-items:center;
+}
+
+.about-image img{
+    width:100%;
+    border-radius:18px;
+    border:1px solid var(--line);
+}
+
+.about-content h2{
+    font-size:2.2rem;
+    margin-bottom:15px;
+}
+
+.about-content p{
+    color:var(--gray);
+    line-height:1.7;
+    margin-bottom:10px;
+}
+
+/* =========================
+   VALORES (CARDS PREMIUM)
+========================= */
+
+.valores-grid{
+    margin-top:40px;
+
+    display:grid;
+    grid-template-columns:repeat(auto-fit,minmax(180px,1fr));
+    gap:25px;
+}
+
+.valor-card{
+    background:var(--card);
+    border:1px solid var(--line);
+    border-radius:16px;
+
+    padding:25px;
+    text-align:center;
+
+    transition:.3s;
+}
+
+.valor-card:hover{
+    transform:translateY(-8px);
+    border-color:rgba(255,31,45,.3);
+}
+
+.valor-card i{
+    font-size:42px;
+    color:var(--red);
+    margin-bottom:10px;
+}
+
+/* =========================
+   IMPACT / ALIADOS CARDS
+========================= */
+
+.impact-grid{
+    display:grid;
+    grid-template-columns:repeat(auto-fit,minmax(200px,1fr));
+    gap:20px;
+    margin-top:30px;
+}
+
+.impact-card{
+    background:var(--card);
+    border:1px solid var(--line);
+    border-radius:14px;
+
+    padding:25px;
+    text-align:center;
+
+    transition:.3s;
+}
+
+.impact-card:hover{
+    transform:translateY(-6px);
+    border-color:rgba(255,31,45,.3);
+}
+
+/* =========================
+   CTA FINAL
+========================= */
+
+.cta{
+    padding:90px 10%;
+    text-align:center;
+    background:linear-gradient(90deg,#c21223,#07152c);
+}
+
+.cta h2{
+    font-size:2.2rem;
+    margin-bottom:20px;
+}
+
+.btn-red{
+    display:inline-flex;
+    padding:14px 22px;
+    background:var(--red);
+    color:white;
+    text-decoration:none;
+    font-weight:800;
+    border-radius:12px;
+    transition:.3s;
+}
+
+.btn-red:hover{
+    background:var(--red-dark);
+    transform:translateY(-3px);
+    box-shadow:0 12px 30px rgba(255,31,45,.35);
+}
