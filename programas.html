@@ -1,156 +1,259 @@
-/* =========================
-   BASE
-========================= */
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-*{
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-    font-family: 'Inter', sans-serif;
-}
+<title>Programas | Corporación Insular Digital</title>
 
-/* =========================
-   PROGRAMAS
-========================= */
+<link rel="stylesheet" href="programas.css">
 
-.programas{
-    padding: 80px 10%;
-}
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 
-.programas-grid{
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-    gap: 30px;
-}
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
 
-/* =========================
-   CARD
-========================= */
+</head>
 
-.programa-card{
-    background: #fff;
-    padding: 25px;
-    border-radius: 16px;
-    box-shadow: 0 10px 30px rgba(0,0,0,0.08);
+<body>
 
-    display: flex;
-    flex-direction: column;
-    gap: 15px;
-}
+<!-- NAVBAR -->
+<header class="navbar">
 
-/* =========================
-   HEADER (ICONO + TITULO)
-========================= */
+    <div class="nav-flex">
 
-.programa-header{
-    display: flex;
-    align-items: flex-start;
-    gap: 15px;
-}
+        <a href="index.html" class="logo">
+            INSULAR<span>+</span>
+        </a>
 
-/* ICONO */
-.programa-icon{
-    font-size: 28px;
-    min-width: 40px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-}
+        <nav>
+            <a href="index.html">Inicio</a>
+            <a href="programas.html" class="active">Programas</a>
+            <a href="colectivo.html">Colectivo</a>
+            <a href="nosotros.html">Nosotros</a>
+        </nav>
 
-/* TITULO */
-.programa-title{
-    display: flex;
-    flex-direction: column;
-    gap: 6px;
-}
+        <a href="contacto.html" class="btn-nav">
+            Contacto
+        </a>
 
-/* LABEL */
-.programa-label{
-    font-size: 12px;
-    font-weight: 700;
-    letter-spacing: 1px;
-}
+    </div>
 
-/* TITULO PRINCIPAL */
-.programa-title h3{
-    font-size: 18px;
-    line-height: 1.4;
-    font-weight: 700;
-}
+</header>
 
-/* =========================
-   TEXTO (IMPORTANTE)
-========================= */
+<!-- HERO -->
+<section class="hero-programas">
 
-.programa-texto{
-    font-size: 14px;
-    line-height: 1.6;
-    color: #333;
-}
+    <div class="hero-bg"></div>
 
-/* =========================
-   BOTON
-========================= */
+    <div class="hero-content">
 
-.btn-detalle{
-    padding: 10px 14px;
-    border: none;
-    border-radius: 8px;
-    cursor: pointer;
-    font-weight: 600;
-    transition: 0.3s ease;
-}
+        <span class="hero-tag">
+            PROGRAMAS INSTITUCIONALES
+        </span>
 
-.btn-detalle:hover{
-    transform: translateY(-2px);
-}
+        <h1>
+            Transformamos realidades desde la educación, la cultura y la innovación social.
+        </h1>
 
-/* =========================
-   IMPACTO (SIN DUPLICADOS)
-========================= */
+        <p>
+            Desarrollamos iniciativas que fortalecen capacidades, impulsan la participación comunitaria y generan oportunidades para las comunidades insulares.
+        </p>
 
-.impacto{
-    padding: 80px 10%;
-}
+    </div>
 
-.impact-grid{
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-    gap: 20px;
-}
+</section>
 
-.impact-card{
-    padding: 20px;
-    border-radius: 14px;
-    background: #fff;
-    box-shadow: 0 8px 20px rgba(0,0,0,0.06);
-    text-align: center;
-}
+<!-- PROGRAMAS -->
+<section class="programas">
 
-.impact-icon{
-    font-size: 28px;
-    margin-bottom: 10px;
-}
+    <div class="programas-grid">
 
-/* =========================
-   CTA
-========================= */
+        <!-- PROGRAMA 1 -->
+        <div class="programa-card">
 
-.cta{
-    padding: 80px 10%;
-    text-align: center;
-}
+            <div class="programa-header">
 
-.cta p{
-    margin-top: 10px;
-    margin-bottom: 20px;
-}
+                <div class="programa-icon">
+                    <i data-lucide="monitor-smartphone"></i>
+                </div>
 
-/* =========================
-   FOOTER
-========================= */
+                <div class="programa-title">
 
-.footer{
-    padding: 40px 10%;
-    text-align: center;
-}
+                    <span class="programa-label">PROGRAMA 01</span>
+
+                    <h3>
+                        Estrategia de Alfabetización e Inclusión Digital
+                    </h3>
+
+                </div>
+
+            </div>
+
+            <p class="programa-texto">
+                Formación para reducir brechas digitales y ampliar oportunidades de acceso al conocimiento.
+            </p>
+
+            <button class="btn-detalle" data-target="digital">
+                Conocer más
+            </button>
+
+        </div>
+
+        <!-- PROGRAMA 2 -->
+        <div class="programa-card">
+
+            <div class="programa-header">
+
+                <div class="programa-icon">
+                    <i data-lucide="clapperboard"></i>
+                </div>
+
+                <div class="programa-title">
+
+                    <span class="programa-label">PROGRAMA 02</span>
+
+                    <h3>
+                        Crea Cine Insular
+                    </h3>
+
+                </div>
+
+            </div>
+
+            <p class="programa-texto">
+                Programa de creación audiovisual comunitaria que fortalece la identidad cultural.
+            </p>
+
+            <button class="btn-detalle" data-target="cine">
+                Conocer más
+            </button>
+
+        </div>
+
+    </div>
+
+</section>
+
+<!-- IMPACTO -->
+<section class="impacto">
+
+    <h2>Áreas de Impacto</h2>
+
+    <div class="impact-grid">
+
+        <div class="impact-card">
+            <div class="impact-icon">
+                <i data-lucide="monitor-smartphone"></i>
+            </div>
+            <h3>Inclusión Digital</h3>
+        </div>
+
+        <div class="impact-card">
+            <div class="impact-icon">
+                <i data-lucide="clapperboard"></i>
+            </div>
+            <h3>Creación Audiovisual</h3>
+        </div>
+
+        <div class="impact-card">
+            <div class="impact-icon">
+                <i data-lucide="users-round"></i>
+            </div>
+            <h3>Participación Comunitaria</h3>
+        </div>
+
+        <div class="impact-card">
+            <div class="impact-icon">
+                <i data-lucide="sparkles"></i>
+            </div>
+            <h3>Innovación Social</h3>
+        </div>
+
+    </div>
+
+</section>
+
+<!-- CTA -->
+<section class="cta">
+
+    <h2>Construyamos oportunidades juntos</h2>
+
+    <p>
+        Sumemos esfuerzos para fortalecer procesos comunitarios, culturales y educativos en las comunidades insulares.
+    </p>
+
+    <a href="#" class="btn-red">
+        Contáctanos
+    </a>
+
+</section>
+
+<!-- FOOTER -->
+<footer class="footer">
+
+    <div class="footer-logo">
+        Corporación Insular Digital
+    </div>
+
+    <p>
+        Juntos comunicamos ideas, conectamos propósitos y transformamos realidades.
+    </p>
+
+</footer>
+
+<!-- ICONOS -->
+<script src="https://unpkg.com/lucide@latest"></script>
+<script>
+lucide.createIcons();
+</script>
+
+<!-- DETALLE PROGRAMAS -->
+<script>
+
+const detalle = document.getElementById("detallePrograma");
+const contenido = document.getElementById("detalleContenido");
+
+document.querySelectorAll(".btn-detalle").forEach(btn => {
+
+    btn.addEventListener("click", () => {
+
+        const tipo = btn.dataset.target;
+
+        if (tipo === "digital") {
+
+            contenido.innerHTML = `
+                <h2>Estrategia de Alfabetización e Inclusión Digital</h2>
+                <p>
+                Promueve procesos de formación orientados al fortalecimiento de habilidades digitales, acceso a tecnologías y apropiación del conocimiento para reducir brechas y generar oportunidades educativas, laborales y sociales en las comunidades insulares.
+                </p>
+            `;
+
+        }
+
+        if (tipo === "cine") {
+
+            contenido.innerHTML = `
+                <h2>Crea Cine Insular</h2>
+                <p>
+                Programa de creación audiovisual comunitaria que impulsa el talento local, fortalece la identidad cultural y promueve narrativas construidas desde el territorio.
+                </p>
+            `;
+
+        }
+
+        detalle.classList.add("active");
+
+    });
+
+});
+
+document.querySelector(".cerrar-detalle")
+.addEventListener("click", () => {
+    detalle.classList.remove("active");
+});
+
+</script>
+
+</body>
+</html>
