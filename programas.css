@@ -314,13 +314,6 @@ nav a.active{
     backdrop-filter:blur(20px);
 }
 
-.programa-icon{
-
-    font-size:6rem;
-
-    color:var(--red);
-}
-
 .programa-label{
 
     color:var(--red);
