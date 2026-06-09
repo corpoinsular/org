@@ -608,3 +608,72 @@ nav a.active{
         grid-template-columns:1fr;
     }
 }
+.programa-header{
+
+    display:flex;
+
+    align-items:center;
+
+    gap:22px;
+
+    margin-bottom:25px;
+}
+
+.programa-title{
+
+    flex:1;
+}
+
+.programa-label{
+
+    display:block;
+
+    color:var(--red);
+
+    font-size:.85rem;
+
+    letter-spacing:2px;
+
+    font-weight:700;
+
+    margin-bottom:8px;
+}
+
+.programa-title h3{
+
+    font-size:1.8rem;
+
+    line-height:1.2;
+
+    margin:0;
+}
+
+.programa-icon{
+
+    width:90px;
+    height:90px;
+
+    flex-shrink:0;
+
+    display:flex;
+
+    align-items:center;
+
+    justify-content:center;
+
+    border-radius:20px;
+
+    background:rgba(255,31,45,.08);
+
+    border:1px solid rgba(255,255,255,.08);
+}
+
+.programa-icon svg{
+
+    width:42px;
+    height:42px;
+
+    stroke:var(--red);
+
+    stroke-width:2;
+}
