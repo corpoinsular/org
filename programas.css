@@ -38,13 +38,43 @@ body{
    NAVBAR (COLECTIVO)
 ========================= */
 
+.navbar{
+    width:100%;
+    padding:14px 0;
+    background:rgba(5,8,17,.92);
+    backdrop-filter:blur(25px);
+    position:sticky;
+    top:0;
+    z-index:1000;
+    border-bottom:1px solid var(--line);
+}
+
+/* CONTENEDOR REAL CENTRADO */
+.nav-flex{
+    max-width:1200px;
+    margin:0 auto;
+
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+
+    padding:0 20px;
+}
+
+/* LINKS MÁS ORDENADOS */
+nav{
+    display:flex;
+    gap:18px;
+    align-items:center;
+}
+
 nav a{
     color:var(--white);
     text-decoration:none;
     font-weight:700;
-    transition:.3s;
     padding:8px 12px;
     border-radius:8px;
+    transition:.3s;
 }
 
 nav a:hover{
@@ -54,6 +84,23 @@ nav a:hover{
 
 nav a.active{
     color:var(--red);
+}
+
+/* BOTÓN CONTACTO */
+.btn-nav{
+    background:var(--red);
+    color:white;
+    padding:10px 16px;
+    border-radius:10px;
+    font-weight:800;
+    text-decoration:none;
+    transition:.3s;
+}
+
+.btn-nav:hover{
+    background:var(--red-dark);
+    box-shadow:0 10px 25px rgba(255,31,45,.35);
+    transform:translateY(-2px);
 }
 
 /* =========================
@@ -191,17 +238,15 @@ nav a.active{
 }
 
 /* ICONO GRANDE (MEJORADO COMO PEDISTE) */
-.programa-icon{
-    font-size:55px;   /* 👈 MÁS GRANDE */
-    min-width:65px;
+.programa-icon svg{
+    width: 70px !important;
+    height: 70px !important;
 
-    display:flex;
-    align-items:center;
-    justify-content:center;
+    stroke-width: 1.8;
 
-    color:var(--red);
+    color: var(--red);
 
-    filter:drop-shadow(0 0 12px rgba(255,31,45,.35));
+    filter: drop-shadow(0 0 12px rgba(255,31,45,.35));
 }
 
 /* TEXTO HEADER */
@@ -295,12 +340,15 @@ nav a.active{
 }
 
 /* ICONOS GRANDES EN IMPACTO */
-.impact-icon{
-    font-size:48px;   /* 👈 MÁS GRANDE */
-    margin-bottom:12px;
-    color:var(--red);
+.impact-icon svg{
+    width: 60px !important;
+    height: 60px !important;
 
-    filter:drop-shadow(0 0 10px rgba(255,31,45,.25));
+    stroke-width: 1.8;
+
+    color: var(--red);
+
+    filter: drop-shadow(0 0 10px rgba(255,31,45,.25));
 }
 
 /* =========================
