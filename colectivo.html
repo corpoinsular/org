@@ -68,7 +68,9 @@
     <div class="info-panel" id="infoPanel">
 
     <h3>Más que un medio, una voz colectiva</h3>
-
+<button class="close-panel" id="closePanel">
+    ✕
+</button>
     <p>
         INSULAR+ es el medio de comunicación comunitario de Bocachica. Nacimos para contar nuestras propias historias, visibilizar nuestras realidades y fortalecer la identidad de un territorio insular lleno de cultura, memoria y resistencia.
     </p>
@@ -86,6 +88,7 @@
     </p>
 
 </div>
+    <div class="overlay-reading" id="overlayReading"></div>
 </section>
 
 <section class="features">
@@ -177,12 +180,29 @@
 
 const btn = document.getElementById('btn-info');
 const panel = document.getElementById('infoPanel');
+const overlay = document.getElementById('overlayReading');
+const close = document.getElementById('closePanel');
 
 btn.addEventListener('click', function(e){
 
     e.preventDefault();
 
-    panel.classList.toggle('active');
+    panel.classList.add('active');
+    overlay.classList.add('active');
+
+});
+
+close.addEventListener('click', function(){
+
+    panel.classList.remove('active');
+    overlay.classList.remove('active');
+
+});
+
+overlay.addEventListener('click', function(){
+
+    panel.classList.remove('active');
+    overlay.classList.remove('active');
 
 });
 
