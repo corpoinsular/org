@@ -549,3 +549,54 @@ nav a.active{
         font-size:3rem;
     }
 }
+.programa-icon{
+
+    width:120px;
+    height:120px;
+
+    border-radius:24px;
+
+    display:flex;
+    align-items:center;
+    justify-content:center;
+
+    background:rgba(255,31,45,.08);
+
+    border:1px solid rgba(255,255,255,.08);
+}
+
+.programa-icon svg{
+
+    width:60px;
+    height:60px;
+
+    stroke:var(--red);
+
+    stroke-width:1.8;
+}
+
+.impact-icon{
+
+    width:70px;
+    height:70px;
+
+    margin:0 auto 20px;
+
+    display:flex;
+    align-items:center;
+    justify-content:center;
+
+    border-radius:16px;
+
+    background:rgba(255,31,45,.08);
+}
+
+.impact-icon svg{
+
+    width:34px;
+    height:34px;
+
+    stroke:var(--red);
+
+    stroke-width:2;
+}
