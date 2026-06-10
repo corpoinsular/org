@@ -113,7 +113,7 @@ img{
 }
 
 .menu a:hover{
-    color:var(--red);
+    color:var(--secondary);
 }
 
 /* ==========================
@@ -126,7 +126,7 @@ img{
     align-items:center;
     justify-content:center;
     padding:14px 28px;
-    background:var(--red);
+    background:var(--accent);
     color:#fff;
     text-decoration:none;
     border-radius:14px;
@@ -137,7 +137,7 @@ img{
 .btn:hover,
 .btn-primary:hover{
     transform:translateY(-4px);
-    background:var(--red-dark);
+    background:#B91C1C;
 }
 
 .btn-outline{
@@ -192,15 +192,9 @@ img{
     max-width:none;
 }
 
-.hero-tag{
-    color:var(--red);
-    font-weight:900;
-    letter-spacing:4px;
-    text-transform:uppercase;
-    display:block;
-    margin-bottom:25px;
+..hero-tag{
+    color:var(--secondary);
 }
-
 .hero h1{
     font-size:clamp(3.2rem,8vw,6rem);
     line-height:.95;
@@ -241,8 +235,7 @@ img{
 }
 
 .stat h3{
-    font-size:2.4rem;
-    color:var(--red);
+    color:var(--secondary);
 }
 
 .stat span{
@@ -303,14 +296,11 @@ section{
 }
 
 .card:hover{
-    transform:translateY(-10px);
-    border-color:rgba(255,31,45,.35);
+    border-color:rgba(0,149,230,.35);
 }
 
 .card i{
-    font-size:60px;
-    color:var(--red);
-    margin-bottom:20px;
+    color:var(--secondary);
 }
 
 .card h3{
@@ -350,11 +340,9 @@ section{
 .cta{
     background:
     linear-gradient(
-    90deg,
-    #c21223,
-    #07152c);
-
-    text-align:center;
+    135deg,
+    #002D9C,
+    #0095E6);
 }
 
 .cta h2{
@@ -473,15 +461,7 @@ section{
 }
 
 .testimonial img{
-    width:55px;
-    height:55px;
-
-    border-radius:50%;
-    object-fit:cover;
-
-    border:2px solid #ff1f2d;
-
-    flex-shrink:0;
+    border:2px solid var(--secondary);
 }
 
 .testimonial p{
