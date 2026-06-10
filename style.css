@@ -1,9 +1,7 @@
 :root{
-
     --primary:#0A2EA8;
     --secondary:#1F8FE5;
     --accent:#D62828;
-
     --sand:#D9A441;
 
     --black:#02040A;
@@ -11,7 +9,6 @@
     --card:#07101D;
 
     --white:#FFFFFF;
-
     --gray:#C4C9D4;
     --gray-dark:#6B7280;
 
@@ -20,13 +17,14 @@
     --line:rgba(255,255,255,.08);
 
     --radius:18px;
-
     --transition:.35s ease;
 }
+
+*{
     margin:0;
     padding:0;
     box-sizing:border-box;
-    font-family: 'Montserrat', sans-serif;;
+    font-family:'Montserrat',sans-serif;
 }
 
 html{
@@ -49,17 +47,12 @@ img{
     width:min(1200px,92%);
     margin:auto;
 }
+..hero h1,
+.section-title h2,
 .titulo-inicio{
-  width: 100%;
-  display: block;
-
-  font-size: clamp(2.8rem, 6vw, 5rem);
- font-weight: 900;
-letter-spacing: -2px;
-text-transform: uppercase;
-  line-height: 1.1;
-
-  text-align: left;
+    font-weight:900;
+    letter-spacing:-2px;
+    text-transform:uppercase;
 }
 /* ==========================
    NAVBAR
@@ -70,9 +63,12 @@ text-transform: uppercase;
     top:0;
     width:100%;
     z-index:9999;
-    background:rgba(5,8,17,.88);
-    backdrop-filter:blur(20px);
-    border-bottom:1px solid rgba(255,255,255,.08);
+
+    background:rgba(5,8,17,.75);
+
+    backdrop-filter:blur(25px);
+
+    border-bottom:1px solid rgba(31,143,229,.15);
 }
 
 .nav{
@@ -164,8 +160,9 @@ text-transform: uppercase;
 
     background:
     linear-gradient(
-    rgba(2,4,10,.72),
-    rgba(2,4,10,.80)),
+        rgba(2,4,10,.65),
+        rgba(2,4,10,.82)
+    ),
     url("assets/hero.jpg");
 
     background-size:cover;
@@ -227,6 +224,8 @@ text-transform: uppercase;
 }
 
 .stat h3{
+    font-size:2.5rem;
+    font-weight:900;
     color:var(--secondary);
 }
 
@@ -280,16 +279,28 @@ section{
 }
 
 .card{
-    background:#07101d;
+    background:linear-gradient(
+        180deg,
+        rgba(7,16,29,.95),
+        rgba(4,10,20,.95)
+    );
+
     border:1px solid rgba(255,255,255,.08);
+
     border-radius:22px;
+
     padding:35px;
-    transition:.35s;
+
+    transition:.35s ease;
 }
 
 .card:hover{
     transform:translateY(-10px);
-    border-color:rgba(0,149,230,.35);
+
+    border-color:rgba(31,143,229,.35);
+
+    box-shadow:
+    0 20px 40px rgba(10,46,168,.15);
 }
 
 .card i{
@@ -333,11 +344,17 @@ section{
 .cta{
     background:
     linear-gradient(
-    135deg,
-    #002D9C,
-    #0095E6);
+        135deg,
+        #0A2EA8 0%,
+        #1F8FE5 60%,
+        #0A2EA8 100%
+    );
 
     text-align:center;
+
+    position:relative;
+
+    overflow:hidden;
 }
 
 .cta h2{
