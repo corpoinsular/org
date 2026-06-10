@@ -157,9 +157,12 @@ nav a.active{
     position:relative;
     z-index:2;
 
-    max-width:650px;
+    max-width:1200px; /* antes 900px aprox */
+}
 
-    padding-top:40px;
+.hero-content h1{
+    font-size:5.5rem;
+   
 }
 .hero-tag{
     color:var(--red);
