@@ -142,41 +142,69 @@ nav a.active{
     inset:0;
 
     background:
-    linear-gradient(90deg, rgba(0,0,0,.88) 0%, rgba(0,0,0,.65) 50%, rgba(0,0,0,.9) 100%),
-    url("assets/conocenos.jpg");
+    linear-gradient(
+        90deg,
+        rgba(0,0,0,.92) 0%,
+        rgba(0,0,0,.78) 45%,
+        rgba(0,0,0,.88) 100%
+    ),
+    url("assets/conocenos-bg.jpg");
 
     background-size:cover;
     background-position:center;
+    background-repeat:no-repeat;
 }
 
 .hero-content{
     position:relative;
     z-index:2;
 
-    max-width:900px;
-}
+    max-width:950px;
 
+    padding-top:40px;
+}
 .hero-tag{
     color:var(--red);
+
+    font-size:1rem;
     font-weight:900;
-    letter-spacing:2px;
-    font-size:.75rem;
-    margin-bottom:14px;
+
+    letter-spacing:4px;
+    text-transform:uppercase;
+
+    margin-bottom:22px;
+
     display:block;
 }
 
 .hero-content h1{
-    font-size:3.6rem;
-    line-height:1.05;
+    font-size:5.5rem;
+
+    line-height:.95;
+
     font-weight:900;
 
-    margin-bottom:18px;
+    letter-spacing:-3px;
+
+    margin-bottom:25px;
+
+    max-width:900px;
+
+    text-shadow:
+        0 4px 20px rgba(0,0,0,.6);
 }
 
 .hero-content p{
-    font-size:1.05rem;
-    color:var(--gray);
-    max-width:750px;
+    font-size:1.25rem;
+
+    line-height:1.9;
+
+    color:#e4e7ee;
+
+    max-width:760px;
+
+    text-shadow:
+        0 2px 12px rgba(0,0,0,.5);
 }
 
 /* =========================
