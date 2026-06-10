@@ -1,577 +1,226 @@
-/* =========================
-   INSULAR DIGITAL - HOME
-========================= */
-
-:root{
-    --red:#ff1f2d;
-    --red-dark:#d80f20;
-    --black:#02040a;
-    --nav:#050811;
-    --card:#07101d;
-    --white:#ffffff;
-    --gray:#c4c9d4;
-    --line:rgba(255,255,255,.08);
-    --radius:20px;
-    --transition:.35s ease;
-}
-
-/* =========================
-   RESET
-========================= */
-
-*{
-    margin:0;
-    padding:0;
-    box-sizing:border-box;
-    font-family:'Inter',sans-serif;
-}
-
-html{
-    scroll-behavior:smooth;
-}
-
-body{
-    background:var(--black);
-    color:var(--white);
-    overflow-x:hidden;
-    line-height:1.6;
-}
-
-/* =========================
-   UTILIDADES
-========================= */
-
-.hero-tag,
-.section-tag{
-    color:var(--red);
-    font-size:.95rem;
-    font-weight:900;
-    letter-spacing:4px;
-    text-transform:uppercase;
-    display:block;
-    margin-bottom:20px;
-}
-
-img{
-    width:100%;
-    display:block;
-}
-
-/* =========================
-   BOTONES
-========================= */
-
-.btn-primary{
-    display:inline-flex;
-    align-items:center;
-    justify-content:center;
-    padding:15px 28px;
-    background:var(--red);
-    color:#fff;
-    text-decoration:none;
-    border-radius:12px;
-    font-weight:800;
-    transition:var(--transition);
-}
-
-.btn-primary:hover{
-    background:var(--red-dark);
-    transform:translateY(-4px);
-    box-shadow:0 15px 30px rgba(255,31,45,.35);
-}
-
-.btn-outline{
-    display:inline-flex;
-    align-items:center;
-    justify-content:center;
-    padding:15px 28px;
-    border:1px solid rgba(255,255,255,.15);
-    color:#fff;
-    text-decoration:none;
-    border-radius:12px;
-    backdrop-filter:blur(20px);
-    transition:var(--transition);
-}
-
-.btn-outline:hover{
-    background:#fff;
-    color:#000;
-}
-
-/* =========================
-   HERO
-========================= */
-
-.hero-home{
-    min-height:100vh;
-    display:flex;
-    align-items:center;
-    padding:140px 10% 100px;
-    position:relative;
-    overflow:hidden;
-}
-
-.hero-home::before{
-    content:"";
-    position:absolute;
-    inset:0;
-
-    background:
-    linear-gradient(
-        rgba(0,0,0,.80),
-        rgba(0,0,0,.85)
-    ),
-    url("assets/hero.jpg");
-
-    background-size:cover;
-    background-position:center;
-}
-
-.hero-home::after{
-    content:"";
-    position:absolute;
-    width:700px;
-    height:700px;
-    border-radius:50%;
-
-    background:
-    radial-gradient(
-        rgba(255,31,45,.15),
-        transparent 70%
-    );
-
-    top:-200px;
-    right:-150px;
-}
-
-.hero-content{
-    position:relative;
-    z-index:2;
-    max-width:1050px;
-}
-
-.hero-content h1{
-    font-size:clamp(4rem,8vw,6rem);
-    line-height:.92;
-    font-weight:900;
-    letter-spacing:-3px;
-    margin-bottom:25px;
-}
-
-.hero-description{
-    font-size:1.25rem;
-    color:#e4e7ee;
-    max-width:700px;
-    line-height:1.9;
-}
-
-.hero-buttons{
-    display:flex;
-    gap:18px;
-    flex-wrap:wrap;
-    margin-top:35px;
-}
-
-.hero-stats{
-    display:flex;
-    gap:25px;
-    flex-wrap:wrap;
-    margin-top:60px;
-}
-
-.stat{
-    min-width:180px;
-    padding:25px;
-    border-radius:20px;
-    background:rgba(7,16,29,.75);
-    backdrop-filter:blur(20px);
-    border:1px solid rgba(255,255,255,.08);
-    transition:.35s;
-}
-
-.stat:hover{
-    transform:translateY(-6px);
-}
-
-.stat h3{
-    color:var(--red);
-    font-size:2.5rem;
-}
-
-.stat span{
-    color:var(--gray);
-}
-
-/* =========================
-   ABOUT
-========================= */
-
-.home-about{
-    padding:120px 10%;
-}
-
-.about-grid{
-    display:grid;
-    grid-template-columns:1fr 1fr;
-    gap:80px;
-    align-items:center;
-}
-
-.about-image img{
-    height:650px;
-    object-fit:cover;
-    border-radius:24px;
-}
-
-.about-content h2{
-    font-size:3rem;
-    line-height:1.1;
-    margin-bottom:25px;
-}
-
-.about-content p{
-    color:var(--gray);
-    margin-bottom:30px;
-}
-
-/* =========================
-   SECTION HEADER
-========================= */
-
-.section-header{
-    text-align:center;
-    max-width:900px;
-    margin:0 auto 70px;
-}
-
-.section-header h2{
-    font-size:clamp(2.3rem,5vw,4rem);
-    line-height:1.1;
-    margin-bottom:15px;
-}
-
-.section-header p{
-    color:var(--gray);
-}
-
-/* =========================
-   IMPACTO
-========================= */
-
-.como-transformamos{
-    padding:120px 10%;
-}
-
-.impact-grid{
-    display:grid;
-    grid-template-columns:repeat(auto-fit,minmax(260px,1fr));
-    gap:30px;
-}
-
-.impact-card{
-    background:var(--card);
-    border:1px solid var(--line);
-    border-radius:24px;
-    padding:35px;
-    text-align:center;
-    transition:.35s;
-    position:relative;
-    overflow:hidden;
-}
-
-.impact-card::before{
-    content:"";
-    position:absolute;
-    top:0;
-    left:0;
-    width:100%;
-    height:4px;
-    background:var(--red);
-}
-
-.impact-card:hover{
-    transform:translateY(-10px);
-    border-color:rgba(255,31,45,.35);
-    box-shadow:0 25px 60px rgba(0,0,0,.35);
-}
-
-.impact-card i{
-    font-size:65px;
-    color:var(--red);
-    margin-bottom:20px;
-}
-
-.impact-card h3{
-    margin-bottom:10px;
-}
-
-.impact-card p{
-    color:var(--gray);
-}
-
-/* =========================
-   PROGRAMA DESTACADO
-========================= */
-
-.programa-destacado{
-    padding:120px 10%;
-}
-
-.programa-grid{
-    display:grid;
-    grid-template-columns:1fr 1fr;
-    gap:80px;
-    align-items:center;
-}
-
-.programa-image img{
-    height:650px;
-    object-fit:cover;
-    border-radius:24px;
-}
-
-.programa-content h2{
-    font-size:3rem;
-    line-height:1.1;
-    margin-bottom:20px;
-}
-
-.programa-content p{
-    color:var(--gray);
-    margin-bottom:30px;
-}
-
-/* =========================
-   COLECTIVO
-========================= */
-
-.colectivo-banner{
-    margin:120px 10%;
-    padding:140px 80px;
-    border-radius:30px;
-    overflow:hidden;
-    position:relative;
-}
-
-.colectivo-banner::before{
-    content:"";
-    position:absolute;
-    inset:0;
-
-    background:
-    linear-gradient(
-        rgba(0,0,0,.75),
-        rgba(0,0,0,.75)
-    ),
-    url("assets/colectivo.jpg");
-
-    background-size:cover;
-    background-position:center;
-}
-
-.banner-content{
-    position:relative;
-    z-index:2;
-    max-width:700px;
-}
-
-.banner-content h2{
-    font-size:clamp(2.4rem,5vw,4.5rem);
-    line-height:1.1;
-    margin-bottom:30px;
-}
-
-/* =========================
-   ALIADOS
-========================= */
-
-.aliados{
-    padding:120px 10%;
-}
-
-.aliados-grid{
-    display:grid;
-    grid-template-columns:repeat(auto-fit,minmax(220px,1fr));
-    gap:25px;
-}
-
-.aliado-logo{
-    height:150px;
-    background:var(--card);
-    border:1px solid var(--line);
-    border-radius:20px;
-    display:flex;
-    align-items:center;
-    justify-content:center;
-    transition:.35s;
-}
-
-.aliado-logo:hover{
-    transform:translateY(-8px);
-    border-color:rgba(255,31,45,.35);
-}
-
-.aliado-logo img{
-    max-width:150px;
-    max-height:80px;
-    object-fit:contain;
-}
-
-/* =========================
-   CTA
-========================= */
-
-.cta-home{
-    margin:120px 10%;
-    padding:100px 80px;
-    border-radius:30px;
-    text-align:center;
-
-    background:
-    linear-gradient(
-        135deg,
-        #c21223,
-        #07152c
-    );
-}
-
-.cta-home h2{
-    font-size:clamp(2.5rem,5vw,4.5rem);
-    line-height:1.1;
-    margin-bottom:20px;
-}
-
-.cta-home p{
-    color:#e4e7ee;
-    max-width:700px;
-    margin:0 auto 40px;
-}
-
-/* =========================
-   FRASE
-========================= */
-
-.frase-institucional{
-    padding:140px 10%;
-    text-align:center;
-}
-
-.frase-content{
-    max-width:1000px;
-    margin:auto;
-}
-
-.frase-content h2{
-    font-size:clamp(2.4rem,5vw,4.8rem);
-    line-height:1.15;
-}
-
-/* =========================
-   FOOTER
-========================= */
-
-.footer{
-    background:#050811;
-    border-top:1px solid rgba(255,255,255,.08);
-}
-
-.footer-container{
-    max-width:1200px;
-    margin:auto;
-    padding:90px 20px;
-    display:grid;
-    grid-template-columns:2fr 1fr 1fr 1fr;
-    gap:50px;
-}
-
-.logo{
-    text-decoration:none;
-    color:#fff;
-    font-size:1.8rem;
-    font-weight:900;
-}
-
-.logo span{
-    color:var(--red);
-}
-
-.footer-brand p{
-    margin-top:20px;
-    color:var(--gray);
-}
-
-.footer-links,
-.footer-contacto{
-    display:flex;
-    flex-direction:column;
-}
-
-.footer-links h4,
-.footer-contacto h4{
-    margin-bottom:20px;
-}
-
-.footer-links a{
-    text-decoration:none;
-    color:var(--gray);
-    margin-bottom:12px;
-    transition:.3s;
-}
-
-.footer-links a:hover{
-    color:var(--red);
-}
-
-.footer-contacto p{
-    color:var(--gray);
-    margin-bottom:10px;
-}
-
-.footer-bottom{
-    text-align:center;
-    border-top:1px solid rgba(255,255,255,.08);
-    padding:25px;
-    color:var(--gray);
-}
-
-/* =========================
-   RESPONSIVE
-========================= */
-
-@media(max-width:1000px){
-
-    .about-grid,
-    .programa-grid{
-        grid-template-columns:1fr;
-    }
-
-    .footer-container{
-        grid-template-columns:1fr 1fr;
-    }
-
-}
-
-@media(max-width:768px){
-
-    .hero-content h1{
-        font-size:3.5rem;
-    }
-
-    .hero-buttons{
-        flex-direction:column;
-        align-items:flex-start;
-    }
-
-    .footer-container{
-        grid-template-columns:1fr;
-    }
-
-    .colectivo-banner{
-        padding:90px 40px;
-    }
-
-    .cta-home{
-        padding:70px 35px;
-    }
-
-}
+<main>
+
+<!-- HERO -->
+
+<section class="hero-home">
+
+    <div class="hero-content">
+
+        <span class="hero-tag">
+            CORPORACIÓN INSULAR DIGITAL
+        </span>
+
+        <h1>
+            Comunicación, cultura e innovación para transformar comunidades.
+        </h1>
+
+        <p class="hero-description">
+            Impulsamos procesos de inclusión digital, comunicación comunitaria y creación cultural que fortalecen capacidades y generan oportunidades en los territorios.
+        </p>
+
+        <div class="hero-buttons">
+
+            <a href="conocenos.html" class="btn-primary">
+                Conócenos
+            </a>
+
+            <a href="programas.html" class="btn-outline">
+                Explorar Programas
+            </a>
+
+        </div>
+
+        <div class="hero-stats">
+
+            <div class="stat">
+                <h3>+10</h3>
+                <span>Proyectos</span>
+            </div>
+
+            <div class="stat">
+                <h3>+500</h3>
+                <span>Beneficiarios</span>
+            </div>
+
+            <div class="stat">
+                <h3>+5</h3>
+                <span>Líneas de acción</span>
+            </div>
+
+        </div>
+
+    </div>
+
+</section>
+
+<!-- QUIÉNES SOMOS -->
+
+<section class="home-about">
+
+    <div class="about-grid">
+
+        <div class="about-content">
+
+            <span class="hero-tag">
+                QUIÉNES SOMOS
+            </span>
+
+            <h2>
+                Construimos oportunidades desde los territorios.
+            </h2>
+
+            <p>
+                Somos una organización comprometida con el fortalecimiento comunitario mediante la comunicación, la cultura, la innovación social y la inclusión digital.
+            </p>
+
+            <a href="conocenos.html" class="btn-primary">
+                Conocer más
+            </a>
+
+        </div>
+
+        <div class="about-image">
+
+            <img src="assets/conocenos.jpg"
+                 alt="Corporación Insular Digital">
+
+        </div>
+
+    </div>
+
+</section>
+
+<!-- IMPACTO -->
+
+<section class="como-transformamos">
+
+    <div class="section-header">
+
+        <span class="section-tag">
+            Nuestro Impacto
+        </span>
+
+        <h2>
+            Líneas estratégicas de transformación.
+        </h2>
+
+        <p>
+            Promovemos procesos que fortalecen capacidades, impulsan la participación comunitaria y generan oportunidades para el desarrollo sostenible.
+        </p>
+
+    </div>
+
+    <div class="impact-grid">
+
+        <article class="impact-card">
+
+            <i class="fa-solid fa-tower-broadcast"></i>
+
+            <h3>Comunicación</h3>
+
+            <p>
+                Fortalecemos voces y narrativas comunitarias.
+            </p>
+
+        </article>
+
+        <article class="impact-card">
+
+            <i class="fa-solid fa-laptop-code"></i>
+
+            <h3>Inclusión Digital</h3>
+
+            <p>
+                Reducimos brechas tecnológicas.
+            </p>
+
+        </article>
+
+        <article class="impact-card">
+
+            <i class="fa-solid fa-masks-theater"></i>
+
+            <h3>Cultura</h3>
+
+            <p>
+                Impulsamos identidad, memoria y patrimonio.
+            </p>
+
+        </article>
+
+        <article class="impact-card">
+
+            <i class="fa-solid fa-lightbulb"></i>
+
+            <h3>Innovación Social</h3>
+
+            <p>
+                Construimos soluciones para desafíos comunitarios.
+            </p>
+
+        </article>
+
+    </div>
+
+</section>
+
+<!-- PROGRAMA DESTACADO -->
+
+<section class="programa-destacado">
+
+    <div class="programa-grid">
+
+        <div class="programa-image">
+
+            <img src="assets/programa-destacado.jpg"
+                 alt="Programa Destacado">
+
+        </div>
+
+        <div class="programa-content">
+
+            <span class="hero-tag">
+                PROGRAMA DESTACADO
+            </span>
+
+            <h2>
+                Alfabetización Digital Comunitaria.
+            </h2>
+
+            <p>
+                Formamos jóvenes, líderes y organizaciones para aprovechar las tecnologías en beneficio del desarrollo territorial.
+            </p>
+
+            <a href="programas.html" class="btn-primary">
+                Ver Programas
+            </a>
+
+        </div>
+
+    </div>
+
+</section>
+
+<!-- COLECTIVO -->
+
+<section class="colectivo-banner">
+
+    <div class="banner-content">
+
+        <span class="hero-tag">
+            COLECTIVO INSULAR
+        </span>
+
+        <h2>
+            Personas que creen en la transformación comunitaria.
+        </h2>
+
+        <a href="colectivo.html" class="btn-primary">
+            Conocer el colectivo
+        </a>
+
+    </div>
+
+</section>
+
+</main>
