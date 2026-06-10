@@ -1,8 +1,8 @@
+```html
 <!DOCTYPE html>
 <html lang="es">
 
 <head>
-
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
@@ -16,10 +16,11 @@
 
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap"
         rel="stylesheet">
-<link rel="stylesheet"
-href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
-    <link rel="stylesheet" href="css/style.css">
 
+    <link rel="stylesheet"
+        href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+
+    <link rel="stylesheet" href="css/style.css">
 </head>
 
 <body>
@@ -28,23 +29,18 @@ href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css"
 
     <header class="navbar">
 
-        <div class="nav-flex">
+        <div class="container nav-flex">
 
             <a href="index.html" class="logo">
                 INSULAR<span>+</span>
             </a>
 
             <nav>
-
                 <a href="index.html">Inicio</a>
                 <a href="conocenos.html">Conócenos</a>
                 <a href="programas.html">Programas</a>
                 <a href="colectivo.html">Colectivo</a>
-
-                <a href="dona.html" class="btn-nav">
-                    Donar
-                </a>
-
+                <a href="dona.html" class="btn-nav">Donar</a>
             </nav>
 
         </div>
@@ -57,7 +53,7 @@ href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css"
 
         <section class="hero-home">
 
-            <div class="hero-content">
+            <div class="container hero-content">
 
                 <span class="hero-tag">
                     CORPORACIÓN INSULAR DIGITAL
@@ -70,7 +66,7 @@ href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css"
                 <p class="hero-description">
                     Impulsamos procesos de inclusión digital, comunicación comunitaria,
                     innovación social y creación cultural que fortalecen capacidades,
-                    conectan territorios y generan oportunidades para las comunidades.
+                    conectan territorios y generan oportunidades.
                 </p>
 
                 <div class="hero-buttons">
@@ -89,7 +85,7 @@ href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css"
 
                     <div class="stat">
                         <h3>+10</h3>
-                        <span>Proyectos desarrollados</span>
+                        <span>Proyectos</span>
                     </div>
 
                     <div class="stat">
@@ -108,11 +104,11 @@ href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css"
 
         </section>
 
-        <!-- QUIENES SOMOS -->
+        <!-- QUIÉNES SOMOS -->
 
         <section class="home-about">
 
-            <div class="about-grid">
+            <div class="container about-grid">
 
                 <div class="about-content">
 
@@ -132,8 +128,8 @@ href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css"
 
                     <p>
                         Trabajamos junto a comunidades, jóvenes, líderes sociales,
-                        organizaciones e instituciones para impulsar procesos que
-                        promuevan el desarrollo sostenible y la participación ciudadana.
+                        organizaciones e instituciones para impulsar procesos
+                        sostenibles de transformación.
                     </p>
 
                     <a href="conocenos.html" class="btn-primary">
@@ -143,10 +139,8 @@ href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css"
                 </div>
 
                 <div class="about-image">
-
                     <img src="assets/conocenos.jpg"
-                        alt="Comunidades fortalecidas por Insular Digital">
-
+                        alt="Corporación Insular Digital">
                 </div>
 
             </div>
@@ -157,73 +151,52 @@ href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css"
 
         <section class="como-transformamos">
 
-            <div class="section-header">
+            <div class="container">
 
-                <span class="section-tag">
-                    NUESTRO IMPACTO
-                </span>
+                <div class="section-header">
 
-                <h2>
-                    Líneas estratégicas de transformación.
-                </h2>
+                    <span class="section-tag">
+                        NUESTRO IMPACTO
+                    </span>
 
-                <p>
-                    Promovemos procesos que fortalecen capacidades,
-                    impulsan la participación comunitaria y generan
-                    oportunidades para el desarrollo sostenible.
-                </p>
-
-            </div>
-
-            <div class="impact-grid">
-
-                <article class="impact-card">
-
-                    <i class="fa-solid fa-tower-broadcast"></i>
-
-                    <h3>Comunicación</h3>
+                    <h2>
+                        Líneas estratégicas de transformación.
+                    </h2>
 
                     <p>
-                        Fortalecemos voces, medios y narrativas comunitarias.
+                        Promovemos procesos que fortalecen capacidades,
+                        impulsan la participación comunitaria y generan oportunidades.
                     </p>
 
-                </article>
+                </div>
 
-                <article class="impact-card">
+                <div class="impact-grid">
 
-                    <i class="fa-solid fa-laptop-code"></i>
+                    <article class="impact-card">
+                        <i class="fa-solid fa-tower-broadcast"></i>
+                        <h3>Comunicación</h3>
+                        <p>Fortalecemos voces y narrativas comunitarias.</p>
+                    </article>
 
-                    <h3>Inclusión Digital</h3>
+                    <article class="impact-card">
+                        <i class="fa-solid fa-laptop-code"></i>
+                        <h3>Inclusión Digital</h3>
+                        <p>Reducimos brechas tecnológicas.</p>
+                    </article>
 
-                    <p>
-                        Reducimos brechas tecnológicas y promovemos acceso al conocimiento.
-                    </p>
+                    <article class="impact-card">
+                        <i class="fa-solid fa-masks-theater"></i>
+                        <h3>Cultura</h3>
+                        <p>Impulsamos identidad, patrimonio y memoria.</p>
+                    </article>
 
-                </article>
+                    <article class="impact-card">
+                        <i class="fa-solid fa-lightbulb"></i>
+                        <h3>Innovación Social</h3>
+                        <p>Diseñamos soluciones para desafíos territoriales.</p>
+                    </article>
 
-                <article class="impact-card">
-
-                    <i class="fa-solid fa-masks-theater"></i>
-
-                    <h3>Cultura</h3>
-
-                    <p>
-                        Impulsamos identidad, patrimonio y memoria colectiva.
-                    </p>
-
-                </article>
-
-                <article class="impact-card">
-
-                    <i class="fa-solid fa-lightbulb"></i>
-
-                    <h3>Innovación Social</h3>
-
-                    <p>
-                        Diseñamos soluciones colaborativas para desafíos territoriales.
-                    </p>
-
-                </article>
+                </div>
 
             </div>
 
@@ -233,13 +206,11 @@ href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css"
 
         <section class="programa-destacado">
 
-            <div class="programa-grid">
+            <div class="container programa-grid">
 
                 <div class="programa-image">
-
                     <img src="assets/programa-destacado.jpg"
-                        alt="Programa de alfabetización digital">
-
+                        alt="Programa de Alfabetización Digital">
                 </div>
 
                 <div class="programa-content">
@@ -249,13 +220,13 @@ href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css"
                     </span>
 
                     <h2>
-                        Alfabetización Digital Comunitaria.
+                        Alfabetización Digital Comunitaria
                     </h2>
 
                     <p>
-                        Formamos jóvenes, líderes comunitarios y organizaciones
-                        para aprovechar las tecnologías digitales como herramientas
-                        de desarrollo, emprendimiento y participación ciudadana.
+                        Formamos jóvenes, líderes y organizaciones para
+                        aprovechar las tecnologías digitales como herramientas
+                        de desarrollo y participación.
                     </p>
 
                     <a href="programas.html" class="btn-primary">
@@ -272,7 +243,7 @@ href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css"
 
         <section class="colectivo-banner">
 
-            <div class="banner-content">
+            <div class="container banner-content">
 
                 <span class="hero-tag">
                     COLECTIVO INSULAR
@@ -283,12 +254,9 @@ href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css"
                 </h2>
 
                 <p>
-                    Una red de jóvenes, gestores culturales, comunicadores,
-                    líderes y profesionales comprometidos con el desarrollo
-                    de los territorios.
+                    Una red de jóvenes, gestores culturales, comunicadores
+                    y líderes comprometidos con sus territorios.
                 </p>
-
-                <br>
 
                 <a href="colectivo.html" class="btn-primary">
                     Conocer el colectivo
@@ -298,368 +266,48 @@ href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css"
 
         </section>
 
-        <!-- ALIADOS -->
+        <!-- CTA -->
 
-        <section class="aliados">
+        <section class="cta-home">
 
-            <div class="section-header">
+            <div class="container">
 
                 <span class="hero-tag">
-                    ALIADOS
+                    SÚMATE
                 </span>
 
                 <h2>
-                    Construimos impacto junto a organizaciones e instituciones.
+                    Juntos comunicamos ideas y transformamos realidades.
                 </h2>
 
                 <p>
-                    Trabajamos en red para fortalecer procesos comunitarios,
-                    culturales y educativos.
+                    Cada aporte fortalece oportunidades para comunidades,
+                    jóvenes y organizaciones.
                 </p>
 
-            </div>
+                <div class="hero-buttons">
 
-            <div class="aliados-grid">
+                    <a href="dona.html" class="btn-primary">
+                        Quiero donar
+                    </a>
 
-                <div class="aliado-logo">
-                    <img src="assets/aliado1.png" alt="Aliado 1">
-                </div>
+                    <a href="contacto.html" class="btn-outline">
+                        Contactar
+                    </a>
 
-                <div class="aliado-logo">
-                    <img src="assets/aliado2.png" alt="Aliado 2">
-                </div>
-
-                <div class="aliado-logo">
-                    <img src="assets/aliado3.png" alt="Aliado 3">
-                </div>
-
-                <div class="aliado-logo">
-                    <img src="assets/aliado4.png" alt="Aliado 4">
                 </div>
 
             </div>
 
         </section>
 
-        <!-- CTA -->
-
-        <section class="cta-home">
-
-            <span class="hero-tag">
-                SÚMATE
-            </span>
-
-            <h2>
-                Juntos comunicamos ideas,
-                conectamos propósitos
-                y transformamos realidades.
-            </h2>
-
-            <p>
-                Cada aporte fortalece oportunidades para comunidades,
-                jóvenes y organizaciones.
-            </p>
-
-            <div class="hero-buttons">
-
-                <a href="dona.html" class="btn-primary">
-                    Quiero donar </a>
-                </div>
-</section>
-
-
-    <!-- HERO -->
-
-    <section class="hero-home">
-
-        <div class="hero-content">
-
-            <span class="hero-tag">
-                CORPORACIÓN INSULAR DIGITAL
-            </span>
-
-            <h1>
-                Comunicación, cultura e innovación para transformar comunidades.
-            </h1>
-
-            <p class="hero-description">
-                Impulsamos procesos de inclusión digital, comunicación comunitaria y creación cultural que fortalecen capacidades y generan oportunidades en los territorios.
-            </p>
-
-            <div class="hero-buttons">
-
-                <a href="conocenos.html" class="btn-primary">
-                    Conócenos
-                </a>
-
-                <a href="programas.html" class="btn-outline">
-                    Explorar Programas
-                </a>
-
-            </div>
-
-            <div class="hero-stats">
-
-                <div class="stat">
-                    <h3>+10</h3>
-                    <span>Proyectos</span>
-                </div>
-
-                <div class="stat">
-                    <h3>+500</h3>
-                    <span>Beneficiarios</span>
-                </div>
-
-                <div class="stat">
-                    <h3>+5</h3>
-                    <span>Líneas de acción</span>
-                </div>
-
-            </div>
-
-        </div>
-
-    </section>
-
-    <!-- QUIÉNES SOMOS -->
-
-    <section class="home-about">
-
-        <div class="about-grid">
-
-            <div class="about-content">
-
-                <span class="hero-tag">
-                    QUIÉNES SOMOS
-                </span>
-
-                <h2>
-                    Construimos oportunidades desde los territorios.
-                </h2>
-
-                <p>
-                    Somos una organización comprometida con el fortalecimiento comunitario mediante la comunicación, la cultura, la innovación social y la inclusión digital.
-                </p>
-
-                <a href="conocenos.html" class="btn-primary">
-                    Conocer más
-                </a>
-
-            </div>
-
-            <div class="about-image">
-
-                <img src="assets/conocenos.jpg"
-                     alt="Corporación Insular Digital">
-
-            </div>
-
-        </div>
-
-    </section>
-
-    <!-- IMPACTO -->
-
-    <section class="como-transformamos">
-
-        <div class="section-header">
-
-            <span class="section-tag">
-                Nuestro Impacto
-            </span>
-
-            <h2>
-                Líneas estratégicas de transformación.
-            </h2>
-
-            <p>
-                Promovemos procesos que fortalecen capacidades, impulsan la participación comunitaria y generan oportunidades para el desarrollo sostenible.
-            </p>
-
-        </div>
-
-        <div class="impact-grid">
-
-            <article class="impact-card">
-                <i class="fa-solid fa-tower-broadcast"></i>
-                <h3>Comunicación</h3>
-                <p>Fortalecemos voces y narrativas comunitarias.</p>
-            </article>
-
-            <article class="impact-card">
-                <i class="fa-solid fa-laptop-code"></i>
-                <h3>Inclusión Digital</h3>
-                <p>Reducimos brechas tecnológicas.</p>
-            </article>
-
-            <article class="impact-card">
-                <i class="fa-solid fa-masks-theater"></i>
-                <h3>Cultura</h3>
-                <p>Impulsamos identidad, memoria y patrimonio.</p>
-            </article>
-
-            <article class="impact-card">
-                <i class="fa-solid fa-lightbulb"></i>
-                <h3>Innovación Social</h3>
-                <p>Construimos soluciones para desafíos comunitarios.</p>
-            </article>
-
-        </div>
-
-    </section>
-
-    <!-- PROGRAMA DESTACADO -->
-
-    <section class="programa-destacado">
-
-        <div class="programa-grid">
-
-            <div class="programa-image">
-
-                <img src="assets/programa-destacado.jpg"
-                     alt="Programa Destacado">
-
-            </div>
-
-            <div class="programa-content">
-
-                <span class="hero-tag">
-                    PROGRAMA DESTACADO
-                </span>
-
-                <h2>
-                    Alfabetización Digital Comunitaria.
-                </h2>
-
-                <p>
-                    Formamos jóvenes, líderes y organizaciones para aprovechar las tecnologías en beneficio del desarrollo territorial.
-                </p>
-
-                <a href="programas.html" class="btn-primary">
-                    Ver Programas
-                </a>
-
-            </div>
-
-        </div>
-
-    </section>
-
-    <!-- COLECTIVO -->
-
-    <section class="colectivo-banner">
-
-        <div class="banner-content">
-
-            <span class="hero-tag">
-                COLECTIVO INSULAR
-            </span>
-
-            <h2>
-                Personas que creen en la transformación comunitaria.
-            </h2>
-
-            <a href="colectivo.html" class="btn-primary">
-                Conocer el colectivo
-            </a>
-
-        </div>
-
-    </section>
-
-    <!-- ALIADOS -->
-
-    <section class="aliados">
-
-        <div class="section-header">
-
-            <span class="hero-tag">
-                ALIADOS
-            </span>
-
-            <h2>
-                Construimos impacto junto a organizaciones e instituciones.
-            </h2>
-
-        </div>
-
-        <div class="aliados-grid">
-
-            <div class="aliado-logo">
-                <img src="assets/aliado1.png" alt="">
-            </div>
-
-            <div class="aliado-logo">
-                <img src="assets/aliado2.png" alt="">
-            </div>
-
-            <div class="aliado-logo">
-                <img src="assets/aliado3.png" alt="">
-            </div>
-
-            <div class="aliado-logo">
-                <img src="assets/aliado4.png" alt="">
-            </div>
-
-        </div>
-
-    </section>
-
-    <!-- CTA -->
-
-    <section class="cta-home">
-
-        <span class="hero-tag">
-            SÚMATE
-        </span>
-
-        <h2>
-            Juntos comunicamos ideas y transformamos realidades.
-        </h2>
-
-        <p>
-            Cada aporte fortalece oportunidades para comunidades, jóvenes y organizaciones.
-        </p>
-
-        <div class="hero-buttons">
-
-            <a href="dona.html" class="btn-primary">
-                Quiero donar
-            </a>
-
-            <a href="contacto.html" class="btn-outline">
-                Contactar
-            </a>
-
-        </div>
-
-    </section>
-
-    <!-- FRASE -->
-
-    <section class="frase-institucional">
-
-        <div class="frase-content">
-
-            <span class="hero-tag">
-                NUESTRO COMPROMISO
-            </span>
-
-            <h2>
-                Creemos en comunidades conectadas, participativas y capaces de construir su propio futuro.
-            </h2>
-
-        </div>
-
-    </section>
-
-</main>
+    </main>
 
     <!-- FOOTER -->
 
     <footer class="footer">
 
-        <div class="footer-container">
+        <div class="container footer-container">
 
             <div class="footer-brand">
 
@@ -669,7 +317,7 @@ href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css"
 
                 <p>
                     Comunicación, cultura, innovación social e inclusión digital
-                    para fortalecer comunidades y generar oportunidades desde los territorios.
+                    para fortalecer comunidades y generar oportunidades.
                 </p>
 
             </div>
@@ -681,18 +329,7 @@ href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css"
                 <a href="conocenos.html">Conócenos</a>
                 <a href="programas.html">Programas</a>
                 <a href="colectivo.html">Colectivo</a>
-                <a href="dona.html">Dona</a>
-
-            </div>
-
-            <div class="footer-links">
-
-                <h4>Programas</h4>
-
-                <a href="#">Comunicación Comunitaria</a>
-                <a href="#">Inclusión Digital</a>
-                <a href="#">Cultura e Identidad</a>
-                <a href="#">Innovación Social</a>
+                <a href="dona.html">Donar</a>
 
             </div>
 
@@ -701,9 +338,7 @@ href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css"
                 <h4>Contacto</h4>
 
                 <p>Cartagena de Indias, Colombia</p>
-
                 <p>contacto@insulardigital.org</p>
-
                 <p>+57 321 591 8125</p>
 
             </div>
@@ -711,11 +346,7 @@ href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css"
         </div>
 
         <div class="footer-bottom">
-
-            <p>
-                © 2026 Corporación Insular Digital. Todos los derechos reservados.
-            </p>
-
+            <p>© 2026 Corporación Insular Digital. Todos los derechos reservados.</p>
         </div>
 
     </footer>
@@ -723,3 +354,5 @@ href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css"
 </body>
 
 </html>
+```
+
