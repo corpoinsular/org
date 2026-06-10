@@ -157,7 +157,7 @@ nav a.active{
     position:relative;
     z-index:2;
 
-    max-width:1200px; /* antes 900px aprox */
+    max-width:1000px; /* antes 900px aprox */
 }
 
 .hero-content h1{
