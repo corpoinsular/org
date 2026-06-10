@@ -1,16 +1,10 @@
 :root{
 
-    /* COLORES PRINCIPALES */
-
-    --primary:#002D9C;
-    --secondary:#0095E6;
+    --primary:#0A2EA8;
+    --secondary:#1F8FE5;
     --accent:#D62828;
 
-    /* TERRITORIO */
-
     --sand:#D9A441;
-
-    /* NEUTROS */
 
     --black:#02040A;
     --nav:#050811;
@@ -21,21 +15,14 @@
     --gray:#C4C9D4;
     --gray-dark:#6B7280;
 
-    /* AZULES SUAVES */
-
-    --light-blue:#CDECF7;
-
-    /* EFECTOS */
+    --light-blue:#D9F1FF;
 
     --line:rgba(255,255,255,.08);
 
     --radius:18px;
 
     --transition:.35s ease;
-
 }
-
-*{
     margin:0;
     padding:0;
     box-sizing:border-box;
@@ -177,8 +164,8 @@ img{
 
     background:
     linear-gradient(
-    rgba(0,0,0,.82),
-    rgba(0,0,0,.82)),
+    rgba(2,4,10,.72),
+    rgba(2,4,10,.80)),
     url("assets/hero.jpg");
 
     background-size:cover;
@@ -192,8 +179,13 @@ img{
     max-width:none;
 }
 
-..hero-tag{
+.hero-tag{
     color:var(--secondary);
+    font-weight:900;
+    letter-spacing:4px;
+    text-transform:uppercase;
+    display:block;
+    margin-bottom:25px;
 }
 .hero h1{
     font-size:clamp(3.2rem,8vw,6rem);
@@ -296,6 +288,7 @@ section{
 }
 
 .card:hover{
+    transform:translateY(-10px);
     border-color:rgba(0,149,230,.35);
 }
 
@@ -343,6 +336,8 @@ section{
     135deg,
     #002D9C,
     #0095E6);
+
+    text-align:center;
 }
 
 .cta h2{
@@ -373,7 +368,7 @@ section{
 }
 
 .footer a:hover{
-    color:var(--red);
+    color:var(--accent);
 }
 
 /* ==========================
@@ -457,11 +452,16 @@ section{
 
 .testimonial:hover{
     transform:translateY(-6px);
-    border-color:rgba(255,31,45,.35);
+    border-color:rgba(0,149,230,.35);
 }
 
 .testimonial img{
+    width:55px;
+    height:55px;
+    border-radius:50%;
+    object-fit:cover;
     border:2px solid var(--secondary);
+    flex-shrink:0;
 }
 
 .testimonial p{
