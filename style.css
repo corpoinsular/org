@@ -43,7 +43,22 @@ img{
     width:min(1200px,92%);
     margin:auto;
 }
+.titulo-inicio{
+  width: 100vw;
+  margin-left: calc(50% - 50vw);
+  padding: 0 5vw;
 
+  font-size: clamp(2.5rem, 6vw, 5rem);
+  font-weight: 900;
+  text-transform: uppercase;
+  letter-spacing: 3px;
+  line-height: 1.1;
+
+  text-align: left;
+}
+.titulo-inicio {
+  letter-spacing: 4px;
+}
 /* ==========================
    NAVBAR
 ========================== */
@@ -463,21 +478,4 @@ section{
     display:block;
     color:#fff;
     font-size:.95rem;
-}
-.titulo-inicio {
-  width: 100%;
-  max-width: 100%;
-  margin: 0;
-  padding: 0 5vw;
-
-  font-size: clamp(2.5rem, 6vw, 5rem);
-  font-weight: 900;
-  text-transform: uppercase;
-  letter-spacing: 2px;
-
-  text-align: left; /* clave para ocupar horizontalmente */
-  line-height: 1.1;
-}
-.titulo-inicio {
-  letter-spacing: 4px;
 }
