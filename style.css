@@ -466,11 +466,18 @@ section{
 }
 .titulo-inicio {
   width: 100%;
-  display: flex;
-  justify-content: space-between; /* estira el texto */
-  align-items: center;
-  font-size: clamp(2rem, 5vw, 4rem);
+  max-width: 100%;
+  margin: 0;
+  padding: 0 5vw;
+
+  font-size: clamp(2.5rem, 6vw, 5rem);
   font-weight: 900;
   text-transform: uppercase;
-  padding: 20px 5vw;
+  letter-spacing: 2px;
+
+  text-align: left; /* clave para ocupar horizontalmente */
+  line-height: 1.1;
+}
+.titulo-inicio {
+  letter-spacing: 4px;
 }
