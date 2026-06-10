@@ -1,19 +1,38 @@
-/* ===================================
-   CORPORACIÓN INSULAR DIGITAL
-   STYLE.CSS PREMIUM
-=================================== */
-
 :root{
-    --red:#ff1f2d;
-    --red-dark:#d80f20;
-    --black:#02040a;
+
+    /* COLORES PRINCIPALES */
+
+    --primary:#002D9C;
+    --secondary:#0095E6;
+    --accent:#D62828;
+
+    /* TERRITORIO */
+
+    --sand:#D9A441;
+
+    /* NEUTROS */
+
+    --black:#02040A;
     --nav:#050811;
-    --card:#07101d;
-    --white:#ffffff;
-    --gray:#c4c9d4;
+    --card:#07101D;
+
+    --white:#FFFFFF;
+
+    --gray:#C4C9D4;
+    --gray-dark:#6B7280;
+
+    /* AZULES SUAVES */
+
+    --light-blue:#CDECF7;
+
+    /* EFECTOS */
+
     --line:rgba(255,255,255,.08);
+
     --radius:18px;
+
     --transition:.35s ease;
+
 }
 
 *{
