@@ -179,21 +179,23 @@ nav a:hover{
 
 
 /* ==========================================
-   HERO
+   HERO PREMIUM INSULAR+
 ========================================== */
 
-.hero-home{
-    min-height:110vh;
+.hero{
+    min-height:90vh;
 
     display:flex;
     align-items:center;
 
+    padding:140px 10% 100px;
+
     position:relative;
 
-    padding:160px 0 120px;
+    overflow:hidden;
 }
 
-.hero-home::before{
+.hero::before{
     content:"";
 
     position:absolute;
@@ -201,82 +203,95 @@ nav a:hover{
 
     background:
     linear-gradient(
-        rgba(0,0,0,.75),
-        rgba(0,0,0,.88)
+        rgba(0,0,0,.85),
+        rgba(0,0,0,.85)
     ),
     url("../assets/hero.jpg");
 
     background-size:cover;
     background-position:center;
+    background-repeat:no-repeat;
 }
 
 .hero-content{
     position:relative;
     z-index:2;
 
-    max-width:650px;
+    max-width:1000px;
 }
 
 .hero-tag{
-    display:inline-block;
-
     color:var(--red);
 
+    font-size:1rem;
     font-weight:900;
 
     letter-spacing:4px;
-
     text-transform:uppercase;
 
-    margin-bottom:25px;
+    margin-bottom:22px;
+
+    display:block;
 }
 
-.hero-home h1{
-    font-size:clamp(3.8rem,6vw,6rem);
+.hero h1{
+    font-size:5.5rem;
 
-    line-height:.92;
+    line-height:.95;
 
     font-weight:900;
 
     letter-spacing:-3px;
 
     margin-bottom:25px;
+
+    max-width:900px;
+
+    text-shadow:
+        0 4px 20px rgba(0,0,0,.6);
 }
 
-.hero-description{
-    font-size:1.2rem;
+.hero p{
+    font-size:1.25rem;
+
+    line-height:1.9;
 
     color:#e4e7ee;
 
-    max-width:620px;
+    max-width:760px;
+
+    text-shadow:
+        0 2px 12px rgba(0,0,0,.5);
 }
 
+.hero-buttons{
+    display:flex;
+    gap:18px;
 
-/* ==========================================
-   HERO STATS
-========================================== */
+    margin-top:40px;
+
+    flex-wrap:wrap;
+}
 
 .hero-stats{
     display:flex;
     gap:25px;
 
-    flex-wrap:wrap;
+    margin-top:50px;
 
-    margin-top:60px;
+    flex-wrap:wrap;
 }
 
 .stat{
-    min-width:190px;
+    min-width:180px;
 
     padding:25px;
 
-    background:
-    rgba(7,16,29,.75);
+    background:rgba(7,16,29,.75);
 
     backdrop-filter:blur(20px);
 
-    border:
-    1px solid rgba(255,255,255,.08);
+    border:1px solid rgba(255,255,255,.08);
 
     border-radius:18px;
 }
@@ -289,7 +304,6 @@ nav a:hover{
 .stat span{
     color:#c4c9d4;
 }
-
 
 /* ==========================================
    SECTION TITLE
