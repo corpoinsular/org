@@ -1,92 +1,92 @@
 
 /* ==================================================
-   ESTILO PREMIUM INSULAR+.CSS
+   INSULAR+ PREMIUM STYLE.CSS
    Corporación Insular Digital
-=================================================== */
+================================================== */
 
-:raíz{
---rojo:#ff1f2d;
---rojo-oscuro:#d80f20;
---azul:#163A59;
---luz-azul:#1f5c90;
---negro:#02040a;
+:root{
+--red:#ff1f2d;
+--red-dark:#d80f20;
+--blue:#163A59;
+--blue-light:#1f5c90;
+--black:#02040a;
 --nav:#050811;
---tarjeta:#07101d;
---blanco:#ffffff;
---gris:#c4c9d4;
---línea:rgba(255,255,255,.08);
---radio:18px;
---transición: 0,35 s de facilidad;
---contenedor:1200px;
+--card:#07101d;
+--white:#ffffff;
+--gray:#c4c9d4;
+--line:rgba(255,255,255,.08);
+--radius:18px;
+--transition:.35s ease;
+--container:1200px;
 }
 
 *{
-margen:0;
-relleno:0;
+margin:0;
+padding:0;
 box-sizing:border-box;
 font-family:'Inter',sans-serif;
 }
 
 html{
-comportamiento de desplazamiento: suave;
+scroll-behavior:smooth;
 }
 
-cuerpo{
-fondo:var(--negro);
+body{
+background:var(--black);
 color:var(--white);
-desbordamiento-x:oculto;
-interlineado: 1,7;
+overflow-x:hidden;
+line-height:1.7;
 }
 
-imagen{
-ancho máximo: 100%;
-mostrar:bloque;
+img{
+max-width:100%;
+display:block;
 }
 
-.recipiente{
-ancho:min(var(--contenedor),92%);
-margen:automático;
+.container{
+width:min(var(--container),92%);
+margin:auto;
 }
 
-sección{
-relleno: 120px 0;
+section{
+padding:120px 0;
 }
 
 ::-webkit-scrollbar{
-ancho:10px;
+width:10px;
 }
 
 ::-webkit-scrollbar-track{
-fondo:#02040a;
+background:#02040a;
 }
 
 ::-webkit-scrollbar-thumb{
-fondo:#ff1f2d;
-radio de borde: 50px;
+background:#ff1f2d;
+border-radius:50px;
 }
 
-/* ==================== NAVBAR ===================== */
+/* ==================== NAVBAR ==================== */
 
-.barra de navegación{
-posición:pegajosa;
-arriba:0;
-índice z: 9999;
-fondo:rgba(5,8,17,.85);
-filtro de fondo: desenfoque (25px);
-borde inferior: var sólido de 1px (--línea);
+.navbar{
+position:sticky;
+top:0;
+z-index:9999;
+background:rgba(5,8,17,.85);
+backdrop-filter:blur(25px);
+border-bottom:1px solid var(--line);
 }
 
 .nav-flex{
-pantalla:flex;
-justificar-contenido:espacio-entre;
-alinear-elementos:centro;
-relleno: 18px 0;
+display:flex;
+justify-content:space-between;
+align-items:center;
+padding:18px 0;
 }
 
 .logo{
-tamaño de fuente: 1,8rem;
-peso de fuente: 900;
-decoración de texto: ninguna;
+font-size:1.8rem;
+font-weight:900;
+text-decoration:none;
 color:#fff;
 }
 
@@ -94,154 +94,154 @@ color:#fff;
 color:var(--red);
 }
 
-navegación{
-pantalla:flex;
-alinear-elementos:centro;
-espacio: 20px;
+nav{
+display:flex;
+align-items:center;
+gap:20px;
 }
 
-navegación a{
+nav a{
 color:#fff;
-decoración de texto: ninguna;
-peso de fuente: 600;
-relleno: 10px 14px;
-radio de borde: 10px;
-transición:var(--transición);
+text-decoration:none;
+font-weight:600;
+padding:10px 14px;
+border-radius:10px;
+transition:var(--transition);
 }
 
-navegación a:hover,
-navegación a.activa{
+nav a:hover,
+nav a.active{
 color:var(--red);
-fondo:rgba(255,31,45,.08);
+background:rgba(255,31,45,.08);
 }
 
 .btn-nav{
-fondo:var(--red);
+background:var(--red);
 color:#fff;
-relleno: 12px 18px;
-radio de borde: 12px;
-peso de fuente: 800;
+padding:12px 18px;
+border-radius:12px;
+font-weight:800;
 }
 
 .btn-nav:hover{
-fondo:var(--rojo-oscuro);
-transformar:translateY(-3px);
+background:var(--red-dark);
+transform:translateY(-3px);
 }
 
-/* ==================== HÉROE ==================== */
+/* ==================== HERO ==================== */
 
 .hero-home{
-altura mínima: 100vh;
-pantalla:flex;
-alinear-elementos:centro;
-posición:relativa;
-relleno: 160px 0 120px;
+min-height:100vh;
+display:flex;
+align-items:center;
+position:relative;
+padding:160px 0 120px;
 }
 
 .hero-home::before{
-contenido:"";
-posición:absoluta;
-recuadro:0;
-fondo:
-gradiente lineal(
+content:"";
+position:absolute;
+inset:0;
+background:
+linear-gradient(
 rgba(0,0,0,.75),
 rgba(0,0,0,.88)
 ),
 url("../assets/hero.jpg");
-tamaño de fondo: cubrir;
-posición de fondo:centro;
+background-size:cover;
+background-position:center;
 }
 
 .hero-content{
-posición:relativa;
-índice z:2;
-ancho máximo: 1000px;
+position:relative;
+z-index:2;
+max-width:1000px;
 }
 
-.etiqueta-héroe,
+.hero-tag,
 .section-tag{
-mostrar:bloque-en-línea;
+display:inline-block;
 color:var(--red);
-peso de fuente: 900;
-espaciado entre letras: 4px;
-transformación de texto: mayúsculas;
-margen inferior: 25px;
+font-weight:900;
+letter-spacing:4px;
+text-transform:uppercase;
+margin-bottom:25px;
 }
 
 .hero-home h1{
-tamaño de fuente:clamp(4rem,8vw,7rem);
-interlineado: 0,9;
-peso de fuente: 900;
-espaciado entre letras: -4px;
-margen inferior: 25px;
+font-size:clamp(4rem,8vw,7rem);
+line-height:.9;
+font-weight:900;
+letter-spacing:-4px;
+margin-bottom:25px;
 }
 
-.descripción-del-héroe{
-tamaño de fuente: 1,25rem;
+.hero-description{
+font-size:1.25rem;
 color:#e4e7ee;
-ancho máximo: 780px;
+max-width:780px;
 }
 
 .hero-buttons{
-pantalla:flex;
-espacio: 15px;
+display:flex;
+gap:15px;
 flex-wrap:wrap;
-margen superior: 40px;
+margin-top:40px;
 }
 
 .btn-primary,
 .btn-outline,
-.btn-rojo{
+.btn-red{
 display:inline-flex;
-alinear-elementos:centro;
-justificar-contenido:centro;
-relleno: 15px 28px;
-radio de borde: 14px;
-peso de fuente: 800;
-decoración de texto: ninguna;
-transición:var(--transición);
+align-items:center;
+justify-content:center;
+padding:15px 28px;
+border-radius:14px;
+font-weight:800;
+text-decoration:none;
+transition:var(--transition);
 }
 
 .btn-primary,
-.btn-rojo{
-fondo:var(--red);
+.btn-red{
+background:var(--red);
 color:#fff;
 }
 
 .btn-primary:hover,
 .btn-red:hover{
-fondo:var(--rojo-oscuro);
-transformar:translateY(-4px);
+background:var(--red-dark);
+transform:translateY(-4px);
 }
 
 .btn-outline{
-borde:1px sólido rgba(255,255,255,.25);
+border:1px solid rgba(255,255,255,.25);
 color:#fff;
 }
 
 .btn-outline:hover{
-fondo:#fff;
+background:#fff;
 color:#000;
 }
 
 .hero-stats{
-pantalla:flex;
-espacio: 25px;
-margen superior: 50px;
+display:flex;
+gap:25px;
+margin-top:50px;
 flex-wrap:wrap;
 }
 
 .stat{
-ancho mínimo: 190px;
-relleno: 25px;
-fondo:rgba(7,16,29,.75);
-filtro de fondo: desenfoque (20px);
-borde:1px sólido rgba(255,255,255,.08);
-radio de borde: 18px;
+min-width:190px;
+padding:25px;
+background:rgba(7,16,29,.75);
+backdrop-filter:blur(20px);
+border:1px solid rgba(255,255,255,.08);
+border-radius:18px;
 }
 
 .stat h3{
-tamaño de fuente: 2,5rem;
+font-size:2.5rem;
 color:var(--red);
 }
 
@@ -249,77 +249,77 @@ color:var(--red);
 color:#c4c9d4;
 }
 
-/* ==================== TITULOS ===================== */
+/* ==================== TITULOS ==================== */
 
-.encabezado-de-sección,
+.section-header,
 .section-title{
-alineación de texto:centro;
-margen inferior: 70px;
+text-align:center;
+margin-bottom:70px;
 }
 
 .section-header h2,
 .section-title h2{
-tamaño de fuente:clamp(2.5rem,5vw,4.5rem);
-altura de línea:1;
-margen superior: 15px;
+font-size:clamp(2.5rem,5vw,4.5rem);
+line-height:1;
+margin-top:15px;
 }
 
 .section-header p,
 .section-title p{
-ancho máximo: 800px;
-margen:automático;
+max-width:800px;
+margin:auto;
 color:#c4c9d4;
 }
 
-/* ==================== ACERCA DE ==================== */
+/* ==================== ABOUT ==================== */
 
 .about-grid,
 .programa-grid{
-mostrar:cuadrícula;
-columnas-de-plantilla-de-cuadrícula:1fr 1fr;
-espacio: 70px;
-alinear-elementos:centro;
+display:grid;
+grid-template-columns:1fr 1fr;
+gap:70px;
+align-items:center;
 }
 
 .about-content h2{
-tamaño de fuente: 4rem;
-altura de línea:1;
-margen inferior: 25px;
+font-size:4rem;
+line-height:1;
+margin-bottom:25px;
 }
 
 .about-content p{
 color:var(--gray);
-margen inferior: 18px;
+margin-bottom:18px;
 }
 
 .about-image img,
 .programa-image img{
-altura: 650px;
-ancho:100%;
-ajuste-objeto:cubrir;
-radio de borde: 24px;
+height:650px;
+width:100%;
+object-fit:cover;
+border-radius:24px;
 }
 
-/* ==================== TARJETAS ==================== */
+/* ==================== CARDS ==================== */
 
-.cuadrícula-de-impacto,
+.impact-grid,
 .valores-grid{
-mostrar:cuadrícula;
+display:grid;
 grid-template-columns:repeat(auto-fit,minmax(250px,1fr));
-espacio: 25px;
-margen superior: 40px;
+gap:25px;
+margin-top:40px;
 }
 
-.tarjeta-de-impacto,
+.impact-card,
 .valor-card,
-.tarjeta-de-testimonio,
-Tarjeta .mv,
+.testimonial-card,
+.mv-card,
 .paso-card{
-fondo:var(--card);
-borde:1px sólido var(--line);
-radio de borde: 22px;
-relleno: 35px;
-transición:var(--transición);
+background:var(--card);
+border:1px solid var(--line);
+border-radius:22px;
+padding:35px;
+transition:var(--transition);
 }
 
 .impact-card:hover,
@@ -327,132 +327,132 @@ transición:var(--transición);
 .testimonial-card:hover,
 .mv-card:hover,
 .paso-card:hover{
-transformar:translateY(-10px);
-color del borde:rgba(255,31,45,.35);
+transform:translateY(-10px);
+border-color:rgba(255,31,45,.35);
 box-shadow:0 25px 60px rgba(0,0,0,.4);
 }
 
-.tarjeta-de-impacto i,
+.impact-card i,
 .valor-card i,
 .linea-card i{
-tamaño de fuente: 65px;
+font-size:65px;
 color:var(--red);
-margen inferior: 20px;
+margin-bottom:20px;
 }
 
-.impacto-tarjeta h3{
-margen inferior: 15px;
+.impact-card h3{
+margin-bottom:15px;
 }
 
-/* ==================== MISIÓN VISIÓN ===================== */
+/* ==================== MISION VISION ==================== */
 
-.misión-visión{
-mostrar:cuadrícula;
-columnas-de-plantilla-de-cuadrícula:1fr 1fr;
-espacio: 30px;
+.mision-vision{
+display:grid;
+grid-template-columns:1fr 1fr;
+gap:30px;
 }
 
 .mv-card span{
 color:var(--red);
-peso de fuente: 800;
-espaciado entre letras: 2px;
+font-weight:800;
+letter-spacing:2px;
 }
 
-/* ==================== COMO TRABAJAMOS ===================== */
+/* ==================== COMO TRABAJAMOS ==================== */
 
 .pasos-grid{
-mostrar:cuadrícula;
-columnas-de-plantilla-de-cuadrícula:repetir(4,1fr);
-espacio: 30px;
-margen superior: 60px;
+display:grid;
+grid-template-columns:repeat(4,1fr);
+gap:30px;
+margin-top:60px;
 }
 
 .paso-card{
-posición:relativa;
-desbordamiento:oculto;
+position:relative;
+overflow:hidden;
 }
 
 .paso-card::before{
-contenido:"";
-posición:absoluta;
-izquierda:0;
-arriba:0;
-ancho:100%;
-altura: 4px;
-fondo:var(--red);
+content:"";
+position:absolute;
+left:0;
+top:0;
+width:100%;
+height:4px;
+background:var(--red);
 }
 
 .paso-icon{
-ancho: 90px;
-altura: 90px;
-radio de borde: 20px;
-fondo:gradiente-lineal(
-135 grados,
+width:90px;
+height:90px;
+border-radius:20px;
+background:linear-gradient(
+135deg,
 rgba(255,31,45,.15),
 rgba(255,31,45,.05)
 );
-pantalla:flex;
-alinear-elementos:centro;
-justificar-contenido:centro;
-margen inferior: 25px;
+display:flex;
+align-items:center;
+justify-content:center;
+margin-bottom:25px;
 }
 
 .paso-icon i{
-tamaño de fuente: 42px;
+font-size:42px;
 color:var(--red);
 }
 
-/* ==================== COLECTIVO ===================== */
+/* ==================== COLECTIVO ==================== */
 
 .colectivo-banner{
-fondo:
-gradiente lineal(
-135 grados,
+background:
+linear-gradient(
+135deg,
 #c21223,
 #07152c
 );
-alineación de texto:centro;
+text-align:center;
 }
 
 .colectivo-banner h2{
-tamaño de fuente: 4rem;
-margen inferior: 20px;
+font-size:4rem;
+margin-bottom:20px;
 }
 
 /* ==================== TESTIMONIOS ==================== */
 
 .testimonios-grid{
-mostrar:cuadrícula;
+display:grid;
 grid-template-columns:repeat(auto-fit,minmax(320px,1fr));
-espacio: 25px;
+gap:25px;
 }
 
-/* ===================== ALIADOS ===================== */
+/* ==================== ALIADOS ==================== */
 
 .aliados-grid{
-mostrar:cuadrícula;
-columnas-de-plantilla-de-cuadrícula:repetir(4,1fr);
-espacio: 25px;
-margen superior: 50px;
+display:grid;
+grid-template-columns:repeat(4,1fr);
+gap:25px;
+margin-top:50px;
 }
 
 .aliado{
-altura: 160px;
-fondo:var(--card);
-borde:1px sólido var(--line);
-radio de borde: 20px;
-pantalla:flex;
-alinear-elementos:centro;
-justificar-contenido:centro;
+height:160px;
+background:var(--card);
+border:1px solid var(--line);
+border-radius:20px;
+display:flex;
+align-items:center;
+justify-content:center;
 }
 
 /* ==================== CTA ==================== */
 
 .cta,
 .cta-home{
-alineación de texto:centro;
-fondo:gradiente-lineal(
-90 grados,
+text-align:center;
+background:linear-gradient(
+90deg,
 #c21223,
 #07152c
 );
@@ -460,32 +460,32 @@ fondo:gradiente-lineal(
 
 .cta h2,
 .cta-home h2{
-tamaño de fuente: 3,5rem;
-margen inferior: 20px;
+font-size:3.5rem;
+margin-bottom:20px;
 }
 
-/* ==================== PIE DE PÁGINA ==================== */
+/* ==================== FOOTER ==================== */
 
-.pie de página{
-fondo:#010204;
-borde superior: 1px sólido rgba(255,255,255,.08);
-relleno: 90px 0 30px;
+.footer{
+background:#010204;
+border-top:1px solid rgba(255,255,255,.08);
+padding:90px 0 30px;
 }
 
 .footer-container{
-mostrar:cuadrícula;
-columnas-de-plantilla-de-cuadrícula:2fr 1fr 1fr;
-espacio: 40px;
+display:grid;
+grid-template-columns:2fr 1fr 1fr;
+gap:40px;
 }
 
 .footer h4{
-margen inferior: 15px;
+margin-bottom:15px;
 }
 
-.pie de página a{
-mostrar:bloque;
-margen:8px 0;
-decoración de texto: ninguna;
+.footer a{
+display:block;
+margin:8px 0;
+text-decoration:none;
 color:#c4c9d4;
 }
 
@@ -494,43 +494,43 @@ color:#c4c9d4;
 }
 
 .footer-bottom{
-margen superior: 40px;
-relleno superior: 20px;
-borde superior: 1px sólido rgba(255,255,255,.08);
-alineación de texto:centro;
+margin-top:40px;
+padding-top:20px;
+border-top:1px solid rgba(255,255,255,.08);
+text-align:center;
 }
 
 /* ==================== WHATSAPP ==================== */
 
 .whatsapp-float{
-posición:fija;
-derecha: 25px;
-parte inferior: 25px;
-ancho: 65px;
-altura: 65px;
-radio de borde: 50%;
-fondo:#25D366;
-pantalla:flex;
-alinear-elementos:centro;
-justificar-contenido:centro;
-tamaño de fuente: 2rem;
+position:fixed;
+right:25px;
+bottom:25px;
+width:65px;
+height:65px;
+border-radius:50%;
+background:#25D366;
+display:flex;
+align-items:center;
+justify-content:center;
+font-size:2rem;
 color:#fff;
-decoración de texto: ninguna;
-índice z: 9999;
+text-decoration:none;
+z-index:9999;
 box-shadow:0 15px 35px rgba(0,0,0,.4);
 }
 
-/* ==================== ANIMACIONES ===================== */
+/* ==================== ANIMACIONES ==================== */
 
-.revelar{
-opacidad:0;
-transformar:translateY(60px);
-transición: .8s facilidad;
+.reveal{
+opacity:0;
+transform:translateY(60px);
+transition:.8s ease;
 }
 
-.revelar.activo{
-opacidad:1;
-transformar:ninguno;
+.reveal.active{
+opacity:1;
+transform:none;
 }
 
 @keyframes float{
@@ -538,48 +538,48 @@ transformar:ninguno;
 50%{transform:translateY(-10px)}
 }
 
-.flotante{
-animación:flotar 4s entrada-salida infinita;
+.floating{
+animation:float 4s ease-in-out infinite;
 }
 
-/* ==================== RESPONSIVO ==================== */
+/* ==================== RESPONSIVE ==================== */
 
 @media(max-width:1100px){
 
 .about-grid,
 .programa-grid,
-.misión-visión,
+.mision-vision,
 .footer-container{
-columnas-de-plantilla-de-cuadrícula:1fr;
+grid-template-columns:1fr;
 }
 
 .pasos-grid{
-columnas-de-plantilla-de-cuadrícula:repetir(2,1fr);
+grid-template-columns:repeat(2,1fr);
 }
 
 .hero-home h1{
-tamaño de fuente: 4,5rem;
+font-size:4.5rem;
 }
 
 }
 
 @media(max-width:768px){
 
-navegación{
-mostrar:ninguno;
+nav{
+display:none;
 }
 
 .hero-home{
-relleno superior: 120px;
+padding-top:120px;
 }
 
 .hero-home h1{
-tamaño de fuente: 3,2rem;
-espaciado entre letras: -2px;
+font-size:3.2rem;
+letter-spacing:-2px;
 }
 
 .about-content h2{
-tamaño de fuente: 2,8rem;
+font-size:2.8rem;
 }
 
 .hero-stats{
@@ -588,17 +588,17 @@ flex-direction:column;
 
 .pasos-grid,
 .aliados-grid{
-columnas-de-plantilla-de-cuadrícula:1fr;
+grid-template-columns:1fr;
 }
 
 .cta h2,
 .cta-home h2,
 .colectivo-banner h2{
-tamaño de fuente: 2,4rem;
+font-size:2.4rem;
 }
 
 .about-image img,
 .programa-image img{
-altura: 400px;
+height:400px;
 }
 }
