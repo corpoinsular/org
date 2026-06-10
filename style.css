@@ -626,3 +626,296 @@
     }
 
 }
+/* =========================
+   RESET
+========================= */
+
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+    font-family:'Inter',sans-serif;
+}
+
+body{
+    background:#02040a;
+    color:#fff;
+    overflow-x:hidden;
+    line-height:1.6;
+}
+
+/* =========================
+   HERO TAG
+========================= */
+
+.hero-tag{
+    color:var(--red);
+
+    font-size:.95rem;
+    font-weight:900;
+
+    letter-spacing:4px;
+    text-transform:uppercase;
+
+    display:block;
+    margin-bottom:20px;
+}
+
+/* =========================
+   SECTION HEADERS
+========================= */
+
+.section-header{
+    max-width:900px;
+    margin:0 auto 70px;
+    text-align:center;
+}
+
+.section-header h2{
+    font-size:clamp(2.2rem,4vw,3.8rem);
+    line-height:1.1;
+    margin-bottom:20px;
+}
+
+.section-header p{
+    color:var(--gray);
+    font-size:1.1rem;
+}
+
+.section-tag{
+    color:var(--red);
+    font-weight:900;
+    letter-spacing:3px;
+    text-transform:uppercase;
+}
+
+/* =========================
+   ABOUT CONTENT
+========================= */
+
+.about-content h2{
+    font-size:3rem;
+    line-height:1.1;
+    margin-bottom:25px;
+}
+
+.about-content p{
+    color:var(--gray);
+    margin-bottom:30px;
+    font-size:1.05rem;
+}
+
+/* =========================
+   IMPACT CARDS ICONS
+========================= */
+
+.impact-card i{
+    font-size:65px;
+    color:var(--red);
+    margin-bottom:25px;
+}
+
+.impact-card h3{
+    font-size:1.5rem;
+    margin-bottom:12px;
+}
+
+.impact-card p{
+    color:var(--gray);
+}
+
+/* =========================
+   PROGRAMA DESTACADO
+========================= */
+
+.programa-destacado{
+    padding:120px 10%;
+}
+
+.programa-grid{
+    display:grid;
+    grid-template-columns:1fr 1fr;
+    gap:80px;
+    align-items:center;
+}
+
+.programa-image img{
+    width:100%;
+    height:650px;
+    object-fit:cover;
+    border-radius:24px;
+}
+
+.programa-content h2{
+    font-size:3rem;
+    line-height:1.1;
+    margin:20px 0;
+}
+
+.programa-content p{
+    color:var(--gray);
+    margin-bottom:30px;
+    line-height:1.9;
+}
+
+/* =========================
+   COLECTIVO BANNER FIX
+========================= */
+
+.banner-content h2{
+    font-size:clamp(2.5rem,5vw,4.5rem);
+    line-height:1.1;
+    margin-bottom:30px;
+}
+
+/* =========================
+   ALIADOS
+========================= */
+
+.aliados{
+    padding:120px 10%;
+}
+
+.aliado-logo img{
+    max-width:160px;
+    max-height:80px;
+    width:auto;
+    height:auto;
+    object-fit:contain;
+}
+
+/* =========================
+   CTA HOME
+========================= */
+
+.cta-home p{
+    max-width:700px;
+    margin:0 auto 40px;
+    color:#e4e7ee;
+    font-size:1.15rem;
+}
+
+/* =========================
+   FRASE INSTITUCIONAL
+========================= */
+
+.frase-institucional{
+    padding:140px 10%;
+
+    text-align:center;
+
+    background:
+    linear-gradient(
+        180deg,
+        transparent,
+        rgba(255,31,45,.04)
+    );
+}
+
+.frase-content{
+    max-width:1000px;
+    margin:auto;
+}
+
+.frase-content h2{
+    font-size:clamp(2.4rem,5vw,4.8rem);
+    line-height:1.15;
+}
+
+/* =========================
+   FOOTER
+========================= */
+
+.footer{
+    background:#050811;
+    border-top:1px solid rgba(255,255,255,.08);
+    padding-top:100px;
+}
+
+.footer-container{
+    max-width:1200px;
+    margin:auto;
+    padding:0 20px;
+
+    display:grid;
+    grid-template-columns:2fr 1fr 1fr 1fr;
+    gap:60px;
+}
+
+.footer-brand p{
+    margin-top:20px;
+    color:var(--gray);
+}
+
+.footer-links,
+.footer-contacto{
+    display:flex;
+    flex-direction:column;
+}
+
+.footer-links h4,
+.footer-contacto h4{
+    margin-bottom:20px;
+}
+
+.footer-links a{
+    text-decoration:none;
+    color:var(--gray);
+    margin-bottom:12px;
+    transition:.3s;
+}
+
+.footer-links a:hover{
+    color:var(--red);
+}
+
+.footer-contacto p{
+    color:var(--gray);
+    margin-bottom:10px;
+}
+
+.footer-bottom{
+    margin-top:80px;
+    border-top:1px solid rgba(255,255,255,.08);
+    text-align:center;
+    padding:25px;
+    color:var(--gray);
+}
+
+/* =========================
+   RESPONSIVE
+========================= */
+
+@media(max-width:1000px){
+
+    .programa-grid{
+        grid-template-columns:1fr;
+    }
+
+    .footer-container{
+        grid-template-columns:1fr 1fr;
+    }
+
+}
+
+@media(max-width:768px){
+
+    .footer-container{
+        grid-template-columns:1fr;
+    }
+
+    .about-content h2,
+    .programa-content h2{
+        font-size:2.2rem;
+    }
+
+    .frase-content h2{
+        font-size:2.4rem;
+    }
+
+    .hero-buttons{
+        flex-direction:column;
+        align-items:flex-start;
+    }
+
+}
