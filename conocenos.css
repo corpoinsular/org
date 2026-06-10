@@ -207,7 +207,32 @@ nav a.active{
     text-shadow:
         0 2px 12px rgba(0,0,0,.5);
 }
+.hero-stats{
+    display:flex;
+    gap:25px;
+    margin-top:40px;
+    flex-wrap:wrap;
+}
 
+.stat{
+    min-width:180px;
+    padding:25px;
+
+    background:rgba(7,16,29,.75);
+    backdrop-filter:blur(20px);
+
+    border:1px solid rgba(255,255,255,.08);
+    border-radius:18px;
+}
+
+.stat h3{
+    font-size:2.5rem;
+    color:var(--red);
+}
+
+.stat span{
+    color:#c4c9d4;
+}
 /* =========================
    SECCIONES
 ========================= */
@@ -229,9 +254,8 @@ nav a.active{
 }
 
 .about-image img{
-    width:100%;
-    border-radius:var(--radius);
-    border:1px solid var(--line);
+    height:650px;
+    object-fit:cover;
 }
 
 .about-content h2{
@@ -273,11 +297,13 @@ nav a.active{
 }
 
 .valor-card i{
-    font-size:44px;
+    font-size:72px;
     color:var(--red);
     margin-bottom:12px;
 }
-
+.valor-card{
+    min-height:240px;
+}
 /* =========================
    CARDS GENERALES
 ========================= */
@@ -343,4 +369,34 @@ nav a.active{
     background:var(--red-dark);
     transform:translateY(-3px);
     box-shadow:0 15px 30px rgba(255,31,45,.35);
+}
+.mision-vision{
+    display:grid;
+    grid-template-columns:1fr 1fr;
+    gap:30px;
+    padding:80px 10%;
+}
+
+.mv-card{
+    background:#07101d;
+    border:1px solid rgba(255,255,255,.08);
+
+    border-radius:20px;
+    padding:40px;
+}
+
+.mv-card span{
+    color:var(--red);
+    font-weight:800;
+    letter-spacing:2px;
+}
+
+.mv-card h3{
+    margin-top:15px;
+    line-height:1.5;
+}
+.linea-card i{
+    font-size:60px;
+    color:var(--red);
+    margin-bottom:20px;
 }
