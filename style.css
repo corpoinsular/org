@@ -421,3 +421,46 @@ section{
     }
 
 }
+.testimonial{
+    background:#07101d;
+    border:1px solid rgba(255,255,255,.08);
+    border-radius:20px;
+
+    padding:25px;
+
+    display:flex;
+    align-items:flex-start;
+
+    gap:15px;
+
+    transition:.35s ease;
+}
+
+.testimonial:hover{
+    transform:translateY(-6px);
+    border-color:rgba(255,31,45,.35);
+}
+
+.testimonial img{
+    width:55px;
+    height:55px;
+
+    border-radius:50%;
+    object-fit:cover;
+
+    border:2px solid #ff1f2d;
+
+    flex-shrink:0;
+}
+
+.testimonial p{
+    color:#c4c9d4;
+    margin-bottom:8px;
+    line-height:1.7;
+}
+
+.testimonial strong{
+    display:block;
+    color:#fff;
+    font-size:.95rem;
+}
