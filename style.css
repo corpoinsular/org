@@ -79,7 +79,9 @@ img{
 }
 
 .logo img{
-    height:60px;
+    height:70px;
+    width:auto;
+    display:block;
 }
 
 .menu{
@@ -165,7 +167,7 @@ img{
         rgba(2,4,10,.65),
         rgba(2,4,10,.82)
     ),
-    url("assets/inicio1.jpg");
+    url("assets/inicio2.jpg");
 
     background-size:cover;
     background-position:center;
