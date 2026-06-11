@@ -187,12 +187,13 @@ img{
     margin-bottom:25px;
 }
 .hero h1{
-    font-size:clamp(3.2rem,8vw,6rem);
-    line-height:.95;
+    font-size:clamp(3.5rem,7vw,6rem);
+    line-height:1;
     font-weight:900;
     letter-spacing:-3px;
-    max-width:850px;
-    margin-bottom:25px;
+
+    max-width:1200px;
+    width:100%;
 }
 
 .hero p{
