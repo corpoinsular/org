@@ -294,17 +294,36 @@ section{
     transition:.35s ease;
 }
 
-.card:hover{
-    transform:translateY(-10px);
+.card i{
+    display:flex;
+    align-items:center;
+    justify-content:center;
 
-    border-color:rgba(31,143,229,.35);
+    width:110px;
+    height:110px;
 
-    box-shadow:
-    0 20px 40px rgba(10,46,168,.15);
+    margin:0 auto 25px;
+
+    font-size:3rem;
+
+    color:var(--secondary);
+
+    background:rgba(31,143,229,.12);
+
+    border:1px solid rgba(31,143,229,.25);
+
+    border-radius:50%;
+
+    transition:.35s ease;
 }
 
-.card i{
-    color:var(--secondary);
+.card:hover i{
+    transform:translateY(-5px) scale(1.05);
+
+    background:rgba(31,143,229,.18);
+
+    box-shadow:
+    0 15px 30px rgba(31,143,229,.20);
 }
 
 .card h3{
