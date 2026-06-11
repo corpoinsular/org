@@ -149,10 +149,12 @@ img{
     display:flex;
     align-items:center;
     position:relative;
-    padding:140px 10% 120px;
     overflow:hidden;
 }
-
+.hero .container{
+    position:relative;
+    z-index:2;
+}
 .hero::before{
     content:"";
     position:absolute;
