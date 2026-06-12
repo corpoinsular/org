@@ -65,6 +65,16 @@ img{
     z-index:9999;
     background:white;
 }
+.navbar .container{
+    display:flex;
+    align-items:center;
+    justify-content:space-between;
+}
+.logo img{
+    height:50px;
+    width:auto;
+    display:block;
+}
 .menu{
     display:flex;
     align-items:center;
@@ -96,13 +106,6 @@ img{
 .menu a:hover::after{
     width:100%;
 }
-
-.logo img{
-    height:50px;
-    width:auto;
-    display:block;
-}
-
 /* ==========================
    BOTONES
 ========================== */
