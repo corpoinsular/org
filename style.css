@@ -320,11 +320,10 @@ section{
    GRID 2 COLUMNAS
 ========================== */
 
-.grid-2{
+.cards{
     display:grid;
-    grid-template-columns:1fr 1fr;
-    gap:70px;
-    align-items:center;
+    grid-template-columns:repeat(4,1fr);
+    gap:20px;
 }
 
 .grid-2 img{
@@ -344,7 +343,7 @@ section{
 
     border-radius:24px;
 
-    padding:35px;
+    padding:25px;
 
     transition:.35s ease;
 }
@@ -571,4 +570,19 @@ section{
     backdrop-filter:blur(12px);
     border-radius:20px;
     padding:30px;
+}
+@media(max-width:1000px){
+
+    .cards{
+        grid-template-columns:repeat(2,1fr);
+    }
+
+}
+
+@media(max-width:768px){
+
+    .cards{
+        grid-template-columns:1fr;
+    }
+
 }
