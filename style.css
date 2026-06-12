@@ -423,16 +423,16 @@ section{
 
 .testimonials{
     display:grid;
-    grid-template-columns:
-    repeat(auto-fit,minmax(300px,1fr));
+    grid-template-columns:repeat(2,1fr);
     gap:25px;
 }
 
-.testimonial{
-    background:#07101d;
-    border-radius:20px;
-    padding:30px;
-    border:1px solid rgba(255,255,255,.08);
+@media(max-width:768px){
+
+    .testimonials{
+        grid-template-columns:1fr;
+    }
+
 }
 
 /* ==========================
@@ -634,36 +634,4 @@ section{
     }
 
 }
-.historias{
-    overflow:hidden;
-}
 
-.slider-testimonios{
-    width:100%;
-    overflow:hidden;
-}
-
-.slide-track{
-    display:flex;
-    gap:25px;
-
-    width:max-content;
-
-    animation:scrollHistorias 30s linear infinite;
-}
-
-.testimonial{
-    min-width:550px;
-}
-
-@keyframes scrollHistorias{
-
-    0%{
-        transform:translateX(0);
-    }
-
-    100%{
-        transform:translateX(-50%);
-    }
-
-}
