@@ -553,8 +553,14 @@ section{
 }
 .conocenos{
     background:
+    radial-gradient(
+        circle at 85% 50%,
+        rgba(99,197,255,.30),
+        transparent 30%
+    ),
+
     linear-gradient(
-        135deg,
+        90deg,
         #021024 0%,
         #06308F 45%,
         #1F8FE5 100%
