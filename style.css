@@ -74,10 +74,9 @@ img{
 }
 
 .logo img{
-    height:70px;
+    height:120px;
     width:auto;
-    display:block;
-    filter: brightness(10);
+    max-width:none;
 }
 
 .menu{
