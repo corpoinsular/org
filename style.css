@@ -65,7 +65,11 @@ img{
     z-index:9999;
     background:white;
 }
-
+.menu{
+    display:flex;
+    align-items:center;
+    gap:20px;
+}
 .menu a{
     color:#0b2c5f;
     text-decoration:none;
@@ -97,12 +101,6 @@ img{
     height:50px;
     width:auto;
     display:block;
-}
-
-.menu{
-    display:flex;
-    align-items:center;
-    gap:20px;
 }
 
 /* ==========================
