@@ -542,3 +542,18 @@ section{
   width: 100vw;
   max-width: 100vw;
 }
+.conocenos{
+    background:
+    linear-gradient(
+        135deg,
+        #021024 0%,
+        #06308F 45%,
+        #1F8FE5 100%
+    );
+}
+.conocenos .contenido{
+    background:rgba(255,255,255,.08);
+    backdrop-filter:blur(12px);
+    border-radius:20px;
+    padding:30px;
+}
