@@ -155,18 +155,26 @@ img{
     align-items:center;
     justify-content:center;
     padding:14px 28px;
-    background:var(--accent);
+
+    background:#4DB8FF;
+
     color:#fff;
     text-decoration:none;
+
     border-radius:14px;
+
     font-weight:800;
+
     transition:.3s;
+
+    box-shadow:
+    0 8px 25px rgba(77,184,255,.35);
 }
 
 .btn:hover,
 .btn-primary:hover{
     transform:translateY(-4px);
-    background:#B91C1C;
+    background:#7ACBFF;
 }
 
 .btn-outline{
