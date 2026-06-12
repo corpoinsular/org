@@ -400,8 +400,36 @@ section{
 ========================== */
 
 .programa{
+    position:relative;
+    overflow:hidden;
+
     background:rgba(255,255,255,.04);
     backdrop-filter:blur(10px);
+}
+
+.programa::before{
+    content:"";
+
+    position:absolute;
+    inset:0;
+
+    background-image:
+    url("assets/patron-tecnologia.png");
+
+    background-repeat:repeat;
+
+    background-size:140px;
+
+    opacity:.04;
+
+    pointer-events:none;
+
+    z-index:0;
+}
+
+.programa .container{
+    position:relative;
+    z-index:2;
 }
 
 /* ==========================
