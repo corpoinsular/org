@@ -67,7 +67,7 @@ img{
     width: 95%;
     max-width: 1300px;
 
-    background: rgba(255,255,255,0.95);
+    background: rgba(255,255,255,.96);
 
     border-radius: 18px;
 
@@ -220,7 +220,7 @@ img{
 
 .hero p{
     max-width:750px;
-    color:#d6dbe5;
+    color:#E5E7EB;
     font-size:1.2rem;
     line-height:1.9;
 }
@@ -310,8 +310,7 @@ section{
         rgba(4,10,20,.95)
     );
 
-    border:1px solid rgba(255,255,255,.08);
-
+    border:1px solid rgba(31,143,229,.20);
     border-radius:22px;
 
     padding:35px;
