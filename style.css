@@ -428,27 +428,27 @@ section{
    HISTORIAS QUE INSPIRAN - SOLO FONDO
 ================================ */
 
-section .container {
+.historias-inspiran .container {
     position: relative;
     overflow: hidden;
 }
 
-/* Fondo sin afectar layout */
-section .container::before {
+
+.historias-inspiran .container::before {
     content: "";
     position: absolute;
     inset: 0;
+
     background-image: url("assets/tecnología.jpg");
     background-size: cover;
     background-position: center;
     background-repeat: no-repeat;
 
-    opacity: 0.08;
-    pointer-events: none;
+    opacity: 0.10;
     z-index: 0;
+    pointer-events: none;
 }
 
-/* ASEGURA QUE TODO SIGA IGUAL ENCIMA */
 .section-title,
 .testimonials {
     position: relative;
