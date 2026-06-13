@@ -425,7 +425,7 @@ section{
 }
 
 /* ================================
-   HISTORIAS QUE INSPIRAN - FONDO
+   HISTORIAS QUE INSPIRAN - SOLO FONDO
 ================================ */
 
 section .container {
@@ -433,7 +433,7 @@ section .container {
     overflow: hidden;
 }
 
-/* Fondo con imagen tecnológica */
+/* Fondo sin afectar layout */
 section .container::before {
     content: "";
     position: absolute;
@@ -443,26 +443,38 @@ section .container::before {
     background-position: center;
     background-repeat: no-repeat;
 
-    opacity: 0.08; /* ajusta entre 0.05 y 0.15 */
-    filter: grayscale(100%) contrast(120%);
-
-    z-index: 0;
+    opacity: 0.08;
     pointer-events: none;
+    z-index: 0;
 }
 
-/* Asegurar que el contenido esté encima */
+/* ASEGURA QUE TODO SIGA IGUAL ENCIMA */
 .section-title,
 .testimonials {
     position: relative;
     z-index: 1;
 }
 
-/* Opcional: mejora visual de tarjetas */
+/* 🔥 IMPORTANTE: NO TOCAR LAYOUT */
+.testimonials {
+    display: grid; /* mantiene estructura si ya la tenías */
+    grid-template-columns: repeat(2, 1fr);
+    gap: 20px;
+}
+
+/* 🔥 RESTAURAR TARJETAS ORIGINALES */
 .testimonial {
-    background: rgba(7, 16, 29, 0.75);
-    backdrop-filter: blur(6px);
-    border-radius: 12px;
-    padding: 15px;
+    display: flex;
+    align-items: center;
+    gap: 15px;
+}
+
+/* 🔥 FOTO CIRCULAR (CLAVE) */
+.testimonial img {
+    width: 70px;
+    height: 70px;
+    border-radius: 50%;
+    object-fit: cover;
 }
 /* ==========================
    CTA
