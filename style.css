@@ -368,7 +368,6 @@ section{
     line-height: 1.6;
     font-size: 14.5px;
 }
-.card i{
 .card i {
     color: var(--secondary);
     font-size: 3.5rem;
@@ -623,30 +622,4 @@ section{
         grid-template-columns:1fr;
     }
 
-}
-/* TEST HISTORIAS */
-
-.testimonials{
-    display:grid !important;
-    grid-template-columns:repeat(2,1fr) !important;
-    gap:20px !important;
-}
-
-.testimonial{
-    display:flex !important;
-    align-items:center !important;
-    gap:15px !important;
-
-    background:#07101D !important;
-    border-radius:20px !important;
-    padding:20px !important;
-
-    border:1px solid rgba(255,255,255,.08) !important;
-}
-
-.testimonial img{
-    width:70px !important;
-    height:70px !important;
-    border-radius:50% !important;
-    object-fit:cover !important;
 }
