@@ -449,10 +449,19 @@ section{
     pointer-events: none;
 }
 
-.section-title,
 .testimonials {
     position: relative;
     z-index: 1;
+    /* NO TOCAR DISPLAY si ya funcionaba antes */
+}
+
+.testimonial {
+    background: rgba(7, 16, 29, 0.85); /* tarjeta oscura */
+    border-radius: 12px;
+    padding: 15px;
+    display: flex;
+    align-items: center;
+    gap: 15px;
 }
 
 /* 🔥 IMPORTANTE: NO TOCAR LAYOUT */
