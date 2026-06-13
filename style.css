@@ -414,102 +414,152 @@ section{
     position:relative;
     z-index:2;
 }
-
-/* ================================
-   HISTORIAS QUE INSPIRAN - SOLO FONDO
-================================ */
-
+/* =========================
+   CONTENEDOR GENERAL
+========================= */
 .historias-inspiran .container {
     position: relative;
     overflow: hidden;
     isolation: isolate;
-    padding: 70px 20px;
+    padding: 60px 20px;
 }
 
-/* Fondo suave SOLO imagen */
+/* =========================
+   FONDO PREMIUM (IMAGEN + GRADIENTE)
+========================= */
 .historias-inspiran .container::before {
     content: "";
     position: absolute;
     inset: 0;
 
-    background: url("assets/tecnología.jpg") center/cover no-repeat;
+    background:
+        linear-gradient(135deg, rgba(5,8,17,0.92), rgba(7,16,29,0.85)),
+        url("assets/tecnología.jpg") center/cover no-repeat;
 
-    opacity: 0.12;
-    z-index: -1;
+    opacity: 1;
+    z-index: -2;
 }
 
+/* CAPA DE BRILLO TECNOLÓGICO */
 .historias-inspiran .container::after {
     content: "";
     position: absolute;
     inset: 0;
 
-    background: linear-gradient(
-        180deg,
-        rgba(5, 8, 17, 0.65),
-        rgba(7, 16, 29, 0.55)
-    );
+    background: radial-gradient(circle at top left,
+        rgba(255, 31, 45, 0.12),
+        transparent 55%),
+        radial-gradient(circle at bottom right,
+        rgba(0, 140, 255, 0.10),
+        transparent 60%);
 
     z-index: -1;
     pointer-events: none;
 }
-.testimonial {
+
+/* =========================
+   GRID
+========================= */
+.testimonials {
     position: relative;
+    z-index: 1;
+
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 22px;
+}
+
+/* =========================
+   TARJETAS PREMIUM GLASS
+========================= */
+.testimonial {
     display: flex;
     align-items: center;
     gap: 16px;
 
-    padding: 22px;
+    padding: 20px 22px;
+    border-radius: 18px;
 
-    border-radius: 22px;
+    background: rgba(255, 255, 255, 0.04);
+    border: 1px solid rgba(255, 255, 255, 0.10);
 
-    background: rgba(255, 255, 255, 0.08);
-    border: 1px solid rgba(255,255,255,0.12);
+    backdrop-filter: blur(12px);
+    -webkit-backdrop-filter: blur(12px);
 
-    backdrop-filter: blur(10px);
-    -webkit-backdrop-filter: blur(10px);
+    box-shadow: 0 10px 30px rgba(0,0,0,0.25);
 
-    box-shadow: 0 10px 25px rgba(0,0,0,0.18);
+    transition: all 0.3s ease;
 
-    transition: all 0.35s ease;
-
+    /* animación inicial */
     opacity: 0;
     transform: translateY(20px);
+    animation: fadeUp 0.6s ease forwards;
 }
 
-/* Hover limpio premium */
+/* delay escalonado (efecto elegante) */
+.testimonial:nth-child(1) { animation-delay: 0.1s; }
+.testimonial:nth-child(2) { animation-delay: 0.2s; }
+.testimonial:nth-child(3) { animation-delay: 0.3s; }
+.testimonial:nth-child(4) { animation-delay: 0.4s; }
+
 .testimonial:hover {
     transform: translateY(-6px);
-    box-shadow: 0 18px 40px rgba(0,0,0,0.25);
-    border-color: rgba(255,255,255,0.25);
+    border-color: rgba(255, 31, 45, 0.35);
+    box-shadow: 0 18px 45px rgba(0,0,0,0.4);
 }
 
-/* borde sutil elegante */
-.testimonial::before {
-    content: "";
-    position: absolute;
-    inset: 0;
-    border-radius: 22px;
-    padding: 1px;
+/* =========================
+   IMAGEN (CÍRCULO PREMIUM)
+========================= */
+.testimonial img {
+    width: 74px;
+    height: 74px;
+    border-radius: 50%;
+    object-fit: cover;
 
-    background: linear-gradient(
-        120deg,
-        rgba(31,143,229,0.35),
-        rgba(214,40,40,0.25),
-        rgba(255,255,255,0.10)
-    );
-
-    -webkit-mask:
-        linear-gradient(#000 0 0) content-box,
-        linear-gradient(#000 0 0);
-    -webkit-mask-composite: xor;
-    mask-composite: exclude;
-
-    opacity: 0;
-    transition: 0.3s ease;
+    border: 2px solid rgba(255,255,255,0.18);
+    box-shadow: 0 6px 14px rgba(0,0,0,0.35);
 }
 
-.testimonial:hover::before {
-    opacity: 1;
+/* =========================
+   TEXTO
+========================= */
+.testimonial p {
+    margin: 0;
+    font-size: 14.8px;
+    line-height: 1.6;
+    color: #eaeaea;
+}
+
+.testimonial strong {
+    display: block;
+    margin-top: 6px;
+    font-size: 13px;
+    color: #ffffff;
+    opacity: 0.9;
+}
+
+/* =========================
+   ANIMACIÓN
+========================= */
+@keyframes fadeUp {
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* =========================
+   RESPONSIVE
+========================= */
+@media (max-width: 768px) {
+    .testimonials {
+        grid-template-columns: 1fr;
+    }
+
+    .testimonial {
+        flex-direction: row;
+    }
 }
 /* ==========================
    CTA
