@@ -482,8 +482,10 @@ section{
 .testimonial img {
     width: 70px;
     height: 70px;
-    border-radius: 50%;
+    border-radius: 50% !important;
     object-fit: cover;
+    display: block;
+    flex-shrink: 0;
 }
 /* ==========================
    CTA
