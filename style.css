@@ -511,13 +511,19 @@ section{
    IMAGEN (CÍRCULO PREMIUM)
 ========================= */
 .testimonial img {
-    width: 74px;
-    height: 74px;
-    border-radius: 50%;
+    width: 72px !important;
+    height: 72px !important;
+
+    min-width: 72px;
+    min-height: 72px;
+
+    border-radius: 50% !important;
     object-fit: cover;
 
-    border: 2px solid rgba(255,255,255,0.18);
-    box-shadow: 0 6px 14px rgba(0,0,0,0.35);
+    display: block;
+    flex-shrink: 0;
+
+    aspect-ratio: 1 / 1;
 }
 
 /* =========================
