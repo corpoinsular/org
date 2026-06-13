@@ -1,42 +1,12 @@
-*{
-    margin:0;
-    padding:0;
-    box-sizing:border-box;
-    font-family:'Montserrat',sans-serif;
-}
+/* ===================================
+   CORPORACIÓN INSULAR DIGITAL
+   CONOCENOS.CSS PREMIUM
+=================================== */
 
-html{
-    scroll-behavior:smooth;
-}
+/* ==========================
+   VARIABLES
+========================== */
 
-img{
-    max-width:100%;
-    display:block;
-}
-
-.section-header{
-    text-align:center;
-    max-width:900px;
-    margin:0 auto 60px;
-}
-
-.section-header h2{
-    font-size:3rem;
-    line-height:1.1;
-    font-weight:900;
-    text-transform:uppercase;
-}
-
-.section-header p{
-    color:#C4C9D4;
-    margin-top:20px;
-}
-
-.programas,
-.impacto,
-.como-trabajamos{
-    padding:110px 8%;
-}
 :root{
     --primary:#0A2EA8;
     --secondary:#1F8FE5;
@@ -55,19 +25,31 @@ img{
     --radius:20px;
     --transition:.35s ease;
 }
+
+/* ==========================
+   RESET
+========================== */
+
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+    font-family:'Montserrat',sans-serif;
+}
+
+html{
+    scroll-behavior:smooth;
+}
+
 body{
     background:
-    radial-gradient(
-        circle at top right,
-        rgba(31,143,229,.25),
-        transparent 35%
-    ),
+    radial-gradient(circle at top right,
+    rgba(31,143,229,.25),
+    transparent 35%),
 
-    radial-gradient(
-        circle at bottom left,
-        rgba(10,46,168,.25),
-        transparent 40%
-    ),
+    radial-gradient(circle at bottom left,
+    rgba(10,46,168,.25),
+    transparent 40%),
 
     linear-gradient(
         135deg,
@@ -80,10 +62,16 @@ body{
     overflow-x:hidden;
     line-height:1.7;
 }
-.logo img{
-    height:55px;
-    width:auto;
+
+img{
+    max-width:100%;
+    display:block;
 }
+
+/* ==========================
+   NAVBAR
+========================== */
+
 .navbar{
     position:fixed;
     top:15px;
@@ -97,22 +85,79 @@ body{
 
     border-radius:25px;
 
-    box-shadow:
-    0 10px 30px rgba(0,0,0,.12);
+    padding:12px 0;
 
     backdrop-filter:blur(10px);
 
+    box-shadow:0 10px 30px rgba(0,0,0,.12);
+
     z-index:9999;
 }
+
+.nav-flex{
+    width:min(1200px,92%);
+    margin:auto;
+
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+}
+
+.logo{
+    font-size:1.6rem;
+    font-weight:900;
+    text-decoration:none;
+    color:#0A2EA8;
+}
+
+.logo span{
+    color:#1F8FE5;
+}
+
+nav{
+    display:flex;
+    align-items:center;
+    gap:28px;
+}
+
 nav a{
+    text-decoration:none;
     color:#0A2EA8;
     font-weight:700;
     transition:.3s;
 }
 
-nav a:hover{
+nav a:hover,
+nav a.active{
     color:#1F8FE5;
 }
+
+.btn-nav{
+    padding:12px 20px;
+    border-radius:12px;
+
+    background:linear-gradient(
+        135deg,
+        #1F8FE5,
+        #63C5FF
+    );
+
+    color:#fff !important;
+}
+
+/* ==========================
+   HERO
+========================== */
+
+.hero-programas{
+    min-height:100vh;
+    display:flex;
+    align-items:center;
+    position:relative;
+    overflow:hidden;
+    padding:0 8%;
+}
+
 .hero-programas::before{
     content:"";
     position:absolute;
@@ -137,148 +182,22 @@ nav a:hover{
     background-size:cover;
     background-position:center;
 }
-.hero-tag{
-    color:var(--secondary);
-}
-.stat{
-    background:rgba(7,16,29,.80);
-
-    border-radius:20px;
-
-    backdrop-filter:blur(20px);
-
-    border:1px solid rgba(255,255,255,.08);
-}
-
-.stat h3{
-    color:var(--secondary);
-}
-.valor-card{
-    background:rgba(7,16,29,.88);
-
-    border-radius:22px;
-
-    border:1px solid rgba(255,255,255,.08);
-
-    padding:35px;
-
-    transition:.35s ease;
-
-    backdrop-filter:blur(12px);
-}
-
-.valor-card:hover{
-    transform:translateY(-10px);
-
-    border-color:rgba(31,143,229,.35);
-
-    box-shadow:
-    0 25px 50px rgba(0,0,0,.30);
-}
-
-.valor-card i{
-    font-size:78px;
-    color:var(--secondary);
-}
-.mv-card{
-    background:rgba(7,16,29,.88);
-
-    border-radius:24px;
-
-    border:1px solid rgba(255,255,255,.08);
-
-    backdrop-filter:blur(12px);
-}
-
-.mv-card span{
-    color:var(--secondary);
-}
-.paso-card{
-    background:rgba(7,16,29,.90);
-
-    border-radius:24px;
-
-    border:1px solid rgba(255,255,255,.08);
-
-    backdrop-filter:blur(12px);
-
-    overflow:hidden;
-}
-
-.paso-card::before{
-    background:linear-gradient(
-        90deg,
-        #0A2EA8,
-        #1F8FE5
-    );
-}
-
-.paso-card:hover{
-    border-color:rgba(31,143,229,.35);
-
-    box-shadow:
-    0 30px 60px rgba(0,0,0,.35);
-}
-.paso-icon{
-    width:100px;
-    height:100px;
-
-    border-radius:24px;
-
-    background:
-    linear-gradient(
-        135deg,
-        rgba(31,143,229,.15),
-        rgba(31,143,229,.05)
-    );
-}
-
-.paso-icon i{
-    font-size:48px;
-    color:var(--secondary);
-}
-.cta{
-    background:
-    linear-gradient(
-        135deg,
-        #0A2EA8 0%,
-        #1F8FE5 60%,
-        #0A2EA8 100%
-    );
-}
-.btn-red{
-    background:
-    linear-gradient(
-        135deg,
-        #1F8FE5,
-        #63C5FF
-    );
-}
-
-.btn-red:hover{
-    background:
-    linear-gradient(
-        135deg,
-        #63C5FF,
-        #8DDCFF
-    );
-
-    box-shadow:
-    0 15px 35px rgba(31,143,229,.35);
-}
-.hero-programas{
-    min-height:100vh;
-    display:flex;
-    align-items:center;
-    position:relative;
-    padding:0 8%;
-    overflow:hidden;
-}
 
 .hero-content{
     position:relative;
     z-index:2;
     max-width:1100px;
+}
+
+.hero-tag{
+    display:block;
+    margin-bottom:20px;
+
+    color:var(--secondary);
+
+    font-weight:900;
+    letter-spacing:4px;
+    text-transform:uppercase;
 }
 
 .hero-content h1{
@@ -288,6 +207,72 @@ nav a:hover{
     letter-spacing:-3px;
     margin-bottom:30px;
 }
+
+/* ==========================
+   HERO STATS
+========================== */
+
+.hero-stats{
+    display:flex;
+    gap:25px;
+    flex-wrap:wrap;
+}
+
+.stat{
+    min-width:180px;
+
+    padding:25px;
+
+    border-radius:20px;
+
+    background:rgba(7,16,29,.80);
+
+    border:1px solid rgba(255,255,255,.08);
+
+    backdrop-filter:blur(20px);
+}
+
+.stat h3{
+    font-size:2.5rem;
+    color:var(--secondary);
+}
+
+.stat span{
+    color:#C4C9D4;
+}
+
+/* ==========================
+   SECCIONES
+========================== */
+
+.programas,
+.impacto,
+.como-trabajamos{
+    padding:110px 8%;
+}
+
+.section-header{
+    text-align:center;
+    max-width:900px;
+    margin:0 auto 60px;
+}
+
+.section-header h2{
+    font-size:3rem;
+    line-height:1.1;
+    font-weight:900;
+    text-transform:uppercase;
+}
+
+.section-header p{
+    color:#C4C9D4;
+    margin-top:20px;
+}
+
+/* ==========================
+   QUIENES SOMOS
+========================== */
+
 .about-grid{
     display:grid;
     grid-template-columns:1fr 1fr;
@@ -296,9 +281,7 @@ nav a:hover{
 }
 
 .about-image img{
-    width:100%;
     border-radius:24px;
-    object-fit:cover;
 }
 
 .about-content h2{
@@ -310,6 +293,153 @@ nav a:hover{
     color:#E5E7EB;
     margin-bottom:15px;
 }
+
+/* ==========================
+   MISION VISION
+========================== */
+
+.mision-vision{
+    display:grid;
+    grid-template-columns:1fr 1fr;
+    gap:30px;
+    padding:0 8% 110px;
+}
+
+.mv-card{
+    background:rgba(7,16,29,.88);
+
+    border:1px solid rgba(255,255,255,.08);
+
+    border-radius:24px;
+
+    padding:40px;
+
+    backdrop-filter:blur(12px);
+}
+
+.mv-card span{
+    color:var(--secondary);
+    font-weight:800;
+}
+
+.mv-card h3{
+    margin-top:15px;
+}
+
+/* ==========================
+   VALORES
+========================== */
+
+.valores-grid{
+    display:grid;
+    grid-template-columns:repeat(3,1fr);
+    gap:25px;
+}
+
+.valor-card{
+    background:rgba(7,16,29,.88);
+
+    border-radius:22px;
+
+    border:1px solid rgba(255,255,255,.08);
+
+    padding:40px 25px;
+
+    text-align:center;
+
+    transition:.35s ease;
+}
+
+.valor-card:hover{
+    transform:translateY(-10px);
+
+    border-color:rgba(31,143,229,.35);
+
+    box-shadow:0 25px 50px rgba(0,0,0,.30);
+}
+
+.valor-card i{
+    font-size:78px;
+    color:var(--secondary);
+    margin-bottom:20px;
+}
+
+/* ==========================
+   COMO TRABAJAMOS
+========================== */
+
+.pasos-grid{
+    display:grid;
+    grid-template-columns:repeat(4,1fr);
+    gap:25px;
+}
+
+.paso-card{
+    background:rgba(7,16,29,.90);
+
+    border-radius:24px;
+
+    border:1px solid rgba(255,255,255,.08);
+
+    padding:35px;
+
+    backdrop-filter:blur(12px);
+
+    position:relative;
+    overflow:hidden;
+}
+
+.paso-card::before{
+    content:"";
+
+    position:absolute;
+    top:0;
+    left:0;
+
+    width:100%;
+    height:4px;
+
+    background:linear-gradient(
+        90deg,
+        #0A2EA8,
+        #1F8FE5
+    );
+}
+
+.paso-card:hover{
+    border-color:rgba(31,143,229,.35);
+
+    box-shadow:0 30px 60px rgba(0,0,0,.35);
+}
+
+.paso-icon{
+    width:100px;
+    height:100px;
+
+    border-radius:24px;
+
+    background:linear-gradient(
+        135deg,
+        rgba(31,143,229,.15),
+        rgba(31,143,229,.05)
+    );
+
+    display:flex;
+    align-items:center;
+    justify-content:center;
+
+    margin-bottom:25px;
+}
+
+.paso-icon i{
+    font-size:48px;
+    color:var(--secondary);
+}
+
+/* ==========================
+   ALIADOS
+========================== */
+
 .impact-grid{
     display:grid;
     grid-template-columns:repeat(4,1fr);
@@ -317,12 +447,39 @@ nav a:hover{
 }
 
 .impact-card{
-    background:rgba(7,16,29,.9);
+    background:rgba(7,16,29,.90);
+
     border-radius:20px;
+
     border:1px solid rgba(255,255,255,.08);
+
     padding:50px 20px;
+
     text-align:center;
 }
+
+/* ==========================
+   CTA
+========================== */
+
+.cta{
+    padding:110px 8%;
+    text-align:center;
+
+    background:linear-gradient(
+        135deg,
+        #0A2EA8 0%,
+        #1F8FE5 60%,
+        #0A2EA8 100%
+    );
+}
+
+.cta h2{
+    font-size:3rem;
+    margin-bottom:30px;
+}
+
+.btn-red,
 .btn-outline{
     display:inline-flex;
     align-items:center;
@@ -330,39 +487,51 @@ nav a:hover{
 
     padding:14px 28px;
 
-    border:1px solid rgba(255,255,255,.25);
-
-    color:#fff;
+    border-radius:14px;
 
     text-decoration:none;
 
-    border-radius:14px;
+    font-weight:800;
+}
 
+.btn-red{
+    background:linear-gradient(
+        135deg,
+        #1F8FE5,
+        #63C5FF
+    );
+
+    color:#fff;
+}
+
+.btn-outline{
+    border:1px solid rgba(255,255,255,.25);
+    color:#fff;
     margin-left:10px;
 }
 
-.btn-outline:hover{
-    background:#fff;
-    color:#000;
-}
-@media(max-width:900px){
+/* ==========================
+   RESPONSIVE
+========================== */
 
-    .about-grid{
-        grid-template-columns:1fr;
-    }
+@media(max-width:1000px){
 
-    .impact-grid{
-        grid-template-columns:1fr 1fr;
-    }
-
+    .about-grid,
     .mision-vision{
         grid-template-columns:1fr;
     }
 
-    .hero-content h1{
-        font-size:3rem;
+    .pasos-grid{
+        grid-template-columns:repeat(2,1fr);
     }
 
+    .impact-grid{
+        grid-template-columns:repeat(2,1fr);
+    }
+
+    .valores-grid{
+        grid-template-columns:repeat(2,1fr);
+    }
 }
 
 @media(max-width:768px){
@@ -371,14 +540,17 @@ nav a:hover{
         display:none;
     }
 
-    .impact-grid,
-    .valores-grid,
-    .pasos-grid{
-        grid-template-columns:1fr;
+    .hero-content h1{
+        font-size:3rem;
     }
 
     .hero-stats{
         flex-direction:column;
     }
 
+    .pasos-grid,
+    .impact-grid,
+    .valores-grid{
+        grid-template-columns:1fr;
+    }
 }
