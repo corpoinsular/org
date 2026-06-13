@@ -338,10 +338,10 @@ section{
 }
 
 .card {
-    background: rgba(255, 255, 255, 0.06);
+    background: rgba(255, 255, 255, 0.04);
     border: 1px solid rgba(255, 255, 255, 0.10);
 
-    box-shadow: 0 8px 20px rgba(0,0,0,0.25);
+    box-shadow: 0 8px 20px rgba(0,0,0,0.35);
 
     transition: all 0.3s ease;
 }
@@ -426,17 +426,15 @@ section{
     padding: 70px 20px;
 }
 
-/* Fondo base cinematic */
 .historias-inspiran .container::before {
     content: "";
     position: absolute;
     inset: 0;
 
-    background:
-        url("assets/tecnología.jpg") center/cover no-repeat;
+    background: url("assets/tecnología.jpg") center/cover no-repeat;
 
-    opacity: 0.18;
-    z-index: -2;
+    opacity: 0.10; /* suave, sin oscurecer */
+    z-index: -1;
 }
 
 .historias-inspiran .container::after {
