@@ -406,15 +406,22 @@ section{
 
 .programa::before{
     content:"";
+
     position:absolute;
     inset:0;
 
-    background-image:
-    radial-gradient(rgba(255,255,255,.03) 1px, transparent 1px);
+    background-image:url("assets/patron-tecnologia.png");
+    background-repeat:repeat;
+    background-size:180px;
 
-    background-size:80px 80px;
+    opacity:.04;
 
-    opacity:.5;
+    z-index:0;
+}
+
+.programa .container{
+    position:relative;
+    z-index:2;
 }
 
 /* ==========================
