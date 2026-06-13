@@ -1,3 +1,42 @@
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+    font-family:'Montserrat',sans-serif;
+}
+
+html{
+    scroll-behavior:smooth;
+}
+
+img{
+    max-width:100%;
+    display:block;
+}
+
+.section-header{
+    text-align:center;
+    max-width:900px;
+    margin:0 auto 60px;
+}
+
+.section-header h2{
+    font-size:3rem;
+    line-height:1.1;
+    font-weight:900;
+    text-transform:uppercase;
+}
+
+.section-header p{
+    color:#C4C9D4;
+    margin-top:20px;
+}
+
+.programas,
+.impacto,
+.como-trabajamos{
+    padding:110px 8%;
+}
 :root{
     --primary:#0A2EA8;
     --secondary:#1F8FE5;
@@ -40,6 +79,10 @@ body{
     color:#fff;
     overflow-x:hidden;
     line-height:1.7;
+}
+.logo img{
+    height:55px;
+    width:auto;
 }
 .navbar{
     position:fixed;
@@ -222,4 +265,120 @@ nav a:hover{
 
     box-shadow:
     0 15px 35px rgba(31,143,229,.35);
+}
+.hero-programas{
+    min-height:100vh;
+    display:flex;
+    align-items:center;
+    position:relative;
+    padding:0 8%;
+    overflow:hidden;
+}
+
+.hero-content{
+    position:relative;
+    z-index:2;
+    max-width:1100px;
+}
+
+.hero-content h1{
+    font-size:clamp(3rem,6vw,5rem);
+    line-height:1;
+    font-weight:900;
+    letter-spacing:-3px;
+    margin-bottom:30px;
+}
+.about-grid{
+    display:grid;
+    grid-template-columns:1fr 1fr;
+    gap:70px;
+    align-items:center;
+}
+
+.about-image img{
+    width:100%;
+    border-radius:24px;
+    object-fit:cover;
+}
+
+.about-content h2{
+    font-size:2.5rem;
+    margin-bottom:20px;
+}
+
+.about-content p{
+    color:#E5E7EB;
+    margin-bottom:15px;
+}
+.impact-grid{
+    display:grid;
+    grid-template-columns:repeat(4,1fr);
+    gap:20px;
+}
+
+.impact-card{
+    background:rgba(7,16,29,.9);
+    border-radius:20px;
+    border:1px solid rgba(255,255,255,.08);
+    padding:50px 20px;
+    text-align:center;
+}
+.btn-outline{
+    display:inline-flex;
+    align-items:center;
+    justify-content:center;
+
+    padding:14px 28px;
+
+    border:1px solid rgba(255,255,255,.25);
+
+    color:#fff;
+
+    text-decoration:none;
+
+    border-radius:14px;
+
+    margin-left:10px;
+}
+
+.btn-outline:hover{
+    background:#fff;
+    color:#000;
+}
+@media(max-width:900px){
+
+    .about-grid{
+        grid-template-columns:1fr;
+    }
+
+    .impact-grid{
+        grid-template-columns:1fr 1fr;
+    }
+
+    .mision-vision{
+        grid-template-columns:1fr;
+    }
+
+    .hero-content h1{
+        font-size:3rem;
+    }
+
+}
+
+@media(max-width:768px){
+
+    nav{
+        display:none;
+    }
+
+    .impact-grid,
+    .valores-grid,
+    .pasos-grid{
+        grid-template-columns:1fr;
+    }
+
+    .hero-stats{
+        flex-direction:column;
+    }
+
 }
