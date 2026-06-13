@@ -424,24 +424,46 @@ section{
     z-index:2;
 }
 
-/* ==========================
-   TESTIMONIOS
-========================== */
+/* ================================
+   HISTORIAS QUE INSPIRAN - FONDO
+================================ */
 
-.testimonials{
-    display:grid;
-    grid-template-columns:repeat(2,1fr);
-    gap:25px;
+section .container {
+    position: relative;
+    overflow: hidden;
 }
 
-@media(max-width:768px){
+/* Fondo con imagen tecnológica */
+section .container::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background-image: url("assets/tecnología.jpg");
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
 
-    .testimonials{
-        grid-template-columns:1fr;
-    }
+    opacity: 0.08; /* ajusta entre 0.05 y 0.15 */
+    filter: grayscale(100%) contrast(120%);
 
+    z-index: 0;
+    pointer-events: none;
 }
 
+/* Asegurar que el contenido esté encima */
+.section-title,
+.testimonials {
+    position: relative;
+    z-index: 1;
+}
+
+/* Opcional: mejora visual de tarjetas */
+.testimonial {
+    background: rgba(7, 16, 29, 0.75);
+    backdrop-filter: blur(6px);
+    border-radius: 12px;
+    padding: 15px;
+}
 /* ==========================
    CTA
 ========================== */
@@ -556,50 +578,6 @@ section{
         width:100%;
     }
 
-}
-.testimonial{
-    background:#07101d;
-    border:1px solid rgba(255,255,255,.08);
-    border-radius:20px;
-
-    padding:25px;
-
-    display:flex;
-    align-items:flex-start;
-
-    gap:15px;
-
-    transition:.35s ease;
-}
-
-.testimonial:hover{
-    transform:translateY(-8px);
-
-    border-color:#1F8FE5;
-
-    box-shadow:
-    0 15px 30px rgba(31,143,229,.12);
-}
-
-.testimonial img{
-    width:55px;
-    height:55px;
-    border-radius:50%;
-    object-fit:cover;
-    border:2px solid var(--secondary);
-    flex-shrink:0;
-}
-
-.testimonial p{
-    color:#c4c9d4;
-    margin-bottom:8px;
-    line-height:1.7;
-}
-
-.testimonial strong{
-    display:block;
-    color:#fff;
-    font-size:.95rem;
 }
 .hero{
   width: 100vw;
