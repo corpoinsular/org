@@ -415,100 +415,79 @@ section{
     position: relative;
 }
 
-/* CONTENEDOR */
 .historias-inspiran .container {
     position: relative;
-    overflow: hidden;
-    isolation: isolate;
     padding: 60px 20px;
+    overflow: hidden;
 }
 
-/* FONDO PRINCIPAL (CORREGIDO) */
+/* fondo */
 .historias-inspiran .container::before {
     content: "";
     position: absolute;
     inset: 0;
 
     background:
-        linear-gradient(rgba(2,8,25,.88), rgba(2,8,25,.92)),
+        linear-gradient(rgba(2,8,25,.90), rgba(2,8,25,.95)),
         url("assets/tecnología.jpg");
 
     background-size: cover;
     background-position: center;
-    background-repeat: no-repeat;
 
     z-index: 0;
 }
 
-/* CAPA DE BRILLO */
+/* capa brillo */
 .historias-inspiran .container::after {
     content: "";
     position: absolute;
     inset: 0;
 
     background:
-        radial-gradient(circle at top left,
-            rgba(31,143,229,0.15),
-            transparent 60%),
-        radial-gradient(circle at bottom right,
-            rgba(214,40,40,0.10),
-            transparent 60%);
+        radial-gradient(circle at top left, rgba(31,143,229,.15), transparent 60%),
+        radial-gradient(circle at bottom right, rgba(214,40,40,.10), transparent 60%);
 
     z-index: 0;
 }
 
-/* TITULO + GRID ENCIMA */
-.historias-inspiran .section-title,
-.historias-inspiran .testimonials {
+.testimonials {
     position: relative;
     z-index: 1;
-}
 
-/* GRID 2x2 */
-.testimonials {
     display: grid;
-    grid-template-columns: repeat(2, minmax(0, 1fr));
-    gap: 22px;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 20px;
 }
 
-/* TARJETAS OSCURAS REDONDEADAS */
 .testimonial {
     display: flex;
     align-items: center;
-    gap: 16px;
+    gap: 15px;
 
     padding: 20px;
-    border-radius: 22px;
+    border-radius: 20px;
 
     background: rgba(2, 6, 16, 0.92);
-    border: 1px solid rgba(255, 255, 255, 0.08);
+    border: 1px solid rgba(255,255,255,0.08);
 
     box-shadow: 0 10px 25px rgba(0,0,0,0.35);
 
     transition: .25s ease;
 }
 
-/* HOVER */
-.testimonial:hover {
-    transform: translateY(-4px);
-    border-color: rgba(31,143,229,0.25);
-}
-
-/* IMAGEN CIRCULAR PERFECTA */
 .testimonial img {
-    width: 72px;
-    height: 72px;
+    width: 70px;
+    height: 70px;
     border-radius: 50%;
     object-fit: cover;
     flex-shrink: 0;
 }
 
-/* TEXTO */
 .testimonial p {
     margin: 0;
-    font-size: 14.8px;
-    line-height: 1.6;
+    font-size: 14.5px;
     color: #eaeaea;
+    line-height: 1.6;
 }
 
 .testimonial strong {
@@ -516,10 +495,10 @@ section{
     margin-top: 6px;
     font-size: 13px;
     color: #fff;
-    opacity: 0.9;
+    opacity: .9;
 }
 
-/* RESPONSIVE */
+/* responsive */
 @media (max-width: 768px) {
     .testimonials {
         grid-template-columns: 1fr;
