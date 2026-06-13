@@ -456,14 +456,24 @@ section{
 }
 
 .testimonial {
-    background: rgba(7, 16, 29, 0.85); /* tarjeta oscura */
-    border-radius: 12px;
-    padding: 15px;
+    background: rgba(7, 16, 29, 0.82);
+    border: 1px solid rgba(255, 255, 255, 0.08);
+    border-radius: 16px;
+    padding: 18px 20px;
     display: flex;
     align-items: center;
     gap: 15px;
-}
 
+    backdrop-filter: blur(6px);
+    -webkit-backdrop-filter: blur(6px);
+
+    transition: transform 0.25s ease, box-shadow 0.25s ease;
+}
+.testimonial:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 10px 25px rgba(0,0,0,0.35);
+    border-color: rgba(255, 255, 255, 0.15);
+}
 /* 🔥 IMPORTANTE: NO TOCAR LAYOUT */
 .testimonials {
     display: grid; /* mantiene estructura si ya la tenías */
@@ -477,15 +487,28 @@ section{
     align-items: center;
     gap: 15px;
 }
-
+.testimonial p {
+    margin: 0;
+    font-size: 14.5px;
+    line-height: 1.5;
+    color: #e6e6e6;
+}
+.testimonial strong {
+    display: block;
+    margin-top: 6px;
+    font-size: 13px;
+    color: #ffffff;
+    opacity: 0.85;
+}
 /* 🔥 FOTO CIRCULAR (CLAVE) */
 .testimonial img {
-    width: 70px;
-    height: 70px;
-    border-radius: 50% !important;
+    width: 72px;
+    height: 72px;
+    border-radius: 50%;
     object-fit: cover;
-    display: block;
-    flex-shrink: 0;
+
+    border: 2px solid rgba(255,255,255,0.15);
+    box-shadow: 0 4px 10px rgba(0,0,0,0.3);
 }
 /* ==========================
    CTA
