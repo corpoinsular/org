@@ -457,3 +457,17 @@ nav a.active{
 .detalle-programa.active{
     display:flex;
 }
+/* FORZAR COLORES NAVBAR */
+
+.navbar a{
+    color:#0A2EA8 !important;
+}
+
+.navbar a:hover,
+.navbar a.active{
+    color:#1F8FE5 !important;
+}
+
+.navbar .btn-nav{
+    color:#FFFFFF !important;
+}
