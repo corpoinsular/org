@@ -3,14 +3,23 @@
 ========================= */
 
 :root{
-    --red:#ff1f2d;
-    --red-dark:#d80f20;
-    --black:#02040a;
+
+    --primary:#0A2EA8;
+    --secondary:#1F8FE5;
+    --accent:#59D0FF;
+
+    --black:#02040A;
     --nav:#050811;
-    --card:#07101d;
-    --white:#ffffff;
-    --gray:#c4c9d4;
+    --card:#07101D;
+
+    --white:#FFFFFF;
+    --gray:#C4C9D4;
+
     --line:rgba(255,255,255,.08);
+
+    --glow:
+    rgba(31,143,229,.35);
+
 }
 
 /* =========================
@@ -28,21 +37,32 @@ html{
 }
 
 body.colectivo{
+body.colectivo{
+
     font-family:'Inter',sans-serif;
     color:white;
     overflow-x:hidden;
 
     background:
+
     radial-gradient(
-        circle at 80% 20%,
-        rgba(255,60,60,.08),
+        circle at 15% 20%,
+        rgba(31,143,229,.15),
         transparent 35%
     ),
+
     radial-gradient(
-        circle at 20% 80%,
-        rgba(0,80,255,.08),
+        circle at 85% 80%,
+        rgba(10,46,168,.18),
         transparent 40%
     ),
+
+    radial-gradient(
+        circle at 50% 50%,
+        rgba(89,208,255,.05),
+        transparent 60%
+    ),
+
     #02040a;
 }
 
@@ -51,21 +71,18 @@ body.colectivo{
 ========================= */
 
 .navbar{
-    position:fixed;
-    top:0;
-    left:0;
-    width:100%;
-    z-index:9999;
 
     background:
     linear-gradient(
-        rgba(0,0,0,.82),
-        rgba(0,0,0,.35)
+        to bottom,
+        rgba(2,4,10,.95),
+        rgba(2,4,10,.45)
     );
 
-    backdrop-filter:blur(24px);
+    backdrop-filter:blur(30px);
 
-    border-bottom:1px solid rgba(255,255,255,.04);
+    border-bottom:
+    1px solid rgba(255,255,255,.05);
 }
 
 .nav-flex{
@@ -80,13 +97,20 @@ body.colectivo{
 }
 
 .logo{
-    font-size:2.4rem;
+
+    font-size:2.3rem;
     font-weight:900;
+
     letter-spacing:-1px;
+
+    color:white;
+
+    text-shadow:
+    0 0 20px rgba(31,143,229,.5);
 }
 
 .logo span{
-    color:var(--red);
+    color:var(--secondary);
 }
 
 nav{
@@ -119,13 +143,13 @@ nav a:hover{
 ========================= */
 
 .hero{
+
+    min-height:100vh;
+
     position:relative;
-    height:900px;
-    min-height:900px;
+
     display:flex;
     align-items:center;
-    padding:0 8%;
-    overflow:hidden;
 }
 
 .hero-bg{
@@ -147,17 +171,20 @@ nav a:hover{
 }
 
 .hero::before{
+
     content:"";
+
     position:absolute;
     inset:0;
 
     background:
+
     linear-gradient(
         90deg,
-        rgba(0,0,0,.95) 0%,
-        rgba(0,0,0,.85) 30%,
-        rgba(0,0,0,.55) 60%,
-        rgba(0,0,0,.25) 100%
+        rgba(2,4,10,.97) 0%,
+        rgba(2,4,10,.85) 35%,
+        rgba(2,4,10,.45) 70%,
+        transparent 100%
     );
 
     z-index:1;
@@ -178,10 +205,18 @@ nav a:hover{
 }
 
 .hero h1{
-    font-size:9rem;
-    line-height:.85;
+
+    font-size:8rem;
+
     font-weight:900;
+
+    line-height:.88;
+
     letter-spacing:-5px;
+
+    text-shadow:
+    0 10px 40px rgba(0,0,0,.6);
+
     margin-bottom:25px;
 }
 
@@ -203,31 +238,29 @@ nav a:hover{
 ========================= */
 
 .btn-red{
-    display:inline-flex;
-    align-items:center;
-    justify-content:center;
 
-    min-width:260px;
-    height:64px;
+    background:
 
-    background:var(--red);
-    color:white;
+    linear-gradient(
+        135deg,
+        #1F8FE5,
+        #0A2EA8
+    );
 
-    text-decoration:none;
-    font-weight:700;
+    border:none;
 
-    border-radius:12px;
-
-    transition:.3s;
+    box-shadow:
+    0 10px 40px rgba(31,143,229,.35);
 }
 
 .btn-red:hover{
-    transform:translateY(-4px);
+
+    transform:
+    translateY(-4px);
 
     box-shadow:
-    0 10px 30px rgba(255,31,45,.4);
+    0 15px 50px rgba(31,143,229,.55);
 }
-
 .btn-outline{
     display:inline-flex;
     align-items:center;
@@ -268,15 +301,35 @@ nav a:hover{
 }
 
 .feature{
-    background:rgba(9,17,31,.85);
 
-    border:1px solid rgba(255,255,255,.06);
+    background:
+    rgba(8,18,34,.8);
 
-    border-radius:18px;
+    backdrop-filter:
+    blur(25px);
 
-    padding:30px;
+    border:
+    1px solid rgba(89,208,255,.08);
 
-    backdrop-filter:blur(20px);
+    box-shadow:
+    0 10px 40px rgba(0,0,0,.35);
+
+    transition:.4s;
+}
+
+.feature:hover{
+
+    transform:
+    translateY(-10px);
+
+    border-color:
+    rgba(89,208,255,.25);
+
+    box-shadow:
+
+    0 15px 50px rgba(0,0,0,.45),
+
+    0 0 25px rgba(31,143,229,.15);
 }
 
 .feature h3{
@@ -318,27 +371,33 @@ nav a:hover{
 }
 
 .card{
-    width:310px;
-    flex-shrink:0;
 
-    background:var(--card);
+    background:
+    linear-gradient(
+        180deg,
+        rgba(12,25,45,.95),
+        rgba(7,16,29,.98)
+    );
 
-    border-radius:18px;
+    border:
+    1px solid rgba(255,255,255,.06);
 
     overflow:hidden;
 
-    border:1px solid rgba(255,255,255,.05);
-
-    transition:.4s;
+    transition:.45s;
 }
 
 .card:hover{
+
     transform:
-        translateY(-12px)
-        scale(1.03);
+    translateY(-12px)
+    scale(1.04);
 
     box-shadow:
-        0 25px 60px rgba(0,0,0,.55);
+
+    0 20px 70px rgba(0,0,0,.65),
+
+    0 0 40px rgba(31,143,229,.18);
 }
 
 .thumb{
@@ -349,7 +408,21 @@ nav a:hover{
 
     position:relative;
 }
+.thumb::after{
 
+    content:"";
+
+    position:absolute;
+    inset:0;
+
+    background:
+
+    linear-gradient(
+        180deg,
+        transparent,
+        rgba(2,4,10,.9)
+    );
+}
 .thumb::before{
     content:"▶";
 
@@ -407,26 +480,20 @@ nav a:hover{
 ========================= */
 
 .ads{
-    margin:100px 8%;
-
-    padding:50px;
-
-    min-height:180px;
-
-    border-radius:24px;
 
     background:
+
     linear-gradient(
-        90deg,
-        #c21223,
-        #07152c
+        135deg,
+        #0A2EA8,
+        #07101D
     );
 
-    display:flex;
-    justify-content:space-between;
-    align-items:center;
+    border:
+    1px solid rgba(255,255,255,.08);
 
-    gap:30px;
+    box-shadow:
+    0 25px 80px rgba(0,0,0,.45);
 }
 
 .ads p{
@@ -495,38 +562,23 @@ nav a:hover{
     }
 }
 .info-panel{
-    position:fixed;
 
-    top:50%;
-    left:50%;
+    background:
 
-    transform:translate(-50%,-50%) scale(.95);
+    linear-gradient(
+        180deg,
+        rgba(12,25,45,.98),
+        rgba(4,10,20,.98)
+    );
 
-    width:min(900px,90vw);
-
-    max-height:80vh;
-
-    overflow-y:auto;
-
-    background:rgba(7,16,29,.97);
-
-    border:1px solid rgba(255,255,255,.08);
-
-    border-radius:24px;
-
-    padding:50px;
-
-    backdrop-filter:blur(30px);
+    border:
+    1px solid rgba(89,208,255,.12);
 
     box-shadow:
-    0 30px 100px rgba(0,0,0,.65);
 
-    z-index:99999;
+    0 40px 120px rgba(0,0,0,.75),
 
-    opacity:0;
-    visibility:hidden;
-
-    transition:.35s;
+    0 0 60px rgba(31,143,229,.12);
 }
 
 .info-panel.active{
