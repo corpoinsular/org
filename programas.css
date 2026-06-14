@@ -100,13 +100,10 @@ body{
 
     z-index:9999;
 }
-
-/* LOGO */
-.logo{
-    font-size:1.6rem;
-    font-weight:900;
-    text-decoration:none;
-    color:#0A2EA8;
+.logo img{
+    height:55px;
+    width:auto;
+    display:block;
 }
 
 .logo span{
