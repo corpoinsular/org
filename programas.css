@@ -103,19 +103,14 @@ body{
 
 /* LOGO */
 .logo{
-    font-size:2rem;
+    font-size:1.6rem;
     font-weight:900;
-    letter-spacing:-1px;
-    color:white;
     text-decoration:none;
-}
-
-.logo{
-    color:var(--primary);
+    color:#0A2EA8;
 }
 
 .logo span{
-    color:var(--secondary);
+    color:#1F8FE5;
 }
 
 nav a{
