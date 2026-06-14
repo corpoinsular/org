@@ -3,18 +3,23 @@
 ========================= */
 
 :root{
-    --red:#ff1f2d;
-    --red-dark:#d80f20;
+:root{
+    --primary:#0A2EA8;
+    --secondary:#1F8FE5;
+    --accent:#D9A441;
 
-    --black:#02040a;
+    --black:#02040A;
     --nav:#050811;
+    --card:#07101D;
 
-    --card:#07101d;
-
-    --white:#ffffff;
-    --gray:#c4c9d4;
+    --white:#FFFFFF;
+    --gray:#C4C9D4;
+    --gray-dark:#6B7280;
 
     --line:rgba(255,255,255,.08);
+
+    --radius:20px;
+    --transition:.35s ease;
 }
 
 /* =========================
@@ -29,8 +34,27 @@
 }
 
 body{
-    background:var(--black);
-    color:var(--white);
+    background:
+    radial-gradient(
+        circle at top right,
+        rgba(31,143,229,.25),
+        transparent 35%
+    ),
+
+    radial-gradient(
+        circle at bottom left,
+        rgba(10,46,168,.25),
+        transparent 40%
+    ),
+
+    linear-gradient(
+        135deg,
+        #031024,
+        #07245F,
+        #0A2EA8
+    );
+
+    color:#fff;
     overflow-x:hidden;
 }
 
@@ -55,16 +79,26 @@ body{
     border-bottom:1px solid rgba(255,255,255,.06);
 }
 
-/* CONTENEDOR */
-.nav-flex{
-    max-width:1400px;
-    margin:auto;
+.navbar{
+    position:fixed;
+    top:15px;
+    left:50%;
+    transform:translateX(-50%);
 
-    display:flex;
-    justify-content:space-between;
-    align-items:center;
+    width:95%;
+    max-width:1300px;
 
-    padding:20px 50px;
+    background:rgba(255,255,255,.96);
+
+    border-radius:25px;
+
+    padding:6px 0;
+
+    backdrop-filter:blur(10px);
+
+    box-shadow:0 10px 30px rgba(0,0,0,.12);
+
+    z-index:9999;
 }
 
 /* LOGO */
@@ -76,46 +110,32 @@ body{
     text-decoration:none;
 }
 
-.logo span{
-    color:var(--red);
+.logo{
+    color:var(--primary);
 }
 
-/* NAV LINKS */
-nav{
-    display:flex;
-    gap:35px;
-    align-items:center;
+.logo span{
+    color:var(--secondary);
 }
 
 nav a{
-    text-decoration:none;
-    color:white;
-    font-weight:600;
-    transition:.3s;
-    padding:8px 10px;
-    border-radius:8px;
+    color:var(--primary);
+    font-weight:700;
 }
 
-nav a:hover{
-    color:var(--red);
-    background:rgba(255,31,45,.08);
-}
-
+nav a:hover,
 nav a.active{
-    color:var(--red);
+    color:var(--secondary);
 }
 
-/* BOTÓN CONTACTO */
 .btn-nav{
-    background:var(--red);
-    color:white;
-    text-decoration:none;
+    background:linear-gradient(
+        135deg,
+        #1F8FE5,
+        #63C5FF
+    );
 
-    padding:12px 22px;
-    border-radius:10px;
-
-    font-weight:800;
-    transition:.3s;
+    color:#fff;
 }
 
 .btn-nav:hover{
@@ -139,19 +159,29 @@ nav a.active{
     overflow:hidden;
 }
 
-/* FOTO DE FONDO */
 .hero-programas::before{
     content:"";
     position:absolute;
     inset:0;
 
     background:
-    linear-gradient(rgba(0,0,0,.75), rgba(0,0,0,.9)),
+
+    radial-gradient(
+        circle at center,
+        rgba(31,143,229,.10),
+        rgba(10,46,168,.25) 45%,
+        rgba(2,8,25,.85)
+    ),
+
+    linear-gradient(
+        rgba(2,8,25,.55),
+        rgba(2,8,25,.80)
+    ),
+
     url("assets/programas.jpg");
 
     background-size:cover;
     background-position:center;
-    filter:contrast(1.1);
 }
 
 /* CONTENIDO */
@@ -181,15 +211,12 @@ nav a.active{
     line-height:1.7;
 }
 
-/* TAG */
 .hero-tag{
-    display:block;
-    color:var(--red);
-    font-weight:800;
-    letter-spacing:3px;
-    margin-bottom:20px;
+    color:var(--secondary);
+    font-weight:900;
+    letter-spacing:4px;
+    text-transform:uppercase;
 }
-
 /* =========================
    PROGRAMAS SECTION
 ========================= */
@@ -210,14 +237,17 @@ nav a.active{
 ========================= */
 
 .programa-card{
-    background:var(--card);
-    border:1px solid var(--line);
-    border-radius:20px;
+    background:rgba(7,16,29,.88);
 
-    padding:30px;
+    border:1px solid rgba(255,255,255,.08);
 
-    transition:.4s ease;
-    position:relative;
+    border-radius:24px;
+
+    padding:35px;
+
+    backdrop-filter:blur(14px);
+
+    transition:.35s ease;
 
     overflow:hidden;
 }
@@ -242,9 +272,11 @@ nav a.active{
 }
 
 .programa-card:hover{
-    transform:translateY(-12px);
-    border-color:rgba(255,31,45,.35);
-    box-shadow:0 30px 80px rgba(0,0,0,.7);
+    transform:translateY(-10px);
+
+    border-color:rgba(31,143,229,.35);
+
+    box-shadow:0 30px 60px rgba(0,0,0,.35);
 }
 
 /* =========================
@@ -264,9 +296,11 @@ nav a.active{
 
     stroke-width: 1.8;
 
-    color: var(--red);
+    color: var(--secondary);
 
-    filter: drop-shadow(0 0 12px rgba(255,31,45,.35));
+    filter:drop-shadow(
+0 0 14px rgba(31,143,229,.35)
+);
 }
 
 /* TEXTO HEADER */
@@ -305,30 +339,31 @@ nav a.active{
 ========================= */
 
 .btn-detalle{
-    margin-top:18px;
+    margin-top:20px;
 
-    padding:12px 16px;
+    border:none;
 
-    border-radius:12px;
-    border:1px solid rgba(255,255,255,.25);
+    background:linear-gradient(
+        135deg,
+        #1F8FE5,
+        #63C5FF
+    );
 
-    background:rgba(255,255,255,.95);
-    color:#02040a;
+    color:#fff;
+
+    padding:14px 20px;
+
+    border-radius:14px;
 
     font-weight:800;
-    cursor:pointer;
-
-    transition:.3s;
-
-    backdrop-filter:blur(10px);
 }
 
 .btn-detalle:hover{
     transform:translateY(-4px);
 
-    background:#ffffff;
-
-    box-shadow:0 15px 30px rgba(0,0,0,.4);
+    box-shadow:
+    0 15px 30px
+    rgba(31,143,229,.35);
 }
 /* =========================
    IMPACTO (MEJORADO)
@@ -351,16 +386,23 @@ nav a.active{
 }
 
 .impact-card{
-    background:var(--card);
-    border:1px solid var(--line);
-    border-radius:16px;
-    padding:30px;
-    transition:.3s;
+    background:rgba(7,16,29,.90);
+
+    border-radius:20px;
+
+    border:1px solid rgba(255,255,255,.08);
+
+    backdrop-filter:blur(12px);
+
+    padding:40px 20px;
 }
 
 .impact-card:hover{
     transform:translateY(-8px);
-    border-color:rgba(255,31,45,.3);
+
+    border-color:rgba(31,143,229,.35);
+
+    box-shadow:0 25px 50px rgba(0,0,0,.30);
 }
 
 /* ICONOS GRANDES EN IMPACTO */
@@ -380,13 +422,20 @@ nav a.active{
 ========================= */
 
 .cta{
-    padding:100px 10%;
+    padding:110px 8%;
     text-align:center;
-    background:linear-gradient(90deg,#c21223,#07152c);
+
+    background:linear-gradient(
+        135deg,
+        #0A2EA8 0%,
+        #1F8FE5 60%,
+        #0A2EA8 100%
+    );
 }
 
 .cta h2{
-    font-size:2.5rem;
+    font-size:3rem;
+    margin-bottom:20px;
 }
 
 .cta p{
