@@ -100,16 +100,31 @@ body{
 
     z-index:9999;
 }
+/* CONTENEDOR NAVBAR */
+.nav-flex{
+    width:min(1200px,92%);
+    margin:auto;
+
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+}
+.logo{
+    display:flex;
+    align-items:center;
+    text-decoration:none;
+}
+
 .logo img{
     height:55px;
     width:auto;
     display:block;
 }
-
-.logo span{
-    color:#1F8FE5;
+nav{
+    display:flex;
+    align-items:center;
+    gap:28px;
 }
-
 nav a{
     color:var(--primary);
     font-weight:700;
@@ -131,7 +146,7 @@ nav a.active{
 }
 
 .btn-nav:hover{
-    background:var(--red-dark);
+    background:#0A2EA8;
     box-shadow:0 10px 30px rgba(255,31,45,.35);
     transform:translateY(-2px);
 }
@@ -306,7 +321,7 @@ nav a.active{
     font-size:12px;
     font-weight:900;
     letter-spacing:2px;
-    color:var(--red);
+    color:var(--secondary);
 }
 
 .programa-title h3{
@@ -403,8 +418,7 @@ nav a.active{
     height: 60px !important;
 
     stroke-width: 1.8;
-
-    color: var(--red);
+    color:var(--secondary);
 
     filter: drop-shadow(0 0 10px rgba(255,31,45,.25));
 }
