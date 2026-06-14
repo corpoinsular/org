@@ -215,8 +215,9 @@ nav a.active{
     line-height:1;
     letter-spacing:-2px;
     margin-bottom:20px;
-}
 
+    color:#63C5FF; /* azul claro premium */
+}
 /* SUBTEXTO */
 .hero-content p{
     font-size:1.2rem;
