@@ -110,9 +110,10 @@ body{
     align-items:center;
 }
 .logo{
-    display:flex;
-    align-items:center;
+    font-size:1.6rem;
+    font-weight:900;
     text-decoration:none;
+    color:var(--primary);
 }
 
 .logo img{
@@ -120,14 +121,19 @@ body{
     width:auto;
     display:block;
 }
+.logo span{
+    color:var(--secondary);
+}
 nav{
     display:flex;
     align-items:center;
     gap:28px;
 }
 nav a{
+    text-decoration:none;
     color:var(--primary);
     font-weight:700;
+    transition:.3s;
 }
 
 nav a:hover,
