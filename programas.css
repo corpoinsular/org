@@ -57,11 +57,7 @@ body{
     color:#fff;
     overflow-x:hidden;
 }
-
-/* =========================
-   NAVBAR COLECTIVO (UNIFICADO)
-========================= */
-
+   
 .navbar{
     position:fixed;
     top:15px;
@@ -83,7 +79,7 @@ body{
 
     z-index:9999;
 }
-/* CONTENEDOR NAVBAR */
+
 .nav-flex{
     width:min(1200px,92%);
     margin:auto;
@@ -92,45 +88,53 @@ body{
     justify-content:space-between;
     align-items:center;
 }
+
+.logo{
+    font-size:1.6rem;
+    font-weight:900;
+    text-decoration:none;
+    color:#0A2EA8;
+}
+
 .logo img{
     height:55px;
     width:auto;
     display:block;
 }
+
 .logo span{
-    color:var(--secondary);
+    color:#1F8FE5;
 }
+
 nav{
     display:flex;
     align-items:center;
     gap:28px;
 }
+
 nav a{
     text-decoration:none;
-    color:var(--primary);
+    color:#0A2EA8;
     font-weight:700;
     transition:.3s;
 }
 
 nav a:hover,
 nav a.active{
-    color:var(--secondary);
+    color:#1F8FE5;
 }
 
 .btn-nav{
+    padding:12px 20px;
+    border-radius:12px;
+
     background:linear-gradient(
         135deg,
         #1F8FE5,
         #63C5FF
     );
 
-    color:#fff;
-}
-
-.btn-nav:hover{
-    background:#0A2EA8;
-    box-shadow:0 10px 30px rgba(255,31,45,.35);
-    transform:translateY(-2px);
+    color:#fff !important;
 }
 /* =========================
    HERO PREMIUM (MEJORADO)
