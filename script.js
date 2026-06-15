@@ -30,17 +30,22 @@ document.querySelectorAll(".btn-detalle").forEach(btn => {
 document.querySelector(".cerrar-detalle")?.addEventListener("click", () => {
     detalle.classList.remove("active");
 });
+
 <script>
-let slides = document.querySelectorAll(".slide");
-let index = 0;
+document.addEventListener("DOMContentLoaded", () => {
 
-function show(i){
-    slides.forEach(s => s.classList.remove("active"));
-    slides[i].classList.add("active");
-}
+    const slides = document.querySelectorAll(".slide");
+    let index = 0;
 
-setInterval(() => {
-    index = (index + 1) % slides.length;
-    show(index);
-}, 4000);
+    function showSlide(i){
+        slides.forEach(s => s.classList.remove("active"));
+        slides[i].classList.add("active");
+    }
+
+    setInterval(() => {
+        index = (index + 1) % slides.length;
+        showSlide(index);
+    }, 3500);
+
+});
 </script>
