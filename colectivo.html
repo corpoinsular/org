@@ -1,211 +1,155 @@
 <!DOCTYPE html>
 <html lang="es">
-<head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>INSULAR+</title>
 
-<link rel="stylesheet" href="colectivo.css">
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+<head>
+
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Colectivo | Medio de Comunicación Comunitario</title>
+
+    <meta name="description"
+        content="Colectivo es el medio de comunicación de la comunidad insular. Narramos historias, visibilizamos procesos comunitarios y fortalecemos la participación ciudadana.">
+
+    <link rel="stylesheet" href="colectivo.css">
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap"
+        rel="stylesheet">
+
 </head>
 
 <body class="colectivo">
 
-<header class="navbar">
+    <!-- =========================
+         NAVBAR
+    ========================== -->
 
-    <div class="nav-flex">
+    <header class="navbar">
 
-        <a href="colectivo.html" class="logo">
-    INSULAR<span>+</span>
-</a>
+        <div class="nav-container">
 
-        <nav>
-    <a href="index.html">Inicio</a>
-    <a href="programas.html">Programas</a>
-    <a href="#pauta">Pauta</a>
-</nav>
-
-        <a href="#pauta" class="btn-nav">
-            Pautar ahora
-        </a>
-
-    </div>
-
-</header>
-
-<section class="hero">
-
-    <div class="hero-bg"></div>
-
-    <div class="hero-content">
-
-        <span class="hero-tag">
-    LA VOZ DEL TERRITORIO INSULAR
-</span>
-
-        <h1>INSULAR+</h1>
-
-        <p>
-            Creamos contenido audiovisual desde la isla para el mundo.
-            Historias reales, cultura, territorio y transformación social.
-        </p>
-
-        <div class="hero-buttons">
-
-            <a href="#programas" class="btn-red">
-                ▶ Ver contenido
+            <a href="index.html" class="logo">
+                COLECTIVO
             </a>
 
-            <a href="#" class="btn-outline" id="btn-info">
-    Sobre INSULAR+
-</a>
+            <nav>
+
+                <a href="#inicio">Inicio</a>
+                <a href="#nosotros">Nosotros</a>
+                <a href="#producciones">Producciones</a>
+                <a href="#galeria">Galería</a>
+
+            </nav>
+
+            <a href="contacto.html" class="btn-nav">
+                Contáctanos
+            </a>
 
         </div>
 
-    </div>
-    <div class="info-panel" id="infoPanel">
+    </header>
 
-    <h3>Más que un medio, una voz colectiva</h3>
-<button class="close-panel" id="closePanel">
-    ✕
-</button>
-    <p>
-        INSULAR+ es el medio de comunicación comunitario de Bocachica. Nacimos para contar nuestras propias historias, visibilizar nuestras realidades y fortalecer la identidad de un territorio insular lleno de cultura, memoria y resistencia.
-    </p>
+    <!-- =========================
+         HERO
+    ========================== -->
 
-    <p>
-        Construimos espacios de participación donde las voces de la comunidad tienen lugar, promoviendo el diálogo, la organización social y el ejercicio de una ciudadanía activa que contribuye al bienestar colectivo.
-    </p>
+    <section class="hero" id="inicio">
 
-    <p>
-        A través de la comunicación, la creación audiovisual y las narrativas digitales, impulsamos procesos que aportan al desarrollo local, fortalecen el tejido social y generan nuevas oportunidades para niños, jóvenes, mujeres, líderes y organizaciones comunitarias.
-    </p>
+        <div class="hero-overlay"></div>
 
-    <p>
-        Creemos en una comunicación que conecta personas, inspira acciones y transforma realidades. Por eso trabajamos para que Bocachica sea vista, escuchada y reconocida desde su propia voz, proyectando su riqueza cultural, ambiental y humana hacia el mundo.
-    </p>
+        <div class="hero-content">
 
-</div>
-    <div class="overlay-reading" id="overlayReading"></div>
-</section>
+            <span class="hero-tag">
+                COMUNICACIÓN • AUDIOVISUAL • TERRITORIO
+            </span>
 
-<section class="features">
+            <h1>
+                COLECTIVO
+            </h1>
 
-    <div class="feature">
-        <h3>Contenido Original</h3>
-        <p>Producciones creadas desde el territorio.</p>
-    </div>
+            <h2>
+                Somos el medio de comunicación de la comunidad insular.
+            </h2>
 
-    <div class="feature">
-        <h3>Historias Reales</h3>
-        <p>Voces auténticas de nuestras comunidades.</p>
-    </div>
+            <p>
+                Narramos historias, visibilizamos procesos comunitarios
+                y fortalecemos la participación ciudadana a través de la
+                comunicación, el audiovisual y las nuevas tecnologías.
+            </p>
 
-    <div class="feature">
-        <h3>Impacto Social</h3>
-        <p>Comunicación para transformar realidades.</p>
-    </div>
+            <div class="hero-buttons">
 
-    <div class="feature">
-        <h3>Producción Profesional</h3>
-        <p>Video, fotografía y narrativas digitales.</p>
-    </div>
+                <a href="#producciones" class="btn-primary">
+                    Ver Producciones
+                </a>
 
-</section>
+                <a href="#nosotros" class="btn-secondary">
+                    Conócenos
+                </a>
 
-<section id="programas" class="section">
+            </div>
 
-    <h2 class="title">Programas al aire</h2>
-
-    <div class="row">
-
-        <div class="card">
-            <div class="thumb t1"></div>
-            <h3>Informe Informativo</h3>
         </div>
 
-        <div class="card">
-            <div class="thumb t2"></div>
-            <h3>Sintonía Insular</h3>
+    </section>
+
+    <!-- =========================
+         NOSOTROS
+    ========================== -->
+
+    <section class="nosotros" id="nosotros">
+
+        <div class="section-header">
+
+            <span>NUESTRA IDENTIDAD</span>
+
+            <h2>
+                Comunicación con propósito
+            </h2>
+
         </div>
 
-        <div class="card">
-            <div class="thumb t3"></div>
-            <h3>Nuestro Territorio</h3>
+        <div class="nosotros-content">
+
+            <p>
+                Colectivo es una iniciativa de comunicación comunitaria
+                orientada a contar las historias del territorio,
+                fortalecer la participación ciudadana y visibilizar
+                experiencias que generan transformación social.
+            </p>
+
+            <p>
+                A través de la producción audiovisual, la fotografía,
+                la comunicación digital y la creación de contenidos,
+                construimos narrativas que conectan a las comunidades
+                y promueven el desarrollo cultural y social.
+            </p>
+
         </div>
 
-        <div class="card">
-            <div class="thumb t4"></div>
-            <h3>Nuestro Territorio</h3>
-        </div>
+    </section>
 
-    </div>
+    <!-- =========================
+         PRODUCCIONES
+         (SE DESARROLLARÁ DESPUÉS)
+    ========================== -->
 
-</section>
+    <section id="producciones">
 
-<section id="pauta" class="ads">
+    </section>
 
-    <div>
+    <!-- =========================
+         GALERÍA
+         (SE DESARROLLARÁ DESPUÉS)
+    ========================== -->
 
-        <h2>
-            ¿Quieres anunciar con nosotros?
-        </h2>
+    <section id="galeria">
 
-        <p>
-    Lleva tu marca, organización o iniciativa a una audiencia auténtica y comprometida. A través de nuestros contenidos, redes y espacios de participación, ayudamos a conectar mensajes con personas reales.
-</p>
+    </section>
 
-    </div>
-
-    <a href="https://wa.me/573215978125" class="btn-red" target="_blank">
-    Pautar ahora
-</a>
-
-</section>
-
-<footer class="footer">
-
-    <div class="footer-logo">
-        INSULAR+
-    </div>
-
-    <p>
-        Colectivo de Comunicacion de la Corporación Insular Digital.
-    </p>
-
-</footer>
-<script>
-
-const btn = document.getElementById('btn-info');
-const panel = document.getElementById('infoPanel');
-const overlay = document.getElementById('overlayReading');
-const close = document.getElementById('closePanel');
-
-btn.addEventListener('click', function(e){
-
-    e.preventDefault();
-
-    panel.classList.add('active');
-    overlay.classList.add('active');
-
-});
-
-close.addEventListener('click', function(){
-
-    panel.classList.remove('active');
-    overlay.classList.remove('active');
-
-});
-
-overlay.addEventListener('click', function(){
-
-    panel.classList.remove('active');
-    overlay.classList.remove('active');
-
-});
-
-</script>
 </body>
+
 </html>
