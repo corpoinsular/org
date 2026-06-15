@@ -655,9 +655,10 @@ section{
 }
 
 .footer-bottom p{
-
     color:var(--gray);
     font-size:.85rem;
+    text-align:center;
+    width:100%;
 }
 
 /* =========================
