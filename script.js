@@ -34,15 +34,13 @@ document.querySelector(".cerrar-detalle")?.addEventListener("click", () => {
 let slides = document.querySelectorAll(".slide");
 let index = 0;
 
-function showSlide(i){
+function show(i){
     slides.forEach(s => s.classList.remove("active"));
     slides[i].classList.add("active");
 }
 
-function nextSlide(){
+setInterval(() => {
     index = (index + 1) % slides.length;
-    showSlide(index);
-}
-
-setInterval(nextSlide, 4000); // cada 4 segundos
+    show(index);
+}, 4000);
 </script>
