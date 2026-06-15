@@ -1453,3 +1453,219 @@ section{
         grid-template-columns:1fr;
     }
 }
+/* =========================
+   FOOTER CORPORACIÓN MEDIA
+========================= */
+
+.footer{
+
+    padding:100px 8% 40px;
+
+    background:
+    radial-gradient(circle at 10% 10%, rgba(89,208,255,.08), transparent 40%),
+    linear-gradient(180deg, #02040A, #050811);
+
+    border-top:1px solid rgba(255,255,255,.06);
+}
+
+/* =========================
+   GRID CORPORATIVO
+========================= */
+
+.footer-grid{
+
+    display:grid;
+    grid-template-columns:2.2fr 1fr 1fr 1fr;
+    gap:60px;
+
+    margin-bottom:60px;
+}
+
+/* =========================
+   BRAND (IDENTIDAD)
+========================= */
+
+.footer-brand{
+
+    max-width:380px;
+}
+
+.footer-logo{
+
+    font-size:2.2rem;
+    font-weight:900;
+    letter-spacing:5px;
+
+    color:var(--white);
+
+    margin-bottom:15px;
+}
+
+.footer-brand p{
+
+    color:var(--gray);
+    line-height:1.8;
+    font-size:.95rem;
+}
+
+/* =========================
+   BLOQUES CORPORATIVOS
+========================= */
+
+.footer-col h4{
+
+    color:var(--white);
+    font-size:.95rem;
+
+    letter-spacing:2px;
+    text-transform:uppercase;
+
+    margin-bottom:18px;
+
+    position:relative;
+}
+
+/* línea institucional */
+.footer-col h4::after{
+
+    content:"";
+    position:absolute;
+
+    left:0;
+    bottom:-8px;
+
+    width:40px;
+    height:2px;
+
+    background:var(--secondary);
+}
+
+.footer-col a{
+
+    display:block;
+
+    color:var(--gray);
+    text-decoration:none;
+
+    margin-bottom:12px;
+
+    font-size:.92rem;
+
+    transition:.3s;
+}
+
+.footer-col a:hover{
+
+    color:var(--secondary);
+    transform:translateX(6px);
+}
+
+/* =========================
+   REDES CORPORATIVAS
+========================= */
+
+.footer-social{
+
+    display:flex;
+    gap:12px;
+
+    margin-top:20px;
+}
+
+.footer-social a{
+
+    width:42px;
+    height:42px;
+
+    display:flex;
+    align-items:center;
+    justify-content:center;
+
+    border-radius:10px;
+
+    background:rgba(255,255,255,.05);
+    border:1px solid rgba(255,255,255,.08);
+
+    color:var(--white);
+
+    transition:.3s;
+}
+
+.footer-social a:hover{
+
+    background:var(--secondary);
+    transform:translateY(-4px);
+}
+
+/* =========================
+   PIE CORPORATIVO
+========================= */
+
+.footer-bottom{
+
+    border-top:1px solid rgba(255,255,255,.06);
+
+    padding-top:25px;
+
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+
+    flex-wrap:wrap;
+    gap:15px;
+}
+
+.footer-bottom p{
+
+    color:var(--gray);
+    font-size:.85rem;
+}
+
+/* =========================
+   BADGE INSTITUCIONAL
+========================= */
+
+.footer-badge{
+
+    display:inline-block;
+
+    margin-top:15px;
+
+    padding:6px 12px;
+
+    border-radius:999px;
+
+    font-size:.75rem;
+    font-weight:700;
+    letter-spacing:2px;
+
+    color:var(--accent);
+
+    background:rgba(89,208,255,.08);
+
+    border:1px solid rgba(89,208,255,.15);
+}
+
+/* =========================
+   RESPONSIVE
+========================= */
+
+@media (max-width: 1024px){
+
+    .footer-grid{
+        grid-template-columns:1fr 1fr;
+        gap:40px;
+    }
+}
+
+@media (max-width: 768px){
+
+    .footer-grid{
+        grid-template-columns:1fr;
+    }
+
+    .footer-bottom{
+        flex-direction:column;
+        text-align:center;
+    }
+}
