@@ -1105,3 +1105,252 @@ section{
         padding:100px 6%;
     }
 }
+/* =========================
+   PAUTA - MODO COMERCIAL PRO
+========================= */
+
+.pauta{
+
+    padding:140px 8%;
+    position:relative;
+    overflow:hidden;
+
+    background:
+    radial-gradient(circle at 10% 20%, rgba(89,208,255,.12), transparent 40%),
+    radial-gradient(circle at 90% 70%, rgba(31,143,229,.15), transparent 45%),
+    linear-gradient(180deg, #02040A, #02040A);
+}
+
+/* efecto de “energía” */
+.pauta::before{
+
+    content:"";
+    position:absolute;
+    inset:-50%;
+
+    background:radial-gradient(
+        circle,
+        rgba(89,208,255,.10),
+        transparent 60%
+    );
+
+    animation:pulse 8s infinite;
+}
+
+@keyframes pulse{
+    0%,100%{transform:scale(1);}
+    50%{transform:scale(1.1);}
+}
+
+/* =========================
+   LAYOUT
+========================= */
+
+.pauta-container{
+
+    display:grid;
+    grid-template-columns:1.2fr .8fr;
+    gap:70px;
+    align-items:center;
+
+    position:relative;
+    z-index:2;
+}
+
+/* =========================
+   HEADLINE (VENTA FUERTE)
+========================= */
+
+.pauta-content .section-tag{
+
+    color:#59D0FF;
+    letter-spacing:3px;
+}
+
+.pauta-content h2{
+
+    font-size:3.6rem;
+    line-height:1.1;
+
+    margin:20px 0;
+
+    background:linear-gradient(90deg, #fff, #59D0FF);
+    -webkit-background-clip:text;
+    -webkit-text-fill-color:transparent;
+}
+
+.pauta-content p{
+
+    color:var(--gray);
+    line-height:1.8;
+    max-width:650px;
+    margin-bottom:30px;
+}
+
+/* =========================
+   BENEFICIOS (TIPO CHECK PREMIUM)
+========================= */
+
+.beneficios{
+
+    display:grid;
+    grid-template-columns:repeat(2,1fr);
+    gap:15px;
+
+    margin-bottom:35px;
+}
+
+.beneficio{
+
+    display:flex;
+    align-items:center;
+    gap:10px;
+
+    padding:14px 16px;
+
+    background:rgba(7,16,29,.6);
+    border:1px solid rgba(255,255,255,.06);
+    border-radius:14px;
+
+    transition:.3s;
+}
+
+.beneficio::before{
+
+    content:"✓";
+    color:#59D0FF;
+    font-weight:900;
+}
+
+.beneficio:hover{
+
+    transform:translateY(-5px);
+    border-color:rgba(89,208,255,.4);
+    box-shadow:0 15px 40px rgba(0,0,0,.4);
+}
+
+/* =========================
+   BOTÓN CTA (MUY IMPORTANTE)
+========================= */
+
+.pauta .btn-primary{
+
+    position:relative;
+    overflow:hidden;
+}
+
+.pauta .btn-primary::before{
+
+    content:"";
+    position:absolute;
+    top:0;
+    left:-100%;
+
+    width:100%;
+    height:100%;
+
+    background:linear-gradient(
+        90deg,
+        transparent,
+        rgba(255,255,255,.25),
+        transparent
+    );
+
+    transition:.6s;
+}
+
+.pauta .btn-primary:hover::before{
+
+    left:100%;
+}
+
+/* =========================
+   TARJETA COMERCIAL
+========================= */
+
+.pauta-card{
+
+    background:linear-gradient(
+        145deg,
+        rgba(7,16,29,.95),
+        rgba(2,4,10,.95)
+    );
+
+    border:1px solid rgba(89,208,255,.15);
+
+    border-radius:30px;
+
+    padding:45px;
+
+    position:relative;
+
+    box-shadow:0 40px 120px rgba(0,0,0,.6);
+
+    transition:.4s;
+}
+
+.pauta-card:hover{
+
+    transform:translateY(-10px);
+    border-color:rgba(89,208,255,.35);
+}
+
+.pauta-card::after{
+
+    content:"";
+
+    position:absolute;
+    inset:0;
+
+    background:radial-gradient(
+        circle at top,
+        rgba(89,208,255,.15),
+        transparent 60%
+    );
+
+    pointer-events:none;
+}
+
+/* =========================
+   TEXTO VENTA
+========================= */
+
+.pauta-card span{
+
+    color:#59D0FF;
+    font-weight:800;
+    letter-spacing:2px;
+    font-size:.8rem;
+}
+
+.pauta-card h3{
+
+    font-size:2.2rem;
+    margin:15px 0;
+}
+
+.pauta-card p{
+
+    color:var(--gray);
+    line-height:1.7;
+}
+
+/* =========================
+   RESPONSIVE
+========================= */
+
+@media (max-width: 1024px){
+
+    .pauta-container{
+        grid-template-columns:1fr;
+        gap:40px;
+    }
+
+    .pauta-content h2{
+        font-size:2.8rem;
+    }
+
+    .beneficios{
+        grid-template-columns:1fr;
+    }
+}
