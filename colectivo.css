@@ -129,7 +129,6 @@ nav a:hover{
 color:var(--secondary);
 
 }
-
 /* =========================
 HERO
 ========================= */
@@ -211,7 +210,75 @@ linear-gradient(
     max-width:900px;
 
 }
+/* =========================
+   HERO HIGHLIGHTS
+========================= */
 
+.hero-highlights{
+
+    position:absolute;
+
+    right:8%;
+
+    top:50%;
+
+    transform:translateY(-50%);
+
+    width:340px;
+
+    display:flex;
+
+    flex-direction:column;
+
+    gap:20px;
+
+    z-index:20;
+}
+
+.highlight-card{
+
+    background:rgba(7,16,29,.85);
+
+    backdrop-filter:blur(20px);
+
+    border:1px solid rgba(255,255,255,.08);
+
+    border-radius:20px;
+
+    padding:25px;
+
+    box-shadow:
+    0 20px 50px rgba(0,0,0,.45);
+}
+
+.highlight-label{
+
+    display:block;
+
+    color:var(--accent);
+
+    font-size:.8rem;
+
+    font-weight:700;
+
+    letter-spacing:1px;
+
+    margin-bottom:10px;
+}
+
+.highlight-card h3{
+
+    font-size:1.4rem;
+
+    margin-bottom:10px;
+}
+
+.highlight-card p{
+
+    color:var(--gray);
+
+    line-height:1.6;
+}
 .hero-tag{
 
 display:inline-block;
@@ -230,7 +297,8 @@ text-transform:uppercase;
 
 .hero-content h1{
 
-    font-size:clamp(5rem,10vw,10rem);
+    font-size:clamp(4rem,8vw,7rem);
+};
 
     line-height:.85;
 
@@ -434,4 +502,25 @@ section{
     color:var(--gray);
 
     line-height:1.8;
+}
+.live-badge{
+
+    position:absolute;
+
+    top:120px;
+    right:8%;
+
+    background:#ff3b30;
+
+    color:white;
+
+    padding:10px 18px;
+
+    border-radius:999px;
+
+    font-size:.85rem;
+
+    font-weight:700;
+
+    letter-spacing:1px;
 }
