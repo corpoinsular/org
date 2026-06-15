@@ -1491,13 +1491,16 @@ section{
     align-items:flex-start;
 }
 
-.footer-logo{
 .footer-logo img{
     height:60px;
     width:auto;
     display:block;
 }
 
+.footer-logo{
+    line-height:0;
+    margin-bottom:10px;
+}
 .footer-brand p{
 
     color:var(--gray);
