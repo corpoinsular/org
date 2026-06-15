@@ -963,34 +963,145 @@ section{
     align-items:center;
     gap:8px;
 
-    color:var(--secondary);
-    font-weight:700;
-    text-decoration:none;
+/* =========================
+   PRODUCCIONES DESTACADAS
+========================= */
 
-    transition:.3s ease;
+.producciones{
+
+    padding:140px 8%;
+    background: radial-gradient(
+        circle at top,
+        rgba(31,143,229,.08),
+        transparent 60%
+    );
 }
 
-.programa-destacado-btn:hover{
+/* HEADER */
+.producciones .section-header{
+
+    text-align:center;
+    max-width:800px;
+    margin:0 auto 70px;
+}
+
+.producciones .section-tag{
+
+    display:inline-block;
+    color:var(--accent);
+    font-weight:700;
+    letter-spacing:2px;
+    margin-bottom:15px;
+}
+
+.producciones .section-header h2{
+
+    font-size:3rem;
+    margin-bottom:20px;
+}
+
+.producciones .section-header p{
+
+    color:var(--gray);
+    line-height:1.8;
+}
+
+/* GRID */
+.producciones-grid{
+
+    display:grid;
+    grid-template-columns:repeat(3,1fr);
+    gap:30px;
+}
+
+/* CARD */
+.produccion-card{
+
+    position:relative;
+    overflow:hidden;
+    border-radius:26px;
+
+    height:360px;
+
+    cursor:pointer;
+
+    transition:.4s ease;
+}
+
+.produccion-card img{
+
+    width:100%;
+    height:100%;
+    object-fit:cover;
+
+    transition:.6s ease;
+}
+
+/* HOVER ZOOM */
+.produccion-card:hover img{
+
+    transform:scale(1.1);
+}
+
+/* OVERLAY */
+.produccion-overlay{
+
+    position:absolute;
+    inset:0;
+
+    display:flex;
+    flex-direction:column;
+    justify-content:flex-end;
+
+    padding:25px;
+
+    background:linear-gradient(
+        transparent 0%,
+        rgba(2,4,10,.35) 45%,
+        rgba(2,4,10,.95) 100%
+    );
+
+    transition:.4s ease;
+}
+
+/* TEXT */
+.produccion-overlay span{
 
     color:var(--accent);
-    transform:translateX(6px);
+    font-size:.75rem;
+    font-weight:700;
+    letter-spacing:2px;
+}
+
+.produccion-overlay h3{
+
+    color:white;
+    font-size:1.4rem;
+    margin-top:8px;
+}
+
+/* HOVER EFFECT */
+.produccion-card:hover{
+
+    transform:translateY(-10px);
+    box-shadow:0 30px 80px rgba(0,0,0,.5);
 }
 
 /* RESPONSIVE */
 @media (max-width: 1024px){
 
-    .programas-destacados-grid{
+    .producciones-grid{
         grid-template-columns:repeat(2,1fr);
     }
 }
 
 @media (max-width: 768px){
 
-    .programas-destacados-grid{
+    .producciones-grid{
         grid-template-columns:1fr;
     }
 
-    .programas-destacados{
+    .producciones{
         padding:100px 6%;
     }
 }
