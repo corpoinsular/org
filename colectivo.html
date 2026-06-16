@@ -320,39 +320,24 @@ participativa y la producción audiovisual.
 <div class="producciones-grid">
 
     <!-- PRODUCCIÓN 1 -->
-<section class="coberturas">
+<article class="produccion-card">
 
-    <div class="slider">
+    <div class="produccion-slider">
 
-        <div class="slide active">
-            <img src="assets/cobertura1.jpg" alt="">
-
-            <div class="caption">
-                <span class="tag">COBERTURA ESPECIAL</span>
-                <h3>Lo que pasa</h3>
-            </div>
-        </div>
-
-        <div class="slide">
-            <img src="assets/cobertura2.jpg" alt="">
-
-            <div class="caption">
-                <span class="tag">COBERTURA ESPECIAL</span>
-                <h3>Lo que pasa</h3>
-            </div>
-        </div>
-
-        <div class="slide">
-            <img src="assets/cobertura3.jpg" alt="">
-
-            <div class="caption">
-                <span class="tag">INVESTIGACIÓN</span>
-                <h3>Lo que pasa</h3>
-            </div>
-        </div>
+        <img src="assets/cobertura1.jpg" class="slide active">
+        <img src="assets/cobertura2.jpg" class="slide">
+        <img src="assets/cobertura3.jpg" class="slide">
 
     </div>
 
+    <div class="produccion-info">
+
+        <span>COBERTURA ESPECIAL</span>
+        <h3>Lo que pasa</h3>
+
+    </div>
+
+</article>
 </section>
 
     <!-- PRODUCCIÓN 2 -->
@@ -532,7 +517,27 @@ participativa y la producción audiovisual.
     </div>
 
 </footer>
+<script>
 
+document.querySelectorAll('.produccion-slider').forEach(slider=>{
+
+    const slides = slider.querySelectorAll('.slide');
+
+    let current = 0;
+
+    setInterval(()=>{
+
+        slides[current].classList.remove('active');
+
+        current = (current + 1) % slides.length;
+
+        slides[current].classList.add('active');
+
+    },4000);
+
+});
+
+</script>
 </body>
 
 </html>
