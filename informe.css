@@ -555,3 +555,404 @@ RESPONSIVE
 }
 
 }
+/* ===================================
+PREMIUM UPGRADE
+INFORME INFORMATIVO
+=================================== */
+
+/* FONDO TECNOLÓGICO */
+
+body::before{
+
+content:"";
+
+position:fixed;
+
+inset:0;
+
+background-image:
+linear-gradient(rgba(255,255,255,.02) 1px, transparent 1px),
+linear-gradient(90deg, rgba(255,255,255,.02) 1px, transparent 1px);
+
+background-size:40px 40px;
+
+pointer-events:none;
+
+z-index:-2;
+
+}
+
+body::after{
+
+content:"";
+
+position:fixed;
+
+top:-300px;
+right:-300px;
+
+width:700px;
+height:700px;
+
+border-radius:50%;
+
+background:
+rgba(89,208,255,.05);
+
+filter:blur(120px);
+
+pointer-events:none;
+
+z-index:-1;
+
+}
+
+/* HERO CINEMÁTICO */
+
+.informe-hero::after{
+
+content:"";
+
+position:absolute;
+
+bottom:-200px;
+left:-200px;
+
+width:500px;
+height:500px;
+
+border-radius:50%;
+
+background:
+rgba(10,46,168,.12);
+
+filter:blur(120px);
+
+}
+
+.hero-content{
+
+animation:heroFade 1.5s ease;
+
+}
+
+@keyframes heroFade{
+
+from{
+
+    opacity:0;
+    transform:translateY(50px);
+}
+
+to{
+
+    opacity:1;
+    transform:translateY(0);
+}
+
+}
+
+/* TÍTULOS PREMIUM */
+
+.hero-programa h1,
+.equipo-programa h2,
+.ultimas-emisiones h2,
+.programa-info h2{
+
+position:relative;
+
+display:inline-block;
+
+margin-bottom:40px;
+
+}
+
+.hero-programa h1::after,
+.equipo-programa h2::after,
+.ultimas-emisiones h2::after,
+.programa-info h2::after{
+
+content:"";
+
+position:absolute;
+
+left:0;
+bottom:-15px;
+
+width:80px;
+height:4px;
+
+border-radius:50px;
+
+background:
+linear-gradient(
+    90deg,
+    var(--accent),
+    transparent
+);
+
+}
+
+/* TARJETAS */
+
+.seccion-item,
+.persona,
+.emision-card,
+.info-box{
+
+position:relative;
+
+overflow:hidden;
+
+border:
+1px solid rgba(255,255,255,.05);
+
+box-shadow:
+0 20px 50px rgba(0,0,0,.35);
+
+transition:.45s;
+
+}
+
+.seccion-item::before,
+.persona::before,
+.emision-card::before,
+.info-box::before{
+
+content:"";
+
+position:absolute;
+
+top:0;
+left:0;
+
+width:100%;
+height:3px;
+
+background:
+linear-gradient(
+    90deg,
+    var(--accent),
+    transparent
+);
+
+}
+
+.seccion-item:hover,
+.persona:hover,
+.emision-card:hover,
+.info-box:hover{
+
+transform:
+translateY(-12px);
+
+box-shadow:
+0 30px 70px rgba(0,0,0,.45);
+
+}
+
+/* EFECTO IMAGEN */
+
+.persona img,
+.emision-card img{
+
+transition:.8s;
+
+}
+
+.persona:hover img,
+.emision-card:hover img{
+
+transform:scale(1.08);
+
+}
+
+/* ESTADÍSTICAS */
+
+.stat{
+
+backdrop-filter:blur(18px);
+
+border:
+1px solid rgba(255,255,255,.05);
+
+box-shadow:
+0 15px 35px rgba(0,0,0,.25);
+
+}
+
+.stat strong{
+
+text-shadow:
+0 0 25px rgba(89,208,255,.35);
+
+}
+
+/* BREAKING NEWS */
+
+.breaking-news{
+
+animation:pulseNews 4s infinite;
+
+font-size:1rem;
+
+letter-spacing:.5px;
+
+}
+
+.breaking-news span{
+
+font-weight:900;
+
+}
+
+@keyframes pulseNews{
+
+0%{
+
+    box-shadow:0 0 0 rgba(214,40,40,0);
+}
+
+50%{
+
+    box-shadow:
+    0 0 35px rgba(214,40,40,.45);
+}
+
+100%{
+
+    box-shadow:0 0 0 rgba(214,40,40,0);
+}
+
+}
+
+/* BOTONES PREMIUM */
+
+.btn-primary,
+.btn-secondary{
+
+transition:.4s;
+
+}
+
+.btn-primary:hover{
+
+transform:translateY(-4px);
+
+box-shadow:
+0 15px 40px rgba(31,143,229,.4);
+
+}
+
+.btn-secondary:hover{
+
+transform:translateY(-4px);
+
+border-color:
+rgba(89,208,255,.35);
+
+}
+
+/* SCROLLBAR */
+
+::-webkit-scrollbar{
+
+width:10px;
+
+}
+
+::-webkit-scrollbar-track{
+
+background:#050811;
+
+}
+
+::-webkit-scrollbar-thumb{
+
+background:
+linear-gradient(
+    var(--primary),
+    var(--accent)
+);
+
+border-radius:50px;
+
+}
+
+/* BANNER EN VIVO */
+
+.live-banner{
+
+position:fixed;
+
+right:25px;
+bottom:25px;
+
+z-index:999;
+
+padding:14px 22px;
+
+border-radius:60px;
+
+background:
+linear-gradient(
+    135deg,
+    #C1121F,
+    #D62828
+);
+
+color:white;
+
+font-weight:800;
+
+box-shadow:
+0 0 30px rgba(214,40,40,.45);
+
+animation:livePulse 2s infinite;
+
+}
+
+@keyframes livePulse{
+
+0%{
+    transform:scale(1);
+}
+
+50%{
+    transform:scale(1.05);
+}
+
+100%{
+    transform:scale(1);
+}
+
+}
+
+/* ANIMACIÓN GENERAL */
+
+.seccion-item,
+.persona,
+.emision-card,
+.stat{
+
+animation:fadeUp .8s ease;
+
+}
+
+@keyframes fadeUp{
+
+from{
+
+    opacity:0;
+
+    transform:translateY(30px);
+}
+
+to{
+
+    opacity:1;
+
+    transform:translateY(0);
+}
+
+}
