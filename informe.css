@@ -656,3 +656,300 @@ min-height:65vh;
 }
 
 }
+/* ===================================
+INFORME PREMIUM NEWS UPGRADE
+PEGAR AL FINAL DE INFORME.CSS
+=================================== */
+
+.informe-hero{
+
+    min-height:72vh;
+
+    padding:140px 8% 80px;
+
+    text-align:left;
+
+    position:relative;
+}
+
+.hero-content{
+
+    max-width:850px;
+}
+
+.informe-hero h1{
+
+    font-size:clamp(4rem,8vw,7rem);
+
+    line-height:.9;
+
+    letter-spacing:-4px;
+
+    margin-bottom:20px;
+}
+
+.informe-hero p{
+
+    max-width:700px;
+
+    font-size:1.15rem;
+
+    line-height:1.9;
+}
+
+.hero-programa,
+.programa-info,
+.cobertura-especial,
+.equipo-programa,
+.ultimas-emisiones{
+
+    padding:80px 8%;
+}
+
+.programa-secciones{
+
+    padding:60px 8%;
+}
+
+.hero-stats{
+
+    padding:50px 8%;
+}
+
+/* TITULOS */
+
+.hero-programa h1,
+.programa-info h2,
+.equipo-programa h2,
+.ultimas-emisiones h2,
+.cobertura-especial h2{
+
+    font-size:clamp(2rem,4vw,3.5rem);
+
+    margin-bottom:25px;
+
+    position:relative;
+}
+
+.hero-programa h1::after,
+.programa-info h2::after,
+.equipo-programa h2::after,
+.ultimas-emisiones h2::after,
+.cobertura-especial h2::after{
+
+    content:"";
+
+    display:block;
+
+    width:90px;
+    height:4px;
+
+    margin-top:15px;
+
+    border-radius:50px;
+
+    background:
+    linear-gradient(
+        90deg,
+        var(--accent),
+        transparent
+    );
+}
+
+/* TARJETAS */
+
+.seccion-item,
+.persona,
+.emision-card,
+.cobertura-card,
+.info-box{
+
+    background:
+    linear-gradient(
+        145deg,
+        rgba(7,16,29,.98),
+        rgba(2,4,10,.98)
+    );
+
+    border:
+    1px solid rgba(255,255,255,.05);
+
+    box-shadow:
+    0 20px 60px rgba(0,0,0,.30);
+
+    transition:.4s;
+}
+
+.seccion-item:hover,
+.persona:hover,
+.emision-card:hover,
+.cobertura-card:hover,
+.info-box:hover{
+
+    transform:translateY(-8px);
+
+    border-color:
+    rgba(89,208,255,.20);
+
+    box-shadow:
+    0 30px 80px rgba(0,0,0,.40);
+}
+
+/* GRID MÁS LIMPIA */
+
+.programa-secciones{
+
+    grid-template-columns:
+    repeat(auto-fit,minmax(260px,1fr));
+}
+
+.coberturas-grid{
+
+    display:grid;
+
+    grid-template-columns:
+    repeat(auto-fit,minmax(300px,1fr));
+
+    gap:25px;
+}
+
+.emisiones-grid{
+
+    grid-template-columns:
+    repeat(auto-fit,minmax(320px,1fr));
+
+    gap:25px;
+}
+
+/* ESTADÍSTICAS */
+
+.hero-stats{
+
+    display:grid;
+
+    grid-template-columns:
+    repeat(auto-fit,minmax(220px,1fr));
+
+    gap:20px;
+}
+
+.stat{
+
+    backdrop-filter:blur(15px);
+
+    background:
+    rgba(255,255,255,.03);
+
+    border:
+    1px solid rgba(255,255,255,.05);
+}
+
+.stat strong{
+
+    font-size:2.3rem;
+
+    color:var(--accent);
+}
+
+/* EQUIPO */
+
+.persona img{
+
+    height:340px;
+
+    transition:.8s;
+}
+
+.persona:hover img{
+
+    transform:scale(1.06);
+}
+
+/* EMISIONES */
+
+.emision-card img{
+
+    transition:.8s;
+}
+
+.emision-card:hover img{
+
+    transform:scale(1.05);
+}
+
+.emision-content{
+
+    padding:28px;
+}
+
+.emision-content h3{
+
+    line-height:1.4;
+
+    margin-top:10px;
+}
+
+/* BREAKING NEWS */
+
+.breaking-news{
+
+    margin:60px auto;
+
+    max-width:1200px;
+
+    display:flex;
+
+    justify-content:center;
+    align-items:center;
+
+    gap:15px;
+
+    padding:22px 30px;
+
+    border-radius:18px;
+
+    box-shadow:
+    0 0 40px rgba(214,40,40,.20);
+}
+
+/* LIVE */
+
+.live-banner{
+
+    bottom:20px;
+    right:20px;
+
+    padding:12px 18px;
+
+    font-size:.8rem;
+
+    border-radius:50px;
+}
+
+/* RESPONSIVE */
+
+@media(max-width:1024px){
+
+    .informe-hero{
+
+        text-align:center;
+
+        min-height:65vh;
+    }
+
+    .hero-content{
+
+        margin:auto;
+    }
+
+    .equipo-grid{
+
+        grid-template-columns:1fr;
+    }
+
+    .persona img{
+
+        height:300px;
+    }
+
+}
