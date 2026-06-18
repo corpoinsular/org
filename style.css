@@ -744,3 +744,50 @@ section{
 
     transform:translateY(-3px);
 }
+/* ==========================
+   QUIENES SOMOS
+========================== */
+
+.quienes-somos{
+    position:relative;
+    overflow:hidden;
+}
+
+.quienes-somos::before{
+    content:"";
+    position:absolute;
+    inset:0;
+
+    background-image:url("assets/patron-tecnologia.png");
+    background-repeat:repeat;
+    background-size:220px;
+
+    opacity:.035;
+
+    z-index:0;
+}
+
+.quienes-somos::after{
+    content:"";
+    position:absolute;
+    inset:0;
+
+    background:
+    radial-gradient(
+        circle at top right,
+        rgba(31,143,229,.10),
+        transparent 40%
+    ),
+    radial-gradient(
+        circle at bottom left,
+        rgba(10,46,168,.12),
+        transparent 45%
+    );
+
+    z-index:1;
+}
+
+.quienes-somos .container{
+    position:relative;
+    z-index:2;
+}
