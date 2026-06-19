@@ -907,3 +907,64 @@ section{
         grid-template-columns:1fr;
     }
 }
+/* ==========================
+   INICIATIVAS DESTACADAS
+========================== */
+
+.iniciativas-destacadas{
+    position:relative;
+    overflow:hidden;
+
+    background:
+    linear-gradient(
+        135deg,
+        rgba(3,16,36,.75),
+        rgba(7,36,95,.85),
+        rgba(10,46,168,.75)
+    );
+
+    border-top:1px solid rgba(255,255,255,.05);
+    border-bottom:1px solid rgba(255,255,255,.05);
+}
+
+/* Patrón PNG institucional */
+.iniciativas-destacadas::before{
+    content:"";
+    position:absolute;
+    inset:0;
+
+    background-image:url("assets/tecnologia.png");
+    background-repeat:repeat;
+    background-size:220px;
+
+    opacity:.18;
+
+    z-index:0;
+}
+
+/* Glow decorativo */
+.iniciativas-destacadas::after{
+    content:"";
+    position:absolute;
+    inset:0;
+
+    background:
+    radial-gradient(
+        circle at top left,
+        rgba(31,143,229,.14),
+        transparent 45%
+    ),
+    radial-gradient(
+        circle at bottom right,
+        rgba(89,208,255,.10),
+        transparent 50%
+    );
+
+    z-index:1;
+}
+
+/* contenido por encima */
+.iniciativas-destacadas .container{
+    position:relative;
+    z-index:2;
+}
