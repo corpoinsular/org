@@ -803,3 +803,107 @@ section{
     position:relative;
     z-index:2;
 }
+/* ==========================
+   IMPACTO INSTITUCIONAL
+========================== */
+
+.impact-card{
+
+    background:rgba(7,16,29,.65);
+
+    backdrop-filter:blur(25px);
+
+    border:1px solid rgba(255,255,255,.08);
+
+    border-radius:28px;
+
+    padding:40px;
+
+    display:grid;
+
+    grid-template-columns:1fr 1fr;
+
+    gap:25px;
+
+    box-shadow:
+    0 20px 60px rgba(0,0,0,.35);
+
+    position:relative;
+
+    overflow:hidden;
+}
+
+.impact-card::before{
+
+    content:"";
+
+    position:absolute;
+
+    inset:0;
+
+    background:
+    radial-gradient(
+        circle at top right,
+        rgba(31,143,229,.12),
+        transparent 40%
+    );
+
+    pointer-events:none;
+}
+
+.impact-item{
+
+    background:rgba(255,255,255,.03);
+
+    border:1px solid rgba(255,255,255,.06);
+
+    border-radius:18px;
+
+    padding:25px;
+
+    text-align:center;
+
+    transition:.35s ease;
+}
+
+.impact-item:hover{
+
+    transform:translateY(-6px);
+
+    border-color:rgba(31,143,229,.25);
+
+    background:rgba(255,255,255,.05);
+}
+
+.impact-item h3{
+
+    font-size:2.8rem;
+
+    font-weight:900;
+
+    color:var(--secondary);
+
+    line-height:1;
+
+    margin-bottom:10px;
+}
+
+.impact-item span{
+
+    color:var(--gray);
+
+    font-weight:600;
+
+    font-size:.95rem;
+
+    text-transform:uppercase;
+
+    letter-spacing:1px;
+}
+
+@media(max-width:768px){
+
+    .impact-card{
+        grid-template-columns:1fr;
+    }
+}
