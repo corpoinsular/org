@@ -497,14 +497,11 @@ section{
 ========================= */
 
 .footer{
-
-    padding:100px 8% 40px;
-
-    background:
-    radial-gradient(circle at 10% 10%, rgba(89,208,255,.08), transparent 40%),
-    linear-gradient(180deg, #02040A, #050811);
-
-    border-top:1px solid rgba(255,255,255,.06);
+    background: linear-gradient(
+        to top,
+        #050811 0%,
+        #061a33 100%
+    );
 }
 
 /* =========================
