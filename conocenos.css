@@ -6,24 +6,22 @@
 /* ==========================
    VARIABLES
 ========================== */
-
 :root{
-    --primary:#0A2EA8;
-    --secondary:#1F8FE5;
-    --accent:#D9A441;
 
-    --black:#02040A;
-    --nav:#050811;
-    --card:#07101D;
+--primary:#0A2EA8;
+--secondary:#1F8FE5;
+--accent:#D62828;
 
-    --white:#FFFFFF;
-    --gray:#C4C9D4;
-    --gray-dark:#6B7280;
+--dark:#02040A;
+--dark-2:#050811;
 
-    --line:rgba(255,255,255,.08);
+--soft-blue:#0E1B3D;
+--soft-card:#0B1224;
 
-    --radius:20px;
-    --transition:.35s ease;
+--white:#FFFFFF;
+--gray:#C4C9D4;
+--muted:#8FA0B3;
+
 }
 
 /* ==========================
@@ -151,7 +149,30 @@ nav a.active{
 /* ==========================
    HERO
 ========================== */
+..hero-about-bg{
+    position:relative;
+    padding:140px 0;
+    background:linear-gradient(135deg, var(--dark) 0%, var(--soft-blue) 100%);
+    color:white;
+    overflow:hidden;
+   background:url('assets/quienessomos.png') center/cover no-repeat;
+}
 
+.hero-about-bg::before{
+    content:"";
+    position:absolute;
+    top:-200px;
+    right:-200px;
+    width:500px;
+    height:500px;
+    background:radial-gradient(circle, rgba(31,143,229,.25), transparent 60%);
+    filter:blur(40px);
+}
+
+.hero-about-bg .container{
+    position:relative;
+    z-index:2;
+}
 .hero-programas{
     min-height:100vh;
     display:flex;
@@ -218,30 +239,27 @@ nav a.active{
 .hero-stats{
     display:flex;
     gap:25px;
+    margin-top:40px;
     flex-wrap:wrap;
 }
 
 .stat{
-    min-width:180px;
-
-    padding:25px;
-
-    border-radius:20px;
-
-    background:rgba(7,16,29,.80);
-
+    background:rgba(255,255,255,.06);
     border:1px solid rgba(255,255,255,.08);
-
-    backdrop-filter:blur(20px);
+    padding:18px 22px;
+    border-radius:16px;
+    min-width:140px;
 }
 
 .stat h3{
-    font-size:2.5rem;
     color:var(--secondary);
+    font-size:28px;
+    margin:0;
 }
 
 .stat span{
-    color:#C4C9D4;
+    color:var(--gray);
+    font-size:13px;
 }
 
 /* ==========================
@@ -442,7 +460,11 @@ nav a.active{
 /* ==========================
    ALIADOS
 ========================== */
-
+.impacto{
+    background:var(--soft-blue);
+    padding:80px 20px;
+    text-align:center;
+}
 .impact-grid{
     display:grid;
     grid-template-columns:repeat(4,1fr);
@@ -556,4 +578,12 @@ nav a.active{
     .valores-grid{
         grid-template-columns:1fr;
     }
+}
+.programas{
+    background:var(--dark);
+    padding:80px 20px;
+}
+.como-trabajamos{
+    background:#0B1224;
+    padding:90px 20px;
 }
