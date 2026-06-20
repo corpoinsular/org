@@ -532,3 +532,73 @@ nav a.active{
     line-height:1.5;
     color:#fff;
 }
+.gobierno{
+    padding:120px 8%;
+    background:
+        radial-gradient(circle at top right, rgba(31,143,229,.18), transparent 55%),
+        radial-gradient(circle at bottom left, rgba(10,46,168,.18), transparent 60%),
+        #050811;
+    text-align:center;
+}
+.org-chart{
+    margin-top:60px;
+    display:flex;
+    flex-direction:column;
+    gap:40px;
+    align-items:center;
+}
+.org-card{
+    position:relative;
+
+    background:rgba(255,255,255,.04);
+    border:1px solid rgba(255,255,255,.10);
+    border-radius:22px;
+
+    padding:30px 25px;
+    min-width:260px;
+    max-width:320px;
+
+    backdrop-filter:blur(14px);
+
+    transition:.35s ease;
+
+    box-shadow:0 20px 50px rgba(0,0,0,.25);
+}
+.org-card::before{
+    content:"";
+    position:absolute;
+    top:-120px;
+    right:-120px;
+
+    width:240px;
+    height:240px;
+
+    background:radial-gradient(circle, rgba(31,143,229,.30), transparent 60%);
+    filter:blur(35px);
+    opacity:.7;
+}
+.org-card.top,
+.org-card.main{
+    border-color:rgba(31,143,229,.35);
+    transform:scale(1.05);
+}
+.org-level.grid{
+    display:grid;
+    grid-template-columns:repeat(3,1fr);
+    gap:20px;
+}
+.org-card h3{
+    font-size:1.2rem;
+    font-weight:800;
+    margin-bottom:10px;
+}
+
+.org-card p{
+    color:#C4C9D4;
+    font-size:.95rem;
+}
+.org-card:hover{
+    transform:translateY(-10px);
+    border-color:rgba(31,143,229,.5);
+    box-shadow:0 30px 70px rgba(0,0,0,.45);
+}
