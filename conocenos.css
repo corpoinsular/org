@@ -657,3 +657,40 @@ nav a.active{
     border-color:rgba(31,143,229,.4);
     color:#1F8FE5;
 }
+.aliados-grid{
+    display:grid;
+    grid-template-columns:repeat(5, 1fr);
+    gap:25px;
+    align-items:center;
+    justify-items:center;
+}
+.aliados-grid img{
+    width:90px;
+    height:auto;
+
+    filter:grayscale(100%);
+    opacity:.75;
+
+    transition:.3s ease;
+
+    object-fit:contain;
+}
+.aliados-grid img:hover{
+    filter:grayscale(0%);
+    opacity:1;
+
+    transform:scale(1.1);
+
+    box-shadow:0 10px 30px rgba(31,143,229,.25);
+}
+@media(max-width:900px){
+    .aliados-grid{
+        grid-template-columns:repeat(3,1fr);
+    }
+}
+
+@media(max-width:600px){
+    .aliados-grid{
+        grid-template-columns:repeat(2,1fr);
+    }
+}
