@@ -306,11 +306,61 @@ nav a.active{
 }
 
 .paso-card{
-    background:rgba(7,16,29,.90);
-    border-radius:22px;
-    padding:30px;
+    position:relative;
+
+    background:rgba(255,255,255,.04);
+    border:1px solid rgba(255,255,255,.10);
+    border-radius:24px;
+
+    padding:35px;
+
+    backdrop-filter:blur(14px);
+
+    transition:.35s ease;
+
+    overflow:hidden;
+}
+.paso-card::before{
+    content:"";
+    position:absolute;
+    top:-140px;
+    right:-140px;
+    width:260px;
+    height:260px;
+
+    background:radial-gradient(circle, rgba(31,143,229,.35), transparent 60%);
+
+    filter:blur(35px);
+    opacity:.8;
+}
+.paso-card:hover{
+    transform:translateY(-12px) scale(1.02);
+
+    border-color:rgba(31,143,229,.45);
+
+    box-shadow:0 35px 80px rgba(0,0,0,.45);
+}
+.paso-icon{
+    background:rgba(31,143,229,.08);
+    border:1px solid rgba(31,143,229,.15);
+    box-shadow:0 10px 25px rgba(31,143,229,.10);
 }
 
+.paso-icon i{
+    font-size:56px;
+    color:var(--secondary);
+}
+.paso-card h3{
+    margin-top:15px;
+    font-size:1.3rem;
+    font-weight:800;
+}
+
+.paso-card p{
+    color:#C4C9D4;
+    margin-top:10px;
+    line-height:1.6;
+}
 /* ==========================
    RESPONSIVE
 ========================== */
