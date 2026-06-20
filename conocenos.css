@@ -735,3 +735,10 @@ nav a.active{
     }
 
 }
+.impacto-texto{
+    max-width:900px;
+    margin:30px auto 0;
+    color:#C4C9D4;
+    font-size:1.1rem;
+    line-height:1.9;
+}
