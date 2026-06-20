@@ -282,19 +282,59 @@ nav a.active{
 }
 
 .valor-card{
-    background:rgba(7,16,29,.88);
+    position:relative;
+
+    background:rgba(255,255,255,.04);
+    border:1px solid rgba(255,255,255,.10);
     border-radius:22px;
-    border:1px solid rgba(255,255,255,.08);
+
     padding:40px 25px;
+
     text-align:center;
+
+    backdrop-filter:blur(14px);
+
+    transition:.35s ease;
+
+    overflow:hidden;
+}
+.valor-card::before{
+    content:"";
+    position:absolute;
+    top:-120px;
+    right:-120px;
+    width:240px;
+    height:240px;
+
+    background:radial-gradient(circle, rgba(31,143,229,.30), transparent 60%);
+
+    filter:blur(35px);
+    opacity:.8;
+}
+.valor-card:hover{
+    transform:translateY(-10px);
+
+    border-color:rgba(31,143,229,.45);
+
+    box-shadow:0 30px 70px rgba(0,0,0,.40);
+}
+.valor-card i{
+    font-size:60px;
+    color:var(--secondary);
+    margin-bottom:18px;
     transition:.3s;
 }
 
-.valor-card:hover{
-    transform:translateY(-8px);
-    border-color:rgba(31,143,229,.4);
+.valor-card:hover i{
+    transform:scale(1.1);
+    text-shadow:0 0 20px rgba(31,143,229,.4);
 }
-
+.valor-card p{
+    margin-top:10px;
+    font-weight:700;
+    color:#fff;
+    letter-spacing:.5px;
+}
 /* ==========================
    PASOS
 ========================== */
