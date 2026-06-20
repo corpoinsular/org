@@ -676,10 +676,9 @@ nav a.active{
     object-fit:contain;
 }
 .aliados-grid img:hover{
-    filter:grayscale(0%);
-    opacity:1;
-
-    transform:scale(1.1);
+    filter:none;
+opacity:1;
+    transform:scale(1.08);
 
     box-shadow:0 10px 30px rgba(31,143,229,.25);
 }
@@ -693,4 +692,7 @@ nav a.active{
     .aliados-grid{
         grid-template-columns:repeat(2,1fr);
     }
+}
+.aliados-section{
+    background:#F8FAFC;
 }
