@@ -657,41 +657,81 @@ nav a.active{
     border-color:rgba(31,143,229,.4);
     color:#1F8FE5;
 }
+/* ==========================
+   ALIADOS PREMIUM
+========================== */
+
 .aliados-grid{
     display:grid;
-    grid-template-columns:repeat(5, 1fr);
+    grid-template-columns:repeat(5,1fr);
     gap:25px;
+
+    margin-top:50px;
+
     align-items:center;
     justify-items:center;
 }
-.aliados-grid img{
-    width:110px;
+
+.aliado-item{
+
+    width:100%;
+    max-width:180px;
+    height:110px;
+
+    background:#FFFFFF;
+
+    border-radius:20px;
+
+    display:flex;
+    align-items:center;
+    justify-content:center;
+
+    padding:20px;
+
+    box-shadow:
+    0 15px 35px rgba(0,0,0,.15);
+
+    transition:.35s ease;
+}
+
+.aliado-item:hover{
+
+    transform:translateY(-8px);
+
+    box-shadow:
+    0 25px 50px rgba(31,143,229,.20);
+}
+
+.aliado-item img{
+
+    max-width:120px;
+    max-height:65px;
+
+    width:auto;
     height:auto;
+
+    object-fit:contain;
 
     filter:none;
     opacity:1;
-
-    transition:.3s ease;
-    object-fit:contain;
 }
-.aliados-grid img:hover{
-    filter:none;
-opacity:1;
-    transform:scale(1.08);
+@media(max-width:1000px){
 
-    box-shadow:0 10px 30px rgba(31,143,229,.25);
-}
-@media(max-width:900px){
     .aliados-grid{
         grid-template-columns:repeat(3,1fr);
     }
+
 }
 
-@media(max-width:600px){
+@media(max-width:700px){
+
     .aliados-grid{
         grid-template-columns:repeat(2,1fr);
     }
-}
-.aliados-section{
-    background:#F8FAFC;
+
+    .aliado-item{
+        max-width:150px;
+        height:95px;
+    }
+
 }
