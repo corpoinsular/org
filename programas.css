@@ -520,3 +520,61 @@ nav a.active{
 .navbar .btn-nav{
     color:#FFFFFF !important;
 }
+.metodologia{
+    padding:120px 10%;
+    background:linear-gradient(
+        135deg,
+        rgba(2,8,25,.95),
+        rgba(10,46,168,.15)
+    );
+}
+
+.metodologia-header{
+    text-align:center;
+    margin-bottom:60px;
+}
+
+.metodologia-header h2{
+    font-size:2.8rem;
+    margin-bottom:10px;
+}
+
+.metodologia-header p{
+    color:#C4C9D4;
+}
+
+.metodologia-steps{
+    display:grid;
+    grid-template-columns:repeat(auto-fit,minmax(220px,1fr));
+    gap:25px;
+}
+
+.step{
+    background:rgba(7,16,29,.85);
+    border:1px solid rgba(255,255,255,.08);
+    border-radius:20px;
+    padding:30px;
+    position:relative;
+    transition:.3s ease;
+}
+
+.step:hover{
+    transform:translateY(-8px);
+    border-color:rgba(31,143,229,.4);
+}
+
+.step span{
+    font-size:2rem;
+    font-weight:900;
+    color:#63C5FF;
+}
+
+.step h3{
+    margin-top:10px;
+    font-size:1.2rem;
+}
+
+.step p{
+    color:#C4C9D4;
+    margin-top:10px;
+}
