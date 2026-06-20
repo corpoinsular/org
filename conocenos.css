@@ -665,14 +665,13 @@ nav a.active{
     justify-items:center;
 }
 .aliados-grid img{
-    width:90px;
+    width:110px;
     height:auto;
 
-    filter:grayscale(100%);
-    opacity:.75;
+    filter:none;
+    opacity:1;
 
     transition:.3s ease;
-
     object-fit:contain;
 }
 .aliados-grid img:hover{
