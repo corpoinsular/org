@@ -1,8 +1,6 @@
 /* =========================
    VARIABLES COLECTIVO
 ========================= */
-
-:root{
 :root{
     --primary:#0A2EA8;
     --secondary:#1F8FE5;
@@ -519,6 +517,34 @@ nav a.active{
 
 .navbar .btn-nav{
     color:#FFFFFF !important;
+}
+.programa-expand{
+    max-height:0;
+    overflow:hidden;
+    opacity:0;
+
+    transition:var(--transition);
+    margin-top:0;
+}
+
+.programa-card.active .programa-expand{
+    max-height:500px;
+    opacity:1;
+    margin-top:20px;
+}
+
+.programa-galeria{
+    display:grid;
+    grid-template-columns:repeat(3,1fr);
+    gap:10px;
+    margin-top:15px;
+}
+
+.programa-galeria img{
+    width:100%;
+    height:100px;
+    object-fit:cover;
+    border-radius:12px;
 }
 .metodologia{
     padding:120px 10%;
