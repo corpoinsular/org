@@ -602,3 +602,58 @@ nav a.active{
     border-color:rgba(31,143,229,.5);
     box-shadow:0 30px 70px rgba(0,0,0,.45);
 }
+.footer-simple{
+    padding:60px 8%;
+    background:#050811;
+    border-top:1px solid rgba(255,255,255,.08);
+    text-align:center;
+}
+
+.footer-simple-container{
+    display:flex;
+    flex-direction:column;
+    align-items:center;
+    gap:20px;
+}
+
+.footer-logo img{
+    height:60px;
+    width:auto;
+}
+
+/* DERECHOS */
+.footer-copy{
+    color:#C4C9D4;
+    font-size:.95rem;
+}
+
+/* REDES */
+.footer-social{
+    display:flex;
+    gap:18px;
+}
+
+.footer-social a{
+    width:44px;
+    height:44px;
+
+    display:flex;
+    align-items:center;
+    justify-content:center;
+
+    border-radius:50%;
+
+    background:rgba(255,255,255,.05);
+    border:1px solid rgba(255,255,255,.08);
+
+    color:#fff;
+
+    transition:.3s;
+}
+
+.footer-social a:hover{
+    transform:translateY(-5px);
+    background:rgba(31,143,229,.15);
+    border-color:rgba(31,143,229,.4);
+    color:#1F8FE5;
+}
