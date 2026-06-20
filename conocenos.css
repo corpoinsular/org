@@ -156,6 +156,9 @@ nav a.active{
 .hero-about-bg .container{
     position:relative;
     z-index:2;
+    max-width:1200px;
+    margin:auto;
+    padding:0 25px; /* 👈 esto separa del borde */
 }
 
 .hero-tag{
