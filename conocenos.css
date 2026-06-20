@@ -1,6 +1,6 @@
 /* ===================================
    CORPORACIÓN INSULAR DIGITAL
-   CONOCENOS.CSS PREMIUM
+   CONOCENOS.CSS LIMPIO Y PREMIUM
 =================================== */
 
 /* ==========================
@@ -41,20 +41,9 @@ html{
 
 body{
     background:
-    radial-gradient(circle at top right,
-    rgba(31,143,229,.25),
-    transparent 35%),
-
-    radial-gradient(circle at bottom left,
-    rgba(10,46,168,.25),
-    transparent 40%),
-
-    linear-gradient(
-        135deg,
-        #031024,
-        #07245F,
-        #0A2EA8
-    );
+        radial-gradient(circle at top right, rgba(31,143,229,.25), transparent 35%),
+        radial-gradient(circle at bottom left, rgba(10,46,168,.25), transparent 40%),
+        linear-gradient(135deg, #031024, #07245F, #0A2EA8);
 
     color:#fff;
     overflow-x:hidden;
@@ -67,7 +56,7 @@ img{
 }
 
 /* ==========================
-   NAVBAR
+   NAVBAR (limpio)
 ========================== */
 
 .navbar{
@@ -75,89 +64,41 @@ img{
     top:15px;
     left:50%;
     transform:translateX(-50%);
-
     width:95%;
     max-width:1300px;
-
     background:rgba(255,255,255,.96);
-
     border-radius:25px;
-
     padding:12px 0;
-
     backdrop-filter:blur(10px);
-
     box-shadow:0 10px 30px rgba(0,0,0,.12);
-
     z-index:9999;
 }
 
 .nav-flex{
     width:min(1200px,92%);
     margin:auto;
-
     display:flex;
     justify-content:space-between;
     align-items:center;
 }
 
-.logo{
-    font-size:1.6rem;
-    font-weight:900;
-    text-decoration:none;
-    color:#0A2EA8;
-}
-
-.logo span{
-    color:#1F8FE5;
-}
-
-nav{
-    display:flex;
-    align-items:center;
-    gap:28px;
-}
-
-nav a{
-    text-decoration:none;
-    color:#0A2EA8;
-    font-weight:700;
-    transition:.3s;
-}
-
-nav a:hover,
-nav a.active{
-    color:#1F8FE5;
-}
-
-.btn-nav{
-    padding:12px 20px;
-    border-radius:12px;
-
-    background:linear-gradient(
-        135deg,
-        #1F8FE5,
-        #63C5FF
-    );
-
-    color:#fff !important;
-}
-.logo img{
-    height:55px;
-    width:auto;
-}
 /* ==========================
-   HERO
+   HERO ABOUT (CORREGIDO)
 ========================== */
-..hero-about-bg{
+
+.hero-about-bg{
     position:relative;
-    padding:140px 0;
-    background:linear-gradient(135deg, var(--dark) 0%, var(--soft-blue) 100%);
+    padding:160px 0;
     color:white;
     overflow:hidden;
-   background:url('assets/quienessomos.png') center/cover no-repeat;
+
+    /* 👇 TU IMAGEN CORRECTA */
+    background:
+        linear-gradient(rgba(2,8,25,.65), rgba(2,8,25,.85)),
+        url("assets/quienes-somos.png") center/cover no-repeat;
 }
 
+/* brillo premium */
 .hero-about-bg::before{
     content:"";
     position:absolute;
@@ -173,72 +114,29 @@ nav a.active{
     position:relative;
     z-index:2;
 }
-.hero-programas{
-    min-height:100vh;
-    display:flex;
-    align-items:center;
-    position:relative;
-    overflow:hidden;
-    padding:0 8%;
-}
-
-.hero-programas::before{
-    content:"";
-    position:absolute;
-    inset:0;
-
-    background:
-
-    radial-gradient(
-        circle at center,
-        rgba(31,143,229,.10),
-        rgba(10,46,168,.25) 45%,
-        rgba(2,8,25,.85)
-    ),
-
-    linear-gradient(
-        rgba(2,8,25,.55),
-        rgba(2,8,25,.80)
-    ),
-
-    url("assets/quienessomos.png");
-
-    background-size:cover;
-    background-position:center;
-}
-
-.hero-content{
-    position:relative;
-    z-index:2;
-    max-width:1100px;
-}
 
 .hero-tag{
     display:block;
     margin-bottom:20px;
-
     color:var(--secondary);
-
     font-weight:900;
     letter-spacing:4px;
     text-transform:uppercase;
 }
 
-.hero-content h1{
-    font-size:clamp(3rem,6vw,5rem);
-    line-height:1;
+.hero-about-bg h1{
+    font-size:clamp(2.5rem,5vw,4.5rem);
     font-weight:900;
-    letter-spacing:-3px;
-    margin-bottom:30px;
+    line-height:1.1;
 }
 
 /* ==========================
-   HERO STATS
+   STATS
 ========================== */
 
 .hero-stats{
     display:flex;
-    gap:25px;
+    gap:20px;
     margin-top:40px;
     flex-wrap:wrap;
 }
@@ -254,7 +152,6 @@ nav a.active{
 .stat h3{
     color:var(--secondary);
     font-size:28px;
-    margin:0;
 }
 
 .stat span{
@@ -263,56 +160,51 @@ nav a.active{
 }
 
 /* ==========================
-   SECCIONES
+   SECCIONES BASE
 ========================== */
 
 .programas,
 .impacto,
 .como-trabajamos{
-    padding:110px 8%;
+    padding:100px 8%;
 }
 
-.section-header{
+/* alternancia visual (IMPORTANTE) */
+
+.programas{
+    background:#050811;
+}
+
+.como-trabajamos{
+    background:#0B1224;
+}
+
+.impacto{
+    background:#0E1B3D;
     text-align:center;
-    max-width:900px;
-    margin:0 auto 60px;
-}
-
-.section-header h2{
-    font-size:3rem;
-    line-height:1.1;
-    font-weight:900;
-    text-transform:uppercase;
-}
-
-.section-header p{
-    color:#C4C9D4;
-    margin-top:20px;
 }
 
 /* ==========================
-   QUIENES SOMOS
+   ABOUT GRID
 ========================== */
 
 .about-grid{
     display:grid;
     grid-template-columns:1fr 1fr;
-    gap:70px;
+    gap:60px;
     align-items:center;
 }
 
+/* imagen */
 .about-image img{
     border-radius:24px;
+    box-shadow:0 25px 60px rgba(0,0,0,.35);
 }
 
+/* texto */
 .about-content h2{
     font-size:2.5rem;
     margin-bottom:20px;
-}
-
-.about-content p{
-    color:#E5E7EB;
-    margin-bottom:15px;
 }
 
 /* ==========================
@@ -322,29 +214,15 @@ nav a.active{
 .mision-vision{
     display:grid;
     grid-template-columns:1fr 1fr;
-    gap:30px;
-    padding:0 8% 110px;
+    gap:25px;
+    padding:0 8% 100px;
 }
 
 .mv-card{
     background:rgba(7,16,29,.88);
-
     border:1px solid rgba(255,255,255,.08);
-
     border-radius:24px;
-
     padding:40px;
-
-    backdrop-filter:blur(12px);
-}
-
-.mv-card span{
-    color:var(--secondary);
-    font-weight:800;
-}
-
-.mv-card h3{
-    margin-top:15px;
 }
 
 /* ==========================
@@ -359,180 +237,32 @@ nav a.active{
 
 .valor-card{
     background:rgba(7,16,29,.88);
-
     border-radius:22px;
-
     border:1px solid rgba(255,255,255,.08);
-
     padding:40px 25px;
-
     text-align:center;
-
-    transition:.35s ease;
+    transition:.3s;
 }
 
 .valor-card:hover{
-    transform:translateY(-10px);
-
-    border-color:rgba(31,143,229,.35);
-
-    box-shadow:0 25px 50px rgba(0,0,0,.30);
-}
-
-.valor-card i{
-    font-size:78px;
-    color:var(--secondary);
-    margin-bottom:20px;
+    transform:translateY(-8px);
+    border-color:rgba(31,143,229,.4);
 }
 
 /* ==========================
-   COMO TRABAJAMOS
+   PASOS
 ========================== */
 
 .pasos-grid{
     display:grid;
     grid-template-columns:repeat(4,1fr);
-    gap:25px;
+    gap:20px;
 }
 
 .paso-card{
     background:rgba(7,16,29,.90);
-
-    border-radius:24px;
-
-    border:1px solid rgba(255,255,255,.08);
-
-    padding:35px;
-
-    backdrop-filter:blur(12px);
-
-    position:relative;
-    overflow:hidden;
-}
-
-.paso-card::before{
-    content:"";
-
-    position:absolute;
-    top:0;
-    left:0;
-
-    width:100%;
-    height:4px;
-
-    background:linear-gradient(
-        90deg,
-        #0A2EA8,
-        #1F8FE5
-    );
-}
-
-.paso-card:hover{
-    border-color:rgba(31,143,229,.35);
-
-    box-shadow:0 30px 60px rgba(0,0,0,.35);
-}
-
-.paso-icon{
-    width:100px;
-    height:100px;
-
-    border-radius:24px;
-
-    background:linear-gradient(
-        135deg,
-        rgba(31,143,229,.15),
-        rgba(31,143,229,.05)
-    );
-
-    display:flex;
-    align-items:center;
-    justify-content:center;
-
-    margin-bottom:25px;
-}
-
-.paso-icon i{
-    font-size:48px;
-    color:var(--secondary);
-}
-
-/* ==========================
-   ALIADOS
-========================== */
-.impacto{
-    background:var(--soft-blue);
-    padding:80px 20px;
-    text-align:center;
-}
-.impact-grid{
-    display:grid;
-    grid-template-columns:repeat(4,1fr);
-    gap:20px;
-}
-
-.impact-card{
-    background:rgba(7,16,29,.90);
-
-    border-radius:20px;
-
-    border:1px solid rgba(255,255,255,.08);
-
-    padding:50px 20px;
-
-    text-align:center;
-}
-
-/* ==========================
-   CTA
-========================== */
-
-.cta{
-    padding:110px 8%;
-    text-align:center;
-
-    background:linear-gradient(
-        135deg,
-        #0A2EA8 0%,
-        #1F8FE5 60%,
-        #0A2EA8 100%
-    );
-}
-
-.cta h2{
-    font-size:3rem;
-    margin-bottom:30px;
-}
-
-.btn-red,
-.btn-outline{
-    display:inline-flex;
-    align-items:center;
-    justify-content:center;
-
-    padding:14px 28px;
-
-    border-radius:14px;
-
-    text-decoration:none;
-
-    font-weight:800;
-}
-
-.btn-red{
-    background:linear-gradient(
-        135deg,
-        #1F8FE5,
-        #63C5FF
-    );
-
-    color:#fff;
-}
-
-.btn-outline{
-    border:1px solid rgba(255,255,255,.25);
-    color:#fff;
-    margin-left:10px;
+    border-radius:22px;
+    padding:30px;
 }
 
 /* ==========================
@@ -550,10 +280,6 @@ nav a.active{
         grid-template-columns:repeat(2,1fr);
     }
 
-    .impact-grid{
-        grid-template-columns:repeat(2,1fr);
-    }
-
     .valores-grid{
         grid-template-columns:repeat(2,1fr);
     }
@@ -561,29 +287,12 @@ nav a.active{
 
 @media(max-width:768px){
 
-    nav{
-        display:none;
-    }
-
-    .hero-content h1{
-        font-size:3rem;
-    }
-
-    .hero-stats{
-        flex-direction:column;
-    }
-
     .pasos-grid,
-    .impact-grid,
     .valores-grid{
         grid-template-columns:1fr;
     }
-}
-.programas{
-    background:var(--dark);
-    padding:80px 20px;
-}
-.como-trabajamos{
-    background:#0B1224;
-    padding:90px 20px;
+
+    .hero-about-bg h1{
+        font-size:2.2rem;
+    }
 }
