@@ -386,3 +386,21 @@ nav a.active{
     font-size:32px;
     color:#1F8FE5;
 }
+@media(min-width:1200px){
+    .hero-about-bg .container{
+        padding:0 60px;
+    }
+}
+.mision-vision{
+    background:
+        radial-gradient(circle at top right, rgba(31,143,229,.15), transparent 50%),
+        radial-gradient(circle at bottom left, rgba(10,46,168,.15), transparent 55%),
+        #050811;
+
+    padding:120px 8%;
+    border-radius:30px;
+}
+.mv-card{
+    background:rgba(255,255,255,.04);
+    backdrop-filter:blur(10px);
+}
