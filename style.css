@@ -968,3 +968,20 @@ section{
     position:relative;
     z-index:2;
 }
+.footer-col i{
+    width:20px;
+    color:var(--secondary);
+    margin-right:8px;
+}
+
+.social-user{
+    display:block;
+    margin-top:15px;
+    padding:10px 14px;
+    border-radius:12px;
+    background:rgba(31,143,229,.08);
+    border:1px solid rgba(31,143,229,.2);
+    color:var(--secondary);
+    font-size:.9rem;
+    font-weight:600;
+}
