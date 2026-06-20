@@ -465,7 +465,73 @@ section{
     }
 
 }
-    
+/* ==========================
+   ALIADOS HOME
+========================== */
+
+.aliados-home{
+    padding:100px 0;
+    background:#050811;
+    overflow:hidden;
+}
+
+.aliados-slider{
+    width:100%;
+    overflow:hidden;
+    margin-top:50px;
+}
+
+.aliados-track{
+    display:flex;
+    gap:25px;
+
+    width:max-content;
+
+    animation:scrollAliados 35s linear infinite;
+}
+
+.aliado-item{
+
+    width:180px;
+    height:110px;
+
+    background:#fff;
+
+    border-radius:18px;
+
+    display:flex;
+    align-items:center;
+    justify-content:center;
+
+    flex-shrink:0;
+
+    box-shadow:
+    0 10px 30px rgba(0,0,0,.15);
+
+    transition:.3s;
+}
+
+.aliado-item img{
+    max-width:120px;
+    max-height:60px;
+    object-fit:contain;
+}
+
+.aliado-item:hover{
+    transform:translateY(-5px);
+}
+
+@keyframes scrollAliados{
+
+    from{
+        transform:translateX(0);
+    }
+
+    to{
+        transform:translateX(-50%);
+    }
+
+}    
 /* ==========================
    CTA
 ========================== */
