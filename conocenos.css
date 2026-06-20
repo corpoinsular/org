@@ -393,14 +393,52 @@ nav a.active{
 }
 .mision-vision{
     background:
-        radial-gradient(circle at top right, rgba(31,143,229,.15), transparent 50%),
-        radial-gradient(circle at bottom left, rgba(10,46,168,.15), transparent 55%),
+        radial-gradient(circle at top right, rgba(31,143,229,.18), transparent 55%),
+        radial-gradient(circle at bottom left, rgba(10,46,168,.18), transparent 60%),
         #050811;
 
     padding:120px 8%;
-    border-radius:30px;
+    display:grid;
+    grid-template-columns:1fr 1fr;
+    gap:30px;
 }
 .mv-card{
+    position:relative;
     background:rgba(255,255,255,.04);
-    backdrop-filter:blur(10px);
+    border:1px solid rgba(255,255,255,.10);
+    border-radius:24px;
+    padding:45px;
+
+    backdrop-filter:blur(14px);
+
+    transition:.35s ease;
+    overflow:hidden;
+}
+.mv-card::before{
+    content:"";
+    position:absolute;
+    top:-120px;
+    right:-120px;
+    width:250px;
+    height:250px;
+    background:radial-gradient(circle, rgba(31,143,229,.35), transparent 60%);
+    filter:blur(30px);
+    opacity:.8;
+}
+.mv-card:hover{
+    transform:translateY(-10px);
+    border-color:rgba(31,143,229,.4);
+    box-shadow:0 30px 70px rgba(0,0,0,.45);
+}
+.mv-card span{
+    color:var(--secondary);
+    font-weight:800;
+    letter-spacing:2px;
+}
+
+.mv-card h3{
+    margin-top:15px;
+    font-size:1.4rem;
+    line-height:1.5;
+    color:#fff;
 }
