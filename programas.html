@@ -8,10 +8,13 @@
 
 <link rel="stylesheet" href="programas.css">
 
+<!-- Google Fonts -->
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-
 <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+
+<!-- Font Awesome (FIX ICONOS FOOTER) -->
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
 
 </head>
 
@@ -27,9 +30,9 @@
         </a>
 
         <nav>
-            <a href="index.html" class="active">Inicio</a>
-            <a href="conocenos.html" class="active">Conócenos</a>
-            <a href="programas.html">Programas</a>
+            <a href="index.html">Inicio</a>
+            <a href="conocenos.html">Conócenos</a>
+            <a href="programas.html" class="active">Programas</a>
             <a href="colectivo.html">Colectivo</a>
             <a href="dona.html" class="btn-nav">Dona</a>
         </nav>
@@ -65,7 +68,7 @@
     <div class="programas-grid">
 
         <!-- PROGRAMA 1 -->
-        <div class="programa-card">
+        <article class="programa-card">
 
             <div class="programa-header">
 
@@ -76,7 +79,6 @@
                 <div class="programa-title">
 
                     <span class="programa-label">PROGRAMA 01</span>
-
                     <h3>Estrategia de Alfabetización e Inclusión Digital</h3>
 
                 </div>
@@ -91,10 +93,10 @@
                 Conocer más
             </button>
 
-        </div>
+        </article>
 
         <!-- PROGRAMA 2 -->
-        <div class="programa-card">
+        <article class="programa-card">
 
             <div class="programa-header">
 
@@ -105,7 +107,6 @@
                 <div class="programa-title">
 
                     <span class="programa-label">PROGRAMA 02</span>
-
                     <h3>Crea Cine Insular</h3>
 
                 </div>
@@ -120,7 +121,7 @@
                 Conocer más
             </button>
 
-        </div>
+        </article>
 
     </div>
 
@@ -131,7 +132,7 @@
 
     <div class="detalle-box">
 
-        <button class="cerrar-detalle">✕</button>
+        <button class="cerrar-detalle" aria-label="Cerrar modal">✕</button>
 
         <div id="detalleContenido"></div>
 
@@ -181,12 +182,10 @@
 <!-- CTA -->
 <section class="cta">
 
-    <h2>
-        Construyamos oportunidades juntos
-    </h2>
+    <h2>Construyamos oportunidades juntos</h2>
 
     <p>
-        Sumemos esfuerzos para fortalecer procesos comunitarios, culturales y educativos en las comunidades insulares.
+        Sumemos esfuerzos para fortalecer procesos comunitarios, culturales y educativos.
     </p>
 
     <a href="https://wa.me/573001112233?text=Hola%2C%20quiero%20m%C3%A1s%20informaci%C3%B3n%20sobre%20los%20programas"
@@ -202,17 +201,14 @@
 
     <div class="footer-simple-container">
 
-        <!-- LOGO -->
         <div class="footer-logo">
             <img src="assets/ahorasi.png" alt="Corporación Insular Digital">
         </div>
 
-        <!-- DERECHOS -->
         <p class="footer-copy">
             © 2026 Corporación Insular Digital · Todos los derechos reservados
         </p>
 
-        <!-- REDES -->
         <div class="footer-social">
 
             <a href="https://facebook.com/insulardigitaloficial" target="_blank">
@@ -236,57 +232,51 @@
     </div>
 
 </footer>
-<!-- ICONOS -->
+
+<!-- ICONOS LUCIDE -->
 <script src="https://unpkg.com/lucide@latest"></script>
 <script>
-lucide.createIcons();
+    lucide.createIcons();
 </script>
 
-<!-- JS MODAL -->
+<!-- MODAL JS -->
 <script>
-
 const detalle = document.getElementById("detallePrograma");
 const contenido = document.getElementById("detalleContenido");
 
 document.querySelectorAll(".btn-detalle").forEach(btn => {
-
     btn.addEventListener("click", () => {
 
         const tipo = btn.dataset.target;
 
         if (tipo === "digital") {
-
             contenido.innerHTML = `
                 <h2>Estrategia de Alfabetización e Inclusión Digital</h2>
-                <p>
-                Promueve procesos de formación para reducir brechas digitales y ampliar oportunidades educativas, laborales y sociales.
-                </p>
+                <p>Promueve formación para reducir brechas digitales y ampliar oportunidades educativas, laborales y sociales.</p>
             `;
-
         }
 
         if (tipo === "cine") {
-
             contenido.innerHTML = `
                 <h2>Crea Cine Insular</h2>
-                <p>
-                Programa de creación audiovisual comunitaria que fortalece la identidad cultural y la narración desde el territorio.
-                </p>
+                <p>Programa de creación audiovisual comunitaria que fortalece identidad cultural y narración territorial.</p>
             `;
-
         }
 
         detalle.classList.add("active");
-
     });
-
 });
 
-document.querySelector(".cerrar-detalle")
-.addEventListener("click", () => {
+document.querySelector(".cerrar-detalle").addEventListener("click", () => {
     detalle.classList.remove("active");
 });
 
+// cerrar al hacer clic fuera del modal
+detalle.addEventListener("click", (e) => {
+    if (e.target === detalle) {
+        detalle.classList.remove("active");
+    }
+});
 </script>
 
 </body>
