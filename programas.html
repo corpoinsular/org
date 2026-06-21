@@ -286,43 +286,33 @@ Crea Cine Insular entiende el cine y la comunicación como herramientas para la 
     lucide.createIcons();
 </script>
 
-<!-- MODAL JS -->
 <script>
-const detalle = document.getElementById("detallePrograma");
-const contenido = document.getElementById("detalleContenido");
+const cards = document.querySelectorAll(".programa-card");
 
-document.querySelectorAll(".btn-detalle").forEach(btn => {
-    btn.addEventListener("click", () => {
+cards.forEach(card => {
 
-        const tipo = btn.dataset.target;
+    const btn = card.querySelector(".btn-detalle");
 
-        if (tipo === "digital") {
-            contenido.innerHTML = `
-                <h2>Estrategia de Alfabetización e Inclusión Digital</h2>
-                <p>Promueve formación para reducir brechas digitales y ampliar oportunidades educativas, laborales y sociales.</p>
-            `;
-        }
+    btn.addEventListener("click", (e) => {
 
-        if (tipo === "cine") {
-            contenido.innerHTML = `
-                <h2>Crea Cine Insular</h2>
-                <p>Programa de creación audiovisual comunitaria que fortalece identidad cultural y narración territorial.</p>
-            `;
-        }
+        e.stopPropagation();
 
-        detalle.classList.add("active");
+        cards.forEach(c => {
+            if (c !== card) {
+                c.classList.remove("active");
+            }
+        });
+
+        card.classList.toggle("active");
+
     });
+
 });
 
-document.querySelector(".cerrar-detalle").addEventListener("click", () => {
-    detalle.classList.remove("active");
-});
-
-// cerrar al hacer clic fuera del modal
-detalle.addEventListener("click", (e) => {
-    if (e.target === detalle) {
-        detalle.classList.remove("active");
-    }
+document.addEventListener("click", () => {
+    cards.forEach(card => {
+        card.classList.remove("active");
+    });
 });
 </script>
 
