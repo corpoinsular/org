@@ -133,29 +133,25 @@ HERO
     background-position:center;
 }
 
-.hero-content{
-    position:relative;
-    z-index:2;
-    max-width:900px;
-}
-
 .hero-content h1{
     font-size:4rem;
     font-weight:900;
     line-height:1.1;
-    color:#63C5FF;
+    color:#FFFFFF;
+    text-shadow: 0 8px 30px rgba(0,0,0,.6);
 }
 
 .hero-content p{
-    color:var(--gray);
+    color: rgba(255,255,255,.85);
     margin-top:15px;
     font-size:1.1rem;
 }
 
 .hero-tag{
-    color:var(--secondary);
+    color:#FFFFFF;
     font-weight:800;
     letter-spacing:3px;
+    opacity:.9;
 }
 
 /* =========================
@@ -167,8 +163,14 @@ PROGRAMAS
 
 .programas-grid{
     display:grid;
-    grid-template-columns:repeat(auto-fit,minmax(300px,1fr));
-    gap:35px;
+    grid-template-columns:repeat(2,1fr);
+    gap:30px;
+}
+
+@media(max-width:900px){
+    .programas-grid{
+        grid-template-columns:1fr;
+    }
 }
 
 /* =========================
@@ -184,15 +186,18 @@ CARD
     box-shadow: 0 15px 40px rgba(0,0,0,.25);
 }
 
-.programa-card:hover{
-    transform: translateY(-6px);
-    border-color: rgba(31,143,229,.35);
+.programa-card{
+    min-height: 260px;
+    padding: 40px;
 }
 
 .programa-texto{
-    color: #C4C9D4;
-    margin-top: 12px;
-    line-height: 1.6;
+    font-size: 1.05rem;
+    line-height: 1.7;
+}
+
+.programa-title h3{
+    font-size: 20px;
 }
 
 .btn-detalle{
