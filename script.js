@@ -47,3 +47,31 @@ const programas = {
 // Abrir modal SOLO si existe data-target
 document.querySelectorAll(".btn-detalle").forEach(btn => {
     btn.addEventListener("click", () => {
+const cards = document.querySelectorAll(".programa-card");
+
+// abrir solo una
+cards.forEach(card => {
+    const btn = card.querySelector(".btn-detalle");
+
+    btn.addEventListener("click", (e) => {
+        e.stopPropagation();
+
+        cards.forEach(c => {
+            if (c !== card) c.classList.remove("active");
+        });
+
+        card.classList.toggle("active");
+    });
+});
+
+// cerrar al hacer click fuera
+document.addEventListener("click", () => {
+    cards.forEach(c => c.classList.remove("active"));
+});
+
+// evitar cierre cuando clic dentro de card
+cards.forEach(card => {
+    card.addEventListener("click", (e) => {
+        e.stopPropagation();
+    });
+});
