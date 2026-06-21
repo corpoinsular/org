@@ -1,16 +1,19 @@
 /* =========================
-VARIABLES
+VARIABLES COLECTIVO
 ========================= */
 :root{
     --primary:#0A2EA8;
     --secondary:#1F8FE5;
     --accent:#D9A441;
 
-    --bg:#02040A;
+    --black:#02040A;
     --nav:#050811;
+    --card:#07101D;
 
-    --text:#FFFFFF;
+    --white:#FFFFFF;
     --gray:#C4C9D4;
+    --gray-dark:#6B7280;
+
     --line:rgba(255,255,255,.08);
 
     --radius:20px;
@@ -29,16 +32,16 @@ RESET
 
 body{
     background:
-    radial-gradient(circle at top right,rgba(31,143,229,.25),transparent 40%),
+    radial-gradient(circle at top right,rgba(31,143,229,.25),transparent 35%),
     radial-gradient(circle at bottom left,rgba(10,46,168,.25),transparent 40%),
     linear-gradient(135deg,#031024,#07245F,#0A2EA8);
 
-    color:var(--text);
+    color:#fff;
     overflow-x:hidden;
 }
 
 /* =========================
-NAVBAR (MEJORADO)
+NAVBAR
 ========================= */
 .navbar{
     position:fixed;
@@ -52,7 +55,7 @@ NAVBAR (MEJORADO)
     border-radius:25px;
     padding:12px 0;
 
-    backdrop-filter:blur(12px);
+    backdrop-filter:blur(10px);
     box-shadow:0 10px 30px rgba(0,0,0,.12);
 
     z-index:9999;
@@ -68,6 +71,7 @@ NAVBAR (MEJORADO)
 
 nav{
     display:flex;
+    align-items:center;
     gap:28px;
 }
 
@@ -76,7 +80,6 @@ nav a{
     color:#0A2EA8;
     font-weight:700;
     transition:.3s;
-    position:relative;
 }
 
 nav a:hover,
@@ -92,7 +95,7 @@ nav a.active{
 }
 
 /* =========================
-HERO (MEJOR CONTRASTE)
+HERO
 ========================= */
 .hero-programas{
     position:relative;
@@ -108,9 +111,11 @@ HERO (MEJOR CONTRASTE)
     content:"";
     position:absolute;
     inset:0;
+
     background:
-    radial-gradient(circle at center,rgba(31,143,229,.12),rgba(10,46,168,.25),rgba(2,8,25,.9)),
+    radial-gradient(circle at center,rgba(31,143,229,.10),rgba(10,46,168,.25),rgba(2,8,25,.85)),
     url("assets/programas.jpg");
+
     background-size:cover;
     background-position:center;
 }
@@ -154,7 +159,7 @@ PROGRAMAS
 }
 
 /* =========================
-CARD (MEJORADA PREMIUM)
+CARD
 ========================= */
 .programa-card{
     background:rgba(7,16,29,.88);
@@ -163,25 +168,7 @@ CARD (MEJORADA PREMIUM)
     padding:35px;
     position:relative;
     overflow:hidden;
-
     transition:var(--transition);
-}
-
-/* efecto luz suave */
-.programa-card::before{
-    content:"";
-    position:absolute;
-    top:-40%;
-    left:-40%;
-    width:180%;
-    height:180%;
-    background:radial-gradient(circle,rgba(31,143,229,.08),transparent 60%);
-    opacity:0;
-    transition:.4s;
-}
-
-.programa-card:hover::before{
-    opacity:1;
 }
 
 .programa-card:hover{
@@ -190,9 +177,7 @@ CARD (MEJORADA PREMIUM)
     box-shadow:0 30px 60px rgba(0,0,0,.35);
 }
 
-/* =========================
-HEADER CARD
-========================= */
+/* HEADER */
 .programa-header{
     display:flex;
     gap:15px;
@@ -208,21 +193,16 @@ HEADER CARD
 
 .programa-title h3{
     font-size:18px;
-    font-weight:800;
 }
 
-/* =========================
-TEXTO
-========================= */
+/* TEXTO */
 .programa-texto{
     margin-top:15px;
     color:var(--gray);
     line-height:1.6;
 }
 
-/* =========================
-BOTÓN PREMIUM
-========================= */
+/* BOTÓN */
 .btn-detalle{
     margin-top:20px;
     padding:12px 18px;
@@ -230,20 +210,12 @@ BOTÓN PREMIUM
     border-radius:12px;
     font-weight:800;
     cursor:pointer;
-
     background:linear-gradient(135deg,#1F8FE5,#63C5FF);
     color:#fff;
-
-    transition:var(--transition);
-}
-
-.btn-detalle:hover{
-    transform:translateY(-4px);
-    box-shadow:0 15px 30px rgba(31,143,229,.35);
 }
 
 /* =========================
-EXPANSIÓN (ACORDEÓN LIMPIO)
+EXPANSIÓN (ACORDEÓN)
 ========================= */
 .programa-expand{
     max-height:0;
@@ -259,9 +231,7 @@ EXPANSIÓN (ACORDEÓN LIMPIO)
     margin-top:20px;
 }
 
-/* =========================
-GALERÍA PREMIUM
-========================= */
+/* GALERÍA */
 .programa-galeria{
     display:grid;
     grid-template-columns:repeat(3,1fr);
@@ -274,19 +244,14 @@ GALERÍA PREMIUM
     height:120px;
     object-fit:cover;
     border-radius:12px;
-    transition:.3s;
-}
-
-.programa-galeria img:hover{
-    transform:scale(1.05);
 }
 
 /* =========================
-METODOLOGÍA (MEJOR CONTRASTE)
+METODOLOGÍA
 ========================= */
 .metodologia{
     padding:120px 10%;
-    background:rgba(0,0,0,.18);
+    background:rgba(0,0,0,.15);
 }
 
 .metodologia-header{
@@ -313,12 +278,6 @@ METODOLOGÍA (MEJOR CONTRASTE)
     border:1px solid var(--line);
     border-radius:20px;
     padding:25px;
-    transition:.3s;
-}
-
-.step:hover{
-    transform:translateY(-6px);
-    border-color:rgba(31,143,229,.35);
 }
 
 /* =========================
@@ -340,12 +299,6 @@ IMPACTO
     border:1px solid var(--line);
     border-radius:20px;
     padding:30px;
-    transition:.3s;
-}
-
-.impact-card:hover{
-    transform:translateY(-6px);
-    border-color:rgba(31,143,229,.3);
 }
 
 /* =========================
