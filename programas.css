@@ -407,10 +407,32 @@ IMPACTO PREMIUM
 ========================= */
 
 .impacto{
+    position:relative;
+
     padding:140px 6%;
+
     text-align:center;
+
+    overflow:hidden;
+
+    background:
+    linear-gradient(
+        180deg,
+        #061738 0%,
+        #031024 50%,
+        #02040A 100%
+    );
+}
+.impacto::before,
+.impacto::after{
+    z-index:1;
 }
 
+.impacto h2,
+.impact-grid{
+    position:relative;
+    z-index:2;
+}
 .impacto h2{
     font-size:3rem;
     font-weight:900;
@@ -655,25 +677,30 @@ FOOTER
 }
 
 /* Luz difusa */
-
 .programa-card::before{
     content:"";
 
-    position:relative;
+    position:absolute;
 
-    padding:140px 6%;
+    width:350px;
+    height:350px;
 
-    text-align:center;
+    top:-180px;
+    right:-120px;
 
-    overflow:hidden;
+    border-radius:50%;
 
     background:
-    linear-gradient(
-        180deg,
-        #061738 0%,
-        #031024 50%,
-        #02040A 100%
+    radial-gradient(
+        circle,
+        rgba(99,197,255,.18) 0%,
+        rgba(31,143,229,.08) 40%,
+        transparent 75%
     );
+
+    pointer-events:none;
+
+    transition:.6s ease;
 }
 
 /* Luz inferior */
