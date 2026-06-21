@@ -274,37 +274,132 @@ EXPANSIÓN (ACORDEÓN)
 }
 
 /* =========================
-METODOLOGÍA
+METODOLOGÍA PREMIUM
 ========================= */
+
 .metodologia{
-    padding:120px 10%;
-    background:rgba(0,0,0,.15);
+    padding:140px 6%;
+    position:relative;
 }
 
 .metodologia-header{
     text-align:center;
-    margin-bottom:50px;
+    max-width:800px;
+    margin:0 auto 70px;
 }
 
 .metodologia-header h2{
-    font-size:2.6rem;
+    font-size:3rem;
+    font-weight:900;
+    margin-bottom:15px;
 }
 
 .metodologia-header p{
     color:var(--gray);
+    font-size:1.1rem;
+    line-height:1.8;
 }
+
+/* FILA HORIZONTAL */
 
 .metodologia-steps{
     display:grid;
-    grid-template-columns:repeat(auto-fit,minmax(220px,1fr));
+    grid-template-columns:repeat(4,1fr);
     gap:25px;
 }
 
+/* TARJETAS */
+
 .step{
-    background:rgba(7,16,29,.85);
-    border:1px solid var(--line);
-    border-radius:20px;
-    padding:25px;
+    position:relative;
+
+    background:
+    linear-gradient(
+        180deg,
+        rgba(255,255,255,.05),
+        rgba(255,255,255,.02)
+    );
+
+    border:1px solid rgba(255,255,255,.08);
+
+    border-radius:24px;
+
+    padding:40px 30px;
+
+    min-height:260px;
+
+    backdrop-filter:blur(15px);
+
+    transition:.35s ease;
+
+    overflow:hidden;
+}
+
+.step:hover{
+    transform:translateY(-8px);
+
+    border-color:rgba(31,143,229,.35);
+
+    box-shadow:
+    0 25px 50px rgba(0,0,0,.25),
+    0 0 35px rgba(31,143,229,.15);
+}
+
+/* NÚMERO */
+
+.step span{
+    display:block;
+
+    font-size:3rem;
+    font-weight:900;
+
+    color:#63C5FF;
+
+    margin-bottom:20px;
+
+    line-height:1;
+}
+
+/* TÍTULO */
+
+.step h3{
+    font-size:1.3rem;
+    margin-bottom:15px;
+    line-height:1.4;
+}
+
+/* TEXTO */
+
+.step p{
+    color:var(--gray);
+    line-height:1.8;
+    font-size:.98rem;
+}
+
+/* RESPONSIVE */
+
+@media(max-width:1200px){
+
+    .metodologia-steps{
+        grid-template-columns:repeat(2,1fr);
+    }
+
+}
+
+@media(max-width:768px){
+
+    .metodologia{
+        padding:100px 8%;
+    }
+
+    .metodologia-header h2{
+        font-size:2.3rem;
+    }
+
+    .metodologia-steps{
+        grid-template-columns:1fr;
+    }
+
 }
 
 /* =========================
