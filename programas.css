@@ -235,15 +235,14 @@ EXPANSIÓN (ACORDEÓN)
     overflow:hidden;
     opacity:0;
     margin-top:0;
-    transition:all .5s ease;
+    transition:all .45s ease;
 }
 
 .programa-card.active .programa-expand{
-    max-height:1200px;
+    max-height:1000px;
     opacity:1;
     margin-top:20px;
 }
-
 /* GALERÍA */
 .programa-galeria{
     display:grid;
