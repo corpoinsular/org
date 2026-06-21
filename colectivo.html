@@ -217,7 +217,7 @@ participativa y la producción audiovisual.
                 de interés para las comunidades insulares.
             </p>
 
-            <a href="informe-informativo.html" class="programa-btn">
+            <a href="#" class="programa-btn" data-programa="informe">
     Conocer programa →
 </a>
         </div>
@@ -250,7 +250,7 @@ participativa y la producción audiovisual.
                 identidad desde el territorio.
             </p>
 
-            <a href="#" class="programa-btn">
+            <a href="#" class="programa-btn" data-programa="sintonia">
     Ver programa →
 </a>
 
@@ -264,7 +264,7 @@ participativa y la producción audiovisual.
 
         <div class="programa-image">
 
-            <img src="assets/historias-vida.jpg"
+            <img src="assets/historias.jpg"
                  alt="Historias de Vida y Oficios Tradicionales">
 
         </div>
@@ -284,7 +284,7 @@ participativa y la producción audiovisual.
                 las tradiciones que hacen parte de nuestra identidad.
             </p>
 
-            <a href="#" class="programa-btn">
+            <a href="#" class="programa-btn" data-programa="historias">
     Ver programa →
 </a>
 
@@ -514,26 +514,68 @@ participativa y la producción audiovisual.
     </div>
 
 </footer>
+
+    <!-- MODAL PROGRAMAS -->
+<div class="programa-modal" id="modal">
+
+    <div class="programa-modal-box">
+
+        <button class="modal-close">✕</button>
+
+        <div id="modal-content"></div>
+
+    </div>
+
+</div>
 <script>
+const modal = document.getElementById("modal");
+const content = document.getElementById("modal-content");
 
-document.querySelectorAll('.produccion-slider').forEach(slider=>{
+/* CONTENIDO DE CADA PROGRAMA */
+const programas = {
+    informe: `
+        <h2>Informe Informativo</h2>
+        <p>Noticias, entrevistas y actualidad de la comunidad insular.</p>
+        <img src="assets/informativo.jpg">
+    `,
 
-    const slides = slider.querySelectorAll('.slide');
+    sintonia: `
+        <h2>Sintonía Insular</h2>
+        <p>Programa cultural con música, identidad y participación ciudadana.</p>
+        <img src="assets/sintonia.jpg">
+    `,
 
-    let current = 0;
+    historias: `
+        <h2>Historias de Vida</h2>
+        <p>Relatos que rescatan memoria y tradición del territorio.</p>
+        <img src="assets/historias.jpg">
+    `
+};
 
-    setInterval(()=>{
+/* abrir modal */
+document.querySelectorAll(".programa-btn").forEach(btn => {
+    btn.addEventListener("click", (e) => {
+        e.preventDefault();
 
-        slides[current].classList.remove('active');
+        const id = btn.dataset.programa;
 
-        current = (current + 1) % slides.length;
+        content.innerHTML = programas[id];
 
-        slides[current].classList.add('active');
-
-    },4000);
-
+        modal.classList.add("active");
+    });
 });
 
+/* cerrar con botón */
+document.querySelector(".modal-close").addEventListener("click", () => {
+    modal.classList.remove("active");
+});
+
+/* cerrar al hacer click fuera */
+modal.addEventListener("click", (e) => {
+    if(e.target === modal){
+        modal.classList.remove("active");
+    }
+});
 </script>
 </body>
 
