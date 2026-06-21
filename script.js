@@ -49,3 +49,11 @@ document.addEventListener("DOMContentLoaded", () => {
 
 });
 </script>
+document.querySelectorAll(".programa-card .btn-detalle")
+.forEach(btn => {
+    btn.addEventListener("click", () => {
+        const card = btn.closest(".programa-card");
+
+        card.classList.toggle("active");
+    });
+});
