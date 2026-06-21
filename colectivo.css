@@ -1717,3 +1717,85 @@ section{
     }
 
 }
+/* =========================
+MODAL PROGRAMAS FULLSCREEN
+========================= */
+
+.programa-modal{
+    position:fixed;
+    inset:0;
+    background:rgba(0,0,0,.75);
+    backdrop-filter:blur(12px);
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    opacity:0;
+    visibility:hidden;
+    transition:.35s ease;
+    z-index:99999;
+}
+
+/* abrir modal */
+.programa-modal.active{
+    opacity:1;
+    visibility:visible;
+}
+
+/* caja grande */
+.programa-modal-box{
+    width:min(1100px,92%);
+    max-height:90vh;
+    overflow:auto;
+    background:linear-gradient(145deg,#07101D,#02040A);
+    border:1px solid rgba(255,255,255,.08);
+    border-radius:24px;
+    padding:40px;
+    position:relative;
+    box-shadow:0 40px 120px rgba(0,0,0,.6);
+    animation:zoomIn .35s ease;
+}
+
+/* animación pro */
+@keyframes zoomIn{
+    from{transform:scale(.9);opacity:0}
+    to{transform:scale(1);opacity:1}
+}
+
+/* botón cerrar */
+.modal-close{
+    position:absolute;
+    top:15px;
+    right:15px;
+    width:42px;
+    height:42px;
+    border-radius:50%;
+    border:none;
+    cursor:pointer;
+    background:rgba(255,255,255,.08);
+    color:white;
+    font-size:18px;
+    transition:.3s;
+}
+
+.modal-close:hover{
+    background:rgba(255,255,255,.2);
+    transform:scale(1.05);
+}
+
+/* contenido interno */
+#modal-content h2{
+    font-size:2rem;
+    margin-bottom:15px;
+}
+
+#modal-content p{
+    color:var(--gray);
+    line-height:1.8;
+    margin-bottom:20px;
+}
+
+#modal-content img{
+    width:100%;
+    border-radius:16px;
+    margin-top:15px;
+}
