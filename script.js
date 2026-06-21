@@ -1,5 +1,34 @@
+<script>
 // =========================
-// MODAL PROGRAMAS
+// TARJETAS (ACORDEÓN)
+// =========================
+document.querySelectorAll(".programa-card .btn-detalle").forEach(btn => {
+    btn.addEventListener("click", () => {
+
+        const card = btn.closest(".programa-card");
+
+        // Cierra otras tarjetas (modo profesional)
+        document.querySelectorAll(".programa-card").forEach(c => {
+            if (c !== card) c.classList.remove("active");
+        });
+
+        // Toggle de la tarjeta actual
+        card.classList.toggle("active");
+
+    });
+});
+
+
+// =========================
+// LUCIDE ICONS
+// =========================
+if (window.lucide) {
+    lucide.createIcons();
+}
+
+
+// =========================
+// MODAL (OPCIONAL PERO FUNCIONAL)
 // =========================
 const detalle = document.getElementById("detallePrograma");
 const contenido = document.getElementById("detalleContenido");
@@ -7,74 +36,14 @@ const contenido = document.getElementById("detalleContenido");
 const programas = {
     digital: {
         titulo: "Estrategia de Alfabetización e Inclusión Digital",
-        texto: "Este programa promueve la formación en habilidades digitales..."
+        texto: "Promueve formación para reducir brechas digitales y ampliar oportunidades educativas, laborales y sociales."
     },
     cine: {
         titulo: "Crea Cine Insular",
-        texto: "Programa audiovisual comunitario..."
+        texto: "Programa de creación audiovisual comunitaria que fortalece identidad cultural y narración territorial."
     }
 };
 
+// Abrir modal SOLO si existe data-target
 document.querySelectorAll(".btn-detalle").forEach(btn => {
     btn.addEventListener("click", () => {
-
-        const tipo = btn.dataset.target;
-
-        if (programas[tipo]) {
-            contenido.innerHTML = `
-                <h2>${programas[tipo].titulo}</h2>
-                <p>${programas[tipo].texto}</p>
-            `;
-            detalle.classList.add("active");
-        }
-
-    });
-});
-
-// cerrar modal
-document.querySelector(".cerrar-detalle")?.addEventListener("click", () => {
-    detalle.classList.remove("active");
-});
-
-// cerrar fuera del modal
-detalle?.addEventListener("click", (e) => {
-    if (e.target === detalle) {
-        detalle.classList.remove("active");
-    }
-});
-
-
-// =========================
-// ACORDEÓN TARJETAS
-// =========================
-document.querySelectorAll(".programa-card .btn-detalle")
-.forEach(btn => {
-    btn.addEventListener("click", () => {
-        const card = btn.closest(".programa-card");
-        card.classList.toggle("active");
-    });
-});
-
-
-// =========================
-// SLIDER (si existe .slide)
-// =========================
-document.addEventListener("DOMContentLoaded", () => {
-
-    const slides = document.querySelectorAll(".slide");
-
-    if (slides.length > 0) {
-        let index = 0;
-
-        function showSlide(i){
-            slides.forEach(s => s.classList.remove("active"));
-            slides[i].classList.add("active");
-        }
-
-        setInterval(() => {
-            index = (index + 1) % slides.length;
-            showSlide(index);
-        }, 3500);
-    }
-
-});
