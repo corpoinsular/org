@@ -403,24 +403,143 @@ METODOLOGÍA PREMIUM
 }
 
 /* =========================
-IMPACTO
+IMPACTO PREMIUM
 ========================= */
+
 .impacto{
-    padding:100px 10%;
+    padding:140px 6%;
     text-align:center;
+}
+
+.impacto h2{
+    font-size:3rem;
+    font-weight:900;
+    margin-bottom:60px;
 }
 
 .impact-grid{
     display:grid;
-    grid-template-columns:repeat(auto-fit,minmax(200px,1fr));
-    gap:20px;
+    grid-template-columns:repeat(4,1fr);
+    gap:30px;
 }
 
+/* TARJETAS */
+
 .impact-card{
-    background:rgba(7,16,29,.85);
-    border:1px solid var(--line);
-    border-radius:20px;
-    padding:30px;
+    background:
+    linear-gradient(
+        180deg,
+        rgba(255,255,255,.05),
+        rgba(255,255,255,.02)
+    );
+
+    border:1px solid rgba(255,255,255,.08);
+
+    border-radius:28px;
+
+    min-height:260px;
+
+    padding:40px 25px;
+
+    display:flex;
+    flex-direction:column;
+    align-items:center;
+    justify-content:center;
+
+    backdrop-filter:blur(15px);
+
+    transition:.35s ease;
+
+    overflow:hidden;
+
+    position:relative;
+}
+
+.impact-card:hover{
+    transform:translateY(-10px);
+
+    border-color:rgba(31,143,229,.4);
+
+    box-shadow:
+    0 25px 60px rgba(0,0,0,.30),
+    0 0 40px rgba(31,143,229,.15);
+}
+
+/* ICONOS */
+
+.impact-icon{
+    margin-bottom:25px;
+}
+
+.impact-icon svg{
+    width:70px;
+    height:70px;
+    stroke:#63C5FF;
+    stroke-width:1.8;
+}
+
+/* TITULOS */
+
+.impact-card h3{
+    font-size:1.35rem;
+    font-weight:800;
+    line-height:1.4;
+}
+
+/* EFECTO SUPERIOR */
+
+.impact-card::before{
+    content:"";
+    position:absolute;
+
+    top:0;
+    left:0;
+
+    width:100%;
+    height:4px;
+
+    background:linear-gradient(
+        90deg,
+        #1F8FE5,
+        #63C5FF
+    );
+
+    opacity:0;
+    transition:.35s ease;
+}
+
+.impact-card:hover::before{
+    opacity:1;
+}
+
+/* RESPONSIVE */
+
+@media(max-width:1100px){
+
+    .impact-grid{
+        grid-template-columns:repeat(2,1fr);
+    }
+
+}
+
+@media(max-width:768px){
+
+    .impacto{
+        padding:100px 8%;
+    }
+
+    .impacto h2{
+        font-size:2.3rem;
+    }
+
+    .impact-grid{
+        grid-template-columns:1fr;
+    }
+
+    .impact-card{
+        min-height:220px;
+    }
+
 }
 
 /* =========================
