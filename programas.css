@@ -126,13 +126,18 @@ HERO
     inset:0;
 
     background:
-    radial-gradient(circle at center,rgba(31,143,229,.10),rgba(10,46,168,.25),rgba(2,8,25,.85)),
+    linear-gradient(rgba(2,8,25,.75), rgba(10,46,168,.65)),
     url("assets/programas.jpg");
 
     background-size:cover;
     background-position:center;
-}
 
+    z-index:0;
+}
+.hero-content{
+    position:relative;
+    z-index:2;
+}
 .hero-content h1{
     font-size:4rem;
     font-weight:900;
@@ -165,6 +170,11 @@ PROGRAMAS
     display:grid;
     grid-template-columns:repeat(2,1fr);
     gap:30px;
+    align-items:stretch;
+}
+
+.programa-card{
+    min-height:320px;
 }
 
 @media(max-width:900px){
@@ -209,20 +219,6 @@ CARD
     color: white;
     font-weight: 700;
     cursor: pointer;
-}
-
-.programa-expand{
-    max-height: 0;
-    overflow: hidden;
-    opacity: 0;
-    transition: .5s ease;
-    margin-top: 0;
-}
-
-.programa-card.active .programa-expand{
-    max-height: 900px;
-    opacity: 1;
-    margin-top: 20px;
 }
 .cerrar-detalle{
     position: absolute;
@@ -399,22 +395,6 @@ FOOTER
     background:rgba(31,143,229,.15);
     border-color:rgba(31,143,229,.4);
     color:#1F8FE5;
-}
-.hero-programas::before{
-    content:"";
-    position:absolute;
-    inset:0;
-
-    background:
-    radial-gradient(circle at center,
-        rgba(0,0,0,.35),
-        rgba(10,46,168,.55),
-        rgba(2,8,25,.95)
-    ),
-    url("assets/programas.jpg");
-
-    background-size:cover;
-    background-position:center;
 }
 .cta{
     padding: 60px 10%;
