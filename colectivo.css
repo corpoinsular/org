@@ -573,3 +573,62 @@ RESPONSIVE
         text-align:center;
     }
 }
+/* =========================
+HERO BASE FIX
+========================= */
+
+.hero-colectivo{
+    position:relative;
+    min-height:100vh;
+    display:flex;
+    align-items:center;
+    padding:120px 8%;
+}
+
+.hero-content{
+    position:relative;
+    z-index:10;
+    max-width:800px;
+}
+
+.hero-content h1{
+    font-size:4rem;
+    font-weight:900;
+}
+
+.hero-content h2{
+    font-size:1.8rem;
+    margin:15px 0;
+}
+
+.hero-content p{
+    color:var(--gray);
+    line-height:1.7;
+}
+
+/* STATS */
+.hero-stats{
+    display:flex;
+    gap:40px;
+    margin-top:30px;
+}
+
+/* HIGHLIGHTS FIX */
+.hero-highlights{
+    position:absolute;
+    right:5%;
+    top:50%;
+    transform:translateY(-50%);
+    display:flex;
+    flex-direction:column;
+    gap:20px;
+}
+
+/* BUTTON FIX */
+.btn-primary, .btn-secondary{
+    display:inline-block;
+    padding:14px 22px;
+    border-radius:12px;
+    text-decoration:none;
+    font-weight:700;
+}
