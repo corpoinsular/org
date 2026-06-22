@@ -8,140 +8,180 @@
 <title>INSULAR+ | Plataforma Comunitaria</title>
 
 <link rel="stylesheet" href="colectivo.css">
-
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
 </head>
 
 <body>
 
-<!-- NAV BAR -->
-<header class="nav">
-  <div class="nav-inner">
+<!-- TOP NAV (APPLE TV STYLE) -->
+<header class="topbar">
+  <div class="topbar-inner">
 
-    <img src="assets/ahorasi.png" class="logo">
+    <div class="brand">
+      <img src="assets/ahorasi.png" alt="INSULAR+">
+    </div>
 
-    <nav>
-      <a href="#hero">Inicio</a>
+    <nav class="nav">
+      <a href="#home">Inicio</a>
       <a href="#live">En vivo</a>
-      <a href="#programs">Programas</a>
+      <a href="#catalog">Explorar</a>
       <a href="#pauta">Pauta</a>
     </nav>
+
+    <div class="status">
+      <span class="dot"></span>
+      EN TRANSMISIÓN
+    </div>
 
   </div>
 </header>
 
-<!-- HERO PRINCIPAL (EXPERIENCIA CINEMÁTICA) -->
-<section class="hero" id="hero">
+<!-- HERO CINEMÁTICO -->
+<section class="hero" id="home">
 
-  <div class="hero-bg"></div>
-  <div class="hero-overlay"></div>
+  <div class="hero-media"></div>
+  <div class="hero-gradient"></div>
 
-  <div class="hero-content">
+  <div class="hero-panel">
 
-    <span class="badge-live">● EN VIVO AHORA</span>
+    <div class="hero-meta">
+      <span class="tag-live">● LIVE NOW</span>
+      <span class="tag-type">PROGRAMA DESTACADO</span>
+    </div>
 
     <h1>INSULAR+</h1>
 
-    <p class="subtitle">
-      Las voces de nuestras comunidades cruzan fronteras
+    <p class="lead">
+      Comunicación comunitaria que documenta, informa y conecta el territorio.
     </p>
 
-    <p class="desc">
-      Plataforma audiovisual comunitaria que informa, conecta y documenta
-      la identidad del territorio insular.
+    <p class="sub">
+      Una plataforma audiovisual donde la identidad se transmite en tiempo real.
     </p>
 
     <div class="hero-actions">
-      <a href="#live" class="btn-primary">Ver transmisión</a>
-      <a href="#programs" class="btn-secondary">Explorar catálogo</a>
+      <a href="#live" class="primary">Ver transmisión</a>
+      <a href="#catalog" class="ghost">Explorar catálogo</a>
+    </div>
+
+    <!-- KPIs dentro del hero (NO FLOTA, SE INTEGRA) -->
+    <div class="hero-kpi">
+
+      <div>
+        <strong>3</strong>
+        <span>Programas</span>
+      </div>
+
+      <div>
+        <strong>35+</strong>
+        <span>Emisiones</span>
+      </div>
+
+      <div>
+        <strong>8</strong>
+        <span>Producciones</span>
+      </div>
+
+      <div>
+        <strong>100%</strong>
+        <span>Comunitario</span>
+      </div>
+
     </div>
 
   </div>
 
-</section>
+  <!-- FEATURE STACK (APPLE TV STYLE SIDE CARDS) -->
+  <aside class="hero-stack">
 
-<!-- LIVE NOW (PRIORIDAD 1) -->
-<section class="section" id="live">
-
-  <div class="section-title">
-    <h2>En transmisión</h2>
-    <p>Contenido activo ahora mismo</p>
-  </div>
-
-  <div class="row">
-
-    <div class="card live">
+    <div class="mini-card live">
       <span>EN VIVO</span>
       <h3>Informe Informativo</h3>
-      <p>Noticias y actualidad del territorio</p>
-      <button onclick="openModal('informe')">Ver</button>
+      <p>Noticias del territorio en tiempo real</p>
     </div>
 
-    <div class="card">
-      <span>PROGRAMADO</span>
+    <div class="mini-card">
+      <span>TRANSMISIÓN</span>
       <h3>Sintonía Insular</h3>
       <p>Música y cultura en vivo</p>
-      <button onclick="openModal('sintonia')">Ver</button>
     </div>
+
+    <div class="mini-card">
+      <span>CATÁLOGO</span>
+      <h3>Historias de Vida</h3>
+      <p>Memoria y tradición comunitaria</p>
+    </div>
+
+  </aside>
+
+</section>
+
+<!-- LIVE ROW -->
+<section class="rail" id="live">
+
+  <div class="rail-head">
+    <h2>En transmisión ahora</h2>
+    <p>Contenido activo del territorio</p>
+  </div>
+
+  <div class="rail-scroll">
+
+    <article class="card live">
+      <div class="badge">LIVE</div>
+      <h3>Informe Informativo</h3>
+      <p>Noticias, entrevistas y análisis</p>
+      <button>Ver ahora</button>
+    </article>
+
+    <article class="card">
+      <h3>Sintonía Insular</h3>
+      <p>Música y cultura comunitaria</p>
+      <button>Ver</button>
+    </article>
 
   </div>
 
 </section>
 
-<!-- PROGRAMAS (CATÁLOGO) -->
-<section class="section" id="programs">
+<!-- CATALOG -->
+<section class="rail" id="catalog">
 
-  <div class="section-title">
-    <h2>Catálogo de programas</h2>
-    <p>Contenido comunitario bajo demanda</p>
+  <div class="rail-head">
+    <h2>Catálogo INSULAR+</h2>
+    <p>Programación audiovisual comunitaria</p>
   </div>
 
   <div class="grid">
 
     <article class="card">
       <h3>Informe Informativo</h3>
-      <p>Noticias, entrevistas y análisis.</p>
-      <button onclick="openModal('informe')">Conocer</button>
+      <p>Noticias y actualidad del territorio</p>
     </article>
 
     <article class="card">
       <h3>Sintonía Insular</h3>
-      <p>Música, cultura y participación.</p>
-      <button onclick="openModal('sintonia')">Ver</button>
+      <p>Cultura y participación ciudadana</p>
     </article>
 
     <article class="card">
       <h3>Historias de Vida</h3>
-      <p>Memoria y tradición del territorio.</p>
-      <button onclick="openModal('historias')">Ver</button>
+      <p>Relatos del territorio</p>
     </article>
 
   </div>
 
 </section>
 
-<!-- STATS (REAL PLATFORM KPI) -->
-<section class="stats">
+<!-- PAUTA (BRAND LEVEL LANDING) -->
+<section class="ads" id="pauta">
 
-  <div><strong>3</strong><span>Programas</span></div>
-  <div><strong>35+</strong><span>Emisiones</span></div>
-  <div><strong>8</strong><span>Producciones</span></div>
-  <div><strong>100%</strong><span>Comunitario</span></div>
+  <div class="ads-left">
 
-</section>
-
-<!-- PAUTA (LANDING REAL DE NEGOCIO) -->
-<section class="pauta" id="pauta">
-
-  <div class="pauta-left">
-
-    <h2>Publicidad con impacto real</h2>
+    <h2>Tu marca en la pantalla comunitaria</h2>
 
     <p>
-      Conecta tu marca con audiencias locales a través de contenido audiovisual,
-      cobertura y espacios de alta visibilidad comunitaria.
+      Conecta con audiencias reales mediante contenido audiovisual,
+      cobertura de eventos y presencia institucional.
     </p>
 
     <ul>
@@ -151,57 +191,23 @@
       <li>Entrevistas institucionales</li>
     </ul>
 
-    <a class="btn-primary">Quiero pautar</a>
+    <a class="cta">Quiero pautar</a>
 
   </div>
 
-  <div class="pauta-right">
-    <h3>INSULAR+</h3>
-    <p>Plataforma de comunicación comunitaria</p>
+  <div class="ads-right">
+    <div class="brand-card">
+      <h3>INSULAR+</h3>
+      <p>Plataforma audiovisual comunitaria</p>
+    </div>
   </div>
 
 </section>
 
 <!-- FOOTER -->
 <footer class="footer">
-  <p>© 2026 INSULAR+ · Corporación Insular Digital</p>
+  <p>© 2026 INSULAR+ · Comunicación comunitaria</p>
 </footer>
-
-<!-- MODAL -->
-<div class="modal" id="modal">
-
-  <div class="modal-box">
-    <button onclick="closeModal()">✕</button>
-    <div id="modal-content"></div>
-  </div>
-
-</div>
-
-<script>
-
-const modal = document.getElementById("modal");
-const content = document.getElementById("modal-content");
-
-const programas = {
-  informe: `<h2>Informe Informativo</h2><p>Noticias del territorio en tiempo real.</p>`,
-  sintonia: `<h2>Sintonía Insular</h2><p>Música y cultura en vivo.</p>`,
-  historias: `<h2>Historias de Vida</h2><p>Relatos comunitarios.</p>`
-};
-
-function openModal(id){
-  content.innerHTML = programas[id];
-  modal.classList.add("active");
-}
-
-function closeModal(){
-  modal.classList.remove("active");
-}
-
-modal.addEventListener("click", e=>{
-  if(e.target === modal) closeModal();
-});
-
-</script>
 
 </body>
 </html>
