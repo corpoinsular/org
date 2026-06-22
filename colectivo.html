@@ -529,32 +529,6 @@ const programas = {
         <h2>Historias de Vida</h2>
         <p>Relatos que rescatan memoria y tradición del territorio.</p>
         <img src="assets/historias.jpg">
-    `
-};
-
-/* abrir modal */
-document.querySelectorAll(".programa-btn").forEach(btn => {
-    btn.addEventListener("click", (e) => {
-        e.preventDefault();
-
-        const id = btn.dataset.programa;
-
-        content.innerHTML = programas[id];
-
-        modal.classList.add("active");
-    });
-});
-
-/* cerrar con botón */
-document.querySelector(".modal-close").addEventListener("click", () => {
-    modal.classList.remove("active");
-});
-
-/* cerrar al hacer click fuera */
-modal.addEventListener("click", (e) => {
-    if(e.target === modal){
-        modal.classList.remove("active");
-    }
 });
 </script>
 </body>
