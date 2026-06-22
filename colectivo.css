@@ -292,63 +292,202 @@ section{
    PROGRAMAS (FOCUS CARDS SYSTEM)
 =================================== */
 
-.programas-grid{
-    display:flex;
-    gap:18px;
-    overflow-x:auto;
+/* ===================================
+   PROGRAMAS AL AIRE — APPLE CURATED ROW
+=================================== */
 
-    padding-top:24px;
-
-    scroll-snap-type:x mandatory;
+.programas-aire{
+    position:relative;
+    padding:110px 6%;
 }
 
-/* CARD BASE */
+/* HEADER EDITORIAL (APPLE STYLE) */
+.programas-aire .section-header{
+    max-width:720px;
+    margin-bottom:28px;
+}
+
+.programas-aire .section-tag{
+    font-size:.72rem;
+    letter-spacing:3px;
+    text-transform:uppercase;
+    color:var(--accent);
+    font-weight:600;
+}
+
+.programas-aire .section-header h2{
+    font-size:2.4rem;
+    font-weight:750;
+    letter-spacing:-.8px;
+    margin-top:10px;
+}
+
+.programas-aire .section-header p{
+    margin-top:12px;
+    color:var(--muted);
+    line-height:1.6;
+}
+
+/* ===================================
+   ROW TYPE: CURATED CINEMA STRIP
+=================================== */
+
+.programas-grid{
+    display:flex;
+    gap:22px;
+    overflow-x:auto;
+    padding:20px 6px 30px;
+
+    scroll-snap-type:x mandatory;
+    -webkit-overflow-scrolling:touch;
+}
+
+/* scrollbar premium */
+.programas-grid::-webkit-scrollbar{
+    height:6px;
+}
+
+.programas-grid::-webkit-scrollbar-thumb{
+    background:rgba(255,255,255,.08);
+    border-radius:10px;
+}
+
+/* ===================================
+   CARD APPLE TV (FOCUS HERO STYLE)
+=================================== */
+
 .programa-card{
-    min-width:280px;
+    min-width:320px;
+    max-width:320px;
 
-    background:var(--surface);
-    border-radius:18px;
-
+    border-radius:22px;
     overflow:hidden;
+
+    background:linear-gradient(180deg, #0B101C, #070A12);
 
     border:1px solid rgba(255,255,255,.06);
 
-    transition:.35s ease;
+    position:relative;
+
+    transition:all .35s ease;
+
+    scroll-snap-align:start;
 }
 
-/* FOCUS EFFECT (APPLE TV REMOTE STYLE) */
+/* HERO FOCUS EFFECT */
 .programa-card:hover{
-    transform:scale(1.06) translateY(-6px);
-    box-shadow:var(--shadow);
+    transform:scale(1.08) translateY(-6px);
     border-color:rgba(90,215,255,.25);
+    box-shadow:0 30px 90px rgba(0,0,0,.7);
     z-index:10;
+}
+
+/* IMAGE ZONE (APPLE CINEMA CUT) */
+.programa-image{
+    position:relative;
+    height:190px;
+    overflow:hidden;
 }
 
 .programa-image img{
     width:100%;
-    height:170px;
+    height:100%;
     object-fit:cover;
+    transform:scale(1.02);
+    transition:transform .6s ease;
 }
 
+/* zoom suave tipo Apple TV */
+.programa-card:hover .programa-image img{
+    transform:scale(1.12);
+}
+
+/* overlay cinematográfico limpio */
+.programa-image::after{
+    content:"";
+    position:absolute;
+    inset:0;
+
+    background:linear-gradient(
+        to top,
+        rgba(0,0,0,.85),
+        rgba(0,0,0,.25),
+        transparent 60%
+    );
+}
+
+/* ===================================
+   CONTENT (EDITORIAL LAYOUT)
+=================================== */
+
 .programa-content{
-    padding:15px;
+    padding:16px 16px 18px;
 }
 
 .programa-label{
     font-size:.7rem;
+    letter-spacing:2.5px;
+    text-transform:uppercase;
     color:var(--accent);
-    letter-spacing:2px;
+    font-weight:600;
 }
 
 .programa-content h3{
-    margin-top:6px;
-    font-size:1.1rem;
+    margin-top:8px;
+    font-size:1.15rem;
+    font-weight:700;
+    letter-spacing:-.3px;
 }
 
 .programa-content p{
-    font-size:.9rem;
+    margin-top:8px;
+    font-size:.92rem;
     color:var(--muted);
-    margin-top:6px;
+    line-height:1.5;
+}
+
+/* CTA MICRO LINK (APPLE STYLE) */
+.programa-btn{
+    display:inline-block;
+    margin-top:14px;
+
+    font-size:.85rem;
+    font-weight:600;
+
+    color:var(--text);
+    text-decoration:none;
+
+    opacity:.8;
+
+    transition:.25s ease;
+}
+
+.programa-btn:hover{
+    opacity:1;
+    color:var(--accent);
+}
+
+/* ===================================
+   ACTIVE FOCUS (TV REMOTE FEEL)
+=================================== */
+
+.programa-card:focus-within{
+    outline:2px solid rgba(90,215,255,.35);
+    transform:scale(1.06);
+}
+
+/* ===================================
+   MOBILE POLISH
+=================================== */
+
+@media(max-width:900px){
+    .programa-card{
+        min-width:270px;
+    }
+
+    .programas-aire .section-header h2{
+        font-size:2rem;
+    }
 }
 
 /* ===================================
