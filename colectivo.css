@@ -1,22 +1,22 @@
 /* ===================================
-   APPLE TV PRO+ UI SYSTEM
-   COLECTIVO - BROADCAST PLATFORM
+   APPLE TV NEXT LEVEL UI
+   COLECTIVO - CINEMATIC PLATFORM
 =================================== */
 
 :root{
-    --bg:#05070B;
-    --surface:#0C111C;
+    --bg:#04060A;
+    --surface:#0B101C;
     --surface-2:#111827;
 
     --text:#FFFFFF;
-    --muted:rgba(255,255,255,.62);
+    --muted:rgba(255,255,255,.60);
 
     --accent:#5AD7FF;
     --primary:#3B82F6;
 
-    --radius:18px;
+    --radius:20px;
 
-    --shadow:0 30px 90px rgba(0,0,0,.65);
+    --shadow:0 40px 120px rgba(0,0,0,.7);
 }
 
 /* RESET */
@@ -31,11 +31,11 @@ body{
     background:var(--bg);
     color:var(--text);
     overflow-x:hidden;
-    line-height:1.55;
+    line-height:1.6;
 }
 
 /* ===================================
-   NAVBAR PRO (FLOATING GLASS)
+   NAVBAR ULTRA GLASS (APPLE TV STYLE)
 =================================== */
 
 .navbar{
@@ -44,45 +44,49 @@ body{
     width:100%;
     z-index:9999;
 
-    background:rgba(10,14,22,.55);
-    backdrop-filter:blur(22px);
+    background:rgba(8,10,16,.45);
+    backdrop-filter:blur(26px);
 
     border-bottom:1px solid rgba(255,255,255,.06);
 }
 
 .nav-flex{
-    max-width:1200px;
+    max-width:1250px;
     margin:auto;
+
     display:flex;
     justify-content:space-between;
     align-items:center;
-    padding:16px 28px;
+
+    padding:18px 28px;
 }
 
 .logo img{
-    height:44px;
-    filter:drop-shadow(0 10px 20px rgba(0,0,0,.4));
+    height:46px;
+    filter:drop-shadow(0 20px 40px rgba(0,0,0,.5));
 }
 
 nav{
     display:flex;
-    gap:26px;
+    gap:28px;
 }
 
 nav a{
     color:var(--muted);
     text-decoration:none;
     font-weight:500;
-    font-size:.95rem;
+    letter-spacing:.2px;
+
     transition:.25s ease;
 }
 
 nav a:hover{
     color:var(--text);
+    transform:translateY(-1px);
 }
 
 /* ===================================
-   HERO PRO+ CINEMATIC (FIXED)
+   HERO NEXT LEVEL (APPLE TV CINEMA)
 =================================== */
 
 .hero-colectivo{
@@ -90,60 +94,64 @@ nav a:hover{
     min-height:100vh;
 
     display:flex;
-    align-items:flex-start; /* 🔥 FIX: SUBE TODO */
-    justify-content:flex-start;
+    align-items:flex-start;
 
-    padding:150px 6% 90px;
+    padding:160px 6% 90px;
 
     overflow:hidden;
 }
 
-/* BACKGROUND */
+/* BACKGROUND LAYERS (DEPTH SYSTEM) */
 .hero-bg{
     position:absolute;
     inset:0;
 
     background:url("assets/hero-colectivo.jpg") center/cover no-repeat;
 
-    transform:scale(1.06);
+    transform:scale(1.12);
+    filter:brightness(.8) contrast(1.05);
 }
 
-/* CLEAN CINEMATIC OVERLAY */
+/* CINEMATIC DARK LAYER */
 .hero-overlay{
     position:absolute;
     inset:0;
 
-    background:linear-gradient(
-        90deg,
-        rgba(5,7,11,.95) 0%,
-        rgba(5,7,11,.70) 45%,
-        rgba(5,7,11,.25) 100%
-    );
+    background:
+        radial-gradient(circle at 25% 40%, rgba(90,215,255,.12), transparent 55%),
+        linear-gradient(
+            90deg,
+            rgba(4,6,10,.95) 0%,
+            rgba(4,6,10,.75) 45%,
+            rgba(4,6,10,.25) 100%
+        );
 }
 
-/* LIGHT DEPTH LAYER */
-.hero-colectivo::after{
+/* subtle floating light */
+.hero-colectivo::before{
     content:"";
     position:absolute;
-    inset:0;
+    inset:-20%;
 
-    background:radial-gradient(
-        circle at 30% 40%,
-        rgba(90,215,255,.12),
-        transparent 55%
-    );
+    background:radial-gradient(circle, rgba(90,215,255,.08), transparent 60%);
+    filter:blur(40px);
 
-    pointer-events:none;
+    animation:slowFloat 14s ease-in-out infinite;
 }
 
-/* CONTENT (FOCO PRINCIPAL) */
+@keyframes slowFloat{
+    0%,100%{transform:translateY(0);}
+    50%{transform:translateY(-20px);}
+}
+
+/* HERO CONTENT (FOCUS CORE) */
 .hero-content{
     position:relative;
     z-index:2;
 
-    max-width:720px;
+    max-width:760px;
 
-    transform:translateY(10px); /* leve elevación visual */
+    transform:translateY(10px);
 }
 
 /* TAG */
@@ -155,60 +163,68 @@ nav a:hover{
     font-weight:600;
 }
 
-/* TITLE (APPLE STYLE BIG TYPE) */
+/* TITLE (APPLE CINEMA TYPE) */
 .hero-content h1{
-    font-size:clamp(3.2rem,5.5vw,5.4rem);
+    font-size:clamp(3.4rem,6vw,5.8rem);
     font-weight:800;
-    letter-spacing:-1px;
-    margin-top:10px;
+    letter-spacing:-1.5px;
+
+    margin-top:12px;
+
+    text-shadow:0 30px 80px rgba(0,0,0,.6);
 }
 
 /* SUBTITLE */
 .hero-content h2{
-    font-size:1.35rem;
+    font-size:1.45rem;
     font-weight:500;
-    margin-top:12px;
-    color:var(--text);
+
+    margin-top:14px;
+
+    color:rgba(255,255,255,.92);
 }
 
 /* DESCRIPTION */
 .hero-content p{
-    margin-top:14px;
+    margin-top:16px;
     color:var(--muted);
-    max-width:520px;
+    max-width:540px;
 }
 
-/* BUTTONS (APPLE CLEAN CTA) */
+/* BUTTONS (APPLE TV REMOTE STYLE) */
 .hero-buttons{
     display:flex;
     gap:14px;
-    margin-top:26px;
+
+    margin-top:28px;
 }
 
 .btn-primary{
-    background:var(--text);
+    background:#fff;
     color:#000;
 
-    padding:12px 22px;
+    padding:13px 22px;
     border-radius:14px;
 
     font-weight:600;
+
     text-decoration:none;
 
     transition:.25s ease;
 }
 
 .btn-primary:hover{
-    transform:scale(1.04);
+    transform:scale(1.05);
+    box-shadow:0 20px 60px rgba(255,255,255,.08);
 }
 
 .btn-secondary{
-    background:rgba(255,255,255,.06);
+    background:rgba(255,255,255,.05);
     border:1px solid rgba(255,255,255,.12);
 
     color:var(--text);
 
-    padding:12px 22px;
+    padding:13px 22px;
     border-radius:14px;
 
     text-decoration:none;
@@ -219,28 +235,33 @@ nav a:hover{
 .btn-secondary:hover{
     border-color:var(--accent);
     color:var(--accent);
+    transform:translateY(-2px);
 }
 
-/* LIVE BADGE (MINIMAL PRO) */
+/* LIVE BADGE (SOFT GLASS) */
 .live-badge{
     position:absolute;
-    top:90px;
+    top:95px;
     left:6%;
     z-index:3;
 
-    font-size:.7rem;
+    font-size:.72rem;
     letter-spacing:2px;
 
     padding:6px 12px;
+
     border-radius:999px;
 
-    background:rgba(255,255,255,.06);
-    border:1px solid rgba(255,255,255,.08);
+    background:rgba(255,255,255,.05);
+    border:1px solid rgba(255,255,255,.1);
 
-    backdrop-filter:blur(12px);
+    backdrop-filter:blur(16px);
 }
 
-/* ❌ REMOVE CLUTTER COMPLETELY */
+/* ===================================
+   REMOVE NOISE ELEMENTS
+=================================== */
+
 .hero-highlights,
 .hero-stats,
 .hero-scroll{
@@ -248,61 +269,69 @@ nav a:hover{
 }
 
 /* ===================================
-   SECTIONS BASE (PRO CLEAN)
+   SECTIONS FLOW (APPLE TV SPACING)
 =================================== */
 
 section{
-    padding:90px 6%;
+    padding:100px 6%;
 }
 
 .section-header h2{
-    font-size:2rem;
+    font-size:2.1rem;
     font-weight:700;
+    letter-spacing:-.5px;
 }
 
 .section-header p{
     color:var(--muted);
-    max-width:720px;
     margin-top:10px;
+    max-width:720px;
 }
 
 /* ===================================
-   PROGRAMAS (APPLE CARDS)
+   PROGRAMAS (FOCUS CARDS SYSTEM)
 =================================== */
 
 .programas-grid{
     display:flex;
-    gap:16px;
+    gap:18px;
     overflow-x:auto;
-    padding-top:22px;
+
+    padding-top:24px;
+
     scroll-snap-type:x mandatory;
 }
 
+/* CARD BASE */
 .programa-card{
-    min-width:270px;
+    min-width:280px;
 
     background:var(--surface);
-    border-radius:16px;
+    border-radius:18px;
 
     overflow:hidden;
 
-    border:1px solid rgba(255,255,255,.05);
+    border:1px solid rgba(255,255,255,.06);
 
-    transition:.25s ease;
+    transition:.35s ease;
 }
 
+/* FOCUS EFFECT (APPLE TV REMOTE STYLE) */
 .programa-card:hover{
-    transform:translateY(-6px);
+    transform:scale(1.06) translateY(-6px);
+    box-shadow:var(--shadow);
+    border-color:rgba(90,215,255,.25);
+    z-index:10;
 }
 
 .programa-image img{
     width:100%;
-    height:160px;
+    height:170px;
     object-fit:cover;
 }
 
 .programa-content{
-    padding:14px;
+    padding:15px;
 }
 
 .programa-label{
@@ -313,7 +342,7 @@ section{
 
 .programa-content h3{
     margin-top:6px;
-    font-size:1.05rem;
+    font-size:1.1rem;
 }
 
 .programa-content p{
@@ -323,30 +352,38 @@ section{
 }
 
 /* ===================================
-   PRODUCCIONES (CINEMA ROW)
+   PRODUCCIONES (CINEMATIC ROW)
 =================================== */
 
 .producciones-grid{
     display:flex;
-    gap:16px;
+    gap:18px;
     overflow-x:auto;
 }
 
 .produccion-card{
-    min-width:320px;
+    min-width:340px;
+
     background:var(--surface);
-    border-radius:16px;
+    border-radius:18px;
+
     overflow:hidden;
+
+    transition:.3s ease;
+}
+
+.produccion-card:hover{
+    transform:scale(1.04);
 }
 
 .produccion-slider img{
     width:100%;
-    height:180px;
+    height:190px;
     object-fit:cover;
 }
 
 /* ===================================
-   PAUTA PRO CLEAN
+   PAUTA (APPLE BUSINESS STYLE)
 =================================== */
 
 .pauta{
@@ -356,36 +393,43 @@ section{
 .pauta-container{
     display:grid;
     grid-template-columns:1.3fr .8fr;
-    gap:50px;
+    gap:60px;
 }
 
 .pauta-content h2{
-    font-size:2.3rem;
-    line-height:1.2;
+    font-size:2.6rem;
+    letter-spacing:-1px;
 }
 
 .beneficios{
     display:grid;
     grid-template-columns:repeat(2,1fr);
-    gap:10px;
-    margin-top:18px;
+    gap:12px;
+    margin-top:22px;
 }
 
 .beneficio{
-    padding:12px;
-    border-radius:12px;
+    padding:14px;
+    border-radius:14px;
 
     background:rgba(255,255,255,.03);
 
     color:var(--muted);
+
+    transition:.25s ease;
+}
+
+.beneficio:hover{
+    transform:translateY(-3px);
+    border:1px solid rgba(90,215,255,.2);
 }
 
 /* ===================================
-   FOOTER PRO CLEAN
+   FOOTER (CLEAN APPLE STYLE)
 =================================== */
 
 .footer-simple{
-    padding:70px 6%;
+    padding:80px 6%;
     border-top:1px solid rgba(255,255,255,.06);
     text-align:center;
 }
@@ -393,22 +437,23 @@ section{
 .footer-social a{
     color:var(--muted);
     margin:0 10px;
-    font-size:1.1rem;
+    font-size:1.15rem;
     transition:.25s;
 }
 
 .footer-social a:hover{
     color:var(--accent);
+    transform:translateY(-2px);
 }
 
 /* ===================================
-   RESPONSIVE PRO
+   RESPONSIVE
 =================================== */
 
 @media(max-width:900px){
 
     .hero-content h1{
-        font-size:2.6rem;
+        font-size:2.8rem;
     }
 
     .pauta-container{
