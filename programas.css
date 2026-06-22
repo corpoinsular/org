@@ -776,26 +776,28 @@ FOOTER
 }
 
 /* Luz inferior */
+.programa-card{
+    position:relative;
+    overflow:hidden;
 
-.programa-card::after{
-    content:"";
-
-    position:absolute;
-
-    width:250px;
-    height:250px;
-
-    bottom:-120px;
-    left:-120px;
-
-    border-radius:50%;
+    backdrop-filter:blur(18px);
 
     background:
-    radial-gradient(
-        circle,
-        rgba(10,46,168,.25) 0%,
-        transparent 70%
+    linear-gradient(
+        180deg,
+        rgba(255,255,255,.05),
+        rgba(255,255,255,.02)
     );
+
+    border:1px solid rgba(255,255,255,.08);
+
+    border-radius:32px;
+
+    box-shadow:
+    0 20px 60px rgba(0,0,0,.25);
+
+    transition:.4s ease;
+}
 
     pointer-events:none;
 
