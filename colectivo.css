@@ -1,5 +1,155 @@
 
+/* =========================
+VARIABLES
+========================= */
+:root{
+    --primary:#0A2EA8;
+    --secondary:#1F8FE5;
+    --accent:#59D0FF;
 
+    --black:#02040A;
+    --card:#07101D;
+
+    --white:#FFFFFF;
+    --gray:#C4C9D4;
+}
+
+/* =========================
+RESET
+========================= */
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+    font-family:'Inter',sans-serif;
+}
+
+body{
+    background:#02040A;
+    color:#fff;
+    overflow-x:hidden;
+}
+
+/* =========================
+NAVBAR
+========================= */
+.navbar{
+    position:fixed;
+    top:0;
+    width:100%;
+    z-index:9999;
+    background:rgba(2,4,10,.85);
+    backdrop-filter:blur(20px);
+    border-bottom:1px solid rgba(255,255,255,.06);
+}
+
+.nav-flex{
+    max-width:1200px;
+    margin:auto;
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+    padding:15px 30px;
+}
+
+.logo img{
+    height:55px;
+}
+
+/* =========================
+HERO IMAGE FIX (IMPORTANTE)
+========================= */
+.hero-bg{
+    position:absolute;
+    inset:0;
+    background:url("assets/hero-colectivo.jpg") center/cover no-repeat;
+    transform:scale(1.05);
+}
+
+/* =========================
+PROGRAMAS
+========================= */
+.programas-aire{
+    padding:140px 8%;
+}
+
+.programas-grid{
+    display:grid;
+    grid-template-columns:repeat(3,1fr);
+    gap:30px;
+}
+
+/* CARD */
+.programa-card{
+    background:var(--card);
+    border-radius:24px;
+    overflow:hidden;
+    border:1px solid rgba(255,255,255,.06);
+    transition:.3s;
+}
+
+.programa-card:hover{
+    transform:translateY(-10px);
+}
+
+/* 🔴 ESTA PARTE ES CLAVE PARA TUS IMÁGENES */
+.programa-image{
+    width:100%;
+    height:240px;
+    overflow:hidden;
+}
+
+.programa-image img{
+    width:100%;
+    height:100%;
+    object-fit:cover;
+    display:block;
+}
+
+/* CONTENIDO */
+.programa-content{
+    padding:22px;
+}
+
+.programa-label{
+    font-size:.75rem;
+    color:var(--accent);
+    font-weight:700;
+    letter-spacing:2px;
+}
+
+.programa-content h3{
+    margin-top:10px;
+    font-size:1.3rem;
+}
+
+.programa-content p{
+    color:var(--gray);
+    margin-top:10px;
+    line-height:1.6;
+}
+
+/* BOTÓN */
+.programa-btn{
+    display:inline-block;
+    margin-top:15px;
+    color:#fff;
+    text-decoration:none;
+    font-weight:700;
+}
+
+.programa-btn:hover{
+    color:var(--accent);
+}
+
+/* =========================
+RESPONSIVE
+========================= */
+@media(max-width:1000px){
+    .programas-grid{
+        grid-template-columns:1fr;
+    }
+}
 /* =========================
    PAUTA - AGENCIA PREMIUM
 ========================= */
