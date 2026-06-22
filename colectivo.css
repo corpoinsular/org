@@ -1,21 +1,22 @@
 /* ===================================
-   APPLE TV ULTRA CLEAN UI
-   COLECTIVO - MEDIA SYSTEM
+   APPLE TV PRO+ UI SYSTEM
+   COLECTIVO - BROADCAST PLATFORM
 =================================== */
 
 :root{
-    --bg:#05070D;
-    --surface:#0B0F1A;
-    --surface-2:#101826;
+    --bg:#05070B;
+    --surface:#0C111C;
+    --surface-2:#111827;
 
     --text:#FFFFFF;
-    --muted:rgba(255,255,255,.65);
+    --muted:rgba(255,255,255,.62);
 
-    --accent:#59D0FF;
-    --primary:#2D6BFF;
+    --accent:#5AD7FF;
+    --primary:#3B82F6;
 
     --radius:18px;
-    --shadow:0 20px 60px rgba(0,0,0,.55);
+
+    --shadow:0 30px 90px rgba(0,0,0,.65);
 }
 
 /* RESET */
@@ -30,23 +31,23 @@ body{
     background:var(--bg);
     color:var(--text);
     overflow-x:hidden;
-    line-height:1.5;
+    line-height:1.55;
 }
 
 /* ===================================
-   NAVBAR (APPLE CLEAN)
+   NAVBAR PRO (FLOATING GLASS)
 =================================== */
 
 .navbar{
     position:fixed;
     top:0;
     width:100%;
-    z-index:1000;
+    z-index:9999;
 
-    background:rgba(5,7,13,.72);
-    backdrop-filter:blur(20px);
+    background:rgba(10,14,22,.55);
+    backdrop-filter:blur(22px);
 
-    border-bottom:1px solid rgba(255,255,255,.05);
+    border-bottom:1px solid rgba(255,255,255,.06);
 }
 
 .nav-flex{
@@ -55,16 +56,17 @@ body{
     display:flex;
     justify-content:space-between;
     align-items:center;
-    padding:16px 24px;
+    padding:16px 28px;
 }
 
 .logo img{
     height:44px;
+    filter:drop-shadow(0 10px 20px rgba(0,0,0,.4));
 }
 
 nav{
     display:flex;
-    gap:24px;
+    gap:26px;
 }
 
 nav a{
@@ -80,15 +82,19 @@ nav a:hover{
 }
 
 /* ===================================
-   HERO ULTRA CLEAN (FIXED)
+   HERO PRO+ CINEMATIC (FIXED)
 =================================== */
 
 .hero-colectivo{
     position:relative;
     min-height:100vh;
+
     display:flex;
-    align-items:flex-start; /* 🔥 SUBE TODO EL TEXTO */
-    padding:140px 6% 80px;
+    align-items:flex-start; /* 🔥 FIX: SUBE TODO */
+    justify-content:flex-start;
+
+    padding:150px 6% 90px;
+
     overflow:hidden;
 }
 
@@ -96,54 +102,73 @@ nav a:hover{
 .hero-bg{
     position:absolute;
     inset:0;
+
     background:url("assets/hero-colectivo.jpg") center/cover no-repeat;
-    transform:scale(1.05);
+
+    transform:scale(1.06);
 }
 
-/* OVERLAY CLEAN (NO OVERLOAD) */
+/* CLEAN CINEMATIC OVERLAY */
 .hero-overlay{
     position:absolute;
     inset:0;
+
     background:linear-gradient(
-        to right,
-        rgba(5,7,13,.92) 0%,
-        rgba(5,7,13,.65) 40%,
-        rgba(5,7,13,.2) 100%
+        90deg,
+        rgba(5,7,11,.95) 0%,
+        rgba(5,7,11,.70) 45%,
+        rgba(5,7,11,.25) 100%
     );
 }
 
-/* CONTENT */
+/* LIGHT DEPTH LAYER */
+.hero-colectivo::after{
+    content:"";
+    position:absolute;
+    inset:0;
+
+    background:radial-gradient(
+        circle at 30% 40%,
+        rgba(90,215,255,.12),
+        transparent 55%
+    );
+
+    pointer-events:none;
+}
+
+/* CONTENT (FOCO PRINCIPAL) */
 .hero-content{
     position:relative;
     z-index:2;
-    max-width:680px;
 
-    margin-top:40px; /* 🔥 SUBIDA VISUAL */
+    max-width:720px;
+
+    transform:translateY(10px); /* leve elevación visual */
 }
 
 /* TAG */
 .hero-tag{
-    font-size:.75rem;
+    font-size:.72rem;
     letter-spacing:3px;
     text-transform:uppercase;
     color:var(--accent);
     font-weight:600;
 }
 
-/* TITLE */
+/* TITLE (APPLE STYLE BIG TYPE) */
 .hero-content h1{
-    font-size:clamp(3rem,5vw,5rem);
+    font-size:clamp(3.2rem,5.5vw,5.4rem);
     font-weight:800;
-    margin-top:10px;
     letter-spacing:-1px;
+    margin-top:10px;
 }
 
 /* SUBTITLE */
 .hero-content h2{
-    font-size:1.4rem;
-    margin-top:10px;
-    color:var(--text);
+    font-size:1.35rem;
     font-weight:500;
+    margin-top:12px;
+    color:var(--text);
 }
 
 /* DESCRIPTION */
@@ -153,34 +178,41 @@ nav a:hover{
     max-width:520px;
 }
 
-/* BUTTONS */
+/* BUTTONS (APPLE CLEAN CTA) */
 .hero-buttons{
     display:flex;
     gap:14px;
-    margin-top:24px;
+    margin-top:26px;
 }
 
 .btn-primary{
     background:var(--text);
     color:#000;
-    padding:12px 20px;
-    border-radius:12px;
-    text-decoration:none;
+
+    padding:12px 22px;
+    border-radius:14px;
+
     font-weight:600;
+    text-decoration:none;
+
     transition:.25s ease;
 }
 
 .btn-primary:hover{
-    transform:scale(1.03);
+    transform:scale(1.04);
 }
 
 .btn-secondary{
-    background:transparent;
-    border:1px solid rgba(255,255,255,.2);
+    background:rgba(255,255,255,.06);
+    border:1px solid rgba(255,255,255,.12);
+
     color:var(--text);
-    padding:12px 20px;
-    border-radius:12px;
+
+    padding:12px 22px;
+    border-radius:14px;
+
     text-decoration:none;
+
     transition:.25s ease;
 }
 
@@ -189,14 +221,7 @@ nav a:hover{
     color:var(--accent);
 }
 
-/* REMOVE ELEMENTOS QUE ENSUCIAN */
-.hero-highlights,
-.hero-stats,
-.hero-scroll{
-    display:none !important;
-}
-
-/* LIVE BADGE SIMPLE */
+/* LIVE BADGE (MINIMAL PRO) */
 .live-badge{
     position:absolute;
     top:90px;
@@ -204,50 +229,70 @@ nav a:hover{
     z-index:3;
 
     font-size:.7rem;
+    letter-spacing:2px;
+
     padding:6px 12px;
     border-radius:999px;
 
-    background:rgba(255,255,255,.08);
-    border:1px solid rgba(255,255,255,.1);
-    backdrop-filter:blur(10px);
+    background:rgba(255,255,255,.06);
+    border:1px solid rgba(255,255,255,.08);
+
+    backdrop-filter:blur(12px);
+}
+
+/* ❌ REMOVE CLUTTER COMPLETELY */
+.hero-highlights,
+.hero-stats,
+.hero-scroll{
+    display:none !important;
 }
 
 /* ===================================
-   SECCIONES BASE
+   SECTIONS BASE (PRO CLEAN)
 =================================== */
 
 section{
-    padding:80px 6%;
+    padding:90px 6%;
 }
 
 .section-header h2{
     font-size:2rem;
     font-weight:700;
-    margin-bottom:10px;
 }
 
 .section-header p{
     color:var(--muted);
-    max-width:700px;
+    max-width:720px;
+    margin-top:10px;
 }
 
 /* ===================================
-   PROGRAMAS (CLEAN CARDS)
+   PROGRAMAS (APPLE CARDS)
 =================================== */
 
 .programas-grid{
     display:flex;
-    gap:18px;
+    gap:16px;
     overflow-x:auto;
-    padding-top:20px;
+    padding-top:22px;
+    scroll-snap-type:x mandatory;
 }
 
 .programa-card{
-    min-width:260px;
+    min-width:270px;
+
     background:var(--surface);
-    border-radius:var(--radius);
+    border-radius:16px;
+
     overflow:hidden;
+
     border:1px solid rgba(255,255,255,.05);
+
+    transition:.25s ease;
+}
+
+.programa-card:hover{
+    transform:translateY(-6px);
 }
 
 .programa-image img{
@@ -268,7 +313,7 @@ section{
 
 .programa-content h3{
     margin-top:6px;
-    font-size:1.1rem;
+    font-size:1.05rem;
 }
 
 .programa-content p{
@@ -278,19 +323,19 @@ section{
 }
 
 /* ===================================
-   PRODUCCIONES
+   PRODUCCIONES (CINEMA ROW)
 =================================== */
 
 .producciones-grid{
     display:flex;
-    gap:18px;
+    gap:16px;
     overflow-x:auto;
 }
 
 .produccion-card{
     min-width:320px;
     background:var(--surface);
-    border-radius:var(--radius);
+    border-radius:16px;
     overflow:hidden;
 }
 
@@ -301,7 +346,7 @@ section{
 }
 
 /* ===================================
-   PAUTA CLEAN
+   PAUTA PRO CLEAN
 =================================== */
 
 .pauta{
@@ -311,56 +356,66 @@ section{
 .pauta-container{
     display:grid;
     grid-template-columns:1.3fr .8fr;
-    gap:40px;
+    gap:50px;
 }
 
 .pauta-content h2{
-    font-size:2.4rem;
+    font-size:2.3rem;
+    line-height:1.2;
 }
 
 .beneficios{
     display:grid;
     grid-template-columns:repeat(2,1fr);
     gap:10px;
-    margin-top:20px;
+    margin-top:18px;
 }
 
 .beneficio{
     padding:12px;
-    background:rgba(255,255,255,.03);
     border-radius:12px;
+
+    background:rgba(255,255,255,.03);
+
     color:var(--muted);
 }
 
 /* ===================================
-   FOOTER CLEAN
+   FOOTER PRO CLEAN
 =================================== */
 
 .footer-simple{
-    padding:60px 6%;
-    border-top:1px solid rgba(255,255,255,.05);
+    padding:70px 6%;
+    border-top:1px solid rgba(255,255,255,.06);
     text-align:center;
 }
 
 .footer-social a{
     color:var(--muted);
     margin:0 10px;
+    font-size:1.1rem;
+    transition:.25s;
+}
+
+.footer-social a:hover{
+    color:var(--accent);
 }
 
 /* ===================================
-   RESPONSIVE
+   RESPONSIVE PRO
 =================================== */
 
 @media(max-width:900px){
-    .hero-content{
-        margin-top:20px;
+
+    .hero-content h1{
+        font-size:2.6rem;
     }
 
     .pauta-container{
         grid-template-columns:1fr;
     }
 
-    .hero-content h1{
-        font-size:2.6rem;
+    .hero-content{
+        transform:none;
     }
 }
