@@ -19,195 +19,195 @@
 
 <!-- NAV -->
 <header class="navbar">
-<div class="nav-flex">
+  <div class="nav-flex">
 
-<a href="index.html" class="logo">
-<img src="assets/ahorasi.png" alt="Colectivo">
-</a>
+    <a href="#inicio" class="logo">
+      <img src="assets/ahorasi.png" alt="Colectivo">
+    </a>
 
-<nav>
-<a href="#inicio">Inicio</a>
-<a href="#programas-aire">Programas</a>
-<a href="#pauta">Pauta</a>
-</nav>
+    <nav>
+      <a href="#inicio">Inicio</a>
+      <a href="#programas-aire">Programación</a>
+      <a href="#pauta">Pauta</a>
+    </nav>
 
-</div>
+  </div>
 </header>
 
-<!-- HERO -->
+<!-- HERO PREMIUM APPLE TV STYLE -->
 <section class="hero-colectivo" id="inicio">
 
-<div class="hero-bg"></div>
-<div class="hero-overlay"></div>
+  <div class="hero-bg"></div>
+  <div class="hero-overlay"></div>
 
-<div class="hero-content">
+  <!-- CONTENIDO PRINCIPAL -->
+  <div class="hero-content">
 
-<span class="hero-tag">MEDIO DE COMUNICACIÓN COMUNITARIO</span>
+    <span class="hero-tag">MEDIO DE COMUNICACIÓN COMUNITARIO</span>
 
-<h1>INSULAR+</h1>
+    <h1>INSULAR+</h1>
 
-<h2>Las voces de nuestras comunidades cruzan fronteras.</h2>
+    <h2>Las voces de nuestras comunidades cruzan fronteras.</h2>
 
-<p>Narramos historias, informamos a nuestras comunidades y visibilizamos procesos que transforman el territorio.</p>
+    <p>
+      Narramos historias, informamos y conectamos el territorio
+      a través de comunicación comunitaria audiovisual.
+    </p>
 
-<div class="hero-buttons">
-<a href="#programas-aire" class="btn-primary">Ver Programas</a>
-<a href="#pauta" class="btn-secondary">Pauta con Nosotros</a>
-</div>
+    <div class="hero-buttons">
+      <a href="#programas-aire" class="btn-primary">Ver programación</a>
+      <a href="#pauta" class="btn-secondary">Pauta con nosotros</a>
+    </div>
 
-</div>
+  </div>
 
-</section>
+  <!-- 📊 INDICADORES (INTEGRADOS EN HERO, NO ABAJO) -->
+  <div class="hero-stats">
+    <div class="stat"><strong>3</strong><span>Programas</span></div>
+    <div class="stat"><strong>35+</strong><span>Emisiones</span></div>
+    <div class="stat"><strong>8</strong><span>Producciones</span></div>
+    <div class="stat"><strong>100%</strong><span>Comunitario</span></div>
+  </div>
 
-<!-- 📊 INDICADORES -->
-<section class="hero-stats">
-<div class="stat"><strong>3</strong><span>Programas</span></div>
-<div class="stat"><strong>35+</strong><span>Emisiones</span></div>
-<div class="stat"><strong>8</strong><span>Producciones</span></div>
-<div class="stat"><strong>100%</strong><span>Comunitario</span></div>
-</section>
+  <!-- 🎬 TARJETAS DENTRO DEL HERO (APPLE TV STYLE STACKED) -->
+  <div class="hero-stack">
 
-<!-- ⭐ DESTACADOS -->
-<section class="destacados">
+    <!-- DESTACADO -->
+    <div class="stack-card">
+      <span class="label">DESTACADO</span>
+      <h3>Informe Informativo</h3>
+      <p>Noticias, entrevistas y actualidad del territorio en formato audiovisual.</p>
+      <button onclick="openModal('informe')">Ver programa</button>
+    </div>
 
-<div class="section-header">
-<h2>Programas Destacados</h2>
-<p>Lo más visto y en transmisión activa</p>
-</div>
+    <!-- EN TRANSMISIÓN -->
+    <div class="stack-card live">
+      <span class="label">EN TRANSMISIÓN</span>
+      <h3>Sintonía Insular</h3>
+      <p>Música, cultura e identidad en vivo desde el territorio.</p>
+      <button onclick="openModal('sintonia')">Ver transmisión</button>
+    </div>
 
-<div class="destacados-grid">
-
-<div class="destacado-card live">
-<h3>🔴 Informe Informativo</h3>
-<p>Noticias, entrevistas y actualidad en tiempo real.</p>
-<button onclick="openModal('informe')">Ver programa</button>
-</div>
-
-<div class="destacado-card">
-<h3>🎧 Sintonía Insular</h3>
-<p>Música, cultura e identidad en transmisión.</p>
-<button onclick="openModal('sintonia')">Ver programa</button>
-</div>
-
-</div>
+  </div>
 
 </section>
 
 <!-- PROGRAMAS -->
 <section class="programas-aire" id="programas-aire">
 
-<div class="section-header">
-<h2>Programas al Aire</h2>
-<p>Contenido comunitario y cultural</p>
-</div>
+  <div class="section-header">
+    <h2>Programación</h2>
+    <p>Contenido comunitario audiovisual del territorio</p>
+  </div>
 
-<div class="programas-grid">
+  <div class="programas-grid">
 
-<article class="programa-card">
-<img src="assets/informativo.png">
-<h3>Informe Informativo</h3>
-<p>Noticias y análisis del territorio.</p>
-<a onclick="openModal('informe')">Conocer →</a>
-</article>
+    <article class="programa-card">
+      <img src="assets/informativo.png">
+      <h3>Informe Informativo</h3>
+      <p>Noticias y análisis del territorio.</p>
+      <button onclick="openModal('informe')">Conocer</button>
+    </article>
 
-<article class="programa-card">
-<img src="assets/sintonia.png">
-<h3>Sintonía Insular</h3>
-<p>Música y cultura local.</p>
-<a onclick="openModal('sintonia')">Ver →</a>
-</article>
+    <article class="programa-card">
+      <img src="assets/sintonia.png">
+      <h3>Sintonía Insular</h3>
+      <p>Música y cultura local.</p>
+      <button onclick="openModal('sintonia')">Ver</button>
+    </article>
 
-<article class="programa-card">
-<img src="assets/historias.png">
-<h3>Historias de Vida</h3>
-<p>Memoria y tradición comunitaria.</p>
-<a onclick="openModal('historias')">Ver →</a>
-</article>
+    <article class="programa-card">
+      <img src="assets/historias.png">
+      <h3>Historias de Vida</h3>
+      <p>Memoria y tradición comunitaria.</p>
+      <button onclick="openModal('historias')">Ver</button>
+    </article>
 
-</div>
+  </div>
 
 </section>
 
-<!-- PAUTA -->
+<!-- PAUTA (AHORA SÍ VENDE) -->
 <section class="pauta" id="pauta">
 
-<div class="pauta-container">
+  <div class="pauta-container">
 
-<div class="pauta-content">
-<h2>Tu marca en la pantalla comunitaria</h2>
-<p>Conecta con audiencias reales a través de contenido local.</p>
+    <div class="pauta-content">
 
-<div class="beneficios">
-<div>Patrocinio</div>
-<div>Publicidad</div>
-<div>Cobertura</div>
-<div>Entrevistas</div>
-</div>
+      <span class="section-tag">PUBLICIDAD COMUNITARIA</span>
 
-<a class="btn-primary">Solicitar información</a>
+      <h2>Haz que tu marca viva dentro de la comunidad</h2>
 
-</div>
+      <p>
+        Conectamos marcas con audiencias reales mediante contenido audiovisual,
+        cobertura de eventos y espacios de alto impacto local.
+      </p>
 
-<div class="pauta-card">
-<h3>Comunica. Conecta. Crece.</h3>
-<p>Espacios audiovisuales de alto impacto comunitario.</p>
-</div>
+      <div class="beneficios">
+        <div>Patrocinio de programas</div>
+        <div>Publicidad audiovisual</div>
+        <div>Cobertura de eventos</div>
+        <div>Entrevistas</div>
+      </div>
 
-</div>
+      <a href="#" class="btn-primary">Quiero pautar</a>
+
+    </div>
+
+    <div class="pauta-card">
+      <span>ALIANZAS</span>
+      <h3>Comunica. Conecta. Crece.</h3>
+      <p>Tu marca dentro de un ecosistema audiovisual comunitario real.</p>
+    </div>
+
+  </div>
 
 </section>
 
 <!-- FOOTER -->
 <footer class="footer-simple">
-<p>© 2026 Corporación Insular Digital</p>
+  <p>© 2026 Corporación Insular Digital</p>
 </footer>
 
 <!-- MODAL -->
 <div class="programa-modal" id="modal">
-<div class="programa-modal-box">
-<button class="modal-close" onclick="closeModal()">✕</button>
-<div id="modal-content"></div>
-</div>
+  <div class="programa-modal-box">
+    <button class="modal-close" onclick="closeModal()">✕</button>
+    <div id="modal-content"></div>
+  </div>
 </div>
 
-<!-- JS -->
 <script>
 
 const modal = document.getElementById("modal");
 const content = document.getElementById("modal-content");
 
 const programas = {
-
-informe: `
-<h2>Informe Informativo</h2>
-<p>Programa de noticias, entrevistas y actualidad del territorio insular.</p>
-<p>Se emite en vivo con cobertura comunitaria y análisis social.</p>
-`,
-
-sintonia: `
-<h2>Sintonía Insular</h2>
-<p>Espacio musical y cultural que conecta identidad y territorio.</p>
-<p>Transmisión en vivo con artistas locales y participación ciudadana.</p>
-`,
-
-historias: `
-<h2>Historias de Vida</h2>
-<p>Relatos de memoria, tradición y cultura comunitaria.</p>
-`
-
+  informe: `
+    <h2>Informe Informativo</h2>
+    <p>Programa de noticias y actualidad del territorio.</p>
+  `,
+  sintonia: `
+    <h2>Sintonía Insular</h2>
+    <p>Programa cultural y musical en vivo.</p>
+  `,
+  historias: `
+    <h2>Historias de Vida</h2>
+    <p>Relatos de memoria y tradición comunitaria.</p>
+  `
 };
 
 function openModal(id){
-content.innerHTML = programas[id];
-modal.classList.add("active");
+  content.innerHTML = programas[id];
+  modal.classList.add("active");
 }
 
 function closeModal(){
-modal.classList.remove("active");
+  modal.classList.remove("active");
 }
 
-modal.addEventListener("click",(e)=>{
-if(e.target === modal) closeModal();
+modal.addEventListener("click", e=>{
+  if(e.target === modal) closeModal();
 });
 
 </script>
