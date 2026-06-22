@@ -1,605 +1,385 @@
-/* ===================================
-   APPLE TV NEXT LEVEL UI
-   COLECTIVO - CINEMATIC PLATFORM
-=================================== */
-
+/* =========================
+   BASE
+========================= */
 :root{
-    --bg:#04060A;
-    --surface:#0B101C;
-    --surface-2:#111827;
+  --bg:#05070D;
+  --card:#0B1220;
+  --text:#FFFFFF;
+  --muted:rgba(255,255,255,.65);
+  --soft:rgba(255,255,255,.08);
+  --accent:#59D0FF;
+  --blue:#0A2EA8;
 
-    --text:#FFFFFF;
-    --muted:rgba(255,255,255,.60);
-
-    --accent:#5AD7FF;
-    --primary:#3B82F6;
-
-    --radius:20px;
-
-    --shadow:0 40px 120px rgba(0,0,0,.7);
+  --shadow:0 30px 80px rgba(0,0,0,.6);
+  --blur:blur(18px);
 }
 
-/* RESET */
 *{
-    margin:0;
-    padding:0;
-    box-sizing:border-box;
-    font-family:'Inter', sans-serif;
+  margin:0;
+  padding:0;
+  box-sizing:border-box;
+  font-family:'Inter',sans-serif;
 }
 
 body{
-    background:var(--bg);
-    color:var(--text);
-    overflow-x:hidden;
-    line-height:1.6;
+  background:var(--bg);
+  color:var(--text);
+  overflow-x:hidden;
 }
 
-/* ===================================
-   NAVBAR ULTRA GLASS (APPLE TV STYLE)
-=================================== */
-
+/* =========================
+   NAV
+========================= */
 .navbar{
-    position:fixed;
-    top:0;
-    width:100%;
-    z-index:9999;
+  position:fixed;
+  top:0;
+  width:100%;
+  z-index:1000;
 
-    background:rgba(8,10,16,.45);
-    backdrop-filter:blur(26px);
-
-    border-bottom:1px solid rgba(255,255,255,.06);
+  background:rgba(0,0,0,.35);
+  backdrop-filter:var(--blur);
 }
 
 .nav-flex{
-    max-width:1250px;
-    margin:auto;
-
-    display:flex;
-    justify-content:space-between;
-    align-items:center;
-
-    padding:18px 28px;
+  max-width:1200px;
+  margin:auto;
+  display:flex;
+  justify-content:space-between;
+  align-items:center;
+  padding:16px 30px;
 }
 
 .logo img{
-    height:46px;
-    filter:drop-shadow(0 20px 40px rgba(0,0,0,.5));
+  height:42px;
 }
 
 nav{
-    display:flex;
-    gap:28px;
+  display:flex;
+  gap:22px;
 }
 
 nav a{
-    color:var(--muted);
-    text-decoration:none;
-    font-weight:500;
-    letter-spacing:.2px;
-
-    transition:.25s ease;
+  color:var(--muted);
+  text-decoration:none;
+  font-weight:500;
+  transition:.3s;
 }
 
 nav a:hover{
-    color:var(--text);
-    transform:translateY(-1px);
+  color:#fff;
 }
 
-/* ===================================
-   HERO NEXT LEVEL (APPLE TV CINEMA)
-=================================== */
-
+/* =========================
+   HERO
+========================= */
 .hero-colectivo{
-    position:relative;
-    min-height:100vh;
-
-    display:flex;
-    align-items:flex-start;
-
-    padding:160px 6% 90px;
-
-    overflow:hidden;
+  position:relative;
+  min-height:100vh;
+  display:flex;
+  align-items:center;
+  padding:120px 6% 80px;
+  overflow:hidden;
 }
 
-/* BACKGROUND LAYERS (DEPTH SYSTEM) */
 .hero-bg{
-    position:absolute;
-    inset:0;
-
-    background:url("assets/hero-colectivo.jpg") center/cover no-repeat;
-
-    transform:scale(1.12);
-    filter:brightness(.8) contrast(1.05);
+  position:absolute;
+  inset:0;
+  background:url("assets/hero.jpg") center/cover no-repeat;
+  transform:scale(1.05);
 }
 
-/* CINEMATIC DARK LAYER */
 .hero-overlay{
-    position:absolute;
-    inset:0;
-
-    background:
-        radial-gradient(circle at 25% 40%, rgba(90,215,255,.12), transparent 55%),
-        linear-gradient(
-            90deg,
-            rgba(4,6,10,.95) 0%,
-            rgba(4,6,10,.75) 45%,
-            rgba(4,6,10,.25) 100%
-        );
+  position:absolute;
+  inset:0;
+  background:linear-gradient(
+    90deg,
+    rgba(0,0,0,.92),
+    rgba(0,0,0,.55),
+    rgba(0,0,0,.25)
+  );
 }
 
-/* subtle floating light */
-.hero-colectivo::before{
-    content:"";
-    position:absolute;
-    inset:-20%;
-
-    background:radial-gradient(circle, rgba(90,215,255,.08), transparent 60%);
-    filter:blur(40px);
-
-    animation:slowFloat 14s ease-in-out infinite;
-}
-
-@keyframes slowFloat{
-    0%,100%{transform:translateY(0);}
-    50%{transform:translateY(-20px);}
-}
-
-/* HERO CONTENT (FOCUS CORE) */
 .hero-content{
-    position:relative;
-    z-index:2;
-
-    max-width:760px;
-
-    transform:translateY(10px);
+  position:relative;
+  max-width:650px;
+  z-index:2;
 }
 
-/* TAG */
 .hero-tag{
-    font-size:.72rem;
-    letter-spacing:3px;
-    text-transform:uppercase;
-    color:var(--accent);
-    font-weight:600;
+  font-size:.75rem;
+  letter-spacing:3px;
+  color:var(--accent);
+  font-weight:700;
 }
 
-/* TITLE (APPLE CINEMA TYPE) */
 .hero-content h1{
-    font-size:clamp(3.4rem,6vw,5.8rem);
-    font-weight:800;
-    letter-spacing:-1.5px;
-
-    margin-top:12px;
-
-    text-shadow:0 30px 80px rgba(0,0,0,.6);
+  font-size:clamp(3rem,6vw,5.5rem);
+  font-weight:900;
+  margin-top:10px;
 }
 
-/* SUBTITLE */
 .hero-content h2{
-    font-size:1.45rem;
-    font-weight:500;
-
-    margin-top:14px;
-
-    color:rgba(255,255,255,.92);
+  font-size:1.4rem;
+  margin-top:10px;
+  font-weight:600;
 }
 
-/* DESCRIPTION */
 .hero-content p{
-    margin-top:16px;
-    color:var(--muted);
-    max-width:540px;
+  color:var(--muted);
+  margin-top:12px;
+  line-height:1.6;
 }
 
-/* BUTTONS (APPLE TV REMOTE STYLE) */
+/* BOTONES */
 .hero-buttons{
-    display:flex;
-    gap:14px;
-
-    margin-top:28px;
+  display:flex;
+  gap:14px;
+  margin-top:22px;
 }
 
 .btn-primary{
-    background:#fff;
-    color:#000;
-
-    padding:13px 22px;
-    border-radius:14px;
-
-    font-weight:600;
-
-    text-decoration:none;
-
-    transition:.25s ease;
+  background:#fff;
+  color:#000;
+  padding:12px 20px;
+  border-radius:10px;
+  font-weight:700;
+  text-decoration:none;
+  transition:.3s;
 }
 
 .btn-primary:hover{
-    transform:scale(1.05);
-    box-shadow:0 20px 60px rgba(255,255,255,.08);
+  transform:scale(1.05);
 }
 
 .btn-secondary{
-    background:rgba(255,255,255,.05);
-    border:1px solid rgba(255,255,255,.12);
-
-    color:var(--text);
-
-    padding:13px 22px;
-    border-radius:14px;
-
-    text-decoration:none;
-
-    transition:.25s ease;
+  background:rgba(255,255,255,.12);
+  color:#fff;
+  padding:12px 20px;
+  border-radius:10px;
+  text-decoration:none;
+  transition:.3s;
 }
 
 .btn-secondary:hover{
-    border-color:var(--accent);
-    color:var(--accent);
-    transform:translateY(-2px);
+  background:rgba(255,255,255,.18);
 }
 
-/* LIVE BADGE (SOFT GLASS) */
-.live-badge{
-    position:absolute;
-    top:95px;
-    left:6%;
-    z-index:3;
-
-    font-size:.72rem;
-    letter-spacing:2px;
-
-    padding:6px 12px;
-
-    border-radius:999px;
-
-    background:rgba(255,255,255,.05);
-    border:1px solid rgba(255,255,255,.1);
-
-    backdrop-filter:blur(16px);
+/* =========================
+   HERO MINI CARDS
+========================= */
+.hero-mini{
+  display:flex;
+  gap:14px;
+  margin-top:26px;
 }
 
-/* ===================================
-   REMOVE NOISE ELEMENTS
-=================================== */
+.mini-card{
+  flex:1;
+  padding:14px;
+  border-radius:14px;
 
-.hero-highlights,
-.hero-stats,
-.hero-scroll{
-    display:none !important;
+  background:rgba(255,255,255,.06);
+  backdrop-filter:var(--blur);
+  border:1px solid rgba(255,255,255,.08);
+
+  cursor:pointer;
+  transition:.3s;
 }
 
-/* ===================================
-   SECTIONS FLOW (APPLE TV SPACING)
-=================================== */
+.mini-card:hover{
+  transform:translateY(-4px);
+  border-color:rgba(89,208,255,.4);
+}
 
-section{
-    padding:100px 6%;
+.mini-card span{
+  font-size:.65rem;
+  letter-spacing:2px;
+  color:var(--accent);
+  font-weight:700;
+}
+
+.mini-card h3{
+  font-size:1rem;
+  margin-top:6px;
+}
+
+/* LIVE */
+.mini-card.live{
+  border-color:rgba(255,0,0,.3);
+}
+
+/* =========================
+   INDICADORES
+========================= */
+.indicadores{
+  display:flex;
+  justify-content:center;
+  gap:50px;
+  padding:60px 6%;
+}
+
+.indicator{
+  text-align:center;
+}
+
+.indicator strong{
+  font-size:2rem;
+}
+
+.indicator span{
+  display:block;
+  color:var(--muted);
+  margin-top:5px;
+}
+
+/* =========================
+   PROGRAMAS
+========================= */
+.programas{
+  padding:80px 6%;
+}
+
+.section-header{
+  text-align:center;
+  margin-bottom:40px;
 }
 
 .section-header h2{
-    font-size:2.1rem;
-    font-weight:700;
-    letter-spacing:-.5px;
+  font-size:2.2rem;
 }
 
 .section-header p{
-    color:var(--muted);
-    margin-top:10px;
-    max-width:720px;
+  color:var(--muted);
+  margin-top:8px;
 }
-
-/* ===================================
-   PROGRAMAS (FOCUS CARDS SYSTEM)
-=================================== */
-
-/* ===================================
-   PROGRAMAS AL AIRE — APPLE CURATED ROW
-=================================== */
-
-.programas-aire{
-    position:relative;
-    padding:110px 6%;
-}
-
-/* HEADER EDITORIAL (APPLE STYLE) */
-.programas-aire .section-header{
-    max-width:720px;
-    margin-bottom:28px;
-}
-
-.programas-aire .section-tag{
-    font-size:.72rem;
-    letter-spacing:3px;
-    text-transform:uppercase;
-    color:var(--accent);
-    font-weight:600;
-}
-
-.programas-aire .section-header h2{
-    font-size:2.4rem;
-    font-weight:750;
-    letter-spacing:-.8px;
-    margin-top:10px;
-}
-
-.programas-aire .section-header p{
-    margin-top:12px;
-    color:var(--muted);
-    line-height:1.6;
-}
-
-/* ===================================
-   ROW TYPE: CURATED CINEMA STRIP
-=================================== */
 
 .programas-grid{
-    display:flex;
-    gap:22px;
-    overflow-x:auto;
-    padding:20px 6px 30px;
-
-    scroll-snap-type:x mandatory;
-    -webkit-overflow-scrolling:touch;
+  display:grid;
+  grid-template-columns:repeat(auto-fit,minmax(240px,1fr));
+  gap:22px;
 }
-
-/* scrollbar premium */
-.programas-grid::-webkit-scrollbar{
-    height:6px;
-}
-
-.programas-grid::-webkit-scrollbar-thumb{
-    background:rgba(255,255,255,.08);
-    border-radius:10px;
-}
-
-/* ===================================
-   CARD APPLE TV (FOCUS HERO STYLE)
-=================================== */
 
 .programa-card{
-    min-width:320px;
-    max-width:320px;
-
-    border-radius:22px;
-    overflow:hidden;
-
-    background:linear-gradient(180deg, #0B101C, #070A12);
-
-    border:1px solid rgba(255,255,255,.06);
-
-    position:relative;
-
-    transition:all .35s ease;
-
-    scroll-snap-align:start;
+  background:rgba(255,255,255,.05);
+  border:1px solid rgba(255,255,255,.08);
+  border-radius:16px;
+  overflow:hidden;
+  cursor:pointer;
+  transition:.3s;
 }
 
-/* HERO FOCUS EFFECT */
 .programa-card:hover{
-    transform:scale(1.08) translateY(-6px);
-    border-color:rgba(90,215,255,.25);
-    box-shadow:0 30px 90px rgba(0,0,0,.7);
-    z-index:10;
+  transform:translateY(-6px);
+  border-color:rgba(89,208,255,.4);
 }
 
-/* IMAGE ZONE (APPLE CINEMA CUT) */
-.programa-image{
-    position:relative;
-    height:190px;
-    overflow:hidden;
+.programa-card img{
+  width:100%;
+  height:160px;
+  object-fit:cover;
 }
 
-.programa-image img{
-    width:100%;
-    height:100%;
-    object-fit:cover;
-    transform:scale(1.02);
-    transition:transform .6s ease;
+.programa-card h3{
+  padding:12px;
+  font-size:1.1rem;
 }
 
-/* zoom suave tipo Apple TV */
-.programa-card:hover .programa-image img{
-    transform:scale(1.12);
+.programa-card button{
+  margin:0 12px 16px;
+  padding:10px;
+  width:calc(100% - 24px);
+  border:none;
+  border-radius:10px;
+  background:var(--accent);
+  color:#000;
+  font-weight:700;
+  cursor:pointer;
 }
 
-/* overlay cinematográfico limpio */
-.programa-image::after{
-    content:"";
-    position:absolute;
-    inset:0;
-
-    background:linear-gradient(
-        to top,
-        rgba(0,0,0,.85),
-        rgba(0,0,0,.25),
-        transparent 60%
-    );
-}
-
-/* ===================================
-   CONTENT (EDITORIAL LAYOUT)
-=================================== */
-
-.programa-content{
-    padding:16px 16px 18px;
-}
-
-.programa-label{
-    font-size:.7rem;
-    letter-spacing:2.5px;
-    text-transform:uppercase;
-    color:var(--accent);
-    font-weight:600;
-}
-
-.programa-content h3{
-    margin-top:8px;
-    font-size:1.15rem;
-    font-weight:700;
-    letter-spacing:-.3px;
-}
-
-.programa-content p{
-    margin-top:8px;
-    font-size:.92rem;
-    color:var(--muted);
-    line-height:1.5;
-}
-
-/* CTA MICRO LINK (APPLE STYLE) */
-.programa-btn{
-    display:inline-block;
-    margin-top:14px;
-
-    font-size:.85rem;
-    font-weight:600;
-
-    color:var(--text);
-    text-decoration:none;
-
-    opacity:.8;
-
-    transition:.25s ease;
-}
-
-.programa-btn:hover{
-    opacity:1;
-    color:var(--accent);
-}
-
-/* ===================================
-   ACTIVE FOCUS (TV REMOTE FEEL)
-=================================== */
-
-.programa-card:focus-within{
-    outline:2px solid rgba(90,215,255,.35);
-    transform:scale(1.06);
-}
-
-/* ===================================
-   MOBILE POLISH
-=================================== */
-
-@media(max-width:900px){
-    .programa-card{
-        min-width:270px;
-    }
-
-    .programas-aire .section-header h2{
-        font-size:2rem;
-    }
-}
-
-/* ===================================
-   PRODUCCIONES (CINEMATIC ROW)
-=================================== */
-
-.producciones-grid{
-    display:flex;
-    gap:18px;
-    overflow-x:auto;
-}
-
-.produccion-card{
-    min-width:340px;
-
-    background:var(--surface);
-    border-radius:18px;
-
-    overflow:hidden;
-
-    transition:.3s ease;
-}
-
-.produccion-card:hover{
-    transform:scale(1.04);
-}
-
-.produccion-slider img{
-    width:100%;
-    height:190px;
-    object-fit:cover;
-}
-
-/* ===================================
-   PAUTA (APPLE BUSINESS STYLE)
-=================================== */
-
+/* =========================
+   PAUTA (VENDEDOR REAL)
+========================= */
 .pauta{
-    background:var(--surface);
+  padding:100px 6%;
 }
 
 .pauta-container{
-    display:grid;
-    grid-template-columns:1.3fr .8fr;
-    gap:60px;
+  display:grid;
+  grid-template-columns:1.2fr .8fr;
+  gap:50px;
+  align-items:center;
 }
 
 .pauta-content h2{
-    font-size:2.6rem;
-    letter-spacing:-1px;
+  font-size:2.5rem;
+}
+
+.pauta-content p{
+  color:var(--muted);
+  margin-top:12px;
+  line-height:1.6;
 }
 
 .beneficios{
-    display:grid;
-    grid-template-columns:repeat(2,1fr);
-    gap:12px;
-    margin-top:22px;
+  display:grid;
+  grid-template-columns:repeat(2,1fr);
+  gap:10px;
+  margin:20px 0;
 }
 
-.beneficio{
-    padding:14px;
-    border-radius:14px;
-
-    background:rgba(255,255,255,.03);
-
-    color:var(--muted);
-
-    transition:.25s ease;
+.beneficios div{
+  padding:10px;
+  background:rgba(255,255,255,.05);
+  border-radius:10px;
 }
 
-.beneficio:hover{
-    transform:translateY(-3px);
-    border:1px solid rgba(90,215,255,.2);
+.pauta-card{
+  background:rgba(255,255,255,.06);
+  padding:30px;
+  border-radius:18px;
+  border:1px solid rgba(255,255,255,.1);
 }
 
-/* ===================================
-   FOOTER (CLEAN APPLE STYLE)
-=================================== */
+.pauta-card h3{
+  font-size:1.6rem;
+}
 
+/* =========================
+   FOOTER
+========================= */
 .footer-simple{
-    padding:80px 6%;
-    border-top:1px solid rgba(255,255,255,.06);
-    text-align:center;
+  padding:40px;
+  text-align:center;
+  color:var(--muted);
+  border-top:1px solid rgba(255,255,255,.08);
 }
 
-.footer-social a{
-    color:var(--muted);
-    margin:0 10px;
-    font-size:1.15rem;
-    transition:.25s;
+/* =========================
+   MODAL PREMIUM
+========================= */
+.modal{
+  position:fixed;
+  inset:0;
+  background:rgba(0,0,0,.75);
+  display:none;
+  justify-content:center;
+  align-items:center;
 }
 
-.footer-social a:hover{
-    color:var(--accent);
-    transform:translateY(-2px);
+.modal.active{
+  display:flex;
 }
 
-/* ===================================
-   RESPONSIVE
-=================================== */
+.modal-box{
+  background:#0B1220;
+  padding:30px;
+  border-radius:16px;
+  max-width:600px;
+  width:90%;
+}
 
-@media(max-width:900px){
-
-    .hero-content h1{
-        font-size:2.8rem;
-    }
-
-    .pauta-container{
-        grid-template-columns:1fr;
-    }
-
-    .hero-content{
-        transform:none;
-    }
+.close{
+  float:right;
+  cursor:pointer;
+  font-size:20px;
 }
