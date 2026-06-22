@@ -5,121 +5,116 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<title>Colectivo | Medio de Comunicación Comunitario</title>
+<title>INSULAR+ | Plataforma Comunitaria</title>
 
 <link rel="stylesheet" href="colectivo.css">
 
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-
 <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
 </head>
 
 <body>
 
-<!-- NAV -->
-<header class="navbar">
-  <div class="nav-flex">
+<!-- NAV BAR -->
+<header class="nav">
+  <div class="nav-inner">
 
-    <a href="#inicio" class="logo">
-      <img src="assets/ahorasi.png" alt="Colectivo">
-    </a>
+    <img src="assets/ahorasi.png" class="logo">
 
     <nav>
-      <a href="#inicio">Inicio</a>
-      <a href="#programas-aire">Programación</a>
+      <a href="#hero">Inicio</a>
+      <a href="#live">En vivo</a>
+      <a href="#programs">Programas</a>
       <a href="#pauta">Pauta</a>
     </nav>
 
   </div>
 </header>
 
-<!-- HERO PREMIUM APPLE TV STYLE -->
-<section class="hero-colectivo" id="inicio">
+<!-- HERO PRINCIPAL (EXPERIENCIA CINEMÁTICA) -->
+<section class="hero" id="hero">
 
   <div class="hero-bg"></div>
   <div class="hero-overlay"></div>
 
-  <!-- CONTENIDO PRINCIPAL -->
   <div class="hero-content">
 
-    <span class="hero-tag">MEDIO DE COMUNICACIÓN COMUNITARIO</span>
+    <span class="badge-live">● EN VIVO AHORA</span>
 
     <h1>INSULAR+</h1>
 
-    <h2>Las voces de nuestras comunidades cruzan fronteras.</h2>
-
-    <p>
-      Narramos historias, informamos y conectamos el territorio
-      a través de comunicación comunitaria audiovisual.
+    <p class="subtitle">
+      Las voces de nuestras comunidades cruzan fronteras
     </p>
 
-    <div class="hero-buttons">
-      <a href="#programas-aire" class="btn-primary">Ver programación</a>
-      <a href="#pauta" class="btn-secondary">Pauta con nosotros</a>
-    </div>
+    <p class="desc">
+      Plataforma audiovisual comunitaria que informa, conecta y documenta
+      la identidad del territorio insular.
+    </p>
 
-  </div>
-
-  <!-- 📊 INDICADORES (INTEGRADOS EN HERO, NO ABAJO) -->
-  <div class="hero-stats">
-    <div class="stat"><strong>3</strong><span>Programas</span></div>
-    <div class="stat"><strong>35+</strong><span>Emisiones</span></div>
-    <div class="stat"><strong>8</strong><span>Producciones</span></div>
-    <div class="stat"><strong>100%</strong><span>Comunitario</span></div>
-  </div>
-
-  <!-- 🎬 TARJETAS DENTRO DEL HERO (APPLE TV STYLE STACKED) -->
-  <div class="hero-stack">
-
-    <!-- DESTACADO -->
-    <div class="stack-card">
-      <span class="label">DESTACADO</span>
-      <h3>Informe Informativo</h3>
-      <p>Noticias, entrevistas y actualidad del territorio en formato audiovisual.</p>
-      <button onclick="openModal('informe')">Ver programa</button>
-    </div>
-
-    <!-- EN TRANSMISIÓN -->
-    <div class="stack-card live">
-      <span class="label">EN TRANSMISIÓN</span>
-      <h3>Sintonía Insular</h3>
-      <p>Música, cultura e identidad en vivo desde el territorio.</p>
-      <button onclick="openModal('sintonia')">Ver transmisión</button>
+    <div class="hero-actions">
+      <a href="#live" class="btn-primary">Ver transmisión</a>
+      <a href="#programs" class="btn-secondary">Explorar catálogo</a>
     </div>
 
   </div>
 
 </section>
 
-<!-- PROGRAMAS -->
-<section class="programas-aire" id="programas-aire">
+<!-- LIVE NOW (PRIORIDAD 1) -->
+<section class="section" id="live">
 
-  <div class="section-header">
-    <h2>Programación</h2>
-    <p>Contenido comunitario audiovisual del territorio</p>
+  <div class="section-title">
+    <h2>En transmisión</h2>
+    <p>Contenido activo ahora mismo</p>
   </div>
 
-  <div class="programas-grid">
+  <div class="row">
 
-    <article class="programa-card">
-      <img src="assets/informativo.png">
+    <div class="card live">
+      <span>EN VIVO</span>
       <h3>Informe Informativo</h3>
-      <p>Noticias y análisis del territorio.</p>
+      <p>Noticias y actualidad del territorio</p>
+      <button onclick="openModal('informe')">Ver</button>
+    </div>
+
+    <div class="card">
+      <span>PROGRAMADO</span>
+      <h3>Sintonía Insular</h3>
+      <p>Música y cultura en vivo</p>
+      <button onclick="openModal('sintonia')">Ver</button>
+    </div>
+
+  </div>
+
+</section>
+
+<!-- PROGRAMAS (CATÁLOGO) -->
+<section class="section" id="programs">
+
+  <div class="section-title">
+    <h2>Catálogo de programas</h2>
+    <p>Contenido comunitario bajo demanda</p>
+  </div>
+
+  <div class="grid">
+
+    <article class="card">
+      <h3>Informe Informativo</h3>
+      <p>Noticias, entrevistas y análisis.</p>
       <button onclick="openModal('informe')">Conocer</button>
     </article>
 
-    <article class="programa-card">
-      <img src="assets/sintonia.png">
+    <article class="card">
       <h3>Sintonía Insular</h3>
-      <p>Música y cultura local.</p>
+      <p>Música, cultura y participación.</p>
       <button onclick="openModal('sintonia')">Ver</button>
     </article>
 
-    <article class="programa-card">
-      <img src="assets/historias.png">
+    <article class="card">
       <h3>Historias de Vida</h3>
-      <p>Memoria y tradición comunitaria.</p>
+      <p>Memoria y tradición del territorio.</p>
       <button onclick="openModal('historias')">Ver</button>
     </article>
 
@@ -127,54 +122,59 @@
 
 </section>
 
-<!-- PAUTA (AHORA SÍ VENDE) -->
+<!-- STATS (REAL PLATFORM KPI) -->
+<section class="stats">
+
+  <div><strong>3</strong><span>Programas</span></div>
+  <div><strong>35+</strong><span>Emisiones</span></div>
+  <div><strong>8</strong><span>Producciones</span></div>
+  <div><strong>100%</strong><span>Comunitario</span></div>
+
+</section>
+
+<!-- PAUTA (LANDING REAL DE NEGOCIO) -->
 <section class="pauta" id="pauta">
 
-  <div class="pauta-container">
+  <div class="pauta-left">
 
-    <div class="pauta-content">
+    <h2>Publicidad con impacto real</h2>
 
-      <span class="section-tag">PUBLICIDAD COMUNITARIA</span>
+    <p>
+      Conecta tu marca con audiencias locales a través de contenido audiovisual,
+      cobertura y espacios de alta visibilidad comunitaria.
+    </p>
 
-      <h2>Haz que tu marca viva dentro de la comunidad</h2>
+    <ul>
+      <li>Patrocinios de programas</li>
+      <li>Publicidad audiovisual</li>
+      <li>Cobertura de eventos</li>
+      <li>Entrevistas institucionales</li>
+    </ul>
 
-      <p>
-        Conectamos marcas con audiencias reales mediante contenido audiovisual,
-        cobertura de eventos y espacios de alto impacto local.
-      </p>
+    <a class="btn-primary">Quiero pautar</a>
 
-      <div class="beneficios">
-        <div>Patrocinio de programas</div>
-        <div>Publicidad audiovisual</div>
-        <div>Cobertura de eventos</div>
-        <div>Entrevistas</div>
-      </div>
+  </div>
 
-      <a href="#" class="btn-primary">Quiero pautar</a>
-
-    </div>
-
-    <div class="pauta-card">
-      <span>ALIANZAS</span>
-      <h3>Comunica. Conecta. Crece.</h3>
-      <p>Tu marca dentro de un ecosistema audiovisual comunitario real.</p>
-    </div>
-
+  <div class="pauta-right">
+    <h3>INSULAR+</h3>
+    <p>Plataforma de comunicación comunitaria</p>
   </div>
 
 </section>
 
 <!-- FOOTER -->
-<footer class="footer-simple">
-  <p>© 2026 Corporación Insular Digital</p>
+<footer class="footer">
+  <p>© 2026 INSULAR+ · Corporación Insular Digital</p>
 </footer>
 
 <!-- MODAL -->
-<div class="programa-modal" id="modal">
-  <div class="programa-modal-box">
-    <button class="modal-close" onclick="closeModal()">✕</button>
+<div class="modal" id="modal">
+
+  <div class="modal-box">
+    <button onclick="closeModal()">✕</button>
     <div id="modal-content"></div>
   </div>
+
 </div>
 
 <script>
@@ -183,18 +183,9 @@ const modal = document.getElementById("modal");
 const content = document.getElementById("modal-content");
 
 const programas = {
-  informe: `
-    <h2>Informe Informativo</h2>
-    <p>Programa de noticias y actualidad del territorio.</p>
-  `,
-  sintonia: `
-    <h2>Sintonía Insular</h2>
-    <p>Programa cultural y musical en vivo.</p>
-  `,
-  historias: `
-    <h2>Historias de Vida</h2>
-    <p>Relatos de memoria y tradición comunitaria.</p>
-  `
+  informe: `<h2>Informe Informativo</h2><p>Noticias del territorio en tiempo real.</p>`,
+  sintonia: `<h2>Sintonía Insular</h2><p>Música y cultura en vivo.</p>`,
+  historias: `<h2>Historias de Vida</h2><p>Relatos comunitarios.</p>`
 };
 
 function openModal(id){
