@@ -1,7 +1,8 @@
 /* =========================
-   MEDIA PORTAL PREMIUM
+   MEDIA PORTAL PREMIUM SYSTEM
 ========================= */
 
+/* VARIABLES */
 :root{
     --bg:#02040A;
     --card:#0B1220;
@@ -26,16 +27,15 @@ body{
 }
 
 /* =========================
-   NAVBAR PREMIUM STREAMING
+   NAV PREMIUM STREAMING
 ========================= */
 .navbar{
     position:fixed;
     top:0;
-    left:0;
     width:100%;
     z-index:9999;
 
-    background:linear-gradient(to bottom, rgba(0,0,0,.9), transparent);
+    background:linear-gradient(to bottom, rgba(0,0,0,.85), rgba(0,0,0,.2), transparent);
     backdrop-filter:blur(18px);
 }
 
@@ -62,25 +62,41 @@ nav a{
     color:rgba(255,255,255,.75);
     text-decoration:none;
     font-weight:600;
-    transition:.3s;
+    position:relative;
 }
 
 nav a:hover{
     color:#fff;
 }
 
+nav a::after{
+    content:"";
+    position:absolute;
+    left:0;
+    bottom:-6px;
+    width:0;
+    height:2px;
+    background:var(--accent);
+    transition:.3s;
+}
+
+nav a:hover::after{
+    width:100%;
+}
+
 /* =========================
-   HERO CINEMÁTICO (NETFLIX STYLE)
+   HERO CINEMATIC PREMIUM
 ========================= */
 .hero-colectivo{
     position:relative;
     min-height:100vh;
     display:flex;
     align-items:flex-end;
-    padding:160px 6% 90px;
+    padding:160px 6% 100px;
     overflow:hidden;
 }
 
+/* BACKGROUND */
 .hero-bg{
     position:absolute;
     inset:0;
@@ -88,17 +104,26 @@ nav a:hover{
     transform:scale(1.08);
 }
 
+/* DARK OVERLAY CINEMATIC */
 .hero-overlay{
     position:absolute;
     inset:0;
-    background:linear-gradient(
-        90deg,
+    background:linear-gradient(90deg,
         rgba(0,0,0,.95) 0%,
-        rgba(0,0,0,.65) 40%,
+        rgba(0,0,0,.75) 40%,
         rgba(0,0,0,.2) 100%
     );
 }
 
+/* LIGHT FX */
+.hero-colectivo::after{
+    content:"";
+    position:absolute;
+    inset:0;
+    background:radial-gradient(circle at 30% 40%, rgba(89,208,255,.18), transparent 45%);
+}
+
+/* CONTENT */
 .hero-content{
     position:relative;
     z-index:2;
@@ -110,17 +135,20 @@ nav a:hover{
     letter-spacing:3px;
     color:var(--accent);
     font-weight:800;
+    text-transform:uppercase;
 }
 
 .hero-content h1{
-    font-size:clamp(3.5rem,6vw,6rem);
+    font-size:clamp(3rem,6vw,5.5rem);
     font-weight:900;
     line-height:1;
+    margin:10px 0;
 }
 
 .hero-content h2{
     font-size:1.4rem;
-    margin:12px 0;
+    color:#fff;
+    margin:10px 0;
 }
 
 .hero-content p{
@@ -128,17 +156,17 @@ nav a:hover{
     line-height:1.6;
 }
 
-/* BOTONES */
+/* BUTTONS */
 .hero-buttons{
     display:flex;
     gap:14px;
-    margin-top:20px;
+    margin-top:22px;
 }
 
 .btn-primary{
     background:#fff;
     color:#000;
-    padding:14px 22px;
+    padding:12px 20px;
     border-radius:6px;
     font-weight:800;
     text-decoration:none;
@@ -147,45 +175,17 @@ nav a:hover{
 .btn-secondary{
     background:rgba(255,255,255,.12);
     color:#fff;
-    padding:14px 22px;
+    padding:12px 20px;
     border-radius:6px;
-    text-decoration:none;
 }
 
 /* =========================
-   SECCIONES BASE
+   PROGRAMAS ROW (NETFLIX STYLE)
 ========================= */
-section{
-    width:100%;
+.programas-aire{
     padding:90px 6%;
-    position:relative;
 }
 
-.section-header{
-    max-width:800px;
-    margin-bottom:25px;
-}
-
-.section-tag{
-    font-size:.75rem;
-    letter-spacing:3px;
-    color:var(--accent);
-    font-weight:800;
-}
-
-.section-header h2{
-    font-size:2.2rem;
-    margin-top:10px;
-}
-
-.section-header p{
-    color:var(--gray);
-    margin-top:10px;
-}
-
-/* =========================
-   PROGRAMAS (NETFLIX ROW)
-========================= */
 .programas-grid{
     display:flex;
     gap:18px;
@@ -194,32 +194,22 @@ section{
     padding-bottom:10px;
 }
 
-.programas-grid::-webkit-scrollbar{
-    height:6px;
-}
-
-.programas-grid::-webkit-scrollbar-thumb{
-    background:rgba(255,255,255,.08);
-    border-radius:10px;
-}
-
 .programa-card{
     min-width:320px;
+    background:var(--card);
     border-radius:16px;
     overflow:hidden;
-    background:linear-gradient(145deg,#0B1220,#02040A);
-    border:1px solid rgba(255,255,255,.06);
+    box-shadow:var(--shadow);
     scroll-snap-align:start;
     transition:.3s;
 }
 
 .programa-card:hover{
     transform:scale(1.05);
-    box-shadow:var(--shadow);
 }
 
 .programa-image{
-    height:200px;
+    height:190px;
     overflow:hidden;
 }
 
@@ -230,31 +220,49 @@ section{
 }
 
 .programa-content{
-    padding:16px;
+    padding:14px;
 }
 
 .programa-label{
-    font-size:.7rem;
+    font-size:.75rem;
     color:var(--accent);
-    font-weight:800;
+    font-weight:700;
+}
+
+.programa-content h3{
+    font-size:1.1rem;
+    margin-top:6px;
+}
+
+.programa-content p{
+    font-size:.9rem;
+    color:var(--gray);
+    margin-top:6px;
 }
 
 /* =========================
-   PRODUCCIONES (HORIZONTAL STREAM)
+   PRODUCCIONES (HORIZONTAL CINEMA)
 ========================= */
 .producciones-grid{
     display:flex;
     gap:18px;
     overflow-x:auto;
     scroll-snap-type:x mandatory;
+    padding:10px 6%;
 }
 
 .produccion-card{
-    min-width:340px;
+    min-width:360px;
+    background:var(--card);
     border-radius:16px;
     overflow:hidden;
-    background:linear-gradient(145deg,#07101D,#02040A);
-    border:1px solid rgba(255,255,255,.06);
+    scroll-snap-align:start;
+    box-shadow:var(--shadow);
+    transition:.3s;
+}
+
+.produccion-card:hover{
+    transform:scale(1.04);
 }
 
 .produccion-slider{
@@ -276,41 +284,58 @@ section{
     opacity:1;
 }
 
-.produccion-info{
-    padding:16px;
-}
-
 /* =========================
    PAUTA PREMIUM
 ========================= */
 .pauta{
-    background:linear-gradient(180deg,#02040A,#02040A);
+    padding:120px 6%;
+    background:radial-gradient(circle at 20% 20%, rgba(89,208,255,.12), transparent 50%);
 }
 
 .pauta-container{
     display:grid;
     grid-template-columns:1.5fr .8fr;
-    gap:50px;
+    gap:60px;
     align-items:center;
+}
+
+.pauta-content h2{
+    font-size:3rem;
+    font-weight:900;
+    margin-bottom:20px;
+}
+
+.pauta-content p{
+    color:var(--gray);
+    line-height:1.7;
 }
 
 .beneficios{
     display:grid;
     grid-template-columns:repeat(2,1fr);
     gap:12px;
+    margin-top:20px;
 }
 
 .beneficio{
     padding:14px;
     background:rgba(255,255,255,.05);
-    border-radius:12px;
+    border-radius:10px;
+    border:1px solid rgba(255,255,255,.08);
 }
 
-/* =========================
-   RESPONSIVE
-========================= */
+/* RESPONSIVE */
 @media(max-width:900px){
-    .hero-content h1{font-size:2.8rem;}
-    .pauta-container{grid-template-columns:1fr;}
-    .programa-card{min-width:260px;}
+    .pauta-container{
+        grid-template-columns:1fr;
+    }
+
+    .programa-card,
+    .produccion-card{
+        min-width:260px;
+    }
+
+    .hero-content h1{
+        font-size:2.6rem;
+    }
 }
