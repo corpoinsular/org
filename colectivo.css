@@ -543,3 +543,9 @@ overflow:hidden;
     }
 
 }
+.plus{
+  color: var(--accent);
+  font-weight: 800;
+  text-shadow: 0 0 18px rgba(89,208,255,.45);
+  margin-left: 2px;
+}
