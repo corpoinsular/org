@@ -84,7 +84,7 @@ nav a:hover{
 .hero-bg{
   position:absolute;
   inset:0;
-  background:url("assets/héroe-colectivo.jpg") center/cover no-repeat;
+  background:url("assets/heroe-colectivo.jpg") center/cover no-repeat;
   transform:scale(1.05);
 }
 
