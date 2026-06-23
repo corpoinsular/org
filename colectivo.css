@@ -108,8 +108,17 @@ overflow:hidden;
 }
 
 .hero-content{
-  position:relative;
   max-width:760px;
+  z-index:2;
+}
+
+/* INDICADORES ENTRE MEDIO */
+.indicadores{
+  display:flex;
+  justify-content:center;
+  gap:60px;
+
+  margin-top:90px;  /* 👈 clave del efecto */
   z-index:2;
 }
 
