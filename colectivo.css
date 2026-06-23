@@ -78,8 +78,7 @@ min-height:100vh;
 display:flex;
 align-items:flex-start;
 padding:170px 6% 80px;
-}
-  overflow:hidden;
+overflow:hidden;
 }
 
 .hero-bg{
