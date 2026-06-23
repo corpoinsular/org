@@ -544,8 +544,7 @@ overflow:hidden;
 
 }
 .plus{
-  color: var(--accent);
+  color: #0A2EA8;
+  text-shadow: 0 0 10px rgba(10,46,168,.25);
   font-weight: 800;
-  text-shadow: 0 0 18px rgba(89,208,255,.45);
-  margin-left: 2px;
 }
