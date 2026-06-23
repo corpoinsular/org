@@ -91,11 +91,19 @@ nav a:hover{
 .hero-overlay{
   position:absolute;
   inset:0;
-  background:linear-gradient(
+
+  background:
+  linear-gradient(
     90deg,
-    rgba(0,0,0,.92),
-    rgba(0,0,0,.55),
-    rgba(0,0,0,.25)
+    rgba(0,0,0,.88) 0%,
+    rgba(0,0,0,.65) 40%,
+    rgba(0,0,0,.45) 100%
+  ),
+
+  linear-gradient(
+    180deg,
+    rgba(0,0,0,.15),
+    rgba(0,0,0,.45)
   );
 }
 
@@ -172,7 +180,10 @@ nav a:hover{
   gap:14px;
   margin-top:26px;
 }
-
+.mini-card{
+    text-decoration:none;
+    color:white;
+}
 .mini-card{
   flex:1;
   padding:14px;
@@ -295,7 +306,21 @@ nav a:hover{
   font-weight:700;
   cursor:pointer;
 }
+.programa-image{
+    height:220px;
+    overflow:hidden;
+}
 
+.programa-image img{
+    width:100%;
+    height:100%;
+    object-fit:cover;
+    transition:.6s ease;
+}
+
+.programa-card:hover .programa-image img{
+    transform:scale(1.08);
+}
 /* =========================
    PAUTA (VENDEDOR REAL)
 ========================= */
@@ -382,4 +407,23 @@ nav a:hover{
   float:right;
   cursor:pointer;
   font-size:20px;
+}
+.audiencia{
+    display:flex;
+    gap:25px;
+    margin:25px 0;
+}
+
+.audiencia div{
+    display:flex;
+    flex-direction:column;
+}
+
+.audiencia strong{
+    font-size:1.4rem;
+}
+
+.audiencia span{
+    color:var(--muted);
+    font-size:.9rem;
 }
