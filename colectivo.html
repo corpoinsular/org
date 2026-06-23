@@ -57,15 +57,17 @@
     <!-- MINI CARDS HERO -->
     <div class="hero-mini">
 
-      <div class="mini-card" onclick="openProgram('informe')">
-        <span>PROGRAMA DESTACADO</span>
-        <h3>Informe Informativo</h3>
-      </div>
+<a href="#informe" class="mini-card">
+    <span>PROGRAMA DESTACADO</span>
+    <h3>Informe Informativo</h3>
+</a>
 
-      <div class="mini-card live" onclick="openProgram('sintonia')">
-        <span>EN TRANSMISIÓN</span>
-        <h3>Sintonía Insular</h3>
-      </div>
+<a href="#sintonia" class="mini-card live">
+    <span>EN TRANSMISIÓN</span>
+    <h3>Sintonía Insular</h3>
+</a>
+
+</div>
 
     </div>
 
@@ -93,25 +95,67 @@
 
   <div class="programas-grid">
 
-    <div class="programa-card" onclick="openProgram('informe')">
-      <img src="assets/informativo.png">
-      <h3>Informe Informativo</h3>
-      <button>Ver programa</button>
-    </div>
+    <article class="programa-card" id="informe">
 
-    <div class="programa-card" onclick="openProgram('sintonia')">
-      <img src="assets/sintonia.png">
-      <h3>Sintonía Insular</h3>
-      <button>Ver programa</button>
-    </div>
+<div class="programa-image">
 
-    <div class="programa-card" onclick="openProgram('historias')">
-      <img src="assets/historias.png">
-      <h3>Historias de Vida</h3>
-      <button>Ver programa</button>
-    </div>
+<img src="assets/informativo.jpg"
+     alt="Informe Informativo">
 
-  </div>
+</div>
+
+<h3>Informe Informativo</h3>
+
+<p>
+Noticias y actualidad del territorio.
+</p>
+
+<button onclick="openModal('informe')">
+Conocer Programa
+</button>
+
+</article>
+    <article class="programa-card" id="sintonia">
+
+<div class="programa-image">
+
+<img src="assets/sintonia.jpg"
+     alt="Sintonía Insular">
+
+</div>
+
+<h3>Sintonía Insular</h3>
+
+<p>
+Música, cultura e identidad.
+</p>
+
+<button onclick="openModal('sintonia')">
+Ver Programa
+</button>
+
+</article>
+
+    <article class="programa-card" id="historias">
+
+<div class="programa-image">
+
+<img src="assets/historias.jpg"
+     alt="Historias de Vida">
+
+</div>
+
+<h3>Historias de Vida y Oficios Tradicionales</h3>
+
+<p>
+Memoria, saberes y tradición.
+</p>
+
+<button onclick="openModal('historias')">
+Ver Programa
+</button>
+
+</article>
 
 </section>
 
@@ -137,10 +181,14 @@
         <div>✔ Difusión digital</div>
       </div>
 
-      <a href="mailto:contacto@insular.com" class="btn-primary">
-        QUIERO PAUTAR CON USTEDES
-      </a>
+      <a
+href="https://wa.me/573215978125?text=Hola%20Corporación%20Insular%20Digital,%20quiero%20pautar%20con%20ustedes."
+target="_blank"
+class="btn-primary">
 
+Pautar por WhatsApp
+
+</a>
     </div>
 
     <div class="pauta-card">
