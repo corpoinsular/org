@@ -935,3 +935,16 @@ overflow:hidden;
 .cobertura-image.slider img.active{
   opacity:1;
 }
+.brand-title{
+  background:linear-gradient(
+    135deg,
+    #0A2EA8,
+    #1F8FE5,
+    #59D0FF
+  );
+
+  -webkit-background-clip:text;
+  -webkit-text-fill-color:transparent;
+
+  font-weight:900;
+}
