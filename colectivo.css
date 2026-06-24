@@ -909,3 +909,23 @@ overflow:hidden;
   font-size:.95rem;
   line-height:1.5;
 }
+.cobertura-image.slider{
+  position:relative;
+  height:230px;
+  overflow:hidden;
+}
+
+.cobertura-image.slider img{
+  position:absolute;
+  inset:0;
+  width:100%;
+  height:100%;
+  object-fit:cover;
+
+  opacity:0;
+  transition:opacity 1s ease;
+}
+
+.cobertura-image.slider img.active{
+  opacity:1;
+}
