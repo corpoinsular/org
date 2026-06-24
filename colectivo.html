@@ -298,6 +298,22 @@ function togglePrograma(btn){
 
   const card = btn.closest('.programa-card');
 
+  // Cerrar todas las demás tarjetas
+  document.querySelectorAll('.programa-card').forEach(item => {
+
+    if(item !== card){
+      item.classList.remove('active');
+
+      const otherBtn = item.querySelector('button');
+
+      if(otherBtn){
+        otherBtn.textContent = 'Conocer Programa';
+      }
+    }
+
+  });
+
+  // Abrir o cerrar la tarjeta seleccionada
   card.classList.toggle('active');
 
   if(card.classList.contains('active')){
