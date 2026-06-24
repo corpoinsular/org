@@ -303,82 +303,119 @@ overflow:hidden;
 }
 
 /* =========================
-   PROGRAMAS
+   PROGRAMAS (PREMIUM)
 ========================= */
 .programas{
-  padding:80px 6%;
+  padding:90px 6%;
+  background: radial-gradient(circle at top, rgba(31,143,229,.08), transparent 60%);
 }
 
 .section-header{
   text-align:center;
-  margin-bottom:40px;
+  margin-bottom:50px;
 }
 
 .section-header h2{
-  font-size:2.2rem;
+  font-size:2.6rem;
+  letter-spacing:.5px;
 }
 
 .section-header p{
-  color:var(--muted);
-  margin-top:8px;
+  color:var(--gray);
+  margin-top:10px;
+  font-size:1.05rem;
 }
 
+/* GRID */
 .programas-grid{
   display:grid;
-  grid-template-columns:repeat(auto-fit,minmax(240px,1fr));
-  gap:22px;
+  grid-template-columns:repeat(auto-fit,minmax(260px,1fr));
+  gap:26px;
 }
 
+/* CARD */
 .programa-card{
-  background:rgba(255,255,255,.05);
+  position:relative;
+  background:linear-gradient(145deg, rgba(255,255,255,.06), rgba(255,255,255,.02));
   border:1px solid rgba(255,255,255,.08);
-  border-radius:16px;
+  border-radius:18px;
   overflow:hidden;
   cursor:pointer;
-  transition:.3s;
+  transition:.35s ease;
+  box-shadow:0 10px 30px rgba(0,0,0,.25);
+  backdrop-filter: blur(6px);
 }
 
+/* hover premium */
 .programa-card:hover{
-  transform:translateY(-6px);
-  border-color:rgba(89,208,255,.4);
+  transform:translateY(-10px);
+  border-color:rgba(31,143,229,.5);
+  box-shadow:0 18px 45px rgba(31,143,229,.15);
 }
 
-.programa-card img{
-  width:100%;
-  height:160px;
-  object-fit:cover;
-}
-
-.programa-card h3{
-  padding:12px;
-  font-size:1.1rem;
-}
-
-.programa-card button{
-  margin:0 12px 16px;
-  padding:10px;
-  width:calc(100% - 24px);
-  border:none;
-  border-radius:10px;
-  background:var(--accent);
-  color:#000;
-  font-weight:700;
-  cursor:pointer;
-}
+/* IMAGE */
 .programa-image{
-    height:220px;
-    overflow:hidden;
+  height:220px;
+  overflow:hidden;
+  position:relative;
+}
+
+.programa-image::after{
+  content:"";
+  position:absolute;
+  inset:0;
+  background:linear-gradient(to top, rgba(0,0,0,.65), transparent 60%);
+  z-index:1;
 }
 
 .programa-image img{
-    width:100%;
-    height:100%;
-    object-fit:cover;
-    transition:.6s ease;
+  width:100%;
+  height:100%;
+  object-fit:cover;
+  transition:transform .7s ease;
 }
 
 .programa-card:hover .programa-image img{
-    transform:scale(1.08);
+  transform:scale(1.12);
+}
+
+/* TITLE */
+.programa-card h3{
+  padding:14px 14px 6px;
+  font-size:1.15rem;
+  position:relative;
+  z-index:2;
+}
+
+/* TEXT */
+.programa-card p{
+  padding:0 14px;
+  color:var(--gray);
+  font-size:.95rem;
+  margin-bottom:12px;
+  position:relative;
+  z-index:2;
+}
+
+/* BUTTON */
+.programa-card button{
+  margin:0 14px 18px;
+  padding:11px;
+  width:calc(100% - 28px);
+  border:none;
+  border-radius:12px;
+  background:linear-gradient(90deg, var(--secondary), var(--accent));
+  color:#fff;
+  font-weight:700;
+  cursor:pointer;
+  transition:.3s ease;
+  position:relative;
+  z-index:2;
+}
+
+.programa-card button:hover{
+  filter:brightness(1.1);
+  transform:scale(1.02);
 }
 /* =========================
    PAUTA (VENDEDOR REAL)
@@ -579,4 +616,60 @@ overflow:hidden;
 
   border:1px solid rgba(255,255,255,.08);
   border-radius:16px;
+}
+/* =========================
+   MODAL PROGRAMAS
+========================= */
+.modal{
+  position:fixed;
+  inset:0;
+  background:rgba(0,0,0,.7);
+  display:none;
+  align-items:center;
+  justify-content:center;
+  padding:20px;
+  z-index:9999;
+  backdrop-filter: blur(8px);
+}
+
+.modal.active{
+  display:flex;
+}
+
+.modal-content{
+  background:rgba(10,15,25,.95);
+  border:1px solid rgba(255,255,255,.1);
+  border-radius:18px;
+  max-width:700px;
+  width:100%;
+  padding:28px;
+  position:relative;
+  animation:modalIn .35s ease;
+  box-shadow:0 25px 80px rgba(0,0,0,.6);
+}
+
+@keyframes modalIn{
+  from{ transform:scale(.85); opacity:0; }
+  to{ transform:scale(1); opacity:1; }
+}
+
+.modal-content h2{
+  margin-bottom:12px;
+  font-size:1.8rem;
+}
+
+.modal-content p{
+  color:var(--gray);
+  line-height:1.6;
+}
+
+.close-modal{
+  position:absolute;
+  top:12px;
+  right:14px;
+  background:none;
+  border:none;
+  color:#fff;
+  font-size:1.5rem;
+  cursor:pointer;
 }
