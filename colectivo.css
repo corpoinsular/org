@@ -303,7 +303,7 @@ overflow:hidden;
 }
 
 /* =========================
-   PROGRAMAS (PREMIUM)
+   PROGRAMAS (PREMIUM FIXED)
 ========================= */
 .programas{
   padding:90px 6%;
@@ -331,19 +331,24 @@ overflow:hidden;
   display:grid;
   grid-template-columns:repeat(auto-fit,minmax(260px,1fr));
   gap:26px;
-
-  align-items:start;
+  align-items:stretch; /* clave para igualar alturas */
 }
 
 /* CARD */
 .programa-card{
   position:relative;
+  display:flex;
+  flex-direction:column;
+  height:100%; /* clave para uniformidad */
+
   background:linear-gradient(145deg, rgba(255,255,255,.06), rgba(255,255,255,.02));
   border:1px solid rgba(255,255,255,.08);
   border-radius:18px;
   overflow:hidden;
+
   cursor:pointer;
   transition:.35s ease;
+
   box-shadow:0 10px 30px rgba(0,0,0,.25);
   backdrop-filter: blur(6px);
 }
@@ -358,6 +363,7 @@ overflow:hidden;
 /* IMAGE */
 .programa-image{
   height:220px;
+  width:100%;
   overflow:hidden;
   position:relative;
 }
@@ -374,6 +380,7 @@ overflow:hidden;
   width:100%;
   height:100%;
   object-fit:cover;
+  object-position:center;
   transition:transform .7s ease;
 }
 
@@ -387,6 +394,10 @@ overflow:hidden;
   font-size:1.15rem;
   position:relative;
   z-index:2;
+
+  min-height:52px; /* alineación de títulos */
+  display:flex;
+  align-items:center;
 }
 
 /* TEXT */
@@ -397,6 +408,8 @@ overflow:hidden;
   margin-bottom:12px;
   position:relative;
   z-index:2;
+
+  min-height:45px; /* alineación de texto */
 }
 
 /* BUTTON */
@@ -404,15 +417,21 @@ overflow:hidden;
   margin:0 14px 18px;
   padding:11px;
   width:calc(100% - 28px);
+
   border:none;
   border-radius:12px;
+
   background:linear-gradient(90deg, var(--secondary), var(--accent));
   color:#fff;
   font-weight:700;
+
   cursor:pointer;
   transition:.3s ease;
+
   position:relative;
   z-index:2;
+
+  margin-top:auto; /* clave: empuja el botón abajo */
 }
 
 .programa-card button:hover{
