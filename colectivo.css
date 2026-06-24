@@ -673,3 +673,19 @@ overflow:hidden;
   font-size:1.5rem;
   cursor:pointer;
 }
+.programa-info{
+  max-height:0;
+  overflow:hidden;
+  transition:max-height .5s ease;
+  padding:0 14px;
+  color:var(--gray);
+}
+
+.programa-card.active .programa-info{
+  max-height:400px;
+  padding-bottom:16px;
+}
+
+.programa-card.active{
+  border-color:rgba(31,143,229,.5);
+}
