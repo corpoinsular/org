@@ -838,3 +838,74 @@ overflow:hidden;
 .programa-card.active{
   border-color:rgba(31,143,229,.5);
 }
+/* =========================
+   COBERTURAS
+========================= */
+.coberturas{
+  padding:100px 6%;
+  background:
+    radial-gradient(circle at top, rgba(31,143,229,.10), transparent 55%),
+    #050811;
+}
+
+.coberturas-grid{
+  display:grid;
+  grid-template-columns:repeat(auto-fit,minmax(280px,1fr));
+  gap:26px;
+  margin-top:50px;
+}
+
+.cobertura-card{
+  border-radius:18px;
+  overflow:hidden;
+  background:rgba(255,255,255,.04);
+  border:1px solid rgba(255,255,255,.08);
+  transition:.35s ease;
+  box-shadow:0 10px 30px rgba(0,0,0,.25);
+}
+
+.cobertura-card:hover{
+  transform:translateY(-10px);
+  border-color:rgba(31,143,229,.5);
+  box-shadow:0 18px 50px rgba(31,143,229,.15);
+}
+
+.cobertura-image{
+  height:200px;
+  overflow:hidden;
+  position:relative;
+}
+
+.cobertura-image img{
+  width:100%;
+  height:100%;
+  object-fit:cover;
+  transition:.7s ease;
+}
+
+.cobertura-card:hover .cobertura-image img{
+  transform:scale(1.1);
+}
+
+.cobertura-content{
+  padding:18px;
+}
+
+.cobertura-content span{
+  font-size:.75rem;
+  color:var(--secondary);
+  font-weight:800;
+  letter-spacing:1px;
+}
+
+.cobertura-content h3{
+  margin-top:8px;
+  font-size:1.2rem;
+}
+
+.cobertura-content p{
+  margin-top:8px;
+  color:var(--gray);
+  font-size:.95rem;
+  line-height:1.5;
+}
