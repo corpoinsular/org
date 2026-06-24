@@ -283,22 +283,44 @@ const data = {
   `
 };
 
-function openProgram(id){
-  content.innerHTML = data[id];
+<script>
+function openModal(id){
+
+  let content = {
+    informe: {
+      title: "Informe Informativo",
+      text: "Noticias y actualidad del territorio. Espacio dedicado a la información comunitaria, análisis local y cobertura de eventos relevantes."
+    },
+    sintonia: {
+      title: "Sintonía Insular",
+      text: "Programa cultural y musical que conecta la identidad del territorio con sonidos locales, artistas emergentes y expresiones culturales."
+    },
+    historias: {
+      title: "Historias de Vida y Oficios Tradicionales",
+      text: "Relatos de memoria viva, saberes ancestrales y oficios tradicionales que construyen la identidad de la comunidad."
+    }
+  };
+
+  let modal = document.getElementById("modal");
   modal.classList.add("active");
+
+  document.getElementById("modal-title").innerText = content[id].title;
+  document.getElementById("modal-text").innerText = content[id].text;
 }
 
-function closeProgram(){
-  modal.classList.remove("active");
+function closeModal(){
+  document.getElementById("modal").classList.remove("active");
 }
-
-modal.addEventListener("click", (e)=>{
-  if(e.target === modal){
-    closeProgram();
-  }
-});
-
 </script>
+  <div class="modal" id="modal" onclick="closeModal()">
+  <div class="modal-content" onclick="event.stopPropagation()">
+    
+    <button class="close-modal" onclick="closeModal()">✕</button>
+    
+    <h2 id="modal-title"></h2>
+    <p id="modal-text"></p>
 
+  </div>
+</div>
 </body>
 </html>
