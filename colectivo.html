@@ -149,8 +149,8 @@
   </div>
 
   <button onclick="togglePrograma(this)">
-    Conocer Programa
-  </button>
+  Conocer Programa
+</button>
 
 </article>
 
@@ -169,9 +169,18 @@
 <p>
 Música, cultura e identidad.
 </p>
+<div class="programa-info">
+  <p>
+    Programa dedicado a la música, la cultura y las expresiones artísticas
+    del territorio insular.
+  </p>
 
-<button onclick="openModal('sintonia')">
-Ver Programa
+  <p>
+    Incluye entrevistas, invitados especiales y difusión de nuevos talentos.
+  </p>
+</div>
+<button onclick="togglePrograma(this)">
+  Conocer Programa
 </button>
 
 </article>
@@ -190,9 +199,18 @@ Ver Programa
 <p>
 Memoria, saberes y tradición.
 </p>
+<div class="programa-info">
+  <p>
+    Espacio de memoria colectiva donde las voces de la comunidad comparten
+    experiencias, saberes y tradiciones.
+  </p>
 
-<button onclick="openModal('historias')">
-Ver Programa
+  <p>
+    Rescata historias de vida, oficios tradicionales y patrimonio cultural.
+  </p>
+</div>
+<button onclick="togglePrograma(this)">
+  Conocer Programa
 </button>
 
 </article>
@@ -256,81 +274,21 @@ Pautar por WhatsApp
 
 </footer>
 
-
-<!-- ================= MODAL ================= -->
-<div class="modal" id="modal">
-
-  <div class="modal-box">
-
-    <span class="close" onclick="closeProgram()">✕</span>
-
-    <div id="modal-content"></div>
-
-  </div>
-
-</div>
-
-
-<!-- ================= JS ================= -->
 <script>
+function togglePrograma(btn){
 
-const modal = document.getElementById("modal");
-const content = document.getElementById("modal-content");
+  const card = btn.closest('.programa-card');
 
-const data = {
-  informe: `
-    <h2>Informe Informativo</h2>
-    <p>Noticias, entrevistas y actualidad del territorio.</p>
-    <p>Programa líder en cobertura comunitaria.</p>
-  `,
-  sintonia: `
-    <h2>Sintonía Insular</h2>
-    <p>Música, cultura e identidad en transmisión en vivo.</p>
-  `,
-  historias: `
-    <h2>Historias de Vida</h2>
-    <p>Relatos de memoria, tradición y oficios del territorio.</p>
-  `
-};
+  card.classList.toggle('active');
 
-<script>
-function openModal(id){
+  if(card.classList.contains('active')){
+    btn.textContent = 'Ocultar Información';
+  }else{
+    btn.textContent = 'Conocer Programa';
+  }
 
-  let content = {
-    informe: {
-      title: "Informe Informativo",
-      text: "Noticias y actualidad del territorio. Espacio dedicado a la información comunitaria, análisis local y cobertura de eventos relevantes."
-    },
-    sintonia: {
-      title: "Sintonía Insular",
-      text: "Programa cultural y musical que conecta la identidad del territorio con sonidos locales, artistas emergentes y expresiones culturales."
-    },
-    historias: {
-      title: "Historias de Vida y Oficios Tradicionales",
-      text: "Relatos de memoria viva, saberes ancestrales y oficios tradicionales que construyen la identidad de la comunidad."
-    }
-  };
-
-  let modal = document.getElementById("modal");
-  modal.classList.add("active");
-
-  document.getElementById("modal-title").innerText = content[id].title;
-  document.getElementById("modal-text").innerText = content[id].text;
-}
-
-function closeModal(){
-  document.getElementById("modal").classList.remove("active");
 }
 </script>
-  <div class="modal" id="modal" onclick="closeModal()">
-  <div class="modal-content" onclick="event.stopPropagation()">
-    
-    <button class="close-modal" onclick="closeModal()">✕</button>
-    
-    <h2 id="modal-title"></h2>
-    <p id="modal-text"></p>
-
   </div>
-</div>
 </body>
 </html>
