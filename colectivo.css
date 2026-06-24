@@ -472,7 +472,15 @@ overflow:hidden;
     border-top:1px solid rgba(255,255,255,.08);
     text-align:center;
 }
+.footer-simple{
+    padding:70px 8%;
+    background:
+        radial-gradient(circle at top, rgba(31,143,229,.12), transparent 60%),
+        #050811;
 
+    border-top:1px solid rgba(255,255,255,.08);
+    text-align:center;
+}
 .footer-simple-container{
     display:flex;
     flex-direction:column;
@@ -489,6 +497,7 @@ overflow:hidden;
 .footer-copy{
     color:#C4C9D4;
     font-size:.95rem;
+    opacity:.9;
 }
 
 /* REDES */
