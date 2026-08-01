@@ -156,9 +156,9 @@ img{
     justify-content:center;
     padding:14px 28px;
     background:linear-gradient(
-    135deg,
-    #1F8FE5,
-    #63C5FF
+        135deg,
+        #ED1C24,
+        #C8102E
 );
     color:#fff;
     text-decoration:none;
@@ -173,8 +173,8 @@ img{
 
     background:linear-gradient(
         135deg,
-        #63C5FF,
-        #8DDCFF
+        #FF3A42,
+        #ED1C24
     );
 }
 
@@ -292,7 +292,7 @@ img{
 .stat h3{
     font-size:2.5rem;
     font-weight:900;
-    color:var(--secondary);
+    color:var(--accent);
 }
 
 .stat span{
@@ -369,7 +369,7 @@ section{
     font-size: 14.5px;
 }
 .card i {
-    color: var(--secondary);
+    color:var(--accent);
     font-size: 3.5rem;
     margin-bottom: 15px;
 }
