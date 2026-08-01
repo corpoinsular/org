@@ -98,7 +98,7 @@ img{
     box-shadow:0 10px 30px rgba(0,0,0,.12);
     backdrop-filter:blur(10px);
     z-index:9999;
-    padding:13px 0;
+    padding:12px 0;
 }
 
 .navbar .container{
@@ -108,7 +108,7 @@ img{
 }
 
 .logo img{
-    height:78px;
+    height:90px;
     width:auto;
     display:block;
 }
