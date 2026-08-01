@@ -8,15 +8,15 @@
 ========================== */
 :root{
 
---primary:#0A2EA8;
---secondary:#1F8FE5;
---accent:#D62828;
+--primary:#0B1638;
+--secondary:#143A9A;
+--accent:#ED1C24;
 
 --dark:#02040A;
 --dark-2:#050811;
 
---soft-blue:#0E1B3D;
---soft-card:#0B1224;
+--soft-blue:#07101D;
+--soft-card:#0A0F1D;
 
 --white:#FFFFFF;
 --gray:#C4C9D4;
@@ -41,14 +41,18 @@ html{
 
 body{
     background:
-        radial-gradient(circle at top right, rgba(31,143,229,.25), transparent 35%),
-        radial-gradient(circle at bottom left, rgba(10,46,168,.25), transparent 40%),
-        linear-gradient(135deg, #031024, #07245F, #0A2EA8);
+        radial-gradient(circle at top right, rgba(237,28,36,.08), transparent 30%),
+        radial-gradient(circle at bottom left, rgba(11,22,56,.30), transparent 45%),
+        linear-gradient(
+            135deg,
+            #02040A,
+            #050811,
+            #0B1638
+        );
 
     color:#fff;
-    overflow-x:hidden;
-    line-height:1.7;
 }
+
 .logo img{
     height:60px;
     width:auto;
@@ -91,7 +95,7 @@ img{
 }
 nav a{
     text-decoration:none;
-    color:#0A2EA8;
+    color:#0B1638;
     font-weight:700;
     font-size:15px;
     padding:8px 10px;
@@ -101,21 +105,27 @@ nav a{
 
 nav a:hover{
     background:rgba(31,143,229,.10);
-    color:#1F8FE5;
+    color:#ED1C24;
 }
 
 nav a.active{
-    color:#1F8FE5;
-    background:rgba(31,143,229,.12);
+    color:#ED1C24;
+    background:rgba(237,28,36,.10);
 }
 
 .btn-nav{
     padding:12px 22px;
     border-radius:12px;
-    background:linear-gradient(135deg,#1F8FE5,#63C5FF);
-    color:#fff !important;
-    box-shadow:0 10px 25px rgba(31,143,229,.25);
+    .btn-nav{
+    background:linear-gradient(
+        135deg,
+        #ED1C24,
+        #B9101A
+    );
+
+    box-shadow:0 10px 25px rgba(237,28,36,.25);
 }
+    
 /* ==========================
    HERO ABOUT (CORREGIDO)
 ========================== */
@@ -127,8 +137,11 @@ nav a.active{
     overflow:hidden;
 
     background:
-        linear-gradient(rgba(2,8,25,.65), rgba(2,8,25,.85)),
-        url("assets/quienes-somos.png");
+linear-gradient(
+rgba(2,4,10,.82),
+rgba(2,4,10,.90)
+),
+url("assets/quienes-somos.png");
 
     background-size:cover;
     background-position:center;
@@ -164,7 +177,7 @@ nav a.active{
 .hero-tag{
     display:block;
     margin-bottom:20px;
-    color:var(--secondary);
+    color:var(--accent);
     font-weight:900;
     letter-spacing:4px;
     text-transform:uppercase;
@@ -196,7 +209,7 @@ nav a.active{
 }
 
 .stat h3{
-    color:var(--secondary);
+    color:var(--accent);
     font-size:28px;
 }
 
@@ -222,11 +235,11 @@ nav a.active{
 }
 
 .como-trabajamos{
-    background:#0B1224;
+    background:#050811;
 }
 
 .impacto{
-    background:#0E1B3D;
+    background:#07101D;
     text-align:center;
 }
 
@@ -320,7 +333,7 @@ nav a.active{
 }
 .valor-card i{
     font-size:60px;
-    color:var(--secondary);
+    color:var(--accent);
     margin-bottom:18px;
     transition:.3s;
 }
@@ -388,7 +401,7 @@ nav a.active{
 
 .paso-icon i{
     font-size:56px;
-    color:var(--secondary);
+    color:var(--accent);
 }
 .paso-card h3{
     margin-top:15px;
@@ -450,12 +463,12 @@ nav a.active{
 }
 .paso-icon i{
     font-size:54px;
-    color:var(--secondary);
+    color:var(--accent);
 }
 
 .valor-card i{
     font-size:64px;
-    color:var(--secondary);
+    color:var(--accent);
 }
 .stat{
     backdrop-filter:blur(10px);
@@ -521,7 +534,7 @@ nav a.active{
     box-shadow:0 30px 70px rgba(0,0,0,.45);
 }
 .mv-card span{
-    color:var(--secondary);
+    color:var(--accent);
     font-weight:800;
     letter-spacing:2px;
 }
@@ -643,10 +656,9 @@ nav a.active{
 
     border-radius:50%;
 
-    background:rgba(255,255,255,.05);
-    border:1px solid rgba(255,255,255,.08);
-
-    color:#fff;
+    background:rgba(237,28,36,.15);
+border-color:#ED1C24;
+color:#ED1C24;
 
     transition:.3s;
 }
