@@ -33,24 +33,24 @@ html{
 
 body{
     background:
-    radial-gradient(
-        circle at top right,
-        rgba(31,143,229,.35),
-        transparent 35%
-    ),
+radial-gradient(
+    circle at top right,
+    rgba(237,28,36,.10),
+    transparent 30%
+),
 
-    radial-gradient(
-        circle at bottom left,
-        rgba(10,46,168,.35),
-        transparent 40%
-    ),
+radial-gradient(
+    circle at bottom left,
+    rgba(11,22,56,.35),
+    transparent 45%
+),
 
-    linear-gradient(
-        135deg,
-        #031024,
-        #07245F,
-        #0A2EA8
-    );
+linear-gradient(
+    135deg,
+    #02040A,
+    #050811,
+    #0B1638
+);
 
     color:#fff;
     overflow-x:hidden;
@@ -80,7 +80,7 @@ img{
     height:4px;
     margin-top:15px;
     border-radius:20px;
-    background:#1F8FE5;
+    background:#ED1C24;
 }
 /* ==========================
    NAVBAR PREMIUM
@@ -124,7 +124,7 @@ img{
 }
 
 .menu a{
-    color:#0A2EA8;
+    color:#0B1638;
     text-decoration:none;
     font-weight:700;
     position:relative;
@@ -138,12 +138,12 @@ img{
     bottom:-6px;
     width:0;
     height:2px;
-    background:#1F8FE5;
+    background:#ED1C24;
     transition:.3s;
 }
 
 .menu a:hover{
-    color:#1F8FE5;
+    color:#ED1C24;
 }
 
 .menu a:hover::after{
@@ -215,21 +215,29 @@ img{
     z-index:2;
 }
 .hero::before{
+.hero::before{
+
     content:"";
     position:absolute;
     inset:0;
 
     background:
-    radial-gradient(
-        circle at center,
-        rgba(31,143,229,.08) 0%,
-        rgba(10,46,168,.25) 40%,
-        rgba(2,8,25,.85) 100%
-    ),
 
     linear-gradient(
-        rgba(2,8,25,.45),
-        rgba(2,8,25,.75)
+        rgba(2,4,10,.82),
+        rgba(2,4,10,.88)
+    ),
+
+    radial-gradient(
+        circle at left,
+        rgba(237,28,36,.12),
+        transparent 30%
+    ),
+
+    radial-gradient(
+        circle at right,
+        rgba(11,22,56,.28),
+        transparent 40%
     ),
 
     url("assets/ombe.jpg");
@@ -477,12 +485,17 @@ section{
 
     padding:100px 0;
 
-    background:linear-gradient(
-        135deg,
-        #0A2EA8 0%,
-        #1546D1 50%,
-        #1F8FE5 100%
-    );
+    .quienes-somos{
+
+background:
+
+linear-gradient(
+135deg,
+#02040A,
+#050811,
+#0B1638
+);
+}
 
     overflow:hidden;
 }
@@ -597,7 +610,7 @@ section{
 
     background:linear-gradient(
         to right,
-        #0A2EA8,
+        #0B1638,
         transparent
     );
 }
@@ -608,7 +621,7 @@ section{
 
     background:linear-gradient(
         to left,
-        #1F8FE5,
+        #ED1C24,
         transparent
     );
 }
@@ -655,12 +668,16 @@ section{
 
 .cta{
     background:
-    linear-gradient(
-        135deg,
-        #0A2EA8 0%,
-        #1F8FE5 60%,
-        #0A2EA8 100%
-    );
+    .quienes-somos{
+
+background:
+
+linear-gradient(
+135deg,
+#02040A,
+#050811,
+#0B1638
+);
 
     text-align:center;
 
@@ -933,13 +950,17 @@ section{
     position:relative;
     overflow:hidden;
 
-    background:
-    linear-gradient(
-        135deg,
-        rgba(3,16,36,.75),
-        rgba(7,36,95,.85),
-        rgba(10,46,168,.75)
-    );
+    .quienes-somos{
+
+background:
+
+linear-gradient(
+135deg,
+#02040A,
+#050811,
+#0B1638
+);
+}
 
     border-top:1px solid rgba(255,255,255,.05);
     border-bottom:1px solid rgba(255,255,255,.05);
@@ -1096,13 +1117,17 @@ section{
     position:relative;
     overflow:hidden;
 
-    background:
-    linear-gradient(
-        135deg,
-        rgba(3,16,36,.75),
-        rgba(7,36,95,.85),
-        rgba(10,46,168,.75)
-    );
+    .quienes-somos{
+
+background:
+
+linear-gradient(
+135deg,
+#02040A,
+#050811,
+#0B1638
+);
+}
 
     border-top:1px solid rgba(255,255,255,.05);
     border-bottom:1px solid rgba(255,255,255,.05);
