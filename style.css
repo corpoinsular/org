@@ -1,7 +1,8 @@
 :root{
-    --primary:#0A2EA8;
-    --secondary:#1F8FE5;
-    --accent:#D62828;
+    --primary:#0B1638;      /* Azul oscuro del isotipo */
+    --secondary:#143A9A;    /* Azul institucional */
+    --accent:#ED1C24;       /* Rojo del isotipo */
+
     --sand:#D9A441;
 
     --black:#02040A;
@@ -12,14 +13,13 @@
     --gray:#C4C9D4;
     --gray-dark:#6B7280;
 
-    --light-blue:#D9F1FF;
+    --light-blue:#D9E8FF;
 
     --line:rgba(255,255,255,.08);
 
     --radius:18px;
     --transition:.35s ease;
 }
-
 *{
     margin:0;
     padding:0;
@@ -98,7 +98,7 @@ img{
     box-shadow:0 10px 30px rgba(0,0,0,.12);
     backdrop-filter:blur(10px);
     z-index:9999;
-    padding:12px 0;
+    padding:18px 0;
 }
 
 .navbar .container{
@@ -108,7 +108,7 @@ img{
 }
 
 .logo img{
-    height:55px;
+    height:78px;
     width:auto;
     display:block;
 }
