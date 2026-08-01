@@ -215,7 +215,6 @@ img{
     z-index:2;
 }
 .hero::before{
-.hero::before{
 
     content:"";
     position:absolute;
@@ -484,9 +483,6 @@ section{
 .aliados-home{
 
     padding:100px 0;
-
-    .quienes-somos{
-
 background:
 
 linear-gradient(
@@ -667,8 +663,6 @@ linear-gradient(
 
 .cta{
     background:
-    .quienes-somos{
-
 background:
 
 linear-gradient(
@@ -830,7 +824,7 @@ linear-gradient(
 
 .footer-social a:hover{
 
-    background:var(--secondary);
+    background:var(--accent);
     transform:translateY(-4px);
 }
 
@@ -924,8 +918,7 @@ linear-gradient(
 
     border:1px solid rgba(31,143,229,.25);
 
-    color:var(--secondary);
-
+    color:var(--accent);
     text-decoration:none;
 
     font-weight:700;
@@ -935,7 +928,7 @@ linear-gradient(
 
 .programa-btn:hover{
 
-    background:var(--secondary);
+    background:.hero-tag{:var(--accent);
 
     color:#fff;
 
@@ -948,8 +941,6 @@ linear-gradient(
 .quienes-somos{
     position:relative;
     overflow:hidden;
-
-    .quienes-somos{
 
 background:
 
@@ -1080,8 +1071,7 @@ linear-gradient(
     font-size:2.8rem;
 
     font-weight:900;
-
-    color:var(--secondary);
+    color:var(--accent);
 
     line-height:1;
 
@@ -1114,9 +1104,6 @@ linear-gradient(
 .iniciativas-destacadas{
     position:relative;
     overflow:hidden;
-
-    .quienes-somos{
-
 background:
 
 linear-gradient(
@@ -1199,7 +1186,7 @@ linear-gradient(
 
 .footer-social a:hover{
     transform:translateY(-3px);
-    border-color:var(--secondary);
+    border-color:var(--accent);
     background:rgba(31,143,229,.15);
     box-shadow:0 10px 20px rgba(31,143,229,.2);
 }
@@ -1213,7 +1200,7 @@ linear-gradient(
 .social-user{
     display:block;
     margin-top:15px;
-    color:var(--secondary);
+    color:var(--accent);
     font-size:.9rem;
     font-weight:600;
 }
