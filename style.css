@@ -253,7 +253,7 @@ img{
 }
 
 .hero-tag{
-    color:var(--secondary);
+    color:var(--accent);
     font-weight:900;
     letter-spacing:4px;
     text-transform:uppercase;
@@ -351,20 +351,16 @@ section{
 .card {
     background: rgba(2, 6, 16, 0.88); /* MÁS OSCURO */
     border: 1px solid rgba(255, 255, 255, 0.08);
-
     border-radius: 20px; /* más redondeado */
-
     padding: 25px;
-
     box-shadow: 0 10px 25px rgba(0,0,0,0.35);
-
     transition: all 0.3s ease;
 }
 
 .card:hover {
     transform: translateY(-5px);
     background: rgba(2, 6, 16, 0.94);
-    border-color: rgba(31,143,229,0.25);
+    border-color:rgba(20,58,154,.35);
     box-shadow: 0 15px 35px rgba(0,0,0,0.45);
 }
 
@@ -387,11 +383,9 @@ section{
 
 .card:hover i{
     transform:translateY(-8px) scale(1.1);
-
-    background:rgba(31,143,229,.20);
-
+    background:border-color:rgba(20,58,154,.35);
     box-shadow:
-    0 20px 40px rgba(31,143,229,.25);
+    0 20px 40px rgba(11,22,56,.30);
 }
 /* ==========================
    PROGRAMA
@@ -409,9 +403,7 @@ section{
     inset:0;
     background-repeat:repeat;
     background-size:180px;
-
     opacity:.04;
-
     z-index:0;
 }
 
@@ -437,10 +429,8 @@ section{
 
     background:rgba(255,255,255,.05);
     border:1px solid rgba(255,255,255,.08);
-
     padding:20px;
     border-radius:18px;
-
     transition:.3s ease;
 }
 
@@ -452,7 +442,6 @@ section{
     width:70px;
     height:70px;
     min-width:70px;
-
     border-radius:50%;
     object-fit:cover;
 }
@@ -499,9 +488,7 @@ linear-gradient(
 
     max-width:1000px;
     margin:0 auto 50px;
-
     padding:0 40px;
-
     text-align:center;
 }
 
@@ -526,9 +513,7 @@ linear-gradient(
 
     display:flex;
     gap:25px;
-
     width:max-content;
-
     animation:scrollAliados 35s linear infinite;
 }
 
@@ -538,29 +523,21 @@ linear-gradient(
 
     width:180px;
     height:110px;
-
     background:#fff;
-
     border-radius:18px;
-
     display:flex;
     align-items:center;
     justify-content:center;
-
     padding:18px;
-
     flex-shrink:0;
-
     box-shadow:
     0 12px 30px rgba(0,0,0,.15);
-
     transition:.35s ease;
 }
 
 .aliado-item:hover{
 
     transform:translateY(-8px);
-
     box-shadow:
     0 20px 40px rgba(0,0,0,.20);
 }
@@ -571,12 +548,9 @@ linear-gradient(
 
     max-width:120px;
     max-height:65px;
-
     width:auto;
     height:auto;
-
     object-fit:contain;
-
     filter:none;
     opacity:1;
 }
@@ -637,7 +611,6 @@ linear-gradient(
 /* Responsive */
 
 @media(max-width:768px){
-
     .aliados-home{
         padding:80px 0;
     }
@@ -664,7 +637,6 @@ linear-gradient(
 .cta{
     background:
 background:
-
 linear-gradient(
 135deg,
 #02040A,
@@ -673,9 +645,7 @@ linear-gradient(
 );
 
     text-align:center;
-
     position:relative;
-
     overflow:hidden;
 }
 
@@ -690,11 +660,9 @@ linear-gradient(
 .footer{
 
     padding:100px 8% 40px;
-
     background:
     radial-gradient(circle at 10% 10%, rgba(89,208,255,.08), transparent 40%),
     linear-gradient(180deg, #02040A, #050811);
-
     border-top:1px solid rgba(255,255,255,.06);
 }
 
@@ -707,7 +675,6 @@ linear-gradient(
     display:grid;
     grid-template-columns:2.2fr 1fr 1fr 1fr;
     gap:60px;
-
     margin-bottom:60px;
 }
 
@@ -726,9 +693,7 @@ linear-gradient(
     font-size:2.2rem;
     font-weight:900;
     letter-spacing:5px;
-
     color:var(--white);
-
     margin-bottom:15px;
 }
 
@@ -747,12 +712,9 @@ linear-gradient(
 
     color:var(--white);
     font-size:.95rem;
-
     letter-spacing:2px;
     text-transform:uppercase;
-
     margin-bottom:18px;
-
     position:relative;
 }
 
@@ -761,27 +723,20 @@ linear-gradient(
 
     content:"";
     position:absolute;
-
     left:0;
     bottom:-8px;
-
     width:40px;
     height:2px;
-
     background:var(--secondary);
 }
 
 .footer-col a{
 
     display:block;
-
     color:var(--gray);
     text-decoration:none;
-
     margin-bottom:12px;
-
     font-size:.92rem;
-
     transition:.3s;
 }
 
@@ -799,7 +754,6 @@ linear-gradient(
 
     display:flex;
     gap:12px;
-
     margin-top:20px;
 }
 
@@ -807,18 +761,13 @@ linear-gradient(
 
     width:42px;
     height:42px;
-
     display:flex;
     align-items:center;
     justify-content:center;
-
     border-radius:10px;
-
-    background:rgba(255,255,255,.05);
-    border:1px solid rgba(255,255,255,.08);
-
-    color:var(--white);
-
+    background:var(--accent);
+border-color:var(--accent);
+box-shadow:0 10px 25px rgba(237,28,36,.30);
     transition:.3s;
 }
 
@@ -835,13 +784,10 @@ linear-gradient(
 .footer-bottom{
 
     border-top:1px solid rgba(255,255,255,.06);
-
     padding-top:25px;
-
     display:flex;
     justify-content:space-between;
     align-items:center;
-
     flex-wrap:wrap;
     gap:15px;
 }
@@ -860,22 +806,15 @@ linear-gradient(
 .footer-badge{
 
     display:inline-block;
-
     margin-top:15px;
-
     padding:6px 12px;
-
     border-radius:999px;
-
     font-size:.75rem;
     font-weight:700;
     letter-spacing:2px;
-
     color:var(--accent);
-
-    background:rgba(89,208,255,.08);
-
-    border:1px solid rgba(89,208,255,.15);
+    background:rgba(11,22,56,.30);
+    border:1px solid rgba(11,22,56,.30);
 }
 
 /* =========================
@@ -883,7 +822,6 @@ linear-gradient(
 ========================= */
 
 @media (max-width: 1024px){
-
     .footer-grid{
         grid-template-columns:1fr 1fr;
         gap:40px;
@@ -891,7 +829,6 @@ linear-gradient(
 }
 
 @media (max-width: 768px){
-
     .footer-grid{
         grid-template-columns:1fr;
     }
@@ -909,29 +846,19 @@ linear-gradient(
 
     display:inline-flex;
     align-items:center;
-
     padding:12px 18px;
-
     border-radius:12px;
-
-    background:rgba(31,143,229,.12);
-
-    border:1px solid rgba(31,143,229,.25);
-
+    background:rgba(11,22,56,.30);
+    border:1px solid rgba(11,22,56,.30);
     color:var(--accent);
     text-decoration:none;
-
     font-weight:700;
-
     transition:.3s;
 }
 
 .programa-btn:hover{
-
     background:.hero-tag{:var(--accent);
-
     color:#fff;
-
     transform:translateY(-3px);
 }
 /* ==========================
@@ -941,7 +868,6 @@ linear-gradient(
 .quienes-somos{
     position:relative;
     overflow:hidden;
-
 background:
 
 linear-gradient(
@@ -963,9 +889,7 @@ linear-gradient(
     background-image:url("assets/patron-tecnologia.png");
     background-repeat:repeat;
     background-size:220px;
-
     opacity:.20;
-
     z-index:0;
 }
 
@@ -973,17 +897,16 @@ linear-gradient(
     content:"";
     position:absolute;
     inset:0;
-
     background:
     radial-gradient(
         circle at top right,
-        rgba(89,208,255,.12),
+        rgba(11,22,56,.30),
         transparent 45%
     ),
 
     radial-gradient(
         circle at bottom left,
-        rgba(31,143,229,.10),
+        rgba(11,22,56,.30),
         transparent 45%
     );
 
@@ -1001,41 +924,28 @@ linear-gradient(
 .impact-card{
 
     background:rgba(7,16,29,.65);
-
     backdrop-filter:blur(25px);
-
     border:1px solid rgba(255,255,255,.08);
-
     border-radius:28px;
-
     padding:40px;
-
     display:grid;
-
     grid-template-columns:1fr 1fr;
-
     gap:25px;
-
     box-shadow:
     0 20px 60px rgba(0,0,0,.35);
-
     position:relative;
-
     overflow:hidden;
 }
 
 .impact-card::before{
 
     content:"";
-
     position:absolute;
-
     inset:0;
-
     background:
     radial-gradient(
         circle at top right,
-        rgba(31,143,229,.12),
+        rgba(11,22,56,.30),
         transparent 40%
     );
 
@@ -1045,49 +955,35 @@ linear-gradient(
 .impact-item{
 
     background:rgba(255,255,255,.05);
-
     border:1px solid rgba(255,255,255,.06);
-
     border-radius:18px;
-
     padding:25px;
-
     text-align:center;
-
     transition:.35s ease;
 }
 
 .impact-item:hover{
 
     transform:translateY(-6px);
-
-    border-color:rgba(31,143,229,.25);
-
+    border-color:rgba(11,22,56,.30);
     background:rgba(255,255,255,.05);
 }
 
 .impact-item h3{
 
     font-size:2.8rem;
-
     font-weight:900;
     color:var(--accent);
-
     line-height:1;
-
     margin-bottom:10px;
 }
 
 .impact-item span{
 
     color:var(--gray);
-
     font-weight:600;
-
     font-size:.95rem;
-
     text-transform:uppercase;
-
     letter-spacing:1px;
 }
 
@@ -1122,13 +1018,10 @@ linear-gradient(
     content:"";
     position:absolute;
     inset:0;
-
     background-image:url("assets/tecnologia.png");
     background-repeat:repeat;
     background-size:220px;
-
     opacity:.18;
-
     z-index:0;
 }
 
@@ -1141,12 +1034,12 @@ linear-gradient(
     background:
     radial-gradient(
         circle at top left,
-        rgba(31,143,229,.14),
+        rgba(11,22,56,.30),
         transparent 45%
     ),
     radial-gradient(
         circle at bottom right,
-        rgba(89,208,255,.10),
+        rgba(11,22,56,.30),
         transparent 50%
     );
 
@@ -1168,26 +1061,21 @@ linear-gradient(
 .footer-social a{
     width:42px;
     height:42px;
-
     display:flex;
     align-items:center;
     justify-content:center;
-
     border-radius:50%;
-
     background:rgba(255,255,255,.06);
     border:1px solid rgba(255,255,255,.08);
-
     color:var(--white);
     text-decoration:none;
-
     transition:.3s ease;
 }
 
 .footer-social a:hover{
     transform:translateY(-3px);
     border-color:var(--accent);
-    background:rgba(31,143,229,.15);
+    background:rgba(11,22,56,.30);
     box-shadow:0 10px 20px rgba(31,143,229,.2);
 }
 
