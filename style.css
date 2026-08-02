@@ -383,9 +383,8 @@ section{
 
 .card:hover i{
     transform:translateY(-8px) scale(1.1);
-    background:border-color:rgba(20,58,154,.35);
-    box-shadow:
-    0 20px 40px rgba(11,22,56,.30);
+    color:var(--accent);
+    text-shadow:0 0 20px rgba(20,58,154,.35);
 }
 /* ==========================
    PROGRAMA
@@ -635,7 +634,6 @@ linear-gradient(
 ========================== */
 
 .cta{
-    background:
 background:
 linear-gradient(
 135deg,
@@ -857,7 +855,7 @@ box-shadow:0 10px 25px rgba(237,28,36,.30);
 }
 
 .programa-btn:hover{
-    background:.hero-tag{:var(--accent);
+    background:var(--accent);
     color:#fff;
     transform:translateY(-3px);
 }
@@ -1079,11 +1077,6 @@ linear-gradient(
     box-shadow:0 10px 20px rgba(31,143,229,.2);
 }
 
-.footer-social i{
-    margin:0;
-    color:var(--white);
-    font-size:1rem;
-}
 
 .social-user{
     display:block;
@@ -1092,8 +1085,4 @@ linear-gradient(
     font-size:.9rem;
     font-weight:600;
 }
-.hero .container{
-    max-width:1200px;
-    margin:auto;
-    padding:0 40px;
-}
+
