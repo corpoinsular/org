@@ -756,25 +756,22 @@ color:var(--accent);
 }
 
 /* Luz difusa */
-.programa-card:before{
+.programa-card::before{
     content:"";
-
     position:absolute;
-
     width:350px;
     height:350px;
-
     top:-180px;
     right:-120px;
-
     border-radius:50%;
 
-    background:
-    radial-gradient(
+    background:radial-gradient(
         circle,
         rgba(20,58,154,.20) 0%,
         rgba(237,28,36,.08) 40%,
         transparent 75%
+    );
+
     pointer-events:none;
     transition:.6s ease;
 }
@@ -837,26 +834,21 @@ color:var(--accent);
 }
 /* Luz inferior */
 
-.impacto:after{
+.impacto::after{
     content:"";
-
     position:absolute;
-
     width:600px;
     height:600px;
-
     bottom:-300px;
     right:-200px;
-
     border-radius:50%;
-
-    .impacto:after{
-    background:
-    radial-gradient(
+    background:radial-gradient(
         circle,
         rgba(237,28,36,.08),
         transparent 70%
     );
+    filter:blur(50px);
+    z-index:1;
 }
 .impacto h2,
 .impact-grid{
