@@ -1,25 +1,22 @@
 /* =========================
 VARIABLES COLECTIVO
 ========================= */
-:root{
-    --primary:#0A2EA8;
-    --secondary:#1F8FE5;
-    --accent:#D9A441;
 
-    --black:#02040A;
-    --nav:#050811;
-    --card:#07101D;
+--primary:#0B1638;
+--secondary:#143A9A;
+--accent:#ED1C24;
 
-    --white:#FFFFFF;
-    --gray:#C4C9D4;
-    --gray-dark:#6B7280;
+--dark:#02040A;
+--dark-2:#050811;
 
-    --line:rgba(255,255,255,.08);
+--soft-blue:#07101D;
+--soft-card:#0A0F1D;
 
-    --radius:20px;
-    --transition:.35s ease;
+--white:#FFFFFF;
+--gray:#C4C9D4;
+--muted:#8FA0B3;
+
 }
-
 /* =========================
 RESET
 ========================= */
