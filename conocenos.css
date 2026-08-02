@@ -211,8 +211,8 @@ url("assets/quienes-somos.png");
 }
 
 .stat h3{
+    font-size:32px;
     color:var(--accent);
-    font-size:28px;
 }
 
 .stat span{
