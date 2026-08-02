@@ -375,10 +375,11 @@ section{
     line-height: 1.6;
     font-size: 14.5px;
 }
-.card i {
+.card i{
     color:var(--accent);
-    font-size: 3.5rem;
-    margin-bottom: 15px;
+    font-size:3.5rem;
+    margin-bottom:15px;
+    transition:transform .35s ease, text-shadow .35s ease;
 }
 
 .card:hover i{
