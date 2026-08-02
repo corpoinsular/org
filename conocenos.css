@@ -212,7 +212,7 @@ url("assets/quienes-somos.png");
 
 .stat h3{
     font-size:32px;
-    color:var(--accent);
+    color:var(--accent); /* #ED1C24 */
 }
 
 .stat span{
