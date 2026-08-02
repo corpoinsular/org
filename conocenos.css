@@ -104,7 +104,7 @@ nav a{
 }
 
 nav a:hover{
-    background:rgba(31,143,229,.10);
+    background:rgba(20,58,154,.10);
     color:#ED1C24;
 }
 
@@ -116,13 +116,16 @@ nav a.active{
 .btn-nav{
     padding:12px 22px;
     border-radius:12px;
-    background:linear-gradient(
-        135deg,
-        #ED1C24,
-        #B9101A
-    );
+    background:linear-gradient(135deg,#ED1C24,#B9101A);
+    color:#fff;
+    text-decoration:none;
+    font-weight:700;
+    transition:.3s;
+}
 
-    box-shadow:0 10px 25px rgba(237,28,36,.25);
+    .btn-nav:hover{
+    transform:translateY(-3px);
+    box-shadow:0 15px 35px rgba(237,28,36,.35);
 }
     
 /* ==========================
@@ -150,7 +153,7 @@ url("assets/quienes-somos.png");
     content:"";
     position:absolute;
     inset:0;
-    background:radial-gradient(circle at top right, rgba(31,143,229,.25), transparent 60%);
+    background:radial-gradient(circle at top right, rgba(11,22,56,.35), transparent 60%);
 }
 
 /* brillo premium */
@@ -648,18 +651,14 @@ url("assets/quienes-somos.png");
 .footer-social a{
     width:44px;
     height:44px;
-
     display:flex;
     align-items:center;
     justify-content:center;
-
     border-radius:50%;
-
     background:rgba(237,28,36,.15);
 border-color:#ED1C24;
 color:#ED1C24;
-
-    transition:.3s;
+transition:all .35s ease;
 }
 
 .footer-social a:hover{
