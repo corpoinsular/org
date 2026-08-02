@@ -2,16 +2,25 @@
    BASE
 ========================= */
 :root{
-  --bg:#05070D;
-  --card:#0B1220;
-  --text:#FFFFFF;
-  --muted:rgba(255,255,255,.65);
-  --soft:rgba(255,255,255,.08);
-  --accent:#59D0FF;
-  --blue:#0A2EA8;
 
-  --shadow:0 30px 80px rgba(0,0,0,.6);
-  --blur:blur(18px);
+  --bg:#04070F;
+
+  --card:#0D1528;
+
+  --primary:#0B1638;
+
+  --secondary:#143A9A;
+
+  --accent:#ED1C24;
+
+  --light:#F5F7FA;
+
+  --gray:#C7D0DD;
+
+  --muted:#8FA0B3;
+
+  --line:rgba(255,255,255,.08);
+
 }
 
 *{
@@ -22,9 +31,24 @@
 }
 
 body{
-  background:var(--bg);
-  color:var(--text);
-  overflow-x:hidden;
+
+background:
+
+radial-gradient(circle at top right,
+rgba(20,58,154,.12),
+transparent 30%),
+
+radial-gradient(circle at bottom left,
+rgba(237,28,36,.08),
+transparent 35%),
+
+linear-gradient(
+180deg,
+#03060E,
+#07101D,
+#0B1638
+);
+
 }
 
 /* =========================
@@ -249,7 +273,7 @@ overflow:hidden;
     font-size:.65rem;
     letter-spacing:2px;
 
-    color:#59D0FF;
+    color:#2563EB;
     font-weight:700;
 
     margin-bottom:8px;
@@ -425,7 +449,7 @@ overflow:hidden;
   background:linear-gradient(
     135deg,
     #1F8FE5,
-    #59D0FF
+    ##2563EB
   );
 
   color:#fff;
@@ -940,7 +964,7 @@ overflow:hidden;
     135deg,
     #0A2EA8,
     #1F8FE5,
-    #59D0FF
+    ##2563EB
   );
 
   -webkit-background-clip:text;
