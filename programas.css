@@ -756,7 +756,7 @@ color:var(--accent);
 }
 
 /* Luz difusa */
-.programa-card::before{
+.programa-card:before{
     content:"";
 
     position:absolute;
@@ -775,10 +775,7 @@ color:var(--accent);
         rgba(20,58,154,.20) 0%,
         rgba(237,28,36,.08) 40%,
         transparent 75%
-    );
-
     pointer-events:none;
-
     transition:.6s ease;
 }
 
@@ -806,16 +803,11 @@ color:var(--accent);
     transition:.4s ease;
 }
 
-    pointer-events:none;
-
-    transition:.6s ease;
-}
-
-.programa-card:hover::before{
+.programa-card:hover:before{
     transform:scale(1.25);
 }
 
-.programa-card:hover::after{
+.programa-card:hover:after{
     transform:scale(1.3);
 }
 .programa-header,
@@ -827,30 +819,25 @@ color:var(--accent);
 }
 /* Luz superior */
 
-.impacto::before{
+.impacto:before{
     content:"";
-
     position:absolute;
-
     width:700px;
     height:700px;
-
     top:-350px;
     left:-250px;
-
     border-radius:50%;
-
-    .impacto::before{
-    background:
-    radial-gradient(
+    background:radial-gradient(
         circle,
         rgba(11,22,56,.35),
         transparent 70%
     );
+    filter:blur(40px);
+    z-index:1;
 }
 /* Luz inferior */
 
-.impacto::after{
+.impacto:after{
     content:"";
 
     position:absolute;
@@ -863,7 +850,7 @@ color:var(--accent);
 
     border-radius:50%;
 
-    .impacto::after{
+    .impacto:after{
     background:
     radial-gradient(
         circle,
