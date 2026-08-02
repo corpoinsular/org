@@ -108,13 +108,16 @@ HERO
 }
 
 .hero-programas::before{
+    content:"";
+    position:absolute;
+    inset:0;
+
     background:
     linear-gradient(
         rgba(2,4,10,.82),
         rgba(2,4,10,.90)
     ),
     url("assets/programas.jpg");
-}
 
     background-size:cover;
     background-position:center;
@@ -308,8 +311,7 @@ EXPANSIÓN (ACORDEÓN)
     transition:all .45s ease;
 }
 
-.programa-card.active .programa-expand{
-    max-height:1000px;
+.programa-card.active-max-height:1000px;
     opacity:1;
     margin-top:20px;
 }
@@ -469,15 +471,22 @@ IMPACTO PREMIUM
 
     overflow:hidden;
 
-    background:
-    linear-gradient(
+    .impacto{
+    background:linear-gradient(
         180deg,
-        #061738 0%,
-        #031024 50%,
-        #02040A 100%
+        var(--dark-2),
+        var(--dark),
+        var(--primary)
     );
 }
-.impacto::before,
+..impacto::before{
+    background:
+    radial-gradient(
+        circle,
+        rgba(11,22,56,.35),
+        transparent 70%
+    );
+}
 .impacto::after{
     z-index:1;
 }
@@ -822,16 +831,14 @@ color:var(--accent);
 
     border-radius:50%;
 
+    .impacto::before{
     background:
     radial-gradient(
         circle,
-        rgba(31,143,229,.18),
+        rgba(11,22,56,.35),
         transparent 70%
     );
-
-    filter:blur(40px);
 }
-
 /* Luz inferior */
 
 .impacto::after{
@@ -847,14 +854,13 @@ color:var(--accent);
 
     border-radius:50%;
 
+    .impacto::after{
     background:
     radial-gradient(
         circle,
-        rgba(99,197,255,.12),
+        rgba(237,28,36,.08),
         transparent 70%
     );
-
-    filter:blur(50px);
 }
 .impacto h2,
 .impact-grid{
