@@ -2,20 +2,20 @@
 VARIABLES COLECTIVO
 ========================= */
 
---primary:#0B1638;
---secondary:#143A9A;
---accent:#ED1C24;
+:root{
+    --primary:#0B1638;
+    --secondary:#143A9A;
+    --accent:#ED1C24;
 
---dark:#02040A;
---dark-2:#050811;
+    --dark:#02040A;
+    --dark-2:#050811;
 
---soft-blue:#07101D;
---soft-card:#0A0F1D;
+    --soft-blue:#07101D;
+    --soft-card:#0A0F1D;
 
---white:#FFFFFF;
---gray:#C4C9D4;
---muted:#8FA0B3;
-
+    --white:#FFFFFF;
+    --gray:#C4C9D4;
+    --muted:#8FA0B3;
 }
 /* =========================
 RESET
