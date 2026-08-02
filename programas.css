@@ -29,10 +29,9 @@ RESET
 
 body{
     background:
-    radial-gradient(circle at top right,rgba(31,143,229,.25),transparent 35%),
-    radial-gradient(circle at bottom left,rgba(10,46,168,.25),transparent 40%),
-    linear-gradient(135deg,#031024,#07245F,#0A2EA8);
-
+radial-gradient(circle at top right, rgba(237,28,36,.08), transparent 30%),
+radial-gradient(circle at bottom left, rgba(11,22,56,.30), transparent 45%),
+linear-gradient(135deg,#02040A,#050811,#0B1638);
     color:#fff;
     overflow-x:hidden;
 }
@@ -79,7 +78,7 @@ img{
 }
 nav a{
     text-decoration:none;
-    color:#0A2EA8;
+    color:var(--primary);
     font-weight:700;
     font-size:15px;
     padding:8px 10px;
@@ -88,21 +87,22 @@ nav a{
 }
 
 nav a:hover{
-    background:rgba(31,143,229,.10);
-    color:#1F8FE5;
+    background:rgba(20,58,154,.10);
+color:var(--accent);
 }
 
 nav a.active{
-    color:#1F8FE5;
-    background:rgba(31,143,229,.12);
+    color:var(--accent);
+background:rgba(237,28,36,.10);
 }
 
 .btn-nav{
     padding:12px 22px;
     border-radius:12px;
-    background:linear-gradient(135deg,#1F8FE5,#63C5FF);
-    color:#fff !important;
-    box-shadow:0 10px 25px rgba(31,143,229,.25)
+    .btn-nav{
+    background:linear-gradient(135deg,var(--accent),#B9101A);
+    color:#fff;
+    box-shadow:0 10px 25px rgba(237,28,36,.30);
 }
 /* =========================
 HERO
@@ -123,7 +123,10 @@ HERO
     inset:0;
 
     background:
-    linear-gradient(rgba(2,8,25,.75), rgba(10,46,168,.65)),
+    linear-gradient(
+rgba(2,4,10,.82),
+rgba(2,4,10,.90)
+)
     url("assets/programas.jpg");
 
     background-size:cover;
@@ -168,12 +171,12 @@ PROGRAMAS PREMIUM
     overflow:hidden;
 
     background:
-    linear-gradient(
-        180deg,
-        #061738 0%,
-        #031024 50%,
-        #02040A 100%
-    );
+linear-gradient(
+180deg,
+var(--dark-2),
+var(--dark),
+var(--primary)
+);
 }
 /* Luz superior */
 
@@ -193,7 +196,7 @@ PROGRAMAS PREMIUM
     background:
     radial-gradient(
         circle,
-        rgba(31,143,229,.18),
+        rgba(11,22,56,.35),
         transparent 70%
     );
 
@@ -220,7 +223,7 @@ PROGRAMAS PREMIUM
     background:
     radial-gradient(
         circle,
-        rgba(99,197,255,.12),
+        rgba(237,28,36,.10),
         transparent 70%
     );
 
@@ -287,10 +290,19 @@ CARD
     padding: 10px 16px;
     border-radius: 12px;
     border: none;
-    background: linear-gradient(135deg,#1F8FE5,#63C5FF);
+    background:linear-gradient(
+135deg,
+var(--accent),
+#B9101A
+);
     color: white;
     font-weight: 700;
     cursor: pointer;
+}
+    .btn-detalle:hover{
+    transform:translateY(-3px);
+
+    box-shadow:0 15px 35px rgba(237,28,36,.35);
 }
 .cerrar-detalle{
     position: absolute;
@@ -407,12 +419,11 @@ METODOLOGÍA PREMIUM
 .step:hover{
     transform:translateY(-8px);
 
-    border-color:rgba(31,143,229,.35);
+    border-color:rgba(20,58,154,.35);
 
-    box-shadow:
-    0 25px 50px rgba(0,0,0,.25),
-    0 0 35px rgba(31,143,229,.15);
-}
+box-shadow:
+0 25px 60px rgba(0,0,0,.35);
+    }
 
 /* NÚMERO */
 
@@ -422,7 +433,7 @@ METODOLOGÍA PREMIUM
     font-size:3rem;
     font-weight:900;
 
-    color:#63C5FF;
+    color:var(--accent);
 
     margin-bottom:20px;
 
@@ -549,11 +560,11 @@ IMPACTO PREMIUM
 .impact-card:hover{
     transform:translateY(-10px);
 
-    border-color:rgba(31,143,229,.4);
+    border-color:rgba(20,58,154,.35);
 
     box-shadow:
     0 25px 60px rgba(0,0,0,.30),
-    0 0 40px rgba(31,143,229,.15);
+    0 0 35px rgba(237,28,36,.10);
 }
 
 /* ICONOS */
@@ -565,7 +576,7 @@ IMPACTO PREMIUM
 .impact-icon svg{
     width:70px;
     height:70px;
-    stroke:#63C5FF;
+    stroke:var(--accent);
     stroke-width:1.8;
 }
 
@@ -589,11 +600,12 @@ IMPACTO PREMIUM
     width:100%;
     height:4px;
 
-    background:linear-gradient(
-        90deg,
-        #1F8FE5,
-        #63C5FF
-    );
+    background:
+linear-gradient(
+90deg,
+var(--accent),
+#B9101A
+);
 
     opacity:0;
     transition:.35s ease;
@@ -639,7 +651,12 @@ CTA
 .cta{
     padding:100px 10%;
     text-align:center;
-    background:linear-gradient(135deg,#0A2EA8,#1F8FE5);
+    background:
+linear-gradient(
+135deg,
+var(--primary),
+var(--secondary)
+);;
 }
 
 .cta h2{
@@ -699,10 +716,11 @@ FOOTER
 }
 
 .footer-social a:hover{
-    transform:translateY(-5px);
-    background:rgba(31,143,229,.15);
-    border-color:rgba(31,143,229,.4);
-    color:#1F8FE5;
+    background:rgba(237,28,36,.12);
+
+border-color:rgba(237,28,36,.35);
+
+color:var(--accent);
 }
 .cta{
     padding: 60px 10%;
@@ -728,7 +746,7 @@ FOOTER
     display:inline-block;
     padding:12px 18px;
     border-radius:14px;
-    background:#0A2EA8;
+    background:var(--accent);
     color:#fff;
     font-weight:700;
     text-decoration:none;
@@ -762,8 +780,8 @@ FOOTER
     background:
     radial-gradient(
         circle,
-        rgba(99,197,255,.18) 0%,
-        rgba(31,143,229,.08) 40%,
+        rgba(20,58,154,.20) 0%,
+        rgba(237,28,36,.08) 40%,
         transparent 75%
     );
 
