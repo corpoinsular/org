@@ -564,6 +564,9 @@ h2 {
 
 /* TELEINSULAR — IDENTIDAD INSTITUCIONAL */
 
+
+/* TELEINSULAR: identidad propia, coherente con COINDI */
+
 .teleinsular-home {
   position: relative;
   overflow: hidden;
@@ -571,17 +574,18 @@ h2 {
   background:
     radial-gradient(
       circle at 90% 0%,
-      rgba(0, 166, 214, 0.16),
-      transparent 42%
+      rgba(0, 166, 214, 0.22),
+      transparent 38%
     ),
     linear-gradient(
       120deg,
-      #023746 0%,
-      var(--petroleo) 58%,
-      #07566B 100%
+      #022F3E 0%,
+      #004B63 58%,
+      #075B78 100%
     );
   color: var(--blanco);
 }
+
 
 .teleinsular-contenido {
   width: min(1100px, calc(100% - 40px));
@@ -648,25 +652,28 @@ h2 {
   font-size: 0.93rem;
 }
 
+
 .teleinsular-boton {
   display: inline-flex;
   align-items: center;
   justify-content: center;
   gap: 12px;
   min-height: 48px;
-  margin-top: 8px;
-  padding: 13px 25px;
+  padding: 13px 22px;
   border-radius: 8px;
   background: var(--arena);
-  color: #173640;
+  color: var(--petroleo);
   font-weight: 800;
-  transition: transform 0.2s ease, background 0.2s ease;
+  transition:
+    transform 0.2s ease,
+    background 0.2s ease;
 }
 
 .teleinsular-boton:hover {
   transform: translateY(-2px);
-  background: #FFD16C;
+  background: #FFD36F;
 }
+
 
 .teleinsular-boton:focus-visible {
   outline: 3px solid var(--blanco);
