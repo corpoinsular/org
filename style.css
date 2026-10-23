@@ -1,87 +1,991 @@
 
-/* =========================================
-   LOGOS INSTITUCIONALES - COINDI
-   ========================================= */
+/* =========================================================
+   COINDI — CORPORACIÓN INSULAR DIGITAL
+   Hoja de estilos de la página de inicio
+   Archivo: css/inicio.css
+   ========================================================= */
 
-/* LOGO SUPERIOR: FONDO BLANCO */
-.logo-header {
-    display: block;
-    width: 230px;
-    max-width: 100%;
-    height: 62px;
-    object-fit: contain;
-    object-position: left center;
-    flex-shrink: 0;
-    background: transparent;
-    border: none;
-    box-shadow: none;
+/* 1. VARIABLES INSTITUCIONALES */
+:root {
+    --azul-institucional: #0A2EA8;
+    --azul-digital: #1F8FE5;
+    --azul-profundo: #06163D;
+    --azul-noche: #02040A;
+    --azul-claro: #D9F1FF;
+    --blanco: #FFFFFF;
+    --gris-fondo: #F5F7FA;
+    --gris-texto: #536174;
+    --texto-oscuro: #17233D;
+    --acento: #D62828;
+    --arena: #D9A441;
+
+    --radio: 20px;
+    --sombra: 0 12px 35px rgba(4, 28, 78, 0.10);
+    --sombra-fuerte: 0 20px 50px rgba(0, 0, 0, 0.20);
+    --transicion: 0.3s ease;
 }
 
-/* Contenedor del logo superior */
-.navbar .brand {
+/* 2. REINICIO GENERAL */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+    scroll-padding-top: 95px;
+}
+
+body {
+    font-family: "Segoe UI", Arial, Helvetica, sans-serif;
+    color: var(--texto-oscuro);
+    background: var(--blanco);
+    line-height: 1.7;
+    overflow-x: hidden;
+}
+
+img {
+    display: block;
+    max-width: 100%;
+}
+
+a {
+    color: inherit;
+    text-decoration: none;
+}
+
+button,
+input,
+textarea,
+select {
+    font: inherit;
+}
+
+button,
+a {
+    -webkit-tap-highlight-color: transparent;
+}
+
+button:focus-visible,
+a:focus-visible {
+    outline: 3px solid var(--arena);
+    outline-offset: 4px;
+}
+
+/* 3. BARRA DE NAVEGACIÓN */
+.navbar {
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+    width: 100%;
+    min-height: 86px;
+    padding: 12px clamp(18px, 5vw, 75px);
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 30px;
+    background: rgba(255, 255, 255, 0.97);
+    border-bottom: 1px solid rgba(10, 46, 168, 0.08);
+    box-shadow: 0 5px 24px rgba(5, 30, 80, 0.06);
+    backdrop-filter: blur(14px);
+}
+
+.brand {
     display: flex;
     align-items: center;
     flex-shrink: 0;
-    background: transparent;
-    border: none;
-    box-shadow: none;
-    padding: 0;
 }
 
-/* LOGO INFERIOR: PNG TRANSPARENTE PARA FONDO OSCURO */
-.logo-footer {
-    display: block;
-    width: 260px;
-    max-width: 100%;
-    height: 85px;
+.logo-header {
+    width: 230px;
+    height: 62px;
     object-fit: contain;
     object-position: left center;
-    background: transparent !important;
-    border: none !important;
-    box-shadow: none !important;
-    padding: 0;
 }
 
-/* Contenedor del logo del pie de página */
+.nav-links {
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+    gap: clamp(14px, 2vw, 30px);
+}
+
+.nav-links a {
+    position: relative;
+    padding: 9px 0;
+    color: #263650;
+    font-size: 0.91rem;
+    font-weight: 600;
+    white-space: nowrap;
+    transition: color var(--transicion);
+}
+
+.nav-links a::after {
+    content: "";
+    position: absolute;
+    left: 0;
+    bottom: 1px;
+    width: 0;
+    height: 3px;
+    border-radius: 10px;
+    background: linear-gradient(
+        90deg,
+        var(--azul-institucional),
+        var(--azul-digital)
+    );
+    transition: width var(--transicion);
+}
+
+.nav-links a:hover,
+.nav-links a.active {
+    color: var(--azul-institucional);
+}
+
+.nav-links a:hover::after,
+.nav-links a.active::after {
+    width: 100%;
+}
+
+.menu-toggle {
+    display: none;
+    align-items: center;
+    justify-content: center;
+    width: 46px;
+    height: 46px;
+    border: 1px solid #DCE5F3;
+    border-radius: 12px;
+    background: var(--blanco);
+    color: var(--azul-institucional);
+    font-size: 1.6rem;
+    cursor: pointer;
+}
+
+/* 4. PORTADA PRINCIPAL */
+.hero {
+    position: relative;
+    isolation: isolate;
+    min-height: min(760px, calc(100svh - 86px));
+    display: flex;
+    align-items: center;
+    padding: clamp(75px, 10vw, 135px) clamp(22px, 8vw, 120px);
+    overflow: hidden;
+
+    background-color: #06163D;
+    background-image:
+        linear-gradient(
+            90deg,
+            rgba(2, 8, 28, 0.91) 0%,
+            rgba(4, 25, 76, 0.78) 48%,
+            rgba(10, 46, 168, 0.28) 100%
+        ),
+        url("../assets/hero-bocachica.jpg");
+    background-position: center;
+    background-size: cover;
+    background-repeat: no-repeat;
+}
+
+.hero::before {
+    content: "";
+    position: absolute;
+    z-index: -1;
+    width: 520px;
+    height: 520px;
+    right: -180px;
+    bottom: -260px;
+    border: 1px solid rgba(255, 255, 255, 0.18);
+    border-radius: 50%;
+    box-shadow:
+        0 0 0 45px rgba(255, 255, 255, 0.035),
+        0 0 0 90px rgba(255, 255, 255, 0.025);
+}
+
+.hero-content {
+    width: 100%;
+    max-width: 850px;
+    color: var(--blanco);
+    animation: coindiEntrada 0.9s ease both;
+}
+
+.eyebrow {
+    display: inline-flex;
+    align-items: center;
+    gap: 10px;
+    margin-bottom: 22px;
+    color: #CDEAFF;
+    font-size: 0.83rem;
+    font-weight: 800;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+}
+
+.eyebrow::before {
+    content: "";
+    display: inline-block;
+    width: 34px;
+    height: 3px;
+    border-radius: 5px;
+    background: var(--arena);
+}
+
+.hero h1 {
+    max-width: 850px;
+    margin-bottom: 24px;
+    font-size: clamp(2.5rem, 5.5vw, 5rem);
+    font-weight: 800;
+    line-height: 1.08;
+    letter-spacing: -2px;
+    text-wrap: balance;
+}
+
+.hero-content p {
+    max-width: 680px;
+    margin-bottom: 34px;
+    color: rgba(255, 255, 255, 0.88);
+    font-size: clamp(1rem, 1.5vw, 1.2rem);
+    line-height: 1.85;
+}
+
+.hero-buttons {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    gap: 15px;
+}
+
+/* 5. BOTONES */
+.btn {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    min-height: 51px;
+    padding: 13px 24px;
+    border: 2px solid transparent;
+    border-radius: 9px;
+    font-size: 0.95rem;
+    font-weight: 700;
+    text-align: center;
+    line-height: 1.3;
+    transition:
+        transform var(--transicion),
+        background var(--transicion),
+        color var(--transicion),
+        box-shadow var(--transicion);
+    cursor: pointer;
+}
+
+.btn:hover {
+    transform: translateY(-3px);
+}
+
+.btn-primary {
+    color: var(--blanco);
+    background: linear-gradient(
+        115deg,
+        var(--azul-institucional),
+        var(--azul-digital)
+    );
+    box-shadow: 0 8px 24px rgba(31, 143, 229, 0.28);
+}
+
+.btn-primary:hover {
+    box-shadow: 0 12px 30px rgba(31, 143, 229, 0.4);
+}
+
+.btn-secondary {
+    color: var(--blanco);
+    background: rgba(255, 255, 255, 0.08);
+    border-color: rgba(255, 255, 255, 0.62);
+}
+
+.btn-secondary:hover {
+    color: var(--azul-profundo);
+    background: var(--blanco);
+}
+
+/* 6. ESTILOS COMUNES DE LAS SECCIONES */
+.contenido,
+.programas-inicio {
+    padding: clamp(65px, 8vw, 105px) clamp(20px, 7vw, 100px);
+}
+
+.contenido {
+    background: var(--blanco);
+}
+
+.section-heading {
+    max-width: 780px;
+    margin: 0 auto 48px;
+    text-align: center;
+}
+
+.section-heading h2 {
+    margin-bottom: 17px;
+    color: var(--azul-profundo);
+    font-size: clamp(2rem, 3.5vw, 3rem);
+    font-weight: 800;
+    line-height: 1.2;
+    letter-spacing: -0.8px;
+    text-wrap: balance;
+}
+
+.section-heading p {
+    color: var(--gris-texto);
+    font-size: 1.04rem;
+    line-height: 1.85;
+}
+
+/* 7. EJES INSTITUCIONALES */
+.ejes-grid {
+    display: grid;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: 25px;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.eje-card {
+    position: relative;
+    padding: 35px 30px;
+    overflow: hidden;
+    background: var(--blanco);
+    border: 1px solid #E6EDF7;
+    border-radius: var(--radio);
+    box-shadow: var(--sombra);
+    transition:
+        transform var(--transicion),
+        box-shadow var(--transicion),
+        border-color var(--transicion);
+}
+
+.eje-card::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 4px;
+    background: linear-gradient(
+        90deg,
+        var(--azul-institucional),
+        var(--azul-digital),
+        var(--arena)
+    );
+}
+
+.eje-card:hover {
+    transform: translateY(-7px);
+    border-color: #C6DDF8;
+    box-shadow: 0 20px 45px rgba(4, 28, 78, 0.13);
+}
+
+.eje-icono {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 66px;
+    height: 66px;
+    margin-bottom: 23px;
+    border-radius: 18px;
+    color: var(--azul-institucional);
+    background: linear-gradient(135deg, #E8F4FF, #D9F1FF);
+    font-size: 1.8rem;
+}
+
+.eje-card h3 {
+    margin-bottom: 13px;
+    color: var(--azul-profundo);
+    font-size: 1.3rem;
+    line-height: 1.35;
+}
+
+.eje-card p {
+    color: var(--gris-texto);
+    font-size: 0.97rem;
+    line-height: 1.8;
+}
+
+/* 8. SECCIÓN INSTITUCIONAL */
+.institucional {
+    position: relative;
+    padding: clamp(70px, 9vw, 115px) clamp(22px, 8vw, 120px);
+    overflow: hidden;
+    color: var(--blanco);
+    background:
+        radial-gradient(
+            circle at 90% 15%,
+            rgba(35, 150, 243, 0.28),
+            transparent 34%
+        ),
+        linear-gradient(
+            120deg,
+            #02040A 0%,
+            #07245F 54%,
+            #0A2EA8 100%
+        );
+}
+
+.institucional::after {
+    content: "";
+    position: absolute;
+    right: -100px;
+    bottom: -200px;
+    width: 430px;
+    height: 430px;
+    border: 1px solid rgba(255, 255, 255, 0.12);
+    border-radius: 50%;
+    box-shadow:
+        0 0 0 35px rgba(255, 255, 255, 0.025),
+        0 0 0 70px rgba(255, 255, 255, 0.02);
+    pointer-events: none;
+}
+
+.institucional-content {
+    position: relative;
+    z-index: 1;
+    max-width: 1000px;
+    margin: 0 auto;
+    text-align: center;
+}
+
+.institucional-content h2 {
+    max-width: 850px;
+    margin: 0 auto 24px;
+    font-size: clamp(2rem, 4.2vw, 3.7rem);
+    font-weight: 800;
+    line-height: 1.18;
+    letter-spacing: -1px;
+    text-wrap: balance;
+}
+
+.institucional-content p {
+    max-width: 800px;
+    margin: 0 auto 22px;
+    color: rgba(255, 255, 255, 0.86);
+    font-size: 1.06rem;
+    line-height: 1.9;
+}
+
+.institucional-content p:last-child {
+    margin-top: 30px;
+    color: #CDEAFF;
+    font-size: clamp(1.1rem, 2vw, 1.45rem);
+    font-weight: 700;
+}
+
+/* 9. PROGRAMAS */
+.programas-inicio {
+    background: var(--gris-fondo);
+}
+
+.programas-grid {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 28px;
+    max-width: 1120px;
+    margin: 0 auto;
+}
+
+.programa-card {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    padding: clamp(28px, 4vw, 42px);
+    background: var(--blanco);
+    border: 1px solid #E3EAF5;
+    border-radius: var(--radio);
+    box-shadow: var(--sombra);
+    transition:
+        transform var(--transicion),
+        box-shadow var(--transicion);
+}
+
+.programa-card:hover {
+    transform: translateY(-6px);
+    box-shadow: 0 20px 45px rgba(4, 28, 78, 0.14);
+}
+
+.programa-icono {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 72px;
+    height: 72px;
+    margin-bottom: 25px;
+    border-radius: 20px;
+    color: var(--blanco);
+    background: linear-gradient(
+        135deg,
+        var(--azul-institucional),
+        var(--azul-digital)
+    );
+    box-shadow: 0 10px 24px rgba(10, 46, 168, 0.18);
+    font-size: 1.9rem;
+}
+
+.programa-card h3 {
+    margin-bottom: 14px;
+    color: var(--azul-profundo);
+    font-size: clamp(1.25rem, 2vw, 1.55rem);
+    line-height: 1.35;
+}
+
+.programa-card p {
+    margin-bottom: 24px;
+    color: var(--gris-texto);
+    line-height: 1.85;
+}
+
+.programa-card .btn {
+    margin-top: auto;
+}
+
+/* 10. BLOQUE TELEINSULAR */
+.seccion-teleinsular {
+    position: relative;
+    padding: clamp(65px, 8vw, 105px) clamp(20px, 7vw, 100px);
+    overflow: hidden;
+    background: linear-gradient(135deg, #EAF6FF, #FFFFFF 65%);
+}
+
+.teleinsular-bloque {
+    display: grid;
+    grid-template-columns: minmax(0, 1fr) minmax(0, 1.15fr);
+    align-items: center;
+    gap: clamp(30px, 6vw, 75px);
+    max-width: 1180px;
+    margin: 0 auto;
+    padding: clamp(28px, 5vw, 55px);
+    border: 1px solid rgba(10, 46, 168, 0.1);
+    border-radius: 26px;
+    background: var(--blanco);
+    box-shadow: 0 20px 55px rgba(5, 38, 100, 0.09);
+}
+
+.teleinsular-content {
+    min-width: 0;
+}
+
+.teleinsular-content h2 {
+    margin-bottom: 20px;
+    color: var(--azul-institucional);
+    font-size: clamp(2rem, 3.5vw, 3rem);
+    font-weight: 800;
+    line-height: 1.18;
+    text-wrap: balance;
+}
+
+.teleinsular-content p {
+    margin-bottom: 24px;
+    color: var(--gris-texto);
+    line-height: 1.9;
+}
+
+.teleinsular-content .btn {
+    margin-top: 5px;
+}
+
+/* Si el bloque contiene una imagen, se adapta al contenedor. */
+.teleinsular-bloque img {
+    width: 100%;
+    max-height: 430px;
+    object-fit: cover;
+    border-radius: 18px;
+}
+
+/* 11. LLAMADO A LA ACCIÓN */
+.cta-final {
+    position: relative;
+    padding: clamp(65px, 8vw, 100px) 22px;
+    overflow: hidden;
+    text-align: center;
+    color: var(--blanco);
+    background:
+        radial-gradient(
+            circle at 10% 90%,
+            rgba(35, 150, 243, 0.22),
+            transparent 35%
+        ),
+        linear-gradient(
+            120deg,
+            #06163D,
+            #0A2EA8 65%,
+            #1F8FE5
+        );
+}
+
+.cta-content {
+    position: relative;
+    z-index: 1;
+    max-width: 850px;
+    margin: 0 auto;
+}
+
+.cta-content h2 {
+    margin-bottom: 20px;
+    font-size: clamp(2rem, 4vw, 3.3rem);
+    font-weight: 800;
+    line-height: 1.2;
+    text-wrap: balance;
+}
+
+.cta-content p {
+    max-width: 700px;
+    margin: 0 auto 30px;
+    color: rgba(255, 255, 255, 0.88);
+    font-size: 1.05rem;
+    line-height: 1.85;
+}
+
+.cta-final .btn {
+    color: var(--azul-profundo);
+    background: var(--blanco);
+    border-color: var(--blanco);
+}
+
+.cta-final .btn:hover {
+    color: var(--blanco);
+    background: transparent;
+}
+
+/* 12. PIE DE PÁGINA */
+.footer {
+    padding: 65px clamp(20px, 7vw, 100px) 0;
+    color: rgba(255, 255, 255, 0.8);
+    background: #020A1D;
+}
+
+.footer-content {
+    display: grid;
+    grid-template-columns: 1.4fr 0.8fr 1fr 1fr;
+    gap: 38px;
+    max-width: 1250px;
+    margin: 0 auto;
+    padding-bottom: 45px;
+}
+
+.footer-brand {
+    min-width: 0;
+}
+
 .footer-logo-container {
     display: inline-flex;
     align-items: center;
     justify-content: flex-start;
-    background: transparent !important;
-    border: none !important;
-    box-shadow: none !important;
+    max-width: 100%;
+    margin-bottom: 20px;
     padding: 0;
-    margin: 0;
+    border: 0;
+    border-radius: 0;
+    background: transparent;
+    box-shadow: none;
 }
 
-/* Evita fondos blancos aplicados directamente a las imágenes */
-.logo-header,
 .logo-footer {
-    outline: none;
+    width: 260px;
+    height: 85px;
+    object-fit: contain;
+    object-position: left center;
 }
 
-/* AJUSTES PARA TABLET Y CELULAR */
-@media (max-width: 768px) {
-    .logo-header {
-        width: 185px;
-        height: 52px;
+.footer-brand p {
+    max-width: 330px;
+    color: #B9C7DD;
+    font-size: 0.93rem;
+    line-height: 1.85;
+}
+
+.footer h3 {
+    margin-bottom: 20px;
+    color: var(--blanco);
+    font-size: 1.05rem;
+    font-weight: 750;
+}
+
+.footer-links,
+.footer-contacto,
+.footer-social {
+    min-width: 0;
+}
+
+.footer-links a,
+.footer-contacto p,
+.footer-contacto a {
+    display: block;
+    margin-bottom: 12px;
+    color: #B9C7DD;
+    font-size: 0.92rem;
+    line-height: 1.7;
+    overflow-wrap: anywhere;
+    transition: color var(--transicion);
+}
+
+.footer-links a:hover,
+.footer-contacto a:hover {
+    color: #66C7FF;
+}
+
+.social-links {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    gap: 10px;
+}
+
+.social-links a {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    min-width: 42px;
+    min-height: 42px;
+    padding: 8px 12px;
+    color: var(--blanco);
+    background: rgba(255, 255, 255, 0.08);
+    border: 1px solid rgba(255, 255, 255, 0.13);
+    border-radius: 10px;
+    font-size: 0.85rem;
+    font-weight: 650;
+    transition:
+        background var(--transicion),
+        transform var(--transicion),
+        border-color var(--transicion);
+}
+
+.social-links a:hover {
+    transform: translateY(-3px);
+    background: var(--azul-institucional);
+    border-color: var(--azul-digital);
+}
+
+.footer-bottom {
+    max-width: 1250px;
+    margin: 0 auto;
+    padding: 22px 0;
+    border-top: 1px solid rgba(255, 255, 255, 0.12);
+    color: #94A6C2;
+    font-size: 0.85rem;
+    text-align: center;
+}
+
+/* 13. ANIMACIÓN DE ENTRADA */
+@keyframes coindiEntrada {
+    from {
+        opacity: 0;
+        transform: translateY(18px);
     }
 
-    .logo-footer {
-        width: 220px;
-        height: 72px;
+    to {
+        opacity: 1;
+        transform: translateY(0);
     }
 }
 
-/* CELULARES PEQUEÑOS */
-@media (max-width: 400px) {
-    .logo-header {
-        width: 155px;
-        height: 46px;
+/* 14. TABLETAS */
+@media (max-width: 1050px) {
+    .navbar {
+        gap: 20px;
+        padding-right: 28px;
+        padding-left: 28px;
     }
 
-    .logo-footer {
+    .logo-header {
         width: 195px;
-        height: 65px;
+    }
+
+    .nav-links {
+        gap: 17px;
+    }
+
+    .nav-links a {
+        font-size: 0.86rem;
+    }
+
+    .footer-content {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+        gap: 35px;
+    }
+}
+
+/* 15. CELULARES */
+@media (max-width: 768px) {
+    html {
+        scroll-padding-top: 75px;
+    }
+
+    .navbar {
+        min-height: 74px;
+        padding: 8px 18px;
+    }
+
+    .logo-header {
+        width: 180px;
+        height: 55px;
+    }
+
+    .menu-toggle {
+        display: inline-flex;
+        flex-shrink: 0;
+    }
+
+    .nav-links {
+        position: absolute;
+        top: 100%;
+        left: 0;
+        right: 0;
+        display: none;
+        flex-direction: column;
+        align-items: stretch;
+        gap: 0;
+        padding: 10px 20px 18px;
+        background: var(--blanco);
+        border-top: 1px solid #E7EDF6;
+        box-shadow: 0 15px 25px rgba(5, 30, 80, 0.12);
+    }
+
+    .nav-links.open {
+        display: flex;
+    }
+
+    .nav-links a {
+        display: block;
+        padding: 13px 5px;
+        border-bottom: 1px solid #EDF1F7;
+        font-size: 0.96rem;
+    }
+
+    .nav-links a:last-child {
+        border-bottom: 0;
+    }
+
+    .nav-links a::after {
+        display: none;
+    }
+
+    .hero {
+        min-height: 650px;
+        min-height: min(760px, calc(100svh - 74px));
+        padding: 80px 25px;
+        background-position: 58% center;
+    }
+
+    .hero h1 {
+        font-size: clamp(2.35rem, 9vw, 3.8rem);
+        letter-spacing: -1.2px;
+    }
+
+    .hero-content p {
+        font-size: 1rem;
+    }
+
+    .hero-buttons {
+        align-items: stretch;
+        flex-direction: column;
+        max-width: 360px;
+    }
+
+    .hero-buttons .btn {
+        width: 100%;
+    }
+
+    .contenido,
+    .programas-inicio {
+        padding: 65px 22px;
+    }
+
+    .section-heading {
+        margin-bottom: 34px;
+    }
+
+    .ejes-grid {
+        grid-template-columns: 1fr;
+        gap: 20px;
+    }
+
+    .eje-card {
+        padding: 29px 25px;
+    }
+
+    .institucional {
+        padding: 75px 24px;
+    }
+
+    .institucional-content h2 {
+        font-size: clamp(2rem, 8vw, 3rem);
+    }
+
+    .programas-grid {
+        grid-template-columns: 1fr;
+        gap: 22px;
+    }
+
+    .programa-card {
+        padding: 30px 25px;
+    }
+
+    .seccion-teleinsular {
+        padding: 60px 20px;
+    }
+
+    .teleinsular-bloque {
+        grid-template-columns: 1fr;
+        gap: 28px;
+        padding: 27px 22px;
+        border-radius: 20px;
+    }
+
+    .teleinsular-content h2 {
+        font-size: 2.25rem;
+    }
+
+    .cta-final {
+        padding: 65px 24px;
+    }
+
+    .footer {
+        padding: 50px 23px 0;
+    }
+
+    .footer-content {
+        grid-template-columns: 1fr;
+        gap: 32px;
+        padding-bottom: 35px;
+    }
+
+    .logo-footer {
+        width: 230px;
+        height: 75px;
+    }
+}
+
+/* 16. CELULARES PEQUEÑOS */
+@media (max-width: 380px) {
+    .logo-header {
+        width: 150px;
+    }
+
+    .hero h1 {
+        font-size: 2.2rem;
+    }
+
+    .btn {
+        padding: 12px 17px;
+        font-size: 0.9rem;
+    }
+
+    .eje-card,
+    .programa-card {
+        padding: 24px 20px;
+    }
+}
+
+/* 17. ACCESIBILIDAD: REDUCIR MOVIMIENTO */
+@media (prefers-reduced-motion: reduce) {
+    *,
+    *::before,
+    *::after {
+        scroll-behavior: auto !important;
+        animation-duration: 0.01ms !important;
+        animation-iteration-count: 1 !important;
+        transition-duration: 0.01ms !important;
     }
 }
