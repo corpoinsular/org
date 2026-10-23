@@ -1,3 +1,4 @@
+
 <!DOCTYPE html>
 <html lang="es">
 <head>
@@ -5,315 +6,1094 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
 <title>Programas | Corporación Insular Digital</title>
+<meta name="description" content="Conoce los programas de Corporación Insular Digital: Alfabetización e Inclusión Digital y Crea Cine Insular.">
 
 <link rel="stylesheet" href="programas.css">
 
-<!-- Google Fonts -->
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
 
-<!-- Font Awesome (FIX ICONOS FOOTER) -->
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
 
+<style>
+:root {
+    --petroleo: #004B63;
+    --caribe: #00A6D6;
+    --arena: #FFC247;
+    --blanco: #FFFFFF;
+    --texto: #173640;
+    --gris: #5C737B;
+    --fondo: #F3F8FA;
+    --borde: #DCE8EC;
+    --sombra: 0 16px 45px rgba(0,54,72,.10);
+}
+
+* {
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+    scroll-padding-top: 100px;
+}
+
+body {
+    margin: 0;
+    font-family: 'Inter', sans-serif;
+    color: var(--texto);
+    background: var(--blanco);
+}
+
+img {
+    max-width: 100%;
+}
+
+.contenedor {
+    width: min(1180px, calc(100% - 40px));
+    margin-inline: auto;
+}
+
+/* ENCABEZADO UNIFICADO */
+
+.navbar {
+    position: sticky;
+    top: 0;
+    z-index: 100;
+    background: rgba(255,255,255,.97);
+    border-bottom: 1px solid var(--borde);
+    backdrop-filter: blur(14px);
+    box-shadow: none;
+}
+
+.nav-flex {
+    width: min(1180px, calc(100% - 40px));
+    min-height: 86px;
+    margin: auto;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 24px;
+}
+
+.logo {
+    display: block;
+    flex-shrink: 0;
+    line-height: 0;
+}
+
+.logo img {
+    display: block;
+    width: 215px;
+    max-height: 70px;
+    object-fit: contain;
+    object-position: left center;
+}
+
+.nav-flex nav {
+    display: flex;
+    align-items: center;
+    gap: 22px;
+}
+
+.nav-flex nav a {
+    position: relative;
+    color: var(--petroleo);
+    text-decoration: none;
+    font-size: .9rem;
+    font-weight: 700;
+    transition: color .2s ease, background .2s ease;
+}
+
+.nav-flex nav a:not(.btn-nav)::after {
+    content: "";
+    position: absolute;
+    left: 0;
+    right: 0;
+    bottom: -10px;
+    height: 3px;
+    border-radius: 4px;
+    background: var(--arena);
+    transform: scaleX(0);
+    transform-origin: left;
+    transition: transform .22s ease;
+}
+
+.nav-flex nav a:not(.btn-nav):hover,
+.nav-flex nav a:not(.btn-nav).active {
+    color: #008CB5;
+}
+
+.nav-flex nav a:not(.btn-nav):hover::after,
+.nav-flex nav a:not(.btn-nav).active::after {
+    transform: scaleX(1);
+}
+
+.nav-flex nav .btn-nav {
+    display: inline-flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 44px;
+    padding: 0 22px;
+    border-radius: 999px;
+    background: var(--arena);
+    color: var(--petroleo);
+    font-weight: 800;
+}
+
+.nav-flex nav .btn-nav:hover {
+    background: #FFD36F;
+    color: var(--petroleo);
+    transform: translateY(-1px);
+}
+
+/* PORTADA */
+
+.hero-programas {
+    position: relative;
+    isolation: isolate;
+    min-height: 440px;
+    padding: 90px 20px;
+    display: flex;
+    align-items: center;
+    overflow: hidden;
+    background: linear-gradient(125deg, #002F43, #006B88 60%, #008EB5);
+}
+
+.hero-bg {
+    position: absolute;
+    inset: 0;
+    z-index: -1;
+    background:
+        radial-gradient(circle at 85% 15%, rgba(0,166,214,.32), transparent 34%),
+        radial-gradient(circle at 12% 90%, rgba(255,194,71,.14), transparent 30%);
+}
+
+.hero-content {
+    width: min(950px, 100%);
+    margin-inline: auto;
+    color: white;
+}
+
+.hero-tag {
+    display: inline-block;
+    margin-bottom: 22px;
+    padding: 9px 14px;
+    border: 1px solid rgba(255,255,255,.3);
+    border-radius: 999px;
+    background: rgba(255,255,255,.09);
+    color: var(--arena);
+    font-size: .77rem;
+    font-weight: 800;
+    letter-spacing: 1.5px;
+}
+
+.hero-content h1 {
+    max-width: 850px;
+    margin: 0 0 22px;
+    font-size: clamp(2.2rem, 5vw, 3.8rem);
+    line-height: 1.12;
+    letter-spacing: -1.5px;
+}
+
+.hero-content p {
+    max-width: 720px;
+    margin: 0;
+    color: rgba(255,255,255,.88);
+    font-size: 1.08rem;
+    line-height: 1.8;
+}
+
+/* TARJETAS DE PROGRAMAS */
+
+.programas {
+    padding: 76px 0;
+    background: var(--fondo);
+}
+
+.programas-grid {
+    width: min(1180px, calc(100% - 40px));
+    margin: auto;
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    align-items: start;
+    gap: 28px;
+}
+
+.programa-card {
+    position: relative;
+    padding: 30px;
+    border: 1px solid var(--borde);
+    border-radius: 22px;
+    background: white;
+    box-shadow: 0 8px 25px rgba(0,54,72,.05);
+    transition: transform .25s ease, box-shadow .25s ease;
+}
+
+.programa-card:hover,
+.programa-card.active {
+    transform: translateY(-4px);
+    box-shadow: var(--sombra);
+}
+
+.programa-header {
+    display: flex;
+    align-items: flex-start;
+    gap: 17px;
+    margin-bottom: 22px;
+}
+
+.programa-icon {
+    width: 58px;
+    height: 58px;
+    flex: 0 0 58px;
+    display: grid;
+    place-items: center;
+    border-radius: 17px;
+    background: #DDF5FC;
+    color: var(--petroleo);
+    font-size: 1.7rem;
+}
+
+.programa-title {
+    min-width: 0;
+}
+
+.programa-label {
+    display: block;
+    margin: 2px 0 9px;
+    color: #008CB5;
+    font-size: .73rem;
+    font-weight: 800;
+    letter-spacing: 1.3px;
+}
+
+.programa-title h3 {
+    margin: 0;
+    color: var(--petroleo);
+    font-size: 1.35rem;
+    line-height: 1.35;
+}
+
+.programa-texto {
+    margin: 0 0 22px;
+    color: var(--gris);
+    font-size: .98rem;
+    line-height: 1.75;
+}
+
+.btn-detalle {
+    display: inline-flex;
+    justify-content: center;
+    align-items: center;
+    gap: 10px;
+    min-height: 44px;
+    padding: 0 20px;
+    border: 0;
+    border-radius: 999px;
+    background: var(--petroleo);
+    color: white;
+    font-family: inherit;
+    font-size: .9rem;
+    font-weight: 700;
+    cursor: pointer;
+    transition: background .2s ease, transform .2s ease;
+}
+
+.btn-detalle:hover {
+    background: #006B88;
+    transform: translateY(-1px);
+}
+
+.btn-detalle::after {
+    content: "+";
+    font-size: 1.2rem;
+}
+
+.programa-card.active .btn-detalle::after {
+    content: "−";
+}
+
+/* CONTENIDO DESPLEGABLE */
+
+.programa-expand {
+    display: none;
+    margin-top: 24px;
+    padding-top: 22px;
+    border-top: 1px solid var(--borde);
+}
+
+.programa-card.active .programa-expand {
+    display: block;
+    animation: aparecer .3s ease;
+}
+
+.programa-expand p {
+    margin: 0 0 22px;
+    color: var(--gris);
+    font-size: .94rem;
+    line-height: 1.85;
+    white-space: pre-line;
+}
+
+.programa-galeria {
+    display: grid;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: 10px;
+}
+
+.programa-galeria img {
+    display: block;
+    width: 100%;
+    aspect-ratio: 4 / 3;
+    object-fit: cover;
+    border-radius: 12px;
+    background: var(--fondo);
+}
+
+@keyframes aparecer {
+    from {
+        opacity: 0;
+        transform: translateY(8px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* METODOLOGÍA */
+
+.metodologia {
+    padding: 76px 20px;
+    background: white;
+}
+
+.metodologia-header {
+    max-width: 760px;
+    margin: 0 auto 42px;
+    text-align: center;
+}
+
+.metodologia-header h2,
+.impacto h2 {
+    margin: 0 0 15px;
+    color: var(--petroleo);
+    font-size: clamp(1.8rem, 3vw, 2.5rem);
+    line-height: 1.2;
+    letter-spacing: -.6px;
+}
+
+.metodologia-header p {
+    margin: 0;
+    color: var(--gris);
+    line-height: 1.8;
+}
+
+.metodologia-steps {
+    width: min(1120px, 100%);
+    margin: auto;
+    display: grid;
+    grid-template-columns: repeat(4, minmax(0, 1fr));
+    gap: 18px;
+}
+
+.step {
+    padding: 25px 21px;
+    border: 1px solid var(--borde);
+    border-radius: 18px;
+    background: var(--fondo);
+}
+
+.step > span {
+    display: grid;
+    place-items: center;
+    width: 43px;
+    height: 43px;
+    margin-bottom: 20px;
+    border-radius: 50%;
+    background: var(--arena);
+    color: var(--petroleo);
+    font-weight: 900;
+}
+
+.step h3 {
+    margin: 0 0 10px;
+    color: var(--petroleo);
+    font-size: 1.03rem;
+    line-height: 1.45;
+}
+
+.step p {
+    margin: 0;
+    color: var(--gris);
+    font-size: .9rem;
+    line-height: 1.7;
+}
+
+/* ÁREAS DE IMPACTO */
+
+.impacto {
+    padding: 76px 20px;
+    background: var(--fondo);
+    text-align: center;
+}
+
+.impacto h2 {
+    margin-bottom: 36px;
+}
+
+.impact-grid {
+    width: min(1050px, 100%);
+    margin: auto;
+    display: grid;
+    grid-template-columns: repeat(4, minmax(0, 1fr));
+    gap: 18px;
+}
+
+.impact-card {
+    padding: 28px 18px;
+    border: 1px solid var(--borde);
+    border-radius: 18px;
+    background: white;
+    transition: transform .2s ease, box-shadow .2s ease;
+}
+
+.impact-card:hover {
+    transform: translateY(-5px);
+    box-shadow: var(--sombra);
+}
+
+.impact-icon {
+    display: grid;
+    place-items: center;
+    width: 57px;
+    height: 57px;
+    margin: 0 auto 18px;
+    border-radius: 17px;
+    background: #DDF5FC;
+    color: var(--petroleo);
+    font-size: 1.6rem;
+}
+
+.impact-card h3 {
+    margin: 0;
+    color: var(--petroleo);
+    font-size: .98rem;
+    line-height: 1.5;
+}
+
+/* LLAMADO A LA ACCIÓN */
+
+.cta {
+    padding: 70px 20px;
+    background: linear-gradient(120deg, #00394E, #006B88);
+    text-align: center;
+    color: white;
+}
+
+.cta h2 {
+    max-width: 760px;
+    margin: 0 auto 15px;
+    font-size: clamp(1.8rem, 3.5vw, 2.6rem);
+    line-height: 1.25;
+}
+
+.cta p {
+    max-width: 650px;
+    margin: 0 auto 28px;
+    color: rgba(255,255,255,.85);
+    line-height: 1.8;
+}
+
+.btn-red {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    min-height: 48px;
+    padding: 0 25px;
+    border-radius: 999px;
+    background: var(--arena);
+    color: var(--petroleo);
+    text-decoration: none;
+    font-weight: 800;
+    transition: transform .2s ease, background .2s ease;
+}
+
+.btn-red:hover {
+    background: #FFD36F;
+    transform: translateY(-2px);
+}
+
+/* PIE DE PÁGINA */
+
+.footer-simple {
+    padding: 28px 20px;
+    background: #002F43;
+    color: white;
+}
+
+.footer-simple-container {
+    width: min(1180px, 100%);
+    margin: auto;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 25px;
+}
+
+.footer-logo img {
+    display: block;
+    width: 175px;
+    max-height: 65px;
+    object-fit: contain;
+}
+
+.footer-copy {
+    margin: 0;
+    color: rgba(255,255,255,.76);
+    font-size: .8rem;
+    line-height: 1.6;
+    text-align: center;
+}
+
+.footer-social {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.footer-social a {
+    display: grid;
+    place-items: center;
+    width: 38px;
+    height: 38px;
+    border: 1px solid rgba(255,255,255,.24);
+    border-radius: 50%;
+    color: white;
+    text-decoration: none;
+    transition: background .2s ease, color .2s ease;
+}
+
+.footer-social a:hover {
+    background: var(--arena);
+    color: var(--petroleo);
+}
+
+/* TABLET */
+
+@media (max-width: 1000px) {
+    .logo img {
+        width: 185px;
+    }
+
+    .nav-flex nav {
+        gap: 15px;
+    }
+
+    .nav-flex nav a {
+        font-size: .84rem;
+    }
+
+    .metodologia-steps {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+    }
+
+    .impact-grid {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+    }
+}
+
+/* MÓVILES */
+
+@media (max-width: 820px) {
+    .nav-flex {
+        min-height: 74px;
+    }
+
+    .logo img {
+        width: 180px;
+        max-height: 58px;
+    }
+
+    .nav-flex nav {
+        gap: 12px;
+    }
+
+    .programas-grid {
+        grid-template-columns: 1fr;
+        max-width: 650px;
+    }
+
+    .hero-programas {
+        min-height: 390px;
+        padding: 72px 24px;
+    }
+
+    .programas,
+    .metodologia,
+    .impacto {
+        padding-top: 55px;
+        padding-bottom: 55px;
+    }
+
+    .footer-simple-container {
+        flex-direction: column;
+        text-align: center;
+    }
+}
+
+@media (max-width: 600px) {
+    .nav-flex {
+        width: calc(100% - 32px);
+        min-height: 74px;
+        flex-wrap: wrap;
+    }
+
+    .logo img {
+        width: 165px;
+        max-height: 55px;
+    }
+
+    .nav-flex nav {
+        width: 100%;
+        padding: 0 0 15px;
+        justify-content: center;
+        flex-wrap: wrap;
+        gap: 18px 20px;
+    }
+
+    .nav-flex nav a {
+        font-size: .83rem;
+    }
+
+    .nav-flex nav a:not(.btn-nav)::after {
+        bottom: -5px;
+    }
+
+    .nav-flex nav .btn-nav {
+        min-height: 36px;
+        padding: 0 15px;
+    }
+
+    .hero-programas {
+        min-height: 360px;
+        padding: 58px 20px;
+    }
+
+    .hero-content h1 {
+        font-size: 2.2rem;
+        letter-spacing: -.8px;
+    }
+
+    .hero-content p {
+        font-size: .96rem;
+        line-height: 1.75;
+    }
+
+    .hero-tag {
+        font-size: .68rem;
+        letter-spacing: 1px;
+    }
+
+    .programas-grid {
+        width: calc(100% - 32px);
+        gap: 18px;
+    }
+
+    .programa-card {
+        padding: 23px 19px;
+        border-radius: 18px;
+    }
+
+    .programa-header {
+        gap: 13px;
+    }
+
+    .programa-icon {
+        width: 48px;
+        height: 48px;
+        flex-basis: 48px;
+        font-size: 1.4rem;
+        border-radius: 14px;
+    }
+
+    .programa-title h3 {
+        font-size: 1.12rem;
+    }
+
+    .programa-expand p {
+        font-size: .9rem;
+    }
+
+    .programa-galeria {
+        gap: 7px;
+    }
+
+    .programa-galeria img {
+        border-radius: 8px;
+    }
+
+    .metodologia-steps {
+        grid-template-columns: 1fr;
+    }
+
+    .impact-grid {
+        gap: 12px;
+    }
+
+    .impact-card {
+        padding: 22px 12px;
+    }
+
+    .impact-card h3 {
+        font-size: .87rem;
+    }
+
+    .footer-copy {
+        max-width: 300px;
+    }
+}
+
+@media (prefers-reduced-motion: reduce) {
+    *,
+    *::before,
+    *::after {
+        scroll-behavior: auto !important;
+        animation-duration: .01ms !important;
+        transition-duration: .01ms !important;
+    }
+}
+</style>
 </head>
 
 <body>
 
-<!-- NAVBAR -->
+<!-- NAVEGACIÓN -->
 <header class="navbar">
-
     <div class="nav-flex">
 
-        <a href="index.html" class="logo">
-            <img src="assets/ahorasi.png" alt="Corporación Insular Digital">
+        <a href="index.html" class="logo" aria-label="COINDI, ir al inicio">
+            <img src="assets/ahorasi.png"
+                 alt="Corporación Insular Digital">
         </a>
 
-        <nav>
+        <nav aria-label="Navegación principal">
             <a href="index.html">Inicio</a>
             <a href="conocenos.html">Conócenos</a>
-            <a href="programas.html" class="active">Programas</a>
+            <a href="programas.html" class="active" aria-current="page">Programas</a>
             <a href="colectivo.html">Colectivo</a>
-            <a href="dona.html" class="btn-nav">Dona</a>
+            <a href="dona.html" class="btn-nav">Apoyar</a>
         </nav>
 
     </div>
-
 </header>
 
-<!-- HERO -->
-<section class="hero-programas">
+<main>
 
-    <div class="hero-bg"></div>
+    <!-- PORTADA -->
+    <section class="hero-programas">
+        <div class="hero-bg" aria-hidden="true"></div>
 
-    <div class="hero-content">
+        <div class="hero-content">
+            <span class="hero-tag">PROGRAMAS INSTITUCIONALES</span>
 
-        <span class="hero-tag">PROGRAMAS INSTITUCIONALES</span>
+            <h1>
+                Transformamos realidades desde la comunicación,
+                la cultura y la innovación social.
+            </h1>
 
-        <h1>
-            Transformamos realidades desde la comunicación, la cultura y la innovación social.
-        </h1>
-
-        <p>
-            Desarrollamos iniciativas que fortalecen capacidades, impulsan la participación comunitaria y generan oportunidades para las comunidades insulares.
-        </p>
-
-    </div>
-
-</section>
-
-<!-- PROGRAMAS -->
-<section class="programas">
-
-    <div class="programas-grid">
-
-        <article class="programa-card">
-    <div class="programa-header">
-        <div class="programa-icon">
-            <i data-lucide="monitor-smartphone"></i>
+            <p>
+                Desarrollamos iniciativas que fortalecen capacidades,
+                impulsan la participación comunitaria y generan
+                oportunidades para las comunidades insulares.
+            </p>
         </div>
+    </section>
 
-        <div class="programa-title">
-            <span class="programa-label">PROGRAMA 01</span>
-            <h3>Alfabetización e Inclusión Digital</h3>
-        </div>
-    </div>
+    <!-- PROGRAMAS INSTITUCIONALES -->
+    <section class="programas" id="programas">
+        <div class="programas-grid">
 
-    <p class="programa-texto">
-        Formación para reducir brechas digitales y ampliar oportunidades.
-    </p>
+            <!-- PROGRAMA 1 -->
+            <article class="programa-card">
+                <div class="programa-header">
+                    <div class="programa-icon" aria-hidden="true">
+                        <i data-lucide="monitor-smartphone"></i>
+                    </div>
 
-    <button class="btn-detalle" data-target="digital">Ver detalles</button>
+                    <div class="programa-title">
+                        <span class="programa-label">PROGRAMA 01</span>
+                        <h3>Alfabetización e Inclusión Digital</h3>
+                    </div>
+                </div>
 
-    <!-- BLOQUE EXPANDIBLE -->
-    <div class="programa-expand">
+                <p class="programa-texto">
+                    Formación para reducir brechas digitales y ampliar
+                    oportunidades mediante el uso práctico, creativo
+                    y responsable de la tecnología.
+                </p>
 
-        <p>
-            La Estrategia de Alfabetización e Inclusión Digital es un programa orientado a promover el acceso, conocimiento y uso adecuado de las tecnologías de la información y la comunicación en comunidades insulares y poblaciones con acceso limitado a procesos de formación tecnológica.
+                <button
+                    class="btn-detalle"
+                    type="button"
+                    aria-expanded="false"
+                    aria-controls="detalle-digital">
+                    Ver detalles
+                </button>
+
+                <div class="programa-expand" id="detalle-digital" hidden>
+                    <p>
+La Estrategia de Alfabetización e Inclusión Digital es un programa orientado a promover el acceso, conocimiento y uso adecuado de las tecnologías de la información y la comunicación en comunidades insulares y poblaciones con acceso limitado a procesos de formación tecnológica.
+
 A través de jornadas pedagógicas, talleres prácticos, espacios de socialización y experiencias participativas, acercamos a niños, jóvenes, familias y líderes comunitarios al mundo digital desde una perspectiva sencilla, útil y adaptada a sus realidades.
+
 Nuestro enfoque busca fortalecer capacidades para el uso responsable de internet, las redes sociales, las herramientas digitales y los dispositivos tecnológicos, promoviendo una cultura digital basada en la seguridad, la creatividad, el aprendizaje y la participación ciudadana.
+
 Más que enseñar tecnología, impulsamos procesos de apropiación digital que permitan a las personas utilizar las herramientas tecnológicas como medios para acceder a información, generar oportunidades, fortalecer sus proyectos de vida y participar activamente en la sociedad actual.
-        </p>
+                    </p>
 
-        <div class="programa-galeria">
-            <img src="assets/digital1.jpg">
-            <img src="assets/digital2.jpg">
-            <img src="assets/digital3.jpg">
-        </div>
+                    <div class="programa-galeria">
+                        <img src="assets/digital1.jpg"
+                             alt="Actividad de alfabetización digital 1"
+                             loading="lazy">
+                        <img src="assets/digital2.jpg"
+                             alt="Actividad de alfabetización digital 2"
+                             loading="lazy">
+                        <img src="assets/digital3.jpg"
+                             alt="Actividad de alfabetización digital 3"
+                             loading="lazy">
+                    </div>
+                </div>
+            </article>
 
-    </div>
+            <!-- PROGRAMA 2 -->
+            <article class="programa-card">
+                <div class="programa-header">
+                    <div class="programa-icon" aria-hidden="true">
+                        <i data-lucide="clapperboard"></i>
+                    </div>
 
-</article>
+                    <div class="programa-title">
+                        <span class="programa-label">PROGRAMA 02</span>
+                        <h3>Crea Cine Insular</h3>
+                    </div>
+                </div>
 
-        <!-- PROGRAMA 2 -->
-        <article class="programa-card">
+                <p class="programa-texto">
+                    Formación y creación audiovisual para contar historias,
+                    fortalecer la identidad territorial y dar voz
+                    a las comunidades insulares.
+                </p>
 
-    <div class="programa-header">
-        <div class="programa-icon">
-            <i data-lucide="clapperboard"></i>
-        </div>
+                <button
+                    class="btn-detalle"
+                    type="button"
+                    aria-expanded="false"
+                    aria-controls="detalle-cine">
+                    Ver detalles
+                </button>
 
-        <div class="programa-title">
-            <span class="programa-label">PROGRAMA 02</span>
-            <h3>Crea Cine Insular</h3>
-        </div>
-    </div>
+                <div class="programa-expand" id="detalle-cine" hidden>
+                    <p>
+Crea Cine Insular es una estrategia de formación y creación audiovisual dirigida a niños, niñas, adolescentes y jóvenes de las comunidades insulares, orientada al desarrollo de habilidades en cine, producción audiovisual, comunicación comunitaria y construcción ciudadana.
 
-    <p class="programa-texto">
-        Programa de creación audiovisual comunitaria.
-    </p>
-
-    <button class="btn-detalle" data-target="cine">Ver detalles</button>
-
-    <!-- BLOQUE EXPANDIBLE -->
-    <div class="programa-expand">
-
-        <p>
-            Crea Cine Insular es una estrategia de formación y creación audiovisual dirigida a niños, niñas, adolescentes y jóvenes de las comunidades insulares, orientada al desarrollo de habilidades en cine, producción audiovisual, comunicación comunitaria y construcción ciudadana.
 A través de talleres, laboratorios creativos y experiencias prácticas, los participantes aprenden herramientas relacionadas con la fotografía, el video, el sonido, la narrativa audiovisual, la creación de contenidos digitales y las distintas etapas de producción cinematográfica.
-El programa busca fortalecer capacidades creativas, comunicativas y técnicas, promoviendo al mismo tiempo el pensamiento crítico, la participación comunitaria, el liderazgo juvenil y el reconocimiento del territorio como escenario de aprendizaje, expresión e identidad.
-Crea Cine Insular entiende el cine y la comunicación como herramientas para la transformación social, permitiendo que las nuevas generaciones cuenten sus propias historias, visibilicen sus realidades y participen activamente en la construcción de comunidades más informadas, creativas y conectadas.
-        </p>
 
-        <div class="programa-galeria">
-            <img src="assets/cine1.jpg">
-            <img src="assets/cine2.jpg">
-            <img src="assets/cine3.jpg">
+El programa busca fortalecer capacidades creativas, comunicativas y técnicas, promoviendo al mismo tiempo el pensamiento crítico, la participación comunitaria, el liderazgo juvenil y el reconocimiento del territorio como escenario de aprendizaje, expresión e identidad.
+
+Crea Cine Insular entiende el cine y la comunicación como herramientas para la transformación social, permitiendo que las nuevas generaciones cuenten sus propias historias, visibilicen sus realidades y participen activamente en la construcción de comunidades más informadas, creativas y conectadas.
+                    </p>
+
+                    <div class="programa-galeria">
+                        <img src="assets/cine1.jpg"
+                             alt="Actividad audiovisual comunitaria 1"
+                             loading="lazy">
+                        <img src="assets/cine2.jpg"
+                             alt="Actividad audiovisual comunitaria 2"
+                             loading="lazy">
+                        <img src="assets/cine3.jpg"
+                             alt="Actividad audiovisual comunitaria 3"
+                             loading="lazy">
+                    </div>
+                </div>
+            </article>
+
+        </div>
+    </section>
+
+    <!-- METODOLOGÍA -->
+    <section class="metodologia">
+        <div class="metodologia-header">
+            <h2>¿Cómo funcionan nuestros programas?</h2>
+            <p>
+                Aplicamos una metodología participativa enfocada en
+                formación, práctica y fortalecimiento comunitario.
+            </p>
         </div>
 
-    </div>
+        <div class="metodologia-steps">
 
-</article>
-</section>
-<section class="metodologia">
+            <article class="step">
+                <span>01</span>
+                <h3>Diagnóstico comunitario</h3>
+                <p>Identificamos necesidades digitales, culturales y sociales.</p>
+            </article>
 
-    <div class="metodologia-header">
+            <article class="step">
+                <span>02</span>
+                <h3>Formación práctica</h3>
+                <p>Promovemos el aprendizaje mediante ejercicios y talleres.</p>
+            </article>
 
-        <h2>¿Cómo funcionan nuestros programas?</h2>
+            <article class="step">
+                <span>03</span>
+                <h3>Implementación</h3>
+                <p>Impulsamos actividades y proyectos en el territorio.</p>
+            </article>
+
+            <article class="step">
+                <span>04</span>
+                <h3>Evaluación y seguimiento</h3>
+                <p>Revisamos avances y oportunidades de mejora.</p>
+            </article>
+
+        </div>
+    </section>
+
+    <!-- ÁREAS DE IMPACTO -->
+    <section class="impacto">
+        <h2>Áreas de impacto</h2>
+
+        <div class="impact-grid">
+
+            <article class="impact-card">
+                <div class="impact-icon" aria-hidden="true">
+                    <i data-lucide="monitor-smartphone"></i>
+                </div>
+                <h3>Inclusión Digital</h3>
+            </article>
+
+            <article class="impact-card">
+                <div class="impact-icon" aria-hidden="true">
+                    <i data-lucide="clapperboard"></i>
+                </div>
+                <h3>Creación Audiovisual</h3>
+            </article>
+
+            <article class="impact-card">
+                <div class="impact-icon" aria-hidden="true">
+                    <i data-lucide="users-round"></i>
+                </div>
+                <h3>Participación Comunitaria</h3>
+            </article>
+
+            <article class="impact-card">
+                <div class="impact-icon" aria-hidden="true">
+                    <i data-lucide="sparkles"></i>
+                </div>
+                <h3>Innovación Social</h3>
+            </article>
+
+        </div>
+    </section>
+
+    <!-- CONTACTO -->
+    <section class="cta">
+        <h2>Construyamos oportunidades juntos</h2>
 
         <p>
-            Aplicamos una metodología participativa enfocada en formación, práctica e impacto comunitario.
+            Sumemos esfuerzos para fortalecer procesos comunitarios,
+            culturales y educativos en el territorio insular.
         </p>
 
-    </div>
+        <a
+            href="https://wa.me/573215978125?text=Hola%2C%20quiero%20m%C3%A1s%20informaci%C3%B3n%20sobre%20los%20programas"
+            class="btn-red"
+            target="_blank"
+            rel="noopener noreferrer">
+            Contáctanos
+        </a>
+    </section>
 
-    <div class="metodologia-steps">
+</main>
 
-        <div class="step">
-    <span>01</span>
-    <h3>Diagnóstico comunitario</h3>
-    <p>Identificamos necesidades digitales, culturales y sociales.</p>
-</div>
-
-        <div class="step">
-    <span>02</span>
-            <h3>Formación práctica</h3>
-            <p>Capacitaciones presenciales y acompañamiento continuo.</p>
-        </div>
-
-        <div class="step">
-            <span>03</span>
-            <h3>Implementación</h3>
-            <p>Desarrollo de proyectos reales en territorio.</p>
-        </div>
-
-        <div class="step">
-            <span>04</span>
-            <h3>Evaluación e impacto</h3>
-            <p>Medimos resultados y fortalecemos procesos.</p>
-        </div>
-
-    </div>
-
-</section>
-
-<!-- IMPACTO -->
-<section class="impacto">
-
-    <h2>Áreas de Impacto</h2>
-
-    <div class="impact-grid">
-
-        <div class="impact-card">
-            <div class="impact-icon">
-                <i data-lucide="monitor-smartphone"></i>
-            </div>
-            <h3>Inclusión Digital</h3>
-        </div>
-
-        <div class="impact-card">
-            <div class="impact-icon">
-                <i data-lucide="clapperboard"></i>
-            </div>
-            <h3>Creación Audiovisual</h3>
-        </div>
-
-        <div class="impact-card">
-            <div class="impact-icon">
-                <i data-lucide="users-round"></i>
-            </div>
-            <h3>Participación Comunitaria</h3>
-        </div>
-
-        <div class="impact-card">
-            <div class="impact-icon">
-                <i data-lucide="sparkles"></i>
-            </div>
-            <h3>Innovación Social</h3>
-        </div>
-
-    </div>
-
-</section>
-
-<!-- CTA -->
-<section class="cta">
-
-    <h2>Construyamos oportunidades juntos</h2>
-
-    <p>
-        Sumemos esfuerzos para fortalecer procesos comunitarios, culturales y educativos.
-    </p>
-
-    <a href="https://wa.me/573215978125?text=Hola%2C%20quiero%20m%C3%A1s%20informaci%C3%B3n%20sobre%20los%20programas"
-       class="btn-red"
-       target="_blank">
-        Contáctanos
-    </a>
-
-</section>
-
-<!-- FOOTER -->
+<!-- PIE DE PÁGINA -->
 <footer class="footer-simple">
-
     <div class="footer-simple-container">
 
-        <div class="footer-logo">
-            <img src="assets/ahorasi.png" alt="Corporación Insular Digital">
-        </div>
+        <a href="index.html" class="footer-logo"
+           aria-label="COINDI, ir al inicio">
+            <img src="assets/ahorasi.png"
+                 alt="Corporación Insular Digital">
+        </a>
 
         <p class="footer-copy">
             © 2026 Corporación Insular Digital · Todos los derechos reservados
         </p>
 
-        <div class="footer-social">
+        <div class="footer-social" aria-label="Redes sociales">
 
-            <a href="https://facebook.com/insulardigitaloficial" target="_blank">
-                <i class="fab fa-facebook-f"></i>
+            <a href="https://facebook.com/insulardigitaloficial"
+               target="_blank" rel="noopener noreferrer"
+               aria-label="Facebook">
+                <i class="fab fa-facebook-f" aria-hidden="true"></i>
             </a>
 
-            <a href="https://instagram.com/insulardigitaloficial" target="_blank">
-                <i class="fab fa-instagram"></i>
+            <a href="https://instagram.com/insulardigitaloficial"
+               target="_blank" rel="noopener noreferrer"
+               aria-label="Instagram">
+                <i class="fab fa-instagram" aria-hidden="true"></i>
             </a>
 
-            <a href="https://tiktok.com/@insulardigitaloficial" target="_blank">
-                <i class="fab fa-tiktok"></i>
+            <a href="https://tiktok.com/@insulardigitaloficial"
+               target="_blank" rel="noopener noreferrer"
+               aria-label="TikTok">
+                <i class="fab fa-tiktok" aria-hidden="true"></i>
             </a>
 
-            <a href="https://youtube.com/@insulardigitaloficial" target="_blank">
-                <i class="fab fa-youtube"></i>
+            <a href="https://youtube.com/@insulardigitaloficial"
+               target="_blank" rel="noopener noreferrer"
+               aria-label="YouTube">
+                <i class="fab fa-youtube" aria-hidden="true"></i>
             </a>
 
         </div>
-
     </div>
-
 </footer>
 
-<!-- ICONOS LUCIDE -->
 <script src="https://unpkg.com/lucide@latest"></script>
 <script>
-    lucide.createIcons();
-</script>
+    if (window.lucide) {
+        lucide.createIcons();
+    }
 
-<script>
-const cards = document.querySelectorAll(".programa-card");
+    const cards = document.querySelectorAll(".programa-card");
 
-cards.forEach(card => {
+    cards.forEach((card) => {
+        const button = card.querySelector(".btn-detalle");
+        const panel = card.querySelector(".programa-expand");
 
-    const btn = card.querySelector(".btn-detalle");
+        button.addEventListener("click", () => {
+            const shouldOpen = !card.classList.contains("active");
 
-    btn.addEventListener("click", (e) => {
+            cards.forEach((otherCard) => {
+                otherCard.classList.remove("active");
 
-        e.stopPropagation();
+                const otherButton = otherCard.querySelector(".btn-detalle");
+                const otherPanel = otherCard.querySelector(".programa-expand");
 
-        cards.forEach(c => {
-            if (c !== card) {
-                c.classList.remove("active");
+                otherButton.setAttribute("aria-expanded", "false");
+                otherPanel.hidden = true;
+            });
+
+            if (shouldOpen) {
+                card.classList.add("active");
+                button.setAttribute("aria-expanded", "true");
+                panel.hidden = false;
             }
         });
-
-        card.classList.toggle("active");
-
     });
-
-});
-
-document.addEventListener("click", () => {
-    cards.forEach(card => {
-        card.classList.remove("active");
-    });
-});
 </script>
 
 </body>
