@@ -571,27 +571,36 @@ h2 {
   background:
     radial-gradient(
       circle at 90% 0%,
-      rgba(0, 166, 214, 0.20),
-      transparent 38%
+      rgba(0, 166, 214, 0.16),
+      transparent 42%
     ),
-    linear-gradient(120deg, #06182D, #0A2EA8);
+    linear-gradient(
+      120deg,
+      #023746 0%,
+      var(--petroleo) 58%,
+      #07566B 100%
+    );
   color: var(--blanco);
 }
 
 .teleinsular-contenido {
-  width: min(1100px, 100%);
-  margin: 0 auto;
-  display: flex;
+  width: min(1100px, calc(100% - 40px));
+  margin-inline: auto;
+  display: grid;
+  grid-template-columns: minmax(0, 0.85fr) minmax(0, 1.15fr);
   align-items: center;
-  justify-content: center;
   gap: 56px;
 }
 
 .teleinsular-logo {
-  flex: 0 1 38%;
   display: flex;
   align-items: center;
   justify-content: center;
+  min-width: 0;
+  padding: 20px;
+  border: 1px solid rgba(255, 255, 255, 0.12);
+  border-radius: 20px;
+  background: rgba(255, 255, 255, 0.05);
 }
 
 .teleinsular-logo img {
@@ -603,73 +612,105 @@ h2 {
 }
 
 .teleinsular-texto {
-  flex: 1;
-  max-width: 570px;
+  min-width: 0;
+}
+
+.teleinsular-categoria {
+  display: inline-block;
+  margin-bottom: 12px;
+  color: var(--arena);
+  font-size: 0.78rem;
+  font-weight: 800;
+  letter-spacing: 0.14em;
 }
 
 .teleinsular-texto h2 {
   margin: 0 0 18px;
-  color: var(--white);
+  color: var(--blanco);
   font-size: clamp(2rem, 4vw, 3.2rem);
   line-height: 1.1;
+  letter-spacing: -0.035em;
 }
 
 .teleinsular-texto p {
   margin: 0 0 12px;
-  color: #EAF3FF;
+  color: #D8EAF0;
   line-height: 1.7;
 }
 
-.teleinsular-texto .teleinsular-frase {
+.teleinsular-slogan {
   font-size: 1.15rem;
-  font-weight: 600;
+  font-weight: 700;
+}
+
+.teleinsular-respaldo {
+  margin-bottom: 24px !important;
+  font-size: 0.93rem;
 }
 
 .teleinsular-boton {
-  display: inline-block;
-  margin-top: 18px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 12px;
+  min-height: 48px;
+  margin-top: 8px;
   padding: 13px 25px;
   border-radius: 8px;
-  background: var(--sand);
-  color: #07142E;
-  font-weight: 700;
-  text-decoration: none;
+  background: var(--arena);
+  color: #173640;
+  font-weight: 800;
   transition: transform 0.2s ease, background 0.2s ease;
 }
 
 .teleinsular-boton:hover {
-  background: #EBC16A;
   transform: translateY(-2px);
+  background: #FFD16C;
+}
+
+.teleinsular-boton:focus-visible {
+  outline: 3px solid var(--blanco);
+  outline-offset: 4px;
 }
 
 @media (max-width: 760px) {
   .teleinsular-home {
-    padding: 48px 22px;
+    padding: 48px 0;
   }
 
   .teleinsular-contenido {
-    flex-direction: column;
+    width: calc(100% - 32px);
+    grid-template-columns: 1fr;
     gap: 28px;
     text-align: center;
   }
 
   .teleinsular-logo {
-    flex-basis: auto;
-    width: 100%;
+    width: min(100%, 420px);
+    margin-inline: auto;
+    padding: 18px;
   }
 
   .teleinsular-logo img {
-    max-width: 240px;
+    max-width: 280px;
   }
 
   .teleinsular-texto h2 {
-    font-size: 2.2rem;
+    font-size: clamp(1.9rem, 7vw, 2.4rem);
   }
 }
 
-@media (prefers-reduced-motion: reduce) {
+@media (max-width: 380px) {
+  .teleinsular-contenido {
+    width: calc(100% - 24px);
+  }
+
+  .teleinsular-logo {
+    padding: 14px;
+  }
+
   .teleinsular-boton {
-    transition: none;
+    width: 100%;
   }
 }
 
