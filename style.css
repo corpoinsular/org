@@ -564,30 +564,114 @@ h2 {
   margin-top: 8px;
 }
 
-/* TELEINSULAR */
+/* TELEINSULAR — IDENTIDAD INSTITUCIONAL */
 
-.seccion-teleinsular {
-  padding-top: 0 !important;
+.teleinsular-home {
+  position: relative;
+  overflow: hidden;
+  padding: 70px 24px;
+  color: var(--white);
+  background: linear-gradient(
+    120deg,
+    #020A24 0%,
+    var(--primary) 58%,
+    #123D91 100%
+  );
 }
 
-.teleinsular-bloque {
-  display: grid;
-  grid-template-columns: minmax(0, 1fr) auto;
+.teleinsular-contenido {
+  width: min(1100px, 100%);
+  margin: 0 auto;
+  display: flex;
   align-items: center;
-  gap: 30px;
-  padding: 42px;
-  border: 1px solid #F0DFB4;
-  border-radius: 28px;
-  background: #FFF5D9;
+  justify-content: center;
+  gap: 56px;
 }
 
-.teleinsular-bloque h2 {
-  margin-top: 12px;
+.teleinsular-logo {
+  flex: 0 1 38%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 
-.teleinsular-bloque p {
-  max-width: 660px;
-  color: #5E625B;
+.teleinsular-logo img {
+  display: block;
+  width: 100%;
+  max-width: 350px;
+  height: auto;
+  object-fit: contain;
+}
+
+.teleinsular-texto {
+  flex: 1;
+  max-width: 570px;
+}
+
+.teleinsular-texto h2 {
+  margin: 0 0 18px;
+  color: var(--white);
+  font-size: clamp(2rem, 4vw, 3.2rem);
+  line-height: 1.1;
+}
+
+.teleinsular-texto p {
+  margin: 0 0 12px;
+  color: #EAF3FF;
+  line-height: 1.7;
+}
+
+.teleinsular-texto .teleinsular-frase {
+  font-size: 1.15rem;
+  font-weight: 600;
+}
+
+.teleinsular-boton {
+  display: inline-block;
+  margin-top: 18px;
+  padding: 13px 25px;
+  border-radius: 8px;
+  background: var(--sand);
+  color: #07142E;
+  font-weight: 700;
+  text-decoration: none;
+  transition: transform 0.2s ease, background 0.2s ease;
+}
+
+.teleinsular-boton:hover {
+  background: #EBC16A;
+  transform: translateY(-2px);
+}
+
+@media (max-width: 760px) {
+  .teleinsular-home {
+    padding: 48px 22px;
+  }
+
+  .teleinsular-contenido {
+    flex-direction: column;
+    gap: 28px;
+    text-align: center;
+  }
+
+  .teleinsular-logo {
+    flex-basis: auto;
+    width: 100%;
+  }
+
+  .teleinsular-logo img {
+    max-width: 240px;
+  }
+
+  .teleinsular-texto h2 {
+    font-size: 2.2rem;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .teleinsular-boton {
+    transition: none;
+  }
 }
 
 /* LLAMADO A LA ACCIÓN */
