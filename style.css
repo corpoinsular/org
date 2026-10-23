@@ -4,17 +4,29 @@
    Hoja de estilos para index.html
    ========================================= */
 
+
 :root {
-  --primary: #0A2EA8;
-  --secondary: #1F8FE5;
+  --petroleo: #004B63;
+  --caribe: #00A6D6;
+  --arena: #FFC247;
+  --blanco: #FFFFFF;
+  --texto: #173640;
+  --gris: #5C737B;
+  --fondo: #F3F8FA;
+  --borde: #DCE8EC;
+
+  --primary: var(--petroleo);
+  --secondary: var(--caribe);
   --light-blue: #D9F1FF;
-  --white: #FFFFFF;
+  --white: var(--blanco);
   --accent: #D62828;
-  --sand: #D9A441;
+  --sand: var(--arena);
+
   --radio: 22px;
   --sombra: 0 18px 45px rgba(0, 45, 61, 0.08);
   --ancho-contenido: 1160px;
 }
+
 
 /* RESET Y CONFIGURACIÓN GENERAL */
 
@@ -563,8 +575,6 @@ h2 {
 }
 
 /* TELEINSULAR: identidad propia, coherente con COINDI */
-
-.teleinsular-home {
 .teleinsular-home {
   position: relative;
   overflow: hidden;
