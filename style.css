@@ -677,6 +677,150 @@ h2 {
   outline-offset: 4px;
 }
 
+    /* REVISTA INSU */
+    .insu-home {
+      position: relative;
+      overflow: hidden;
+      padding: 80px 0;
+      background:
+        radial-gradient(circle at 90% 10%, rgba(0,166,214,.14), transparent 32%),
+        #FFFFFF;
+      border-top: 1px solid var(--borde);
+      border-bottom: 1px solid var(--borde);
+    }
+
+    .insu-contenido {
+      display: grid;
+      grid-template-columns: .9fr 1.1fr;
+      align-items: center;
+      gap: 60px;
+    }
+
+    .insu-portada {
+      position: relative;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      min-height: 390px;
+      padding: 36px;
+      overflow: hidden;
+      border-radius: 24px;
+      color: white;
+      background:
+        radial-gradient(circle at 100% 0%, rgba(0,166,214,.55), transparent 45%),
+        linear-gradient(145deg, #022F3E, #004B63 65%, #007FA4);
+      box-shadow: var(--sombra);
+    }
+
+    .insu-portada::after {
+      content: "";
+      position: absolute;
+      width: 210px;
+      height: 210px;
+      right: -65px;
+      bottom: -75px;
+      border: 1px solid rgba(255,255,255,.24);
+      border-radius: 50%;
+      box-shadow: 0 0 0 22px rgba(255,255,255,.04),
+                  0 0 0 44px rgba(255,255,255,.04);
+      pointer-events: none;
+    }
+
+    .insu-marca {
+      position: relative;
+      z-index: 1;
+      color: var(--arena);
+      font-size: clamp(3.5rem, 8vw, 6rem);
+      font-weight: 900;
+      line-height: 1;
+      letter-spacing: -.07em;
+    }
+
+    .insu-tipo {
+      position: relative;
+      z-index: 1;
+      display: block;
+      margin-top: 12px;
+      color: #D8EBF0;
+      font-size: .8rem;
+      font-weight: 800;
+      letter-spacing: .2em;
+      text-transform: uppercase;
+    }
+
+    .insu-frase {
+      position: relative;
+      z-index: 1;
+      max-width: 340px;
+      margin-top: 55px;
+      font-size: clamp(1.5rem, 3vw, 2.1rem);
+      font-weight: 700;
+      line-height: 1.3;
+    }
+
+    .insu-texto > p {
+      margin-bottom: 20px;
+      color: var(--gris);
+    }
+
+    .insu-etiqueta {
+      display: inline-block;
+      margin-bottom: 8px;
+      color: #007B9F;
+      font-size: .78rem;
+      font-weight: 800;
+      letter-spacing: .13em;
+      text-transform: uppercase;
+    }
+
+    .insu-detalles {
+      display: grid;
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      gap: 14px;
+      margin: 26px 0;
+    }
+
+    .insu-detalle {
+      padding: 18px;
+      border: 1px solid var(--borde);
+      border-radius: 16px;
+      background: #F7FBFC;
+    }
+
+    .insu-detalle strong {
+      display: block;
+      margin-bottom: 5px;
+      color: var(--petroleo);
+    }
+
+    .insu-detalle span {
+      color: var(--gris);
+      font-size: .9rem;
+    }
+
+    .insu-respaldo {
+      margin-top: 20px;
+      color: var(--gris);
+      font-size: .85rem;
+    }
+
+    @media (max-width: 760px) {
+      .insu-home { padding: 55px 0; }
+      .insu-contenido {
+        grid-template-columns: 1fr;
+        gap: 32px;
+      }
+      .insu-portada {
+        min-height: 320px;
+        padding: 28px;
+      }
+      .insu-frase { margin-top: 40px; }
+    }
+
+    @media (max-width: 420px) {
+      .insu-detalles { grid-template-columns: 1fr; }
+    }
+
 /* LLAMADO A LA ACCIÓN */
 
 .llamado {
