@@ -1,4 +1,3 @@
-
 <!DOCTYPE html>
 <html lang="es">
 <head>
@@ -319,7 +318,7 @@
       font-size: 1.15rem;
     }
 
-    /* ENFOQUES */
+    /* TRES ENFOQUES */
 
     .enfoques {
       background: white;
@@ -507,7 +506,7 @@
       text-underline-offset: 4px;
     }
 
-    /* QUIÉNES SOMOS */
+    /* CONÓCENOS */
 
     .conocenos-grid {
       display: grid;
@@ -557,51 +556,110 @@
       margin-top: 9px;
     }
 
-    /* TELEINSULAR */
+    /* TELEINSULAR: LOGO A LA IZQUIERDA, MENSAJE A LA DERECHA */
 
-    .teleinsular-seccion {
-      padding-top: 0;
-    }
-
-    .teleinsular-bloque {
+    .teleinsular-home {
       position: relative;
       overflow: hidden;
-      display: grid;
-      grid-template-columns: 1fr auto;
-      align-items: center;
-      gap: 35px;
-      padding: 45px;
-      border: 1px solid #F0D995;
-      border-radius: 28px;
+      padding: 65px 0;
       background:
         radial-gradient(
-          circle at 95% 0%,
-          rgba(255, 194, 71, 0.22),
+          circle at 90% 0%,
+          rgba(0, 166, 214, 0.20),
           transparent 38%
         ),
-        #FFF8E8;
+        linear-gradient(120deg, #06182D, #0A2EA8);
+      color: var(--blanco);
     }
 
-    .teleinsular-bloque h2 {
-      max-width: 680px;
-      margin-top: 13px;
+    .teleinsular-contenido {
+      width: min(1080px, calc(100% - 40px));
+      margin-inline: auto;
+      display: grid;
+      grid-template-columns: minmax(0, 0.85fr) minmax(0, 1.15fr);
+      align-items: center;
+      gap: 55px;
     }
 
-    .teleinsular-bloque p {
-      max-width: 690px;
-      color: #59666A;
+    .teleinsular-logo {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      min-width: 0;
+      padding: 20px;
+      border: 1px solid rgba(255, 255, 255, 0.12);
+      border-radius: 20px;
+      background: rgba(255, 255, 255, 0.06);
     }
 
-    .teleinsular-marca {
+    .teleinsular-logo img {
+      width: 100%;
+      max-width: 370px;
+      height: auto;
+      object-fit: contain;
+    }
+
+    .teleinsular-texto {
+      min-width: 0;
+    }
+
+    .teleinsular-categoria {
       display: inline-block;
-      margin-bottom: 15px;
-      color: var(--petroleo);
-      font-size: 1rem;
-      font-weight: 900;
-      letter-spacing: 0.08em;
+      margin-bottom: 12px;
+      color: var(--arena);
+      font-size: 0.78rem;
+      font-weight: 800;
+      letter-spacing: 0.14em;
     }
 
-    /* PARTICIPACIÓN */
+    .teleinsular-texto h2 {
+      margin: 0 0 18px;
+      color: var(--blanco);
+      font-size: clamp(1.9rem, 3.4vw, 2.8rem);
+      line-height: 1.14;
+      letter-spacing: -0.035em;
+    }
+
+    .teleinsular-slogan {
+      margin-bottom: 8px;
+      color: var(--blanco);
+      font-size: 1.15rem;
+      font-weight: 700;
+    }
+
+    .teleinsular-respaldo {
+      margin-bottom: 24px;
+      color: #D5E4F5;
+      font-size: 0.93rem;
+    }
+
+    .teleinsular-boton {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      gap: 12px;
+      min-height: 48px;
+      padding: 13px 22px;
+      border-radius: 8px;
+      background: var(--arena);
+      color: #06182D;
+      font-weight: 800;
+      transition:
+        transform 0.2s ease,
+        background 0.2s ease;
+    }
+
+    .teleinsular-boton:hover {
+      transform: translateY(-2px);
+      background: #FFD36F;
+    }
+
+    .teleinsular-boton:focus-visible {
+      outline: 3px solid var(--blanco);
+      outline-offset: 4px;
+    }
+
+    /* INVITACIÓN A PARTICIPAR */
 
     .llamado {
       position: relative;
@@ -712,7 +770,7 @@
       font-size: 0.82rem;
     }
 
-    /* RESPONSIVE */
+    /* TABLET */
 
     @media (max-width: 1000px) {
       .menu {
@@ -739,7 +797,13 @@
       .enfoque {
         padding-inline: 15px;
       }
+
+      .teleinsular-contenido {
+        gap: 35px;
+      }
     }
+
+    /* MÓVILES */
 
     @media (max-width: 760px) {
       .contenedor {
@@ -848,18 +912,33 @@
         padding: 30px;
       }
 
-      .teleinsular-seccion {
-        padding-top: 0;
+      .teleinsular-home {
+        padding: 48px 0;
       }
 
-      .teleinsular-bloque {
+      .teleinsular-contenido {
+        width: calc(100% - 32px);
         grid-template-columns: 1fr;
-        padding: 30px;
-        gap: 22px;
+        gap: 26px;
+        text-align: center;
       }
 
-      .teleinsular-bloque .boton {
-        justify-self: start;
+      .teleinsular-logo {
+        width: min(100%, 420px);
+        margin-inline: auto;
+        padding: 18px;
+      }
+
+      .teleinsular-logo img {
+        max-width: 320px;
+      }
+
+      .teleinsular-categoria {
+        margin-bottom: 10px;
+      }
+
+      .teleinsular-texto h2 {
+        font-size: clamp(1.9rem, 7vw, 2.4rem);
       }
 
       .llamado-interior {
@@ -900,12 +979,20 @@
         font-size: 0.97rem;
       }
 
-      .teleinsular-bloque {
-        padding: 24px;
-      }
-
       .programa-contenido {
         padding: 20px;
+      }
+
+      .teleinsular-logo {
+        padding: 14px;
+      }
+
+      .teleinsular-texto h2 {
+        font-size: 1.85rem;
+      }
+
+      .teleinsular-boton {
+        width: 100%;
       }
     }
 
@@ -933,7 +1020,6 @@
 
       <a class="marca" href="index.html"
          aria-label="Inicio de Corporación Insular Digital">
-        <!-- Logo para fondo claro -->
         <img
           src="assets/logo-coindi-claro.png"
           alt="COINDI — Corporación Insular Digital"
@@ -1061,7 +1147,6 @@
 
           <article class="programa">
             <div class="programa-imagen">
-              <!-- Sustituir por una fotografía real y autorizada -->
               <img
                 src="assets/alfabetizacion-digital.jpg"
                 alt="Actividad de aprendizaje y uso de herramientas digitales"
@@ -1089,7 +1174,6 @@
 
           <article class="programa">
             <div class="programa-imagen">
-              <!-- Sustituir por una fotografía real y autorizada -->
               <img
                 src="assets/crea-cine-insular.jpg"
                 alt="Producción audiovisual y narración de historias locales"
@@ -1163,171 +1247,43 @@
       </div>
     </section>
 
-   <!-- SECCIÓN TELEINSULAR -->
-<section class="teleinsular-home">
-  <div class="teleinsular-contenido">
+    <!-- TELEINSULAR -->
 
-    <div class="teleinsular-logo">
-      <img
-        src="assets/logo-teleinsular.png"
-        alt="Logo de Teleinsular"
-      >
-    </div>
+    <section class="teleinsular-home" aria-labelledby="titulo-teleinsular">
+      <div class="teleinsular-contenido">
 
-    <div class="teleinsular-texto">
-      <span class="teleinsular-categoria">
-        COMUNICACIÓN COMUNITARIA
-      </span>
+        <div class="teleinsular-logo">
+          <img
+            src="assets/logo-teleinsular.png"
+            alt="Logo de Teleinsular"
+            loading="lazy"
+          >
+        </div>
 
-      <h2>Las historias del territorio merecen ser contadas.</h2>
+        <div class="teleinsular-texto">
+          <span class="teleinsular-categoria">
+            COMUNICACIÓN COMUNITARIA
+          </span>
 
-      <p class="teleinsular-slogan">
-        El canal de nuestros pueblos.
-      </p>
+          <h2 id="titulo-teleinsular">
+            Las historias del territorio merecen ser contadas.
+          </h2>
 
-      <p class="teleinsular-respaldo">
-        Una iniciativa de la Corporación Insular Digital.
-      </p>
+          <p class="teleinsular-slogan">
+            El canal de nuestros pueblos.
+          </p>
 
-      <a
-        href="teleinsular.html"
-        class="teleinsular-boton"
-      >
-        Explorar Teleinsular
-        <span aria-hidden="true">→</span>
-      </a>
-    </div>
+          <p class="teleinsular-respaldo">
+            Una iniciativa de la Corporación Insular Digital.
+          </p>
 
-  </div>
-</section>
+          <a href="teleinsular.html" class="teleinsular-boton">
+            Explorar Teleinsular
+            <span aria-hidden="true">→</span>
+          </a>
+        </div>
 
-<style>
-  .teleinsular-home {
-    background: linear-gradient(120deg, #06182D, #0A2EA8);
-    padding: 65px 7%;
-    color: #FFFFFF;
-    overflow: hidden;
-  }
-
-  .teleinsular-contenido {
-    max-width: 1150px;
-    margin: 0 auto;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    gap: 55px;
-  }
-
-  .teleinsular-logo {
-    flex: 0 1 38%;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    min-width: 0;
-  }
-
-  .teleinsular-logo img {
-    display: block;
-    width: 100%;
-    max-width: 360px;
-    height: auto;
-    object-fit: contain;
-  }
-
-  .teleinsular-texto {
-    flex: 1;
-    min-width: 0;
-  }
-
-  .teleinsular-categoria {
-    display: inline-block;
-    color: #FFC247;
-    font-size: 0.78rem;
-    font-weight: 700;
-    letter-spacing: 2px;
-    margin-bottom: 15px;
-  }
-
-  .teleinsular-texto h2 {
-    color: #FFFFFF;
-    font-size: clamp(1.8rem, 3.5vw, 2.8rem);
-    line-height: 1.15;
-    margin: 0 0 18px;
-    max-width: 600px;
-  }
-
-  .teleinsular-slogan {
-    color: #FFFFFF;
-    font-size: 1.2rem;
-    font-weight: 600;
-    margin: 0 0 10px;
-  }
-
-  .teleinsular-respaldo {
-    color: #D5E4F5;
-    font-size: 0.95rem;
-    line-height: 1.6;
-    margin: 0 0 25px;
-  }
-
-  .teleinsular-boton {
-    display: inline-flex;
-    align-items: center;
-    justify-content: center;
-    gap: 12px;
-    background: #FFC247;
-    color: #06182D;
-    padding: 13px 22px;
-    border-radius: 8px;
-    font-weight: 700;
-    text-decoration: none;
-    transition: transform 0.2s ease,
-                background 0.2s ease;
-  }
-
-  .teleinsular-boton:hover {
-    background: #FFD36F;
-    transform: translateY(-2px);
-  }
-
-  .teleinsular-boton:focus-visible {
-    outline: 3px solid #FFFFFF;
-    outline-offset: 4px;
-  }
-
-  @media (max-width: 700px) {
-    .teleinsular-home {
-      padding: 45px 6%;
-    }
-
-    .teleinsular-contenido {
-      flex-direction: column;
-      gap: 28px;
-      text-align: center;
-    }
-
-    .teleinsular-logo {
-      flex-basis: auto;
-      width: 100%;
-    }
-
-    .teleinsular-logo img {
-      max-width: 280px;
-    }
-
-    .teleinsular-texto h2 {
-      font-size: 2rem;
-      margin-left: auto;
-      margin-right: auto;
-    }
-  }
-
-  @media (prefers-reduced-motion: reduce) {
-    .teleinsular-boton {
-      transition: none;
-    }
-  }
-</style>
+      </div>
     </section>
 
     <!-- INVITACIÓN A PARTICIPAR -->
@@ -1368,7 +1324,6 @@
       <div class="pie-grid">
 
         <div>
-          <!-- Logo para fondo oscuro -->
           <img
             class="logo-pie"
             src="assets/logo-coindi-oscuro.png"
