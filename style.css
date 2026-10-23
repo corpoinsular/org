@@ -565,24 +565,14 @@ h2 {
 /* TELEINSULAR: identidad propia, coherente con COINDI */
 
 .teleinsular-home {
+.teleinsular-home {
   position: relative;
   overflow: hidden;
   padding: 65px 0;
-  background:
-    radial-gradient(
-      circle at 90% 0%,
-      rgba(0, 166, 214, 0.22),
-      transparent 38%
-    ),
-    linear-gradient(
-      120deg,
-      #022F3E 0%,
-      #004B63 58%,
-      #075B78 100%
-    );
+  background: #004B63 !important;
+  color: #FFFFFF;
   color: var(--blanco);
 }
-
 
 .teleinsular-contenido {
   width: min(1100px, calc(100% - 40px));
