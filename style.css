@@ -567,14 +567,15 @@ h2 {
 .teleinsular-home {
   position: relative;
   overflow: hidden;
-  padding: 70px 24px;
-  color: var(--white);
-  background: linear-gradient(
-    120deg,
-    #020A24 0%,
-    var(--primary) 58%,
-    #123D91 100%
-  );
+  padding: 65px 0;
+  background:
+    radial-gradient(
+      circle at 90% 0%,
+      rgba(0, 166, 214, 0.20),
+      transparent 38%
+    ),
+    linear-gradient(120deg, #06182D, #0A2EA8);
+  color: var(--blanco);
 }
 
 .teleinsular-contenido {
