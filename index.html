@@ -24,10 +24,10 @@
 
     * { box-sizing: border-box; margin: 0; padding: 0; }
     html { scroll-behavior: smooth; scroll-padding-top: 100px; }
-    body { font-family: Arial, Helvetica, sans-serif; color: var(--texto); background: white; line-height: 1.65; }
+    body { font-family: Arial, Helvetica, sans-serif; color: var(--texto); background: #fff; line-height: 1.65; }
     img { display: block; max-width: 100%; }
     a { color: inherit; text-decoration: none; }
-    button, input { font: inherit; }
+    button { font: inherit; }
     a:focus-visible, button:focus-visible { outline: 3px solid var(--arena); outline-offset: 4px; }
     .contenedor { width: min(1180px, calc(100% - 40px)); margin-inline: auto; }
     .franja-superior { height: 5px; background: linear-gradient(90deg,var(--petroleo) 0 55%,var(--caribe) 55% 85%,var(--arena) 85%); }
@@ -37,8 +37,8 @@
     .navegacion { min-height: 86px; display: flex; align-items: center; justify-content: space-between; gap: 24px; }
     .marca { flex-shrink: 0; }
     .marca img { width: 215px; max-height: 70px; object-fit: contain; object-position: left center; }
-    .menu { display: flex; align-items: center; gap: 25px; }
-    .menu a:not(.boton) { color: var(--petroleo); font-size: .93rem; font-weight: 700; }
+    .menu { display: flex; align-items: center; gap: 22px; }
+    .menu a:not(.boton) { color: var(--petroleo); font-size: .9rem; font-weight: 700; }
     .menu a:not(.boton):hover { color: #008CB5; }
     .menu a[aria-current="page"] { color: #008CB5; text-decoration: underline; text-decoration-color: var(--arena); text-decoration-thickness: 3px; text-underline-offset: 9px; }
     .boton-menu { display: none; border: 1px solid var(--borde); border-radius: 12px; padding: 9px 13px; background: white; color: var(--petroleo); cursor: pointer; font-size: 1.35rem; }
@@ -55,7 +55,7 @@
     .boton-borde-oscuro { color: var(--petroleo); border-color: var(--petroleo); background: transparent; }
     .boton-borde-oscuro:hover { background: #E8F7FB; }
 
-    /* PORTADA */
+    /* PORTADA PRINCIPAL */
     .portada { position: relative; isolation: isolate; overflow: hidden; background: var(--petroleo); color: white; }
     .portada::before { content: ""; position: absolute; inset: 0; z-index: -2; background: linear-gradient(90deg,rgba(0,38,51,.96),rgba(0,57,75,.75),rgba(0,35,49,.25)),url("assets/bocachica-portada.jpg") center 52%/cover no-repeat; }
     .portada::after { content: ""; position: absolute; z-index: -1; inset: auto 0 0; height: 6px; background: linear-gradient(90deg,var(--arena),var(--caribe),var(--petroleo)); }
@@ -70,7 +70,7 @@
     .ubicacion { display: flex; align-items: center; gap: 9px; margin-top: 22px; color: #D2E9EF; font-size: .88rem; }
     .ubicacion span { color: var(--arena); }
 
-    /* TRES ENFOQUES */
+    /* ENFOQUES */
     .enfoques { background: white; border-bottom: 1px solid var(--borde); }
     .enfoques-grid { display: grid; grid-template-columns: repeat(3,1fr); padding-block: 27px; }
     .enfoque { display: flex; align-items: center; gap: 15px; padding: 8px 24px; }
@@ -110,7 +110,7 @@
     .conocenos-texto > p { margin-bottom: 17px; color: var(--gris); }
     .conocenos-texto .boton { margin-top: 9px; }
 
-    /* TELEINSULAR: SECCIÓN INDEPENDIENTE */
+    /* TELEINSULAR */
     .teleinsular-home { position: relative; overflow: hidden; padding: 70px 0; background: #004B63; color: white; }
     .teleinsular-contenido { width: min(1100px,calc(100% - 40px)); margin-inline: auto; display: grid; grid-template-columns: minmax(240px,.8fr) minmax(0,1.2fr); align-items: center; gap: 55px; }
     .teleinsular-logo { display: grid; place-items: center; min-height: 240px; padding: 28px; border: 1px solid rgba(255,255,255,.18); border-radius: 22px; background: rgba(255,255,255,.06); }
@@ -122,7 +122,124 @@
     .teleinsular-boton { display: inline-flex; align-items: center; gap: 10px; padding: 13px 22px; border-radius: 50px; background: var(--arena); color: #173640; font-weight: 800; transition: transform .2s ease,background .2s ease; }
     .teleinsular-boton:hover { transform: translateY(-2px); background: #FFD16C; }
 
-    /* LLAMADO A LA ACCIÓN: BLOQUE SEPARADO */
+    /* REVISTA INSU: DISEÑO EDITORIAL PROPIO */
+    .insu-home {
+      position: relative;
+      overflow: hidden;
+      padding: 85px 0;
+      background:
+        radial-gradient(ellipse at 5% 100%, rgba(0,166,214,.17), transparent 38%),
+        linear-gradient(135deg, #062D3B 0%, #004B63 55%, #073746 100%);
+      color: white;
+    }
+    .insu-contenido {
+      display: grid;
+      grid-template-columns: minmax(0,.95fr) minmax(0,1.05fr);
+      align-items: center;
+      gap: 65px;
+    }
+    .insu-portada {
+      position: relative;
+      isolation: isolate;
+      overflow: hidden;
+      display: flex;
+      min-height: 420px;
+      flex-direction: column;
+      justify-content: space-between;
+      padding: 38px;
+      border: 1px solid rgba(255,255,255,.22);
+      border-radius: 8px;
+      background:
+        linear-gradient(155deg,rgba(0,166,214,.24),transparent 50%),
+        linear-gradient(145deg,#063D50,#021D28);
+      box-shadow: 0 28px 60px rgba(0,0,0,.22);
+    }
+    .insu-portada::before {
+      content: "";
+      position: absolute;
+      z-index: -1;
+      width: 240px;
+      height: 240px;
+      top: 50px;
+      right: -85px;
+      border: 1px solid rgba(255,194,71,.55);
+      border-radius: 50%;
+      box-shadow: 0 0 0 24px rgba(255,194,71,.04),0 0 0 48px rgba(255,194,71,.035);
+    }
+    .insu-portada::after {
+      content: "CULTURA · MEMORIA · TERRITORIO";
+      position: absolute;
+      right: 20px;
+      bottom: 95px;
+      color: rgba(255,255,255,.12);
+      font-size: .65rem;
+      font-weight: 800;
+      letter-spacing: .15em;
+      writing-mode: vertical-rl;
+    }
+    .insu-marca {
+      color: var(--arena);
+      font-family: Georgia,"Times New Roman",serif;
+      font-size: clamp(5rem,10vw,8.5rem);
+      font-weight: 900;
+      letter-spacing: -.09em;
+      line-height: .95;
+    }
+    .insu-tipo {
+      display: inline-block;
+      margin-top: 15px;
+      color: #D8EDF3;
+      font-size: .77rem;
+      font-weight: 700;
+      letter-spacing: .19em;
+      text-transform: uppercase;
+    }
+    .insu-frase {
+      max-width: 330px;
+      margin-top: 55px;
+      padding-top: 20px;
+      border-top: 2px solid var(--arena);
+      color: white;
+      font-family: Georgia,"Times New Roman",serif;
+      font-size: clamp(1.5rem,2.6vw,2.15rem);
+      line-height: 1.25;
+    }
+    .insu-texto { max-width: 570px; }
+    .insu-etiqueta {
+      display: inline-block;
+      margin-bottom: 12px;
+      color: #A8E9F7;
+      font-size: .77rem;
+      font-weight: 800;
+      letter-spacing: .15em;
+      text-transform: uppercase;
+    }
+    .insu-texto h2 {
+      margin: 8px 0 20px;
+      color: white;
+      font-size: clamp(2.1rem,4vw,3.2rem);
+      line-height: 1.12;
+      letter-spacing: -.04em;
+    }
+    .insu-texto > p { color: #D6E8ED; line-height: 1.8; }
+    .insu-detalles {
+      display: grid;
+      grid-template-columns: repeat(2,minmax(0,1fr));
+      gap: 14px;
+      margin: 28px 0;
+    }
+    .insu-detalle {
+      padding: 18px;
+      border-left: 3px solid var(--arena);
+      background: rgba(255,255,255,.07);
+    }
+    .insu-detalle strong { display: block; margin-bottom: 5px; color: var(--arena); font-size: 1rem; }
+    .insu-detalle span { display: block; color: #D6E8ED; font-size: .88rem; line-height: 1.55; }
+    .insu-home .boton-borde-oscuro { border-color: var(--arena); background: var(--arena); color: #173640; }
+    .insu-home .boton-borde-oscuro:hover { border-color: #FFD16C; background: #FFD16C; }
+    .insu-respaldo { margin-top: 18px; color: #A8C9D2; font-size: .83rem; }
+
+    /* LLAMADO A LA ACCIÓN */
     .llamado { padding: 65px 0; background: #F3F8FA; border-top: 4px solid var(--caribe); }
     .llamado-interior { display: flex; align-items: center; justify-content: space-between; gap: 35px; }
     .llamado-interior > div:first-child { max-width: 700px; }
@@ -145,13 +262,15 @@
 
     /* TABLET */
     @media (max-width: 1000px) {
-      .menu { gap: 15px; }
+      .menu { gap: 13px; }
       .marca img { width: 185px; }
       .programas-presentacion { grid-template-columns: 1fr; gap: 28px; }
       .programas-intro { max-width: 700px; }
       .conocenos-grid { gap: 35px; }
       .enfoque { padding-inline: 15px; }
       .teleinsular-contenido { gap: 35px; }
+      .insu-contenido { gap: 35px; }
+      .insu-portada { min-height: 370px; padding: 28px; }
     }
 
     /* MÓVILES */
@@ -160,7 +279,20 @@
       .navegacion { min-height: 74px; }
       .marca img { width: 180px; max-height: 58px; }
       .boton-menu { display: block; }
-      .menu { display: none; position: absolute; top: 74px; left: 0; right: 0; padding: 18px 22px 24px; align-items: stretch; flex-direction: column; gap: 0; background: white; border-bottom: 1px solid var(--borde); box-shadow: 0 18px 35px rgba(0,45,61,.12); }
+      .menu {
+        display: none;
+        position: absolute;
+        top: 74px;
+        left: 0;
+        right: 0;
+        padding: 18px 22px 24px;
+        align-items: stretch;
+        flex-direction: column;
+        gap: 0;
+        background: white;
+        border-bottom: 1px solid var(--borde);
+        box-shadow: 0 18px 35px rgba(0,45,61,.12);
+      }
       .menu.abierto { display: flex; }
       .menu a:not(.boton) { padding: 13px 0; border-bottom: 1px solid #EDF2F4; }
       .menu a[aria-current="page"] { text-underline-offset: 5px; }
@@ -182,6 +314,12 @@
       .teleinsular-logo { width: min(100%,420px); min-height: 180px; margin-inline: auto; padding: 18px; }
       .teleinsular-logo img { max-width: 320px; }
       .teleinsular-texto h2 { font-size: clamp(1.9rem,7vw,2.4rem); }
+      .insu-home { padding: 60px 0; }
+      .insu-contenido { grid-template-columns: 1fr; gap: 35px; }
+      .insu-portada { width: min(100%,500px); min-height: 360px; margin-inline: auto; padding: 28px; }
+      .insu-marca { font-size: clamp(5rem,20vw,7rem); }
+      .insu-texto { max-width: none; }
+      .insu-texto h2 { font-size: clamp(2rem,8vw,2.7rem); }
       .llamado-interior { align-items: flex-start; flex-direction: column; }
       .llamado .acciones { flex-wrap: wrap; }
       .pie-grid { grid-template-columns: 1fr; gap: 30px; }
@@ -197,6 +335,9 @@
       .teleinsular-logo { padding: 14px; }
       .teleinsular-texto h2 { font-size: 1.85rem; }
       .teleinsular-boton { width: 100%; justify-content: center; }
+      .insu-portada { min-height: 320px; padding: 23px; }
+      .insu-detalles { grid-template-columns: 1fr; }
+      .insu-frase { font-size: 1.5rem; }
     }
 
     @media (prefers-reduced-motion: reduce) {
@@ -222,7 +363,6 @@
         <a href="teleinsular.html">Teleinsular</a>
         <a href="#insu">Revista INSU</a>
         <a href="donar.html" class="boton boton-principal">Apoyar</a>
-
       </nav>
     </div>
   </header>
@@ -315,29 +455,21 @@
       </div>
     </section>
 
-    <!-- REVISTA INSU: MEDIO EDITORIAL DE COINDI -->
+    <!-- REVISTA INSU: SIN ARTÍCULOS NI EDICIONES EN LA PÁGINA DE INICIO -->
     <section class="insu-home" id="insu" aria-labelledby="titulo-insu">
       <div class="contenedor insu-contenido">
-
         <div class="insu-portada" aria-label="Presentación gráfica de Revista INSU">
           <div>
             <div class="insu-marca">INSU</div>
             <span class="insu-tipo">Revista · Insular Digital</span>
           </div>
-          <p class="insu-frase">
-            Las voces, las historias y la identidad de nuestro territorio.
-          </p>
+          <p class="insu-frase">Las voces, las historias y la identidad de nuestro territorio.</p>
         </div>
 
         <div class="insu-texto">
           <span class="insu-etiqueta">Nuestro medio editorial</span>
           <h2 id="titulo-insu">El territorio también se cuenta por escrito.</h2>
-
-          <p>
-            Revista INSU es el espacio editorial de la Corporación Insular
-            Digital para dar lugar a las historias, las voces y los temas
-            que conectan a nuestras comunidades con su cultura y su territorio.
-          </p>
+          <p>Revista INSU es el espacio editorial de la Corporación Insular Digital para dar lugar a las historias, las voces y los temas que conectan a nuestras comunidades con su cultura y su territorio.</p>
 
           <div class="insu-detalles">
             <div class="insu-detalle">
@@ -350,19 +482,12 @@
             </div>
           </div>
 
-          <a href="insu.html" class="boton boton-borde-oscuro">
-            Explorar Revista INSU <span aria-hidden="true">→</span>
-          </a>
-
-          <p class="insu-respaldo">
-            Un medio editorial de la Corporación Insular Digital.
-          </p>
+          <a href="insu.html" class="boton boton-borde-oscuro">Explorar Revista INSU <span aria-hidden="true">→</span></a>
+          <p class="insu-respaldo">Un medio editorial de la Corporación Insular Digital.</p>
         </div>
-
       </div>
     </section>
 
-    <!-- LLAMADO A LA ACCIÓN: SECCIÓN SEPARADA -->
     <section class="llamado" id="participa">
       <div class="contenedor llamado-interior">
         <div>
