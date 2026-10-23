@@ -573,19 +573,17 @@ h2 {
   margin-top: 8px;
 }
 
-/* TELEINSULAR
-   Identidad propia, coherente con COINDI.
-   Fondo petróleo sólido, sin azul eléctrico ni degradado. */
+/* TELEINSULAR: FONDO AZUL PETRÓLEO */
 
 .teleinsular-home {
   position: relative;
   overflow: hidden;
   padding: 65px 0;
-  background-color: #004B63;
+  background: #004B63;
   background-image: none;
   color: #FFFFFF;
-  isolation: isolate;
 }
+
 
 .teleinsular-contenido {
   width: min(1100px, calc(100% - 40px));
