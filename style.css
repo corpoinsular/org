@@ -2,8 +2,8 @@
 /* =========================================
    COINDI — CORPORACIÓN INSULAR DIGITAL
    Hoja de estilos para index.html
+   Identidad: azul petróleo, azul Caribe y arena
    ========================================= */
-
 
 :root {
   --petroleo: #004B63;
@@ -26,7 +26,6 @@
   --sombra: 0 18px 45px rgba(0, 45, 61, 0.08);
   --ancho-contenido: 1160px;
 }
-
 
 /* RESET Y CONFIGURACIÓN GENERAL */
 
@@ -232,7 +231,7 @@ header {
   border-radius: 50%;
   background: radial-gradient(
     circle,
-    rgba(0, 166, 214, 0.42),
+    rgba(0, 166, 214, 0.30),
     transparent 70%
   );
   pointer-events: none;
@@ -574,15 +573,18 @@ h2 {
   margin-top: 8px;
 }
 
-
-/* TELEINSULAR: azul petróleo institucional, sin azul eléctrico */
+/* TELEINSULAR
+   Identidad propia, coherente con COINDI.
+   Fondo petróleo sólido, sin azul eléctrico ni degradado. */
 
 .teleinsular-home {
   position: relative;
   overflow: hidden;
   padding: 65px 0;
-  background: #004B63 !important;
+  background-color: #004B63;
+  background-image: none;
   color: #FFFFFF;
+  isolation: isolate;
 }
 
 .teleinsular-contenido {
@@ -657,11 +659,14 @@ h2 {
   gap: 12px;
   min-height: 48px;
   padding: 13px 22px;
+  border: 1px solid transparent;
   border-radius: 8px;
   background: var(--arena);
   color: var(--petroleo);
   font-weight: 800;
-  transition: transform 0.2s ease, background 0.2s ease;
+  transition:
+    transform 0.2s ease,
+    background 0.2s ease;
 }
 
 .teleinsular-boton:hover {
@@ -672,47 +677,6 @@ h2 {
 .teleinsular-boton:focus-visible {
   outline: 3px solid #FFFFFF;
   outline-offset: 4px;
-}
-
-@media (max-width: 760px) {
-  .teleinsular-home {
-    padding: 48px 0;
-  }
-
-  .teleinsular-contenido {
-    width: calc(100% - 32px);
-    grid-template-columns: 1fr;
-    gap: 28px;
-    text-align: center;
-  }
-
-  .teleinsular-logo {
-    width: min(100%, 420px);
-    margin-inline: auto;
-    padding: 18px;
-  }
-
-  .teleinsular-logo img {
-    max-width: 280px;
-  }
-
-  .teleinsular-texto h2 {
-    font-size: clamp(1.9rem, 7vw, 2.4rem);
-  }
-}
-
-@media (max-width: 380px) {
-  .teleinsular-contenido {
-    width: calc(100% - 24px);
-  }
-
-  .teleinsular-logo {
-    padding: 14px;
-  }
-
-  .teleinsular-boton {
-    width: 100%;
-  }
 }
 
 /* LLAMADO A LA ACCIÓN */
@@ -756,9 +720,6 @@ footer {
   gap: 35px;
   padding-bottom: 30px;
 }
-
-/* Versión del logo preparada para fondo oscuro.
-   Se asume que el archivo ya tiene el tratamiento visual adecuado. */
 
 .logo-pie {
   display: block;
@@ -833,6 +794,10 @@ footer a:hover {
 
   .conocenos-grid {
     gap: 30px;
+  }
+
+  .teleinsular-contenido {
+    gap: 32px;
   }
 }
 
@@ -921,9 +886,29 @@ footer a:hover {
     padding: 28px;
   }
 
-  .teleinsular-bloque {
+  .teleinsular-home {
+    padding: 48px 0;
+  }
+
+  .teleinsular-contenido {
+    width: calc(100% - 32px);
     grid-template-columns: 1fr;
-    padding: 28px;
+    gap: 28px;
+    text-align: center;
+  }
+
+  .teleinsular-logo {
+    width: min(100%, 420px);
+    margin-inline: auto;
+    padding: 18px;
+  }
+
+  .teleinsular-logo img {
+    max-width: 280px;
+  }
+
+  .teleinsular-texto h2 {
+    font-size: clamp(1.9rem, 7vw, 2.4rem);
   }
 
   .llamado-interior {
@@ -968,8 +953,16 @@ footer a:hover {
     width: 100%;
   }
 
-  .teleinsular-bloque {
-    padding: 22px;
+  .teleinsular-contenido {
+    width: calc(100% - 24px);
+  }
+
+  .teleinsular-logo {
+    padding: 14px;
+  }
+
+  .teleinsular-boton {
+    width: 100%;
   }
 }
 
