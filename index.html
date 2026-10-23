@@ -556,145 +556,61 @@
       margin-top: 9px;
     }
 
-    /* TELEINSULAR: LOGO A LA IZQUIERDA, MENSAJE A LA DERECHA */
+   
+<!-- SECCIÓN TELEINSULAR -->
+<section class="teleinsular-home" id="teleinsular">
+  <div class="teleinsular-contenido">
 
-    .teleinsular-home {
-  position: relative;
-  overflow: hidden;
-  padding: 65px 0;
-  background: #004B63;
-  color: #FFFFFF;
-}
-    .teleinsular-contenido {
-      width: min(1080px, calc(100% - 40px));
-      margin-inline: auto;
-      display: grid;
-      grid-template-columns: minmax(0, 0.85fr) minmax(0, 1.15fr);
-      align-items: center;
-      gap: 55px;
-    }
+    <div class="teleinsular-logo">
+      <img
+        src="assets/teleinsular.png"
+        alt="Logo de Teleinsular"
+      >
+    </div>
 
-    .teleinsular-logo {
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      min-width: 0;
-      padding: 20px;
-      border: 1px solid rgba(255, 255, 255, 0.12);
-      border-radius: 20px;
-      background: rgba(255, 255, 255, 0.06);
-    }
+    <div class="teleinsular-texto">
+      <span class="teleinsular-etiqueta">
+        MEDIO DE COMUNICACIÓN COMUNITARIO
+      </span>
 
-    .teleinsular-logo img {
-      width: 100%;
-      max-width: 370px;
-      height: auto;
-      object-fit: contain;
-    }
+      <h2>Teleinsular</h2>
 
-    .teleinsular-texto {
-      min-width: 0;
-    }
+      <p>
+        Un medio de comunicación de nuestra comunidad insular,
+        dedicado a visibilizar las historias, las voces, la cultura
+        y las realidades de nuestro territorio.
+      </p>
 
-    .teleinsular-categoria {
-      display: inline-block;
-      margin-bottom: 12px;
-      color: var(--arena);
-      font-size: 0.78rem;
-      font-weight: 800;
-      letter-spacing: 0.14em;
-    }
+      <p>
+        Creemos en una comunicación participativa que conecta a las
+        personas, fortalece la identidad territorial y abre espacios
+        para que nuestra gente también cuente.
+      </p>
+    </div>
 
-    .teleinsular-texto h2 {
-      margin: 0 0 18px;
-      color: var(--blanco);
-      font-size: clamp(1.9rem, 3.4vw, 2.8rem);
-      line-height: 1.14;
-      letter-spacing: -0.035em;
-    }
+  </div>
+</section>
 
-    .teleinsular-slogan {
-      margin-bottom: 8px;
-      color: var(--blanco);
-      font-size: 1.15rem;
-      font-weight: 700;
-    }
 
-    .teleinsular-respaldo {
-      margin-bottom: 24px;
-      color: #D5E4F5;
-      font-size: 0.93rem;
-    }
+<!-- LLAMADO A LA ACCIÓN: SECCIÓN INDEPENDIENTE -->
+<section class="teleinsular-cta" id="participa-teleinsular">
+  <div class="teleinsular-cta-contenido">
 
-    .teleinsular-boton {
-      display: inline-flex;
-      align-items: center;
-      justify-content: center;
-      gap: 12px;
-      min-height: 48px;
-      padding: 13px 22px;
-      border-radius: 8px;
-      background: var(--arena);
-      color: #06182D;
-      font-weight: 800;
-      transition:
-        transform 0.2s ease,
-        background 0.2s ease;
-    }
+    <h2>Tu voz también hace parte de esta historia</h2>
 
-    .teleinsular-boton:hover {
-      transform: translateY(-2px);
-      background: #FFD36F;
-    }
+    <p>
+      ¿Tienes una historia que contar, una iniciativa que compartir
+      o una propuesta para nuestra comunidad? Queremos escucharte.
+    </p>
 
-    .teleinsular-boton:focus-visible {
-      outline: 3px solid var(--blanco);
-      outline-offset: 4px;
-    }
+    <div class="teleinsular-cta-botones">
+      <a href="#contacto" class="btn-teleinsular">
+        Contáctanos
+      </a>
+    </div>
 
-    /* INVITACIÓN A PARTICIPAR */
-
-    .llamado {
-      position: relative;
-      overflow: hidden;
-      background: var(--petroleo);
-      color: white;
-    }
-
-    .llamado::after {
-      content: "";
-      position: absolute;
-      width: 350px;
-      height: 350px;
-      right: -100px;
-      top: -180px;
-      border-radius: 50%;
-      background: rgba(0, 166, 214, 0.18);
-      pointer-events: none;
-    }
-
-    .llamado-interior {
-      position: relative;
-      z-index: 1;
-      display: flex;
-      align-items: center;
-      justify-content: space-between;
-      gap: 35px;
-    }
-
-    .llamado h2 {
-      margin-top: 0;
-      color: white;
-    }
-
-    .llamado p {
-      max-width: 650px;
-      color: #D9EAF0;
-    }
-
-    .llamado .acciones {
-      flex-shrink: 0;
-    }
+  </div>
+</section>
 
     /* PIE DE PÁGINA */
 
