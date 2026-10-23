@@ -1,12 +1,12 @@
+
 <!DOCTYPE html>
 <html lang="es">
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
+  <meta name="theme-color" content="#004B63">
+  <meta name="description" content="Conoce la identidad, la misión, la visión, los valores y la estructura organizativa de la Corporación Insular Digital.">
   <title>Conócenos | Corporación Insular Digital</title>
-
-  <meta name="description" content="Conoce la identidad institucional, los principios, la misión, la visión y la estructura organizativa de la Corporación Insular Digital.">
 
   <style>
     :root {
@@ -14,72 +14,78 @@
       --caribe: #00A6D6;
       --arena: #FFC247;
       --blanco: #FFFFFF;
-      --fondo: #F3F8FA;
       --texto: #173640;
       --gris: #5C737B;
-      --sombra: 0 12px 35px rgba(0, 75, 99, 0.10);
+      --fondo: #F3F8FA;
+      --borde: #DCE8EC;
       --radio: 18px;
+      --sombra: 0 12px 35px rgba(0,75,99,.09);
     }
 
-    * {
-      margin: 0;
-      padding: 0;
-      box-sizing: border-box;
-    }
+    * { box-sizing: border-box; margin: 0; padding: 0; }
 
     html {
       scroll-behavior: smooth;
-      scroll-padding-top: 95px;
+      scroll-padding-top: 100px;
     }
 
     body {
       font-family: Arial, Helvetica, sans-serif;
-      background: var(--blanco);
       color: var(--texto);
-      line-height: 1.7;
+      background: #fff;
+      line-height: 1.65;
     }
 
-    a {
-      color: inherit;
-      text-decoration: none;
-    }
+    img { display: block; max-width: 100%; }
+    a { color: inherit; text-decoration: none; }
+    button { font: inherit; }
 
-    img {
-      display: block;
-      max-width: 100%;
+    a:focus-visible,
+    button:focus-visible {
+      outline: 3px solid var(--arena);
+      outline-offset: 4px;
     }
 
     .contenedor {
-      width: min(1160px, 90%);
-      margin: 0 auto;
+      width: min(1180px, calc(100% - 40px));
+      margin-inline: auto;
     }
 
-    /* ENCABEZADO */
+    .franja-superior {
+      height: 5px;
+      background: linear-gradient(
+        90deg,
+        var(--petroleo) 0 55%,
+        var(--caribe) 55% 85%,
+        var(--arena) 85%
+      );
+    }
+
+    /* ENCABEZADO: SISTEMA VISUAL DE INICIO */
 
     .encabezado {
       position: sticky;
       top: 0;
       z-index: 1000;
-      background: rgba(255, 255, 255, 0.97);
-      box-shadow: 0 3px 18px rgba(0, 0, 0, 0.07);
-      backdrop-filter: blur(12px);
+      background: rgba(255,255,255,.97);
+      border-bottom: 1px solid var(--borde);
+      backdrop-filter: blur(14px);
     }
 
-    .barra-navegacion {
+    .navegacion {
       min-height: 86px;
       display: flex;
       align-items: center;
       justify-content: space-between;
-      gap: 25px;
+      gap: 24px;
     }
 
-    .marca {
-      flex-shrink: 0;
-    }
+    .marca { flex-shrink: 0; }
 
     .marca img {
-      width: 205px;
-      max-height: 65px;
+      display: block;
+      width: 215px;
+      max-height: 70px;
       object-fit: contain;
       object-position: left center;
     }
@@ -87,282 +93,350 @@
     .menu {
       display: flex;
       align-items: center;
-      gap: 23px;
+      gap: 22px;
     }
 
-    .menu a {
-      font-size: 0.91rem;
-      font-weight: 700;
+    .menu a:not(.boton) {
+      position: relative;
       color: var(--petroleo);
-      transition: color 0.2s ease;
+      font-size: .9rem;
+      font-weight: 700;
+      transition: color .2s ease;
     }
 
-    .menu a:hover,
-    .menu a.activo {
-      color: var(--caribe);
+    /* Línea amarilla y cambio de azul como en Inicio */
+    .menu a:not(.boton)::after {
+      content: "";
+      position: absolute;
+      left: 0;
+      right: 0;
+      bottom: -10px;
+      height: 3px;
+      background: var(--arena);
+      transform: scaleX(0);
+      transform-origin: left;
+      transition: transform .2s ease;
     }
 
-    .menu a.boton-apoyar {
-      padding: 11px 19px;
-      color: var(--blanco);
-      background: var(--petroleo);
-      border-radius: 30px;
+    .menu a:not(.boton):hover {
+      color: #008CB5;
     }
 
-    .menu a.boton-apoyar:hover {
-      background: var(--caribe);
-      color: var(--blanco);
+    .menu a:not(.boton):hover::after,
+    .menu a:not(.boton)[aria-current="page"]::after {
+      transform: scaleX(1);
     }
+
+    .menu a:not(.boton)[aria-current="page"] {
+      color: #008CB5;
+    }
+
+    .boton {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      gap: 10px;
+      min-height: 48px;
+      padding: 12px 21px;
+      border: 1px solid transparent;
+      border-radius: 50px;
+      font-weight: 700;
+      text-align: center;
+      transition: transform .2s ease, background .2s ease;
+    }
+
+    .boton:hover { transform: translateY(-2px); }
+
+    .boton-principal {
+      background: var(--arena);
+      color: var(--texto);
+    }
+
+    .boton-principal:hover { background: #FFD16C; }
+
+    .boton-borde-oscuro {
+      color: var(--petroleo);
+      border-color: var(--petroleo);
+      background: transparent;
+    }
+
+    .boton-borde-oscuro:hover { background: #E8F7FB; }
 
     .boton-menu {
       display: none;
-      border: 0;
-      background: transparent;
+      padding: 9px 13px;
+      border: 1px solid var(--borde);
+      border-radius: 12px;
+      background: #fff;
       color: var(--petroleo);
-      font-size: 1.8rem;
       cursor: pointer;
+      font-size: 1.35rem;
     }
 
-    /* PORTADA: ÚNICA FOTOGRAFÍA DE LA PÁGINA */
+    /* PORTADA */
 
     .portada {
-      min-height: 570px;
+      min-height: 455px;
       display: flex;
       align-items: center;
       position: relative;
+      isolation: isolate;
       overflow: hidden;
-      color: var(--blanco);
+      background: var(--petroleo);
+      color: #fff;
+    }
+
+    .portada::before {
+      content: "";
+      position: absolute;
+      inset: 0;
+      z-index: -1;
       background:
         linear-gradient(
           90deg,
-          rgba(0, 35, 54, 0.88) 0%,
-          rgba(0, 75, 99, 0.62) 52%,
-          rgba(0, 75, 99, 0.12) 100%
+          rgba(0,35,54,.91) 0%,
+          rgba(0,75,99,.72) 55%,
+          rgba(0,75,99,.22) 100%
         ),
         url("assets/portada-conocenos.jpg") center 48% / cover no-repeat;
     }
 
     .contenido-portada {
-      position: relative;
-      z-index: 1;
-      max-width: 790px;
-      padding: 90px 0;
+      max-width: 760px;
+      padding-block: 68px;
     }
 
     .etiqueta {
-      display: inline-block;
-      margin-bottom: 20px;
-      padding: 7px 15px;
-      border: 1px solid rgba(255, 255, 255, 0.55);
-      border-radius: 30px;
-      color: var(--blanco);
-      font-size: 0.82rem;
-      font-weight: 700;
-      letter-spacing: 1.2px;
+      display: inline-flex;
+      align-items: center;
+      gap: 11px;
+      margin-bottom: 17px;
+      color: #BCEFFA;
+      font-size: .79rem;
+      font-weight: 800;
+      letter-spacing: .14em;
       text-transform: uppercase;
     }
 
+    .etiqueta::before {
+      content: "";
+      width: 30px;
+      height: 3px;
+      background: var(--arena);
+    }
+
     .portada h1 {
-      margin-bottom: 23px;
-      font-size: clamp(2.6rem, 6vw, 4.7rem);
-      line-height: 1.08;
-      letter-spacing: -1.5px;
+      margin-bottom: 19px;
+      font-size: clamp(2.5rem, 5.2vw, 4.3rem);
+      line-height: 1.07;
+      letter-spacing: -.04em;
     }
 
     .portada h1 span {
+      display: block;
       color: var(--arena);
     }
 
     .portada p {
-      max-width: 670px;
-      color: rgba(255, 255, 255, 0.94);
-      font-size: clamp(1rem, 2vw, 1.2rem);
-      line-height: 1.8;
+      max-width: 650px;
+      color: #E5F3F7;
+      font-size: 1.04rem;
+      line-height: 1.75;
     }
 
     .linea-decorativa {
-      width: 75px;
-      height: 5px;
-      margin-top: 27px;
-      background: var(--arena);
+      width: 65px;
+      height: 4px;
+      margin-top: 23px;
       border-radius: 5px;
+      background: var(--arena);
     }
 
-    /* ESTILOS GENERALES DE SECCIÓN */
+    /* SECCIONES */
 
-    section {
-      padding: 82px 0;
-    }
+    .seccion { padding-block: 66px; }
+    .seccion-fondo { background: var(--fondo); }
 
     .encabezado-seccion {
-      max-width: 780px;
-      margin: 0 auto 43px;
+      max-width: 740px;
+      margin: 0 auto 32px;
       text-align: center;
     }
 
     .subtitulo {
       display: block;
-      margin-bottom: 11px;
-      color: var(--caribe);
-      font-size: 0.82rem;
+      margin-bottom: 8px;
+      color: #007B9F;
+      font-size: .77rem;
       font-weight: 800;
-      letter-spacing: 1.7px;
+      letter-spacing: .13em;
       text-transform: uppercase;
     }
 
     .encabezado-seccion h2 {
-      margin-bottom: 17px;
+      margin-bottom: 12px;
       color: var(--petroleo);
-      font-size: clamp(2rem, 4vw, 3rem);
-      line-height: 1.2;
+      font-size: clamp(1.9rem, 3.5vw, 2.8rem);
+      line-height: 1.15;
+      letter-spacing: -.03em;
     }
 
     .encabezado-seccion p {
       color: var(--gris);
-      font-size: 1.04rem;
+      font-size: .98rem;
     }
 
-    /* IDENTIDAD INSTITUCIONAL */
-
-    .quienes-somos {
-      background: var(--blanco);
-    }
+    /* IDENTIDAD */
 
     .texto-institucional {
       max-width: 900px;
-      margin: 0 auto;
+      margin-inline: auto;
     }
 
     .texto-institucional p {
-      margin-bottom: 19px;
+      margin-bottom: 14px;
       color: var(--gris);
-      font-size: 1.06rem;
-    }
-
-    .texto-institucional p:last-child {
-      margin-bottom: 0;
+      font-size: 1rem;
     }
 
     .frase-institucional {
-      margin-top: 34px;
-      padding: 27px 30px;
-      border-left: 5px solid var(--arena);
-      border-radius: 0 var(--radio) var(--radio) 0;
+      margin-top: 25px;
+      padding: 22px 25px;
+      border-left: 4px solid var(--arena);
+      border-radius: 0 14px 14px 0;
       background: var(--fondo);
       color: var(--petroleo);
-      font-size: clamp(1.15rem, 2.5vw, 1.55rem);
+      font-size: clamp(1.12rem, 2.2vw, 1.4rem);
       font-weight: 700;
-      line-height: 1.55;
+      line-height: 1.5;
     }
 
     /* MISIÓN Y VISIÓN */
 
-    .mision-vision {
-      background:
-        radial-gradient(
-          circle at 100% 0%,
-          rgba(0, 166, 214, 0.09),
-          transparent 35%
-        ),
-        var(--fondo);
-    }
-
     .rejilla-dos {
       display: grid;
-      grid-template-columns: repeat(2, minmax(0, 1fr));
-      gap: 26px;
+      grid-template-columns: repeat(2, minmax(0,1fr));
+      gap: 22px;
     }
 
     .tarjeta {
-      padding: 35px;
-      border: 1px solid rgba(0, 75, 99, 0.08);
+      padding: 27px;
+      border: 1px solid var(--borde);
       border-radius: var(--radio);
-      background: var(--blanco);
+      background: #fff;
+      box-shadow: 0 5px 20px rgba(0,54,72,.045);
+      transition: transform .22s ease, box-shadow .22s ease;
+    }
+
+    .tarjeta:hover {
+      transform: translateY(-3px);
       box-shadow: var(--sombra);
     }
 
-    .icono {
-      width: 54px;
-      height: 54px;
+    .tarjeta-cabecera {
       display: flex;
       align-items: center;
-      justify-content: center;
-      margin-bottom: 22px;
-      border-radius: 15px;
-      background: rgba(0, 166, 214, 0.12);
+      gap: 13px;
+      margin-bottom: 15px;
+    }
+
+    .icono {
+      display: grid;
+      place-items: center;
+      flex-shrink: 0;
+      width: 44px;
+      height: 44px;
+      border-radius: 13px;
+      background: #DDF5FC;
       color: var(--petroleo);
-      font-size: 1.5rem;
+      font-size: 1.2rem;
       font-weight: 800;
     }
 
     .tarjeta h3 {
-      margin-bottom: 15px;
       color: var(--petroleo);
-      font-size: 1.5rem;
+      font-size: 1.3rem;
+      line-height: 1.3;
     }
 
     .tarjeta p {
       color: var(--gris);
+      font-size: .96rem;
+      line-height: 1.7;
     }
 
     /* VALORES */
 
-    .valores {
-      background: var(--blanco);
-    }
-
     .rejilla-valores {
       display: grid;
-      grid-template-columns: repeat(3, minmax(0, 1fr));
-      gap: 22px;
+      grid-template-columns: repeat(3, minmax(0,1fr));
+      gap: 17px;
     }
 
     .valor {
-      padding: 28px 24px;
-      border: 1px solid #E4EEF2;
-      border-radius: var(--radio);
-      background: var(--blanco);
-      transition: transform 0.25s ease, box-shadow 0.25s ease;
+      position: relative;
+      overflow: hidden;
+      padding: 23px;
+      border: 1px solid var(--borde);
+      border-radius: 16px;
+      background: #fff;
+      transition: transform .22s ease, box-shadow .22s ease;
+    }
+
+    .valor::before {
+      content: "";
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 3px;
+      background: linear-gradient(90deg,var(--caribe),var(--arena));
+      transform: scaleX(0);
+      transform-origin: left;
+      transition: transform .22s ease;
     }
 
     .valor:hover {
-      transform: translateY(-5px);
+      transform: translateY(-3px);
       box-shadow: var(--sombra);
     }
 
+    .valor:hover::before { transform: scaleX(1); }
+
     .valor .numero {
       display: inline-flex;
-      width: 42px;
-      height: 42px;
       align-items: center;
       justify-content: center;
-      margin-bottom: 17px;
-      border-radius: 50%;
-      background: var(--petroleo);
-      color: var(--blanco);
+      width: 36px;
+      height: 36px;
+      margin-bottom: 13px;
+      border-radius: 11px;
+      background: #E1F6FC;
+      color: var(--petroleo);
+      font-size: .82rem;
       font-weight: 800;
     }
 
     .valor h3 {
-      margin-bottom: 9px;
+      margin-bottom: 7px;
       color: var(--petroleo);
-      font-size: 1.2rem;
+      font-size: 1.08rem;
+      line-height: 1.35;
     }
 
     .valor p {
       color: var(--gris);
-      font-size: 0.96rem;
+      font-size: .91rem;
+      line-height: 1.6;
     }
 
-    /* ESTRUCTURA ORGANIZATIVA */
+    /* ORGANIZACIÓN */
 
-    .organizacion {
-      background: var(--fondo);
-    }
+    .organizacion { background: var(--fondo); }
 
     .estructura {
-      max-width: 900px;
-      margin: 0 auto;
+      max-width: 920px;
+      margin-inline: auto;
       display: flex;
       flex-direction: column;
       align-items: center;
@@ -370,173 +444,193 @@
 
     .nivel-organizativo {
       width: 100%;
-      padding: 25px;
-      border: 1px solid rgba(0, 75, 99, 0.1);
-      border-radius: 15px;
-      background: var(--blanco);
+      padding: 19px 22px;
+      border: 1px solid var(--borde);
+      border-radius: 14px;
+      background: #fff;
       text-align: center;
-      box-shadow: 0 7px 22px rgba(0, 75, 99, 0.06);
     }
 
     .nivel-organizativo.destacado {
-      border: none;
-      background: linear-gradient(120deg, var(--petroleo), #087B9B);
-      color: var(--blanco);
+      border-color: transparent;
+      background: linear-gradient(120deg,var(--petroleo),#087B9B);
+      color: #fff;
     }
 
     .nivel-organizativo h3 {
-      margin-bottom: 7px;
-      font-size: 1.22rem;
+      margin-bottom: 4px;
+      color: var(--petroleo);
+      font-size: 1.12rem;
     }
+
+    .nivel-organizativo.destacado h3 { color: #fff; }
 
     .nivel-organizativo p {
       color: var(--gris);
-      font-size: 0.96rem;
+      font-size: .91rem;
+      line-height: 1.55;
     }
 
-    .nivel-organizativo.destacado p {
-      color: rgba(255, 255, 255, 0.88);
-    }
+    .nivel-organizativo.destacado p { color: #E0F0F4; }
 
     .conector {
       width: 2px;
-      height: 25px;
+      height: 19px;
       background: #A9C7D1;
     }
 
     .areas-trabajo {
       width: 100%;
       display: grid;
-      grid-template-columns: repeat(2, minmax(0, 1fr));
-      gap: 17px;
-      margin-top: 25px;
+      grid-template-columns: repeat(2,minmax(0,1fr));
+      gap: 15px;
+      margin-top: 22px;
     }
 
     .area {
-      padding: 22px;
-      border-radius: 13px;
-      border-top: 4px solid var(--caribe);
-      background: var(--blanco);
+      padding: 19px 20px;
+      border: 1px solid var(--borde);
+      border-top: 3px solid var(--caribe);
+      border-radius: 12px;
+      background: #fff;
     }
 
     .area h4 {
-      margin-bottom: 6px;
+      margin-bottom: 5px;
       color: var(--petroleo);
-      font-size: 1.02rem;
+      font-size: .98rem;
+      line-height: 1.4;
     }
 
     .area p {
       color: var(--gris);
-      font-size: 0.92rem;
+      font-size: .89rem;
+      line-height: 1.55;
     }
 
     .nota-estructura {
       max-width: 780px;
-      margin: 28px auto 0;
+      margin: 22px auto 0;
       color: var(--gris);
-      font-size: 0.9rem;
+      font-size: .84rem;
       text-align: center;
     }
 
     /* CIERRE */
 
     .cierre {
-      padding: 65px 0;
-      background: linear-gradient(120deg, #003747, var(--petroleo), #087B9B);
-      color: var(--blanco);
+      padding: 55px 0;
+      background: linear-gradient(120deg,#003747,var(--petroleo),#087B9B);
+      color: #fff;
       text-align: center;
     }
 
     .cierre h2 {
-      margin-bottom: 16px;
-      font-size: clamp(1.8rem, 4vw, 2.7rem);
+      margin-bottom: 12px;
+      font-size: clamp(1.8rem,3.5vw,2.55rem);
       line-height: 1.2;
     }
 
     .cierre p {
-      max-width: 700px;
-      margin: 0 auto;
-      color: rgba(255, 255, 255, 0.9);
+      max-width: 690px;
+      margin-inline: auto;
+      color: #D8EBF0;
+      font-size: .97rem;
     }
 
-    /* PIE DE PÁGINA */
+    /* PIE DE PÁGINA: ALINEADO CON INICIO */
 
-    .pie-pagina {
-      padding: 48px 0 20px;
-      background: #071F2A;
-      color: var(--blanco);
+    .pie {
+      padding: 48px 0 22px;
+      background: #022F3E;
+      color: #D8EAF0;
     }
 
-    .contenido-pie {
+    .pie-grid {
       display: grid;
-      grid-template-columns: 1.2fr 1fr;
+      grid-template-columns: 1.3fr .8fr 1fr;
       gap: 40px;
-      align-items: center;
       padding-bottom: 32px;
     }
 
-    .logo-pie img {
-      width: 220px;
-      max-height: 90px;
+    .logo-pie {
+      width: 225px;
+      max-height: 85px;
       object-fit: contain;
       object-position: left center;
-      margin-bottom: 16px;
+      margin-bottom: 17px;
     }
 
-    .logo-pie p {
-      max-width: 430px;
-      color: #C5D7DE;
-      font-size: 0.95rem;
+    .pie-descripcion {
+      max-width: 360px;
+      color: #C2D8DF;
+      font-size: .91rem;
     }
 
-    .contacto-pie h3 {
+    .pie h3 {
       margin-bottom: 13px;
-      color: var(--arena);
-      font-size: 1.15rem;
+      color: #fff;
+      font-size: 1rem;
     }
+
+    .enlaces-pie {
+      display: grid;
+      gap: 8px;
+    }
+
+    .pie a {
+      color: #C2D8DF;
+      font-size: .9rem;
+      overflow-wrap: anywhere;
+      transition: color .2s ease;
+    }
+
+    .pie a:hover { color: var(--arena); }
 
     .contacto-pie p {
-      margin-bottom: 8px;
-      color: #D7E4E9;
+      margin-bottom: 9px;
+      font-size: .9rem;
       overflow-wrap: anywhere;
     }
 
-    .contacto-pie a:hover {
-      color: var(--arena);
+    .legal {
+      display: flex;
+      justify-content: space-between;
+      flex-wrap: wrap;
+      gap: 12px;
+      padding-top: 19px;
+      border-top: 1px solid rgba(255,255,255,.16);
+      color: #A8C2CA;
+      font-size: .82rem;
     }
 
-    .derechos {
-      padding-top: 20px;
-      border-top: 1px solid rgba(255, 255, 255, 0.15);
-      color: #B4C9D1;
-      font-size: 0.86rem;
-      text-align: center;
+    /* TABLET */
+
+    @media (max-width: 1000px) {
+      .menu { gap: 13px; }
+      .marca img { width: 185px; }
+
+      .menu a:not(.boton) { font-size: .84rem; }
+
+      .rejilla-valores { gap: 14px; }
+      .valor { padding: 20px; }
+
+      .pie-grid { gap: 28px; }
     }
 
-    /* DISEÑO RESPONSIVO */
+    /* MÓVILES */
 
-    @media (max-width: 1050px) {
-      .menu {
-        gap: 14px;
-      }
+    @media (max-width: 760px) {
+      .contenedor { width: calc(100% - 32px); }
 
-      .menu a {
-        font-size: 0.84rem;
-      }
+      .navegacion { min-height: 74px; }
 
       .marca img {
-        width: 175px;
-      }
-    }
-
-    @media (max-width: 820px) {
-      .barra-navegacion {
-        min-height: 78px;
+        width: 180px;
+        max-height: 58px;
       }
 
-      .boton-menu {
-        display: block;
-      }
+      .boton-menu { display: block; }
 
       .menu {
         display: none;
@@ -544,154 +638,163 @@
         top: 100%;
         left: 0;
         right: 0;
-        padding: 20px 5% 25px;
-        background: var(--blanco);
-        box-shadow: 0 12px 20px rgba(0, 0, 0, 0.08);
-        flex-direction: column;
+        padding: 18px 22px 24px;
         align-items: stretch;
+        flex-direction: column;
         gap: 0;
+        background: #fff;
+        border-bottom: 1px solid var(--borde);
+        box-shadow: 0 18px 35px rgba(0,45,61,.12);
       }
 
-      .menu.abierto {
-        display: flex;
+      .menu.abierto { display: flex; }
+
+      .menu a:not(.boton) {
+        padding: 13px 0;
+        border-bottom: 1px solid #EDF2F4;
+        font-size: .95rem;
       }
 
-      .menu a {
-        padding: 12px 0;
-        font-size: 0.98rem;
+      .menu a:not(.boton)::after {
+        bottom: 5px;
+        right: auto;
+        width: 42px;
       }
 
-      .menu a.boton-apoyar {
-        margin-top: 10px;
-        padding: 12px 18px;
-        text-align: center;
+      .menu .boton { margin-top: 15px; }
+
+      .portada { min-height: 390px; }
+
+      .portada::before {
+        background:
+          linear-gradient(
+            90deg,
+            rgba(0,35,54,.91),
+            rgba(0,75,99,.68)
+          ),
+          url("assets/portada-conocenos.jpg") 58% center / cover no-repeat;
       }
 
-      .portada {
-        min-height: 500px;
-        background-position: center;
-      }
-
-      .rejilla-valores {
-        grid-template-columns: repeat(2, minmax(0, 1fr));
-      }
-
-      section {
-        padding: 65px 0;
-      }
-    }
-
-    @media (max-width: 600px) {
-      .contenedor {
-        width: 90%;
-      }
-
-      .marca img {
-        width: 165px;
-      }
-
-      .portada {
-        min-height: 480px;
-        background-position: 58% center;
-      }
-
-      .contenido-portada {
-        padding: 65px 0;
-      }
+      .contenido-portada { padding-block: 55px; }
 
       .portada h1 {
-        font-size: clamp(2.45rem, 12vw, 3.6rem);
+        font-size: clamp(2.35rem,8.5vw,3.5rem);
       }
 
+      .portada p { font-size: .97rem; }
+
+      .seccion { padding-block: 48px; }
+
+      .encabezado-seccion { margin-bottom: 25px; }
+
+      .rejilla-dos { gap: 15px; }
+
+      .rejilla-valores {
+        grid-template-columns: repeat(2,minmax(0,1fr));
+        gap: 12px;
+      }
+
+      .valor { padding: 17px; }
+
+      .valor h3 { font-size: 1rem; }
+      .valor p { font-size: .87rem; }
+
+      .tarjeta { padding: 22px; }
+
+      .areas-trabajo { gap: 12px; }
+
+      .pie-grid {
+        grid-template-columns: 1fr 1fr;
+        gap: 27px;
+      }
+
+      .pie-grid > div:first-child {
+        grid-column: 1 / -1;
+      }
+
+      .legal { flex-direction: column; }
+    }
+
+    @media (max-width: 480px) {
       .rejilla-dos,
       .rejilla-valores,
       .areas-trabajo,
-      .contenido-pie {
+      .pie-grid {
         grid-template-columns: 1fr;
       }
 
-      .tarjeta {
-        padding: 27px;
-      }
+      .pie-grid > div:first-child { grid-column: auto; }
 
-      .valor {
-        padding: 24px;
-      }
+      .portada { min-height: 380px; }
 
-      .frase-institucional {
-        padding: 22px;
-      }
+      .portada h1 { font-size: clamp(2.25rem,10vw,3rem); }
 
-      .nivel-organizativo {
-        padding: 22px 17px;
-      }
+      .etiqueta { font-size: .72rem; }
 
-      .contenido-pie {
-        gap: 28px;
-      }
+      .frase-institucional { padding: 19px; }
 
-      .logo-pie img {
-        width: 195px;
-      }
+      .valor { padding: 20px; }
+
+      .valor p { font-size: .91rem; }
+
+      .nivel-organizativo { padding: 18px 15px; }
+
+      .pie-grid { gap: 25px; }
     }
 
     @media (prefers-reduced-motion: reduce) {
-      html {
-        scroll-behavior: auto;
-      }
+      html { scroll-behavior: auto; }
 
       *,
       *::before,
       *::after {
-        transition-duration: 0.01ms !important;
+        transition-duration: .01ms !important;
+        animation-duration: .01ms !important;
+        animation-iteration-count: 1 !important;
       }
     }
   </style>
 </head>
 
 <body>
+  <div class="franja-superior" aria-hidden="true"></div>
 
-  <!-- ENCABEZADO -->
   <header class="encabezado">
-    <div class="contenedor barra-navegacion">
-
-      <a class="marca" href="index.html" aria-label="Corporación Insular Digital - Inicio">
+    <div class="contenedor navegacion">
+      <a class="marca" href="index.html" aria-label="Inicio de Corporación Insular Digital">
         <img
           src="assets/logo-coindi-claro.png"
-          alt="Corporación Insular Digital - COINDI"
+          alt="COINDI — Corporación Insular Digital"
+          width="215"
+          height="70"
         >
       </a>
 
       <button
         class="boton-menu"
-        id="botonMenu"
+        id="boton-menu"
         type="button"
-        aria-label="Abrir menú de navegación"
+        aria-label="Abrir menú"
         aria-expanded="false"
-        aria-controls="menuPrincipal"
-      >
-        ☰
-      </button>
+        aria-controls="menu-principal"
+      >☰</button>
 
-      <nav class="menu" id="menuPrincipal" aria-label="Navegación principal">
+      <nav class="menu" id="menu-principal" aria-label="Navegación principal">
         <a href="index.html">Inicio</a>
-        <a href="conocenos.html" class="activo" aria-current="page">Conócenos</a>
+        <a href="conocenos.html" aria-current="page">Conócenos</a>
         <a href="programas.html">Programas</a>
         <a href="teleinsular.html">Teleinsular</a>
         <a href="insu.html">Revista INSU</a>
-        <a href="donar.html" class="boton-apoyar">Apoyar</a>
+        <a href="donar.html" class="boton boton-principal">Apoyar</a>
       </nav>
-
     </div>
   </header>
 
   <main>
-
-    <!-- PORTADA: NO SE AGREGA OTRA FOTOGRAFÍA EN ESTA PÁGINA -->
+    <!-- PORTADA -->
     <section class="portada">
       <div class="contenedor">
         <div class="contenido-portada">
-
           <span class="etiqueta">Corporación Insular Digital</span>
 
           <h1>
@@ -700,267 +803,210 @@
           </h1>
 
           <p>
-            Una iniciativa institucional que apuesta por la comunicación,
-            la inclusión digital y la creación de oportunidades desde
-            el territorio insular.
+            Comunicación, inclusión digital y creación de oportunidades
+            desde el territorio insular.
           </p>
 
-          <div class="linea-decorativa"></div>
-
+          <div class="linea-decorativa" aria-hidden="true"></div>
         </div>
       </div>
     </section>
 
-    <!-- IDENTIDAD INSTITUCIONAL: SIN SEGUNDA FOTO -->
-    <section class="quienes-somos">
+    <!-- IDENTIDAD -->
+    <section class="seccion">
       <div class="contenedor">
-
         <div class="encabezado-seccion">
           <span class="subtitulo">Nuestra identidad</span>
           <h2>¿Qué es COINDI?</h2>
         </div>
 
         <div class="texto-institucional">
-
           <p>
-            La Corporación Insular Digital (COINDI) es una organización
-            que orienta su trabajo al desarrollo de iniciativas sociales,
-            culturales y tecnológicas vinculadas con las necesidades,
-            capacidades y oportunidades del territorio insular.
+            La Corporación Insular Digital (COINDI) orienta su trabajo
+            al desarrollo de iniciativas sociales, culturales y
+            tecnológicas vinculadas con las necesidades y oportunidades
+            del territorio insular.
           </p>
 
           <p>
-            Su enfoque integra la inclusión digital, la comunicación
-            comunitaria y la creación de contenidos como herramientas
-            para fortalecer la participación, visibilizar las voces
-            del territorio y promover nuevas oportunidades para la comunidad.
+            Integramos la inclusión digital, la comunicación comunitaria
+            y la creación de contenidos para fortalecer la participación,
+            visibilizar las voces locales y promover oportunidades para
+            la comunidad.
           </p>
 
           <p>
-            Desde esta perspectiva, COINDI busca construir procesos
-            colaborativos que reconozcan los saberes locales, impulsen
-            la creatividad y contribuyan a conectar personas, ideas
-            y propósitos.
+            Creemos en el trabajo colaborativo, el valor de los saberes
+            locales y la creatividad como herramientas para conectar
+            personas, ideas y propósitos.
           </p>
 
           <div class="frase-institucional">
-            “Juntos comunicamos ideas, conectamos propósitos y transformamos realidades.”
+            Juntos comunicamos ideas, conectamos propósitos y
+            transformamos realidades.
           </div>
-
         </div>
       </div>
     </section>
 
     <!-- MISIÓN Y VISIÓN -->
-    <section class="mision-vision">
+    <section class="seccion seccion-fondo">
       <div class="contenedor">
-
         <div class="encabezado-seccion">
           <span class="subtitulo">Nuestro horizonte</span>
           <h2>Misión y visión</h2>
           <p>
-            Principios orientadores para el trabajo institucional
-            y la construcción de oportunidades desde el territorio.
+            El propósito que orienta nuestro trabajo y el horizonte
+            hacia el que queremos avanzar.
           </p>
         </div>
 
         <div class="rejilla-dos">
-
           <article class="tarjeta">
-            <div class="icono" aria-hidden="true">M</div>
-            <h3>Misión</h3>
+            <div class="tarjeta-cabecera">
+              <div class="icono" aria-hidden="true">M</div>
+              <h3>Misión</h3>
+            </div>
             <p>
               Promover iniciativas sociales, culturales y tecnológicas
-              que fortalezcan la inclusión digital, la comunicación
-              comunitaria y la participación ciudadana, reconociendo
-              los saberes y las capacidades de las comunidades del
-              territorio insular.
+              que impulsen la inclusión digital, la comunicación
+              comunitaria y la participación, reconociendo los saberes
+              y capacidades de las comunidades insulares.
             </p>
           </article>
 
           <article class="tarjeta">
-            <div class="icono" aria-hidden="true">V</div>
-            <h3>Visión</h3>
+            <div class="tarjeta-cabecera">
+              <div class="icono" aria-hidden="true">V</div>
+              <h3>Visión</h3>
+            </div>
             <p>
-              Consolidarse como una organización reconocida por impulsar
-              procesos colaborativos de transformación social, innovación
-              digital y comunicación territorial, contribuyendo a que
-              las comunidades participen activamente en la construcción
-              de sus propias oportunidades.
+              Consolidarnos como una organización que impulse la
+              innovación digital, la comunicación territorial y el
+              trabajo colaborativo para ampliar las oportunidades
+              de las comunidades.
             </p>
           </article>
-
         </div>
       </div>
     </section>
 
-    <!-- VALORES INSTITUCIONALES -->
-    <section class="valores">
+    <!-- VALORES -->
+    <section class="seccion">
       <div class="contenedor">
-
         <div class="encabezado-seccion">
           <span class="subtitulo">Nuestra manera de trabajar</span>
           <h2>Valores que nos orientan</h2>
           <p>
-            Referentes para promover relaciones respetuosas,
-            procesos participativos y acciones conectadas con
-            la realidad de las comunidades.
+            Seis referentes para guiar nuestras acciones y relaciones
+            con la comunidad.
           </p>
         </div>
 
         <div class="rejilla-valores">
-
           <article class="valor">
             <span class="numero">01</span>
             <h3>Compromiso social</h3>
-            <p>
-              Trabajamos con sentido de responsabilidad frente
-              a las necesidades y oportunidades del territorio.
-            </p>
+            <p>Actuamos con responsabilidad frente a las necesidades y oportunidades del territorio.</p>
           </article>
 
           <article class="valor">
             <span class="numero">02</span>
             <h3>Identidad territorial</h3>
-            <p>
-              Reconocemos la cultura, la memoria y los saberes
-              que dan identidad a nuestras comunidades.
-            </p>
+            <p>Reconocemos la cultura, la memoria y los saberes de nuestras comunidades.</p>
           </article>
 
           <article class="valor">
             <span class="numero">03</span>
             <h3>Inclusión</h3>
-            <p>
-              Promovemos la participación y el acceso a oportunidades
-              sin distinciones ni barreras innecesarias.
-            </p>
+            <p>Promovemos la participación y el acceso a oportunidades sin barreras innecesarias.</p>
           </article>
 
           <article class="valor">
             <span class="numero">04</span>
             <h3>Innovación</h3>
-            <p>
-              Exploramos herramientas y formas creativas de responder
-              a los desafíos sociales y comunicativos.
-            </p>
+            <p>Exploramos herramientas y soluciones creativas ante los desafíos sociales y comunicativos.</p>
           </article>
 
           <article class="valor">
             <span class="numero">05</span>
             <h3>Colaboración</h3>
-            <p>
-              Valoramos el trabajo conjunto, la escucha y la construcción
-              colectiva de iniciativas.
-            </p>
+            <p>Valoramos la escucha, el trabajo conjunto y la construcción colectiva.</p>
           </article>
 
           <article class="valor">
             <span class="numero">06</span>
             <h3>Transparencia</h3>
-            <p>
-              Promovemos una gestión responsable, clara y coherente
-              con los compromisos institucionales.
-            </p>
+            <p>Promovemos una gestión clara y responsable frente a nuestros compromisos.</p>
           </article>
-
         </div>
       </div>
     </section>
 
-    <!-- ESTRUCTURA ORGANIZATIVA -->
-    <section class="organizacion">
+    <!-- ORGANIZACIÓN -->
+    <section class="seccion organizacion">
       <div class="contenedor">
-
         <div class="encabezado-seccion">
           <span class="subtitulo">Organización institucional</span>
           <h2>¿Cómo nos organizamos?</h2>
           <p>
-            La estructura institucional se presenta a partir de sus
-            instancias organizativas y de las áreas de trabajo que
-            apoyan el desarrollo de las iniciativas.
+            Instancias organizativas y áreas de trabajo que apoyan
+            el desarrollo de nuestras iniciativas.
           </p>
         </div>
 
         <div class="estructura">
-
           <article class="nivel-organizativo">
             <h3>Asamblea General</h3>
-            <p>
-              Instancia de participación y decisión de la Corporación,
-              de acuerdo con sus estatutos.
-            </p>
+            <p>Instancia de participación y decisión conforme a los estatutos.</p>
           </article>
 
           <div class="conector" aria-hidden="true"></div>
 
           <article class="nivel-organizativo">
             <h3>Junta Directiva</h3>
-            <p>
-              Instancia directiva de la organización, conforme
-              a las funciones previstas en los estatutos.
-            </p>
+            <p>Instancia directiva de acuerdo con las funciones estatutarias.</p>
           </article>
 
           <div class="conector" aria-hidden="true"></div>
 
           <article class="nivel-organizativo destacado">
             <h3>Dirección Ejecutiva</h3>
-            <p>
-              Orienta la gestión ejecutiva y acompaña el desarrollo
-              de las iniciativas institucionales, dentro de sus
-              competencias y responsabilidades.
-            </p>
+            <p>Orienta la gestión ejecutiva y acompaña el desarrollo de las iniciativas institucionales.</p>
           </article>
 
           <div class="areas-trabajo">
-
             <article class="area">
               <h4>Programas e iniciativas sociales</h4>
-              <p>
-                Apoyo a la formulación, organización y desarrollo
-                de iniciativas sociales, culturales y digitales.
-              </p>
+              <p>Formulación y desarrollo de iniciativas sociales, culturales y digitales.</p>
             </article>
 
             <article class="area">
               <h4>Medios y comunicaciones</h4>
-              <p>
-                Apoyo a la comunicación institucional, la producción
-                de contenidos y la visibilización del territorio.
-              </p>
+              <p>Comunicación institucional, producción de contenidos y visibilización territorial.</p>
             </article>
 
             <article class="area">
               <h4>Gestión administrativa</h4>
-              <p>
-                Apoyo a las tareas organizativas y documentales
-                necesarias para el funcionamiento institucional.
-              </p>
+              <p>Apoyo a la organización y documentación institucional.</p>
             </article>
 
             <article class="area">
               <h4>Apoyo financiero</h4>
-              <p>
-                Apoyo a la organización y seguimiento de los asuntos
-                financieros, conforme a las responsabilidades asignadas.
-              </p>
+              <p>Apoyo a la organización y seguimiento de asuntos financieros.</p>
             </article>
-
           </div>
-
         </div>
 
         <p class="nota-estructura">
-          Las áreas descritas corresponden a ámbitos de trabajo y
-          colaboración. Su presentación no implica por sí misma
-          la creación de cargos, nombramientos o designaciones formales.
+          Las áreas descritas son ámbitos de trabajo y colaboración.
+          Su presentación no implica por sí misma la creación de cargos,
+          nombramientos o designaciones formales.
         </p>
-
       </div>
     </section>
 
-    <!-- CIERRE INSTITUCIONAL -->
+    <!-- CIERRE -->
     <section class="cierre">
       <div class="contenedor">
         <h2>Construimos oportunidades desde el territorio.</h2>
@@ -971,87 +1017,79 @@
         </p>
       </div>
     </section>
-
   </main>
 
   <!-- PIE DE PÁGINA -->
-  <footer class="pie-pagina">
+  <footer class="pie">
     <div class="contenedor">
-
-      <div class="contenido-pie">
-
-        <div class="logo-pie">
-          <a href="index.html" aria-label="Volver al inicio">
-            <img
-              src="assets/logo-coindi-oscuro.png"
-              alt="Corporación Insular Digital - COINDI"
-            >
-          </a>
-
-          <p>
+      <div class="pie-grid">
+        <div>
+          <img
+            class="logo-pie"
+            src="assets/logo-coindi-oscuro.png"
+            alt="COINDI — Corporación Insular Digital"
+            width="225"
+            height="85"
+            loading="lazy"
+          >
+          <p class="pie-descripcion">
             Juntos comunicamos ideas, conectamos propósitos
             y transformamos realidades.
           </p>
         </div>
 
-        <div class="contacto-pie">
-          <h3>Contacto institucional</h3>
-
-          <p>
-            <a href="mailto:corpoindicomunicaciones@gmail.com">
-              corpoindicomunicaciones@gmail.com
-            </a>
-          </p>
-
-          <p>
-            <a href="tel:+573215978125">
-              +57 321 597 8125
-            </a>
-          </p>
-
-          <p>Cartagena, Colombia</p>
+        <div>
+          <h3>Explora</h3>
+          <nav class="enlaces-pie" aria-label="Enlaces del pie de página">
+            <a href="index.html">Inicio</a>
+            <a href="conocenos.html">Conócenos</a>
+            <a href="programas.html">Programas</a>
+            <a href="teleinsular.html">Teleinsular</a>
+            <a href="insu.html">Revista INSU</a>
+            <a href="donar.html">Apoyar</a>
+          </nav>
         </div>
 
+        <div class="contacto-pie">
+          <h3>Contacto institucional</h3>
+          <p>Correo: <a href="mailto:corpoindicomunicaciones@gmail.com">corpoindicomunicaciones@gmail.com</a></p>
+          <p>Teléfono: <a href="tel:+573215978125">+57 321 597 8125</a></p>
+          <p>Cartagena, Colombia</p>
+        </div>
       </div>
 
-      <div class="derechos">
-        © <span id="anioActual"></span> Corporación Insular Digital.
-        Todos los derechos reservados.
+      <div class="legal">
+        <span>© <span id="anio"></span> Corporación Insular Digital. Todos los derechos reservados.</span>
+        <span>COINDI · Identidad institucional</span>
       </div>
-
     </div>
   </footer>
 
   <script>
-    const botonMenu = document.getElementById("botonMenu");
-    const menuPrincipal = document.getElementById("menuPrincipal");
+    const botonMenu = document.getElementById("boton-menu");
+    const menu = document.getElementById("menu-principal");
 
-    botonMenu.addEventListener("click", function () {
-      const estaAbierto = menuPrincipal.classList.toggle("abierto");
+    botonMenu.addEventListener("click", () => {
+      const abierto = menu.classList.toggle("abierto");
 
-      botonMenu.setAttribute("aria-expanded", String(estaAbierto));
+      botonMenu.setAttribute("aria-expanded", String(abierto));
       botonMenu.setAttribute(
         "aria-label",
-        estaAbierto
-          ? "Cerrar menú de navegación"
-          : "Abrir menú de navegación"
+        abierto ? "Cerrar menú" : "Abrir menú"
       );
-
-      botonMenu.textContent = estaAbierto ? "✕" : "☰";
+      botonMenu.textContent = abierto ? "✕" : "☰";
     });
 
-    menuPrincipal.querySelectorAll("a").forEach(function (enlace) {
-      enlace.addEventListener("click", function () {
-        menuPrincipal.classList.remove("abierto");
+    menu.querySelectorAll("a").forEach((enlace) => {
+      enlace.addEventListener("click", () => {
+        menu.classList.remove("abierto");
         botonMenu.setAttribute("aria-expanded", "false");
-        botonMenu.setAttribute("aria-label", "Abrir menú de navegación");
+        botonMenu.setAttribute("aria-label", "Abrir menú");
         botonMenu.textContent = "☰";
       });
     });
 
-    document.getElementById("anioActual").textContent =
-      new Date().getFullYear();
+    document.getElementById("anio").textContent = new Date().getFullYear();
   </script>
-
 </body>
 </html>
