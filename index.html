@@ -5,7 +5,7 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta name="theme-color" content="#004B63">
-  <meta name="description" content="Corporación Insular Digital: inclusión digital, creación audiovisual e iniciativas con impacto social y territorial.">
+  <meta name="description" content="Corporación Insular Digital (COINDI): inclusión digital, creación audiovisual e iniciativas con impacto social y territorial.">
 
   <title>Corporación Insular Digital | COINDI</title>
 
@@ -45,6 +45,7 @@
     }
 
     img {
+      display: block;
       max-width: 100%;
     }
 
@@ -83,7 +84,6 @@
     }
 
     .marca img {
-      display: block;
       width: 210px;
       max-height: 70px;
       object-fit: contain;
@@ -93,7 +93,7 @@
     .menu {
       display: flex;
       align-items: center;
-      gap: 25px;
+      gap: 24px;
     }
 
     .menu a {
@@ -102,7 +102,8 @@
       transition: color 0.2s;
     }
 
-    .menu a:hover {
+    .menu a:hover,
+    .menu a[aria-current="page"] {
       color: var(--caribe);
     }
 
@@ -116,6 +117,7 @@
       font-weight: 700;
       border: 1px solid transparent;
       cursor: pointer;
+      text-align: center;
       transition: transform 0.2s, box-shadow 0.2s;
     }
 
@@ -236,7 +238,7 @@
       font-size: 0.83rem;
     }
 
-    /* ILUSTRACIÓN TEMPORAL DE LA PORTADA */
+    /* VISUAL TEMPORAL DE LA PORTADA */
 
     .portada-visual {
       position: relative;
@@ -312,7 +314,7 @@
       font-size: 0.85rem;
     }
 
-    /* FRANJA DE ENFOQUES */
+    /* ENFOQUES INSTITUCIONALES */
 
     .enfoques {
       border-bottom: 1px solid var(--borde);
@@ -395,7 +397,7 @@
 
     .programas-grid {
       display: grid;
-      grid-template-columns: repeat(2, 1fr);
+      grid-template-columns: repeat(2, minmax(0, 1fr));
       gap: 22px;
     }
 
@@ -445,7 +447,7 @@
       font-weight: 800;
     }
 
-    /* CONÓCENOS */
+    /* PRESENTACIÓN INSTITUCIONAL */
 
     .conocenos-grid {
       display: grid;
@@ -483,15 +485,15 @@
       color: var(--gris);
     }
 
-    /* COLECTIVO */
+    /* TELEINSULAR */
 
-    .seccion-colectivo {
+    .seccion-teleinsular {
       padding-top: 0 !important;
     }
 
-    .colectivo-bloque {
+    .teleinsular-bloque {
       display: grid;
-      grid-template-columns: 1fr auto;
+      grid-template-columns: minmax(0, 1fr) auto;
       align-items: center;
       gap: 30px;
       padding: 42px;
@@ -499,16 +501,16 @@
       background: #FFF5D9;
     }
 
-    .colectivo-bloque h2 {
+    .teleinsular-bloque h2 {
       margin-top: 12px;
     }
 
-    .colectivo-bloque p {
+    .teleinsular-bloque p {
       max-width: 660px;
       color: #5E625B;
     }
 
-    /* LLAMADO A LA ACCIÓN */
+    /* INVITACIÓN A PARTICIPAR */
 
     .llamado {
       background: var(--petroleo);
@@ -684,7 +686,7 @@
         padding: 64px 0;
       }
 
-      .colectivo-bloque {
+      .teleinsular-bloque {
         grid-template-columns: 1fr;
         padding: 28px;
       }
@@ -710,7 +712,7 @@
 </head>
 
 <body>
-  <div class="franja-superior"></div>
+  <div class="franja-superior" aria-hidden="true"></div>
 
   <header>
     <div class="contenedor navegacion">
@@ -719,12 +721,14 @@
         <img
           src="assets/logo-coindi.png"
           alt="COINDI - Corporación Insular Digital"
+          width="210"
         >
       </a>
 
       <button
         class="menu-movil"
         id="boton-menu"
+        type="button"
         aria-label="Abrir menú"
         aria-expanded="false"
         aria-controls="menu-principal"
@@ -736,7 +740,7 @@
         <a href="index.html" aria-current="page">Inicio</a>
         <a href="conocenos.html">Conócenos</a>
         <a href="programas.html">Programas</a>
-        <a href="colectivo.html">Colectivo</a>
+        <a href="teleinsular.html">Teleinsular</a>
         <a href="donar.html" class="boton boton-principal">Apoyar</a>
       </nav>
 
@@ -777,11 +781,7 @@
           <p class="ubicacion">Bocachica · Cartagena, Colombia</p>
         </div>
 
-        <!--
-          Este bloque es una ilustración temporal hecha con CSS.
-          Lo ideal es reemplazarlo por una fotografía real y autorizada
-          de Bocachica o de actividades de la Corporación.
-        -->
+        <!-- Sustituir esta ilustración por una fotografía real y autorizada. -->
 
         <div
           class="portada-visual"
@@ -835,7 +835,7 @@
       </div>
     </section>
 
-    <!-- PROGRAMAS -->
+    <!-- PROGRAMAS INSTITUCIONALES -->
 
     <section class="contenido seccion-programas" id="programas">
       <div class="contenedor">
@@ -854,15 +854,15 @@
 
         <div class="programas-grid">
 
-          <article class="programa" id="alfabetizacion">
+          <article class="programa">
             <div class="programa-icono" aria-hidden="true">⌘</div>
 
             <h3>Alfabetización e Inclusión Digital</h3>
 
             <p>
               Promovemos el aprendizaje y el uso práctico de herramientas
-              digitales para personas de distintas edades, con actividades
-              que respondan a necesidades reales de la comunidad.
+              digitales para personas de distintas edades, mediante actividades
+              relacionadas con las necesidades de la comunidad.
             </p>
 
             <a href="programas.html#alfabetizacion" class="enlace-texto">
@@ -870,7 +870,7 @@
             </a>
           </article>
 
-          <article class="programa" id="crea-cine">
+          <article class="programa">
             <div class="programa-icono" aria-hidden="true">▣</div>
 
             <h3>Crea Cine Insular</h3>
@@ -933,9 +933,9 @@
       </div>
     </section>
 
-    <!-- TELEINSULAR -->
+    <!-- TELEINSULAR: MEDIO DE COMUNICACIÓN COMUNITARIO -->
 
-    <section class="contenido seccion-colectivo">
+    <section class="contenido seccion-teleinsular">
       <div class="contenedor">
 
         <div class="teleinsular-bloque">
@@ -945,14 +945,14 @@
             <h2>Las historias del territorio merecen ser contadas.</h2>
 
             <p>
-              Teleinsular es el espacio de comunicación comunitaria vinculada
-              a COINDI, para visibilizar voces, cultura, experiencias
-              y asuntos de interés local.
+              Teleinsular es el espacio de comunicación comunitaria vinculado
+              a la Corporación Insular Digital, orientado a visibilizar voces,
+              cultura, experiencias y asuntos de interés local.
             </p>
           </div>
 
           <a href="teleinsular.html" class="boton boton-claro">
-            Explora Colectivo →
+            Conoce Teleinsular →
           </a>
         </div>
 
@@ -999,6 +999,7 @@
             class="logo-pie"
             src="assets/logo-coindi.png"
             alt="Corporación Insular Digital"
+            loading="lazy"
           >
 
           <p>
@@ -1012,7 +1013,7 @@
           <div class="enlaces-pie">
             <a href="conocenos.html">Conócenos</a>
             <a href="programas.html">Programas</a>
-            <a href="colectivo.html">Colectivo</a>
+            <a href="teleinsular.html">Teleinsular</a>
             <a href="donar.html">Donaciones</a>
           </div>
         </div>
