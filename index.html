@@ -1163,35 +1163,171 @@
       </div>
     </section>
 
-    <!-- TELEINSULAR: MEDIO DE COMUNICACIÓN COMUNITARIA -->
+   <!-- SECCIÓN TELEINSULAR -->
+<section class="teleinsular-home">
+  <div class="teleinsular-contenido">
 
-    <section class="seccion teleinsular-seccion">
-      <div class="contenedor">
+    <div class="teleinsular-logo">
+      <img
+        src="assets/logo-teleinsular.png"
+        alt="Logo de Teleinsular"
+      >
+    </div>
 
-        <div class="teleinsular-bloque">
-          <div>
-            <span class="teleinsular-marca">TELEINSULAR</span>
+    <div class="teleinsular-texto">
+      <span class="teleinsular-categoria">
+        COMUNICACIÓN COMUNITARIA
+      </span>
 
-            <div class="subtitulo">Comunicación comunitaria</div>
+      <h2>Las historias del territorio merecen ser contadas.</h2>
 
-            <h2>Las historias del territorio merecen ser contadas.</h2>
+      <p class="teleinsular-slogan">
+        El canal de nuestros pueblos.
+      </p>
 
-            <p>
-              Teleinsular es la iniciativa de comunicación comunitaria
-              vinculada a COINDI. Un espacio para visibilizar voces,
-              compartir historias y acercar a la comunidad a los temas
-              de interés del territorio insular.
-            </p>
-          </div>
+      <p class="teleinsular-respaldo">
+        Una iniciativa de la Corporación Insular Digital.
+      </p>
 
-          <div>
-            <a href="teleinsular.html" class="boton boton-borde-oscuro">
-              Explorar Teleinsular <span aria-hidden="true">→</span>
-            </a>
-          </div>
-        </div>
+      <a
+        href="teleinsular.html"
+        class="teleinsular-boton"
+      >
+        Explorar Teleinsular
+        <span aria-hidden="true">→</span>
+      </a>
+    </div>
 
-      </div>
+  </div>
+</section>
+
+<style>
+  .teleinsular-home {
+    background: linear-gradient(120deg, #06182D, #0A2EA8);
+    padding: 65px 7%;
+    color: #FFFFFF;
+    overflow: hidden;
+  }
+
+  .teleinsular-contenido {
+    max-width: 1150px;
+    margin: 0 auto;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 55px;
+  }
+
+  .teleinsular-logo {
+    flex: 0 1 38%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    min-width: 0;
+  }
+
+  .teleinsular-logo img {
+    display: block;
+    width: 100%;
+    max-width: 360px;
+    height: auto;
+    object-fit: contain;
+  }
+
+  .teleinsular-texto {
+    flex: 1;
+    min-width: 0;
+  }
+
+  .teleinsular-categoria {
+    display: inline-block;
+    color: #FFC247;
+    font-size: 0.78rem;
+    font-weight: 700;
+    letter-spacing: 2px;
+    margin-bottom: 15px;
+  }
+
+  .teleinsular-texto h2 {
+    color: #FFFFFF;
+    font-size: clamp(1.8rem, 3.5vw, 2.8rem);
+    line-height: 1.15;
+    margin: 0 0 18px;
+    max-width: 600px;
+  }
+
+  .teleinsular-slogan {
+    color: #FFFFFF;
+    font-size: 1.2rem;
+    font-weight: 600;
+    margin: 0 0 10px;
+  }
+
+  .teleinsular-respaldo {
+    color: #D5E4F5;
+    font-size: 0.95rem;
+    line-height: 1.6;
+    margin: 0 0 25px;
+  }
+
+  .teleinsular-boton {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 12px;
+    background: #FFC247;
+    color: #06182D;
+    padding: 13px 22px;
+    border-radius: 8px;
+    font-weight: 700;
+    text-decoration: none;
+    transition: transform 0.2s ease,
+                background 0.2s ease;
+  }
+
+  .teleinsular-boton:hover {
+    background: #FFD36F;
+    transform: translateY(-2px);
+  }
+
+  .teleinsular-boton:focus-visible {
+    outline: 3px solid #FFFFFF;
+    outline-offset: 4px;
+  }
+
+  @media (max-width: 700px) {
+    .teleinsular-home {
+      padding: 45px 6%;
+    }
+
+    .teleinsular-contenido {
+      flex-direction: column;
+      gap: 28px;
+      text-align: center;
+    }
+
+    .teleinsular-logo {
+      flex-basis: auto;
+      width: 100%;
+    }
+
+    .teleinsular-logo img {
+      max-width: 280px;
+    }
+
+    .teleinsular-texto h2 {
+      font-size: 2rem;
+      margin-left: auto;
+      margin-right: auto;
+    }
+  }
+
+  @media (prefers-reduced-motion: reduce) {
+    .teleinsular-boton {
+      transition: none;
+    }
+  }
+</style>
     </section>
 
     <!-- INVITACIÓN A PARTICIPAR -->
