@@ -574,14 +574,15 @@ h2 {
   margin-top: 8px;
 }
 
-/* TELEINSULAR: identidad propia, coherente con COINDI */
+
+/* TELEINSULAR: azul petróleo institucional, sin azul eléctrico */
+
 .teleinsular-home {
   position: relative;
   overflow: hidden;
   padding: 65px 0;
   background: #004B63 !important;
   color: #FFFFFF;
-  color: var(--blanco);
 }
 
 .teleinsular-contenido {
@@ -627,7 +628,7 @@ h2 {
 
 .teleinsular-texto h2 {
   margin: 0 0 18px;
-  color: var(--blanco);
+  color: #FFFFFF;
   font-size: clamp(2rem, 4vw, 3.2rem);
   line-height: 1.1;
   letter-spacing: -0.035em;
@@ -649,7 +650,6 @@ h2 {
   font-size: 0.93rem;
 }
 
-
 .teleinsular-boton {
   display: inline-flex;
   align-items: center;
@@ -661,9 +661,7 @@ h2 {
   background: var(--arena);
   color: var(--petroleo);
   font-weight: 800;
-  transition:
-    transform 0.2s ease,
-    background 0.2s ease;
+  transition: transform 0.2s ease, background 0.2s ease;
 }
 
 .teleinsular-boton:hover {
@@ -671,9 +669,8 @@ h2 {
   background: #FFD36F;
 }
 
-
 .teleinsular-boton:focus-visible {
-  outline: 3px solid var(--blanco);
+  outline: 3px solid #FFFFFF;
   outline-offset: 4px;
 }
 
