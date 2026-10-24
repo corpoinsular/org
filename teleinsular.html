@@ -5,9 +5,9 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <meta name="theme-color" content="#004B63">
-  <meta name="description" content="Revista INSU de Insular Digital. Ediciones digitales, literatura, cultura, memoria y contenidos de interés.">
+  <meta name="description" content="Revista INSU de Insular Digital: literatura, historia, mitos, leyendas, oficios, personajes y memoria cultural de Bocachica.">
 
-  <title>Revista INSU | Insular Digital</title>
+  <title>Revista INSU | Memoria y cultura de Bocachica</title>
 
   <link rel="stylesheet" href="insu.css">
   <link rel="icon" href="assets/logo-insu.png">
@@ -17,14 +17,7 @@
   <link href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@500;600;700;800&family=DM+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
 </head>
 
-<body>
-
-  <div class="topbar">
-    <div class="container topbar-inner">
-      <span>UNA INICIATIVA DE INSULAR DIGITAL</span>
-      <span>CULTURA · LITERATURA · TERRITORIO</span>
-    </div>
-  </div>
+<body id="inicio">
 
   <header class="site-header">
     <div class="container header-inner">
@@ -32,7 +25,7 @@
       <a class="brand" href="insu.html" aria-label="Revista INSU">
         <img
           src="assets/logo-insu.png"
-          alt="Logo de Revista INSU"
+          alt="Revista INSU"
           class="brand-logo">
       </a>
 
@@ -49,11 +42,11 @@
       </button>
 
       <nav class="main-nav" id="mainNav" aria-label="Navegación principal">
-        <a href="index.html">Inicio</a>
-        <a href="#ediciones">Revista</a>
-        <a href="#literatura">Literatura</a>
-        <a href="#memoria">Memoria y cultura</a>
+        <a href="index.html">Insular Digital</a>
+        <a href="#revista">La revista</a>
         <a href="#biblioteca">Biblioteca digital</a>
+        <a href="#literatura">Literatura</a>
+        <a href="#memoria">Memoria viva</a>
         <a href="#contacto" class="nav-contact">Contacto</a>
       </nav>
 
@@ -62,35 +55,36 @@
 
   <main>
 
-    <section class="hero" id="inicio">
+    <!-- PORTADA -->
+
+    <section class="hero" id="revista">
       <div class="container hero-grid">
 
         <div class="hero-content">
           <span class="eyebrow">
             <span class="eyebrow-line"></span>
-            REVISTA DIGITAL
+            CULTURA · HISTORIA · TERRITORIO
           </span>
 
           <h1>
-            NUESTRA GENTE
-            <span>TIENE MUCHO</span>
-            QUE CONTAR.
+            BOCACHICA,
+            <span>UN TERRITORIO</span>
+            QUE TIENE MUCHO QUE CONTAR.
           </h1>
 
           <p class="hero-description">
-            Un espacio editorial para compartir publicaciones,
-            literatura, cultura, memoria y contenidos que conectan
-            nuestras comunidades.
+            Historias, recuerdos, saberes y expresiones culturales
+            que nos permiten reconocer quiénes somos y preservar
+            la memoria de nuestras comunidades.
           </p>
 
           <div class="hero-actions">
-            <a href="#ediciones" class="btn btn-primary">
-              Explorar ediciones
-              <span aria-hidden="true">↗</span>
+            <a href="#biblioteca" class="btn btn-primary">
+              Explorar la biblioteca <span aria-hidden="true">↗</span>
             </a>
 
-            <a href="#biblioteca" class="btn btn-outline">
-              Biblioteca digital
+            <a href="#ediciones" class="btn btn-outline">
+              Leer Revista INSU
             </a>
           </div>
         </div>
@@ -99,17 +93,19 @@
           <div class="hero-art-frame">
             <img
               src="assets/portada-insu.jpg"
-              alt="Portada de Revista INSU">
+              alt="Imagen de portada de Revista INSU">
 
             <div class="hero-art-label">
               <span>INSU</span>
-              <span>INSULAR DIGITAL</span>
+              <span>MEMORIA · CULTURA · IDENTIDAD</span>
             </div>
           </div>
         </div>
 
       </div>
     </section>
+
+    <!-- PRESENTACIÓN -->
 
     <section class="intro-section">
       <div class="container intro-grid">
@@ -120,33 +116,36 @@
         </div>
 
         <div class="intro-content">
-          <h2>Historias que conectan <span>nuestro territorio.</span></h2>
+          <h2>Las historias de nuestra gente <span>merecen permanecer.</span></h2>
 
           <p>
-            INSU es la revista digital de Insular Digital, un espacio
-            dedicado a compartir publicaciones y contenidos de interés
-            relacionados con nuestra gente, la cultura, la literatura
-            y la memoria de las comunidades.
+            INSU es una iniciativa editorial de Insular Digital
+            que abre un espacio para compartir publicaciones,
+            expresiones literarias, recuerdos y conocimientos
+            relacionados con Bocachica y su gente.
           </p>
 
           <p>
-            Su biblioteca reúne las ediciones de la revista y otros
-            materiales digitales para su consulta y difusión.
+            La revista y su biblioteca digital buscan contribuir
+            a la conservación y difusión de la memoria histórica,
+            cultural y comunitaria del territorio.
           </p>
         </div>
 
       </div>
     </section>
 
+    <!-- EDICIONES DE LA REVISTA -->
+
     <section class="content-section editions-section" id="ediciones">
       <div class="container">
 
         <div class="section-heading">
           <div>
-            <span class="section-kicker">ARCHIVO EDITORIAL</span>
-            <h2>Nuestras <span>ediciones.</span></h2>
+            <span class="section-kicker">PUBLICACIONES EDITORIALES</span>
+            <h2>Revista <span>INSU.</span></h2>
             <p>
-              Consulta las publicaciones de Revista INSU.
+              Consulta las ediciones digitales de nuestra revista.
             </p>
           </div>
 
@@ -156,25 +155,34 @@
         <div class="editions-grid">
 
           <article class="edition-card">
+
             <a
               class="edition-cover"
               href="documentos/insu/insu-edicion-01.pdf"
               target="_blank"
               rel="noopener noreferrer"
-              aria-label="Leer la primera edición de INSU">
+              aria-label="Abrir edición digital de Revista INSU">
 
-              <img
-                src="assets/insu-edicion-01.jpg"
-                alt="Portada de la primera edición de INSU"
-                loading="lazy">
+              <div class="edition-cover-art">
+                <span class="edition-cover-kicker">INSULAR DIGITAL PRESENTA</span>
+                <strong>INSU</strong>
+                <span>REVISTA DIGITAL</span>
+                <span class="edition-cover-line"></span>
+                <span class="edition-cover-bottom">CULTURA · LITERATURA · TERRITORIO</span>
+              </div>
+
             </a>
 
             <div class="edition-info">
               <div class="edition-meta">
-                <span>EDICIÓN 01</span>
+                <span>EDICIÓN DIGITAL</span>
               </div>
 
-              <h3>Temas de interés</h3>
+              <h3>Revista INSU</h3>
+
+              <p>
+                Lee la edición digital de nuestra revista.
+              </p>
 
               <div class="edition-actions">
                 <a
@@ -191,12 +199,256 @@
                 </a>
               </div>
             </div>
+
           </article>
 
         </div>
 
       </div>
     </section>
+
+    <!-- BIBLIOTECA DIGITAL -->
+
+    <section class="content-section library-section" id="biblioteca">
+      <div class="container">
+
+        <div class="section-heading">
+          <div>
+            <span class="section-kicker">ARCHIVO CULTURAL Y COMUNITARIO</span>
+            <h2>Biblioteca <span>digital.</span></h2>
+            <p>
+              Un recorrido por la historia, las tradiciones,
+              los saberes y las memorias de Bocachica.
+            </p>
+          </div>
+
+          <span class="section-number">03</span>
+        </div>
+
+        <div class="literature-grid library-categories">
+
+          <a class="literature-card library-category" href="#historia">
+            <span class="literature-category">ARCHIVO HISTÓRICO</span>
+            <div class="literature-icon" aria-hidden="true">⌂</div>
+            <h3>Historia de Bocachica</h3>
+            <p>
+              Acontecimientos, lugares, documentos y transformaciones
+              de nuestro territorio.
+            </p>
+            <span class="text-link">Explorar categoría ↗</span>
+          </a>
+
+          <a class="literature-card library-category" href="#mitos">
+            <span class="literature-category">TRADICIÓN ORAL</span>
+            <div class="literature-icon" aria-hidden="true">✳</div>
+            <h3>Mitos y leyendas</h3>
+            <p>
+              Relatos, creencias y narraciones transmitidas
+              de generación en generación.
+            </p>
+            <span class="text-link">Explorar categoría ↗</span>
+          </a>
+
+          <a class="literature-card library-category" href="#oficios">
+            <span class="literature-category">SABERES LOCALES</span>
+            <div class="literature-icon" aria-hidden="true">⚒</div>
+            <h3>Oficios y saberes</h3>
+            <p>
+              Prácticas tradicionales, conocimientos cotidianos
+              y formas de vida de la comunidad.
+            </p>
+            <span class="text-link">Explorar categoría ↗</span>
+          </a>
+
+          <a class="literature-card library-category" href="#galerias">
+            <span class="literature-category">FOTOGRAFÍA</span>
+            <div class="literature-icon" aria-hidden="true">▧</div>
+            <h3>Galerías del ayer</h3>
+            <p>
+              Fotografías antiguas, escenas de la vida cotidiana
+              y recuerdos del territorio.
+            </p>
+            <span class="text-link">Explorar categoría ↗</span>
+          </a>
+
+          <a class="literature-card library-category" href="#personajes">
+            <span class="literature-category">MEMORIA HUMANA</span>
+            <div class="literature-icon" aria-hidden="true">◎</div>
+            <h3>Personajes de Bocachica</h3>
+            <p>
+              Historias de vida, testimonios y perfiles de personas
+              que forman parte de la memoria comunitaria.
+            </p>
+            <span class="text-link">Explorar categoría ↗</span>
+          </a>
+
+          <a class="literature-card library-category" href="#documentos">
+            <span class="literature-category">CONSULTA DIGITAL</span>
+            <div class="literature-icon" aria-hidden="true">▤</div>
+            <h3>Documentos y publicaciones</h3>
+            <p>
+              Revistas, textos y materiales de interés histórico,
+              cultural y educativo.
+            </p>
+            <span class="text-link">Explorar categoría ↗</span>
+          </a>
+
+        </div>
+
+      </div>
+    </section>
+
+    <!-- HISTORIA -->
+
+    <section class="content-section archive-section" id="historia">
+      <div class="container archive-grid">
+
+        <div class="archive-heading">
+          <span class="section-kicker">01 · MEMORIA HISTÓRICA</span>
+          <h2>Historia de <span>Bocachica.</span></h2>
+        </div>
+
+        <div class="archive-description">
+          <p>
+            Un espacio dedicado a preservar y compartir información
+            sobre el pasado de Bocachica: sus lugares, acontecimientos,
+            transformaciones y documentos históricos.
+          </p>
+          <p>
+            Los contenidos se incorporarán progresivamente,
+            con sus fuentes y referencias cuando estén disponibles.
+          </p>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- MITOS Y LEYENDAS -->
+
+    <section class="content-section archive-section archive-alt" id="mitos">
+      <div class="container archive-grid">
+
+        <div class="archive-heading">
+          <span class="section-kicker">02 · TRADICIÓN ORAL</span>
+          <h2>Mitos y <span>leyendas.</span></h2>
+        </div>
+
+        <div class="archive-description">
+          <p>
+            Relatos populares, leyendas, creencias y narraciones
+            que hacen parte de la tradición oral y de la memoria
+            de las comunidades.
+          </p>
+          <p>
+            Cada relato podrá identificar a su narrador o fuente
+            y distinguir la tradición oral de los hechos documentados.
+          </p>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- OFICIOS Y SABERES -->
+
+    <section class="content-section archive-section" id="oficios">
+      <div class="container archive-grid">
+
+        <div class="archive-heading">
+          <span class="section-kicker">03 · CONOCIMIENTOS LOCALES</span>
+          <h2>Oficios y <span>saberes.</span></h2>
+        </div>
+
+        <div class="archive-description">
+          <p>
+            Conocimientos tradicionales, prácticas, oficios y experiencias
+            que ayudan a comprender la vida cotidiana y la identidad
+            cultural de Bocachica.
+          </p>
+          <p>
+            Un espacio para reconocer los saberes de quienes los practican
+            y los transmiten a nuevas generaciones.
+          </p>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- GALERÍAS DEL AYER -->
+
+    <section class="content-section archive-section archive-alt" id="galerias">
+      <div class="container archive-grid">
+
+        <div class="archive-heading">
+          <span class="section-kicker">04 · MEMORIA FOTOGRÁFICA</span>
+          <h2>Galerías <span>del ayer.</span></h2>
+        </div>
+
+        <div class="archive-description">
+          <p>
+            Fotografías antiguas, imágenes familiares, lugares,
+            celebraciones y escenas que permiten recordar
+            cómo ha cambiado el territorio.
+          </p>
+          <p>
+            Las imágenes podrán acompañarse de fechas aproximadas,
+            descripciones y datos sobre su procedencia.
+          </p>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- PERSONAJES -->
+
+    <section class="content-section archive-section" id="personajes">
+      <div class="container archive-grid">
+
+        <div class="archive-heading">
+          <span class="section-kicker">05 · PERSONAS E HISTORIAS</span>
+          <h2>Personajes y <span>memoria viva.</span></h2>
+        </div>
+
+        <div class="archive-description">
+          <p>
+            Perfiles, entrevistas y testimonios de personas cuyas
+            experiencias, conocimientos o participación hacen parte
+            de la memoria social y cultural de Bocachica.
+          </p>
+          <p>
+            Las historias se publicarán respetando la identidad,
+            la dignidad y las autorizaciones correspondientes.
+          </p>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- DOCUMENTOS -->
+
+    <section class="content-section archive-section archive-alt" id="documentos">
+      <div class="container archive-grid">
+
+        <div class="archive-heading">
+          <span class="section-kicker">06 · ARCHIVO EDITORIAL</span>
+          <h2>Documentos y <span>publicaciones.</span></h2>
+        </div>
+
+        <div class="archive-description">
+          <p>
+            Un espacio para reunir ediciones de INSU, textos,
+            documentos de consulta y otros materiales digitales
+            relacionados con la cultura, la historia y la educación.
+          </p>
+          <p>
+            Los documentos se incorporarán con información sobre
+            su título, origen y condiciones de consulta.
+          </p>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- LITERATURA -->
 
     <section class="content-section literature-section" id="literatura">
       <div class="container">
@@ -206,11 +458,12 @@
             <span class="section-kicker">LECTURA Y CREACIÓN</span>
             <h2>Literatura <span>digital.</span></h2>
             <p>
-              Obras literarias y textos para leer, descubrir y compartir.
+              Un espacio para la palabra escrita, la imaginación
+              y las distintas formas de contar nuestras experiencias.
             </p>
           </div>
 
-          <span class="section-number">03</span>
+          <span class="section-number">04</span>
         </div>
 
         <div class="literature-grid">
@@ -220,7 +473,8 @@
             <div class="literature-icon" aria-hidden="true">✳</div>
             <h3>Poemas</h3>
             <p>
-              Versos y expresiones literarias de distintas voces y autores.
+              Expresiones poéticas, sentimientos e imágenes
+              que encuentran su lugar en la palabra.
             </p>
           </article>
 
@@ -229,7 +483,8 @@
             <div class="literature-icon" aria-hidden="true">¶</div>
             <h3>Cuentos y relatos</h3>
             <p>
-              Narraciones y relatos para explorar nuevas experiencias.
+              Narraciones para imaginar, recordar y descubrir
+              otras experiencias.
             </p>
           </article>
 
@@ -238,7 +493,8 @@
             <div class="literature-icon" aria-hidden="true">✎</div>
             <h3>Crónicas y ensayos</h3>
             <p>
-              Textos que abordan ideas, experiencias, cultura y sociedad.
+              Textos que exploran ideas, experiencias,
+              cultura y sociedad.
             </p>
           </article>
 
@@ -247,13 +503,15 @@
       </div>
     </section>
 
+    <!-- MEMORIA VIVA -->
+
     <section class="content-section memory-section" id="memoria">
       <div class="container memory-grid">
 
         <div class="memory-visual">
           <img
             src="assets/memoria-insular.jpg"
-            alt="Cultura y memoria de las comunidades insulares"
+            alt="Imagen relacionada con la memoria y la cultura insular"
             loading="lazy">
 
           <span class="memory-stamp">MEMORIA Y TERRITORIO</span>
@@ -265,50 +523,20 @@
           <h2>La memoria vive en nuestras historias.</h2>
 
           <p>
-            Un espacio para compartir contenidos relacionados con
-            las tradiciones, los saberes, la identidad y las experiencias
-            de nuestras comunidades.
+            Conservar los recuerdos, escuchar las voces de la comunidad
+            y reconocer los saberes tradicionales es una forma de
+            mantener viva la relación entre la gente y su territorio.
           </p>
 
           <a href="#biblioteca" class="text-link">
-            Explorar biblioteca <span>↗</span>
+            Recorrer la biblioteca <span aria-hidden="true">↗</span>
           </a>
         </div>
 
       </div>
     </section>
 
-    <section class="content-section library-section" id="biblioteca">
-      <div class="container">
-
-        <div class="section-heading">
-          <div>
-            <span class="section-kicker">PUBLICACIONES Y RECURSOS</span>
-            <h2>Biblioteca <span>digital.</span></h2>
-            <p>
-              Un espacio para consultar publicaciones y materiales
-              culturales, educativos y de interés.
-            </p>
-          </div>
-
-          <span class="section-number">05</span>
-        </div>
-
-        <div class="library-empty">
-          <div class="library-empty-icon" aria-hidden="true">
-            <span>+</span>
-          </div>
-
-          <h3>Lecturas para descubrir y compartir.</h3>
-
-          <p>
-            Publicaciones, documentos y recursos digitales
-            organizados para facilitar su consulta.
-          </p>
-        </div>
-
-      </div>
-    </section>
+    <!-- CONTACTO -->
 
     <section class="participate-section">
       <div class="container participate-inner">
@@ -319,15 +547,15 @@
           <h2>Las historias nos <span>conectan.</span></h2>
 
           <p>
-            Compartimos contenidos que reconocen nuestra gente,
-            cultura y territorio.
+            ¿Tienes fotografías antiguas, documentos, relatos
+            o recuerdos de Bocachica para compartir con la comunidad?
           </p>
         </div>
 
         <a
           class="btn btn-light"
-          href="mailto:corpoindicomunicaciones@gmail.com?subject=Revista%20INSU">
-          Contactar al equipo ↗
+          href="mailto:corpoindicomunicaciones@gmail.com?subject=Memoria%20y%20cultura%20-%20INSU">
+          Compartir una historia ↗
         </a>
 
       </div>
@@ -341,8 +569,9 @@
           <h2>Conectemos.</h2>
 
           <p>
-            Para consultas y propuestas relacionadas con Revista INSU,
-            comunícate con el área de comunicaciones de Insular Digital.
+            Para consultas, propuestas editoriales o aportes a la memoria
+            cultural de Bocachica, comunícate con el área de comunicaciones
+            de Insular Digital.
           </p>
         </div>
 
@@ -362,11 +591,13 @@
 
   </main>
 
+  <!-- PIE DE PÁGINA INSTITUCIONAL -->
+
   <footer class="site-footer">
     <div class="container footer-main">
 
       <div class="footer-brand">
-        <a href="index.html" aria-label="Ir al inicio de Insular Digital">
+        <a href="index.html" aria-label="Inicio de Insular Digital">
           <img
             src="assets/logo-coindi-oscuro.png"
             alt="Corporación Insular Digital"
@@ -383,11 +614,11 @@
 
       <div class="footer-links">
         <span class="footer-heading">NAVEGACIÓN</span>
-        <a href="index.html">Inicio</a>
-        <a href="#ediciones">Revista INSU</a>
-        <a href="#literatura">Literatura digital</a>
-        <a href="#memoria">Memoria y territorio</a>
+        <a href="index.html">Insular Digital</a>
+        <a href="#revista">Revista INSU</a>
         <a href="#biblioteca">Biblioteca digital</a>
+        <a href="#literatura">Literatura digital</a>
+        <a href="#memoria">Memoria viva</a>
       </div>
 
       <div class="footer-links">
@@ -400,17 +631,22 @@
         <span class="footer-heading social-heading">SÍGUENOS</span>
 
         <div class="socials">
-          <a href="https://www.facebook.com/insulardigitaloficial"
-             target="_blank" rel="noopener noreferrer"
-             aria-label="Facebook de Insular Digital">
+
+          <a
+            href="https://www.facebook.com/insulardigitaloficial"
+            target="_blank"
+            rel="noopener noreferrer"
+            aria-label="Facebook de Insular Digital">
             <svg viewBox="0 0 24 24" aria-hidden="true">
               <path d="M13.5 21v-8.2h2.8l.4-3.2h-3.2V7.5c0-.9.3-1.6 1.6-1.6h1.7V3.1c-.8-.1-1.7-.2-2.6-.2-2.6 0-4.4 1.6-4.4 4.5v2.2H7v3.2h2.8V21z"/>
             </svg>
           </a>
 
-          <a href="https://www.instagram.com/insulardigitaloficial/"
-             target="_blank" rel="noopener noreferrer"
-             aria-label="Instagram de Insular Digital">
+          <a
+            href="https://www.instagram.com/insulardigitaloficial/"
+            target="_blank"
+            rel="noopener noreferrer"
+            aria-label="Instagram de Insular Digital">
             <svg viewBox="0 0 24 24" aria-hidden="true">
               <rect x="3" y="3" width="18" height="18" rx="5" fill="none" stroke="currentColor" stroke-width="2"/>
               <circle cx="12" cy="12" r="4" fill="none" stroke="currentColor" stroke-width="2"/>
@@ -418,22 +654,27 @@
             </svg>
           </a>
 
-          <a href="https://www.youtube.com/@insulardigitaloficial"
-             target="_blank" rel="noopener noreferrer"
-             aria-label="YouTube de Insular Digital">
+          <a
+            href="https://www.youtube.com/@insulardigitaloficial"
+            target="_blank"
+            rel="noopener noreferrer"
+            aria-label="YouTube de Insular Digital">
             <svg viewBox="0 0 24 24" aria-hidden="true">
               <path d="M23 7a3 3 0 0 0-2.1-2.1C19 4.4 12 4.4 12 4.4s-7 0-8.9.5A3 3 0 0 0 1 7C.5 8.9.5 12 .5 12s0 3.1.5 5a3 3 0 0 0 2.1 2.1c1.9.5 8.9.5 8.9.5s7 0 8.9-.5A3 3 0 0 0 23 17c.5-1.9.5-5 .5-5s0-3.1-.5-5z"/>
               <path d="m9.5 15.5 6-3.5-6-3.5z" fill="#004B63"/>
             </svg>
           </a>
 
-          <a href="https://www.tiktok.com/@insulardigitaloficial"
-             target="_blank" rel="noopener noreferrer"
-             aria-label="TikTok de Insular Digital">
+          <a
+            href="https://www.tiktok.com/@insulardigitaloficial"
+            target="_blank"
+            rel="noopener noreferrer"
+            aria-label="TikTok de Insular Digital">
             <svg viewBox="0 0 24 24" aria-hidden="true">
               <path d="M19.6 7.2a6.5 6.5 0 0 1-4.1-1.5v9.1a6 6 0 1 1-6-6c.4 0 .8 0 1.2.1v3.3a2.7 2.7 0 1 0 1.5 2.4V2.5h3.3c.3 2.3 1.9 4 4.1 4.3z"/>
             </svg>
           </a>
+
         </div>
       </div>
 
