@@ -1,1 +1,545 @@
 
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <meta name="theme-color" content="#004B63">
+  <meta name="description" content="INSU, la revista digital de Insular Digital. Ediciones, literatura, memoria, cultura y contenidos de interés de nuestras comunidades.">
+
+  <title>Revista INSU | Insular Digital</title>
+
+  <link rel="stylesheet" href="insu.css">
+  <link rel="icon" href="assets/ahorasi.png">
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@500;600;700;800&family=DM+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
+</head>
+
+<body>
+
+  <!-- BARRA SUPERIOR -->
+  <div class="topbar">
+    <div class="container topbar-inner">
+      <span>UNA INICIATIVA DE INSULAR DIGITAL</span>
+      <span>LECTURA · CULTURA · TERRITORIO</span>
+    </div>
+  </div>
+
+  <!-- ENCABEZADO Y NAVEGACIÓN -->
+  <header class="site-header">
+    <div class="container header-inner">
+
+      <a class="brand" href="insu.html" aria-label="Revista INSU, página principal">
+        <span class="brand-name">IN<span>SU</span></span>
+        <span class="brand-subtitle">LA REVISTA DE INSULAR DIGITAL</span>
+      </a>
+
+      <button
+        class="menu-toggle"
+        id="menuToggle"
+        type="button"
+        aria-label="Abrir menú"
+        aria-expanded="false"
+        aria-controls="mainNav">
+        <span></span>
+        <span></span>
+        <span></span>
+      </button>
+
+      <nav class="main-nav" id="mainNav" aria-label="Navegación principal">
+        <a href="index.html">Inicio</a>
+        <a href="#ediciones">Ediciones</a>
+        <a href="#literatura">Literatura</a>
+        <a href="#memoria">Memoria</a>
+        <a href="#biblioteca">Biblioteca</a>
+        <a href="#contacto" class="nav-contact">Contacto</a>
+      </nav>
+
+    </div>
+  </header>
+
+  <main>
+
+    <!-- PORTADA EDITORIAL -->
+    <section class="hero" id="inicio">
+      <div class="container hero-grid">
+
+        <div class="hero-content">
+          <span class="eyebrow">
+            <span class="eyebrow-line"></span>
+            UNA REVISTA PARA CONTAR LO NUESTRO
+          </span>
+
+          <h1>
+            NUESTRA GENTE
+            <span>TIENE MUCHO</span>
+            QUE CONTAR.
+          </h1>
+
+          <p class="hero-description">
+            Historias, talentos, cultura, literatura y memoria.
+            Un espacio para descubrir las voces y las ideas que
+            nacen en nuestras comunidades y merecen llegar más lejos.
+          </p>
+
+          <div class="hero-actions">
+            <a href="#ediciones" class="btn btn-primary">
+              Explorar ediciones
+              <span aria-hidden="true">↗</span>
+            </a>
+
+            <a href="#literatura" class="btn btn-outline">
+              Explorar biblioteca
+            </a>
+          </div>
+
+          <div class="hero-note">
+            <span class="hero-note-dot"></span>
+            Historias que conectan nuestro territorio.
+          </div>
+        </div>
+
+        <div class="hero-art">
+          <div class="hero-art-frame">
+            <img
+              src="assets/portada-insu.jpg"
+              alt="Portada editorial de Revista INSU"
+              onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';">
+
+            <div class="image-placeholder">
+              <span>INSU</span>
+              <p>Historias que merecen ser contadas.</p>
+              <small>Espacio para la imagen principal</small>
+            </div>
+
+            <div class="hero-art-label">
+              <span>INSU</span>
+              <span>INSULAR DIGITAL</span>
+            </div>
+          </div>
+
+          <div class="hero-number">01</div>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- PRESENTACIÓN -->
+    <section class="intro-section">
+      <div class="container intro-grid">
+
+        <div class="section-index">
+          <span>01 /</span>
+          <span>QUIÉNES SOMOS</span>
+        </div>
+
+        <div class="intro-content">
+          <h2>Un espacio para <span>contar lo nuestro.</span></h2>
+
+          <p>
+            INSU es la revista digital de Insular Digital, creada para
+            compartir historias de nuestra gente, visibilizar talentos,
+            reconocer iniciativas y celebrar aquello que nos identifica
+            como comunidad.
+          </p>
+
+          <p>
+            También busca preservar y difundir nuestra cultura, nuestros
+            saberes, tradiciones y las nuevas ideas que construyen el
+            presente y el futuro de nuestras comunidades.
+          </p>
+
+          <div class="intro-signature">
+            <span class="signature-line"></span>
+            <span>INSU — Nuestra gente tiene mucho que contar.</span>
+          </div>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- EDICIONES -->
+    <section class="content-section editions-section" id="ediciones">
+      <div class="container">
+
+        <div class="section-heading">
+          <div>
+            <span class="section-kicker">EL ARCHIVO EDITORIAL</span>
+            <h2>Nuestras <span>ediciones.</span></h2>
+            <p>
+              Cada edición guarda una parte de nuestras historias.
+              Explora las publicaciones de INSU.
+            </p>
+          </div>
+
+          <span class="section-number">02</span>
+        </div>
+
+        <div class="editions-grid">
+
+          <!-- EDICIÓN 01 -->
+          <article class="edition-card">
+            <a
+              class="edition-cover"
+              href="documentos/insu/insu-edicion-01.pdf"
+              target="_blank"
+              rel="noopener noreferrer"
+              aria-label="Abrir la primera edición de INSU">
+
+              <img
+                src="assets/insu-edicion-01.jpg"
+                alt="Portada de INSU, edición 01"
+                loading="lazy"
+                onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';">
+
+              <div class="cover-placeholder">
+                <span class="cover-brand">IN<span>SU</span></span>
+                <span class="cover-rule"></span>
+                <strong>TEMAS DE INTERÉS</strong>
+                <span class="cover-caption">EDICIÓN 01</span>
+                <small>La revista de Insular Digital</small>
+              </div>
+
+              <span class="cover-open">ABRIR EDICIÓN ↗</span>
+            </a>
+
+            <div class="edition-info">
+              <div class="edition-meta">
+                <span>EDICIÓN 01</span>
+                <span>29 AGO. 2026</span>
+              </div>
+
+              <h3>Temas de interés</h3>
+
+              <p>
+                Historias que conectan nuestra gente, nuestra cultura
+                y nuestro territorio.
+              </p>
+
+              <div class="edition-actions">
+                <a
+                  href="documentos/insu/insu-edicion-01.pdf"
+                  target="_blank"
+                  rel="noopener noreferrer">
+                  Leer revista ↗
+                </a>
+
+                <a
+                  href="documentos/insu/insu-edicion-01.pdf"
+                  download>
+                  Descargar PDF ↓
+                </a>
+              </div>
+            </div>
+          </article>
+
+          <!-- PLANTILLA PARA FUTURAS EDICIONES -->
+          <article class="edition-coming">
+            <div class="coming-art">
+              <span class="coming-brand">IN<span>SU</span></span>
+              <span class="coming-line"></span>
+              <span class="coming-text">NUEVAS HISTORIAS</span>
+              <span class="coming-number">02</span>
+            </div>
+
+            <div class="coming-info">
+              <span class="section-kicker">ARCHIVO EDITORIAL</span>
+              <h3>Más historias por contar.</h3>
+              <p>
+                Aquí podrás incorporar las próximas ediciones
+                cuando estén publicadas.
+              </p>
+            </div>
+          </article>
+
+        </div>
+
+        <p class="content-disclaimer">
+          Las publicaciones se incorporarán a medida que estén disponibles.
+        </p>
+
+      </div>
+    </section>
+
+    <!-- LITERATURA DIGITAL -->
+    <section class="content-section literature-section" id="literatura">
+      <div class="container">
+
+        <div class="section-heading">
+          <div>
+            <span class="section-kicker">PALABRAS QUE PERMANECEN</span>
+            <h2>Literatura <span>digital.</span></h2>
+            <p>
+              Un espacio para descubrir y compartir poemas, cuentos,
+              crónicas, relatos y otras obras literarias.
+            </p>
+          </div>
+
+          <span class="section-number">03</span>
+        </div>
+
+        <div class="literature-banner">
+          <div class="literature-banner-content">
+            <span class="literature-label">BIBLIOTECA LITERARIA</span>
+
+            <h3>Las palabras también cuentan nuestra historia.</h3>
+
+            <p>
+              Literatura, imaginación y voces que merecen ser leídas.
+              Un lugar para acercarnos a los libros y a sus autores.
+            </p>
+          </div>
+
+          <div class="literature-symbol" aria-hidden="true">“</div>
+        </div>
+
+        <div class="literature-grid">
+
+          <article class="literature-card">
+            <span class="literature-category">01 · POESÍA</span>
+            <div class="literature-icon" aria-hidden="true">✳</div>
+            <h3>Poemas</h3>
+            <p>
+              Versos, emociones y miradas sobre la vida, la identidad
+              y el territorio.
+            </p>
+            <span class="availability-note">Espacio para publicaciones</span>
+          </article>
+
+          <article class="literature-card">
+            <span class="literature-category">02 · NARRATIVA</span>
+            <div class="literature-icon" aria-hidden="true">¶</div>
+            <h3>Cuentos y relatos</h3>
+            <p>
+              Historias breves, ficción y relatos que invitan
+              a descubrir otros mundos.
+            </p>
+            <span class="availability-note">Espacio para publicaciones</span>
+          </article>
+
+          <article class="literature-card">
+            <span class="literature-category">03 · CRÓNICA</span>
+            <div class="literature-icon" aria-hidden="true">✎</div>
+            <h3>Crónicas y ensayos</h3>
+            <p>
+              Textos que exploran experiencias, cultura, comunidad
+              y distintas formas de comprender nuestro entorno.
+            </p>
+            <span class="availability-note">Espacio para publicaciones</span>
+          </article>
+
+        </div>
+
+        <p class="content-disclaimer">
+          Las categorías son espacios de organización. Los textos
+          se añadirán cuando estén disponibles y autorizados para publicar.
+        </p>
+
+      </div>
+    </section>
+
+    <!-- MEMORIA Y TERRITORIO -->
+    <section class="content-section memory-section" id="memoria">
+      <div class="container memory-grid">
+
+        <div class="memory-visual">
+          <img
+            src="assets/memoria-insular.jpg"
+            alt="Memoria cultural de las comunidades insulares"
+            loading="lazy"
+            onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';">
+
+          <div class="memory-placeholder">
+            <span>MEMORIA</span>
+            <p>Historias que nos conectan con nuestras raíces.</p>
+          </div>
+
+          <span class="memory-stamp">NUESTRAS RAÍCES</span>
+        </div>
+
+        <div class="memory-content">
+          <span class="section-kicker">04 / IDENTIDAD Y CULTURA</span>
+
+          <h2>La memoria de un territorio vive en su gente.</h2>
+
+          <p>
+            Las tradiciones, los saberes, los relatos y las experiencias
+            comunitarias forman parte de aquello que somos.
+          </p>
+
+          <p>
+            INSU abre este espacio para reunir contenidos que contribuyan
+            a reconocer y preservar la memoria cultural de nuestras
+            comunidades.
+          </p>
+
+          <a href="#biblioteca" class="text-link">
+            Explorar recursos <span>↗</span>
+          </a>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- BIBLIOTECA DE INTERÉS -->
+    <section class="content-section library-section" id="biblioteca">
+      <div class="container">
+
+        <div class="section-heading">
+          <div>
+            <span class="section-kicker">CONOCIMIENTO PARA COMPARTIR</span>
+            <h2>Biblioteca <span>de interés.</span></h2>
+            <p>
+              Publicaciones y materiales culturales, educativos
+              y digitales seleccionados para la comunidad.
+            </p>
+          </div>
+
+          <span class="section-number">05</span>
+        </div>
+
+        <div class="library-empty">
+          <div class="library-empty-icon">
+            <span>+</span>
+          </div>
+
+          <h3>Un lugar para descubrir y aprender.</h3>
+
+          <p>
+            Aquí reuniremos documentos, guías, libros digitales
+            y otros recursos de interés, con sus respectivas
+            fuentes y permisos de publicación.
+          </p>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- PARTICIPACIÓN -->
+    <section class="participate-section">
+      <div class="container participate-inner">
+
+        <div>
+          <span class="section-kicker">LAS HISTORIAS TAMBIÉN NACEN CONTIGO</span>
+
+          <h2>¿Tienes algo que <span>contar?</span></h2>
+
+          <p>
+            INSU busca visibilizar historias, talentos, iniciativas
+            y contenidos culturales de nuestras comunidades.
+          </p>
+        </div>
+
+        <a
+          class="btn btn-light"
+          href="mailto:corpoindicomunicaciones@gmail.com?subject=Propuesta%20de%20contenido%20para%20INSU">
+          Proponer un contenido ↗
+        </a>
+
+      </div>
+    </section>
+
+    <!-- CONTACTO -->
+    <section class="contact-section" id="contacto">
+      <div class="container contact-grid">
+
+        <div>
+          <span class="section-kicker">HABLEMOS</span>
+          <h2>Conectemos nuestras historias.</h2>
+          <p>
+            Para propuestas editoriales, contenidos y consultas
+            sobre Revista INSU, puedes comunicarte con Insular Digital.
+          </p>
+        </div>
+
+        <div class="contact-details">
+          <span class="contact-label">CORREO DE COMUNICACIONES</span>
+          <a href="mailto:corpoindicomunicaciones@gmail.com">
+            corpoindicomunicaciones@gmail.com
+          </a>
+
+          <span class="contact-label">ORGANIZACIÓN</span>
+          <span>Corporación Insular Digital · COINDI</span>
+        </div>
+
+      </div>
+    </section>
+
+  </main>
+
+  <!-- PIE DE PÁGINA -->
+  <footer class="site-footer">
+    <div class="container footer-main">
+
+      <div class="footer-brand">
+        <a href="insu.html" class="footer-logo">
+          IN<span>SU</span>
+        </a>
+
+        <p>
+          Nuestra gente tiene mucho que contar.
+        </p>
+      </div>
+
+      <div class="footer-links">
+        <span class="footer-heading">EXPLORAR</span>
+        <a href="index.html">Inicio</a>
+        <a href="#ediciones">Ediciones INSU</a>
+        <a href="#literatura">Literatura digital</a>
+        <a href="#memoria">Memoria y territorio</a>
+        <a href="#biblioteca">Biblioteca de interés</a>
+      </div>
+
+      <div class="footer-links">
+        <span class="footer-heading">INSULAR DIGITAL</span>
+        <a href="mailto:corpoindicomunicaciones@gmail.com">Contacto</a>
+        <a href="https://www.facebook.com/teleinsular.co"
+           target="_blank" rel="noopener noreferrer">Facebook</a>
+        <a href="https://www.instagram.com/teleinsular.co/"
+           target="_blank" rel="noopener noreferrer">Instagram</a>
+        <a href="https://www.youtube.com/@teleinsular.co"
+           target="_blank" rel="noopener noreferrer">YouTube</a>
+      </div>
+
+    </div>
+
+    <div class="container footer-bottom">
+      <span>© <span id="currentYear"></span> Insular Digital.</span>
+      <span>Una iniciativa de Corporación Insular Digital.</span>
+      <a href="#inicio">Volver arriba ↑</a>
+    </div>
+  </footer>
+
+  <!-- FUNCIONES DEL MENÚ -->
+  <script>
+    const menuToggle = document.getElementById("menuToggle");
+    const mainNav = document.getElementById("mainNav");
+
+    menuToggle.addEventListener("click", function () {
+      const isOpen = mainNav.classList.toggle("open");
+
+      menuToggle.setAttribute("aria-expanded", String(isOpen));
+      menuToggle.setAttribute(
+        "aria-label",
+        isOpen ? "Cerrar menú" : "Abrir menú"
+      );
+    });
+
+    mainNav.querySelectorAll("a").forEach(function (link) {
+      link.addEventListener("click", function () {
+        mainNav.classList.remove("open");
+        menuToggle.setAttribute("aria-expanded", "false");
+        menuToggle.setAttribute("aria-label", "Abrir menú");
+      });
+    });
+
+    document.getElementById("currentYear").textContent =
+      new Date().getFullYear();
+  </script>
+
+</body>
+</html>
+
