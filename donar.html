@@ -1,308 +1,544 @@
+
 <!DOCTYPE html>
 <html lang="es">
-
 <head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Donaciones | Corporación Insular Digital - COINDI</title>
 
-<title>Donar | Corporación Insular Digital</title>
+  <meta
+    name="description"
+    content="Apoya a la Corporación Insular Digital — COINDI. Contribuye a iniciativas de inclusión digital, creación audiovisual, comunicación comunitaria y transformación social desde el territorio."
+  >
 
-<meta name="description"
-content="Apoya los procesos de comunicación comunitaria, cultura e innovación impulsados por la Corporación Insular Digital.">
+  <meta name="theme-color" content="#0A2EA8">
 
-<link rel="stylesheet" href="donar.css">
-
-<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
-
-<link rel="stylesheet"
-href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
-
+  <link rel="stylesheet" href="styles.css">
+  <link rel="stylesheet" href="donar.css?v=1">
 </head>
 
-<body>
+<body class="donaciones-page">
 
-<!-- ================= NAV ================= -->
+  <!-- ENCABEZADO -->
+  <header class="site-header">
+    <div class="container header-inner">
 
-<header class="navbar">
-
-  <div class="nav-flex">
-
-    <a href="index.html" class="logo">
-      <img src="assets/ahorasi.png" alt="Corporación Insular Digital">
-    </a>
-
-    <nav>
-      <a href="index.html">Inicio</a>
-      <a href="conocenos.html">Conócenos</a>
-      <a href="programas.html">Programa</a>
-      <a href="colectivo.html">Colectivo</a>
-      <a href="donar.html" class="active">Donar</a>
-    </nav>
-
-  </div>
-
-</header>
-
-<!-- ================= HERO ================= -->
-
-<section class="hero-donar">
-
-  <div class="hero-overlay"></div>
-
-  <div class="hero-content">
-
-    <span class="hero-tag">
-      APOYA NUESTRA MISIÓN
-    </span>
-
-    <h1>
-      Tu aporte fortalece la comunicación comunitaria
-    </h1>
-
-    <p>
-      Cada contribución nos ayuda a producir contenidos,
-      impulsar procesos culturales, fortalecer el tejido social
-      y amplificar las voces de nuestras comunidades.
-    </p>
-
-    <div class="hero-buttons">
-
-      <a href="#formas-donar" class="btn-primary">
-        Donar Ahora
+      <a class="brand" href="index.html" aria-label="Volver al inicio de COINDI">
+        <img
+          src="assets/logo.png"
+          alt="Corporación Insular Digital - COINDI"
+          class="brand-logo"
+        >
       </a>
 
-      <a href="#impacto" class="btn-secondary">
-        Ver Impacto
-      </a>
+      <button
+        class="menu-toggle"
+        type="button"
+        aria-label="Abrir menú de navegación"
+        aria-expanded="false"
+        aria-controls="main-nav"
+      >
+        <span></span>
+        <span></span>
+        <span></span>
+      </button>
+
+      <nav class="main-nav" id="main-nav" aria-label="Navegación principal">
+        <a href="index.html">Inicio</a>
+        <a href="conocenos.html">Conócenos</a>
+        <a href="programas.html">Programas</a>
+        <a href="colectivo.html">Colectivo</a>
+        <a href="contacto.html">Contacto</a>
+        <a href="donar.html" class="nav-donate active" aria-current="page">
+          Donaciones
+        </a>
+      </nav>
+
+    </div>
+  </header>
+
+  <main>
+
+    <!-- PORTADA -->
+    <section class="donate-hero">
+      <div class="donate-hero-overlay"></div>
+
+      <div class="container donate-hero-content">
+        <span class="eyebrow">Tu aporte también transforma</span>
+
+        <h1>Apoya la transformación desde el territorio</h1>
+
+        <p>
+          Cada aporte puede ayudar a impulsar oportunidades, fortalecer
+          la comunicación comunitaria y preservar la memoria cultural
+          de nuestro territorio insular.
+        </p>
+
+        <div class="hero-actions">
+          <a href="#como-aportar" class="btn btn-primary">
+            Quiero aportar
+          </a>
+
+          <a href="#programas-destino" class="btn btn-outline">
+            Elegir un programa
+          </a>
+        </div>
+      </div>
+    </section>
+
+    <!-- INTRODUCCIÓN -->
+    <section class="donate-intro section-padding">
+      <div class="container intro-grid">
+
+        <div class="intro-copy">
+          <span class="section-kicker">Corporación Insular Digital</span>
+
+          <h2>Una comunidad que construye oportunidades</h2>
+
+          <p>
+            COINDI trabaja para conectar ideas, capacidades y propósitos
+            que contribuyan al desarrollo social, cultural y tecnológico
+            desde el territorio.
+          </p>
+
+          <p>
+            Tu contribución puede apoyar el trabajo institucional de la
+            Corporación o destinarse, según las posibilidades de ejecución
+            y coordinación, a uno de sus programas.
+          </p>
+
+          <blockquote>
+            “Juntos comunicamos ideas, conectamos propósitos y transformamos
+            realidades.”
+          </blockquote>
+        </div>
+
+        <div class="intro-image">
+          <img
+            src="assets/hero-bocachica.jpg"
+            alt="Paisaje del territorio insular de Bocachica"
+            loading="lazy"
+          >
+          <div class="image-caption">
+            <span>Territorio</span>
+            <span>Comunidad</span>
+            <span>Oportunidades</span>
+          </div>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- SELECCIÓN DEL DESTINO -->
+    <section class="donation-destinations section-padding" id="programas-destino">
+      <div class="container">
+
+        <div class="section-heading">
+          <span class="section-kicker">Elige cómo quieres contribuir</span>
+          <h2>¿A dónde te gustaría dirigir tu aporte?</h2>
+          <p>
+            Puedes apoyar las necesidades generales de COINDI o indicar
+            cuál de sus líneas de trabajo te interesa respaldar.
+          </p>
+        </div>
+
+        <form
+          class="donation-form"
+          id="donation-form"
+          action="mailto:corpoindicomunicaciones@gmail.com"
+          method="post"
+          enctype="text/plain"
+        >
+
+          <fieldset class="destination-options">
+            <legend>Selecciona el destino de tu aporte</legend>
+
+            <label class="destination-card">
+              <input
+                type="radio"
+                name="destino"
+                value="Apoyo general a COINDI"
+                checked
+                required
+              >
+
+              <span class="destination-card-content">
+                <span class="destination-icon" aria-hidden="true">✦</span>
+                <strong>Apoyo general a COINDI</strong>
+                <span>
+                  Contribuye al fortalecimiento institucional y al desarrollo
+                  de las actividades de la Corporación.
+                </span>
+              </span>
+            </label>
+
+            <label class="destination-card">
+              <input
+                type="radio"
+                name="destino"
+                value="Alfabetización e Inclusión Digital"
+              >
+
+              <span class="destination-card-content">
+                <span class="destination-icon" aria-hidden="true">⌘</span>
+                <strong>Alfabetización e Inclusión Digital</strong>
+                <span>
+                  Apoya procesos de aprendizaje y apropiación de herramientas
+                  digitales para personas de distintas edades.
+                </span>
+              </span>
+            </label>
+
+            <label class="destination-card">
+              <input
+                type="radio"
+                name="destino"
+                value="Crea Cine Insular"
+              >
+
+              <span class="destination-card-content">
+                <span class="destination-icon" aria-hidden="true">▶</span>
+                <strong>Crea Cine Insular</strong>
+                <span>
+                  Contribuye a iniciativas de creación audiovisual,
+                  narración y producción de contenidos desde el territorio.
+                </span>
+              </span>
+            </label>
+
+            <label class="destination-card">
+              <input
+                type="radio"
+                name="destino"
+                value="Comunicación comunitaria y memoria cultural"
+              >
+
+              <span class="destination-card-content">
+                <span class="destination-icon" aria-hidden="true">◎</span>
+                <strong>Comunicación y memoria cultural</strong>
+                <span>
+                  Apoya la participación comunitaria, las historias locales
+                  y la preservación de la memoria cultural.
+                </span>
+              </span>
+            </label>
+
+            <label class="destination-card">
+              <input
+                type="radio"
+                name="destino"
+                value="Actividades sociales y culturales"
+              >
+
+              <span class="destination-card-content">
+                <span class="destination-icon" aria-hidden="true">◇</span>
+                <strong>Actividades sociales y culturales</strong>
+                <span>
+                  Apoya actividades que promuevan la participación,
+                  la identidad territorial y el encuentro comunitario.
+                </span>
+              </span>
+            </label>
+
+          </fieldset>
+
+          <div class="donation-note">
+            <strong>Importante:</strong>
+            la selección expresa tu preferencia de destino. La coordinación
+            del aporte y su aplicación estarán sujetas a confirmación con
+            COINDI, a la disponibilidad de mecanismos y a las condiciones
+            acordadas para la contribución.
+          </div>
+
+          <div class="form-fields">
+            <div class="field-group">
+              <label for="nombre">Nombre o entidad (opcional)</label>
+              <input
+                type="text"
+                id="nombre"
+                name="nombre"
+                autocomplete="name"
+                placeholder="Tu nombre o el de tu organización"
+              >
+            </div>
+
+            <div class="field-group">
+              <label for="correo">Correo electrónico</label>
+              <input
+                type="email"
+                id="correo"
+                name="correo"
+                autocomplete="email"
+                placeholder="tucorreo@ejemplo.com"
+                required
+              >
+            </div>
+
+            <div class="field-group">
+              <label for="tipo-aporte">Tipo de contribución</label>
+              <select id="tipo-aporte" name="tipo_aporte" required>
+                <option value="">Selecciona una opción</option>
+                <option value="Donación económica">Donación económica</option>
+                <option value="Equipos o dispositivos">Equipos o dispositivos</option>
+                <option value="Libros o materiales educativos">Libros o materiales educativos</option>
+                <option value="Servicios profesionales">Servicios profesionales</option>
+                <option value="Voluntariado">Voluntariado</option>
+                <option value="Otro aporte en especie">Otro aporte en especie</option>
+              </select>
+            </div>
+
+            <div class="field-group">
+              <label for="mensaje">Mensaje o descripción del aporte (opcional)</label>
+              <textarea
+                id="mensaje"
+                name="mensaje"
+                rows="4"
+                placeholder="Cuéntanos cómo te gustaría contribuir."
+              ></textarea>
+            </div>
+          </div>
+
+          <div class="privacy-consent">
+            <label for="acepto-contacto">
+              <input
+                type="checkbox"
+                id="acepto-contacto"
+                name="acepto_contacto"
+                value="Sí"
+                required
+              >
+              <span>
+                Autorizo a COINDI a utilizar los datos proporcionados para
+                responder esta consulta y coordinar mi posible contribución.
+              </span>
+            </label>
+            <p>
+              No incluyas información financiera confidencial en este formulario.
+              Antes de publicar esta página, enlaza aquí la política de tratamiento
+              de datos personales de la Corporación.
+            </p>
+          </div>
+
+          <button type="submit" class="btn btn-primary btn-submit">
+            Consultar cómo aportar
+          </button>
+
+          <p class="form-disclaimer">
+            Este formulario inicia una consulta; no procesa pagos ni confirma
+            la recepción de una donación.
+          </p>
+
+        </form>
+      </div>
+    </section>
+
+    <!-- OTRAS FORMAS DE AYUDAR -->
+    <section class="ways-to-help section-padding" id="como-aportar">
+      <div class="container">
+
+        <div class="section-heading">
+          <span class="section-kicker">Hay muchas formas de sumar</span>
+          <h2>Tu aporte va más allá del dinero</h2>
+          <p>
+            Si no puedes realizar una contribución económica, también puedes
+            apoyar con recursos, conocimientos, tiempo o materiales.
+          </p>
+        </div>
+
+        <div class="ways-grid">
+
+          <article class="way-card">
+            <div class="way-icon" aria-hidden="true">₱</div>
+            <h3>Donaciones económicas</h3>
+            <p>
+              Consulta con COINDI los mecanismos disponibles para realizar
+              una contribución económica de manera coordinada.
+            </p>
+          </article>
+
+          <article class="way-card">
+            <div class="way-icon" aria-hidden="true">▣</div>
+            <h3>Equipos y tecnología</h3>
+            <p>
+              Ofrece dispositivos u otros recursos tecnológicos que puedan
+              ser útiles para las actividades de la Corporación.
+            </p>
+          </article>
+
+          <article class="way-card">
+            <div class="way-icon" aria-hidden="true">▤</div>
+            <h3>Libros y materiales</h3>
+            <p>
+              Contribuye con libros, materiales educativos y otros recursos
+              que puedan apoyar procesos de aprendizaje y creación.
+            </p>
+          </article>
+
+          <article class="way-card">
+            <div class="way-icon" aria-hidden="true">✳</div>
+            <h3>Conocimientos y servicios</h3>
+            <p>
+              Comparte tu experiencia profesional, tus habilidades o servicios
+              que puedan contribuir a las iniciativas de COINDI.
+            </p>
+          </article>
+
+          <article class="way-card">
+            <div class="way-icon" aria-hidden="true">♡</div>
+            <h3>Voluntariado</h3>
+            <p>
+              Participa con tu tiempo y capacidades en actividades que
+              requieran apoyo comunitario y organizativo.
+            </p>
+          </article>
+
+          <article class="way-card">
+            <div class="way-icon" aria-hidden="true">↗</div>
+            <h3>Difunde la iniciativa</h3>
+            <p>
+              Comparte los proyectos y contenidos de COINDI para que más
+              personas conozcan las oportunidades de colaboración.
+            </p>
+          </article>
+
+        </div>
+      </div>
+    </section>
+
+    <!-- TRANSPARENCIA -->
+    <section class="donation-transparency section-padding">
+      <div class="container transparency-inner">
+
+        <div class="transparency-symbol" aria-hidden="true">✓</div>
+
+        <div class="transparency-copy">
+          <span class="section-kicker">Aportes con responsabilidad</span>
+          <h2>La confianza también se construye con transparencia</h2>
+          <p>
+            Antes de realizar un aporte, podrás consultar con COINDI el
+            mecanismo disponible, el destino acordado y la forma de
+            coordinación correspondiente.
+          </p>
+          <p>
+            La información sobre recepción y aplicación de los aportes deberá
+            comunicarse conforme a los registros y procedimientos que tenga
+            establecidos la Corporación.
+          </p>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- CONTACTO -->
+    <section class="donation-contact section-padding">
+      <div class="container contact-panel">
+
+        <div>
+          <span class="section-kicker">¿Tienes alguna pregunta?</span>
+          <h2>Hablemos de cómo puedes contribuir</h2>
+          <p>
+            Escríbenos para coordinar tu aporte económico, en especie,
+            profesional o voluntario.
+          </p>
+        </div>
+
+        <div class="contact-actions">
+          <a
+            class="btn btn-primary"
+            href="mailto:corpoindicomunicaciones@gmail.com?subject=Informaci%C3%B3n%20sobre%20donaciones%20a%20COINDI"
+          >
+            Escribir por correo
+          </a>
+
+          <a href="contacto.html" class="contact-secondary-link">
+            Ver página de contacto
+          </a>
+        </div>
+
+      </div>
+    </section>
+
+  </main>
+
+  <!-- PIE DE PÁGINA -->
+  <footer class="site-footer">
+    <div class="container footer-inner">
+
+      <div class="footer-brand">
+        <img
+          src="assets/logo-coindi-oscuro.png"
+          alt="Corporación Insular Digital - COINDI"
+          loading="lazy"
+        >
+
+        <p>
+          Juntos comunicamos ideas, conectamos propósitos y transformamos
+          realidades.
+        </p>
+      </div>
+
+      <div class="footer-contact">
+        <h2>Área de comunicaciones</h2>
+        <a href="mailto:corpoindicomunicaciones@gmail.com">
+          corpoindicomunicaciones@gmail.com
+        </a>
+      </div>
+
+      <div class="footer-social">
+        <h2>Síguenos</h2>
+
+        <div class="social-links">
+          <a href="https://www.facebook.com/insulardigitaloficial"
+             target="_blank" rel="noopener noreferrer"
+             aria-label="Facebook de Insular Digital">Facebook</a>
+
+          <a href="https://www.instagram.com/insulardigitaloficial"
+             target="_blank" rel="noopener noreferrer"
+             aria-label="Instagram de Insular Digital">Instagram</a>
+
+          <a href="https://www.tiktok.com/@insulardigitaloficial"
+             target="_blank" rel="noopener noreferrer"
+             aria-label="TikTok de Insular Digital">TikTok</a>
+
+          <a href="https://www.youtube.com/@insulardigitaloficial"
+             target="_blank" rel="noopener noreferrer"
+             aria-label="YouTube de Insular Digital">YouTube</a>
+        </div>
+      </div>
 
     </div>
 
-  </div>
-
-</section>
-
-<!-- ================= POR QUÉ DONAR ================= -->
-
-<section class="porque-donar">
-
-  <div class="section-header">
-
-    <h2>¿Por qué donar?</h2>
-
-    <p>
-      Tu apoyo hace posible la continuidad de proyectos con impacto social.
-    </p>
-
-  </div>
-
-  <div class="causas-grid">
-
-    <article class="causa-card">
-
-      <i class="fas fa-bullhorn"></i>
-
-      <h3>Comunicación Comunitaria</h3>
-
-      <p>
-        Producción de contenidos que informan, conectan y fortalecen la participación ciudadana.
-      </p>
-
-    </article>
-
-    <article class="causa-card">
-
-      <i class="fas fa-video"></i>
-
-      <h3>Producción Audiovisual</h3>
-
-      <p>
-        Equipos, transmisiones y creación de contenidos con calidad profesional.
-      </p>
-
-    </article>
-
-    <article class="causa-card">
-
-      <i class="fas fa-people-group"></i>
-
-      <h3>Impacto Territorial</h3>
-
-      <p>
-        Procesos sociales, culturales y educativos que generan oportunidades.
-      </p>
-
-    </article>
-
-  </div>
-
-</section>
-
-<!-- ================= IMPACTO ================= -->
-
-<section class="impacto-donar" id="impacto">
-
-  <div class="section-header">
-
-    <h2>Tu aporte genera impacto</h2>
-
-    <p>
-      Cada contribución fortalece proyectos reales en el territorio.
-    </p>
-
-  </div>
-
-  <div class="impacto-grid">
-
-    <div class="impact-card">
-      <strong>3</strong>
-      <span>Programas Activos</span>
+    <div class="footer-bottom">
+      <div class="container">
+        <p>
+          © <span id="current-year"></span> Corporación Insular Digital (COINDI).
+          Todos los derechos reservados.
+        </p>
+      </div>
     </div>
+  </footer>
 
-    <div class="impact-card">
-      <strong>28+</strong>
-      <span>Transmisiones</span>
-    </div>
+  <script>
+    // Año automático en el pie de página
+    document.getElementById("current-year").textContent =
+      new Date().getFullYear();
 
-    <div class="impact-card">
-      <strong>8</strong>
-      <span>Producciones</span>
-    </div>
+    // Menú móvil
+    const menuToggle = document.querySelector(".menu-toggle");
+    const mainNav = document.querySelector(".main-nav");
 
-    <div class="impact-card">
-      <strong>100%</strong>
-      <span>Compromiso Comunitario</span>
-    </div>
-
-  </div>
-
-</section>
-
-<!-- ================= FORMAS DE DONAR ================= -->
-
-<section class="formas-donar" id="formas-donar">
-
-  <div class="section-header">
-
-    <h2>Formas de Donar</h2>
-
-    <p>
-      Elige el medio que te resulte más cómodo.
-    </p>
-
-  </div>
-
-  <div class="donacion-grid">
-
-    <article class="donacion-card">
-
-      <i class="fas fa-mobile-screen"></i>
-
-      <h3>Bancolombia</h3>
-      <h3>Cuenta Ahorros</h3>
-      <p>085-000171-51</p>
-
-    </article>
-
-    <article class="donacion-card">
-
-      <i class="fas fa-wallet"></i>
-
-      <h3>Nequi</h3>
-
-      <p>321 597 8125</p>
-
-    </article>
-
-    <article class="donacion-card">
-
-      <i class="fas fa-building-columns"></i>
-
-      <h3>Transferencia Internacional</h3>
-      <h3>PayPal</h3>
-      <p>
-        3215978125 / corpoindicomunicaciones@gmail.com
-      </p>
-
-    </article>
-
-  </div>
-
-</section>
-
-<!-- ================= TRANSPARENCIA ================= -->
-
-<section class="transparencia">
-
-  <div class="transparencia-box">
-
-    <h2>Compromiso con la Transparencia</h2>
-
-    <p>
-      Los recursos recibidos son destinados al fortalecimiento
-      de procesos comunitarios, culturales, educativos y de comunicación
-      desarrollados por la Corporación Insular Digital.
-    </p>
-
-  </div>
-
-</section>
-
-<!-- ================= CTA FINAL ================= -->
-
-<section class="cta-donar">
-
-  <h2>
-    Cada aporte ayuda a que más voces sean escuchadas.
-  </h2>
-
-  <p>
-    Gracias por creer en la comunicación comunitaria y en el poder transformador de las comunidades.
-  </p>
-
-  <a href="#formas-donar" class="btn-primary">
-    Quiero Aportar
-  </a>
-
-</section>
-
-<!-- ================= FOOTER ================= -->
-
-<footer class="footer-simple">
-
-  <div class="footer-simple-container">
-
-    <div class="footer-logo">
-      <img src="assets/ahorasi.png" alt="Corporación Insular Digital">
-    </div>
-
-    <p class="footer-copy">
-      © 2026 Corporación Insular Digital · Todos los derechos reservados.
-    </p>
-
-    <div class="footer-social">
-
-      <a href="https://facebook.com/insulardigitaloficial" target="_blank">
-        <i class="fab fa-facebook-f"></i>
-      </a>
-
-      <a href="https://instagram.com/insulardigitaloficial" target="_blank">
-        <i class="fab fa-instagram"></i>
-      </a>
-
-      <a href="https://youtube.com/@insulardigitaloficial" target="_blank">
-        <i class="fab fa-youtube"></i>
-      </a>
-
-      <a href="https://tiktok.com/@insulardigitaloficial" target="_blank">
-        <i class="fab fa-tiktok"></i>
-      </a>
-
-    </div>
-
-  </div>
-
-</footer>
+    if (menuToggle && mainNav) {
+      menuToggle.addEventListener("click", function () {
+        const isOpen = mainNav.classList.toggle("open");
+        menuToggle.setAttribute("aria-expanded", String(isOpen));
+        menuToggle.setAttribute(
+          "aria-label",
+          isOpen ? "Cerrar menú de navegación" : "Abrir menú de navegación"
+        );
+      });
+    }
+  </script>
 
 </body>
 </html>
