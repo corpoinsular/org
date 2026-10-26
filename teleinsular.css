@@ -1945,3 +1945,58 @@ a img {
     font-size: 1.2rem;
   }
 }
+/* =========================================
+   TELEINSULAR — AJUSTES DE LOGOTIPOS
+   ========================================= */
+
+/* 1. LOGO SUPERIOR: aumentar tamaño */
+.header .brand {
+  display: flex;
+  align-items: center;
+  flex-shrink: 0;
+}
+
+.header .brand img {
+  display: block;
+  width: 100px !important;
+  height: 76px !important;
+  max-width: none !important;
+  max-height: none !important;
+  object-fit: contain;
+  object-position: left center;
+  flex-shrink: 0;
+}
+
+/* 2. LOGO INFERIOR: quitar fondo, borde y sombra */
+footer .coindi img,
+.footer .coindi img,
+.coindi img {
+  display: block;
+  width: 140px;
+  height: auto;
+  max-height: 70px;
+  object-fit: contain;
+  object-position: left center;
+
+  background: transparent !important;
+  border: none !important;
+  outline: none !important;
+  box-shadow: none !important;
+  padding: 0 !important;
+  border-radius: 0 !important;
+}
+
+/* 3. Evitar que el logo superior se desborde en celulares */
+@media (max-width: 800px) {
+  .header .brand img {
+    width: 78px !important;
+    height: 62px !important;
+  }
+
+  footer .coindi img,
+  .footer .coindi img,
+  .coindi img {
+    width: 115px;
+    max-height: 58px;
+  }
+}
