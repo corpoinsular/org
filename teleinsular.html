@@ -496,6 +496,24 @@ nav.querySelectorAll('a').forEach(link => {
 });
 
 document.querySelector('#year').textContent = new Date().getFullYear();
+  
+document.querySelectorAll('.youtube-preview').forEach(button => {
+  button.addEventListener('click', () => {
+    const videoId = button.dataset.videoId;
+    const container = button.closest('.youtube-feature');
+
+    const iframe = document.createElement('iframe');
+    iframe.src = `https://www.youtube-nocookie.com/embed/${videoId}?autoplay=1&rel=0`;
+    iframe.title = 'Historias que nacen en el territorio - Teleinsular';
+    iframe.allow =
+      'accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share';
+    iframe.allowFullscreen = true;
+    iframe.referrerPolicy = 'strict-origin-when-cross-origin';
+
+    container.replaceChildren(iframe);
+  });
+});
+
 </script>
 </body>
 </html>
