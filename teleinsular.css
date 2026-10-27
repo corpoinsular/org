@@ -2427,3 +2427,41 @@ footer .teleinsular,
     width: 190px;
   }
 }
+
+/* Video de fondo del hero */
+.hero {
+  position: relative;
+  overflow: hidden;
+  isolation: isolate;
+}
+
+.hero-video {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center;
+  z-index: -2;
+  pointer-events: none;
+}
+
+/* Mantener las capas y el contenido por encima */
+.hero-bg {
+  position: absolute;
+  inset: 0;
+  z-index: -1;
+}
+
+.hero-shade {
+  position: absolute;
+  inset: 0;
+  z-index: -1;
+  pointer-events: none;
+}
+
+.hero-in,
+.hero .scroll {
+  position: relative;
+  z-index: 1;
+}
