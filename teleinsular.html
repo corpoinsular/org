@@ -272,22 +272,31 @@
     </div>
   </div>
 
-  <div class="video-list">
-    <a class="video-item"
-       href="https://www.youtube.com/@teleinsular.co"
-       target="_blank"
-       rel="noopener noreferrer">
-      <span class="thumb interview">
-        <i class="fa-solid fa-play"></i>
-      </span>
-      <span>
-        <small>ENTREVISTAS</small>
-        <b>La palabra de nuestra gente</b>
-        <em>Explorar en YouTube
-          <i class="fa-solid fa-arrow-up-right-from-square"></i>
-        </em>
-      </span>
-    </a>
+  
+<div class="video-item youtube-interview">
+  <button
+    class="interview-preview"
+    type="button"
+    data-video-id="wAsAyBMuGEE"
+    aria-label="Reproducir entrevista: La palabra de nuestra gente"
+  >
+    <img
+      src="https://img.youtube.com/vi/wAsAyBMuGEE/hqdefault.jpg"
+      alt="Portada de la entrevista de Teleinsular"
+      loading="lazy"
+    >
+    <span class="interview-play">
+      <i class="fa-solid fa-play"></i>
+    </span>
+  </button>
+
+  <span class="interview-info">
+    <small>ENTREVISTAS</small>
+    <b>La palabra de nuestra gente</b>
+    <em>Reproducir entrevista <i class="fa-solid fa-play"></i></em>
+  </span>
+</div>
+
 
     <a class="video-item"
        href="https://www.youtube.com/@teleinsular.co"
@@ -505,6 +514,23 @@ document.querySelectorAll('.youtube-preview').forEach(button => {
     const iframe = document.createElement('iframe');
     iframe.src = `https://www.youtube-nocookie.com/embed/${videoId}?autoplay=1&rel=0`;
     iframe.title = 'Historias que nacen en el territorio - Teleinsular';
+    iframe.allow =
+      'accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share';
+    iframe.allowFullscreen = true;
+    iframe.referrerPolicy = 'strict-origin-when-cross-origin';
+
+    container.replaceChildren(iframe);
+  });
+});
+
+document.querySelectorAll('.interview-preview').forEach(button => {
+  button.addEventListener('click', () => {
+    const videoId = button.dataset.videoId;
+    const container = button.closest('.interview-preview');
+
+    const iframe = document.createElement('iframe');
+    iframe.src = `https://www.youtube-nocookie.com/embed/${videoId}?autoplay=1&rel=0`;
+    iframe.title = 'Entrevista: La palabra de nuestra gente';
     iframe.allow =
       'accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share';
     iframe.allowFullscreen = true;
