@@ -2000,3 +2000,77 @@ footer .coindi img,
     max-height: 58px;
   }
 }
+/* =========================================
+   TELEINSULAR — AJUSTES FINALES DE LOGOTIPOS
+========================================= */
+
+/* Logo superior: tamaño ampliado en escritorio */
+.header .brand img {
+  width: 112px !important;
+  height: 82px !important;
+  max-width: none !important;
+  max-height: none !important;
+  object-fit: contain;
+  object-position: left center;
+  flex-shrink: 0;
+}
+
+/* Logo institucional del pie: sin caja blanca añadida por CSS */
+.footer-brand img {
+  width: 72px !important;
+  height: 72px !important;
+  max-width: none !important;
+  padding: 0 !important;
+  background: transparent !important;
+  border: 0 !important;
+  outline: 0 !important;
+  box-shadow: none !important;
+  border-radius: 0 !important;
+  object-fit: contain;
+}
+
+/* Logo COINDI si está dentro del bloque .coindi */
+footer .coindi img,
+.footer .coindi img,
+.coindi img {
+  display: block;
+  width: 140px;
+  height: auto;
+  max-height: 70px;
+  padding: 0 !important;
+  background: transparent !important;
+  border: 0 !important;
+  outline: 0 !important;
+  box-shadow: none !important;
+  border-radius: 0 !important;
+  object-fit: contain;
+  object-position: left center;
+}
+
+/* Ajustes para tabletas y móviles */
+@media (max-width: 800px) {
+  .header .brand img {
+    width: 86px !important;
+    height: 66px !important;
+  }
+
+  .footer-brand img {
+    width: 64px !important;
+    height: 64px !important;
+  }
+
+  footer .coindi img,
+  .footer .coindi img,
+  .coindi img {
+    width: 115px;
+    max-height: 58px;
+  }
+}
+
+/* Pantallas muy pequeñas */
+@media (max-width: 380px) {
+  .header .brand img {
+    width: 72px !important;
+    height: 56px !important;
+  }
+}
