@@ -2202,3 +2202,45 @@ footer .teleinsular {
     height: 90px !important;
   }
 }
+/* =========================================
+   FOOTER — AGRANDAR LOGO TELEINSULAR
+========================================= */
+
+footer img[alt*="Teleinsular" i],
+footer img[src*="teleinsular" i],
+footer .teleinsular img,
+.footer .teleinsular img {
+  width: 180px !important;
+  height: 140px !important;
+  max-width: none !important;
+  max-height: none !important;
+  object-fit: contain !important;
+  padding: 0 !important;
+  margin: 0 !important;
+  background: transparent !important;
+  border: none !important;
+  box-shadow: none !important;
+}
+
+/* Evitar que el contenedor lo reduzca */
+footer .teleinsular,
+.footer .teleinsular {
+  min-width: 180px !important;
+  flex-shrink: 0 !important;
+}
+
+/* Ajuste para móviles */
+@media (max-width: 800px) {
+  footer img[alt*="Teleinsular" i],
+  footer img[src*="teleinsular" i],
+  footer .teleinsular img,
+  .footer .teleinsular img {
+    width: 145px !important;
+    height: 115px !important;
+  }
+
+  footer .teleinsular,
+  .footer .teleinsular {
+    min-width: 145px !important;
+  }
+}
