@@ -2609,3 +2609,72 @@ footer .teleinsular,
   position: relative;
   z-index: 2;
 }
+
+/* Miniatura y reproductor de YouTube */
+.youtube-feature {
+  position: relative;
+  overflow: hidden;
+  aspect-ratio: 16 / 9;
+  background: #071A22;
+}
+
+.youtube-feature .youtube-preview {
+  position: absolute;
+  inset: 0;
+  display: block;
+  width: 100%;
+  height: 100%;
+  padding: 0;
+  border: 0;
+  color: white;
+  background: transparent;
+  cursor: pointer;
+  text-align: left;
+}
+
+.youtube-feature .youtube-preview img {
+  width: 100%;
+  height: 100%;
+  display: block;
+  object-fit: cover;
+  transition: transform .35s ease;
+}
+
+.youtube-feature .youtube-preview:hover img {
+  transform: scale(1.04);
+}
+
+.youtube-feature .video-tag,
+.youtube-feature .play,
+.youtube-feature strong {
+  position: absolute;
+  z-index: 2;
+}
+
+.youtube-feature .video-tag {
+  top: 20px;
+  left: 20px;
+}
+
+.youtube-feature .play {
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+.youtube-feature strong {
+  left: 24px;
+  right: 24px;
+  bottom: 24px;
+  font-size: clamp(1.2rem, 2.5vw, 2rem);
+  color: #fff;
+  text-shadow: 0 2px 12px rgba(0, 0, 0, .7);
+}
+
+.youtube-feature iframe {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  border: 0;
+}
