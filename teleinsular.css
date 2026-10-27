@@ -2305,3 +2305,55 @@ footer .teleinsular,
     font-size: 0.68rem !important;
   }
 }
+/* =========================================
+   TELEINSULAR — TIPOGRAFÍA UNIFICADA CON INICIO
+========================================= */
+
+/* Título principal del banner */
+.hero h1,
+.hero-in h1 {
+  font-size: clamp(2.7rem, 5.2vw, 4.7rem) !important;
+  line-height: 1.05 !important;
+  letter-spacing: -0.05em !important;
+  font-weight: 800 !important;
+}
+
+/* Texto descriptivo del banner */
+.hero p,
+.hero-in > p {
+  font-size: 1.1rem !important;
+  line-height: 1.6 !important;
+}
+
+/* Etiqueta pequeña sobre el título */
+.hero .etiqueta,
+.hero-in .etiqueta,
+.hero .hero-note {
+  font-size: 0.78rem !important;
+  font-weight: 800 !important;
+  letter-spacing: 0.12em !important;
+}
+
+/* Tabletas y móviles: conservar la adaptación de Inicio */
+@media (max-width: 700px) {
+  .hero h1,
+  .hero-in h1 {
+    font-size: clamp(2.6rem, 11vw, 4rem) !important;
+    line-height: 1.05 !important;
+    letter-spacing: -0.05em !important;
+  }
+
+  .hero p,
+  .hero-in > p {
+    font-size: 1rem !important;
+    line-height: 1.6 !important;
+  }
+}
+
+/* Teléfonos pequeños */
+@media (max-width: 380px) {
+  .hero h1,
+  .hero-in h1 {
+    font-size: 2.4rem !important;
+  }
+}
