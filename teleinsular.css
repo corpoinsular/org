@@ -2244,3 +2244,64 @@ footer .teleinsular,
     min-width: 145px !important;
   }
 }
+/* =========================================
+   BANNER SUPERIOR — TIPOGRAFÍA UNIFICADA
+========================================= */
+
+/* Título principal del banner */
+.hero h1 {
+  font-family: 'Manrope', sans-serif !important;
+  font-size: clamp(2.8rem, 5.5vw, 4.5rem) !important;
+  font-weight: 800 !important;
+  line-height: 1.08 !important;
+  letter-spacing: -2px !important;
+  max-width: 900px;
+  margin: 24px 0 !important;
+  text-wrap: balance;
+}
+
+/* Texto descriptivo debajo del título */
+.hero-in > p {
+  font-size: clamp(1rem, 1.35vw, 1.15rem) !important;
+  line-height: 1.75 !important;
+  max-width: 610px;
+  margin-bottom: 30px !important;
+}
+
+/* Texto pequeño o frase complementaria del banner */
+.hero-note {
+  font-size: 0.76rem !important;
+  line-height: 1.5 !important;
+}
+
+/* Tabletas */
+@media (max-width: 800px) {
+  .hero h1 {
+    font-size: clamp(2.4rem, 7vw, 3.5rem) !important;
+    line-height: 1.1 !important;
+    letter-spacing: -1.5px !important;
+  }
+
+  .hero-in > p {
+    font-size: 1rem !important;
+    line-height: 1.7 !important;
+  }
+}
+
+/* Celulares */
+@media (max-width: 480px) {
+  .hero h1 {
+    font-size: clamp(2.1rem, 8vw, 2.6rem) !important;
+    line-height: 1.12 !important;
+    letter-spacing: -1px !important;
+  }
+
+  .hero-in > p {
+    font-size: 0.95rem !important;
+    line-height: 1.65 !important;
+  }
+
+  .hero-note {
+    font-size: 0.68rem !important;
+  }
+}
