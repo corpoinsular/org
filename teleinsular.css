@@ -2357,3 +2357,73 @@ footer .teleinsular,
     font-size: 2.4rem !important;
   }
 }
+
+/* =========================================
+   TELEINSULAR — AJUSTE DE BARRA SUPERIOR
+   ========================================= */
+
+/* Altura y distribución de la barra */
+.header-in {
+  min-height: 92px;
+  gap: 32px;
+}
+
+/* Logo principal */
+.header .brand {
+  display: flex;
+  align-items: center;
+  flex-shrink: 0;
+}
+
+.header .brand img {
+  display: block;
+  width: 210px;
+  max-width: 100%;
+  height: auto;
+  object-fit: contain;
+}
+
+/* Opciones del menú */
+.header nav a {
+  font-size: 15px;
+  font-weight: 600;
+  white-space: nowrap;
+}
+
+/* Opción de inicio */
+.header nav a.nav-home {
+  font-weight: 700;
+}
+
+/* Botón Contáctanos */
+.header nav a.nav-cta {
+  font-size: 14px;
+  font-weight: 700;
+  padding: 12px 17px;
+}
+
+/* Ajustes para pantallas medianas */
+@media (max-width: 1050px) {
+  .header-in {
+    gap: 20px;
+  }
+
+  .header .brand img {
+    width: 185px;
+  }
+
+  .header nav a {
+    font-size: 14px;
+  }
+}
+
+/* Ajustes para celulares */
+@media (max-width: 700px) {
+  .header-in {
+    min-height: 76px;
+  }
+
+  .header .brand img {
+    width: 190px;
+  }
+}
