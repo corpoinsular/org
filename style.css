@@ -1202,3 +1202,155 @@ footer a:hover {
     background: #F3F8FA;
   }
 }
+
+/* =========================================
+   INICIATIVAS COINDI
+   ========================================= */
+
+.iniciativas-home {
+  padding: 75px 0;
+  background: #F3F8FA;
+  border-top: 1px solid var(--borde);
+}
+
+.iniciativas-encabezado {
+  max-width: 680px;
+  margin-bottom: 35px;
+}
+
+.iniciativas-etiqueta {
+  color: #007B9F;
+  font-size: .77rem;
+  font-weight: 800;
+  letter-spacing: .14em;
+}
+
+.iniciativas-encabezado h2 {
+  margin: 10px 0 12px;
+  color: var(--petroleo);
+  font-size: clamp(2rem, 3.5vw, 2.8rem);
+}
+
+.iniciativas-encabezado p {
+  color: var(--gris);
+  font-size: 1rem;
+}
+
+.iniciativas-grid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 24px;
+}
+
+.iniciativa-card {
+  display: grid;
+  grid-template-columns: 160px 1fr;
+  align-items: center;
+  gap: 24px;
+  padding: 25px;
+  border: 1px solid var(--borde);
+  border-radius: 20px;
+  background: #FFFFFF;
+  transition: transform .25s ease, box-shadow .25s ease;
+}
+
+.iniciativa-card:hover {
+  transform: translateY(-4px);
+  box-shadow: var(--sombra);
+}
+
+.iniciativa-logo {
+  display: grid;
+  place-items: center;
+  min-height: 145px;
+  padding: 15px;
+  border-radius: 15px;
+  background: #EAF5F8;
+}
+
+.iniciativa-logo img {
+  width: 100%;
+  max-width: 145px;
+  max-height: 115px;
+  object-fit: contain;
+}
+
+.iniciativa-categoria {
+  color: #0085A8;
+  font-size: .68rem;
+  font-weight: 800;
+  letter-spacing: .1em;
+}
+
+.iniciativa-contenido h3 {
+  margin: 7px 0;
+  color: var(--petroleo);
+  font-size: 1.4rem;
+}
+
+.iniciativa-contenido p {
+  margin-bottom: 15px;
+  color: var(--gris);
+  font-size: .9rem;
+  line-height: 1.6;
+}
+
+.iniciativa-enlace {
+  color: #007FA4;
+  font-weight: 800;
+  font-size: .9rem;
+}
+
+.iniciativa-enlace:hover {
+  color: var(--petroleo);
+  text-decoration: underline;
+  text-underline-offset: 4px;
+}
+
+/* TABLET Y MÓVIL */
+
+@media (max-width: 900px) {
+  .iniciativa-card {
+    grid-template-columns: 1fr;
+  }
+
+  .iniciativa-logo {
+    min-height: 130px;
+  }
+}
+
+@media (max-width: 700px) {
+  .iniciativas-home {
+    padding: 55px 0;
+  }
+
+  .iniciativas-grid {
+    grid-template-columns: 1fr;
+    gap: 18px;
+  }
+
+  .iniciativa-card {
+    grid-template-columns: 110px 1fr;
+    gap: 17px;
+    padding: 18px;
+  }
+
+  .iniciativa-logo {
+    min-height: 115px;
+    padding: 10px;
+  }
+
+  .iniciativa-logo img {
+    max-height: 90px;
+  }
+}
+
+@media (max-width: 400px) {
+  .iniciativa-card {
+    grid-template-columns: 1fr;
+  }
+
+  .iniciativa-logo {
+    min-height: 125px;
+  }
+}
