@@ -1,407 +1,130 @@
 <!DOCTYPE html>
 <html lang="es">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta name="theme-color" content="#004B63">
-  <meta name="description" content="Corporación Insular Digital (COINDI). Impulsamos la inclusión digital, la creación audiovisual y las iniciativas comunitarias desde el territorio insular.">
-  <title>Corporación Insular Digital | COINDI</title>
-
-  <link rel="stylesheet" href="styles.css">
-</head>
-
-<body>
-  <div class="franja-superior" aria-hidden="true"></div>
-
-  <header class="encabezado">
-    <div class="contenedor navegacion">
-      <a class="marca" href="index.html" aria-label="Inicio de Corporación Insular Digital">
-        <img src="assets/logo-coindi-claro.png" alt="COINDI — Corporación Insular Digital" width="215" height="70">
-      </a>
-
-      <button class="boton-menu" id="boton-menu" type="button" aria-label="Abrir menú" aria-expanded="false" aria-controls="menu-principal">☰</button>
-
-      <nav class="menu" id="menu-principal" aria-label="Navegación principal">
-        <a href="index.html" aria-current="page">Inicio</a>
-        <a href="conocenos.html">Conócenos</a>
-        <a href="programas.html">Programas</a>
-
-        <div class="menu-desplegable">
-          <button
-            class="iniciativas-toggle"
-            type="button"
-            aria-expanded="false"
-            aria-controls="submenu-iniciativas">
-            Iniciativas
-            <span aria-hidden="true">⌄</span>
-          </button>
-
-          <div class="submenu" id="submenu-iniciativas">
-            <a href="teleinsular.html">Teleinsular</a>
-            <a href="insu.html">Revista INSU</a>
-          </div>
-        </div>
-
-        <a href="servicios.html">Servicios</a>
-        <a href="donar.html" class="boton boton-principal">Apoyar</a>
-      </nav>
-    </div>
-  </header>
-
-  <main>
-    <section class="portada">
-      <div class="contenedor portada-interior">
-        <div class="portada-contenido">
-          <div class="etiqueta">Tecnología con sentido social</div>
-
-          <h1>Construimos oportunidades <span>desde el territorio.</span></h1>
-
-          <p class="portada-texto">
-            Impulsamos la inclusión digital, la creación audiovisual y las iniciativas que conectan a las comunidades con nuevas oportunidades, fortaleciendo la cultura, la participación y el orgullo territorial.
-          </p>
-
-          <div class="acciones">
-            <a href="programas.html" class="boton boton-caribe">
-              Conoce nuestros programas <span aria-hidden="true">→</span>
-            </a>
-            <a href="conocenos.html" class="boton boton-borde-claro">
-              Conoce la Corporación
-            </a>
-          </div>
-
-          <p class="ubicacion">
-            <span aria-hidden="true">●</span> Bocachica · Cartagena, Colombia
-          </p>
-        </div>
-      </div>
-    </section>
-
-    <section class="enfoques" aria-label="Enfoques de COINDI">
-      <div class="contenedor enfoques-grid">
-
-        <article class="enfoque">
-          <div class="enfoque-icono" aria-hidden="true">⌘</div>
-          <div>
-            <strong>Inclusión digital</strong>
-            <small>Herramientas y competencias para la vida.</small>
-          </div>
-        </article>
-
-        <article class="enfoque">
-          <div class="enfoque-icono" aria-hidden="true">▶</div>
-          <div>
-            <strong>Creación audiovisual</strong>
-            <small>Historias contadas desde el territorio.</small>
-          </div>
-        </article>
-
-        <article class="enfoque">
-          <div class="enfoque-icono" aria-hidden="true">⌂</div>
-          <div>
-            <strong>Identidad territorial</strong>
-            <small>Cultura, participación y memoria comunitaria.</small>
-          </div>
-        </article>
-
-      </div>
-    </section>
-
-    <section class="seccion seccion-fondo" id="programas">
-      <div class="contenedor programas-presentacion">
-
-        <div class="programas-intro">
-          <div class="subtitulo">Lo que hacemos</div>
-
-          <h2>Oportunidades que nacen en la comunidad.</h2>
-
-          <p>
-            Trabajamos para acercar herramientas digitales y abrir espacios de creación y expresión que reconozcan las capacidades, experiencias y conocimientos de las comunidades insulares.
-          </p>
-
-          <a href="programas.html" class="boton boton-borde-oscuro">
-            Ver todos los programas <span aria-hidden="true">→</span>
-          </a>
-        </div>
-
-        <div class="programas-grid">
-
-          <article class="programa">
-            <div class="programa-imagen">
-              <img src="assets/alfabetizacion-digital.jpg" alt="Actividad de aprendizaje y uso de herramientas digitales" loading="lazy">
-            </div>
-
-            <div class="programa-contenido">
-              <div class="programa-icono" aria-hidden="true">⌘</div>
-
-              <h3>Alfabetización e Inclusión Digital</h3>
-
-              <p>
-                Promovemos el aprendizaje y el uso práctico de herramientas digitales para personas de distintas edades, atendiendo necesidades reales de la comunidad.
-              </p>
-
-              <a href="programas.html#alfabetizacion" class="enlace-texto">
-                Conocer el programa <span aria-hidden="true">→</span>
-              </a>
-            </div>
-          </article>
-
-          <article class="programa">
-            <div class="programa-imagen">
-              <img src="assets/crea-cine-insular.jpg" alt="Producción audiovisual y narración de historias locales" loading="lazy">
-            </div>
-
-            <div class="programa-contenido">
-              <div class="programa-icono" aria-hidden="true">▣</div>
-
-              <h3>Crea Cine Insular</h3>
-
-              <p>
-                Un espacio para explorar la creación audiovisual y contar historias vinculadas con la memoria, la cultura y la identidad del territorio.
-              </p>
-
-              <a href="programas.html#crea-cine" class="enlace-texto">
-                Conocer el programa <span aria-hidden="true">→</span>
-              </a>
-            </div>
-          </article>
-
-        </div>
-      </div>
-    </section>
-
-    <section class="seccion" id="conocenos">
-      <div class="contenedor conocenos-grid">
-
-        <div class="frase-institucional">
-          <div class="frase-icono" aria-hidden="true">✳</div>
-
-          <h3>
-            Juntos comunicamos ideas, conectamos propósitos y transformamos realidades.
-          </h3>
-
-          <p>
-            Tecnología, cultura y participación al servicio de las personas y del territorio.
-          </p>
-        </div>
-
-        <div class="conocenos-texto">
-          <div class="subtitulo">Quiénes somos</div>
-
-          <h2>Conectamos tecnología, cultura y comunidad.</h2>
-
-          <p>
-            La Corporación Insular Digital impulsa iniciativas sociales y tecnológicas con enfoque territorial. Su propósito es contribuir al desarrollo de capacidades, ampliar oportunidades y abrir espacios para la participación comunitaria.
-          </p>
-
-          <p>
-            Creemos en una tecnología cercana, en el valor de las historias locales y en la construcción de iniciativas que reconozcan las capacidades de las comunidades.
-          </p>
-
-          <a href="conocenos.html" class="boton boton-borde-oscuro">
-            Conoce nuestra identidad <span aria-hidden="true">→</span>
-          </a>
-        </div>
-
-      </div>
-    </section>
-
-    <!-- INICIATIVAS COINDI -->
-    <section class="iniciativas-home" id="iniciativas">
-      <div class="contenedor">
-
-        <div class="iniciativas-encabezado">
-          <span class="iniciativas-etiqueta">PROYECTOS DE COINDI</span>
-
-          <h2>Nuestras iniciativas</h2>
-
-          <p>
-            Espacios para comunicar, crear y preservar las historias,
-            la cultura y la identidad de nuestro territorio.
-          </p>
-        </div>
-
-        <div class="iniciativas-grid">
-
-          <!-- TELEINSULAR -->
-          <article class="iniciativa-card">
-            <div class="iniciativa-logo">
-              <img
-                src="assets/logo-teleinsular.png"
-                alt="Logo de Teleinsular"
-                loading="lazy">
-            </div>
-
-            <div class="iniciativa-contenido">
-              <span class="iniciativa-categoria">
-                COMUNICACIÓN COMUNITARIA
-              </span>
-
-              <h3>Teleinsular</h3>
-
-              <p>
-                Un espacio audiovisual para contar las historias,
-                experiencias y realidades de nuestras comunidades.
-              </p>
-
-              <a href="teleinsular.html" class="iniciativa-enlace">
-                Explorar Teleinsular →
-              </a>
-            </div>
-          </article>
-
-          <!-- REVISTA INSU -->
-          <article class="iniciativa-card">
-            <div class="iniciativa-logo">
-              <img
-                src="assets/logo-insu.png"
-                alt="Logo de Revista INSU"
-                loading="lazy">
-            </div>
-
-            <div class="iniciativa-contenido">
-              <span class="iniciativa-categoria">
-                MEDIO EDITORIAL
-              </span>
-
-              <h3>Revista INSU</h3>
-
-              <p>
-                Un espacio editorial dedicado a la cultura,
-                la memoria y las voces de nuestro territorio.
-              </p>
-
-              <a href="insu.html" class="iniciativa-enlace">
-                Explorar Revista INSU →
-              </a>
-            </div>
-          </article>
-
-        </div>
-      </div>
-    </section>
-
-    <section class="llamado" id="participa">
-      <div class="contenedor llamado-interior">
-
-        <div>
-          <h2>Construyamos oportunidades juntos.</h2>
-
-          <p>
-            Conoce nuestras iniciativas, participa en los procesos comunitarios y descubre cómo puedes apoyar el trabajo de la Corporación.
-          </p>
-        </div>
-
-        <div class="acciones">
-          <a href="programas.html" class="boton boton-caribe">
-            Explorar programas
-          </a>
-
-          <a href="donar.html" class="boton boton-borde-claro">
-            Cómo apoyar
-          </a>
-        </div>
-
-      </div>
-    </section>
-  </main>
-
-  <footer class="pie">
-    <div class="contenedor">
-
-      <div class="pie-grid">
-
-        <div>
-          <img
-            class="logo-pie"
-            src="assets/logo-coindi-oscuro.png"
-            alt="COINDI — Corporación Insular Digital"
-            width="225"
-            height="85"
-            loading="lazy">
-
-          <p class="pie-descripcion">
-            Juntos comunicamos ideas, conectamos propósitos y transformamos realidades.
-          </p>
-        </div>
-
-        <div>
-          <h3>Explora</h3>
-
-          <nav class="enlaces-pie" aria-label="Enlaces del pie de página">
-            <a href="index.html">Inicio</a>
-            <a href="conocenos.html">Conócenos</a>
-            <a href="programas.html">Programas</a>
-            <a href="#iniciativas">Iniciativas</a>
-            <a href="servicios.html">Servicios</a>
-            <a href="donar.html">Donar</a>
-          </nav>
-        </div>
-
-        <div class="contacto-pie">
-          <h3>Contacto institucional</h3>
-
-          <p>
-            Correo:
-            <a href="mailto:corpoindicomunicaciones@gmail.com">
-              corpoindicomunicaciones@gmail.com
-            </a>
-          </p>
-
-          <p>
-            Teléfono:
-            <a href="tel:+573215978125">+57 321 597 8125</a>
-          </p>
-
-          <p>Cartagena, Colombia</p>
-        </div>
-
-      </div>
-
-      <div class="legal">
-        <span>
-          © <span id="anio"></span> Corporación Insular Digital. Todos los derechos reservados.
-        </span>
-
-        <span>COINDI · Identidad institucional</span>
-      </div>
-
-    </div>
-  </footer>
-
-  <script>
-    const botonMenu = document.getElementById("boton-menu");
-    const menu = document.getElementById("menu-principal");
-    const iniciativas = document.querySelector(".menu-desplegable");
-    const botonIniciativas = document.querySelector(".iniciativas-toggle");
-
-    botonMenu.addEventListener("click", () => {
-      const abierto = menu.classList.toggle("abierto");
-
-      botonMenu.setAttribute("aria-expanded", String(abierto));
-      botonMenu.setAttribute("aria-label", abierto ? "Cerrar menú" : "Abrir menú");
-      botonMenu.textContent = abierto ? "✕" : "☰";
-    });
-
-    botonIniciativas.addEventListener("click", () => {
-      const abierto = iniciativas.classList.toggle("abierto");
-
-      botonIniciativas.setAttribute("aria-expanded", String(abierto));
-    });
-
-    menu.querySelectorAll("a").forEach((enlace) => {
-      enlace.addEventListener("click", () => {
-        menu.classList.remove("abierto");
-        iniciativas.classList.remove("abierto");
-
-        botonMenu.setAttribute("aria-expanded", "false");
-        botonMenu.setAttribute("aria-label", "Abrir menú");
-        botonMenu.textContent = "☰";
-
-        botonIniciativas.setAttribute("aria-expanded", "false");
-      });
-    });
-
-    document.getElementById("anio").textContent = new Date().getFullYear();
-  </script>
-</body>
-</html>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="theme-color" content="#004B63">
+<meta name="description" content="Corporación Insular Digital (COINDI). Impulsamos la inclusión digital, la creación audiovisual y las iniciativas comunitarias desde el territorio insular.">
+<title>Corporación Insular Digital | COINDI</title>
+<style>
+:root{--petroleo:#004B63;--caribe:#00A6D6;--arena:#FFC247;--blanco:#FFFFFF;--texto:#173640;--gris:#5C737B;--fondo:#F3F8FA;--borde:#DCE8EC;--radio:22px;--sombra:0 16px 45px rgba(0,54,72,.10)}
+*{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth;scroll-padding-top:100px}
+body{font-family:Arial,Helvetica,sans-serif;color:var(--texto);background:#fff;line-height:1.65}
+img{display:block;max-width:100%}
+a{color:inherit;text-decoration:none}
+button{font:inherit}
+a:focus-visible,button:focus-visible{outline:3px solid var(--arena);outline-offset:4px}
+.contenedor{width:min(1180px,calc(100% - 40px));margin-inline:auto}
+.franja-superior{height:5px;background:linear-gradient(90deg,var(--petroleo) 0 55%,var(--caribe) 55% 85%,var(--arena) 85%)}
+
+/* NAVEGACIÓN */
+.encabezado{position:sticky;top:0;z-index:100;background:rgba(255,255,255,.97);border-bottom:1px solid var(--borde);backdrop-filter:blur(14px)}
+.navegacion{min-height:86px;display:flex;align-items:center;justify-content:space-between;gap:24px}
+.marca{flex-shrink:0}
+.marca img{width:215px;max-height:70px;object-fit:contain;object-position:left center}
+.menu{display:flex;align-items:center;gap:22px}
+.menu a:not(.boton){color:var(--petroleo);font-size:.9rem;font-weight:700}
+.menu a:not(.boton):hover{color:#008CB5}
+.menu a[aria-current="page"]{color:#008CB5;text-decoration:underline;text-decoration-color:var(--arena);text-decoration-thickness:3px;text-underline-offset:9px}
+.boton-menu{display:none;border:1px solid var(--borde);border-radius:12px;padding:9px 13px;background:white;color:var(--petroleo);cursor:pointer;font-size:1.35rem}
+
+/* BOTONES */
+.boton{display:inline-flex;align-items:center;justify-content:center;gap:10px;min-height:48px;padding:12px 21px;border:1px solid transparent;border-radius:50px;font-weight:700;text-align:center;transition:.2s ease}
+.boton:hover{transform:translateY(-2px)}
+.boton-principal{background:var(--arena);color:#173640}
+.boton-principal:hover{background:#FFD16C}
+.boton-caribe{background:var(--caribe);color:#003343}
+.boton-caribe:hover{background:#35BDE4}
+.boton-borde-claro{color:white;border-color:rgba(255,255,255,.75);background:rgba(255,255,255,.06)}
+.boton-borde-claro:hover{background:rgba(255,255,255,.14)}
+.boton-borde-oscuro{color:var(--petroleo);border-color:var(--petroleo);background:transparent}
+.boton-borde-oscuro:hover{background:#E8F7FB}
+
+/* PORTADA */
+.portada{position:relative;isolation:isolate;overflow:hidden;background:var(--petroleo);color:white}
+.portada::before{content:"";position:absolute;inset:0;z-index:-2;background:linear-gradient(90deg,rgba(0,38,51,.96),rgba(0,57,75,.75),rgba(0,35,49,.25)),url("assets/bocachica-portada.jpg") center 52%/cover no-repeat}
+.portada::after{content:"";position:absolute;z-index:-1;inset:auto 0 0;height:6px;background:linear-gradient(90deg,var(--arena),var(--caribe),var(--petroleo))}
+.portada-interior{min-height:600px;display:flex;align-items:center;padding-block:75px}
+.portada-contenido{max-width:690px}
+.etiqueta{display:inline-flex;align-items:center;gap:11px;color:#BCEFFA;font-size:.79rem;font-weight:800;letter-spacing:.14em;text-transform:uppercase}
+.etiqueta::before{content:"";width:30px;height:3px;background:var(--arena)}
+h1{margin:22px 0;font-size:clamp(2.8rem,5.5vw,5rem);line-height:1.04;letter-spacing:-.045em}
+h1 span{display:block;color:var(--arena)}
+.portada-texto{max-width:610px;margin-bottom:28px;color:#E5F3F7;font-size:1.1rem}
+.acciones{display:flex;flex-wrap:wrap;gap:12px}
+.ubicacion{display:flex;align-items:center;gap:9px;margin-top:22px;color:#D2E9EF;font-size:.88rem}
+.ubicacion span{color:var(--arena)}
+
+/* ENFOQUES */
+.enfoques{background:white;border-bottom:1px solid var(--borde)}
+.enfoques-grid{display:grid;grid-template-columns:repeat(3,1fr);padding-block:27px}
+.enfoque{display:flex;align-items:center;gap:15px;padding:8px 24px}
+.enfoque+.enfoque{border-left:1px solid var(--borde)}
+.enfoque-icono{display:grid;place-items:center;flex-shrink:0;width:55px;height:55px;border-radius:16px;background:#E1F6FC;color:var(--petroleo);font-size:1.5rem}
+.enfoque strong{display:block;color:var(--petroleo);line-height:1.35}
+.enfoque small{display:block;margin-top:4px;color:var(--gris);line-height:1.4}
+
+/* SECCIONES GENERALES */
+.seccion{padding-block:85px}
+.seccion-fondo{background:var(--fondo)}
+.subtitulo{color:#007B9F;font-size:.78rem;font-weight:800;letter-spacing:.13em;text-transform:uppercase}
+h2{margin:12px 0 16px;color:var(--petroleo);font-size:clamp(2rem,3.8vw,3.25rem);line-height:1.12;letter-spacing:-.035em}
+
+/* PROGRAMAS */
+.programas-presentacion{display:grid;grid-template-columns:.85fr 1.5fr;align-items:center;gap:45px}
+.programas-intro p{margin-bottom:24px;color:var(--gris)}
+.programas-grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:20px}
+.programa{overflow:hidden;display:flex;flex-direction:column;border:1px solid var(--borde);border-radius:var(--radio);background:white;box-shadow:0 5px 20px rgba(0,54,72,.04);transition:transform .25s ease,box-shadow .25s ease}
+.programa:hover{transform:translateY(-5px);box-shadow:var(--sombra)}
+.programa-imagen{overflow:hidden;height:190px;background:#DDEFF4}
+.programa-imagen img{width:100%;height:100%;object-fit:cover;transition:transform .4s ease}
+.programa:hover .programa-imagen img{transform:scale(1.04)}
+.programa-contenido{display:flex;flex:1;flex-direction:column;align-items:flex-start;padding:23px}
+.programa-icono{display:grid;place-items:center;width:47px;height:47px;margin-top:-45px;margin-bottom:15px;position:relative;border:4px solid white;border-radius:15px;background:#DDF5FC;color:var(--petroleo);font-size:1.25rem}
+.programa h3{margin-bottom:10px;color:var(--petroleo);font-size:1.22rem;line-height:1.3}
+.programa p{margin-bottom:21px;color:var(--gris);font-size:.94rem}
+.enlace-texto{margin-top:auto;color:#007FA4;font-weight:800}
+.enlace-texto:hover{color:var(--petroleo);text-decoration:underline}
+
+/* CONÓCENOS */
+.conocenos-grid{display:grid;grid-template-columns:.9fr 1.1fr;align-items:center;gap:65px}
+.frase-institucional{padding:38px;border-radius:26px;background:radial-gradient(circle at 100% 0%,rgba(0,166,214,.32),transparent 48%),var(--petroleo);color:white;box-shadow:var(--sombra)}
+.frase-icono{color:var(--arena);font-size:2.2rem}
+.frase-institucional h3{margin:22px 0 17px;font-size:clamp(1.5rem,2.5vw,2.1rem);line-height:1.35}
+.frase-institucional p{color:#D8EBF0}
+.conocenos-texto>p{margin-bottom:17px;color:var(--gris)}
+.conocenos-texto .boton{margin-top:9px}
+
+/* TELEINSULAR */
+.teleinsular-home{position:relative;overflow:hidden;padding:70px 0;background:#004B63;color:white}
+.teleinsular-contenido{width:min(1100px,calc(100% - 40px));margin-inline:auto;display:grid;grid-template-columns:minmax(240px,.8fr) minmax(0,1.2fr);align-items:center;gap:55px}
+.teleinsular-logo{display:grid;place-items:center;min-height:240px;padding:28px;border:1px solid rgba(255,255,255,.18);border-radius:22px;background:rgba(255,255,255,.06)}
+.teleinsular-logo img{width:100%;max-width:360px;max-height:230px;object-fit:contain}
+.teleinsular-categoria{display:inline-block;margin-bottom:12px;color:#BCEFFA;font-size:.78rem;font-weight:800;letter-spacing:.13em}
+.teleinsular-texto h2{margin:8px 0 18px;color:white;font-size:clamp(2rem,4vw,3.2rem)}
+.teleinsular-slogan{margin-bottom:10px;color:var(--arena);font-size:1.25rem;font-weight:700}
+.teleinsular-respaldo{margin-bottom:25px;color:#D8EBF0}
+.teleinsular-boton{display:inline-flex;align-items:center;gap:10px;padding:13px 22px;border-radius:50px;background:var(--arena);color:#173640;font-weight:800;transition:transform .2s ease,background .2s ease}
+.teleinsular-boton:hover{transform:translateY(-2px);background:#FFD16C}
+
+/* REVISTA INSU */
+.insu-home{position:relative;overflow:hidden;padding:85px 0;background:radial-gradient(ellipse at 5% 100%,rgba(0,166,214,.17),transparent 38%),linear-gradient(135deg,#062D3B 0%,#004B63 55%,#073746 100%);color:white}
+.insu-contenido{display:grid;grid-template-columns:minmax(0,.95fr) minmax(0,1.05fr);align-items:center;gap:65px}
+.insu-portada{position:relative;isolation:isolate;overflow:hidden;display:flex;min-height:420px;flex-direction:column;justify-content:space-between;padding:38px;border:1px solid rgba(255,255,255,.22);border-radius:8px;background:linear-gradient(155deg,rgba(0,166,214,.24),transparent 50%),linear-gradient(145deg,#063D50,#021D28);box-shadow:0 28px 60px rgba(0,0,0,.22)}
+.insu-portada::before{content:"";position:absolute;z-index:-1;width:240px;height:240px;top:50px;right:-85px;border:1px solid rgba(255,194,71,.55);border-radius:50%;box-shadow:0 0 0 24px rgba(255,194,71,.04),0 0 0 48px rgba(255,194,71,.035)}
+.insu-portada::after{content:"CULTURA · MEMORIA · TERRITORIO";position:absolute;right:20px;bottom:95px;color:rgba(255,255,255,.12);font-size:.65rem;font-weight:800;letter-spacing:.15em;writing-mode:vertical-rl}
+.insu-marca{color:var(--arena);font-family:Georgia,"Times New Roman",serif;font-size:clamp(5rem,10vw,8.5rem);font-weight:900;letter-spacing:-.09em;line-height:.95}
+.insu-tipo{display:inline-block;margin-top:15px;color:#D8EDF3;font-size:.77rem;font-weight:700;letter-spacing:.19em;text-transform:uppercase}
+.insu-frase{max-width:330px;margin-top:55px;padding-top:20px;border-top:2px solid var(--arena);color:white;font-family:Georgia,"Times New Roman",serif;font-size:clamp(1.5rem,2.6vw,2.15rem);line-height:1.25}
+.insu-texto{max-width:570px}
+.insu-etiqueta{display:inline-block;margin-bottom:12px;color:#A8E9F7;font-size:.77rem;font-weight:800;letter-spacing:.15em;text-transform:uppercase}
+.insu-texto h2{margin:8px 0 20px;color:white;font-size:clamp(2.1rem,4vw,3.2rem);line-height:1.12;letter-spacing:-.04em}
+.insu-texto>p{color:#D6E8ED;line-height:1.8}
+.insu-detalles{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:14px;margin:28px 0}
+.insu-detalle{padding:18px;border-left:3px solid var(--arena);background:rgba(255,255,255,.07)}
+.insu-detalle strong{display:block;margin-bottom:5px;color:var(--arena);font-size:1rem}
+.insu-detalle span{display:block;color:#D6E8ED;font-size:.88rem;line-height:1.55}
+.insu-home .boton-borde-oscuro{border-color:var(--arena);background:var(--arena);color:#173640}
+.insu-home .boton-borde-oscuro:hover{border-color:#FFD16C;background:#FFD16C}
+.insu-respaldo{margin-top:18px;color:#A8C9D2;font-size:.83rem}
