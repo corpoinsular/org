@@ -471,13 +471,13 @@ h2 { margin: 12px 0 16px; color: var(--petroleo); font-size: clamp(2rem,3.8vw,3.
 }
 
 /* FONDO AZUL PETRÓLEO PARA LOS LOGOS BLANCOS */
-.iniciativa-logo {
-  display: grid;
-  place-items: center;
-  min-height: 145px;
-  padding: 15px;
-  border-radius: 15px;
-  background: var(--petroleo);
+.iniciativa-logo{
+  display:grid;
+  place-items:center;
+  min-height:145px;
+  padding:15px;
+  border-radius:15px;
+  background:#004B63;
 }
 
 .iniciativa-logo img {
