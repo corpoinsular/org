@@ -18,4 +18,5 @@ iniciativas.querySelectorAll('.submenu a').forEach(enlace => {
     iniciativasBtn.setAttribute('aria-expanded', 'false');
   });
 });
-
+const botonMenu = document.getElementById("boton-menu");
+const menuPrincipal = document.getElementById("menu-principal");
