@@ -908,34 +908,47 @@ a { -webkit-tap-highlight-color: transparent; }
 
 <body>
 
-<!-- ENCABEZADO -->
 <header class="encabezado">
     <div class="navegacion">
 
-        <a href="index.html" class="marca" aria-label="COINDI, inicio">
+        <a href="index.html" class="marca" aria-label="Inicio de COINDI">
             <img src="assets/logo-coindi-claro.png"
-                 alt="Corporación Insular Digital">
+                 alt="COINDI — Corporación Insular Digital"
+                 width="215" height="70">
         </a>
 
         <button class="boton-menu"
-                id="botonMenu"
+                id="boton-menu"
                 type="button"
                 aria-label="Abrir menú"
                 aria-expanded="false"
-                aria-controls="menuPrincipal">☰</button>
+                aria-controls="menu-principal">☰</button>
 
-        <nav class="menu" id="menuPrincipal" aria-label="Navegación principal">
+        <nav class="menu" id="menu-principal" aria-label="Navegación principal">
             <a href="index.html">Inicio</a>
             <a href="conocenos.html">Conócenos</a>
             <a href="programas.html" aria-current="page">Programas</a>
-            <a href="teleinsular.html">Teleinsular</a>
-            <a href="insu.html">Revista INSU</a>
-            <a href="dona.html" class="boton">Apoyar</a>
+
+            <div class="menu-desplegable">
+                <button class="iniciativas-toggle"
+                        type="button"
+                        aria-expanded="false"
+                        aria-controls="submenu-iniciativas">
+                    Iniciativas
+                </button>
+
+                <div class="submenu" id="submenu-iniciativas">
+                    <a href="teleinsular.html">Teleinsular</a>
+                    <a href="insu.html">Revista INSU</a>
+                </div>
+            </div>
+
+            <a href="servicios.html">Servicios</a>
+            <a href="donar.html" class="boton">Apoyar</a>
         </nav>
 
     </div>
 </header>
-
 <main>
 
     <!-- PORTADA -->
