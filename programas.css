@@ -1102,3 +1102,17 @@ button:focus-visible {
         transition-duration: .01ms !important;
     }
 }
+/* =========================================================
+   CORRECCIÓN DEFINITIVA DEL MENÚ INICIATIVAS
+   ========================================================= */
+
+.iniciativas-toggle::before,
+.iniciativas-toggle > i,
+.iniciativas-toggle > svg {
+    display: none !important;
+    content: none !important;
+}
+
+.iniciativas-toggle {
+    gap: 0 !important;
+}
