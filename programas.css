@@ -1,4 +1,3 @@
-
 :root {
     --petroleo: #004B63;
     --caribe: #00A6D6;
@@ -15,9 +14,7 @@
     --ancho-contenido: 1160px;
 }
 
-* {
-    box-sizing: border-box;
-}
+* { box-sizing: border-box; }
 
 html {
     scroll-behavior: smooth;
@@ -33,36 +30,16 @@ body {
     line-height: 1.7;
 }
 
-img {
-    display: block;
-    max-width: 100%;
-}
-
-a,
-button {
-    -webkit-tap-highlight-color: transparent;
-}
-
-button {
-    font: inherit;
-    cursor: pointer;
-}
-
-a:focus-visible,
-button:focus-visible {
-    outline: 3px solid var(--arena);
-    outline-offset: 4px;
-}
+img { max-width: 100%; }
+a, button { -webkit-tap-highlight-color: transparent; }
+button { font: inherit; }
 
 .contenedor {
     width: min(var(--ancho-contenido), 90%);
     margin-inline: auto;
 }
 
-/* =========================================
-   ENCABEZADO Y NAVEGACIÓN INSTITUCIONAL
-========================================= */
-
+/* ENCABEZADO COMPARTIDO */
 .encabezado {
     position: sticky;
     top: 0;
@@ -89,6 +66,7 @@ button:focus-visible {
 }
 
 .marca img {
+    display: block;
     width: 190px;
     max-height: 62px;
     object-fit: contain;
@@ -111,7 +89,8 @@ button:focus-visible {
     font-size: .88rem;
     font-weight: 700;
     text-decoration: none;
-    transition: color .2s ease;
+    cursor: pointer;
+    transition: color .2s ease, background .2s ease;
 }
 
 .menu > a:not(.boton)::after,
@@ -171,7 +150,7 @@ button:focus-visible {
 .iniciativas-toggle {
     display: inline-flex;
     align-items: center;
-    gap: 8px;
+    gap: 6px;
 }
 
 .iniciativas-toggle::before {
@@ -195,7 +174,7 @@ button:focus-visible {
     top: calc(100% + 18px);
     left: -16px;
     display: none;
-    min-width: 190px;
+    min-width: 175px;
     padding: 8px;
     border: 1px solid var(--borde);
     border-radius: 12px;
@@ -203,9 +182,7 @@ button:focus-visible {
     box-shadow: var(--sombra-hover);
 }
 
-.menu-desplegable.abierto .submenu {
-    display: grid;
-}
+.menu-desplegable.abierto .submenu { display: grid; }
 
 .submenu a {
     padding: 9px 11px;
@@ -232,13 +209,11 @@ button:focus-visible {
     border-radius: 10px;
     background: white;
     color: var(--petroleo);
+    cursor: pointer;
     font-size: 1.35rem;
 }
 
-/* =========================================
-   PORTADA
-========================================= */
-
+/* PORTADA */
 .hero {
     position: relative;
     min-height: 480px;
@@ -292,9 +267,7 @@ button:focus-visible {
     letter-spacing: -1.8px;
 }
 
-.hero h1 span {
-    color: var(--arena);
-}
+.hero h1 span { color: var(--arena); }
 
 .hero p {
     max-width: 670px;
@@ -320,13 +293,8 @@ button:focus-visible {
     background: var(--arena);
 }
 
-/* =========================================
-   INTRODUCCIÓN
-========================================= */
-
-.introduccion {
-    padding: 62px 0 52px;
-}
+/* INTRODUCCIÓN */
+.introduccion { padding: 62px 0 52px; }
 
 .introduccion-grid {
     display: grid;
@@ -358,17 +326,9 @@ button:focus-visible {
     line-height: 1.9;
 }
 
-/* =========================================
-   PRESENTACIÓN DE LOS PROGRAMAS
-========================================= */
-
-.programa {
-    padding: 55px 0 72px;
-}
-
-.programa:nth-of-type(even) {
-    background: var(--fondo);
-}
+/* PRESENTACIÓN EDITORIAL DE LOS PROGRAMAS */
+.programa { padding: 55px 0 72px; }
+.programa:nth-of-type(even) { background: var(--fondo); }
 
 .programa-contenido {
     width: min(var(--ancho-contenido), 90%);
@@ -383,14 +343,8 @@ button:focus-visible {
     grid-template-columns: .92fr 1.08fr;
 }
 
-.programa:nth-of-type(even) .programa-visual {
-    order: 2;
-}
-
-.programa-visual,
-.programa-texto {
-    min-width: 0;
-}
+.programa:nth-of-type(even) .programa-visual { order: 2; }
+.programa-visual, .programa-texto { min-width: 0; }
 
 .foto-principal {
     position: relative;
@@ -404,15 +358,14 @@ button:focus-visible {
 }
 
 .foto-principal img {
+    display: block;
     width: 100%;
     aspect-ratio: 4 / 4.1;
     object-fit: cover;
     transition: transform .6s ease;
 }
 
-.foto-principal:hover img {
-    transform: scale(1.035);
-}
+.foto-principal:hover img { transform: scale(1.035); }
 
 .foto-numero {
     position: absolute;
@@ -442,6 +395,7 @@ button:focus-visible {
 }
 
 .galeria img {
+    display: block;
     width: 100%;
     aspect-ratio: 16 / 9;
     object-fit: cover;
@@ -478,10 +432,7 @@ button:focus-visible {
     color: var(--petroleo);
 }
 
-.programa-icono i {
-    width: 27px;
-    height: 27px;
-}
+.programa-icono i { width: 27px; height: 27px; }
 
 .programa-texto h2 {
     margin: 0 0 19px;
@@ -505,32 +456,17 @@ button:focus-visible {
     line-height: 1.9;
 }
 
-.programa-descripcion p {
-    margin: 0 0 15px;
-}
-
-.programa-descripcion p:last-child {
-    margin-bottom: 0;
-}
-
-.programa-extra {
-    display: none;
-}
-
+.programa-descripcion p { margin: 0 0 15px; }
+.programa-descripcion p:last-child { margin-bottom: 0; }
+.programa-extra { display: none; }
 .programa-extra.visible {
     display: block;
     animation: aparecer .3s ease;
 }
 
 @keyframes aparecer {
-    from {
-        opacity: 0;
-        transform: translateY(8px);
-    }
-    to {
-        opacity: 1;
-        transform: translateY(0);
-    }
+    from { opacity: 0; transform: translateY(8px); }
+    to { opacity: 1; transform: translateY(0); }
 }
 
 .programa-enlace {
@@ -545,21 +481,13 @@ button:focus-visible {
     color: var(--petroleo);
     font-size: .9rem;
     font-weight: 800;
+    cursor: pointer;
 }
 
-.programa-enlace i {
-    width: 17px;
-    height: 17px;
-}
+.programa-enlace i { width: 17px; height: 17px; }
+.programa-enlace:hover { color: var(--caribe); }
 
-.programa-enlace:hover {
-    color: var(--caribe);
-}
-
-/* =========================================
-   METODOLOGÍA
-========================================= */
-
+/* METODOLOGÍA */
 .metodologia {
     padding: 78px 0;
     background: var(--petroleo);
@@ -574,9 +502,7 @@ button:focus-visible {
     margin-bottom: 42px;
 }
 
-.metodologia .mini-etiqueta {
-    color: var(--arena);
-}
+.metodologia .mini-etiqueta { color: var(--arena); }
 
 .metodologia h2 {
     margin: 13px 0 0;
@@ -599,10 +525,7 @@ button:focus-visible {
     border-top: 1px solid rgba(255,255,255,.22);
 }
 
-.paso {
-    padding: 25px 20px 0 0;
-}
-
+.paso { padding: 25px 20px 0 0; }
 .paso + .paso {
     padding-left: 20px;
     border-left: 1px solid rgba(255,255,255,.22);
@@ -631,14 +554,8 @@ button:focus-visible {
     line-height: 1.8;
 }
 
-/* =========================================
-   ÁREAS DE IMPACTO
-========================================= */
-
-.impacto {
-    padding: 78px 0;
-    background: white;
-}
+/* ÁREAS DE IMPACTO */
+.impacto { padding: 78px 0; background: white; }
 
 .impacto-cabecera {
     display: flex;
@@ -672,15 +589,8 @@ button:focus-visible {
     border-bottom: 1px solid var(--borde);
 }
 
-.impacto-item {
-    min-height: 180px;
-    padding: 28px 20px;
-}
-
-.impacto-item + .impacto-item {
-    border-left: 1px solid var(--borde);
-}
-
+.impacto-item { min-height: 180px; padding: 28px 20px; }
+.impacto-item + .impacto-item { border-left: 1px solid var(--borde); }
 .impacto-item i {
     display: block;
     width: 30px;
@@ -688,7 +598,6 @@ button:focus-visible {
     margin-bottom: 27px;
     color: var(--caribe);
 }
-
 .impacto-item h3 {
     margin: 0;
     color: var(--petroleo);
@@ -696,14 +605,8 @@ button:focus-visible {
     line-height: 1.5;
 }
 
-/* =========================================
-   CIERRE Y CONTACTO
-========================================= */
-
-.cierre {
-    padding: 70px 0;
-    background: var(--fondo);
-}
+/* CIERRE Y CONTACTO */
+.cierre { padding: 70px 0; background: var(--fondo); }
 
 .cierre-interior {
     display: flex;
@@ -753,15 +656,8 @@ button:focus-visible {
     transform: translateY(-2px);
 }
 
-/* =========================================
-   PIE DE PÁGINA
-========================================= */
-
-.pie {
-    padding: 30px 0;
-    background: var(--oscuro);
-    color: white;
-}
+/* PIE DE PÁGINA */
+.pie { padding: 30px 0; background: var(--oscuro); color: white; }
 
 .pie-interior {
     display: flex;
@@ -771,6 +667,7 @@ button:focus-visible {
 }
 
 .pie-logo img {
+    display: block;
     width: 175px;
     max-height: 65px;
     object-fit: contain;
@@ -784,11 +681,7 @@ button:focus-visible {
     text-align: center;
 }
 
-.redes {
-    display: flex;
-    align-items: center;
-    gap: 10px;
-}
+.redes { display: flex; align-items: center; gap: 10px; }
 
 .redes a {
     display: grid;
@@ -807,76 +700,36 @@ button:focus-visible {
     color: var(--petroleo);
 }
 
-/* =========================================
-   TABLET
-========================================= */
-
+/* RESPONSIVE */
 @media (max-width: 1050px) {
-    .marca img {
-        width: 175px;
-    }
-
-    .menu {
-        gap: 14px;
-    }
-
-    .menu > a,
-    .iniciativas-toggle {
-        font-size: .82rem;
-    }
-
+    .marca img { width: 175px; }
+    .menu { gap: 14px; }
+    .menu > a, .iniciativas-toggle { font-size: .82rem; }
     .programa-contenido,
-    .programa:nth-of-type(even) .programa-contenido {
-        gap: 35px;
-    }
-
-    .pasos {
-        grid-template-columns: repeat(2, minmax(0, 1fr));
-    }
-
-    .paso {
-        padding-bottom: 25px;
-    }
-
+    .programa:nth-of-type(even) .programa-contenido { gap: 35px; }
+    .pasos { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+    .paso { padding-bottom: 25px; }
     .paso:nth-child(3) {
         padding-left: 0;
         border-left: 0;
         border-top: 1px solid rgba(255,255,255,.22);
         padding-top: 23px;
     }
-
     .paso:nth-child(4) {
         border-top: 1px solid rgba(255,255,255,.22);
         padding-top: 23px;
     }
-
-    .impacto-grid {
-        grid-template-columns: repeat(2, minmax(0, 1fr));
-    }
-
+    .impacto-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); }
     .impacto-item:nth-child(3) {
         border-left: 0;
         border-top: 1px solid var(--borde);
     }
-
-    .impacto-item:nth-child(4) {
-        border-top: 1px solid var(--borde);
-    }
+    .impacto-item:nth-child(4) { border-top: 1px solid var(--borde); }
 }
 
-/* =========================================
-   MENÚ MÓVIL
-========================================= */
-
 @media (max-width: 820px) {
-    .navegacion {
-        min-height: 74px;
-    }
-
-    .boton-menu {
-        display: inline-flex;
-    }
-
+    .navegacion { min-height: 74px; }
+    .boton-menu { display: inline-flex; }
     .menu {
         display: none;
         position: absolute;
@@ -891,11 +744,7 @@ button:focus-visible {
         border-bottom: 1px solid var(--borde);
         box-shadow: 0 18px 35px rgba(0,45,61,.10);
     }
-
-    .menu.abierto {
-        display: flex;
-    }
-
+    .menu.abierto { display: flex; }
     .menu > a:not(.boton),
     .iniciativas-toggle {
         width: 100%;
@@ -903,25 +752,11 @@ button:focus-visible {
         text-align: left;
         border-bottom: 1px solid #EDF2F4;
     }
-
     .menu > a:not(.boton)::after,
-    .iniciativas-toggle::after {
-        display: none;
-    }
-
-    .menu .boton {
-        align-self: flex-start;
-        margin-top: 14px;
-    }
-
-    .menu-desplegable {
-        display: block;
-    }
-
-    .iniciativas-toggle {
-        justify-content: space-between;
-    }
-
+    .iniciativas-toggle::after { display: none; }
+    .menu .boton { align-self: flex-start; margin-top: 14px; }
+    .menu-desplegable { display: block; }
+    .iniciativas-toggle { justify-content: space-between; }
     .submenu {
         position: static;
         min-width: 0;
@@ -931,166 +766,60 @@ button:focus-visible {
         box-shadow: none;
         background: #F7FAFB;
     }
-
-    .submenu a {
-        padding: 9px 12px;
-    }
-
-    .introduccion-grid {
-        gap: 30px;
-    }
+    .submenu a { padding: 9px 12px; }
+    .introduccion-grid { gap: 30px; }
 }
 
-/* =========================================
-   TELÉFONOS
-========================================= */
-
 @media (max-width: 760px) {
-    .hero {
-        min-height: 440px;
-    }
-
-    .hero-contenido {
-        padding: 65px 0;
-    }
-
-    .hero h1 {
-        letter-spacing: -1px;
-    }
-
-    .introduccion {
-        padding: 48px 0 35px;
-    }
-
-    .introduccion-grid {
-        grid-template-columns: 1fr;
-        gap: 18px;
-    }
-
-    .programa {
-        padding: 45px 0 52px;
-    }
-
+    .hero { min-height: 440px; }
+    .hero-contenido { padding: 65px 0; }
+    .hero h1 { letter-spacing: -1px; }
+    .introduccion { padding: 48px 0 35px; }
+    .introduccion-grid { grid-template-columns: 1fr; gap: 18px; }
+    .programa { padding: 45px 0 52px; }
     .programa-contenido,
     .programa:nth-of-type(even) .programa-contenido {
         grid-template-columns: 1fr;
         gap: 28px;
     }
-
-    .programa:nth-of-type(even) .programa-visual {
-        order: 0;
-    }
-
-    .foto-principal img {
-        aspect-ratio: 5 / 4;
-    }
-
-    .programa-texto h2 {
-        font-size: 2.2rem;
-    }
-
-    .metodologia,
-    .impacto {
-        padding: 58px 0;
-    }
-
-    .metodologia-encabezado {
-        grid-template-columns: 1fr;
-        gap: 16px;
-    }
-
-    .impacto-cabecera {
-        align-items: flex-start;
-        flex-direction: column;
-        gap: 14px;
-    }
-
-    .cierre {
-        padding: 48px 0;
-    }
-
-    .cierre-interior {
-        align-items: flex-start;
-        flex-direction: column;
-        padding: 28px 23px;
-    }
-
-    .pie-interior {
-        flex-direction: column;
-        text-align: center;
-    }
+    .programa:nth-of-type(even) .programa-visual { order: 0; }
+    .foto-principal img { aspect-ratio: 5 / 4; }
+    .programa-texto h2 { font-size: 2.2rem; }
+    .metodologia, .impacto { padding: 58px 0; }
+    .metodologia-encabezado { grid-template-columns: 1fr; gap: 16px; }
+    .impacto-cabecera { align-items: flex-start; flex-direction: column; gap: 14px; }
+    .cierre { padding: 48px 0; }
+    .cierre-interior { align-items: flex-start; flex-direction: column; padding: 28px 23px; }
+    .pie-interior { flex-direction: column; text-align: center; }
 }
 
 @media (max-width: 480px) {
-    .hero h1 {
-        font-size: 2.45rem;
-    }
-
-    .programa-texto h2 {
-        font-size: 2rem;
-    }
-
-    .pasos {
-        grid-template-columns: 1fr;
-    }
-
-    .paso,
-    .paso + .paso,
-    .paso:nth-child(3),
-    .paso:nth-child(4) {
+    .hero h1 { font-size: 2.45rem; }
+    .programa-texto h2 { font-size: 2rem; }
+    .pasos { grid-template-columns: 1fr; }
+    .paso, .paso + .paso, .paso:nth-child(3), .paso:nth-child(4) {
         padding: 22px 0;
         border-left: 0;
         border-top: 1px solid rgba(255,255,255,.22);
     }
-
-    .paso:first-child {
-        border-top: 0;
-    }
-
-    .paso-numero {
-        margin-bottom: 14px;
-    }
-
-    .impacto-grid {
-        grid-template-columns: 1fr;
-    }
-
-    .impacto-item,
-    .impacto-item + .impacto-item,
-    .impacto-item:nth-child(3),
-    .impacto-item:nth-child(4) {
+    .paso:first-child { border-top: 0; }
+    .paso-numero { margin-bottom: 14px; }
+    .impacto-grid { grid-template-columns: 1fr; }
+    .impacto-item, .impacto-item + .impacto-item,
+    .impacto-item:nth-child(3), .impacto-item:nth-child(4) {
         min-height: auto;
         padding: 21px 5px;
         border-left: 0;
         border-top: 1px solid var(--borde);
     }
-
-    .impacto-item:first-child {
-        border-top: 0;
-    }
-
-    .impacto-item i {
-        margin-bottom: 14px;
-    }
-
-    .foto-numero {
-        left: 12px;
-        bottom: 12px;
-    }
-
-    .cierre-interior {
-        padding: 25px 20px;
-    }
+    .impacto-item:first-child { border-top: 0; }
+    .impacto-item i { margin-bottom: 14px; }
+    .foto-numero { left: 12px; bottom: 12px; }
+    .cierre-interior { padding: 25px 20px; }
 }
 
-/* =========================================
-   MOVIMIENTO REDUCIDO
-========================================= */
-
 @media (prefers-reduced-motion: reduce) {
-    *,
-    *::before,
-    *::after {
+    *, *::before, *::after {
         scroll-behavior: auto !important;
         animation-duration: .01ms !important;
         transition-duration: .01ms !important;
