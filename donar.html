@@ -5,17 +5,120 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-  <title>Donaciones | Corporación Insular Digital - COINDI</title>
+  <title>Apoyar | Corporación Insular Digital - COINDI</title>
 
   <meta
     name="description"
-    content="Apoya a la Corporación Insular Digital — COINDI. Contribuye a iniciativas de inclusión digital, creación audiovisual, comunicación comunitaria y transformación social desde el territorio."
+    content="Apoya a Corporación Insular Digital (COINDI). Contribuye a iniciativas de inclusión digital, creación audiovisual, comunicación comunitaria y transformación social desde el territorio."
   >
 
-  <meta name="theme-color" content="#0A2EA8">
+  <meta name="theme-color" content="#004B63">
 
   <link rel="stylesheet" href="styles.css">
-  <link rel="stylesheet" href="donar.css?v=1">
+  <link rel="stylesheet" href="donar.css?v=2">
+
+  <style>
+    /* Menú desplegable de iniciativas */
+    .nav-dropdown {
+      position: relative;
+    }
+
+    .nav-dropdown-toggle {
+      border: 0;
+      background: transparent;
+      color: inherit;
+      font: inherit;
+      cursor: pointer;
+      padding: 0;
+    }
+
+    .nav-dropdown-menu {
+      display: none;
+      position: absolute;
+      top: 100%;
+      left: 0;
+      min-width: 190px;
+      padding: 10px;
+      background: #ffffff;
+      border-radius: 10px;
+      box-shadow: 0 8px 24px rgba(0, 0, 0, 0.14);
+      z-index: 1000;
+    }
+
+    .nav-dropdown.open .nav-dropdown-menu {
+      display: grid;
+      gap: 8px;
+    }
+
+    .nav-dropdown-menu a {
+      display: block;
+      padding: 9px 12px;
+      color: #173640;
+      text-decoration: none;
+      border-radius: 6px;
+    }
+
+    .nav-dropdown-menu a:hover,
+    .nav-dropdown-menu a:focus {
+      background: #F3F8FA;
+    }
+
+    /* Información para aportes económicos */
+    .bank-contribution {
+      margin-top: 35px;
+      padding: 28px;
+      background: #F3F8FA;
+      border: 1px solid rgba(0, 75, 99, 0.14);
+      border-radius: 16px;
+    }
+
+    .bank-contribution h3 {
+      margin-top: 0;
+      color: #004B63;
+    }
+
+    .bank-contribution p {
+      margin-bottom: 14px;
+    }
+
+    .bank-contribution a {
+      color: #007FA5;
+      font-weight: 600;
+    }
+
+    .tax-information {
+      margin-top: 22px;
+      padding: 18px 20px;
+      border-left: 4px solid #FFC247;
+      background: #FFF9E9;
+      border-radius: 8px;
+    }
+
+    .tax-information p {
+      margin: 0;
+    }
+
+    @media (max-width: 768px) {
+      .nav-dropdown {
+        width: 100%;
+      }
+
+      .nav-dropdown-menu {
+        position: static;
+        box-shadow: none;
+        margin-top: 8px;
+        background: rgba(255, 255, 255, 0.08);
+      }
+
+      .nav-dropdown-menu a {
+        color: inherit;
+      }
+
+      .bank-contribution {
+        padding: 20px;
+      }
+    }
+  </style>
 </head>
 
 <body class="donaciones-page">
@@ -26,7 +129,7 @@
 
       <a class="brand" href="index.html" aria-label="Volver al inicio de COINDI">
         <img
-          src="assets/logo.png"
+          src="assets/logo-coindi-oscuro.png"
           alt="Corporación Insular Digital - COINDI"
           class="brand-logo"
         >
@@ -45,16 +148,34 @@
       </button>
 
       <nav class="main-nav" id="main-nav" aria-label="Navegación principal">
+
         <a href="index.html">Inicio</a>
         <a href="conocenos.html">Conócenos</a>
         <a href="programas.html">Programas</a>
-        <a href="colectivo.html">Colectivo</a>
-        <a href="contacto.html">Contacto</a>
-        <a href="donar.html" class="nav-donate active" aria-current="page">
-          Donaciones
-        </a>
-      </nav>
 
+        <div class="nav-dropdown">
+          <button
+            class="nav-dropdown-toggle"
+            type="button"
+            aria-expanded="false"
+            aria-haspopup="true"
+          >
+            Iniciativas
+          </button>
+
+          <div class="nav-dropdown-menu">
+            <a href="teleinsular.html">Teleinsular</a>
+            <a href="insu.html">Revista INSU</a>
+          </div>
+        </div>
+
+        <a href="servicios.html">Servicios</a>
+
+        <a href="donar.html" class="nav-donate active" aria-current="page">
+          Apoyar
+        </a>
+
+      </nav>
     </div>
   </header>
 
@@ -104,8 +225,8 @@
 
           <p>
             Tu contribución puede apoyar el trabajo institucional de la
-            Corporación o destinarse, según las posibilidades de ejecución
-            y coordinación, a uno de sus programas.
+            Corporación o respaldar, de acuerdo con las posibilidades
+            de ejecución y coordinación, alguna de sus líneas de trabajo.
           </p>
 
           <blockquote>
@@ -120,6 +241,7 @@
             alt="Paisaje del territorio insular de Bocachica"
             loading="lazy"
           >
+
           <div class="image-caption">
             <span>Territorio</span>
             <span>Comunidad</span>
@@ -131,12 +253,17 @@
     </section>
 
     <!-- SELECCIÓN DEL DESTINO -->
-    <section class="donation-destinations section-padding" id="programas-destino">
+    <section
+      class="donation-destinations section-padding"
+      id="programas-destino"
+    >
       <div class="container">
 
         <div class="section-heading">
           <span class="section-kicker">Elige cómo quieres contribuir</span>
+
           <h2>¿A dónde te gustaría dirigir tu aporte?</h2>
+
           <p>
             Puedes apoyar las necesidades generales de COINDI o indicar
             cuál de sus líneas de trabajo te interesa respaldar.
@@ -165,7 +292,9 @@
 
               <span class="destination-card-content">
                 <span class="destination-icon" aria-hidden="true">✦</span>
+
                 <strong>Apoyo general a COINDI</strong>
+
                 <span>
                   Contribuye al fortalecimiento institucional y al desarrollo
                   de las actividades de la Corporación.
@@ -182,7 +311,9 @@
 
               <span class="destination-card-content">
                 <span class="destination-icon" aria-hidden="true">⌘</span>
+
                 <strong>Alfabetización e Inclusión Digital</strong>
+
                 <span>
                   Apoya procesos de aprendizaje y apropiación de herramientas
                   digitales para personas de distintas edades.
@@ -199,7 +330,9 @@
 
               <span class="destination-card-content">
                 <span class="destination-icon" aria-hidden="true">▶</span>
+
                 <strong>Crea Cine Insular</strong>
+
                 <span>
                   Contribuye a iniciativas de creación audiovisual,
                   narración y producción de contenidos desde el territorio.
@@ -216,7 +349,9 @@
 
               <span class="destination-card-content">
                 <span class="destination-icon" aria-hidden="true">◎</span>
+
                 <strong>Comunicación y memoria cultural</strong>
+
                 <span>
                   Apoya la participación comunitaria, las historias locales
                   y la preservación de la memoria cultural.
@@ -233,7 +368,9 @@
 
               <span class="destination-card-content">
                 <span class="destination-icon" aria-hidden="true">◇</span>
+
                 <strong>Actividades sociales y culturales</strong>
+
                 <span>
                   Apoya actividades que promuevan la participación,
                   la identidad territorial y el encuentro comunitario.
@@ -245,15 +382,17 @@
 
           <div class="donation-note">
             <strong>Importante:</strong>
-            la selección expresa tu preferencia de destino. La coordinación
-            del aporte y su aplicación estarán sujetas a confirmación con
-            COINDI, a la disponibilidad de mecanismos y a las condiciones
-            acordadas para la contribución.
+            la selección expresa tu preferencia de destino. La asignación
+            y aplicación del aporte estarán sujetas a las necesidades
+            institucionales, la viabilidad de las actividades y las
+            condiciones acordadas con COINDI.
           </div>
 
           <div class="form-fields">
+
             <div class="field-group">
               <label for="nombre">Nombre o entidad (opcional)</label>
+
               <input
                 type="text"
                 id="nombre"
@@ -265,6 +404,7 @@
 
             <div class="field-group">
               <label for="correo">Correo electrónico</label>
+
               <input
                 type="email"
                 id="correo"
@@ -277,19 +417,29 @@
 
             <div class="field-group">
               <label for="tipo-aporte">Tipo de contribución</label>
+
               <select id="tipo-aporte" name="tipo_aporte" required>
                 <option value="">Selecciona una opción</option>
                 <option value="Donación económica">Donación económica</option>
                 <option value="Equipos o dispositivos">Equipos o dispositivos</option>
-                <option value="Libros o materiales educativos">Libros o materiales educativos</option>
-                <option value="Servicios profesionales">Servicios profesionales</option>
+                <option value="Libros o materiales educativos">
+                  Libros o materiales educativos
+                </option>
+                <option value="Servicios profesionales">
+                  Servicios profesionales
+                </option>
                 <option value="Voluntariado">Voluntariado</option>
-                <option value="Otro aporte en especie">Otro aporte en especie</option>
+                <option value="Otro aporte en especie">
+                  Otro aporte en especie
+                </option>
               </select>
             </div>
 
             <div class="field-group">
-              <label for="mensaje">Mensaje o descripción del aporte (opcional)</label>
+              <label for="mensaje">
+                Mensaje o descripción del aporte (opcional)
+              </label>
+
               <textarea
                 id="mensaje"
                 name="mensaje"
@@ -297,6 +447,7 @@
                 placeholder="Cuéntanos cómo te gustaría contribuir."
               ></textarea>
             </div>
+
           </div>
 
           <div class="privacy-consent">
@@ -308,15 +459,19 @@
                 value="Sí"
                 required
               >
+
               <span>
-                Autorizo a COINDI a utilizar los datos proporcionados para
-                responder esta consulta y coordinar mi posible contribución.
+                Autorizo a COINDI a utilizar los datos proporcionados
+                para responder esta consulta y coordinar mi posible
+                contribución, de acuerdo con su política de tratamiento
+                de datos personales.
               </span>
             </label>
+
             <p>
-              No incluyas información financiera confidencial en este formulario.
-              Antes de publicar esta página, enlaza aquí la política de tratamiento
-              de datos personales de la Corporación.
+              No incluyas información financiera confidencial en este
+              formulario. Antes de publicar, debe enlazarse la política
+              de tratamiento de datos personales de la Corporación.
             </p>
           </div>
 
@@ -325,11 +480,56 @@
           </button>
 
           <p class="form-disclaimer">
-            Este formulario inicia una consulta; no procesa pagos ni confirma
-            la recepción de una donación.
+            Este formulario abre una consulta por correo electrónico.
+            No procesa pagos, no almacena información en una base de datos
+            y no confirma la recepción de una donación.
           </p>
 
         </form>
+
+        <!-- APORTES ECONÓMICOS -->
+        <div class="bank-contribution" id="aporte-economico">
+
+          <span class="section-kicker">Contribuciones económicas</span>
+
+          <h3>Realiza tu aporte a COINDI</h3>
+
+          <p>
+            La Corporación cuenta con una cuenta bancaria institucional
+            habilitada para recibir aportes. Si deseas realizar una
+            contribución económica, puedes solicitar los datos bancarios
+            a través de nuestro correo institucional.
+          </p>
+
+          <p>
+            <a
+              href="mailto:corpoindicomunicaciones@gmail.com?subject=Solicitud%20de%20datos%20bancarios%20para%20aportar%20a%20COINDI"
+            >
+              Solicitar datos bancarios
+            </a>
+          </p>
+
+          <p>
+            Una vez realizada la transferencia, agradecemos informar
+            a COINDI para facilitar la identificación y el registro
+            del aporte.
+          </p>
+
+        </div>
+
+        <!-- INFORMACIÓN TRIBUTARIA -->
+        <div class="tax-information">
+
+          <p>
+            <strong>Información tributaria:</strong>
+            actualmente COINDI no cuenta con calificación en el
+            Régimen Tributario Especial (RTE). Por tanto, los aportes
+            realizados en esta etapa no dan lugar al descuento tributario
+            previsto para donaciones a entidades calificadas en dicho régimen.
+          </p>
+
+        </div>
+
       </div>
     </section>
 
@@ -339,7 +539,9 @@
 
         <div class="section-heading">
           <span class="section-kicker">Hay muchas formas de sumar</span>
+
           <h2>Tu aporte va más allá del dinero</h2>
+
           <p>
             Si no puedes realizar una contribución económica, también puedes
             apoyar con recursos, conocimientos, tiempo o materiales.
@@ -349,17 +551,22 @@
         <div class="ways-grid">
 
           <article class="way-card">
-            <div class="way-icon" aria-hidden="true">₱</div>
+            <div class="way-icon" aria-hidden="true">$</div>
+
             <h3>Donaciones económicas</h3>
+
             <p>
-              Consulta con COINDI los mecanismos disponibles para realizar
-              una contribución económica de manera coordinada.
+              Realiza aportes a la cuenta institucional de COINDI.
+              Solicita previamente los datos bancarios y las indicaciones
+              para identificar tu contribución.
             </p>
           </article>
 
           <article class="way-card">
             <div class="way-icon" aria-hidden="true">▣</div>
+
             <h3>Equipos y tecnología</h3>
+
             <p>
               Ofrece dispositivos u otros recursos tecnológicos que puedan
               ser útiles para las actividades de la Corporación.
@@ -368,7 +575,9 @@
 
           <article class="way-card">
             <div class="way-icon" aria-hidden="true">▤</div>
+
             <h3>Libros y materiales</h3>
+
             <p>
               Contribuye con libros, materiales educativos y otros recursos
               que puedan apoyar procesos de aprendizaje y creación.
@@ -377,7 +586,9 @@
 
           <article class="way-card">
             <div class="way-icon" aria-hidden="true">✳</div>
+
             <h3>Conocimientos y servicios</h3>
+
             <p>
               Comparte tu experiencia profesional, tus habilidades o servicios
               que puedan contribuir a las iniciativas de COINDI.
@@ -386,7 +597,9 @@
 
           <article class="way-card">
             <div class="way-icon" aria-hidden="true">♡</div>
+
             <h3>Voluntariado</h3>
+
             <p>
               Participa con tu tiempo y capacidades en actividades que
               requieran apoyo comunitario y organizativo.
@@ -395,7 +608,9 @@
 
           <article class="way-card">
             <div class="way-icon" aria-hidden="true">↗</div>
+
             <h3>Difunde la iniciativa</h3>
+
             <p>
               Comparte los proyectos y contenidos de COINDI para que más
               personas conozcan las oportunidades de colaboración.
@@ -414,19 +629,22 @@
 
         <div class="transparency-copy">
           <span class="section-kicker">Aportes con responsabilidad</span>
-          <h2>La confianza también se construye con transparencia</h2>
-          <p>
-            Antes de realizar un aporte, podrás consultar con COINDI el
-            mecanismo disponible, el destino acordado y la forma de
-            coordinación correspondiente.
-          </p>
-          <p>
-            La información sobre recepción y aplicación de los aportes deberá
-            comunicarse conforme a los registros y procedimientos que tenga
-            establecidos la Corporación.
-          </p>
-        </div>
 
+          <h2>La confianza también se construye con transparencia</h2>
+
+          <p>
+            Antes de realizar un aporte, podrás consultar con COINDI
+            el mecanismo disponible, el destino acordado y la forma
+            de coordinación correspondiente.
+          </p>
+
+          <p>
+            La Corporación procurará mantener el registro de los aportes
+            recibidos y de su aplicación, de acuerdo con sus procedimientos
+            administrativos y contables.
+          </p>
+
+        </div>
       </div>
     </section>
 
@@ -436,7 +654,9 @@
 
         <div>
           <span class="section-kicker">¿Tienes alguna pregunta?</span>
+
           <h2>Hablemos de cómo puedes contribuir</h2>
+
           <p>
             Escríbenos para coordinar tu aporte económico, en especie,
             profesional o voluntario.
@@ -444,16 +664,14 @@
         </div>
 
         <div class="contact-actions">
+
           <a
             class="btn btn-primary"
-            href="mailto:corpoindicomunicaciones@gmail.com?subject=Informaci%C3%B3n%20sobre%20donaciones%20a%20COINDI"
+            href="mailto:corpoindicomunicaciones@gmail.com?subject=Informaci%C3%B3n%20sobre%20aportes%20a%20COINDI"
           >
             Escribir por correo
           </a>
 
-          <a href="contacto.html" class="contact-secondary-link">
-            Ver página de contacto
-          </a>
         </div>
 
       </div>
@@ -467,7 +685,7 @@
 
       <div class="footer-brand">
         <img
-          src="assets/logo-coindi-oscuro.png"
+          src="assets/logo-coindi-claro.png"
           alt="Corporación Insular Digital - COINDI"
           loading="lazy"
         >
@@ -480,6 +698,7 @@
 
       <div class="footer-contact">
         <h2>Área de comunicaciones</h2>
+
         <a href="mailto:corpoindicomunicaciones@gmail.com">
           corpoindicomunicaciones@gmail.com
         </a>
@@ -489,21 +708,35 @@
         <h2>Síguenos</h2>
 
         <div class="social-links">
-          <a href="https://www.facebook.com/insulardigitaloficial"
-             target="_blank" rel="noopener noreferrer"
-             aria-label="Facebook de Insular Digital">Facebook</a>
 
-          <a href="https://www.instagram.com/insulardigitaloficial"
-             target="_blank" rel="noopener noreferrer"
-             aria-label="Instagram de Insular Digital">Instagram</a>
+          <a
+            href="https://www.facebook.com/insulardigitaloficial"
+            target="_blank"
+            rel="noopener noreferrer"
+            aria-label="Facebook de Insular Digital"
+          >Facebook</a>
 
-          <a href="https://www.tiktok.com/@insulardigitaloficial"
-             target="_blank" rel="noopener noreferrer"
-             aria-label="TikTok de Insular Digital">TikTok</a>
+          <a
+            href="https://www.instagram.com/insulardigitaloficial"
+            target="_blank"
+            rel="noopener noreferrer"
+            aria-label="Instagram de Insular Digital"
+          >Instagram</a>
 
-          <a href="https://www.youtube.com/@insulardigitaloficial"
-             target="_blank" rel="noopener noreferrer"
-             aria-label="YouTube de Insular Digital">YouTube</a>
+          <a
+            href="https://www.tiktok.com/@insulardigitaloficial"
+            target="_blank"
+            rel="noopener noreferrer"
+            aria-label="TikTok de Insular Digital"
+          >TikTok</a>
+
+          <a
+            href="https://www.youtube.com/@insulardigitaloficial"
+            target="_blank"
+            rel="noopener noreferrer"
+            aria-label="YouTube de Insular Digital"
+          >YouTube</a>
+
         </div>
       </div>
 
@@ -512,7 +745,8 @@
     <div class="footer-bottom">
       <div class="container">
         <p>
-          © <span id="current-year"></span> Corporación Insular Digital (COINDI).
+          © <span id="current-year"></span>
+          Corporación Insular Digital (COINDI).
           Todos los derechos reservados.
         </p>
       </div>
@@ -531,11 +765,34 @@
     if (menuToggle && mainNav) {
       menuToggle.addEventListener("click", function () {
         const isOpen = mainNav.classList.toggle("open");
+
         menuToggle.setAttribute("aria-expanded", String(isOpen));
+
         menuToggle.setAttribute(
           "aria-label",
-          isOpen ? "Cerrar menú de navegación" : "Abrir menú de navegación"
+          isOpen
+            ? "Cerrar menú de navegación"
+            : "Abrir menú de navegación"
         );
+      });
+    }
+
+    // Menú desplegable de iniciativas
+    const dropdown = document.querySelector(".nav-dropdown");
+    const dropdownToggle = document.querySelector(".nav-dropdown-toggle");
+
+    if (dropdown && dropdownToggle) {
+      dropdownToggle.addEventListener("click", function () {
+        const isOpen = dropdown.classList.toggle("open");
+
+        dropdownToggle.setAttribute("aria-expanded", String(isOpen));
+      });
+
+      document.addEventListener("click", function (event) {
+        if (!dropdown.contains(event.target)) {
+          dropdown.classList.remove("open");
+          dropdownToggle.setAttribute("aria-expanded", "false");
+        }
       });
     }
   </script>
