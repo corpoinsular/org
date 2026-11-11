@@ -1,15 +1,13 @@
 
 /* =========================================================
    COINDI | PÁGINA APOYAR
-   Identidad visual unificada con la página Programas
-   Archivo: donar.css
+   Hoja de estilos específica: donar.css
+   Tipografía institucional: Arial
    ========================================================= */
 
-/* -------------------------
-   1. VARIABLES INSTITUCIONALES
-------------------------- */
+/* ---------- 1. VARIABLES Y BASE ---------- */
 
-:root {
+.donaciones-page {
     --petroleo: #004B63;
     --caribe: #00A6D6;
     --arena: #FFC247;
@@ -19,1370 +17,1224 @@
     --gris: #5C737B;
     --borde: #E1EBEF;
     --oscuro: #071F2A;
-
     --sombra: 0 8px 24px rgba(0, 75, 99, .08);
     --sombra-hover: 0 13px 30px rgba(0, 75, 99, .13);
-
     --radio: 15px;
     --ancho-contenido: 1160px;
-}
 
-/* -------------------------
-   2. ESTILOS GENERALES
-------------------------- */
-
-* {
-    box-sizing: border-box;
-}
-
-html {
-    scroll-behavior: smooth;
-    scroll-padding-top: 100px;
-}
-
-body {
-    margin: 0;
+    font-family: Arial, Helvetica, sans-serif;
     color: var(--texto);
     background: var(--blanco);
-    font-family: Arial, Helvetica, sans-serif;
     font-size: 16px;
-    line-height: 1.7;
+    line-height: 1.65;
+    overflow-x: clip;
 }
 
-img {
+/* Evita que otras hojas cambien la tipografía de esta página */
+
+.donaciones-page *,
+.donaciones-page *::before,
+.donaciones-page *::after {
+    box-sizing: border-box;
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+.donaciones-page h1,
+.donaciones-page h2,
+.donaciones-page h3,
+.donaciones-page p,
+.donaciones-page a,
+.donaciones-page button,
+.donaciones-page input,
+.donaciones-page select,
+.donaciones-page textarea,
+.donaciones-page label {
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+.donaciones-page h1,
+.donaciones-page h2,
+.donaciones-page h3,
+.donaciones-page p {
+    margin-top: 0;
+}
+
+.donaciones-page h1,
+.donaciones-page h2,
+.donaciones-page h3 {
+    line-height: 1.2;
+    letter-spacing: -0.35px;
+}
+
+.donaciones-page p {
+    color: var(--gris);
+}
+
+.donaciones-page a {
+    color: inherit;
+}
+
+.donaciones-page img {
     display: block;
     max-width: 100%;
 }
 
-button,
-input,
-select,
-textarea {
-    font: inherit;
+.donaciones-page button,
+.donaciones-page input,
+.donaciones-page select,
+.donaciones-page textarea {
+    font-size: inherit;
 }
 
-button {
-    cursor: pointer;
-}
-
-a {
-    color: inherit;
-    text-decoration: none;
-}
-
-button:focus-visible,
-a:focus-visible,
-input:focus-visible,
-select:focus-visible,
-textarea:focus-visible {
-    outline: 3px solid var(--arena);
-    outline-offset: 4px;
-}
-
-.donaciones-page {
-    width: 100%;
-    overflow: hidden;
-    color: var(--texto);
-    background: var(--blanco);
-    font-family: Arial, Helvetica, sans-serif;
-}
-
-.container {
-    width: min(var(--ancho-contenido), 90%);
+.donaciones-page .container {
+    width: min(90%, var(--ancho-contenido));
     margin-inline: auto;
 }
 
-/* -------------------------
-   3. ENCABEZADO Y NAVEGACIÓN
-------------------------- */
+.donaciones-page .section-padding {
+    padding: 88px 0;
+}
 
-.site-header {
+/* ---------- 2. ENCABEZADO Y NAVEGACIÓN ---------- */
+
+.donaciones-page .site-header {
     position: sticky;
     top: 0;
     z-index: 1000;
     width: 100%;
     background: rgba(255, 255, 255, .97);
-    box-shadow: 0 3px 15px rgba(0, 0, 0, .055);
-    backdrop-filter: blur(12px);
-    -webkit-backdrop-filter: blur(12px);
+    border-bottom: 1px solid var(--borde);
+    box-shadow: 0 3px 15px rgba(0, 45, 60, .045);
 }
 
-.header-inner {
-    width: min(var(--ancho-contenido), 90%);
-    min-height: 78px;
-    margin-inline: auto;
+.donaciones-page .header-inner {
+    min-height: 82px;
     display: flex;
     align-items: center;
     justify-content: space-between;
-    gap: 24px;
+    gap: 30px;
 }
 
-.brand {
-    display: flex;
+.donaciones-page .brand {
+    display: inline-flex;
     align-items: center;
     flex-shrink: 0;
+    text-decoration: none;
 }
 
-.brand-logo {
+.donaciones-page .brand-logo {
     width: 190px;
-    max-height: 62px;
+    max-height: 66px;
     object-fit: contain;
+    object-position: left center;
 }
 
-.main-nav {
+.donaciones-page .main-nav {
     display: flex;
     align-items: center;
     justify-content: flex-end;
-    gap: 19px;
+    gap: 25px;
 }
 
-.main-nav a,
-.nav-dropdown-toggle {
-    position: relative;
+.donaciones-page .main-nav > a,
+.donaciones-page .nav-dropdown-toggle {
     display: inline-flex;
     align-items: center;
+    min-height: 42px;
     padding: 8px 0;
-    border: 0;
-    background: transparent;
-    color: var(--petroleo);
-    font-size: .92rem;
-    font-weight: 700;
-    transition: color .25s ease;
+    color: var(--texto);
+    font-size: 14px;
+    font-weight: 600;
+    text-decoration: none;
+    transition: color .2s ease;
 }
 
-.main-nav a::after,
-.nav-dropdown-toggle::after {
-    position: absolute;
-    right: 0;
-    bottom: 2px;
-    left: 0;
-    height: 2px;
-    content: "";
-    background: var(--caribe);
-    transform: scaleX(0);
-    transform-origin: left;
-    transition: transform .25s ease;
-}
-
-.main-nav a:hover,
-.nav-dropdown-toggle:hover,
-.main-nav a.active {
+.donaciones-page .main-nav > a:hover,
+.donaciones-page .nav-dropdown-toggle:hover {
     color: var(--caribe);
 }
 
-.main-nav a:hover::after,
-.nav-dropdown-toggle:hover::after,
-.main-nav a.active::after {
-    transform: scaleX(1);
+.donaciones-page .main-nav > a.active {
+    color: var(--petroleo);
+    font-weight: 700;
 }
 
-/* Botón de la sección Apoyar */
-
-.main-nav .nav-donate,
-.main-nav a.nav-donate {
-    padding: 9px 20px;
-    border-radius: 50px;
-    background: var(--petroleo);
-    color: var(--blanco);
-    transition: background .25s ease, transform .25s ease;
+.donaciones-page .main-nav > a.active::after {
+    content: "";
+    display: block;
+    width: 5px;
+    height: 5px;
+    margin-left: 7px;
+    border-radius: 50%;
+    background: var(--arena);
 }
 
-.main-nav .nav-donate::after,
-.main-nav a.nav-donate::after {
-    display: none;
-}
-
-.main-nav .nav-donate:hover,
-.main-nav a.nav-donate:hover {
-    background: var(--caribe);
-    color: var(--blanco);
-    transform: translateY(-2px);
-}
-
-/* Menú desplegable */
-
-.nav-dropdown {
+.donaciones-page .nav-dropdown {
     position: relative;
 }
 
-.nav-dropdown-toggle {
+.donaciones-page .nav-dropdown-toggle {
+    border: 0;
+    background: transparent;
     cursor: pointer;
 }
 
-.nav-dropdown-menu {
-    position: absolute;
-    top: calc(100% + 12px);
-    left: 0;
-    z-index: 1001;
-    display: none;
-    min-width: 205px;
-    padding: 10px;
-    border: 1px solid var(--borde);
-    border-radius: 12px;
-    background: var(--blanco);
-    box-shadow: var(--sombra);
+.donaciones-page .nav-dropdown-toggle::after {
+    content: "";
+    width: 7px;
+    height: 7px;
+    margin: -4px 0 0 9px;
+    border-right: 1.5px solid currentColor;
+    border-bottom: 1.5px solid currentColor;
+    transform: rotate(45deg);
 }
 
-.nav-dropdown.open .nav-dropdown-menu,
-.nav-dropdown:hover .nav-dropdown-menu,
-.nav-dropdown:focus-within .nav-dropdown-menu {
+.donaciones-page .nav-dropdown-menu {
+    display: none;
+    position: absolute;
+    top: calc(100% + 8px);
+    left: -15px;
+    min-width: 205px;
+    padding: 9px;
+    background: var(--blanco);
+    border: 1px solid var(--borde);
+    border-radius: 12px;
+    box-shadow: var(--sombra-hover);
+    z-index: 1100;
+}
+
+.donaciones-page .nav-dropdown.open .nav-dropdown-menu {
     display: grid;
     gap: 3px;
 }
 
-.nav-dropdown-menu a {
+.donaciones-page .nav-dropdown-menu a {
     display: block;
-    padding: 9px 12px;
-    border-radius: 8px;
+    padding: 10px 12px;
+    color: var(--texto);
+    font-size: 14px;
+    font-weight: 500;
+    text-decoration: none;
+    border-radius: 7px;
+    transition: background .2s ease, color .2s ease;
+}
+
+.donaciones-page .nav-dropdown-menu a:hover,
+.donaciones-page .nav-dropdown-menu a:focus {
     color: var(--petroleo);
-    font-size: .9rem;
-}
-
-.nav-dropdown-menu a::after {
-    display: none;
-}
-
-.nav-dropdown-menu a:hover {
     background: var(--fondo);
-    color: var(--caribe);
 }
 
-/* Botón móvil */
+.donaciones-page .main-nav > a.nav-donate {
+    padding: 10px 19px;
+    color: var(--blanco);
+    background: var(--petroleo);
+    border-radius: 30px;
+    transition: background .2s ease, transform .2s ease;
+}
 
-.menu-toggle {
+.donaciones-page .main-nav > a.nav-donate:hover,
+.donaciones-page .main-nav > a.nav-donate.active {
+    color: var(--blanco);
+    background: var(--caribe);
+}
+
+.donaciones-page .main-nav > a.nav-donate::after {
     display: none;
-    width: 42px;
-    height: 42px;
-    padding: 8px;
+}
+
+.donaciones-page .menu-toggle {
+    display: none;
+    width: 43px;
+    height: 43px;
+    padding: 10px;
     border: 1px solid var(--borde);
-    border-radius: 10px;
+    border-radius: 9px;
     background: var(--blanco);
-    color: var(--petroleo);
-    font-size: 1.5rem;
+    cursor: pointer;
 }
 
-/* -------------------------
-   4. BOTONES
-------------------------- */
-
-.hero-actions,
-.contact-actions {
-    display: flex;
-    flex-wrap: wrap;
-    align-items: center;
-    gap: 14px;
+.donaciones-page .menu-toggle span {
+    display: block;
+    width: 100%;
+    height: 2px;
+    margin: 5px 0;
+    background: var(--petroleo);
+    border-radius: 3px;
 }
 
-.btn {
+/* ---------- 3. BOTONES ---------- */
+
+.donaciones-page .btn {
     display: inline-flex;
     align-items: center;
     justify-content: center;
-    min-height: 46px;
-    padding: 11px 23px;
-    border: 2px solid transparent;
-    border-radius: 50px;
-    font-size: .94rem;
+    min-height: 48px;
+    padding: 12px 23px;
+    border: 1px solid transparent;
+    border-radius: 30px;
+    font-size: 14px;
     font-weight: 700;
     line-height: 1.3;
     text-align: center;
-    transition:
-        background .25s ease,
-        color .25s ease,
-        border-color .25s ease,
-        transform .25s ease,
-        box-shadow .25s ease;
+    text-decoration: none;
+    cursor: pointer;
+    transition: transform .2s ease, background .2s ease,
+                color .2s ease, box-shadow .2s ease;
 }
 
-.btn:hover {
+.donaciones-page .btn:hover {
     transform: translateY(-2px);
 }
 
-.btn-primary {
-    border-color: var(--petroleo);
-    background: var(--petroleo);
+.donaciones-page .btn-primary {
     color: var(--blanco);
+    background: var(--petroleo);
+    box-shadow: 0 5px 14px rgba(0, 75, 99, .15);
 }
 
-.btn-primary:hover {
-    border-color: var(--caribe);
-    background: var(--caribe);
+.donaciones-page .btn-primary:hover {
     color: var(--blanco);
+    background: var(--caribe);
     box-shadow: var(--sombra);
 }
 
-.btn-outline {
-    border-color: var(--blanco);
+.donaciones-page .btn-outline {
+    color: var(--blanco);
+    border-color: rgba(255, 255, 255, .8);
     background: transparent;
-    color: var(--blanco);
 }
 
-.btn-outline:hover {
-    border-color: var(--arena);
-    background: var(--arena);
-    color: var(--oscuro);
-}
-
-.btn-submit {
-    width: 100%;
-    min-height: 50px;
-    border: 0;
-    border-radius: 50px;
-    background: var(--petroleo);
-    color: var(--blanco);
-    font-weight: 700;
-    transition: background .25s ease, transform .25s ease;
-}
-
-.btn-submit:hover {
-    background: var(--caribe);
-    transform: translateY(-2px);
-}
-
-/* -------------------------
-   5. HERO / PORTADA
-------------------------- */
-
-.donate-hero {
-    position: relative;
-    display: flex;
-    align-items: center;
-    min-height: 500px;
-    padding: 85px 0;
-    overflow: hidden;
-    background:
-        linear-gradient(
-            120deg,
-            rgba(0, 47, 67, .94),
-            rgba(0, 92, 120, .84) 60%,
-            rgba(0, 141, 180, .78)
-        ),
-        url("assets/hero-bocachica.jpg") center / cover no-repeat;
-    color: var(--blanco);
-}
-
-.donate-hero::before {
-    position: absolute;
-    top: -140px;
-    right: -100px;
-    width: 430px;
-    height: 430px;
-    border-radius: 50%;
-    content: "";
-    background: radial-gradient(
-        circle,
-        rgba(0, 166, 214, .24),
-        transparent 70%
-    );
-    pointer-events: none;
-}
-
-.donate-hero::after {
-    position: absolute;
-    bottom: -180px;
-    left: -100px;
-    width: 420px;
-    height: 420px;
-    border-radius: 50%;
-    content: "";
-    background: radial-gradient(
-        circle,
-        rgba(255, 194, 71, .15),
-        transparent 70%
-    );
-    pointer-events: none;
-}
-
-.donate-hero-overlay {
-    position: absolute;
-    inset: 0;
-    background: linear-gradient(
-        90deg,
-        rgba(7, 31, 42, .35),
-        transparent 85%
-    );
-}
-
-.donate-hero-content {
-    position: relative;
-    z-index: 1;
-    width: min(var(--ancho-contenido), 90%);
-    margin-inline: auto;
-    max-width: 850px;
-}
-
-.eyebrow {
-    display: inline-block;
-    margin-bottom: 15px;
-    color: var(--arena);
-    font-size: .82rem;
-    font-weight: 800;
-    letter-spacing: 2px;
-    text-transform: uppercase;
-}
-
-.donate-hero h1 {
-    max-width: 780px;
-    margin: 0 0 20px;
-    color: var(--blanco);
-    font-size: clamp(2.5rem, 5vw, 4.3rem);
-    font-weight: 800;
-    line-height: 1.12;
-}
-
-.donate-hero h1 span {
-    color: var(--arena);
-}
-
-.donate-hero p {
-    max-width: 660px;
-    margin: 0 0 30px;
-    color: rgba(255, 255, 255, .92);
-    font-size: 1.08rem;
-}
-
-/* -------------------------
-   6. INTRODUCCIÓN
-------------------------- */
-
-.donate-intro {
-    position: relative;
-    padding: 82px 0;
+.donaciones-page .btn-outline:hover {
+    color: var(--petroleo);
     background: var(--blanco);
 }
 
-.donate-intro::before {
-    position: absolute;
-    top: 0;
-    right: -130px;
-    width: 350px;
-    height: 350px;
-    border-radius: 50%;
-    content: "";
-    background: radial-gradient(
-        circle,
-        rgba(0, 166, 214, .07),
-        transparent 70%
-    );
-    pointer-events: none;
+/* ---------- 4. PORTADA ---------- */
+
+.donaciones-page .donate-hero {
+    position: relative;
+    display: flex;
+    align-items: center;
+    min-height: 510px;
+    padding: 100px 0;
+    overflow: hidden;
+    background:
+        linear-gradient(90deg, rgba(3, 30, 40, .91), rgba(0, 75, 99, .72)),
+        url("assets/hero-bocachica.jpg") center 48% / cover no-repeat;
 }
 
-.intro-grid {
+.donaciones-page .donate-hero-overlay {
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(110deg, rgba(0, 75, 99, .2), transparent 75%);
+}
+
+.donaciones-page .donate-hero-content {
     position: relative;
+    z-index: 1;
+    max-width: var(--ancho-contenido);
+    color: var(--blanco);
+}
+
+.donaciones-page .eyebrow {
+    display: inline-block;
+    margin-bottom: 20px;
+    color: var(--arena);
+    font-size: 13px;
+    font-weight: 700;
+    letter-spacing: 1.5px;
+    text-transform: uppercase;
+}
+
+.donaciones-page .donate-hero h1 {
+    max-width: 760px;
+    margin-bottom: 22px;
+    color: var(--blanco);
+    font-size: clamp(36px, 5vw, 58px);
+    font-weight: 800;
+    line-height: 1.1;
+}
+
+.donaciones-page .donate-hero p {
+    max-width: 650px;
+    margin-bottom: 30px;
+    color: rgba(255, 255, 255, .91);
+    font-size: 17px;
+    line-height: 1.75;
+}
+
+.donaciones-page .hero-actions {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 13px;
+}
+
+/* ---------- 5. INTRODUCCIÓN ---------- */
+
+.donaciones-page .donate-intro {
+    background: var(--blanco);
+}
+
+.donaciones-page .intro-grid {
     display: grid;
     grid-template-columns: 1.05fr .95fr;
     align-items: center;
-    gap: 55px;
+    gap: 65px;
 }
 
-.intro-copy h2 {
-    margin: 0 0 20px;
+.donaciones-page .section-kicker {
+    display: inline-block;
+    margin-bottom: 13px;
+    color: var(--caribe);
+    font-size: 12px;
+    font-weight: 800;
+    letter-spacing: 1.35px;
+    text-transform: uppercase;
+}
+
+.donaciones-page .intro-copy h2,
+.donaciones-page .section-heading h2,
+.donaciones-page .transparency-copy h2,
+.donaciones-page .contact-panel h2 {
+    margin-bottom: 20px;
     color: var(--petroleo);
-    font-size: clamp(1.9rem, 3vw, 2.7rem);
-    line-height: 1.2;
+    font-size: clamp(27px, 3vw, 38px);
+    font-weight: 800;
 }
 
-.intro-copy p {
-    margin: 0 0 17px;
-    color: var(--gris);
+.donaciones-page .intro-copy p {
+    margin-bottom: 17px;
+    font-size: 16px;
+    line-height: 1.8;
 }
 
-.intro-copy blockquote {
-    margin: 28px 0 0;
+.donaciones-page .intro-copy blockquote {
+    margin: 27px 0 0;
     padding: 17px 22px;
-    border-left: 4px solid var(--arena);
-    border-radius: 0 var(--radio) var(--radio) 0;
-    background: var(--fondo);
     color: var(--petroleo);
-    font-size: 1.05rem;
+    background: var(--fondo);
+    border-left: 4px solid var(--arena);
+    border-radius: 0 10px 10px 0;
+    font-size: 16px;
     font-weight: 700;
+    line-height: 1.65;
 }
 
-.intro-image {
+.donaciones-page .intro-image {
     position: relative;
-}
-
-.intro-image img {
-    width: 100%;
-    min-height: 330px;
-    max-height: 440px;
-    border-radius: var(--radio);
-    object-fit: cover;
+    overflow: hidden;
+    border-radius: 18px;
     box-shadow: var(--sombra);
 }
 
-.image-caption {
-    margin-top: 12px;
-    color: var(--gris);
-    font-size: .85rem;
-    text-align: center;
+.donaciones-page .intro-image img {
+    width: 100%;
+    height: 380px;
+    object-fit: cover;
 }
 
-/* -------------------------
-   7. TÍTULOS DE SECCIÓN
-------------------------- */
+.donaciones-page .image-caption {
+    display: flex;
+    justify-content: space-around;
+    gap: 10px;
+    padding: 14px 12px;
+    color: var(--blanco);
+    background: var(--petroleo);
+}
 
-.section-heading {
+.donaciones-page .image-caption span {
+    font-size: 12px;
+    font-weight: 700;
+    letter-spacing: .4px;
+}
+
+/* ---------- 6. DESTINOS Y FORMULARIO ---------- */
+
+.donaciones-page .donation-destinations {
+    background: var(--fondo);
+}
+
+.donaciones-page .section-heading {
     max-width: 760px;
     margin: 0 auto 42px;
     text-align: center;
 }
 
-.section-heading .eyebrow {
-    margin-bottom: 8px;
-    color: var(--caribe);
-}
-
-.section-heading h2 {
-    margin: 0 0 15px;
-    color: var(--petroleo);
-    font-size: clamp(1.9rem, 3.5vw, 2.7rem);
-    line-height: 1.2;
-}
-
-.section-heading p {
-    margin: 0;
-    color: var(--gris);
-}
-
-/* -------------------------
-   8. DESTINOS DE DONACIÓN
-------------------------- */
-
-.donation-destinations {
-    padding: 82px 0;
-    background: var(--fondo);
-}
-
-.donation-form {
-    max-width: 850px;
+.donaciones-page .section-heading p {
+    max-width: 650px;
     margin: 0 auto;
-    padding: 38px;
-    border: 1px solid var(--borde);
-    border-radius: var(--radio);
+    font-size: 16px;
+}
+
+.donaciones-page .donation-form {
+    max-width: 930px;
+    margin: 0 auto;
+    padding: 34px;
     background: var(--blanco);
+    border: 1px solid var(--borde);
+    border-radius: 18px;
     box-shadow: var(--sombra);
 }
 
-.donation-form h3 {
-    margin: 0 0 10px;
-    color: var(--petroleo);
-    font-size: 1.45rem;
-}
-
-.donation-form > p {
-    margin: 0 0 25px;
-    color: var(--gris);
-}
-
-.destination-options {
+.donaciones-page .destination-options {
     display: grid;
     grid-template-columns: repeat(2, minmax(0, 1fr));
     gap: 15px;
-    margin-bottom: 25px;
+    min-width: 0;
+    margin: 0;
+    padding: 0;
+    border: 0;
 }
 
-.destination-card {
+.donaciones-page .destination-options legend {
+    grid-column: 1 / -1;
+    width: 100%;
+    margin-bottom: 17px;
+    color: var(--petroleo);
+    font-size: 17px;
+    font-weight: 800;
+}
+
+.donaciones-page .destination-card {
     position: relative;
-    display: flex;
-    align-items: flex-start;
-    gap: 15px;
-    min-height: 120px;
-    padding: 20px;
+    display: block;
+    min-width: 0;
+    padding: 19px;
     border: 1px solid var(--borde);
-    border-radius: var(--radio);
+    border-radius: 12px;
     background: var(--blanco);
     cursor: pointer;
-    transition:
-        border-color .25s ease,
-        background .25s ease,
-        box-shadow .25s ease,
-        transform .25s ease;
+    transition: border-color .2s ease, background .2s ease,
+                box-shadow .2s ease, transform .2s ease;
 }
 
-.destination-card:hover {
+.donaciones-page .destination-card:hover {
     border-color: var(--caribe);
     box-shadow: var(--sombra);
     transform: translateY(-2px);
 }
 
-.destination-card:has(input:checked) {
-    border-color: var(--caribe);
-    background: rgba(0, 166, 214, .06);
-    box-shadow: 0 0 0 2px rgba(255, 194, 71, .35);
+.donaciones-page .destination-card:has(input:checked) {
+    border: 2px solid var(--caribe);
+    background: #F2FBFE;
+    box-shadow: 0 5px 17px rgba(0, 166, 214, .09);
+    padding: 18px;
 }
 
-.destination-card input {
-    flex-shrink: 0;
+.donaciones-page .destination-card input {
+    position: absolute;
+    top: 18px;
+    right: 18px;
     width: 18px;
     height: 18px;
-    margin-top: 5px;
     accent-color: var(--petroleo);
+    cursor: pointer;
 }
 
-.destination-card-content {
-    flex: 1;
-}
-
-.destination-card-content h4 {
-    margin: 0 0 6px;
-    color: var(--petroleo);
-    font-size: 1.03rem;
-}
-
-.destination-card-content p {
-    margin: 0;
-    color: var(--gris);
-    font-size: .9rem;
-    line-height: 1.5;
-}
-
-.destination-icon {
-    display: flex;
-    flex-shrink: 0;
-    align-items: center;
-    justify-content: center;
-    width: 44px;
-    height: 44px;
-    border-radius: 12px;
-    background: rgba(0, 166, 214, .12);
-    color: var(--petroleo);
-    font-size: 1.3rem;
-}
-
-.donation-note {
-    margin: 25px 0;
-    padding: 16px 19px;
-    border-left: 4px solid var(--arena);
-    border-radius: 0 10px 10px 0;
-    background: rgba(255, 194, 71, .12);
-    color: var(--texto);
-    font-size: .92rem;
-}
-
-/* -------------------------
-   9. CAMPOS DEL FORMULARIO
-------------------------- */
-
-.form-fields {
-    display: grid;
-    grid-template-columns: repeat(2, minmax(0, 1fr));
-    gap: 19px;
-    margin-top: 28px;
-}
-
-.field-group {
+.donaciones-page .destination-card-content {
     display: flex;
     flex-direction: column;
-    gap: 7px;
+    align-items: flex-start;
+    gap: 9px;
+    padding-right: 25px;
 }
 
-.field-group.full-width {
-    grid-column: 1 / -1;
-}
-
-.field-group label {
+.donaciones-page .destination-icon {
+    display: grid;
+    place-items: center;
+    width: 39px;
+    height: 39px;
+    margin-bottom: 3px;
     color: var(--petroleo);
-    font-size: .92rem;
+    background: #E7F5F9;
+    border-radius: 10px;
+    font-size: 20px;
     font-weight: 700;
 }
 
-.field-group input,
-.field-group select,
-.field-group textarea {
-    width: 100%;
-    min-height: 47px;
-    padding: 11px 13px;
-    border: 1px solid var(--borde);
-    border-radius: 9px;
-    background: var(--blanco);
+.donaciones-page .destination-card strong {
+    color: var(--petroleo);
+    font-size: 15px;
+    line-height: 1.4;
+}
+
+.donaciones-page .destination-card-content > span:last-child {
+    color: var(--gris);
+    font-size: 13px;
+    line-height: 1.6;
+}
+
+.donaciones-page .donation-note {
+    margin: 24px 0 30px;
+    padding: 16px 19px;
     color: var(--texto);
+    background: #FFF9E9;
+    border-left: 4px solid var(--arena);
+    border-radius: 8px;
+    font-size: 13px;
+    line-height: 1.7;
+}
+
+.donaciones-page .donation-note strong {
+    color: var(--petroleo);
+}
+
+.donaciones-page .form-fields {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 21px;
+}
+
+.donaciones-page .field-group {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+    min-width: 0;
+}
+
+.donaciones-page .field-group label {
+    color: var(--texto);
+    font-size: 13px;
+    font-weight: 700;
+}
+
+.donaciones-page .field-group input,
+.donaciones-page .field-group select,
+.donaciones-page .field-group textarea {
+    width: 100%;
+    min-height: 48px;
+    padding: 12px 14px;
+    color: var(--texto);
+    background: var(--blanco);
+    border: 1px solid #D5E2E7;
+    border-radius: 8px;
+    outline: none;
+    font-size: 14px;
+    line-height: 1.5;
     transition: border-color .2s ease, box-shadow .2s ease;
 }
 
-.field-group textarea {
+.donaciones-page .field-group textarea {
     min-height: 115px;
     resize: vertical;
 }
 
-.field-group input::placeholder,
-.field-group textarea::placeholder {
-    color: var(--gris);
-    opacity: .75;
+.donaciones-page .field-group input::placeholder,
+.donaciones-page .field-group textarea::placeholder {
+    color: #91A2A8;
 }
 
-.field-group input:focus,
-.field-group select:focus,
-.field-group textarea:focus {
+.donaciones-page .field-group input:focus,
+.donaciones-page .field-group select:focus,
+.donaciones-page .field-group textarea:focus {
     border-color: var(--caribe);
-    outline: none;
     box-shadow: 0 0 0 3px rgba(0, 166, 214, .12);
 }
 
-.privacy-consent {
-    display: flex;
-    align-items: flex-start;
-    gap: 10px;
-    margin: 23px 0 15px;
-    color: var(--gris);
-    font-size: .88rem;
+.donaciones-page .privacy-consent {
+    margin-top: 25px;
 }
 
-.privacy-consent input {
-    flex-shrink: 0;
+.donaciones-page .privacy-consent > label {
+    display: flex;
+    align-items: flex-start;
+    gap: 11px;
+    color: var(--texto);
+    font-size: 13px;
+    line-height: 1.65;
+    cursor: pointer;
+}
+
+.donaciones-page .privacy-consent input {
+    flex: 0 0 auto;
     width: 17px;
     height: 17px;
-    margin-top: 5px;
+    margin-top: 3px;
     accent-color: var(--petroleo);
 }
 
-.privacy-consent a {
-    color: var(--petroleo);
-    font-weight: 700;
-    text-decoration: underline;
-    text-underline-offset: 3px;
+.donaciones-page .privacy-consent p {
+    margin: 10px 0 0 28px;
+    font-size: 12px;
+    line-height: 1.6;
 }
 
-.privacy-consent a:hover {
-    color: var(--caribe);
+.donaciones-page .btn-submit {
+    width: 100%;
+    margin-top: 25px;
+    border: 0;
 }
 
-.form-disclaimer {
-    margin-top: 17px;
-    color: var(--gris);
-    font-size: .82rem;
+.donaciones-page .form-disclaimer {
+    margin: 13px 0 0;
+    font-size: 12px;
+    line-height: 1.6;
     text-align: center;
 }
 
-/* -------------------------
-   10. APORTES BANCARIOS
-------------------------- */
+/* ---------- 7. APORTES ECONÓMICOS ---------- */
 
-.bank-contribution {
-    padding: 82px 0;
+.donaciones-page .bank-contribution {
+    margin-top: 35px;
+    padding: 30px;
     background: var(--blanco);
+    border: 1px solid var(--borde);
+    border-radius: var(--radio);
+    box-shadow: var(--sombra);
 }
 
-.bank-contribution .bank-card {
+.donaciones-page .bank-contribution h3 {
+    margin-bottom: 13px;
+    color: var(--petroleo);
+    font-size: 23px;
+    font-weight: 800;
+}
+
+.donaciones-page .bank-contribution p {
     max-width: 850px;
-    margin: 0 auto;
-    padding: 35px;
-    border: 1px solid var(--borde);
-    border-radius: var(--radio);
-    background: var(--fondo);
-    box-shadow: var(--sombra);
+    margin-bottom: 13px;
+    font-size: 14px;
+    line-height: 1.75;
 }
 
-.bank-contribution h3 {
-    margin: 0 0 12px;
-    color: var(--petroleo);
-    font-size: 1.5rem;
+.donaciones-page .bank-contribution p:last-child {
+    margin-bottom: 0;
 }
 
-.bank-contribution p {
-    color: var(--gris);
-}
-
-.bank-contribution strong {
-    color: var(--petroleo);
-}
-
-.bank-contribution .bank-details {
-    display: grid;
-    gap: 12px;
-    margin-top: 22px;
-    padding: 22px;
-    border: 1px solid var(--borde);
-    border-radius: 12px;
-    background: var(--blanco);
-}
-
-.bank-contribution .bank-details p {
-    margin: 0;
-}
-
-.bank-contribution .bank-details strong {
+.donaciones-page .bank-contribution a {
     display: inline-block;
-    min-width: 150px;
-}
-
-/* -------------------------
-   11. INFORMACIÓN TRIBUTARIA
-------------------------- */
-
-.tax-information {
-    margin: 35px auto;
-    padding: 22px 25px;
-    border: 1px solid rgba(255, 194, 71, .55);
-    border-radius: var(--radio);
-    background: rgba(255, 194, 71, .12);
-    color: var(--texto);
-}
-
-.tax-information h3 {
-    margin: 0 0 10px;
     color: var(--petroleo);
-    font-size: 1.2rem;
+    font-size: 14px;
+    font-weight: 800;
+    text-decoration: underline;
+    text-decoration-color: var(--arena);
+    text-decoration-thickness: 2px;
+    text-underline-offset: 4px;
 }
 
-.tax-information p {
-    margin: 0;
-    color: var(--texto);
-    font-size: .94rem;
-}
-
-/* -------------------------
-   12. OTRAS FORMAS DE APOYAR
-------------------------- */
-
-.ways-to-help {
-    padding: 82px 0;
-    background: var(--fondo);
-}
-
-.ways-grid {
-    display: grid;
-    grid-template-columns: repeat(3, minmax(0, 1fr));
-    gap: 22px;
-}
-
-.way-card {
-    padding: 27px 24px;
-    border: 1px solid var(--borde);
-    border-radius: var(--radio);
-    background: var(--blanco);
-    box-shadow: var(--sombra);
-    transition:
-        transform .25s ease,
-        box-shadow .25s ease,
-        border-color .25s ease;
-}
-
-.way-card:hover {
-    border-color: rgba(0, 166, 214, .5);
-    box-shadow: var(--sombra-hover);
-    transform: translateY(-5px);
-}
-
-.way-icon {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    width: 54px;
-    height: 54px;
-    margin-bottom: 18px;
-    border-radius: 14px;
-    background: rgba(0, 166, 214, .12);
-    color: var(--petroleo);
-    font-size: 1.5rem;
-}
-
-.way-card h3 {
-    margin: 0 0 10px;
-    color: var(--petroleo);
-    font-size: 1.2rem;
-}
-
-.way-card p {
-    margin: 0;
-    color: var(--gris);
-    font-size: .94rem;
-}
-
-.way-card a {
-    display: inline-block;
-    margin-top: 15px;
-    color: var(--petroleo);
-    font-weight: 700;
-}
-
-.way-card a:hover {
+.donaciones-page .bank-contribution a:hover {
     color: var(--caribe);
 }
 
-/* -------------------------
-   13. TRANSPARENCIA
-------------------------- */
-
-.donation-transparency {
-    position: relative;
-    padding: 75px 0;
-    overflow: hidden;
-    background: var(--petroleo);
-    color: var(--blanco);
+.donaciones-page .tax-information {
+    margin-top: 20px;
+    padding: 19px 22px;
+    background: #FFF9E9;
+    border-left: 4px solid var(--arena);
+    border-radius: 8px;
 }
 
-.donation-transparency::before {
-    position: absolute;
-    top: -180px;
-    right: -100px;
-    width: 450px;
-    height: 450px;
-    border-radius: 50%;
-    content: "";
-    background: radial-gradient(
-        circle,
-        rgba(0, 166, 214, .25),
-        transparent 70%
-    );
-}
-
-.transparency-inner {
-    position: relative;
-    z-index: 1;
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    gap: 35px;
-}
-
-.transparency-inner h2 {
-    margin: 0 0 14px;
-    color: var(--blanco);
-    font-size: clamp(1.8rem, 3vw, 2.5rem);
-    line-height: 1.2;
-}
-
-.transparency-inner p {
-    max-width: 720px;
+.donaciones-page .tax-information p {
     margin: 0;
-    color: rgba(255, 255, 255, .88);
+    color: var(--texto);
+    font-size: 13px;
+    line-height: 1.7;
 }
 
-.transparency-inner .eyebrow {
-    color: var(--arena);
+.donaciones-page .tax-information strong {
+    color: var(--petroleo);
 }
 
-.transparency-symbol {
-    display: flex;
-    flex-shrink: 0;
-    align-items: center;
-    justify-content: center;
-    width: 110px;
-    height: 110px;
-    border: 2px solid rgba(255, 194, 71, .65);
-    border-radius: 50%;
-    color: var(--arena);
-    font-size: 2.7rem;
+/* ---------- 8. FORMAS DE AYUDAR ---------- */
+
+.donaciones-page .ways-to-help {
+    background: var(--blanco);
 }
 
-/* -------------------------
-   14. CONTACTO
-------------------------- */
+.donaciones-page .ways-grid {
+    display: grid;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: 20px;
+}
 
-.donation-contact {
-    padding: 82px 0;
+.donaciones-page .way-card {
+    padding: 27px 24px;
+    background: var(--blanco);
+    border: 1px solid var(--borde);
+    border-radius: var(--radio);
+    box-shadow: 0 4px 16px rgba(0, 75, 99, .04);
+    transition: transform .2s ease, box-shadow .2s ease,
+                border-color .2s ease;
+}
+
+.donaciones-page .way-card:hover {
+    transform: translateY(-4px);
+    border-color: rgba(0, 166, 214, .5);
+    box-shadow: var(--sombra-hover);
+}
+
+.donaciones-page .way-icon {
+    display: grid;
+    place-items: center;
+    width: 48px;
+    height: 48px;
+    margin-bottom: 19px;
+    color: var(--petroleo);
+    background: #E7F5F9;
+    border-radius: 13px;
+    font-size: 22px;
+    font-weight: 800;
+}
+
+.donaciones-page .way-card h3 {
+    margin-bottom: 11px;
+    color: var(--petroleo);
+    font-size: 17px;
+    font-weight: 800;
+}
+
+.donaciones-page .way-card p {
+    margin: 0;
+    font-size: 13px;
+    line-height: 1.75;
+}
+
+/* ---------- 9. TRANSPARENCIA ---------- */
+
+.donaciones-page .donation-transparency {
     background: var(--fondo);
 }
 
-.contact-panel {
+.donaciones-page .transparency-inner {
+    display: grid;
+    grid-template-columns: 90px 1fr;
+    align-items: start;
+    gap: 30px;
+    max-width: 950px;
+}
+
+.donaciones-page .transparency-symbol {
+    display: grid;
+    place-items: center;
+    width: 75px;
+    height: 75px;
+    color: var(--petroleo);
+    background: var(--arena);
+    border-radius: 50%;
+    font-size: 35px;
+    font-weight: 800;
+}
+
+.donaciones-page .transparency-copy h2 {
+    max-width: 700px;
+}
+
+.donaciones-page .transparency-copy p {
+    max-width: 800px;
+    margin-bottom: 13px;
+    font-size: 15px;
+    line-height: 1.8;
+}
+
+/* ---------- 10. CONTACTO ---------- */
+
+.donaciones-page .donation-contact {
+    background: var(--blanco);
+}
+
+.donaciones-page .contact-panel {
     display: flex;
     align-items: center;
     justify-content: space-between;
     gap: 35px;
-    padding: 38px;
-    border: 1px solid var(--borde);
-    border-radius: var(--radio);
-    background: var(--blanco);
-    box-shadow: var(--sombra);
+    padding: 42px 45px;
+    background: #EAF6F9;
+    border: 1px solid #D8EDF3;
+    border-radius: 18px;
 }
 
-.contact-panel h2 {
-    margin: 0 0 12px;
-    color: var(--petroleo);
-    font-size: clamp(1.7rem, 3vw, 2.3rem);
-    line-height: 1.2;
+.donaciones-page .contact-panel > div:first-child {
+    max-width: 680px;
 }
 
-.contact-panel p {
-    max-width: 600px;
+.donaciones-page .contact-panel h2 {
+    margin-bottom: 12px;
+}
+
+.donaciones-page .contact-panel p {
     margin: 0;
-    color: var(--gris);
+    font-size: 15px;
 }
 
-.contact-actions {
+.donaciones-page .contact-actions {
     flex-shrink: 0;
 }
 
-/* -------------------------
-   15. PIE DE PÁGINA
-------------------------- */
+/* ---------- 11. PIE DE PÁGINA ---------- */
 
-.site-footer {
-    padding: 55px 0 20px;
-    background: var(--oscuro);
+.donaciones-page .site-footer {
     color: var(--blanco);
+    background: var(--oscuro);
 }
 
-.footer-inner {
+.donaciones-page .footer-inner {
     display: grid;
     grid-template-columns: 1.3fr 1fr 1fr;
-    gap: 45px;
-    padding-bottom: 35px;
+    gap: 55px;
+    padding-top: 58px;
+    padding-bottom: 48px;
 }
 
-.footer-brand img {
+.donaciones-page .footer-brand img {
     width: 190px;
-    max-height: 65px;
+    max-height: 75px;
     margin-bottom: 18px;
     object-fit: contain;
+    object-position: left center;
 }
 
-.footer-brand p,
-.footer-contact p {
-    margin: 0 0 12px;
-    color: rgba(255, 255, 255, .75);
-    font-size: .91rem;
+.donaciones-page .footer-brand p {
+    max-width: 330px;
+    margin: 0;
+    color: rgba(255, 255, 255, .72);
+    font-size: 13px;
+    line-height: 1.8;
 }
 
-.footer-contact h3,
-.footer-inner h3 {
-    margin: 0 0 17px;
+.donaciones-page .footer-contact h2,
+.donaciones-page .footer-social h2 {
+    margin-bottom: 17px;
+    color: var(--blanco);
+    font-size: 15px;
+    font-weight: 800;
+}
+
+.donaciones-page .footer-contact a {
+    color: rgba(255, 255, 255, .78);
+    font-size: 13px;
+    text-decoration: none;
+    overflow-wrap: anywhere;
+}
+
+.donaciones-page .footer-contact a:hover {
     color: var(--arena);
-    font-size: 1.05rem;
 }
 
-.footer-contact a {
-    color: rgba(255, 255, 255, .85);
-    transition: color .2s ease;
-}
-
-.footer-contact a:hover {
-    color: var(--arena);
-}
-
-.social-links {
+.donaciones-page .social-links {
     display: flex;
     flex-wrap: wrap;
-    align-items: center;
-    gap: 12px;
-    margin-top: 18px;
+    gap: 9px;
 }
 
-.social-links a {
-    display: flex;
+.donaciones-page .footer-social .social-links a {
+    display: inline-flex;
     align-items: center;
     justify-content: center;
-    width: 39px;
-    height: 39px;
-    border: 1px solid rgba(255, 255, 255, .25);
-    border-radius: 50%;
+    padding: 8px 12px;
     color: var(--blanco);
-    font-size: .85rem;
-    font-weight: 700;
-    transition:
-        color .2s ease,
-        background .2s ease,
-        border-color .2s ease;
+    border: 1px solid rgba(255, 255, 255, .22);
+    border-radius: 25px;
+    font-size: 12px;
+    text-decoration: none;
+    transition: background .2s ease, border-color .2s ease;
 }
 
-.social-links a:hover {
-    border-color: var(--arena);
-    background: var(--arena);
+.donaciones-page .footer-social .social-links a:hover {
     color: var(--oscuro);
+    background: var(--arena);
+    border-color: var(--arena);
 }
 
-.footer-bottom {
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    gap: 20px;
-    padding-top: 20px;
-    border-top: 1px solid rgba(255, 255, 255, .15);
-    color: rgba(255, 255, 255, .65);
-    font-size: .82rem;
+.donaciones-page .footer-bottom {
+    padding: 18px 0;
+    border-top: 1px solid rgba(255, 255, 255, .12);
 }
 
-.footer-bottom p {
+.donaciones-page .footer-bottom p {
     margin: 0;
+    color: rgba(255, 255, 255, .58);
+    font-size: 12px;
+    text-align: center;
 }
 
-.footer-bottom a {
-    color: var(--arena);
+/* ---------- 12. ACCESIBILIDAD ---------- */
+
+.donaciones-page a:focus-visible,
+.donaciones-page button:focus-visible,
+.donaciones-page input:focus-visible,
+.donaciones-page select:focus-visible,
+.donaciones-page textarea:focus-visible {
+    outline: 3px solid var(--arena);
+    outline-offset: 3px;
 }
 
-.footer-bottom a:hover {
-    color: var(--blanco);
-}
+/* ---------- 13. TABLET ---------- */
 
-/* -------------------------
-   16. RESPONSIVE
-------------------------- */
+@media (max-width: 950px) {
+    .donaciones-page .header-inner {
+        gap: 18px;
+    }
 
-@media (max-width: 1000px) {
-    .header-inner {
+    .donaciones-page .main-nav {
         gap: 15px;
     }
 
-    .main-nav {
-        gap: 13px;
+    .donaciones-page .main-nav > a,
+    .donaciones-page .nav-dropdown-toggle {
+        font-size: 13px;
     }
 
-    .main-nav a,
-    .nav-dropdown-toggle {
-        font-size: .86rem;
-    }
-
-    .brand-logo {
+    .donaciones-page .brand-logo {
         width: 165px;
     }
 
-    .intro-grid {
+    .donaciones-page .intro-grid {
         gap: 35px;
     }
 
-    .ways-grid {
+    .donaciones-page .ways-grid {
         grid-template-columns: repeat(2, minmax(0, 1fr));
     }
 
-    .footer-inner {
-        gap: 28px;
+    .donaciones-page .footer-inner {
+        gap: 30px;
     }
 }
 
-@media (max-width: 760px) {
-    html {
-        scroll-padding-top: 80px;
+/* ---------- 14. MENÚ Y DISEÑO MÓVIL ---------- */
+
+@media (max-width: 768px) {
+    .donaciones-page .section-padding {
+        padding: 65px 0;
     }
 
-    .header-inner {
-        min-height: 70px;
+    .donaciones-page .header-inner {
+        min-height: 72px;
     }
 
-    .brand-logo {
-        width: 155px;
-        max-height: 55px;
+    .donaciones-page .brand-logo {
+        width: 160px;
+        max-height: 58px;
     }
 
-    .menu-toggle {
-        display: inline-flex;
-        align-items: center;
-        justify-content: center;
+    .donaciones-page .menu-toggle {
+        display: block;
+        flex-shrink: 0;
     }
 
-    .main-nav {
+    .donaciones-page .main-nav {
+        display: none;
         position: absolute;
         top: 100%;
-        right: 0;
         left: 0;
-        display: none;
+        right: 0;
+        width: 100%;
+        max-height: calc(100vh - 72px);
+        padding: 17px 5% 22px;
+        overflow-y: auto;
+        background: var(--blanco);
+        border-top: 1px solid var(--borde);
+        box-shadow: 0 12px 20px rgba(0, 45, 60, .09);
         align-items: stretch;
         flex-direction: column;
         gap: 5px;
-        max-height: calc(100vh - 70px);
-        padding: 15px 5%;
-        overflow-y: auto;
-        border-top: 1px solid var(--borde);
-        background: var(--blanco);
-        box-shadow: var(--sombra);
     }
 
-    .main-nav.open {
+    .donaciones-page .main-nav.open {
         display: flex;
     }
 
-    .main-nav a,
-    .nav-dropdown-toggle {
+    .donaciones-page .main-nav > a,
+    .donaciones-page .nav-dropdown-toggle {
         display: flex;
         width: 100%;
-        padding: 11px 5px;
-        font-size: .95rem;
+        min-height: 45px;
+        padding: 11px 8px;
+        font-size: 15px;
+        text-align: left;
     }
 
-    .main-nav a::after,
-    .nav-dropdown-toggle::after {
-        display: none;
+    .donaciones-page .main-nav > a.active::after {
+        margin-left: 9px;
     }
 
-    .main-nav .nav-donate,
-    .main-nav a.nav-donate {
+    .donaciones-page .main-nav > a.nav-donate {
         justify-content: center;
-        width: fit-content;
-        min-width: 130px;
-        margin-top: 6px;
-        padding: 10px 20px;
+        margin-top: 8px;
     }
 
-    .nav-dropdown {
+    .donaciones-page .nav-dropdown {
         width: 100%;
     }
 
-    .nav-dropdown-menu {
+    .donaciones-page .nav-dropdown-toggle {
+        justify-content: space-between;
+    }
+
+    .donaciones-page .nav-dropdown-menu {
         position: static;
-        width: 100%;
-        margin: 0 0 8px;
-        padding: 5px 10px;
+        min-width: 0;
+        margin: 3px 0 8px;
+        padding: 6px 10px;
+        background: var(--fondo);
         border: 0;
-        border-left: 2px solid var(--caribe);
-        border-radius: 0;
+        border-radius: 9px;
         box-shadow: none;
     }
 
-    .donate-hero {
-        min-height: 440px;
-        padding: 70px 0;
+    .donaciones-page .nav-dropdown-menu a {
+        padding: 10px;
+        color: var(--texto);
     }
 
-    .donate-hero h1 {
-        font-size: clamp(2.25rem, 8vw, 3.3rem);
+    .donaciones-page .donate-hero {
+        min-height: 470px;
+        padding: 80px 0;
     }
 
-    .donate-intro,
-    .donation-destinations,
-    .bank-contribution,
-    .ways-to-help,
-    .donation-contact {
-        padding: 62px 0;
+    .donaciones-page .donate-hero h1 {
+        font-size: clamp(34px, 8vw, 46px);
     }
 
-    .intro-grid {
+    .donaciones-page .donate-hero p {
+        font-size: 15px;
+    }
+
+    .donaciones-page .intro-grid {
         grid-template-columns: 1fr;
-        gap: 30px;
+        gap: 32px;
     }
 
-    .intro-image img {
-        min-height: 260px;
-        max-height: 360px;
+    .donaciones-page .intro-image img {
+        height: 320px;
     }
 
-    .donation-form {
-        padding: 25px;
+    .donaciones-page .donation-form {
+        padding: 25px 20px;
     }
 
-    .destination-options {
-        grid-template-columns: 1fr;
-    }
-
-    .transparency-inner {
+    .donaciones-page .contact-panel {
         align-items: flex-start;
         flex-direction: column;
+        padding: 30px 25px;
     }
 
-    .transparency-symbol {
-        width: 80px;
-        height: 80px;
-        font-size: 2rem;
+    .donaciones-page .footer-inner {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
     }
 
-    .contact-panel {
-        align-items: flex-start;
-        flex-direction: column;
-        padding: 28px;
-    }
-
-    .footer-inner {
-        grid-template-columns: 1fr 1fr;
-    }
-
-    .footer-brand {
+    .donaciones-page .footer-brand {
         grid-column: 1 / -1;
-    }
-
-    .footer-bottom {
-        align-items: flex-start;
-        flex-direction: column;
-        gap: 8px;
     }
 }
 
-@media (max-width: 480px) {
-    .container {
-        width: 90%;
+/* ---------- 15. TELÉFONOS ---------- */
+
+@media (max-width: 560px) {
+    .donaciones-page {
+        font-size: 15px;
     }
 
-    .donate-hero {
-        min-height: 420px;
-        padding: 60px 0;
+    .donaciones-page .section-padding {
+        padding: 53px 0;
     }
 
-    .donate-hero h1 {
-        font-size: 2.25rem;
+    .donaciones-page .donate-hero {
+        min-height: 440px;
+        padding: 70px 0;
+        background-position: center;
     }
 
-    .donate-hero p {
-        font-size: .98rem;
+    .donaciones-page .donate-hero h1 {
+        font-size: 35px;
     }
 
-    .hero-actions,
-    .contact-actions {
-        align-items: stretch;
+    .donaciones-page .hero-actions {
         flex-direction: column;
+        align-items: stretch;
     }
 
-    .hero-actions .btn,
-    .contact-actions .btn {
+    .donaciones-page .hero-actions .btn {
         width: 100%;
     }
 
-    .section-heading {
+    .donaciones-page .section-heading {
         margin-bottom: 30px;
     }
 
-    .donation-form {
-        padding: 20px 16px;
+    .donaciones-page .section-heading h2,
+    .donaciones-page .intro-copy h2,
+    .donaciones-page .transparency-copy h2,
+    .donaciones-page .contact-panel h2 {
+        font-size: 27px;
     }
 
-    .form-fields {
+    .donaciones-page .destination-options,
+    .donaciones-page .form-fields,
+    .donaciones-page .ways-grid {
         grid-template-columns: 1fr;
     }
 
-    .field-group.full-width {
-        grid-column: auto;
+    .donaciones-page .destination-options legend {
+        font-size: 16px;
     }
 
-    .destination-card {
-        padding: 16px;
+    .donaciones-page .donation-form {
+        padding: 22px 16px;
     }
 
-    .bank-contribution .bank-card {
-        padding: 23px 18px;
-    }
-
-    .bank-contribution .bank-details {
+    .donaciones-page .destination-card {
         padding: 17px;
     }
 
-    .bank-contribution .bank-details strong {
-        display: block;
-        min-width: 0;
+    .donaciones-page .destination-card:has(input:checked) {
+        padding: 16px;
     }
 
-    .ways-grid {
-        grid-template-columns: 1fr;
-    }
-
-    .way-card {
-        padding: 23px 20px;
-    }
-
-    .contact-panel {
+    .donaciones-page .bank-contribution {
         padding: 23px 19px;
     }
 
-    .footer-inner {
-        grid-template-columns: 1fr;
-        gap: 30px;
+    .donaciones-page .bank-contribution h3 {
+        font-size: 21px;
     }
 
-    .footer-brand {
+    .donaciones-page .transparency-inner {
+        grid-template-columns: 1fr;
+        gap: 20px;
+    }
+
+    .donaciones-page .transparency-symbol {
+        width: 60px;
+        height: 60px;
+        font-size: 28px;
+    }
+
+    .donaciones-page .contact-panel {
+        padding: 27px 20px;
+    }
+
+    .donaciones-page .contact-actions,
+    .donaciones-page .contact-actions .btn {
+        width: 100%;
+    }
+
+    .donaciones-page .footer-inner {
+        grid-template-columns: 1fr;
+        gap: 30px;
+        padding-top: 43px;
+        padding-bottom: 35px;
+    }
+
+    .donaciones-page .footer-brand {
         grid-column: auto;
     }
 
-    .footer-bottom {
-        font-size: .78rem;
+    .donaciones-page .footer-bottom p {
+        line-height: 1.7;
     }
 }
 
-/* -------------------------
-   17. MOVIMIENTO REDUCIDO
-------------------------- */
+/* ---------- 16. MOVIMIENTO REDUCIDO ---------- */
 
 @media (prefers-reduced-motion: reduce) {
-    *,
-    *::before,
-    *::after {
+    .donaciones-page *,
+    .donaciones-page *::before,
+    .donaciones-page *::after {
         scroll-behavior: auto !important;
+        transition-duration: .01ms !important;
         animation-duration: .01ms !important;
         animation-iteration-count: 1 !important;
-        transition-duration: .01ms !important;
     }
 }
