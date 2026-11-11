@@ -1,108 +1,1082 @@
-        border: 1px solid var(--borde);
-        border-radius: 18px;
-        box-shadow: 0 18px 35px rgba(0,45,61,.14);
-        backdrop-filter: blur(18px);
-        -webkit-backdrop-filter: blur(18px);
+
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Programas | Corporación Insular Digital</title>
+
+    <meta name="description" content="Conoce los programas de la Corporación Insular Digital: Alfabetización e Inclusión Digital y Crea Cine Insular.">
+
+    <meta name="theme-color" content="#004B63">
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+
+    <script src="https://unpkg.com/lucide@latest"></script>
+
+<style>
+:root {
+    --petroleo: #004B63;
+    --caribe: #00A6D6;
+    --arena: #FFC247;
+    --blanco: #FFFFFF;
+    --fondo: #F3F8FA;
+    --texto: #173640;
+    --gris: #5C737B;
+    --borde: #E1EBEF;
+    --oscuro: #071F2A;
+    --sombra: 0 8px 24px rgba(0,75,99,.08);
+    --sombra-hover: 0 13px 30px rgba(0,75,99,.13);
+    --radio: 15px;
+    --ancho-contenido: 1160px;
+}
+
+* {
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+    scroll-padding-top: 100px;
+}
+
+body {
+    margin: 0;
+    color: var(--texto);
+    background: var(--blanco);
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 16px;
+    line-height: 1.7;
+}
+
+img {
+    display: block;
+    max-width: 100%;
+}
+
+a,
+button {
+    -webkit-tap-highlight-color: transparent;
+}
+
+button {
+    font: inherit;
+    cursor: pointer;
+}
+
+a:focus-visible,
+button:focus-visible {
+    outline: 3px solid var(--arena);
+    outline-offset: 4px;
+}
+
+.contenedor {
+    width: min(var(--ancho-contenido), 90%);
+    margin-inline: auto;
+}
+
+/* FRANJA SUPERIOR */
+
+.franja-superior {
+    height: 5px;
+    background: linear-gradient(
+        90deg,
+        var(--petroleo) 0 55%,
+        var(--caribe) 55% 85%,
+        var(--arena) 85%
+    );
+}
+
+/* ENCABEZADO INSTITUCIONAL */
+
+.encabezado {
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+    background: rgba(255,255,255,.97);
+    border-bottom: 1px solid var(--borde);
+    box-shadow: 0 3px 15px rgba(0,0,0,.04);
+    backdrop-filter: blur(12px);
+    -webkit-backdrop-filter: blur(12px);
+}
+
+.navegacion {
+    width: min(var(--ancho-contenido), 90%);
+    min-height: 78px;
+    margin: auto;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 24px;
+}
+
+.marca {
+    display: block;
+    flex-shrink: 0;
+    line-height: 0;
+}
+
+.marca img {
+    display: block;
+    width: 190px;
+    max-height: 62px;
+    object-fit: contain;
+    object-position: left center;
+}
+
+.menu {
+    display: flex;
+    align-items: center;
+    gap: 19px;
+}
+
+.menu > a:not(.boton),
+.iniciativas-toggle {
+    position: relative;
+    padding: 0;
+    border: 0;
+    background: transparent;
+    color: var(--petroleo);
+    font-size: .88rem;
+    font-weight: 700;
+    text-decoration: none;
+    transition: color .2s ease;
+}
+
+.menu > a:not(.boton)::after,
+.iniciativas-toggle::after {
+    content: "";
+    position: absolute;
+    left: 0;
+    right: 0;
+    bottom: -9px;
+    height: 2px;
+    border-radius: 4px;
+    background: var(--caribe);
+    transform: scaleX(0);
+    transform-origin: left;
+    transition: transform .2s ease;
+}
+
+.menu > a:not(.boton):hover,
+.menu > a[aria-current="page"],
+.iniciativas-toggle:hover,
+.menu-desplegable.abierto .iniciativas-toggle {
+    color: var(--caribe);
+}
+
+.menu > a:not(.boton):hover::after,
+.menu > a[aria-current="page"]::after,
+.menu-desplegable.abierto .iniciativas-toggle::after {
+    transform: scaleX(1);
+}
+
+.menu .boton {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    min-height: 42px;
+    padding: 9px 17px;
+    border-radius: 999px;
+    background: var(--petroleo);
+    color: white;
+    font-size: .88rem;
+    font-weight: 700;
+    text-decoration: none;
+    transition: background .2s ease, transform .2s ease;
+}
+
+.menu .boton:hover {
+    background: var(--caribe);
+    transform: translateY(-1px);
+}
+
+.menu-desplegable {
+    position: relative;
+    display: flex;
+    align-items: center;
+}
+
+.iniciativas-toggle {
+    display: inline-flex;
+    align-items: center;
+    gap: 9px;
+}
+
+.iniciativas-toggle::before {
+    content: "";
+    width: 7px;
+    height: 7px;
+    margin-top: -3px;
+    border-right: 1.5px solid currentColor;
+    border-bottom: 1.5px solid currentColor;
+    transform: rotate(45deg);
+    transition: transform .2s ease;
+}
+
+.menu-desplegable.abierto .iniciativas-toggle::before {
+    margin-top: 4px;
+    transform: rotate(225deg);
+}
+
+.submenu {
+    position: absolute;
+    top: calc(100% + 18px);
+    left: -16px;
+    display: none;
+    min-width: 190px;
+    padding: 8px;
+    border: 1px solid var(--borde);
+    border-radius: 12px;
+    background: white;
+    box-shadow: var(--sombra-hover);
+}
+
+.menu-desplegable.abierto .submenu {
+    display: grid;
+}
+
+.submenu a {
+    padding: 9px 11px;
+    border-radius: 8px;
+    color: var(--petroleo);
+    font-size: .86rem;
+    font-weight: 700;
+    text-decoration: none;
+}
+
+.submenu a:hover,
+.submenu a:focus-visible {
+    background: var(--fondo);
+    color: var(--caribe);
+}
+
+.boton-menu {
+    display: none;
+    width: 42px;
+    height: 42px;
+    align-items: center;
+    justify-content: center;
+    border: 1px solid var(--borde);
+    border-radius: 10px;
+    background: white;
+    color: var(--petroleo);
+    font-size: 1.35rem;
+}
+
+/* PORTADA */
+
+.hero {
+    position: relative;
+    min-height: 480px;
+    display: flex;
+    align-items: center;
+    overflow: hidden;
+    isolation: isolate;
+    background: linear-gradient(
+        120deg,
+        #002F43,
+        #005C78 60%,
+        #008DB4
+    );
+}
+
+.hero-fondo {
+    position: absolute;
+    inset: 0;
+    z-index: -1;
+    background:
+        radial-gradient(
+            ellipse at 85% 25%,
+            rgba(0,166,214,.30),
+            transparent 35%
+        ),
+        radial-gradient(
+            ellipse at 10% 95%,
+            rgba(255,194,71,.14),
+            transparent 30%
+        );
+}
+
+.hero-contenido {
+    width: min(var(--ancho-contenido), 90%);
+    margin: auto;
+    padding: 75px 0;
+}
+
+.etiqueta {
+    display: inline-flex;
+    align-items: center;
+    gap: 9px;
+    margin-bottom: 22px;
+    color: var(--arena);
+    font-size: .76rem;
+    font-weight: 800;
+    letter-spacing: 1.8px;
+    text-transform: uppercase;
+}
+
+.etiqueta::before {
+    content: "";
+    width: 28px;
+    height: 3px;
+    background: var(--arena);
+}
+
+.hero h1 {
+    max-width: 850px;
+    margin: 0 0 22px;
+    color: white;
+    font-size: clamp(2.35rem, 5vw, 4.4rem);
+    line-height: 1.08;
+    letter-spacing: -1.8px;
+}
+
+.hero h1 span {
+    color: var(--arena);
+}
+
+.hero p {
+    max-width: 670px;
+    margin: 0;
+    color: rgba(255,255,255,.88);
+    font-size: 1.02rem;
+    line-height: 1.85;
+}
+
+.hero-indice {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    margin-top: 30px;
+    color: white;
+    font-size: .85rem;
+    font-weight: 600;
+}
+
+.hero-indice span {
+    width: 35px;
+    height: 2px;
+    background: var(--arena);
+}
+
+/* INTRODUCCIÓN */
+
+.introduccion {
+    padding: 62px 0 52px;
+}
+
+.introduccion-grid {
+    display: grid;
+    grid-template-columns: .8fr 1.2fr;
+    gap: 50px;
+    align-items: start;
+}
+
+.mini-etiqueta {
+    color: var(--caribe);
+    font-size: .75rem;
+    font-weight: 800;
+    letter-spacing: 1.5px;
+    text-transform: uppercase;
+}
+
+.introduccion h2 {
+    margin: 14px 0 0;
+    color: var(--petroleo);
+    font-size: clamp(1.8rem, 3vw, 2.6rem);
+    line-height: 1.2;
+    letter-spacing: -1px;
+}
+
+.introduccion p {
+    margin: 0;
+    color: var(--gris);
+    font-size: 1rem;
+    line-height: 1.9;
+}
+
+/* PROGRAMAS */
+
+.programa {
+    padding: 55px 0 72px;
+}
+
+.programa:nth-of-type(even) {
+    background: var(--fondo);
+}
+
+.programa-contenido {
+    width: min(var(--ancho-contenido), 90%);
+    margin: auto;
+    display: grid;
+    grid-template-columns: 1.08fr .92fr;
+    gap: 60px;
+    align-items: center;
+}
+
+.programa:nth-of-type(even) .programa-contenido {
+    grid-template-columns: .92fr 1.08fr;
+}
+
+.programa:nth-of-type(even) .programa-visual {
+    order: 2;
+}
+
+.programa-visual,
+.programa-texto {
+    min-width: 0;
+}
+
+.foto-principal {
+    position: relative;
+    overflow: hidden;
+    border-radius: 6px 60px 6px 6px;
+    background: #DCE8EC;
+}
+
+.programa:nth-of-type(even) .foto-principal {
+    border-radius: 60px 6px 6px 6px;
+}
+
+.foto-principal img {
+    width: 100%;
+    aspect-ratio: 4 / 4.1;
+    object-fit: cover;
+    transition: transform .6s ease;
+}
+
+.foto-principal:hover img {
+    transform: scale(1.035);
+}
+
+.foto-numero {
+    position: absolute;
+    left: 18px;
+    bottom: 18px;
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    padding: 11px 16px;
+    background: white;
+    color: var(--petroleo);
+    font-size: .75rem;
+    font-weight: 800;
+    letter-spacing: .7px;
+}
+
+.foto-numero span {
+    color: var(--caribe);
+    font-size: 1.1rem;
+}
+
+.galeria {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 12px;
+    margin-top: 12px;
+}
+
+.galeria img {
+    width: 100%;
+    aspect-ratio: 16 / 9;
+    object-fit: cover;
+    border-radius: 5px;
+    background: #DCE8EC;
+}
+
+.programa-numero {
+    display: flex;
+    align-items: center;
+    gap: 13px;
+    margin-bottom: 18px;
+    color: var(--caribe);
+    font-size: .77rem;
+    font-weight: 800;
+    letter-spacing: 1.5px;
+}
+
+.programa-numero::after {
+    content: "";
+    width: 45px;
+    height: 2px;
+    background: var(--arena);
+}
+
+.programa-icono {
+    display: grid;
+    place-items: center;
+    width: 56px;
+    height: 56px;
+    margin-bottom: 20px;
+    border-radius: 15px;
+    background: #DDF5FC;
+    color: var(--petroleo);
+}
+
+.programa-icono i {
+    width: 27px;
+    height: 27px;
+}
+
+.programa-texto h2 {
+    margin: 0 0 19px;
+    color: var(--petroleo);
+    font-size: clamp(2rem, 3.4vw, 3rem);
+    line-height: 1.14;
+    letter-spacing: -1.2px;
+}
+
+.programa-bajada {
+    margin: 0 0 22px;
+    color: var(--caribe);
+    font-size: 1.05rem;
+    font-weight: 700;
+    line-height: 1.65;
+}
+
+.programa-descripcion {
+    color: var(--gris);
+    font-size: .95rem;
+    line-height: 1.9;
+}
+
+.programa-descripcion p {
+    margin: 0 0 15px;
+}
+
+.programa-descripcion p:last-child {
+    margin-bottom: 0;
+}
+
+.programa-extra {
+    display: none;
+}
+
+.programa-extra.visible {
+    display: block;
+    animation: aparecer .3s ease;
+}
+
+@keyframes aparecer {
+    from {
+        opacity: 0;
+        transform: translateY(8px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.programa-enlace {
+    display: inline-flex;
+    align-items: center;
+    gap: 10px;
+    margin-top: 23px;
+    padding: 0 0 7px;
+    border: 0;
+    border-bottom: 2px solid var(--arena);
+    background: transparent;
+    color: var(--petroleo);
+    font-size: .9rem;
+    font-weight: 800;
+    cursor: pointer;
+}
+
+.programa-enlace i {
+    width: 17px;
+    height: 17px;
+}
+
+.programa-enlace:hover {
+    color: var(--caribe);
+}
+
+/* METODOLOGÍA */
+
+.metodologia {
+    padding: 78px 0;
+    background: var(--petroleo);
+    color: white;
+}
+
+.metodologia-encabezado {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 40px;
+    align-items: end;
+    margin-bottom: 42px;
+}
+
+.metodologia .mini-etiqueta {
+    color: var(--arena);
+}
+
+.metodologia h2 {
+    margin: 13px 0 0;
+    color: white;
+    font-size: clamp(2rem, 3.7vw, 3rem);
+    line-height: 1.15;
+    letter-spacing: -1px;
+}
+
+.metodologia-encabezado > p {
+    max-width: 510px;
+    margin: 0;
+    color: rgba(255,255,255,.78);
+    line-height: 1.85;
+}
+
+.pasos {
+    display: grid;
+    grid-template-columns: repeat(4, minmax(0, 1fr));
+    border-top: 1px solid rgba(255,255,255,.22);
+}
+
+.paso {
+    padding: 25px 20px 0 0;
+}
+
+.paso + .paso {
+    padding-left: 20px;
+    border-left: 1px solid rgba(255,255,255,.22);
+}
+
+.paso-numero {
+    display: block;
+    margin-bottom: 22px;
+    color: var(--arena);
+    font-size: 2rem;
+    font-weight: 800;
+    letter-spacing: -1px;
+}
+
+.paso h3 {
+    margin: 0 0 10px;
+    color: white;
+    font-size: 1.02rem;
+    line-height: 1.45;
+}
+
+.paso p {
+    margin: 0;
+    color: rgba(255,255,255,.75);
+    font-size: .9rem;
+    line-height: 1.8;
+}
+
+/* ÁREAS DE IMPACTO */
+
+.impacto {
+    padding: 78px 0;
+    background: white;
+}
+
+.impacto-cabecera {
+    display: flex;
+    justify-content: space-between;
+    align-items: end;
+    gap: 30px;
+    margin-bottom: 32px;
+}
+
+.impacto h2 {
+    max-width: 500px;
+    margin: 12px 0 0;
+    color: var(--petroleo);
+    font-size: clamp(2rem, 3.5vw, 2.8rem);
+    line-height: 1.15;
+    letter-spacing: -1px;
+}
+
+.impacto-cabecera p {
+    max-width: 400px;
+    margin: 0;
+    color: var(--gris);
+    font-size: .95rem;
+    line-height: 1.8;
+}
+
+.impacto-grid {
+    display: grid;
+    grid-template-columns: repeat(4, minmax(0, 1fr));
+    border-top: 1px solid var(--borde);
+    border-bottom: 1px solid var(--borde);
+}
+
+.impacto-item {
+    min-height: 180px;
+    padding: 28px 20px;
+}
+
+.impacto-item + .impacto-item {
+    border-left: 1px solid var(--borde);
+}
+
+.impacto-item i {
+    display: block;
+    width: 30px;
+    height: 30px;
+    margin-bottom: 27px;
+    color: var(--caribe);
+}
+
+.impacto-item h3 {
+    margin: 0;
+    color: var(--petroleo);
+    font-size: 1.02rem;
+    line-height: 1.5;
+}
+
+/* CIERRE Y CONTACTO */
+
+.cierre {
+    padding: 70px 0;
+    background: var(--fondo);
+}
+
+.cierre-interior {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 35px;
+    padding: 42px;
+    border-radius: 6px 40px 6px 6px;
+    background: linear-gradient(120deg, #DDF5FC, #F3F8FA);
+}
+
+.cierre h2 {
+    max-width: 640px;
+    margin: 0 0 13px;
+    color: var(--petroleo);
+    font-size: clamp(1.8rem, 3vw, 2.6rem);
+    line-height: 1.2;
+    letter-spacing: -1px;
+}
+
+.cierre p {
+    max-width: 620px;
+    margin: 0;
+    color: var(--gris);
+    line-height: 1.8;
+}
+
+.boton-contacto {
+    display: inline-flex;
+    flex-shrink: 0;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+    min-height: 46px;
+    padding: 0 22px;
+    border-radius: 999px;
+    background: var(--petroleo);
+    color: white;
+    text-decoration: none;
+    font-size: .9rem;
+    font-weight: 800;
+    transition: transform .2s ease, background .2s ease;
+}
+
+.boton-contacto:hover {
+    background: var(--caribe);
+    transform: translateY(-2px);
+}
+
+/* PIE INSTITUCIONAL */
+
+.pie {
+    padding: 48px 0 22px;
+    background: #022F3E;
+    color: #D8EAF0;
+}
+
+.pie-grid {
+    display: grid;
+    grid-template-columns: 1.3fr .8fr 1fr;
+    gap: 40px;
+    padding-bottom: 32px;
+}
+
+.logo-pie {
+    display: block;
+    width: 225px;
+    max-height: 85px;
+    object-fit: contain;
+    object-position: left center;
+    margin-bottom: 17px;
+}
+
+.pie-descripcion {
+    max-width: 360px;
+    color: #C2D8DF;
+    font-size: .91rem;
+}
+
+.pie h3 {
+    margin: 0 0 13px;
+    color: #fff;
+    font-size: 1rem;
+}
+
+.enlaces-pie {
+    display: grid;
+    gap: 8px;
+}
+
+.pie a {
+    color: #C2D8DF;
+    font-size: .9rem;
+    overflow-wrap: anywhere;
+    transition: color .2s ease;
+}
+
+.pie a:hover {
+    color: var(--arena);
+}
+
+.contacto-pie p {
+    margin: 0 0 9px;
+    color: #C2D8DF;
+    font-size: .9rem;
+    overflow-wrap: anywhere;
+}
+
+.redes {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    margin-top: 15px;
+}
+
+.redes a {
+    display: grid;
+    place-items: center;
+    width: 38px;
+    height: 38px;
+    border: 1px solid rgba(255,255,255,.24);
+    border-radius: 50%;
+    color: white;
+    text-decoration: none;
+}
+
+.redes a:hover {
+    background: var(--arena);
+    color: var(--petroleo);
+}
+
+.legal {
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    gap: 12px;
+    padding-top: 19px;
+    border-top: 1px solid rgba(255,255,255,.16);
+    color: #A8C2CA;
+    font-size: .82rem;
+}
+
+/* TABLET */
+
+@media (max-width: 1050px) {
+    .marca img {
+        width: 175px;
     }
 
-    .menu.abierto { display: flex; }
+    .menu {
+        gap: 12px;
+    }
 
-    .menu > a:not(.boton) {
+    .menu > a:not(.boton),
+    .iniciativas-toggle {
+        font-size: .82rem;
+    }
+
+    .programa-contenido,
+    .programa:nth-of-type(even) .programa-contenido {
+        gap: 35px;
+    }
+
+    .pasos {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+    }
+
+    .paso {
+        padding-bottom: 25px;
+    }
+
+    .paso:nth-child(3) {
+        padding-left: 0;
+        border-left: 0;
+        border-top: 1px solid rgba(255,255,255,.22);
+        padding-top: 23px;
+    }
+
+    .paso:nth-child(4) {
+        border-top: 1px solid rgba(255,255,255,.22);
+        padding-top: 23px;
+    }
+
+    .impacto-grid {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+    }
+
+    .impacto-item:nth-child(3) {
+        border-left: 0;
+        border-top: 1px solid var(--borde);
+    }
+
+    .impacto-item:nth-child(4) {
+        border-top: 1px solid var(--borde);
+    }
+}
+
+/* MENÚ MÓVIL Y TABLETAS */
+
+@media (max-width: 820px) {
+    .navegacion {
+        min-height: 74px;
+    }
+
+    .boton-menu {
+        display: inline-flex;
+    }
+
+    .menu {
+        display: none;
+        position: absolute;
+        top: 74px;
+        left: 0;
+        right: 0;
+        padding: 12px 5% 22px;
+        align-items: stretch;
+        flex-direction: column;
+        gap: 0;
+        background: white;
+        border-bottom: 1px solid var(--borde);
+        box-shadow: 0 18px 35px rgba(0,45,61,.10);
+    }
+
+    .menu.abierto {
         display: flex;
+    }
+
+    .menu > a:not(.boton),
+    .iniciativas-toggle {
         width: 100%;
-        min-height: 45px;
         padding: 12px 0;
+        text-align: left;
         border-bottom: 1px solid #EDF2F4;
     }
 
-    .menu > a:not(.boton)::after {
-        left: 0;
-        right: auto;
-        bottom: 4px;
-        width: 40px;
+    .menu > a:not(.boton)::after,
+    .iniciativas-toggle::after {
+        display: none;
+    }
+
+    .menu .boton {
+        align-self: flex-start;
+        margin-top: 14px;
     }
 
     .menu-desplegable {
         display: block;
-        width: 100%;
-        border-bottom: 1px solid #EDF2F4;
     }
 
     .iniciativas-toggle {
-        display: flex;
         justify-content: space-between;
-        width: 100%;
-        min-height: 45px;
-        padding: 12px 0;
-        border-radius: 0;
-        text-align: left;
     }
-
-    .iniciativas-toggle::after { display: none; }
 
     .submenu {
-        display: none;
         position: static;
-        min-width: 100%;
-        margin: 0 0 10px;
-        padding: 7px 10px;
+        min-width: 0;
+        padding: 4px 0 8px 13px;
         border: 0;
-        border-radius: 12px;
+        border-radius: 0;
         box-shadow: none;
-        background: var(--fondo);
+        background: #F7FAFB;
     }
 
-    .menu-desplegable:hover .submenu,
-    .menu-desplegable:focus-within .submenu {
-        display: none;
+    .submenu a {
+        padding: 9px 12px;
     }
 
-    .menu-desplegable.abierto .submenu { display: block; }
-    .submenu a { padding: 12px; }
-
-    .menu .boton {
-        align-self: flex-start;
-        margin-top: 15px;
-        padding-inline: 24px;
+    .introduccion-grid {
+        gap: 30px;
     }
 
-    .hero { min-height: 450px; }
-    .hero-contenido { padding: 105px 0 70px; }
-    .hero h1 { letter-spacing: -1.2px; }
-    .introduccion { padding: 50px 0 35px; }
+    .pie-grid {
+        gap: 28px;
+    }
+}
+
+/* TELÉFONOS */
+
+@media (max-width: 760px) {
+    .hero {
+        min-height: 440px;
+    }
+
+    .hero-contenido {
+        padding: 65px 0;
+    }
+
+    .hero h1 {
+        letter-spacing: -1px;
+    }
+
+    .introduccion {
+        padding: 48px 0 35px;
+    }
 
     .introduccion-grid {
         grid-template-columns: 1fr;
-        gap: 20px;
+        gap: 18px;
     }
 
-    .programa { padding: 48px 0 55px; }
+    .programa {
+        padding: 45px 0 52px;
+    }
 
     .programa-contenido,
     .programa:nth-of-type(even) .programa-contenido {
         grid-template-columns: 1fr;
-        gap: 30px;
+        gap: 28px;
     }
 
-    .programa:nth-of-type(even) .programa-visual { order: 0; }
-    .foto-principal img { aspect-ratio: 5 / 4; }
-    .programa-texto h2 { font-size: 2.25rem; }
+    .programa:nth-of-type(even) .programa-visual {
+        order: 0;
+    }
+
+    .foto-principal img {
+        aspect-ratio: 5 / 4;
+    }
+
+    .programa-texto h2 {
+        font-size: 2.2rem;
+    }
 
     .metodologia,
-    .impacto { padding: 60px 0; }
+    .impacto {
+        padding: 58px 0;
+    }
 
     .metodologia-encabezado {
         grid-template-columns: 1fr;
-        gap: 18px;
+        gap: 16px;
     }
 
     .impacto-cabecera {
         align-items: flex-start;
         flex-direction: column;
-        gap: 15px;
+        gap: 14px;
     }
 
-    .cierre { padding: 50px 0; }
+    .cierre {
+        padding: 48px 0;
+    }
 
     .cierre-interior {
         align-items: flex-start;
@@ -110,102 +1084,102 @@
         padding: 28px 23px;
     }
 
-    .pie-interior {
+    .pie-grid {
+        grid-template-columns: 1fr 1fr;
+        gap: 27px;
+    }
+
+    .pie-grid > div:first-child {
+        grid-column: 1 / -1;
+    }
+
+    .legal {
         flex-direction: column;
-        text-align: center;
     }
 }
 
 @media (max-width: 480px) {
-    .hero h1 { font-size: 2.55rem; }
-    .programa-contenido { width: calc(100% - 32px); }
-    .programa-texto h2 { font-size: 2rem; }
-    .pasos { grid-template-columns: 1fr; }
+    .hero h1 {
+        font-size: 2.45rem;
+    }
+
+    .programa-texto h2 {
+        font-size: 2rem;
+    }
+
+    .pasos {
+        grid-template-columns: 1fr;
+    }
 
     .paso,
     .paso + .paso,
     .paso:nth-child(3),
     .paso:nth-child(4) {
-        padding: 23px 0;
+        padding: 22px 0;
         border-left: 0;
         border-top: 1px solid rgba(255,255,255,.22);
     }
 
-    .paso:first-child { border-top: 0; }
-    .paso-numero { margin-bottom: 15px; }
-    .impacto-grid { grid-template-columns: 1fr; }
+    .paso:first-child {
+        border-top: 0;
+    }
+
+    .paso-numero {
+        margin-bottom: 14px;
+    }
+
+    .impacto-grid {
+        grid-template-columns: 1fr;
+    }
 
     .impacto-item,
     .impacto-item + .impacto-item,
     .impacto-item:nth-child(3),
     .impacto-item:nth-child(4) {
         min-height: auto;
-        padding: 22px 5px;
+        padding: 21px 5px;
         border-left: 0;
         border-top: 1px solid var(--borde);
     }
 
-    .impacto-item:first-child { border-top: 0; }
-    .impacto-item i { margin-bottom: 15px; }
-    .foto-numero { left: 12px; bottom: 12px; }
+    .impacto-item:first-child {
+        border-top: 0;
+    }
+
+    .impacto-item i {
+        margin-bottom: 14px;
+    }
+
+    .foto-numero {
+        left: 12px;
+        bottom: 12px;
+    }
+
+    .cierre-interior {
+        padding: 25px 20px;
+    }
+
+    .pie-grid {
+        grid-template-columns: 1fr;
+        gap: 25px;
+    }
+
+    .pie-grid > div:first-child {
+        grid-column: auto;
+    }
 }
 
+/* ACCESIBILIDAD */
+
 @media (prefers-reduced-motion: reduce) {
-    *, *::before, *::after {
+    *,
+    *::before,
+    *::after {
         scroll-behavior: auto !important;
         animation-duration: .01ms !important;
         transition-duration: .01ms !important;
     }
 }
-
-/* PIE INSTITUCIONAL COMPARTIDO */
-.pie { padding:48px 0 22px; background:#022F3E; color:#D8EAF0; }
-.pie-grid { display:grid; grid-template-columns:1.3fr .8fr 1fr; gap:40px; padding-bottom:32px; }
-.logo-pie { display:block; width:225px; max-height:85px; object-fit:contain; object-position:left center; margin-bottom:17px; }
-.pie-descripcion { max-width:360px; color:#C2D8DF; font-size:.91rem; }
-.pie h3 { margin:0 0 13px; color:#fff; font-size:1rem; }
-.enlaces-pie { display:grid; gap:8px; }
-.pie a { color:#C2D8DF; font-size:.9rem; overflow-wrap:anywhere; transition:color .2s ease; }
-.pie a:hover { color:var(--arena); }
-.contacto-pie p { margin:0 0 9px; color:#C2D8DF; font-size:.9rem; overflow-wrap:anywhere; }
-.redes { display:flex; align-items:center; gap:10px; margin-top:15px; }
-.redes a { display:grid; place-items:center; width:38px; height:38px; border:1px solid rgba(255,255,255,.24); border-radius:50%; color:white; text-decoration:none; }
-.redes a:hover { background:var(--arena); color:var(--petroleo); }
-.legal { display:flex; justify-content:space-between; flex-wrap:wrap; gap:12px; padding-top:19px; border-top:1px solid rgba(255,255,255,.16); color:#A8C2CA; font-size:.82rem; }
-
-@media(max-width:1000px) {
- .navegacion { gap:16px; }
- .menu { gap:13px; }
- .marca img { width:185px; }
- .menu > a:not(.boton), .iniciativas-toggle { font-size:.84rem; }
- .pie-grid { gap:28px; }
-}
-
-@media(max-width:760px) {
- .navegacion { width:calc(100% - 32px); min-height:74px; }
- .marca img { width:180px; max-height:58px; }
- .boton-menu { display:block; }
- .menu { display:none; position:absolute; top:100%; left:0; right:0; padding:18px 22px 24px; align-items:stretch; flex-direction:column; gap:0; background:#fff; border-bottom:1px solid var(--borde); box-shadow:0 18px 35px rgba(0,45,61,.12); }
- .menu.abierto { display:flex; }
- .menu > a:not(.boton) { min-height:45px; padding:13px 0; border-bottom:1px solid #EDF2F4; font-size:.95rem; }
- .menu > a:not(.boton)::after { bottom:5px; right:auto; width:42px; }
- .menu-desplegable { display:block; width:100%; }
- .iniciativas-toggle { width:100%; min-height:45px; padding:13px 0; border-bottom:1px solid #EDF2F4; text-align:left; font-size:.95rem; }
- .iniciativas-toggle::after { display:none; }
- .submenu { display:none; position:static; min-width:0; padding:5px 0 5px 15px; border:0; border-radius:0; box-shadow:none; }
- .menu-desplegable:hover .submenu, .menu-desplegable:focus-within .submenu { display:none; }
- .menu-desplegable.abierto .submenu { display:grid; }
- .menu .boton { align-self:flex-start; margin-top:15px; }
- .pie-grid { grid-template-columns:1fr 1fr; gap:27px; }
- .pie-grid > div:first-child { grid-column:1 / -1; }
- .legal { flex-direction:column; }
-}
-
-@media(max-width:480px) {
- .pie-grid { grid-template-columns:1fr; gap:25px; }
- .pie-grid > div:first-child { grid-column:auto; }
-}
-
 </style>
 </head>
 
@@ -213,13 +1187,19 @@
 
 <div class="franja-superior" aria-hidden="true"></div>
 
+<!-- ENCABEZADO -->
+
 <header class="encabezado">
     <div class="navegacion">
 
-        <a href="index.html" class="marca" aria-label="Inicio de COINDI">
+        <a href="index.html"
+           class="marca"
+           aria-label="Inicio de COINDI">
+
             <img src="assets/logo-coindi-claro.png"
                  alt="COINDI — Corporación Insular Digital"
-                 width="215" height="70">
+                 width="215"
+                 height="70">
         </a>
 
         <button class="boton-menu"
@@ -227,14 +1207,22 @@
                 type="button"
                 aria-label="Abrir menú"
                 aria-expanded="false"
-                aria-controls="menu-principal">☰</button>
+                aria-controls="menu-principal">
+            ☰
+        </button>
 
-        <nav class="menu" id="menu-principal" aria-label="Navegación principal">
+        <nav class="menu"
+             id="menu-principal"
+             aria-label="Navegación principal">
+
             <a href="index.html">Inicio</a>
+
             <a href="conocenos.html">Conócenos</a>
+
             <a href="programas.html" aria-current="page">Programas</a>
 
             <div class="menu-desplegable">
+
                 <button class="iniciativas-toggle"
                         type="button"
                         aria-expanded="false"
@@ -246,10 +1234,13 @@
                     <a href="teleinsular.html">Teleinsular</a>
                     <a href="insu.html">Revista INSU</a>
                 </div>
+
             </div>
 
             <a href="servicios.html">Servicios</a>
+
             <a href="donar.html" class="boton">Apoyar</a>
+
         </nav>
 
     </div>
@@ -258,10 +1249,13 @@
 <main>
 
     <!-- PORTADA -->
+
     <section class="hero">
+
         <div class="hero-fondo" aria-hidden="true"></div>
 
         <div class="hero-contenido">
+
             <span class="etiqueta">Nuestros programas</span>
 
             <h1>
@@ -279,15 +1273,23 @@
                 <span></span>
                 Comunicación · Cultura · Innovación social
             </div>
+
         </div>
+
     </section>
 
     <!-- INTRODUCCIÓN -->
+
     <section class="introduccion">
+
         <div class="contenedor introduccion-grid">
+
             <div>
                 <span class="mini-etiqueta">Acción en el territorio</span>
-                <h2>Conocimiento que se convierte en oportunidades.</h2>
+
+                <h2>
+                    Conocimiento que se convierte en oportunidades.
+                </h2>
             </div>
 
             <p>
@@ -298,15 +1300,21 @@
                 de las comunidades insulares desde la educación digital,
                 la comunicación y la creación audiovisual.
             </p>
+
         </div>
+
     </section>
 
     <!-- PROGRAMA 01 -->
-    <section class="programa" id="inclusion-digital">
+
+    <section class="programa" id="alfabetizacion">
+
         <div class="programa-contenido">
 
             <div class="programa-visual">
+
                 <div class="foto-principal">
+
                     <img src="assets/digital1.jpg"
                          alt="Actividad de Alfabetización e Inclusión Digital"
                          loading="lazy">
@@ -315,19 +1323,25 @@
                         <span>01</span>
                         PROGRAMA INSTITUCIONAL
                     </div>
+
                 </div>
 
                 <div class="galeria">
+
                     <img src="assets/digital2.jpg"
                          alt="Registro complementario del programa digital"
                          loading="lazy">
+
                     <img src="assets/digital3.jpg"
                          alt="Otra imagen del programa de inclusión digital"
                          loading="lazy">
+
                 </div>
+
             </div>
 
             <div class="programa-texto">
+
                 <div class="programa-numero">PROGRAMA 01</div>
 
                 <div class="programa-icono" aria-hidden="true">
@@ -341,6 +1355,7 @@
                 </p>
 
                 <div class="programa-descripcion">
+
                     <p>
                         La Estrategia de Alfabetización e Inclusión Digital
                         es un programa orientado a promover el acceso,
@@ -351,6 +1366,7 @@
                     </p>
 
                     <div class="programa-extra">
+
                         <p>
                             A través de jornadas pedagógicas, talleres
                             prácticos, espacios de socialización y
@@ -378,26 +1394,37 @@
                             fortalecer sus proyectos de vida y participar
                             activamente en la sociedad actual.
                         </p>
+
                     </div>
+
                 </div>
 
                 <button class="programa-enlace"
                         type="button"
                         aria-expanded="false">
+
                     <span>Leer descripción completa</span>
+
                     <i data-lucide="arrow-down"></i>
+
                 </button>
+
             </div>
 
         </div>
+
     </section>
 
     <!-- PROGRAMA 02 -->
+
     <section class="programa" id="crea-cine">
+
         <div class="programa-contenido">
 
             <div class="programa-visual">
+
                 <div class="foto-principal">
+
                     <img src="assets/cine1.jpg"
                          alt="Actividad de creación audiovisual comunitaria"
                          loading="lazy">
@@ -406,19 +1433,25 @@
                         <span>02</span>
                         PROGRAMA INSTITUCIONAL
                     </div>
+
                 </div>
 
                 <div class="galeria">
+
                     <img src="assets/cine2.jpg"
                          alt="Registro complementario de Crea Cine Insular"
                          loading="lazy">
+
                     <img src="assets/cine3.jpg"
                          alt="Otra imagen del programa audiovisual"
                          loading="lazy">
+
                 </div>
+
             </div>
 
             <div class="programa-texto">
+
                 <div class="programa-numero">PROGRAMA 02</div>
 
                 <div class="programa-icono" aria-hidden="true">
@@ -432,6 +1465,7 @@
                 </p>
 
                 <div class="programa-descripcion">
+
                     <p>
                         Crea Cine Insular es una estrategia de formación y
                         creación audiovisual dirigida a niños, niñas,
@@ -442,6 +1476,7 @@
                     </p>
 
                     <div class="programa-extra">
+
                         <p>
                             A través de talleres, laboratorios creativos y
                             experiencias prácticas, los participantes
@@ -469,34 +1504,48 @@
                             activamente en la construcción de comunidades
                             más informadas, creativas y conectadas.
                         </p>
+
                     </div>
+
                 </div>
 
                 <button class="programa-enlace"
                         type="button"
                         aria-expanded="false">
+
                     <span>Leer descripción completa</span>
+
                     <i data-lucide="arrow-down"></i>
+
                 </button>
+
             </div>
 
         </div>
+
     </section>
 
     <!-- METODOLOGÍA -->
+
     <section class="metodologia">
+
         <div class="contenedor">
 
             <div class="metodologia-encabezado">
+
                 <div>
                     <span class="mini-etiqueta">Nuestra metodología</span>
-                    <h2>Del reconocimiento del territorio a la acción.</h2>
+
+                    <h2>
+                        Del reconocimiento del territorio a la acción.
+                    </h2>
                 </div>
 
                 <p>
                     Aplicamos una metodología participativa enfocada en
                     formación, práctica e impacto comunitario.
                 </p>
+
             </div>
 
             <div class="pasos">
@@ -534,14 +1583,19 @@
                 </article>
 
             </div>
+
         </div>
+
     </section>
 
     <!-- ÁREAS DE IMPACTO -->
+
     <section class="impacto">
+
         <div class="contenedor">
 
             <div class="impacto-cabecera">
+
                 <div>
                     <span class="mini-etiqueta">Nuestro enfoque</span>
                     <h2>Áreas de impacto</h2>
@@ -551,6 +1605,7 @@
                     Nuestras iniciativas conectan el aprendizaje,
                     la creación, la participación y la innovación social.
                 </p>
+
             </div>
 
             <div class="impacto-grid">
@@ -576,15 +1631,22 @@
                 </article>
 
             </div>
+
         </div>
+
     </section>
 
-    <!-- CONTACTO -->
+    <!-- CIERRE Y CONTACTO -->
+
     <section class="cierre">
+
         <div class="contenedor">
+
             <div class="cierre-interior">
+
                 <div>
                     <h2>Construyamos oportunidades juntos.</h2>
+
                     <p>
                         Sumemos esfuerzos para fortalecer procesos
                         comunitarios, culturales y educativos.
@@ -595,108 +1657,249 @@
                    href="https://wa.me/573215978125?text=Hola%2C%20quiero%20m%C3%A1s%20informaci%C3%B3n%20sobre%20los%20programas"
                    target="_blank"
                    rel="noopener noreferrer">
+
                     Contáctanos
+
                     <i data-lucide="arrow-up-right"></i>
+
                 </a>
+
             </div>
+
         </div>
+
     </section>
 
 </main>
 
 <!-- PIE DE PÁGINA INSTITUCIONAL -->
+
 <footer class="pie">
-  <div class="contenedor pie-grid">
-    <div>
-      <a href="index.html" aria-label="COINDI, inicio"><img class="logo-pie" src="assets/logo-coindi-oscuro.png" alt="Corporación Insular Digital"></a>
-      <p class="pie-descripcion">Comunicación, inclusión digital y creación de oportunidades desde el territorio insular.</p>
+
+    <div class="contenedor pie-grid">
+
+        <div>
+
+            <a href="index.html" aria-label="COINDI, inicio">
+
+                <img class="logo-pie"
+                     src="assets/logo-coindi-oscuro.png"
+                     alt="Corporación Insular Digital">
+
+            </a>
+
+            <p class="pie-descripcion">
+                Comunicación, inclusión digital y creación de oportunidades
+                desde el territorio insular.
+            </p>
+
+        </div>
+
+        <div>
+
+            <h3>Enlaces</h3>
+
+            <nav class="enlaces-pie" aria-label="Enlaces del pie de página">
+
+                <a href="index.html">Inicio</a>
+                <a href="conocenos.html">Conócenos</a>
+                <a href="programas.html" aria-current="page">Programas</a>
+                <a href="teleinsular.html">Teleinsular</a>
+                <a href="insu.html">Revista INSU</a>
+                <a href="servicios.html">Servicios</a>
+                <a href="donar.html">Apoyar</a>
+
+            </nav>
+
+        </div>
+
+        <div class="contacto-pie">
+
+            <h3>Contacto</h3>
+
+            <p>Área de comunicaciones</p>
+
+            <p>
+                <a href="mailto:corpoindicomunicaciones@gmail.com">
+                    corpoindicomunicaciones@gmail.com
+                </a>
+            </p>
+
+            <div class="redes" aria-label="Redes sociales">
+
+                <a href="https://facebook.com/insulardigitaloficial"
+                   target="_blank"
+                   rel="noopener noreferrer"
+                   aria-label="Facebook">
+                    <i class="fab fa-facebook-f"></i>
+                </a>
+
+                <a href="https://instagram.com/insulardigitaloficial"
+                   target="_blank"
+                   rel="noopener noreferrer"
+                   aria-label="Instagram">
+                    <i class="fab fa-instagram"></i>
+                </a>
+
+                <a href="https://tiktok.com/@insulardigitaloficial"
+                   target="_blank"
+                   rel="noopener noreferrer"
+                   aria-label="TikTok">
+                    <i class="fab fa-tiktok"></i>
+                </a>
+
+                <a href="https://youtube.com/@insulardigitaloficial"
+                   target="_blank"
+                   rel="noopener noreferrer"
+                   aria-label="YouTube">
+                    <i class="fab fa-youtube"></i>
+                </a>
+
+            </div>
+
+        </div>
+
     </div>
-    <div>
-      <h3>Enlaces</h3>
-      <nav class="enlaces-pie" aria-label="Enlaces del pie de página">
-        <a href="index.html">Inicio</a><a href="conocenos.html">Conócenos</a>
-        <a href="programas.html" aria-current="page">Programas</a>
-        <a href="teleinsular.html">Teleinsular</a><a href="insu.html">Revista INSU</a>
-        <a href="servicios.html">Servicios</a><a href="donar.html">Apoyar</a>
-      </nav>
+
+    <div class="contenedor legal">
+
+        <span>
+            © <span id="anio-actual">2026</span>
+            Corporación Insular Digital. Todos los derechos reservados.
+        </span>
+
+        <span>COINDI · Cartagena, Colombia</span>
+
     </div>
-    <div class="contacto-pie">
-      <h3>Contacto</h3>
-      <p>Área de comunicaciones</p>
-      <p><a href="mailto:corpoindicomunicaciones@gmail.com">corpoindicomunicaciones@gmail.com</a></p>
-      <div class="redes" aria-label="Redes sociales">
-        <a href="https://facebook.com/insulardigitaloficial" target="_blank" rel="noopener noreferrer" aria-label="Facebook"><i class="fab fa-facebook-f"></i></a>
-        <a href="https://instagram.com/insulardigitaloficial" target="_blank" rel="noopener noreferrer" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
-        <a href="https://tiktok.com/@insulardigitaloficial" target="_blank" rel="noopener noreferrer" aria-label="TikTok"><i class="fab fa-tiktok"></i></a>
-        <a href="https://youtube.com/@insulardigitaloficial" target="_blank" rel="noopener noreferrer" aria-label="YouTube"><i class="fab fa-youtube"></i></a>
-      </div>
-    </div>
-  </div>
-  <div class="contenedor legal">
-    <span>© <span id="anio-actual">2026</span> Corporación Insular Digital. Todos los derechos reservados.</span>
-    <span>COINDI · Cartagena, Colombia</span>
-  </div>
+
 </footer>
 
+<!-- FUNCIONES DE LA PÁGINA -->
+
 <script>
-if (window.lucide) lucide.createIcons();
+document.addEventListener("DOMContentLoaded", function () {
 
-const botonMenu = document.getElementById("boton-menu");
-const menuPrincipal = document.getElementById("menu-principal");
-const iniciativas = document.querySelector(".menu-desplegable");
-const botonIniciativas = document.querySelector(".iniciativas-toggle");
+    /* ICONOS */
 
-function cerrarMenuMovil() {
-  menuPrincipal.classList.remove("abierto");
-  botonMenu.setAttribute("aria-expanded", "false");
-  botonMenu.setAttribute("aria-label", "Abrir menú");
-  botonMenu.textContent = "☰";
-}
-
-botonMenu.addEventListener("click", () => {
-  const abierto = menuPrincipal.classList.toggle("abierto");
-  botonMenu.setAttribute("aria-expanded", String(abierto));
-  botonMenu.setAttribute("aria-label", abierto ? "Cerrar menú" : "Abrir menú");
-  botonMenu.textContent = abierto ? "×" : "☰";
-});
-
-botonIniciativas.addEventListener("click", () => {
-  const abierto = iniciativas.classList.toggle("abierto");
-  botonIniciativas.setAttribute("aria-expanded", String(abierto));
-});
-
-iniciativas.querySelectorAll(".submenu a").forEach((enlace) => {
-  enlace.addEventListener("click", () => {
-    iniciativas.classList.remove("abierto");
-    botonIniciativas.setAttribute("aria-expanded", "false");
-    cerrarMenuMovil();
-  });
-});
-
-document.addEventListener("click", (evento) => {
-  if (!iniciativas.contains(evento.target)) {
-    iniciativas.classList.remove("abierto");
-    botonIniciativas.setAttribute("aria-expanded", "false");
-  }
-});
-
-document.querySelectorAll(".programa-enlace").forEach((boton) => {
-  boton.addEventListener("click", () => {
-    const programaTexto = boton.closest(".programa-texto");
-    const extra = programaTexto.querySelector(".programa-extra");
-    const abierto = extra.classList.toggle("visible");
-    boton.setAttribute("aria-expanded", String(abierto));
-    boton.querySelector("span").textContent = abierto ? "Mostrar menos" : "Leer descripción completa";
-    const icono = boton.querySelector("i");
-    if (icono) {
-      icono.setAttribute("data-lucide", abierto ? "arrow-up" : "arrow-down");
-      if (window.lucide) lucide.createIcons();
+    if (window.lucide) {
+        lucide.createIcons();
     }
-  });
-});
 
-menuPrincipal.querySelectorAll("a").forEach((enlace) => enlace.addEventListener("click", cerrarMenuMovil));
-document.getElementById("anio-actual").textContent = new Date().getFullYear();
+    /* MENÚ PRINCIPAL MÓVIL */
+
+    const botonMenu = document.getElementById("boton-menu");
+    const menuPrincipal = document.getElementById("menu-principal");
+
+    function cerrarMenuMovil() {
+        menuPrincipal.classList.remove("abierto");
+
+        botonMenu.setAttribute("aria-expanded", "false");
+        botonMenu.setAttribute("aria-label", "Abrir menú");
+        botonMenu.textContent = "☰";
+    }
+
+    botonMenu.addEventListener("click", function () {
+
+        const abierto = menuPrincipal.classList.toggle("abierto");
+
+        botonMenu.setAttribute("aria-expanded", String(abierto));
+
+        botonMenu.setAttribute(
+            "aria-label",
+            abierto ? "Cerrar menú" : "Abrir menú"
+        );
+
+        botonMenu.textContent = abierto ? "×" : "☰";
+
+    });
+
+    /* MENÚ DESPLEGABLE DE INICIATIVAS */
+
+    const iniciativas = document.querySelector(".menu-desplegable");
+    const botonIniciativas = document.querySelector(".iniciativas-toggle");
+
+    botonIniciativas.addEventListener("click", function () {
+
+        const abierto = iniciativas.classList.toggle("abierto");
+
+        botonIniciativas.setAttribute(
+            "aria-expanded",
+            String(abierto)
+        );
+
+    });
+
+    document.addEventListener("click", function (evento) {
+
+        if (!iniciativas.contains(evento.target)) {
+
+            iniciativas.classList.remove("abierto");
+
+            botonIniciativas.setAttribute("aria-expanded", "false");
+
+        }
+
+    });
+
+    /* CERRAR MENÚ AL SELECCIONAR UN ENLACE */
+
+    menuPrincipal.querySelectorAll("a").forEach(function (enlace) {
+
+        enlace.addEventListener("click", function () {
+
+            cerrarMenuMovil();
+
+            iniciativas.classList.remove("abierto");
+
+            botonIniciativas.setAttribute("aria-expanded", "false");
+
+        });
+
+    });
+
+    /* DESCRIPCIONES AMPLIABLES DE LOS PROGRAMAS */
+
+    document.querySelectorAll(".programa-enlace").forEach(function (boton) {
+
+        boton.addEventListener("click", function () {
+
+            const programaTexto = boton.closest(".programa-texto");
+
+            const extra = programaTexto.querySelector(".programa-extra");
+
+            const abierto = extra.classList.toggle("visible");
+
+            boton.setAttribute("aria-expanded", String(abierto));
+
+            boton.querySelector("span").textContent = abierto
+                ? "Mostrar menos"
+                : "Leer descripción completa";
+
+            const icono = boton.querySelector("i");
+
+            if (icono) {
+
+                icono.setAttribute(
+                    "data-lucide",
+                    abierto ? "arrow-up" : "arrow-down"
+                );
+
+                if (window.lucide) {
+                    lucide.createIcons();
+                }
+
+            }
+
+        });
+
+    });
+
+    /* AÑO AUTOMÁTICO */
+
+    document.getElementById("anio-actual").textContent =
+        new Date().getFullYear();
+
+});
 </script>
 
 </body>
