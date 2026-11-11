@@ -198,26 +198,12 @@ button:focus-visible {
     align-items: center;
 }
 
+/* INICIATIVAS: SIN FLECHA */
+
 .iniciativas-toggle {
     display: inline-flex;
     align-items: center;
-    gap: 9px;
-}
-
-.iniciativas-toggle::before {
-    content: "";
-    width: 7px;
-    height: 7px;
-    margin-top: -3px;
-    border-right: 1.5px solid currentColor;
-    border-bottom: 1.5px solid currentColor;
-    transform: rotate(45deg);
-    transition: transform .2s ease;
-}
-
-.menu-desplegable.abierto .iniciativas-toggle::before {
-    margin-top: 4px;
-    transform: rotate(225deg);
+    gap: 0;
 }
 
 .submenu {
