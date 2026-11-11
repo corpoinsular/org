@@ -181,19 +181,8 @@ button:focus-visible {
 }
 
 .iniciativas-toggle::before {
-    content: "";
-    width: 7px;
-    height: 7px;
-    margin-top: -3px;
-    border-right: 1.5px solid currentColor;
-    border-bottom: 1.5px solid currentColor;
-    transform: rotate(45deg);
-    transition: transform .2s ease;
-}
-
-.menu-desplegable.abierto .iniciativas-toggle::before {
-    margin-top: 4px;
-    transform: rotate(225deg);
+    display: none;
+    content: none;
 }
 
 .submenu {
