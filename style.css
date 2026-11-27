@@ -48,10 +48,13 @@ svg.line-icon{color:#005e9b;width:34px;height:34px;flex:none}
 
 /* Componentes compartidos de navegación e interiores */
 @media (min-width:601px) and (max-width:850px){
- .nav,.js .nav{flex-wrap:wrap;justify-content:center;gap:8px;padding:8px 0 12px}
- .js .toggle{display:none}
- .menu,.js .menu,.js .menu.open{display:flex;position:static;flex-direction:row;align-items:center;justify-content:center;flex-wrap:wrap;width:100%;padding:0;box-shadow:none;gap:12px 20px}
- .menu a:not(.btn){padding:4px 0}
+ header .nav, .js header .nav{flex-wrap:nowrap;justify-content:space-between;gap:10px;padding:0;}
+ header .brand{flex:0 1 150px;min-width:80px;}
+ header .brand img{width:100%;height:55px;object-fit:contain;}
+ .js header .toggle{display:none;}
+ header .menu,.js header .menu,.js header .menu.open{display:flex;position:static;flex:0 0 auto;flex-direction:row;align-items:center;justify-content:flex-end;flex-wrap:nowrap;width:auto;padding:0;box-shadow:none;gap:clamp(7px,1.2vw,12px);white-space:nowrap;}
+ header .menu a:not(.btn){padding:4px 0;}
+ header .menu .btn{padding-inline:12px;}
 }
 @media(max-width:600px){.js .toggle{display:block}.js .menu{display:none}.js .menu.open{display:flex}}
 main > .interior-hero{min-height:480px}
