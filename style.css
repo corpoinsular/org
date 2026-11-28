@@ -73,12 +73,12 @@ main > .interior-hero .hero-copy{padding:76px 0}
 .footer-social a:hover,.footer-social a:focus-visible{color:var(--yellow);border-color:var(--yellow);background:#ffffff0d}
 
 /* Servicios: componentes exclusivos de esta página */
-.services-page main > .services-hero:before{background:linear-gradient(90deg,rgba(8,21,64,.96),rgba(8,21,64,.76) 48%,rgba(8,21,64,.24)),url('assets/servicios-produccion.jpg') center/cover no-repeat,url('assets/bocachica-portada.jpg') center/cover no-repeat}
+.services-page main > .services-hero:before{background:linear-gradient(90deg,rgba(8,21,64,.96),rgba(8,21,64,.76) 48%,rgba(8,21,64,.24)),url('assets/servicios-produccion.jpg?v=20261128-2') center/cover no-repeat,url('assets/bocachica-portada.jpg?v=20261128-2') center/cover no-repeat}
 .services-page .service-offers{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:24px}
 .services-page .offer{padding:32px;border-top:4px solid var(--blue);display:flex;flex-direction:column;align-items:flex-start}
 .services-page .offer:nth-child(2n){border-top-color:var(--yellow)}
 .services-page .offer h3{margin:16px 0 12px}.services-page .offer .link{margin-top:auto}
-.services-page .service-photo{min-height:340px;border-radius:12px 64px 12px 12px;background:var(--navy) url('assets/servicios-produccion.jpg') center/cover no-repeat;background-image:url('assets/servicios-produccion.jpg'),url('assets/bocachica-portada.jpg');border-bottom:4px solid var(--yellow)}
+.services-page .service-photo{min-height:340px;border-radius:12px 64px 12px 12px;background:url('assets/servicios-produccion.jpg?v=20261128-2') center/cover no-repeat,url('assets/bocachica-portada.jpg?v=20261128-2') center/cover no-repeat var(--navy);border-bottom:4px solid var(--yellow)}
 .services-page .service-process{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:24px}.services-page .service-process article{border-top:3px solid var(--blue);padding:22px 0}.services-page .service-process span{font:800 2rem var(--heading);color:#005e9b}.services-page .service-process h3{margin:12px 0;font-size:1.15rem}
 @media(max-width:850px){.services-page .service-process{grid-template-columns:repeat(2,minmax(0,1fr))}}
 @media(max-width:600px){.services-page .service-offers,.services-page .service-process{grid-template-columns:1fr}.services-page .offer{padding:24px}.services-page .service-photo{min-height:240px}}
